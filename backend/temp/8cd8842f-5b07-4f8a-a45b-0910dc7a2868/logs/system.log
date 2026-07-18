@@ -1,0 +1,23 @@
+[2026-07-17 23:56:51,927] [INFO] [job_manager.py:92]: Job 8cd8842f-5b07-4f8a-a45b-0910dc7a2868 workspace created successfully
+[2026-07-17 23:57:43,922] [INFO] [pipeline_service.py:30]: Starting validation for job: 8cd8842f-5b07-4f8a-a45b-0910dc7a2868
+[2026-07-17 23:57:43,924] [INFO] [job_manager.py:136]: Job status updated to: VALIDATING
+[2026-07-17 23:57:43,937] [INFO] [job_manager.py:160]: Progress updated to 10%: Validating input Word Document
+[2026-07-17 23:57:43,955] [INFO] [pipeline_service.py:46]: Validation successful.
+[2026-07-17 23:57:43,969] [INFO] [job_manager.py:160]: Progress updated to 25%: Input document validated successfully
+[2026-07-17 23:57:43,970] [INFO] [pipeline_service.py:63]: Starting document analysis for job: 8cd8842f-5b07-4f8a-a45b-0910dc7a2868
+[2026-07-17 23:57:43,992] [INFO] [job_manager.py:136]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-17 23:57:44,006] [INFO] [job_manager.py:160]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-17 23:57:44,006] [INFO] [document_analyzer.py:32]: Starting document analysis for: G:\work\Journal2LaTeX\backend\temp\8cd8842f-5b07-4f8a-a45b-0910dc7a2868\input\test.docx
+[2026-07-17 23:57:44,007] [DEBUG] [document_analyzer.py:46]: Running Pandoc AST command: pandoc G:\work\Journal2LaTeX\backend\temp\8cd8842f-5b07-4f8a-a45b-0910dc7a2868\input\test.docx -t json
+[2026-07-17 23:57:44,444] [INFO] [document_analyzer.py:183]: Successfully parsed document: title='', sections=2
+[2026-07-17 23:57:44,447] [INFO] [pipeline_service.py:84]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\8cd8842f-5b07-4f8a-a45b-0910dc7a2868\intermediate\document_structure.json
+[2026-07-17 23:57:44,464] [INFO] [job_manager.py:160]: Progress updated to 65%: Document structure extracted successfully
+[2026-07-17 23:57:44,464] [INFO] [pipeline_service.py:105]: Starting asset extraction for job: 8cd8842f-5b07-4f8a-a45b-0910dc7a2868
+[2026-07-17 23:57:44,480] [INFO] [job_manager.py:136]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-17 23:57:44,497] [INFO] [job_manager.py:160]: Progress updated to 70%: Extracting images and figure assets from document
+[2026-07-17 23:57:44,917] [INFO] [pipeline_service.py:117]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\8cd8842f-5b07-4f8a-a45b-0910dc7a2868\intermediate\media
+[2026-07-17 23:57:44,933] [INFO] [job_manager.py:160]: Progress updated to 90%: Document assets extracted successfully
+[2026-07-17 23:57:44,933] [INFO] [pipeline_service.py:137]: Marking analysis complete for job: 8cd8842f-5b07-4f8a-a45b-0910dc7a2868
+[2026-07-17 23:57:44,946] [INFO] [job_manager.py:136]: Job status updated to: READY_FOR_TEMPLATE_RENDERING
+[2026-07-17 23:57:44,957] [INFO] [job_manager.py:160]: Progress updated to 100%: Document analysis complete. Ready for template rendering.
+[2026-07-17 23:57:44,957] [INFO] [pipeline_service.py:142]: Pipeline analysis run completed successfully.

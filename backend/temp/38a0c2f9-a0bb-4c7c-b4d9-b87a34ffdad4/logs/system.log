@@ -1,0 +1,23 @@
+[2026-07-17 23:07:18,889] [INFO] [job_manager.py:92]: Job 38a0c2f9-a0bb-4c7c-b4d9-b87a34ffdad4 workspace created successfully
+[2026-07-17 23:07:18,914] [INFO] [pipeline_service.py:30]: Starting validation for job: 38a0c2f9-a0bb-4c7c-b4d9-b87a34ffdad4
+[2026-07-17 23:07:18,916] [INFO] [job_manager.py:136]: Job status updated to: VALIDATING
+[2026-07-17 23:07:18,937] [INFO] [job_manager.py:160]: Progress updated to 10%: Validating input Word Document
+[2026-07-17 23:07:18,961] [INFO] [pipeline_service.py:46]: Validation successful.
+[2026-07-17 23:07:18,973] [INFO] [job_manager.py:160]: Progress updated to 20%: Input document validated successfully
+[2026-07-17 23:07:18,973] [INFO] [pipeline_service.py:61]: Starting document conversion for job: 38a0c2f9-a0bb-4c7c-b4d9-b87a34ffdad4
+[2026-07-17 23:07:18,992] [INFO] [job_manager.py:136]: Job status updated to: CONVERTING
+[2026-07-17 23:07:19,008] [INFO] [job_manager.py:160]: Progress updated to 30%: Converting document elements to LaTeX
+[2026-07-17 23:07:19,130] [INFO] [job_manager.py:160]: Progress updated to 50%: Extracting embedded media files
+[2026-07-17 23:07:19,172] [INFO] [pipeline_service.py:82]: Conversion completed successfully.
+[2026-07-17 23:07:19,188] [INFO] [job_manager.py:160]: Progress updated to 60%: Document conversion completed
+[2026-07-17 23:07:19,207] [INFO] [pipeline_service.py:102]: Starting document compilation for job: 38a0c2f9-a0bb-4c7c-b4d9-b87a34ffdad4
+[2026-07-17 23:07:19,208] [INFO] [job_manager.py:136]: Job status updated to: COMPILING
+[2026-07-17 23:07:19,222] [INFO] [job_manager.py:160]: Progress updated to 70%: Running LaTeX compilation engine
+[2026-07-17 23:07:22,756] [INFO] [pipeline_service.py:116]: Compilation completed successfully.
+[2026-07-17 23:07:22,772] [INFO] [job_manager.py:160]: Progress updated to 90%: LaTeX compilation completed
+[2026-07-17 23:07:22,772] [INFO] [pipeline_service.py:136]: Exporting output files for job: 38a0c2f9-a0bb-4c7c-b4d9-b87a34ffdad4
+[2026-07-17 23:07:22,788] [INFO] [job_manager.py:136]: Job status updated to: EXPORTING
+[2026-07-17 23:07:22,804] [INFO] [job_manager.py:160]: Progress updated to 95%: Exporting generated files
+[2026-07-17 23:07:22,831] [INFO] [job_manager.py:136]: Job status updated to: COMPLETED
+[2026-07-17 23:07:22,846] [INFO] [job_manager.py:160]: Progress updated to 100%: Pipeline process completed successfully
+[2026-07-17 23:07:22,846] [INFO] [pipeline_service.py:154]: Job execution completed successfully.

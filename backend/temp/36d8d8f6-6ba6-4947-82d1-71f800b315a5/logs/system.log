@@ -1,0 +1,42 @@
+[2026-07-18 02:04:22,609] [INFO] [job_manager.py:92]: Job 36d8d8f6-6ba6-4947-82d1-71f800b315a5 workspace created successfully
+[2026-07-18 02:04:22,622] [INFO] [pipeline_service.py:34]: Starting validation for job: 36d8d8f6-6ba6-4947-82d1-71f800b315a5
+[2026-07-18 02:04:22,623] [INFO] [job_manager.py:136]: Job status updated to: VALIDATING
+[2026-07-18 02:04:22,634] [INFO] [job_manager.py:160]: Progress updated to 10%: Validating input Word Document
+[2026-07-18 02:04:29,410] [INFO] [pipeline_service.py:49]: Validation successful.
+[2026-07-18 02:04:29,427] [INFO] [job_manager.py:160]: Progress updated to 20%: Input document validated successfully
+[2026-07-18 02:04:29,427] [INFO] [pipeline_service.py:56]: Starting document analysis for job: 36d8d8f6-6ba6-4947-82d1-71f800b315a5
+[2026-07-18 02:04:29,449] [INFO] [job_manager.py:136]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-18 02:04:29,465] [INFO] [job_manager.py:160]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-18 02:04:29,465] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\36d8d8f6-6ba6-4947-82d1-71f800b315a5\input\normal_paper.docx
+[2026-07-18 02:04:29,848] [INFO] [document_analyzer.py:348]: Parsed document: title='Modification of the Authentication in the Routing Protocols in Mobile Ad Hoc Networks (MANETs)', authors=5, sections=1, references=0
+[2026-07-18 02:04:29,858] [INFO] [pipeline_service.py:84]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\36d8d8f6-6ba6-4947-82d1-71f800b315a5\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\36d8d8f6-6ba6-4947-82d1-71f800b315a5\intermediate\conversion_report.json
+[2026-07-18 02:04:29,873] [INFO] [job_manager.py:160]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-18 02:04:29,873] [INFO] [pipeline_service.py:97]: Starting asset extraction for job: 36d8d8f6-6ba6-4947-82d1-71f800b315a5
+[2026-07-18 02:04:29,885] [INFO] [job_manager.py:136]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-18 02:04:29,900] [INFO] [job_manager.py:160]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-18 02:04:30,531] [INFO] [pipeline_service.py:108]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\36d8d8f6-6ba6-4947-82d1-71f800b315a5\intermediate\media
+[2026-07-18 02:04:30,544] [INFO] [job_manager.py:160]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-18 02:04:30,544] [INFO] [pipeline_service.py:120]: Classifying extracted assets for job: 36d8d8f6-6ba6-4947-82d1-71f800b315a5
+[2026-07-18 02:04:30,544] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 36d8d8f6-6ba6-4947-82d1-71f800b315a5
+[2026-07-18 02:04:30,550] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 81
+[2026-07-18 02:04:30,563] [INFO] [job_manager.py:160]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-18 02:04:30,584] [INFO] [pipeline_service.py:136]: Loading template JSAP for job: 36d8d8f6-6ba6-4947-82d1-71f800b315a5
+[2026-07-18 02:04:30,585] [INFO] [job_manager.py:136]: Job status updated to: LOADING_TEMPLATE
+[2026-07-18 02:04:30,603] [INFO] [job_manager.py:160]: Progress updated to 70%: Loading template styles: JSAP
+[2026-07-18 02:04:30,700] [INFO] [pipeline_service.py:154]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\36d8d8f6-6ba6-4947-82d1-71f800b315a5\rendered
+[2026-07-18 02:04:30,714] [INFO] [job_manager.py:160]: Progress updated to 80%: Template workspace initialized
+[2026-07-18 02:04:30,714] [INFO] [pipeline_service.py:167]: Starting LaTeX rendering for job: 36d8d8f6-6ba6-4947-82d1-71f800b315a5
+[2026-07-18 02:04:30,730] [INFO] [job_manager.py:136]: Job status updated to: RENDERING_LATEX
+[2026-07-18 02:04:30,744] [INFO] [job_manager.py:160]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-18 02:04:30,763] [INFO] [latex_renderer.py:29]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\36d8d8f6-6ba6-4947-82d1-71f800b315a5\rendered
+[2026-07-18 02:04:30,774] [INFO] [latex_renderer.py:105]: LaTeX document main.tex rendered successfully.
+[2026-07-18 02:04:30,790] [INFO] [job_manager.py:160]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-18 02:04:30,790] [INFO] [pipeline_service.py:201]: Starting document compilation for job: 36d8d8f6-6ba6-4947-82d1-71f800b315a5
+[2026-07-18 02:04:30,807] [INFO] [job_manager.py:136]: Job status updated to: COMPILING
+[2026-07-18 02:04:30,824] [INFO] [job_manager.py:160]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-18 02:04:36,096] [INFO] [pipeline_service.py:223]: Compilation completed successfully.
+[2026-07-18 02:04:36,098] [INFO] [pipeline_service.py:235]: Running E2E publication fidelity checker for job: 36d8d8f6-6ba6-4947-82d1-71f800b315a5
+[2026-07-18 02:04:36,098] [INFO] [fidelity_checker.py:24]: Generating advanced fidelity report and scores for job: 36d8d8f6-6ba6-4947-82d1-71f800b315a5
+[2026-07-18 02:04:36,111] [INFO] [fidelity_checker.py:163]: Fidelity report written to G:\work\Journal2LaTeX\backend\temp\36d8d8f6-6ba6-4947-82d1-71f800b315a5\intermediate\fidelity_report.json. Overall Score: 98.3%, Critical missing: 0
+[2026-07-18 02:04:36,128] [INFO] [job_manager.py:136]: Job status updated to: COMPLETED
+[2026-07-18 02:04:36,146] [INFO] [job_manager.py:160]: Progress updated to 100%: Pipeline process completed successfully

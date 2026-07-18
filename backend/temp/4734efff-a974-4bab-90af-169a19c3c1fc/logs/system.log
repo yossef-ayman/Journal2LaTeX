@@ -1,0 +1,35 @@
+[2026-07-18 00:03:55,473] [INFO] [job_manager.py:92]: Job 4734efff-a974-4bab-90af-169a19c3c1fc workspace created successfully
+[2026-07-18 00:03:55,492] [INFO] [pipeline_service.py:30]: Starting validation for job: 4734efff-a974-4bab-90af-169a19c3c1fc
+[2026-07-18 00:03:55,493] [INFO] [job_manager.py:136]: Job status updated to: VALIDATING
+[2026-07-18 00:03:55,506] [INFO] [job_manager.py:160]: Progress updated to 10%: Validating input Word Document
+[2026-07-18 00:03:55,509] [INFO] [pipeline_service.py:45]: Validation successful.
+[2026-07-18 00:03:55,520] [INFO] [job_manager.py:160]: Progress updated to 20%: Input document validated successfully
+[2026-07-18 00:03:55,520] [INFO] [pipeline_service.py:52]: Starting document analysis for job: 4734efff-a974-4bab-90af-169a19c3c1fc
+[2026-07-18 00:03:55,538] [INFO] [job_manager.py:136]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-18 00:03:55,548] [INFO] [job_manager.py:160]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-18 00:03:55,549] [INFO] [document_analyzer.py:32]: Starting document analysis for: G:\work\Journal2LaTeX\backend\temp\4734efff-a974-4bab-90af-169a19c3c1fc\input\sample.docx
+[2026-07-18 00:03:55,549] [DEBUG] [document_analyzer.py:46]: Running Pandoc AST command: pandoc G:\work\Journal2LaTeX\backend\temp\4734efff-a974-4bab-90af-169a19c3c1fc\input\sample.docx -t json
+[2026-07-18 00:03:55,591] [INFO] [document_analyzer.py:183]: Successfully parsed document: title='', sections=1
+[2026-07-18 00:03:55,592] [INFO] [pipeline_service.py:73]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\4734efff-a974-4bab-90af-169a19c3c1fc\intermediate\document_structure.json
+[2026-07-18 00:03:55,603] [INFO] [job_manager.py:160]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-18 00:03:55,603] [INFO] [pipeline_service.py:86]: Starting asset extraction for job: 4734efff-a974-4bab-90af-169a19c3c1fc
+[2026-07-18 00:03:55,615] [INFO] [job_manager.py:136]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-18 00:03:55,626] [INFO] [job_manager.py:160]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-18 00:03:55,661] [INFO] [pipeline_service.py:97]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\4734efff-a974-4bab-90af-169a19c3c1fc\intermediate\media
+[2026-07-18 00:03:55,673] [INFO] [job_manager.py:160]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-18 00:03:55,690] [INFO] [pipeline_service.py:109]: Loading template default for job: 4734efff-a974-4bab-90af-169a19c3c1fc
+[2026-07-18 00:03:55,691] [INFO] [job_manager.py:136]: Job status updated to: LOADING_TEMPLATE
+[2026-07-18 00:03:55,702] [INFO] [job_manager.py:160]: Progress updated to 70%: Loading template styles: default
+[2026-07-18 00:03:55,708] [INFO] [pipeline_service.py:127]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\4734efff-a974-4bab-90af-169a19c3c1fc\rendered
+[2026-07-18 00:03:55,721] [INFO] [job_manager.py:160]: Progress updated to 80%: Template workspace initialized
+[2026-07-18 00:03:55,721] [INFO] [pipeline_service.py:140]: Starting LaTeX rendering for job: 4734efff-a974-4bab-90af-169a19c3c1fc
+[2026-07-18 00:03:55,734] [INFO] [job_manager.py:136]: Job status updated to: RENDERING_LATEX
+[2026-07-18 00:03:55,744] [INFO] [job_manager.py:160]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-18 00:03:55,746] [INFO] [latex_renderer.py:29]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\4734efff-a974-4bab-90af-169a19c3c1fc\rendered
+[2026-07-18 00:03:55,747] [INFO] [latex_renderer.py:81]: LaTeX document main.tex rendered successfully.
+[2026-07-18 00:03:55,760] [INFO] [job_manager.py:160]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-18 00:03:55,760] [INFO] [pipeline_service.py:174]: Starting document compilation for job: 4734efff-a974-4bab-90af-169a19c3c1fc
+[2026-07-18 00:03:55,772] [INFO] [job_manager.py:136]: Job status updated to: COMPILING
+[2026-07-18 00:03:55,784] [INFO] [job_manager.py:160]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-18 00:04:05,059] [ERROR] [pipeline_service.py:203]: LaTeX compilation failed: LaTeX compilation failed with return code 12.
+[2026-07-18 00:04:05,073] [ERROR] [job_manager.py:184]: Job error added: LaTeX compilation failed: LaTeX compilation failed with return code 12.

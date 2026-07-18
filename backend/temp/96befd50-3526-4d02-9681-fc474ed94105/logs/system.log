@@ -1,0 +1,38 @@
+[2026-07-18 02:07:35,802] [INFO] [job_manager.py:92]: Job 96befd50-3526-4d02-9681-fc474ed94105 workspace created successfully
+[2026-07-18 02:07:35,830] [INFO] [pipeline_service.py:34]: Starting validation for job: 96befd50-3526-4d02-9681-fc474ed94105
+[2026-07-18 02:07:35,831] [INFO] [job_manager.py:136]: Job status updated to: VALIDATING
+[2026-07-18 02:07:35,846] [INFO] [job_manager.py:160]: Progress updated to 10%: Validating input Word Document
+[2026-07-18 02:07:35,867] [INFO] [pipeline_service.py:49]: Validation successful.
+[2026-07-18 02:07:35,881] [INFO] [job_manager.py:160]: Progress updated to 20%: Input document validated successfully
+[2026-07-18 02:07:35,882] [INFO] [pipeline_service.py:56]: Starting document analysis for job: 96befd50-3526-4d02-9681-fc474ed94105
+[2026-07-18 02:07:35,905] [INFO] [job_manager.py:136]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-18 02:07:35,919] [INFO] [job_manager.py:160]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-18 02:07:35,919] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\96befd50-3526-4d02-9681-fc474ed94105\input\with_author_photo.docx
+[2026-07-18 02:07:36,275] [INFO] [document_analyzer.py:358]: Parsed document: title='Statistical Analysis of Body Dysmorphic Disorder, Quality of Life, and Social Anxiety in Fire Victims: Path Analysis', authors=3, sections=1, references=0
+[2026-07-18 02:07:36,276] [INFO] [pipeline_service.py:84]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\96befd50-3526-4d02-9681-fc474ed94105\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\96befd50-3526-4d02-9681-fc474ed94105\intermediate\conversion_report.json
+[2026-07-18 02:07:36,287] [INFO] [job_manager.py:160]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-18 02:07:36,288] [INFO] [pipeline_service.py:97]: Starting asset extraction for job: 96befd50-3526-4d02-9681-fc474ed94105
+[2026-07-18 02:07:36,301] [INFO] [job_manager.py:136]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-18 02:07:36,315] [INFO] [job_manager.py:160]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-18 02:07:36,688] [INFO] [pipeline_service.py:108]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\96befd50-3526-4d02-9681-fc474ed94105\intermediate\media
+[2026-07-18 02:07:36,705] [INFO] [job_manager.py:160]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-18 02:07:36,705] [INFO] [pipeline_service.py:120]: Classifying extracted assets for job: 96befd50-3526-4d02-9681-fc474ed94105
+[2026-07-18 02:07:36,705] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 96befd50-3526-4d02-9681-fc474ed94105
+[2026-07-18 02:07:36,707] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 8
+[2026-07-18 02:07:36,720] [INFO] [job_manager.py:160]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-18 02:07:36,743] [INFO] [pipeline_service.py:136]: Loading template JSAP for job: 96befd50-3526-4d02-9681-fc474ed94105
+[2026-07-18 02:07:36,744] [INFO] [job_manager.py:136]: Job status updated to: LOADING_TEMPLATE
+[2026-07-18 02:07:36,757] [INFO] [job_manager.py:160]: Progress updated to 70%: Loading template styles: JSAP
+[2026-07-18 02:07:36,777] [INFO] [pipeline_service.py:154]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\96befd50-3526-4d02-9681-fc474ed94105\rendered
+[2026-07-18 02:07:36,792] [INFO] [job_manager.py:160]: Progress updated to 80%: Template workspace initialized
+[2026-07-18 02:07:36,792] [INFO] [pipeline_service.py:167]: Starting LaTeX rendering for job: 96befd50-3526-4d02-9681-fc474ed94105
+[2026-07-18 02:07:36,804] [INFO] [job_manager.py:136]: Job status updated to: RENDERING_LATEX
+[2026-07-18 02:07:36,819] [INFO] [job_manager.py:160]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-18 02:07:36,833] [INFO] [latex_renderer.py:30]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\96befd50-3526-4d02-9681-fc474ed94105\rendered
+[2026-07-18 02:07:36,852] [INFO] [latex_renderer.py:157]: LaTeX document main.tex rendered successfully.
+[2026-07-18 02:07:36,869] [INFO] [job_manager.py:160]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-18 02:07:36,870] [INFO] [pipeline_service.py:201]: Starting document compilation for job: 96befd50-3526-4d02-9681-fc474ed94105
+[2026-07-18 02:07:36,883] [INFO] [job_manager.py:136]: Job status updated to: COMPILING
+[2026-07-18 02:07:36,897] [INFO] [job_manager.py:160]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-18 02:07:41,559] [ERROR] [pipeline_service.py:228]: LaTeX compilation failed: LaTeX compilation failed with return code 12.
+[2026-07-18 02:07:41,573] [ERROR] [job_manager.py:184]: Job error added: LaTeX compilation failed: LaTeX compilation failed with return code 12.

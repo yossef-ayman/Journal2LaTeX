@@ -1,0 +1,57 @@
+\documentclass[10pt]{NSP1}
+\usepackage{url,floatflt}
+\usepackage{helvet,times}
+\usepackage{psfig,graphics}
+\usepackage{mathptmx,amsmath,amssymb,bm}
+\usepackage{float}
+\usepackage[bf,hypcap]{caption}
+\usepackage{keyval}
+\makeatletter
+\define@key{psfig}{file}{\def\psfig@file{#1}}
+\define@key{psfig}{width}{\def\psfig@width{#1}}
+\define@key{psfig}{height}{\def\psfig@height{#1}}
+\renewcommand{\psfig}[1]{%
+  \let\par\@@par%
+  \setkeys{psfig}{#1}%
+  \includegraphics[width=3.6truecm,height=5truecm,keepaspectratio]{\psfig@file}%
+}
+\makeatother
+
+\addtolength{\oddsidemargin}{.5in}
+\addtolength{\evensidemargin}{-.5in}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\topmargin=0.00cm
+
+\def\sm{\smallskip}
+\def\no{\noindent}
+
+\def\firstpage{1}
+\setcounter{page}{\firstpage}
+\def\thevol{7}
+\def\thenumber{?}
+\def\theyear{2026}
+
+
+\begin{document}
+
+\titlefigurecaption{{\large \bf \rm Applied Mathematics \& Information Sciences }\\ {\it\small An International Journal}}
+
+\title{__TITLE__}
+
+\author{__AUTHORS__}
+\institute{__INSTITUTES__}
+
+\abstracttext{__ABSTRACT__}
+
+\keywords{__KEYWORDS__}
+
+\maketitle
+
+__CONTENT__
+
+\end{document}

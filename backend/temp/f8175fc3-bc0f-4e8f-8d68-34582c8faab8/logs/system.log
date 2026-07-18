@@ -1,0 +1,42 @@
+[2026-07-18 02:36:06,485] [INFO] [job_manager.py:92]: Job f8175fc3-bc0f-4e8f-8d68-34582c8faab8 workspace created successfully
+[2026-07-18 02:36:06,505] [INFO] [pipeline_service.py:34]: Starting validation for job: f8175fc3-bc0f-4e8f-8d68-34582c8faab8
+[2026-07-18 02:36:06,506] [INFO] [job_manager.py:136]: Job status updated to: VALIDATING
+[2026-07-18 02:36:06,517] [INFO] [job_manager.py:160]: Progress updated to 10%: Validating input Word Document
+[2026-07-18 02:36:06,530] [INFO] [pipeline_service.py:49]: Validation successful.
+[2026-07-18 02:36:06,542] [INFO] [job_manager.py:160]: Progress updated to 20%: Input document validated successfully
+[2026-07-18 02:36:06,542] [INFO] [pipeline_service.py:56]: Starting document analysis for job: f8175fc3-bc0f-4e8f-8d68-34582c8faab8
+[2026-07-18 02:36:06,560] [INFO] [job_manager.py:136]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-18 02:36:06,573] [INFO] [job_manager.py:160]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-18 02:36:06,573] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\f8175fc3-bc0f-4e8f-8d68-34582c8faab8\input\with_author_photo.docx
+[2026-07-18 02:36:06,856] [INFO] [document_analyzer.py:415]: Parsed document: title='Statistical Analysis of Body Dysmorphic Disorder, Quality of Life, and Social Anxiety in Fire Victims: Path Analysis', authors=3, sections=1, references=21
+[2026-07-18 02:36:06,858] [INFO] [pipeline_service.py:84]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\f8175fc3-bc0f-4e8f-8d68-34582c8faab8\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\f8175fc3-bc0f-4e8f-8d68-34582c8faab8\intermediate\conversion_report.json
+[2026-07-18 02:36:06,869] [INFO] [job_manager.py:160]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-18 02:36:06,869] [INFO] [pipeline_service.py:97]: Starting asset extraction for job: f8175fc3-bc0f-4e8f-8d68-34582c8faab8
+[2026-07-18 02:36:06,880] [INFO] [job_manager.py:136]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-18 02:36:06,890] [INFO] [job_manager.py:160]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-18 02:36:07,227] [INFO] [pipeline_service.py:108]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\f8175fc3-bc0f-4e8f-8d68-34582c8faab8\intermediate\media
+[2026-07-18 02:36:07,238] [INFO] [job_manager.py:160]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-18 02:36:07,238] [INFO] [pipeline_service.py:120]: Classifying extracted assets for job: f8175fc3-bc0f-4e8f-8d68-34582c8faab8
+[2026-07-18 02:36:07,238] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: f8175fc3-bc0f-4e8f-8d68-34582c8faab8
+[2026-07-18 02:36:07,240] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 8
+[2026-07-18 02:36:07,252] [INFO] [job_manager.py:160]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-18 02:36:07,269] [INFO] [pipeline_service.py:136]: Loading template JSAP for job: f8175fc3-bc0f-4e8f-8d68-34582c8faab8
+[2026-07-18 02:36:07,269] [INFO] [job_manager.py:136]: Job status updated to: LOADING_TEMPLATE
+[2026-07-18 02:36:07,281] [INFO] [job_manager.py:160]: Progress updated to 70%: Loading template styles: JSAP
+[2026-07-18 02:36:07,299] [INFO] [pipeline_service.py:154]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\f8175fc3-bc0f-4e8f-8d68-34582c8faab8\rendered
+[2026-07-18 02:36:07,310] [INFO] [job_manager.py:160]: Progress updated to 80%: Template workspace initialized
+[2026-07-18 02:36:07,310] [INFO] [pipeline_service.py:167]: Starting LaTeX rendering for job: f8175fc3-bc0f-4e8f-8d68-34582c8faab8
+[2026-07-18 02:36:07,321] [INFO] [job_manager.py:136]: Job status updated to: RENDERING_LATEX
+[2026-07-18 02:36:07,332] [INFO] [job_manager.py:160]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-18 02:36:07,346] [INFO] [latex_renderer.py:30]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\f8175fc3-bc0f-4e8f-8d68-34582c8faab8\rendered
+[2026-07-18 02:36:07,352] [INFO] [latex_renderer.py:173]: LaTeX document main.tex rendered successfully.
+[2026-07-18 02:36:07,363] [INFO] [job_manager.py:160]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-18 02:36:07,363] [INFO] [pipeline_service.py:201]: Starting document compilation for job: f8175fc3-bc0f-4e8f-8d68-34582c8faab8
+[2026-07-18 02:36:07,373] [INFO] [job_manager.py:136]: Job status updated to: COMPILING
+[2026-07-18 02:36:07,383] [INFO] [job_manager.py:160]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-18 02:36:11,306] [INFO] [pipeline_service.py:223]: Compilation completed successfully.
+[2026-07-18 02:36:11,307] [INFO] [pipeline_service.py:235]: Running E2E publication fidelity checker for job: f8175fc3-bc0f-4e8f-8d68-34582c8faab8
+[2026-07-18 02:36:11,307] [INFO] [fidelity_checker.py:24]: Generating advanced fidelity report and scores for job: f8175fc3-bc0f-4e8f-8d68-34582c8faab8
+[2026-07-18 02:36:11,309] [INFO] [fidelity_checker.py:163]: Fidelity report written to G:\work\Journal2LaTeX\backend\temp\f8175fc3-bc0f-4e8f-8d68-34582c8faab8\intermediate\fidelity_report.json. Overall Score: 99.1%, Critical missing: 0
+[2026-07-18 02:36:11,310] [ERROR] [pipeline_service.py:247]: Fidelity checker execution failed: name 'doc' is not defined
+[2026-07-18 02:36:11,320] [ERROR] [job_manager.py:184]: Job error added: Fidelity checker execution failed: name 'doc' is not defined

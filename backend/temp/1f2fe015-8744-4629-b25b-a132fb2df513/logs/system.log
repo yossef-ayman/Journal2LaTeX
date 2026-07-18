@@ -1,0 +1,35 @@
+[2026-07-18 00:20:12,983] [INFO] [job_manager.py:92]: Job 1f2fe015-8744-4629-b25b-a132fb2df513 workspace created successfully
+[2026-07-18 00:20:13,000] [INFO] [pipeline_service.py:30]: Starting validation for job: 1f2fe015-8744-4629-b25b-a132fb2df513
+[2026-07-18 00:20:13,001] [INFO] [job_manager.py:136]: Job status updated to: VALIDATING
+[2026-07-18 00:20:13,017] [INFO] [job_manager.py:160]: Progress updated to 10%: Validating input Word Document
+[2026-07-18 00:20:13,036] [INFO] [pipeline_service.py:45]: Validation successful.
+[2026-07-18 00:20:13,051] [INFO] [job_manager.py:160]: Progress updated to 20%: Input document validated successfully
+[2026-07-18 00:20:13,051] [INFO] [pipeline_service.py:52]: Starting document analysis for job: 1f2fe015-8744-4629-b25b-a132fb2df513
+[2026-07-18 00:20:13,064] [INFO] [job_manager.py:136]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-18 00:20:13,076] [INFO] [job_manager.py:160]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-18 00:20:13,076] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\1f2fe015-8744-4629-b25b-a132fb2df513\input\test.docx
+[2026-07-18 00:20:13,428] [INFO] [document_analyzer.py:254]: Parsed document: title='Statistical Analysis of Body Dysmorphic Disorder, Quality of Life, and Social Anxiety in Fire Victims: Path Analysis', authors=3, sections=1, references=0
+[2026-07-18 00:20:13,430] [INFO] [pipeline_service.py:80]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\1f2fe015-8744-4629-b25b-a132fb2df513\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\1f2fe015-8744-4629-b25b-a132fb2df513\intermediate\conversion_report.json
+[2026-07-18 00:20:13,442] [INFO] [job_manager.py:160]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-18 00:20:13,442] [INFO] [pipeline_service.py:93]: Starting asset extraction for job: 1f2fe015-8744-4629-b25b-a132fb2df513
+[2026-07-18 00:20:13,454] [INFO] [job_manager.py:136]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-18 00:20:13,465] [INFO] [job_manager.py:160]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-18 00:20:13,880] [INFO] [pipeline_service.py:104]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\1f2fe015-8744-4629-b25b-a132fb2df513\intermediate\media
+[2026-07-18 00:20:13,895] [INFO] [job_manager.py:160]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-18 00:20:13,912] [INFO] [pipeline_service.py:116]: Loading template JSAP for job: 1f2fe015-8744-4629-b25b-a132fb2df513
+[2026-07-18 00:20:13,913] [INFO] [job_manager.py:136]: Job status updated to: LOADING_TEMPLATE
+[2026-07-18 00:20:13,928] [INFO] [job_manager.py:160]: Progress updated to 70%: Loading template styles: JSAP
+[2026-07-18 00:20:13,946] [INFO] [pipeline_service.py:134]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\1f2fe015-8744-4629-b25b-a132fb2df513\rendered
+[2026-07-18 00:20:13,961] [INFO] [job_manager.py:160]: Progress updated to 80%: Template workspace initialized
+[2026-07-18 00:20:13,961] [INFO] [pipeline_service.py:147]: Starting LaTeX rendering for job: 1f2fe015-8744-4629-b25b-a132fb2df513
+[2026-07-18 00:20:13,974] [INFO] [job_manager.py:136]: Job status updated to: RENDERING_LATEX
+[2026-07-18 00:20:13,987] [INFO] [job_manager.py:160]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-18 00:20:14,002] [INFO] [latex_renderer.py:29]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\1f2fe015-8744-4629-b25b-a132fb2df513\rendered
+[2026-07-18 00:20:14,008] [INFO] [latex_renderer.py:105]: LaTeX document main.tex rendered successfully.
+[2026-07-18 00:20:14,021] [INFO] [job_manager.py:160]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-18 00:20:14,021] [INFO] [pipeline_service.py:181]: Starting document compilation for job: 1f2fe015-8744-4629-b25b-a132fb2df513
+[2026-07-18 00:20:14,035] [INFO] [job_manager.py:136]: Job status updated to: COMPILING
+[2026-07-18 00:20:14,048] [INFO] [job_manager.py:160]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-18 00:20:18,228] [INFO] [pipeline_service.py:203]: Compilation completed successfully.
+[2026-07-18 00:20:18,242] [INFO] [job_manager.py:136]: Job status updated to: COMPLETED
+[2026-07-18 00:20:18,254] [INFO] [job_manager.py:160]: Progress updated to 100%: Pipeline process completed successfully
