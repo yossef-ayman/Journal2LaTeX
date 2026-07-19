@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import List, Optional
+from typing import List
 from pydantic import BaseModel, Field
 
 
@@ -27,7 +27,10 @@ class JobMetadata(BaseModel):
     created_at: str
     updated_at: str
     paper_name: str = ""
+    template_id: str = ""
     template_name: str = ""
+    template_version: str = ""
+    template_type: str = ""
     output_pdf: str = ""
     output_tex: str = ""
     compile_success: bool = False

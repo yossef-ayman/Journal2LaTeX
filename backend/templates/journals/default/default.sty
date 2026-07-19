@@ -4,15 +4,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 
-% Define macro for showing journal header
-\newcommand{\journalheader}{
-  \noindent
-  \begin{minipage}{0.2\textwidth}
-    \includegraphics[width=\linewidth]{logo.png}
-  \end{minipage}
-  \begin{minipage}{0.8\textwidth}
-    \flushright \large \textbf{Journal2LaTeX Open Document Series} \\
-    \small Vol. 1, No. 1, 2026
-  \end{minipage}
-  \vskip 1em \hrule \vskip 1.5em
-}
+% \journalheader retained as a no-op for backward compatibility with
+% documents rendered by older template versions; real headers are
+% reconstructed from the source DOCX by HeaderReconstructor.
+\newcommand{\journalheader}{}

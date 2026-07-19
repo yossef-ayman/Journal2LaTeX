@@ -1,3 +1,4 @@
+import os
 import zipfile
 from pathlib import Path
 from typing import Union
@@ -31,9 +32,6 @@ def zip_directory(dir_path: Union[str, Path], zip_file_path: Union[str, Path]) -
                 zip_file.write(file_path, archive_name)
 
     return archive_path
-
-
-import os
 
 
 def extract_zip(zip_file_path: Union[str, Path], extract_dir: Union[str, Path]) -> Path:

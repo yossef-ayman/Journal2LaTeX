@@ -148,6 +148,7 @@ class DocumentAnalyzer:
 
         # 3. Process Author & Affiliation lists from remaining metadata paragraphs
         email_regex = re.compile(r"[\w\.-]+@[\w\.-]+\.\w+")
+        author_markers = {}  # id(AuthorModel) -> superscript affiliation index
         institution_keywords = ["university", "department", "institute", "school", "college", "lab", "corp", "inc", "ltd", "centre"]
         current_author: Optional[AuthorModel] = None
 
@@ -166,19 +167,40 @@ class DocumentAnalyzer:
                     current_author = AuthorModel(name="Corresponding Author", email=emails[0])
                     authors.append(current_author)
             elif is_inst:
-                # This paragraph represents affiliation info. Attach to preceding authors.
-                if current_author:
+                # Affiliation paragraph.  If it starts with an index digit
+                # ("1 Professor in ..."), attach it to the author(s) carrying
+                # that superscript marker; otherwise attach to the latest author.
+                idx_match = re.match(r"^(\d{1,2})\s*(?=[A-Za-z])(.*)$", txt, re.DOTALL)
+                if idx_match:
+                    marker = int(idx_match.group(1))
+                    body = idx_match.group(2).strip()
+                    matched = False
+                    for author in authors:
+                        if author_markers.get(id(author)) == marker:
+                            author.affiliation = body
+                            matched = True
+                    if not matched and current_author:
+                        current_author.affiliation = body
+                elif current_author:
                     current_author.affiliation = txt
-                else:
-                    if authors:
-                        authors[-1].affiliation = txt
+                elif authors:
+                    authors[-1].affiliation = txt
             else:
-                # Likely name or comma-separated authors
-                # Strip footnotes tags (like Carlo Bianca^1 -> Carlo Bianca)
-                cleaned_name = re.sub(r"\^\{\d+\}|\^\d+", "", txt).strip()
-                names = [n.strip() for n in re.split(r",|\band\b", cleaned_name) if n.strip()]
+                # Likely a name list: "Abdallah Almahaireh1, Baha' Shawaqfeh2, and ..."
+                # Superscript affiliation markers arrive as plain trailing
+                # digits after inline flattening; capture them for affiliation
+                # matching, then strip them from the display name.
+                cleaned = re.sub(r"\^\{\d+\}|\^\d+", "", txt).strip()
+                names = [n.strip() for n in re.split(r",|\band\b", cleaned) if n.strip()]
                 for name in names:
-                    current_author = AuthorModel(name=name)
+                    marker_match = re.search(r"(\d+)\s*\*?$", name)
+                    marker = int(marker_match.group(1)) if marker_match else None
+                    display = re.sub(r"\s*\d+\s*\*?$", "", name).strip()
+                    if not display:
+                        continue
+                    current_author = AuthorModel(name=display)
+                    if marker is not None:
+                        author_markers[id(current_author)] = marker
                     authors.append(current_author)
 
         # Fallback if no authors parsed
@@ -201,17 +223,17 @@ class DocumentAnalyzer:
         for txt in intro_texts:
             txt_lower = txt.lower().strip()
             if "received:" in txt_lower:
-                m_rec = re.search(r"received:\s*([^,.]+)", txt, re.IGNORECASE)
+                m_rec = re.search(r"received:\s*([^,]+)", txt, re.IGNORECASE)
                 if m_rec:
                     received_date = m_rec.group(1).strip()
-                m_rev = re.search(r"revised:\s*([^,.]+)", txt, re.IGNORECASE)
+                m_rev = re.search(r"revised:\s*([^,]+)", txt, re.IGNORECASE)
                 if m_rev:
                     revised_date = m_rev.group(1).strip()
-                m_acc = re.search(r"accepted:\s*([^,.]+)", txt, re.IGNORECASE)
+                m_acc = re.search(r"accepted:\s*([^,]+)", txt, re.IGNORECASE)
                 if m_acc:
                     accepted_date = m_acc.group(1).strip()
             if "published online:" in txt_lower:
-                m_pub = re.search(r"published online:\s*([^,.]+)", txt, re.IGNORECASE)
+                m_pub = re.search(r"published online:\s*([^,]+)", txt, re.IGNORECASE)
                 if m_pub:
                     published_date = m_pub.group(1).strip()
             if "vol." in txt_lower or "no." in txt_lower or "j. stat." in txt_lower:
@@ -271,7 +293,10 @@ class DocumentAnalyzer:
                 if current_section and current_section.blocks:
                     doc.sections.append(current_section)
 
-                current_section = SectionModel(title=header_text, level=level, blocks=[])
+                # Strip manual numbering ("2.1 Methods" -> "Methods"): LaTeX
+                # sectioning renumbers, so keeping it doubles the numbers.
+                clean_title = re.sub(r"^\d+(\.\d+)*\.?\s+", "", header_text).strip() or header_text
+                current_section = SectionModel(title=clean_title, level=level, blocks=[])
                 continue
 
             if t in ("Para", "Plain"):
@@ -302,13 +327,17 @@ class DocumentAnalyzer:
                 continue
             elif in_references:
                 if t in ("Para", "Plain"):
-                    references_list.append(self._stringify_inlines(c))
-                    counters["references"] += 1
+                    ref_text = self._stringify_inlines(c).strip()
+                    if ref_text:  # skip blank paragraphs (they became empty \bibitems)
+                        references_list.append(ref_text)
+                        counters["references"] += 1
                 elif t in ("BulletList", "OrderedList"):
                     list_items = c[1] if t == "OrderedList" else c
                     for item in list_items:
-                        references_list.append(self._stringify_blocks(item))
-                        counters["references"] += 1
+                        ref_text = self._stringify_blocks(item).strip()
+                        if ref_text:
+                            references_list.append(ref_text)
+                            counters["references"] += 1
                 continue
             elif in_biography:
                 if t == "Table":
@@ -567,8 +596,13 @@ class DocumentAnalyzer:
                 parts.append("\n")
             elif t == "Math":
                 parts.append(f"${c[1]}$")
-            elif t in ("Emph", "Strong", "Strikeout"):
+            elif t in ("Emph", "Strong", "Strikeout", "Superscript", "Subscript",
+                       "SmallCaps", "Underline"):
+                # Formatting wrappers: keep the text content (superscripted
+                # citation markers like "[2]" must survive for citation mapping).
                 parts.append(self._stringify_inlines(c))
+            elif t == "Span":
+                parts.append(self._stringify_inlines(c[1]))
             elif t == "Quoted":
                 parts.append(f'"{self._stringify_inlines(c[1])}"')
             elif t == "Code":
@@ -592,6 +626,13 @@ class DocumentAnalyzer:
                 parts.append(self._stringify_inlines(c))
             elif t == "Header":
                 parts.append(self._stringify_inlines(c[2]))
+            elif t == "BlockQuote":
+                # Word list items frequently arrive as BlockQuote wrappers.
+                parts.append(self._stringify_blocks(c))
+            elif t == "Div":
+                parts.append(self._stringify_blocks(c[1]))
+            elif t == "LineBlock":
+                parts.append(" ".join(self._stringify_inlines(line) for line in c))
             elif t in ("BulletList", "OrderedList"):
                 list_items = c[1] if t == "OrderedList" else c
                 item_texts = [self._stringify_blocks(item) for item in list_items]

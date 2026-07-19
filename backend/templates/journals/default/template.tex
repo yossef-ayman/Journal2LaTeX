@@ -3,16 +3,23 @@
 
 \begin{document}
 
-\journalheader
-
-\title{__TITLE__}
-\author{__AUTHORS__}
-\date{}
-\maketitle
+% Title block rendered inline (article's \maketitle forces a page break when
+% preceded by other content, which pushed the whole paper to page 2).
+\begin{center}
+  {\LARGE\bfseries __TITLE__\par}
+  \vspace{1em}
+  {\normalsize __AUTHORS__\par}
+  \vspace{0.5em}
+  {\small __INSTITUTES__\par}
+\end{center}
+\vspace{1em}
 
 \begin{abstract}
 __ABSTRACT__
 \end{abstract}
+
+\noindent\textbf{Keywords:} __KEYWORDS__
+\vspace{1em}
 
 __CONTENT__
 

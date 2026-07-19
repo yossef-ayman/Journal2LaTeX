@@ -1,9 +1,7 @@
-import os
 import shutil
 import subprocess
 import zipfile
 from pathlib import Path
-from typing import List, Optional
 from app.core.config import settings
 from app.models.conversion import PandocResult
 from app.utils.logger import get_job_logger
@@ -98,7 +96,9 @@ class PandocService:
                 capture_output=True,
                 text=True,
                 check=False,
-                encoding="utf-8"
+                encoding="utf-8",
+                errors="replace",
+                timeout=settings.SUBPROCESS_TIMEOUT,
             )
 
             stdout_content = result.stdout or ""
@@ -176,15 +176,13 @@ class PandocService:
                 capture_output=True,
                 text=True,
                 check=False,
-                encoding="utf-8"
+                encoding="utf-8",
+                errors="replace",
+                timeout=settings.SUBPROCESS_TIMEOUT,
             )
 
             stdout_content = result.stdout or ""
             stderr_content = result.stderr or ""
-
-            # Delete the dummy output file
-            if dummy_out.exists():
-                dummy_out.unlink()
 
             if result.returncode != 0:
                 msg = f"Pandoc media extraction failed with return code {result.returncode}"
@@ -224,3 +222,10 @@ class PandocService:
                 logger.exception(msg)
                 raise PandocExecutionError(msg)
             raise
+        finally:
+            # Always remove the throwaway markdown output, even on failure.
+            try:
+                if dummy_out.exists():
+                    dummy_out.unlink()
+            except OSError:
+                pass

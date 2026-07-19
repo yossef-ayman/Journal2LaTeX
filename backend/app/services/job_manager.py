@@ -1,12 +1,27 @@
 import datetime
 import json
+import os
+import threading
 import uuid
+from collections import defaultdict
 from pathlib import Path
-from typing import Optional, Union
+from typing import List, Optional, Union
 from app.core.config import settings
 from app.models.job import JobMetadata, JobStatus
 from app.utils.filesystem import delete_file_or_dir, normalize_path
-from app.utils.logger import get_job_logger
+from app.utils.logger import close_job_loggers, get_job_logger
+
+
+# Process-wide locks serializing read-modify-write cycles on each job's
+# metadata.json (JobManager instances are created per-request, so the locks
+# must live at module scope).
+_job_locks: "defaultdict[str, threading.Lock]" = defaultdict(threading.Lock)
+_job_locks_guard = threading.Lock()
+
+
+def _lock_for(job_id: str) -> threading.Lock:
+    with _job_locks_guard:
+        return _job_locks[job_id]
 
 
 class JobManager:
@@ -32,6 +47,31 @@ class JobManager:
         """
         return self.temp_dir / job_id
 
+    def list_jobs(self) -> List[JobMetadata]:
+        """List all known jobs sorted by creation time descending.
+
+        Returns:
+            A list of JobMetadata objects for all discoverable jobs.
+        """
+        if not self.temp_dir.exists():
+            return []
+
+        jobs: List[JobMetadata] = []
+        for entry in self.temp_dir.iterdir():
+            if not entry.is_dir():
+                continue
+            metadata_path = entry / "metadata.json"
+            if not metadata_path.exists():
+                continue
+            try:
+                data = json.loads(metadata_path.read_text(encoding="utf-8"))
+                jobs.append(JobMetadata(**data))
+            except Exception:
+                continue
+
+        jobs.sort(key=lambda j: j.created_at, reverse=True)
+        return jobs
+
     def _get_metadata_path(self, job_id: str) -> Path:
         """Get the file path for a job's metadata.json.
 
@@ -51,7 +91,11 @@ class JobManager:
         """
         metadata_path = self._get_metadata_path(metadata.job_id)
         metadata.updated_at = datetime.datetime.now(datetime.timezone.utc).isoformat()
-        metadata_path.write_text(metadata.model_dump_json(indent=2), encoding="utf-8")
+        # Atomic write: dump to a temp file in the same directory, then replace,
+        # so a crash or concurrent reader never observes a half-written JSON.
+        tmp_path = metadata_path.with_suffix(".json.tmp")
+        tmp_path.write_text(metadata.model_dump_json(indent=2), encoding="utf-8")
+        os.replace(tmp_path, metadata_path)
 
     def create_job(self, paper_name: str = "", template_name: str = "") -> JobMetadata:
         """Create a new job and initialize its folder structure and metadata.json.
@@ -125,12 +169,12 @@ class JobManager:
         Returns:
             The updated JobMetadata object if found, else None.
         """
-        metadata = self.get_job(job_id)
-        if not metadata:
-            return None
-
-        metadata.status = status
-        self._save_metadata(metadata)
+        with _lock_for(job_id):
+            metadata = self.get_job(job_id)
+            if not metadata:
+                return None
+            metadata.status = status
+            self._save_metadata(metadata)
 
         sys_logger = get_job_logger(job_id, "system")
         sys_logger.info("Job status updated to: %s", status.value)
@@ -148,20 +192,20 @@ class JobManager:
         Returns:
             The updated JobMetadata object if found, else None.
         """
-        metadata = self.get_job(job_id)
-        if not metadata:
-            return None
-
-        metadata.progress = max(0, min(100, progress))
-        metadata.current_step = current_step
-        self._save_metadata(metadata)
+        with _lock_for(job_id):
+            metadata = self.get_job(job_id)
+            if not metadata:
+                return None
+            metadata.progress = max(0, min(100, progress))
+            metadata.current_step = current_step
+            self._save_metadata(metadata)
 
         sys_logger = get_job_logger(job_id, "system")
         sys_logger.info("Progress updated to %d%%: %s", progress, current_step)
 
         return metadata
 
-    def add_error(self, job_id: str, error: str) -> Optional[JobMetadata]:
+    def add_error(self, job_id: str, error: str, fatal: bool = True) -> Optional[JobMetadata]:
         """Add an error message to the job metadata.
 
         Args:
@@ -171,14 +215,14 @@ class JobManager:
         Returns:
             The updated JobMetadata object if found, else None.
         """
-        metadata = self.get_job(job_id)
-        if not metadata:
-            return None
-
-        metadata.errors.append(error)
-        # Automatically mark as FAILED when an error is added
-        metadata.status = JobStatus.FAILED
-        self._save_metadata(metadata)
+        with _lock_for(job_id):
+            metadata = self.get_job(job_id)
+            if not metadata:
+                return None
+            metadata.errors.append(error)
+            if fatal:
+                metadata.status = JobStatus.FAILED
+            self._save_metadata(metadata)
 
         sys_logger = get_job_logger(job_id, "system")
         sys_logger.error("Job error added: %s", error)
@@ -195,12 +239,12 @@ class JobManager:
         Returns:
             The updated JobMetadata object if found, else None.
         """
-        metadata = self.get_job(job_id)
-        if not metadata:
-            return None
-
-        metadata.warnings.append(warning)
-        self._save_metadata(metadata)
+        with _lock_for(job_id):
+            metadata = self.get_job(job_id)
+            if not metadata:
+                return None
+            metadata.warnings.append(warning)
+            self._save_metadata(metadata)
 
         sys_logger = get_job_logger(job_id, "system")
         sys_logger.warning("Job warning added: %s", warning)
@@ -220,6 +264,9 @@ class JobManager:
         if not job_dir.exists():
             return True
 
+        # Release open log file handles first; otherwise rmtree fails on
+        # Windows because the FileHandler keeps logs/<component>.log locked.
+        close_job_loggers(job_id)
         try:
             delete_file_or_dir(job_dir)
             return True

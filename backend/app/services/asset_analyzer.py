@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 from app.models.document import DocumentModel, BlockType
 from app.utils.logger import get_job_logger
 

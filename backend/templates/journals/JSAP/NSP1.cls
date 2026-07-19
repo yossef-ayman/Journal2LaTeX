@@ -351,6 +351,10 @@
    \addtocounter{page}{1}}
 
 \def\journalname#1{\gdef\@journalname{#1}}
+% Short journal name used in running headers (settable by templates; the
+% original class hard-coded "Appl. Math. Inf. Sci.").
+\def\shortjournalname#1{\gdef\@shortjournalname{#1}}
+\shortjournalname{Appl. Math. Inf. Sci.}
 
 \def\dedication#1{\gdef\@dedic{#1}}
 \def\@dedic{}
@@ -1524,7 +1528,7 @@ Natural Sciences Publishing Cor.
 %    \hbox to 0pt{%
       \vbox to \headheight{\vss\baselineskip=3pt
         \hbox to\textwidth{%
-          \small Appl. Math. Inf. Sci. {\bf \thevol}, No.~\thenumber,
+          \small \@shortjournalname\ {\bf \thevol}, No.~\thenumber,
           \firstpage\--\pageref*{LastPage}\
           (\theyear)%
           \wwwmark\hfill
@@ -1581,7 +1585,7 @@ Natural Sciences Publishing Cor.
           \hbox to\textwidth{%
             \hbox to 2em{\thepage\hfill}\quad
             \smash{\lower5pt\hbox{\includegraphics{logo7pt}}}%hhh
-            \hfill\small Appl. Math. Inf. Sci. {\bf \thevol}, No.~\thenumber,
+            \hfill\small \@shortjournalname\ {\bf \thevol}, No.~\thenumber,
             \firstpage\--\pageref*{LastPage}\
             (\theyear)%
             \wwwmark

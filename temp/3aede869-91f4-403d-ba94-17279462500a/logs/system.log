@@ -1,0 +1,15 @@
+[2026-07-18 18:33:54,788] [INFO] [job_manager.py:117]: Job 3aede869-91f4-403d-ba94-17279462500a workspace created successfully
+[2026-07-18 18:33:54,790] [INFO] [pipeline_service.py:36]: Starting validation for job: 3aede869-91f4-403d-ba94-17279462500a
+[2026-07-18 18:33:54,803] [INFO] [job_manager.py:161]: Job status updated to: VALIDATING
+[2026-07-18 18:33:54,814] [INFO] [job_manager.py:185]: Progress updated to 10%: Validating input Word Document
+[2026-07-18 18:33:54,835] [INFO] [pipeline_service.py:51]: Validation successful.
+[2026-07-18 18:33:54,847] [INFO] [job_manager.py:185]: Progress updated to 20%: Input document validated successfully
+[2026-07-18 18:33:54,847] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\temp\3aede869-91f4-403d-ba94-17279462500a\input\style_ieee.docx
+[2026-07-18 18:33:55,093] [INFO] [document_analyzer.py:416]: Parsed document: title='Test Document Title', authors=2, sections=1, references=2
+[2026-07-18 18:33:55,093] [INFO] [pipeline_service.py:58]: Starting document analysis for job: 3aede869-91f4-403d-ba94-17279462500a
+[2026-07-18 18:33:55,108] [INFO] [job_manager.py:161]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-18 18:33:55,120] [INFO] [job_manager.py:185]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-18 18:33:55,120] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\temp\3aede869-91f4-403d-ba94-17279462500a\input\style_ieee.docx
+[2026-07-18 18:33:55,294] [INFO] [document_analyzer.py:416]: Parsed document: title='Test Document Title', authors=2, sections=1, references=2
+[2026-07-18 18:33:55,296] [INFO] [pipeline_service.py:86]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\temp\3aede869-91f4-403d-ba94-17279462500a\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\temp\3aede869-91f4-403d-ba94-17279462500a\intermediate\conversion_report.json
+[2026-07-18 18:33:55,307] [INFO] [job_manager.py:185]: Progress updated to 45%: Document structure extracted successfully

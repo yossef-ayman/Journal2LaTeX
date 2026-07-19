@@ -3,5 +3,5 @@
 \LoadClass{article}
 \RequirePackage{graphicx}
 \RequirePackage{geometry}
-\RequirePackage{hyperref}
+\RequirePackage[hidelinks]{hyperref}
 \geometry{a4paper, margin=1in}

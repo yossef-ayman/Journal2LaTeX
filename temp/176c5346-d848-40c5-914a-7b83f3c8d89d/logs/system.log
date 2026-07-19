@@ -1,0 +1,13 @@
+[2026-07-18 18:33:09,585] [INFO] [job_manager.py:117]: Job 176c5346-d848-40c5-914a-7b83f3c8d89d workspace created successfully
+[2026-07-18 18:33:09,588] [INFO] [pipeline_service.py:36]: Starting validation for job: 176c5346-d848-40c5-914a-7b83f3c8d89d
+[2026-07-18 18:33:09,602] [INFO] [job_manager.py:161]: Job status updated to: VALIDATING
+[2026-07-18 18:33:09,616] [INFO] [job_manager.py:185]: Progress updated to 10%: Validating input Word Document
+[2026-07-18 18:33:09,638] [INFO] [pipeline_service.py:51]: Validation successful.
+[2026-07-18 18:33:09,654] [INFO] [job_manager.py:185]: Progress updated to 20%: Input document validated successfully
+[2026-07-18 18:33:09,655] [INFO] [pipeline_service.py:58]: Starting document analysis for job: 176c5346-d848-40c5-914a-7b83f3c8d89d
+[2026-07-18 18:33:09,671] [INFO] [job_manager.py:161]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-18 18:33:09,691] [INFO] [job_manager.py:185]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-18 18:33:09,691] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\temp\176c5346-d848-40c5-914a-7b83f3c8d89d\input\style_ieee.docx
+[2026-07-18 18:33:09,898] [INFO] [document_analyzer.py:416]: Parsed document: title='Test Document Title', authors=2, sections=1, references=2
+[2026-07-18 18:33:09,899] [INFO] [pipeline_service.py:86]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\temp\176c5346-d848-40c5-914a-7b83f3c8d89d\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\temp\176c5346-d848-40c5-914a-7b83f3c8d89d\intermediate\conversion_report.json
+[2026-07-18 18:33:09,912] [INFO] [job_manager.py:185]: Progress updated to 45%: Document structure extracted successfully

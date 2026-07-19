@@ -1,0 +1,37 @@
+[2026-07-18 18:34:40,421] [INFO] [job_manager.py:117]: Job 5c12f71f-2ea6-44e4-9e78-137e5c23635f workspace created successfully
+[2026-07-18 18:34:40,423] [INFO] [pipeline_service.py:36]: Starting validation for job: 5c12f71f-2ea6-44e4-9e78-137e5c23635f
+[2026-07-18 18:34:40,436] [INFO] [job_manager.py:161]: Job status updated to: VALIDATING
+[2026-07-18 18:34:40,452] [INFO] [job_manager.py:185]: Progress updated to 10%: Validating input Word Document
+[2026-07-18 18:34:40,466] [INFO] [pipeline_service.py:51]: Validation successful.
+[2026-07-18 18:34:40,483] [INFO] [job_manager.py:185]: Progress updated to 20%: Input document validated successfully
+[2026-07-18 18:34:40,484] [INFO] [pipeline_service.py:58]: Starting document analysis for job: 5c12f71f-2ea6-44e4-9e78-137e5c23635f
+[2026-07-18 18:34:40,501] [INFO] [job_manager.py:161]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-18 18:34:40,515] [INFO] [job_manager.py:185]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-18 18:34:40,515] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\temp\5c12f71f-2ea6-44e4-9e78-137e5c23635f\input\style_harvard.docx
+[2026-07-18 18:34:40,720] [INFO] [document_analyzer.py:416]: Parsed document: title='Test Document Title', authors=2, sections=1, references=1
+[2026-07-18 18:34:40,723] [INFO] [pipeline_service.py:86]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\temp\5c12f71f-2ea6-44e4-9e78-137e5c23635f\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\temp\5c12f71f-2ea6-44e4-9e78-137e5c23635f\intermediate\conversion_report.json
+[2026-07-18 18:34:40,741] [INFO] [job_manager.py:185]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-18 18:34:40,741] [INFO] [pipeline_service.py:99]: Starting asset extraction for job: 5c12f71f-2ea6-44e4-9e78-137e5c23635f
+[2026-07-18 18:34:40,754] [INFO] [job_manager.py:161]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-18 18:34:40,770] [INFO] [job_manager.py:185]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-18 18:34:40,982] [INFO] [pipeline_service.py:111]: Assets extracted to: G:\work\Journal2LaTeX\temp\5c12f71f-2ea6-44e4-9e78-137e5c23635f\intermediate\media
+[2026-07-18 18:34:40,997] [INFO] [job_manager.py:185]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-18 18:34:40,997] [INFO] [pipeline_service.py:123]: Classifying extracted assets for job: 5c12f71f-2ea6-44e4-9e78-137e5c23635f
+[2026-07-18 18:34:40,997] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 5c12f71f-2ea6-44e4-9e78-137e5c23635f
+[2026-07-18 18:34:41,000] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 0
+[2026-07-18 18:34:41,016] [INFO] [job_manager.py:185]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-18 18:34:41,017] [INFO] [pipeline_service.py:139]: Loading template default for job: 5c12f71f-2ea6-44e4-9e78-137e5c23635f
+[2026-07-18 18:34:41,032] [INFO] [job_manager.py:161]: Job status updated to: LOADING_TEMPLATE
+[2026-07-18 18:34:41,048] [INFO] [job_manager.py:185]: Progress updated to 70%: Loading template styles: default
+[2026-07-18 18:34:41,055] [INFO] [pipeline_service.py:157]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\temp\5c12f71f-2ea6-44e4-9e78-137e5c23635f\rendered
+[2026-07-18 18:34:41,068] [INFO] [job_manager.py:185]: Progress updated to 80%: Template workspace initialized
+[2026-07-18 18:34:41,068] [INFO] [pipeline_service.py:170]: Starting LaTeX rendering for job: 5c12f71f-2ea6-44e4-9e78-137e5c23635f
+[2026-07-18 18:34:41,084] [INFO] [job_manager.py:161]: Job status updated to: RENDERING_LATEX
+[2026-07-18 18:34:41,098] [INFO] [job_manager.py:185]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-18 18:34:41,099] [INFO] [latex_renderer.py:70]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\temp\5c12f71f-2ea6-44e4-9e78-137e5c23635f\rendered
+[2026-07-18 18:34:41,106] [INFO] [latex_renderer.py:337]: LaTeX document main.tex rendered successfully.
+[2026-07-18 18:34:41,118] [INFO] [job_manager.py:185]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-18 18:34:41,119] [INFO] [pipeline_service.py:204]: Starting document compilation for job: 5c12f71f-2ea6-44e4-9e78-137e5c23635f
+[2026-07-18 18:34:41,134] [INFO] [job_manager.py:161]: Job status updated to: COMPILING
+[2026-07-18 18:34:41,149] [INFO] [job_manager.py:185]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-18 18:34:43,539] [INFO] [pipeline_service.py:226]: Compilation completed successfully.

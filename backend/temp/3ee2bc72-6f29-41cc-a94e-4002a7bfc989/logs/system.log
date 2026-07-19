@@ -1,0 +1,42 @@
+[2026-07-18 18:32:00,791] [INFO] [job_manager.py:117]: Job 3ee2bc72-6f29-41cc-a94e-4002a7bfc989 workspace created successfully
+[2026-07-18 18:32:02,858] [INFO] [pipeline_service.py:36]: Starting validation for job: 3ee2bc72-6f29-41cc-a94e-4002a7bfc989
+[2026-07-18 18:32:02,874] [INFO] [job_manager.py:161]: Job status updated to: VALIDATING
+[2026-07-18 18:32:02,889] [INFO] [job_manager.py:185]: Progress updated to 10%: Validating input Word Document
+[2026-07-18 18:32:02,904] [INFO] [pipeline_service.py:51]: Validation successful.
+[2026-07-18 18:32:02,921] [INFO] [job_manager.py:185]: Progress updated to 20%: Input document validated successfully
+[2026-07-18 18:32:02,921] [INFO] [pipeline_service.py:58]: Starting document analysis for job: 3ee2bc72-6f29-41cc-a94e-4002a7bfc989
+[2026-07-18 18:32:02,939] [INFO] [job_manager.py:161]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-18 18:32:02,954] [INFO] [job_manager.py:185]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-18 18:32:02,955] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\3ee2bc72-6f29-41cc-a94e-4002a7bfc989\input\style_apa.docx
+[2026-07-18 18:32:03,191] [INFO] [document_analyzer.py:416]: Parsed document: title='Test Document Title', authors=2, sections=1, references=1
+[2026-07-18 18:32:03,195] [INFO] [pipeline_service.py:86]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\3ee2bc72-6f29-41cc-a94e-4002a7bfc989\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\3ee2bc72-6f29-41cc-a94e-4002a7bfc989\intermediate\conversion_report.json
+[2026-07-18 18:32:03,211] [INFO] [job_manager.py:185]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-18 18:32:03,211] [INFO] [pipeline_service.py:99]: Starting asset extraction for job: 3ee2bc72-6f29-41cc-a94e-4002a7bfc989
+[2026-07-18 18:32:03,227] [INFO] [job_manager.py:161]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-18 18:32:03,245] [INFO] [job_manager.py:185]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-18 18:32:03,448] [INFO] [pipeline_service.py:111]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\3ee2bc72-6f29-41cc-a94e-4002a7bfc989\intermediate\media
+[2026-07-18 18:32:03,463] [INFO] [job_manager.py:185]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-18 18:32:03,463] [INFO] [pipeline_service.py:123]: Classifying extracted assets for job: 3ee2bc72-6f29-41cc-a94e-4002a7bfc989
+[2026-07-18 18:32:03,463] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 3ee2bc72-6f29-41cc-a94e-4002a7bfc989
+[2026-07-18 18:32:03,467] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 0
+[2026-07-18 18:32:03,484] [INFO] [job_manager.py:185]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-18 18:32:05,536] [INFO] [pipeline_service.py:139]: Loading template default for job: 3ee2bc72-6f29-41cc-a94e-4002a7bfc989
+[2026-07-18 18:32:05,537] [INFO] [job_manager.py:161]: Job status updated to: LOADING_TEMPLATE
+[2026-07-18 18:32:05,552] [INFO] [job_manager.py:185]: Progress updated to 70%: Loading template styles: default
+[2026-07-18 18:32:05,564] [INFO] [pipeline_service.py:157]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\3ee2bc72-6f29-41cc-a94e-4002a7bfc989\rendered
+[2026-07-18 18:32:05,577] [INFO] [job_manager.py:185]: Progress updated to 80%: Template workspace initialized
+[2026-07-18 18:32:05,579] [INFO] [pipeline_service.py:170]: Starting LaTeX rendering for job: 3ee2bc72-6f29-41cc-a94e-4002a7bfc989
+[2026-07-18 18:32:05,592] [INFO] [job_manager.py:161]: Job status updated to: RENDERING_LATEX
+[2026-07-18 18:32:05,608] [INFO] [job_manager.py:185]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-18 18:32:05,610] [INFO] [latex_renderer.py:70]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\3ee2bc72-6f29-41cc-a94e-4002a7bfc989\rendered
+[2026-07-18 18:32:05,617] [INFO] [latex_renderer.py:337]: LaTeX document main.tex rendered successfully.
+[2026-07-18 18:32:05,633] [INFO] [job_manager.py:185]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-18 18:32:05,633] [INFO] [pipeline_service.py:204]: Starting document compilation for job: 3ee2bc72-6f29-41cc-a94e-4002a7bfc989
+[2026-07-18 18:32:05,646] [INFO] [job_manager.py:161]: Job status updated to: COMPILING
+[2026-07-18 18:32:05,659] [INFO] [job_manager.py:185]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-18 18:32:07,844] [INFO] [pipeline_service.py:226]: Compilation completed successfully.
+[2026-07-18 18:32:07,845] [INFO] [pipeline_service.py:238]: Running E2E publication fidelity checker for job: 3ee2bc72-6f29-41cc-a94e-4002a7bfc989
+[2026-07-18 18:32:07,845] [INFO] [fidelity_checker.py:24]: Generating advanced fidelity report and scores for job: 3ee2bc72-6f29-41cc-a94e-4002a7bfc989
+[2026-07-18 18:32:07,846] [INFO] [fidelity_checker.py:163]: Fidelity report written to G:\work\Journal2LaTeX\backend\temp\3ee2bc72-6f29-41cc-a94e-4002a7bfc989\intermediate\fidelity_report.json. Overall Score: 99.5%, Critical missing: 0
+[2026-07-18 18:32:07,857] [INFO] [job_manager.py:161]: Job status updated to: COMPLETED
+[2026-07-18 18:32:07,868] [INFO] [job_manager.py:185]: Progress updated to 100%: Pipeline process completed successfully

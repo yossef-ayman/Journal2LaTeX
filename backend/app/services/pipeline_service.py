@@ -1,5 +1,6 @@
 import json
 import shutil
+import time
 from pathlib import Path
 from typing import Optional
 from app.services.job_manager import JobManager
@@ -9,10 +10,15 @@ from app.services.asset_analyzer import AssetAnalyzer
 from app.services.template_manager import TemplateManager, TemplateManagerError
 from app.services.latex_renderer import LatexRenderer, LatexRendererError
 from app.services.fidelity_checker import FidelityChecker
+from app.services.graphics_extractor import GraphicsExtractor
+from app.services.visual_comparator import VisualComparator
+from app.services.layout_optimizer import LayoutOptimizer
+from app.services.header_reconstructor import HeaderReconstructor
 from app.compiler.latex_compiler import LatexCompiler, LatexCompilerException
 from app.models.job import JobMetadata, JobStatus
 from app.models.document import DocumentModel
 from app.utils.logger import get_job_logger
+from app.utils.media_convert import convert_unsupported_media
 
 
 class PipelineService:
@@ -27,6 +33,10 @@ class PipelineService:
         self.latex_renderer = LatexRenderer()
         self.latex_compiler = LatexCompiler()
         self.fidelity_checker = FidelityChecker()
+        self.graphics_extractor = GraphicsExtractor()
+        self.visual_comparator = VisualComparator()
+        self.layout_optimizer = LayoutOptimizer()
+        self.header_reconstructor = HeaderReconstructor()
 
     def validate(self, job_id: str, docx_filename: str) -> bool:
         """Validate the input document."""
@@ -105,6 +115,18 @@ class PipelineService:
 
         try:
             self.pandoc_service.extract_media(docx_path, media_dir, job_id)
+            self.graphics_extractor.extract_graphics(docx_path, media_dir, job_id)
+
+            # pdflatex cannot include WMF/EMF/SVG (Word often stores equations
+            # and drawings as WMF) -- convert them to PNG siblings up front.
+            conv_report = convert_unsupported_media(media_dir, job_id)
+            if conv_report["failed"]:
+                self.job_manager.add_warning(
+                    job_id,
+                    f"{len(conv_report['failed'])} vector media files could not be converted to PNG "
+                    f"and may be missing from the output.",
+                )
+
             logger.info("Assets extracted to: %s", media_dir)
             self.job_manager.update_progress(job_id, 60, "Document assets extracted successfully")
             return True
@@ -130,26 +152,30 @@ class PipelineService:
             self.job_manager.add_error(job_id, error_msg)
             return False
 
-    def load_template(self, job_id: str, template_name: str) -> bool:
+    def load_template(self, job_id: str, template_id: str) -> bool:
         """Load selected template class/styles and prepare isolated workspace."""
         logger = get_job_logger(job_id, "system")
-        logger.info("Loading template %s for job: %s", template_name, job_id)
+        logger.info("Loading template %s for job: %s", template_id, job_id)
 
         self.job_manager.set_status(job_id, JobStatus.LOADING_TEMPLATE)
-        self.job_manager.update_progress(job_id, 70, f"Loading template styles: {template_name}")
+        self.job_manager.update_progress(job_id, 70, f"Loading template styles: {template_id}")
 
         job_dir = self.job_manager._get_job_dir(job_id)
         rendered_dir = job_dir / "rendered"
 
         try:
             # 1. Prepare rendering workspace with template files
-            self.template_manager.prepare_workspace(template_name, rendered_dir)
+            self.template_manager.prepare_workspace(template_id, rendered_dir)
             
             # 2. Copy intermediate media files into rendering workspace under 'media/'
             intermediate_media = job_dir / "intermediate" / "media"
             if intermediate_media.exists() and intermediate_media.is_dir():
                 dest_media = rendered_dir / "media"
                 shutil.copytree(intermediate_media, dest_media, dirs_exist_ok=True)
+
+            # Convert template-supplied vector graphics (EPS class logos etc.)
+            # that the LaTeX toolchain cannot process on this host.
+            convert_unsupported_media(rendered_dir, job_id)
 
             logger.info("Template loaded and workspace prepared at: %s", rendered_dir)
             self.job_manager.update_progress(job_id, 80, "Template workspace initialized")
@@ -160,6 +186,18 @@ class PipelineService:
             logger.error(error_msg)
             self.job_manager.add_error(job_id, error_msg)
             return False
+
+    def load_document_model(self, job_id: str) -> Optional[DocumentModel]:
+        """Load the persisted DocumentModel from intermediate/document_structure.json."""
+        structure_file = self.job_manager._get_job_dir(job_id) / "intermediate" / "document_structure.json"
+        if not structure_file.exists():
+            return None
+        try:
+            data = json.loads(structure_file.read_text(encoding="utf-8"))
+            return DocumentModel(**data)
+        except Exception as e:
+            get_job_logger(job_id, "system").error("Failed to load document model: %s", e)
+            return None
 
     def render_latex(self, job_id: str) -> Optional[Path]:
         """Render the extracted document structure model into main.tex inside the workspace."""
@@ -186,6 +224,28 @@ class PipelineService:
 
             # Render document to main.tex
             main_tex_path = self.latex_renderer.render_document(doc_model, rendered_dir, job_id)
+            
+            # Automatically extract and reconstruct publication headers
+            try:
+                metadata = self.job_manager.get_job(job_id)
+                if metadata and metadata.paper_name:
+                    docx_path = job_dir / "input" / metadata.paper_name
+                    template_meta = {}
+                    template_json = rendered_dir / "template.json"
+                    if template_json.exists():
+                        try:
+                            template_meta = json.loads(template_json.read_text(encoding="utf-8"))
+                        except (OSError, json.JSONDecodeError):
+                            template_meta = {}
+                    self.header_reconstructor.reconstruct_header(
+                        docx_path, rendered_dir, job_dir / "intermediate", job_id, template_meta
+                    )
+                else:
+                    logger.warning("Skipping header reconstruction: job metadata unavailable.")
+            except Exception as e:
+                logger.error("Header reconstruction failed: %s", str(e))
+                self.job_manager.add_warning(job_id, f"Header reconstruction failed: {e}")
+                
             self.job_manager.update_progress(job_id, 90, "LaTeX document rendering completed")
             return main_tex_path
 
@@ -195,13 +255,21 @@ class PipelineService:
             self.job_manager.add_error(job_id, error_msg)
             return None
 
-    def compile(self, job_id: str) -> Optional[Path]:
-        """Compile the rendered main.tex inside workspace into final PDF."""
+    def compile(self, job_id: str, quiet: bool = False) -> Optional[Path]:
+        """Compile the rendered main.tex inside workspace into the final PDF.
+
+        Args:
+            job_id: The job UUID.
+            quiet: When True (optimizer recompiles), do not rewrite job
+                status/progress and record failures as warnings, not fatal
+                errors.
+        """
         logger = get_job_logger(job_id, "system")
         logger.info("Starting document compilation for job: %s", job_id)
 
-        self.job_manager.set_status(job_id, JobStatus.COMPILING)
-        self.job_manager.update_progress(job_id, 92, "Compiling LaTeX source to PDF")
+        if not quiet:
+            self.job_manager.set_status(job_id, JobStatus.COMPILING)
+            self.job_manager.update_progress(job_id, 92, "Compiling LaTeX source to PDF")
 
         job_dir = self.job_manager._get_job_dir(job_id)
         tex_path = job_dir / "rendered" / "main.tex"
@@ -226,7 +294,10 @@ class PipelineService:
         except LatexCompilerException as e:
             error_msg = f"LaTeX compilation failed: {str(e)}"
             logger.error(error_msg)
-            self.job_manager.add_error(job_id, error_msg)
+            if quiet:
+                self.job_manager.add_warning(job_id, error_msg)
+            else:
+                self.job_manager.add_error(job_id, error_msg)
             return None
 
     def check_fidelity(self, job_id: str, doc_model: DocumentModel) -> bool:
@@ -238,9 +309,17 @@ class PipelineService:
         try:
             self.fidelity_checker.generate_fidelity_report(job_id, doc_model, job_dir)
             
-            # Transition job status state
-            self.job_manager.set_status(job_id, JobStatus.COMPLETED)
-            self.job_manager.update_progress(job_id, 100, "Pipeline process completed successfully")
+            # Run layout optimization loop to iteratively refine visual layout match
+            try:
+                self.layout_optimizer.optimize_layout(self, job_id, doc_model, job_dir)
+            except Exception as e:
+                logger.error("Layout optimization failed: %s", str(e))
+            
+            # Transition job status only if no fatal error occurred meanwhile.
+            metadata = self.job_manager.get_job(job_id)
+            if metadata and metadata.status != JobStatus.FAILED:
+                self.job_manager.set_status(job_id, JobStatus.COMPLETED)
+                self.job_manager.update_progress(job_id, 100, "Pipeline process completed successfully")
             return True
         except Exception as e:
             error_msg = f"Fidelity checker execution failed: {str(e)}"
@@ -248,40 +327,58 @@ class PipelineService:
             self.job_manager.add_error(job_id, error_msg)
             return False
 
-    def run_full_pipeline(self, job_id: str, docx_filename: str, template_name: str = "default") -> JobMetadata:
-        """Run the full end-to-end document conversion, rendering, and compilation pipeline."""
-        # Step 1: Validate
-        if not self.validate(job_id, docx_filename):
-            return self.job_manager.get_job(job_id)
+    def run_full_pipeline(self, job_id: str, docx_filename: str, template_id: str = "default") -> JobMetadata:
+        """Run the full end-to-end conversion, rendering, and compilation pipeline.
 
-        # Step 2: Analyze
-        doc_model = self.analyze(job_id, docx_filename)
-        if not doc_model:
-            return self.job_manager.get_job(job_id)
+        A stage-by-stage timing report is always written to
+        ``intermediate/pipeline_timing.json``, including for failed runs.
+        """
+        timings = {}
+        pipeline_started = time.monotonic()
 
-        # Step 3: Extract Assets
-        if not self.extract_assets(job_id, docx_filename):
-            return self.job_manager.get_job(job_id)
+        def timed(stage_name, fn, *args):
+            started = time.monotonic()
+            try:
+                return fn(*args)
+            finally:
+                timings[stage_name] = round(time.monotonic() - started, 3)
 
-        # Step 4: Classify Assets
-        if not self.analyze_assets(job_id, doc_model):
-            return self.job_manager.get_job(job_id)
+        try:
+            if not timed("validate", self.validate, job_id, docx_filename):
+                return self.job_manager.get_job(job_id)
 
-        # Step 5: Load Template
-        if not self.load_template(job_id, template_name):
-            return self.job_manager.get_job(job_id)
+            doc_model = timed("analyze", self.analyze, job_id, docx_filename)
+            if not doc_model:
+                return self.job_manager.get_job(job_id)
 
-        # Step 6: Render LaTeX
-        tex_path = self.render_latex(job_id)
-        if not tex_path:
-            return self.job_manager.get_job(job_id)
+            if not timed("extract_assets", self.extract_assets, job_id, docx_filename):
+                return self.job_manager.get_job(job_id)
 
-        # Step 7: Compile LaTeX to PDF
-        pdf_path = self.compile(job_id)
-        if not pdf_path:
-            return self.job_manager.get_job(job_id)
+            if not timed("analyze_assets", self.analyze_assets, job_id, doc_model):
+                return self.job_manager.get_job(job_id)
 
-        # Step 8: Run Fidelity check
-        self.check_fidelity(job_id, doc_model)
-        
-        return self.job_manager.get_job(job_id)
+            if not timed("load_template", self.load_template, job_id, template_id):
+                return self.job_manager.get_job(job_id)
+
+            if not timed("render_latex", self.render_latex, job_id):
+                return self.job_manager.get_job(job_id)
+
+            if not timed("compile", self.compile, job_id):
+                return self.job_manager.get_job(job_id)
+
+            timed("fidelity_and_optimization", self.check_fidelity, job_id, doc_model)
+            return self.job_manager.get_job(job_id)
+        finally:
+            timings["total"] = round(time.monotonic() - pipeline_started, 3)
+            self._write_timing_report(job_id, timings)
+
+    def _write_timing_report(self, job_id: str, timings: dict) -> None:
+        """Persist per-stage timings; failures here must never mask pipeline results."""
+        try:
+            intermediate_dir = self.job_manager._get_job_dir(job_id) / "intermediate"
+            intermediate_dir.mkdir(parents=True, exist_ok=True)
+            (intermediate_dir / "pipeline_timing.json").write_text(
+                json.dumps({"stage_seconds": timings}, indent=2), encoding="utf-8"
+            )
+        except OSError:
+            get_job_logger(job_id, "system").warning("Failed to write pipeline timing report.")

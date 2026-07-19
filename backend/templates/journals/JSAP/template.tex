@@ -1,4 +1,11 @@
 \documentclass[10pt]{NSP1}
+% NSP1.cls defines its banner colors via dvips *named* colors, which are
+% undefined unless the dvipsnames driver table is loaded -- the banner then
+% renders black.  Define them (and the class aliases) explicitly.
+\definecolor{LimeGreen}{cmyk}{0.50,0,1,0}
+\definecolor{PineGreen}{cmyk}{0.92,0,0.59,0.25}
+\definecolor{abstractcolor}{rgb}{0.96,0.65,0.15}% orange banner as in the Word original
+\definecolor{rulecolor}{cmyk}{0.92,0,0.59,0.25}
 \usepackage{url,floatflt}
 \usepackage{helvet,times}
 \usepackage{psfig,graphics}
@@ -63,6 +70,9 @@
 \def\thevol{__VOLUME__}
 \def\thenumber{__ISSUE__}
 \def\theyear{__YEAR__}
+
+\shortjournalname{J. Stat. Appl. Pro.}
+\journalname{Journal of Statistics Applications \& Probability}
 
 \begin{document}
 

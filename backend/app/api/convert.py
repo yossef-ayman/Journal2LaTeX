@@ -1,14 +1,17 @@
+from typing import Optional
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
 from app.models.job import JobMetadata
 from app.services.pipeline_service import PipelineService
+from app.services.template_manager import TemplateManager
 
 router = APIRouter(prefix="/convert", tags=["Convert"])
 
 
 class ConvertRequest(BaseModel):
     job_id: str
-    template_name: str = "default"
+    template_id: Optional[str] = None
+    template_name: Optional[str] = "default"
 
 
 @router.post("", response_model=JobMetadata)
@@ -21,6 +24,26 @@ async def start_conversion(request: ConvertRequest) -> JobMetadata:
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Job with ID {request.job_id} not found",
         )
+
+    # Resolve template metadata
+    manager = TemplateManager()
+    resolved_id = request.template_id or request.template_name or "default"
+    try:
+        template_meta = manager.get_template_metadata(resolved_id)
+    except Exception:
+        template_meta = {
+            "template_id": resolved_id,
+            "display_name": resolved_id,
+            "version": "1.0.0",
+            "template_type": "built_in"
+        }
+
+    # Update job metadata fields
+    metadata.template_id = template_meta.get("template_id") or resolved_id
+    metadata.template_name = template_meta.get("display_name") or resolved_id
+    metadata.template_version = template_meta.get("version") or "1.0.0"
+    metadata.template_type = template_meta.get("template_type") or "built_in"
+    pipeline_service.job_manager._save_metadata(metadata)
 
     # 1. Validate
     if not pipeline_service.validate(request.job_id, metadata.paper_name):

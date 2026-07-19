@@ -2,7 +2,7 @@ import hashlib
 import shutil
 import subprocess
 from pathlib import Path
-from typing import List, Optional
+from typing import Optional
 from app.core.config import settings
 from app.models.conversion import CompilationResult
 from app.utils.logger import get_job_logger
@@ -25,6 +25,8 @@ class LatexCompilationError(LatexCompilerException):
 class LatexCompiler:
     """Service to handle compilation of LaTeX documents using pdflatex or latexmk."""
 
+    _latexmk_probe_result = None  # cached across compilations
+
     MAX_PDFLATEX_PASSES = 3
 
     def _run_pdflatex(self, tex_path: Path, working_dir: Path, job_id: str) -> subprocess.CompletedProcess:
@@ -44,7 +46,8 @@ class LatexCompiler:
             text=True,
             check=False,
             encoding="utf-8",
-            errors="replace"
+            errors="replace",
+            timeout=settings.COMPILE_TIMEOUT,
         )
 
     def _file_hash(self, path: Path) -> Optional[str]:
@@ -52,6 +55,23 @@ class LatexCompiler:
         if not path.exists():
             return None
         return hashlib.md5(path.read_bytes()).hexdigest()
+
+    def _latexmk_available(self, logger) -> bool:
+        """Probe for latexmk once per process and cache the result."""
+        cls = type(self)
+        if cls._latexmk_probe_result is None:
+            available = False
+            if settings.LATEXMK_PATH:
+                try:
+                    check_res = subprocess.run(
+                        [settings.LATEXMK_PATH, "-v"],
+                        capture_output=True, text=True, check=False, timeout=30,
+                    )
+                    available = check_res.returncode == 0
+                except (FileNotFoundError, OSError, subprocess.SubprocessError):
+                    logger.warning("latexmk not found; falling back to pdflatex.")
+            cls._latexmk_probe_result = available
+        return cls._latexmk_probe_result
 
     def compile_tex(self, tex_path: Path, output_dir: Path, job_id: str) -> CompilationResult:
         """Compile the LaTeX file into a PDF.
@@ -89,20 +109,15 @@ class LatexCompiler:
         stdout_combined = ""
         stderr_combined = ""
 
-        # Determine which tool to use
-        use_latexmk = False
-        if settings.LATEXMK_PATH:
-            try:
-                check_res = subprocess.run(
-                    [settings.LATEXMK_PATH, "-v"],
-                    capture_output=True,
-                    text=True,
-                    check=False
-                )
-                if check_res.returncode == 0:
-                    use_latexmk = True
-            except FileNotFoundError:
-                logger.warning("latexmk executable not found. Falling back to pdflatex.")
+        # Remove any stale PDF from a previous pass so a failed compile is not
+        # masked by an old artifact still sitting in the working directory.
+        try:
+            if pdf_path.exists():
+                pdf_path.unlink()
+        except OSError:
+            logger.warning("Could not remove stale PDF before compilation: %s", pdf_path)
+
+        use_latexmk = self._latexmk_available(logger)
 
         try:
             if use_latexmk:
@@ -110,6 +125,9 @@ class LatexCompiler:
                 cmd = [
                     settings.LATEXMK_PATH,
                     "-pdf",
+                    "-g",  # force processing: we delete the old PDF ourselves,
+                           # and latexmk's up-to-date check otherwise refuses to
+                           # rebuild after a previous failed invocation
                     "-interaction=nonstopmode",
                     "-file-line-error",
                     str(tex_path)
@@ -121,7 +139,8 @@ class LatexCompiler:
                     text=True,
                     check=False,
                     encoding="utf-8",
-                    errors="replace"
+                    errors="replace",
+                    timeout=settings.COMPILE_TIMEOUT,
                 )
                 stdout_combined = result.stdout or ""
                 stderr_combined = result.stderr or ""

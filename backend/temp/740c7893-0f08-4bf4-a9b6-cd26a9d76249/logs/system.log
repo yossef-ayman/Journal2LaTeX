@@ -1,0 +1,42 @@
+[2026-07-18 12:53:59,109] [INFO] [job_manager.py:117]: Job 740c7893-0f08-4bf4-a9b6-cd26a9d76249 workspace created successfully
+[2026-07-18 12:53:59,143] [INFO] [pipeline_service.py:34]: Starting validation for job: 740c7893-0f08-4bf4-a9b6-cd26a9d76249
+[2026-07-18 12:53:59,145] [INFO] [job_manager.py:161]: Job status updated to: VALIDATING
+[2026-07-18 12:53:59,164] [INFO] [job_manager.py:185]: Progress updated to 10%: Validating input Word Document
+[2026-07-18 12:53:59,185] [INFO] [pipeline_service.py:49]: Validation successful.
+[2026-07-18 12:53:59,202] [INFO] [job_manager.py:185]: Progress updated to 20%: Input document validated successfully
+[2026-07-18 12:53:59,203] [INFO] [pipeline_service.py:56]: Starting document analysis for job: 740c7893-0f08-4bf4-a9b6-cd26a9d76249
+[2026-07-18 12:53:59,218] [INFO] [job_manager.py:161]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-18 12:53:59,236] [INFO] [job_manager.py:185]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-18 12:53:59,236] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\740c7893-0f08-4bf4-a9b6-cd26a9d76249\input\research in the journal form.docx
+[2026-07-18 12:53:59,789] [INFO] [document_analyzer.py:416]: Parsed document: title='Statistical Analysis of Body Dysmorphic Disorder, Quality of Life, and Social Anxiety in Fire Victims: Path Analysis', authors=3, sections=1, references=21
+[2026-07-18 12:53:59,794] [INFO] [pipeline_service.py:84]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\740c7893-0f08-4bf4-a9b6-cd26a9d76249\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\740c7893-0f08-4bf4-a9b6-cd26a9d76249\intermediate\conversion_report.json
+[2026-07-18 12:53:59,816] [INFO] [job_manager.py:185]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-18 12:53:59,816] [INFO] [pipeline_service.py:97]: Starting asset extraction for job: 740c7893-0f08-4bf4-a9b6-cd26a9d76249
+[2026-07-18 12:53:59,835] [INFO] [job_manager.py:161]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-18 12:53:59,854] [INFO] [job_manager.py:185]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-18 12:54:00,429] [INFO] [pipeline_service.py:108]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\740c7893-0f08-4bf4-a9b6-cd26a9d76249\intermediate\media
+[2026-07-18 12:54:00,449] [INFO] [job_manager.py:185]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-18 12:54:00,449] [INFO] [pipeline_service.py:120]: Classifying extracted assets for job: 740c7893-0f08-4bf4-a9b6-cd26a9d76249
+[2026-07-18 12:54:00,449] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 740c7893-0f08-4bf4-a9b6-cd26a9d76249
+[2026-07-18 12:54:00,452] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 8
+[2026-07-18 12:54:00,468] [INFO] [job_manager.py:185]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-18 12:54:00,579] [INFO] [pipeline_service.py:136]: Loading template default for job: 740c7893-0f08-4bf4-a9b6-cd26a9d76249
+[2026-07-18 12:54:00,581] [INFO] [job_manager.py:161]: Job status updated to: LOADING_TEMPLATE
+[2026-07-18 12:54:00,606] [INFO] [job_manager.py:185]: Progress updated to 70%: Loading template styles: default
+[2026-07-18 12:54:00,630] [INFO] [pipeline_service.py:154]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\740c7893-0f08-4bf4-a9b6-cd26a9d76249\rendered
+[2026-07-18 12:54:00,659] [INFO] [job_manager.py:185]: Progress updated to 80%: Template workspace initialized
+[2026-07-18 12:54:00,661] [INFO] [pipeline_service.py:167]: Starting LaTeX rendering for job: 740c7893-0f08-4bf4-a9b6-cd26a9d76249
+[2026-07-18 12:54:00,694] [INFO] [job_manager.py:161]: Job status updated to: RENDERING_LATEX
+[2026-07-18 12:54:00,722] [INFO] [job_manager.py:185]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-18 12:54:00,751] [INFO] [latex_renderer.py:29]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\740c7893-0f08-4bf4-a9b6-cd26a9d76249\rendered
+[2026-07-18 12:54:00,761] [INFO] [latex_renderer.py:174]: LaTeX document main.tex rendered successfully.
+[2026-07-18 12:54:00,780] [INFO] [job_manager.py:185]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-18 12:54:00,780] [INFO] [pipeline_service.py:201]: Starting document compilation for job: 740c7893-0f08-4bf4-a9b6-cd26a9d76249
+[2026-07-18 12:54:00,799] [INFO] [job_manager.py:161]: Job status updated to: COMPILING
+[2026-07-18 12:54:00,817] [INFO] [job_manager.py:185]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-18 12:54:04,482] [INFO] [pipeline_service.py:223]: Compilation completed successfully.
+[2026-07-18 12:54:04,485] [INFO] [pipeline_service.py:235]: Running E2E publication fidelity checker for job: 740c7893-0f08-4bf4-a9b6-cd26a9d76249
+[2026-07-18 12:54:04,485] [INFO] [fidelity_checker.py:24]: Generating advanced fidelity report and scores for job: 740c7893-0f08-4bf4-a9b6-cd26a9d76249
+[2026-07-18 12:54:04,489] [INFO] [fidelity_checker.py:163]: Fidelity report written to G:\work\Journal2LaTeX\backend\temp\740c7893-0f08-4bf4-a9b6-cd26a9d76249\intermediate\fidelity_report.json. Overall Score: 99.5%, Critical missing: 0
+[2026-07-18 12:54:04,514] [INFO] [job_manager.py:161]: Job status updated to: COMPLETED
+[2026-07-18 12:54:04,534] [INFO] [job_manager.py:185]: Progress updated to 100%: Pipeline process completed successfully

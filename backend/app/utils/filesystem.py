@@ -1,4 +1,3 @@
-import os
 import shutil
 from pathlib import Path
 from typing import Union
@@ -85,3 +84,52 @@ def delete_file_or_dir(path: Union[str, Path]) -> None:
         shutil.rmtree(p)
     else:
         p.unlink()
+
+
+def read_text_file(file_path: Union[str, Path]) -> str:
+    """Read a text file with automatic encoding detection and fallback strategy.
+    
+    Order of fallbacks:
+      - Detected encoding (via charset-normalizer / chardet)
+      - UTF-8
+      - UTF-8-SIG
+      - Windows-1252 (cp1252)
+      - Latin-1
+    """
+    path = Path(file_path).resolve()
+    raw_bytes = path.read_bytes()
+    
+    # 1. Try automatic detection using charset_normalizer
+    try:
+        import charset_normalizer
+        result = charset_normalizer.from_bytes(raw_bytes).best()
+        if result and result.encoding and result.confidence > 0.5:
+            try:
+                return str(result)
+            except Exception:
+                pass
+    except Exception:
+        pass
+
+    # Fallback to chardet
+    try:
+        import chardet
+        det = chardet.detect(raw_bytes)
+        if det and det.get("encoding") and det.get("confidence", 0) > 0.5:
+            try:
+                return raw_bytes.decode(det["encoding"])
+            except Exception:
+                pass
+    except Exception:
+        pass
+
+    # 2. Sequential Fallback Strategy
+    fallbacks = ["utf-8", "utf-8-sig", "cp1252", "latin-1"]
+    for enc in fallbacks:
+        try:
+            return raw_bytes.decode(enc)
+        except UnicodeDecodeError:
+            continue
+            
+    # Absolute final fallback
+    return raw_bytes.decode("utf-8", errors="replace")

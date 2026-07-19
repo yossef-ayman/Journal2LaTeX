@@ -1,7 +1,7 @@
 import json
 import re
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict
 from app.models.document import DocumentModel, BlockType
 from app.utils.logger import get_job_logger
 

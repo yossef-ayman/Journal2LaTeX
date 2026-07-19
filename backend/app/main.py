@@ -10,6 +10,8 @@ from app.api.compile import router as compile_router
 from app.api.download import router as download_router
 from app.api.health import router as health_router
 from app.api.job import router as job_router
+from app.api.job import jobs_router
+from app.api.templates import router as templates_router
 from app.utils.logger import setup_app_logging
 
 logger = logging.getLogger("app.main")
@@ -36,8 +38,8 @@ app = FastAPI(
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust for production as needed (desktop app origins)
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,  # False required when allow_origins=["*"]
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -60,3 +62,5 @@ app.include_router(compile_router)
 app.include_router(download_router)
 app.include_router(health_router)
 app.include_router(job_router)
+app.include_router(jobs_router)
+app.include_router(templates_router)
