@@ -1,0 +1,71 @@
+[2026-07-21 20:04:20,470] [INFO] [latex_compiler.py:321]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\517290cf-b270-4f31-8baf-a1b5abf84738\rendered\main.tex
+[2026-07-21 20:04:20,474] [INFO] [latex_compiler.py:125]: Rendered working directory tree before compilation:
+  main.tex
+  media/
+    image1.jpeg
+    image10.jpeg
+    image4.jpeg
+    image5.png
+    image6.png
+    image7.png
+    image8.jpeg
+    image9.jpeg
+  template.json
+  tex/
+    author1.jpg
+    author2.jpg
+    author3.jpg
+    fig2_qol.png
+    fig3_bdds.png
+    fig4_sads.png
+    fig5_model.png
+    logo7pt.eps
+    logo7pt.pdf
+    main.pdf
+    main.tex
+    NSP1.cls
+    nsplogo.jpg
+[2026-07-21 20:04:20,478] [INFO] [latex_compiler.py:131]: Template resource manifest (23 files):
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.jpeg                       renderer-generated media
+  media\image4.jpeg                        renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.jpeg                        renderer-generated media
+  media\image9.jpeg                        renderer-generated media
+  template.json                            template metadata
+  tex\author1.jpg                          template resource (graphic (JPEG))
+  tex\author2.jpg                          template resource (graphic (JPEG))
+  tex\author3.jpg                          template resource (graphic (JPEG))
+  tex\fig2_qol.png                         template resource (graphic (PNG))
+  tex\fig3_bdds.png                        template resource (graphic (PNG))
+  tex\fig4_sads.png                        template resource (graphic (PNG))
+  tex\fig5_model.png                       template resource (graphic (PNG))
+  tex\logo7pt.eps                          template resource (graphic (EPS))
+  tex\logo7pt.pdf                          template resource (graphic (PDF))
+  tex\main.pdf                             generated document / build artefact
+  tex\main.tex                             generated document / build artefact
+  tex\NSP1.cls                             template resource (document class)
+  tex\nsplogo.jpg                          template resource (graphic (JPEG))
+[2026-07-21 20:04:21,074] [INFO] [latex_compiler.py:144]: Dependency resolution (16 references):
+  [MISSING] documentclass   NSP1
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      tikz
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      fancyhdr
+  [SYSTEM ] usepackage      graphicx
+  [LOCAL  ] includegraphics media/image4.jpeg
+  [MISSING] includegraphics nsplogo.jpg
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+  [LOCAL  ] includegraphics media/image8.jpeg
+  [LOCAL  ] includegraphics media/image9.jpeg
+  [LOCAL  ] includegraphics media/image10.jpeg
+[2026-07-21 20:04:21,074] [ERROR] [latex_compiler.py:153]: Template is missing required local resource(s); aborting before pdflatex. Ensure the template package ships these files:
+  - documentclass -> NSP1
+  - includegraphics -> nsplogo.jpg

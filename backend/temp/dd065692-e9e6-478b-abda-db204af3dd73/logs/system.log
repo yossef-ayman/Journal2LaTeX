@@ -1,0 +1,23 @@
+[2026-07-22 12:32:44,379] [INFO] [job_manager.py:136]: Job dd065692-e9e6-478b-abda-db204af3dd73 workspace created successfully
+[2026-07-22 12:32:44,413] [INFO] [pipeline_service.py:45]: Starting validation for job: dd065692-e9e6-478b-abda-db204af3dd73
+[2026-07-22 12:32:44,429] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-07-22 12:32:44,444] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-07-22 12:32:44,467] [INFO] [pipeline_service.py:60]: Validation successful.
+[2026-07-22 12:32:44,483] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-07-22 12:32:44,483] [INFO] [pipeline_service.py:67]: Starting document analysis for job: dd065692-e9e6-478b-abda-db204af3dd73
+[2026-07-22 12:32:44,501] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-22 12:32:44,518] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-22 12:32:44,519] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\dd065692-e9e6-478b-abda-db204af3dd73\input\The role.docx
+[2026-07-22 12:32:45,866] [INFO] [document_analyzer.py:511]: Parsed document: title='The Role of Social Media in the Spread and Countering of Cyber-Extremism: An Islamic Jurisprudential and Educational Perspective', authors=3, sections=41, references=42
+[2026-07-22 12:32:45,877] [INFO] [pipeline_service.py:95]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\dd065692-e9e6-478b-abda-db204af3dd73\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\dd065692-e9e6-478b-abda-db204af3dd73\intermediate\conversion_report.json
+[2026-07-22 12:32:45,893] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-22 12:32:45,894] [INFO] [pipeline_service.py:108]: Starting asset extraction for job: dd065692-e9e6-478b-abda-db204af3dd73
+[2026-07-22 12:32:45,911] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-22 12:32:45,927] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-22 12:32:52,039] [INFO] [pipeline_service.py:223]: Office object fig:office1 placed=True
+[2026-07-22 12:32:52,104] [INFO] [pipeline_service.py:141]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\dd065692-e9e6-478b-abda-db204af3dd73\intermediate\media
+[2026-07-22 12:32:52,123] [INFO] [job_manager.py:204]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-22 12:32:52,123] [INFO] [pipeline_service.py:231]: Classifying extracted assets for job: dd065692-e9e6-478b-abda-db204af3dd73
+[2026-07-22 12:32:52,124] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: dd065692-e9e6-478b-abda-db204af3dd73
+[2026-07-22 12:32:52,127] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 8
+[2026-07-22 12:32:52,146] [INFO] [job_manager.py:204]: Progress updated to 65%: Extracted assets analyzed and mapped successfully

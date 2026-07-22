@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 from typing import Optional
 from app.models.document import DocumentBlock, DocumentModel, BlockType
@@ -85,14 +86,7 @@ class LatexRenderer:
             # 1. Render block elements sequentially
             rendered_blocks = []
             for section in doc.sections:
-                # Add section header
-                # We determine header style based on level
-                if section.level == 1:
-                    rendered_blocks.append(f"\\section{{{self._escape_text(section.title)}}}")
-                elif section.level == 2:
-                    rendered_blocks.append(f"\\subsection{{{self._escape_text(section.title)}}}")
-                else:
-                    rendered_blocks.append(f"\\subsubsection{{{self._escape_text(section.title)}}}")
+                rendered_blocks.append(self._render_heading(section))
                 
                 # Render section blocks
                 for block in section.blocks:
@@ -132,7 +126,11 @@ class LatexRenderer:
             if doc.references:
                 bib_tex = "\\begin{thebibliography}{99}\n"
                 for idx, ref in enumerate(doc.references):
-                    ref_text = self._escape_text(ref.strip())
+                    # \bibitem numbers entries itself; strip any literal
+                    # enumeration carried over from Word ("[25] ...", "25. ...")
+                    # so entries do not render as "[25] [25] ...".
+                    cleaned_ref = re.sub(r"^\s*(?:\[\d+\]|\d+[\.\)])\s*", "", ref.strip())
+                    ref_text = self._escape_text(cleaned_ref or ref.strip())
                     bib_tex += f"\\bibitem{{ref{idx+1}}}\n{ref_text}\n\n"
                 bib_tex += "\\end{thebibliography}\n"
 
@@ -221,11 +219,12 @@ class LatexRenderer:
                     running_author = f"{first_author} et al." if len(doc.authors) > 1 else first_author
                     rendered_content = replace_latex_command(rendered_content, "\\authorrunning", self._escape_text(running_author))
                 
-                corresponding_email = ""
-                for author in doc.authors:
-                    if author.email:
-                        corresponding_email = author.email
-                        break
+                corresponding_email = getattr(doc, "corresponding_email", "") or ""
+                if not corresponding_email:
+                    for author in doc.authors:
+                        if author.email:
+                            corresponding_email = author.email
+                            break
                 rendered_content = replace_latex_command(rendered_content, "\\mail", self._escape_text(corresponding_email) if corresponding_email else "")
 
                 # Replace dates if commands exist (otherwise clear them to prevent legacy fallbacks)
@@ -291,7 +290,11 @@ class LatexRenderer:
                 # 6.b Default Placeholder Replacement Strategy
                 rendered_content = template_content
                 rendered_content = rendered_content.replace("__TITLE__", self._escape_text(doc.title or "Untitled Document"))
-                rendered_content = rendered_content.replace("__AUTHORS__", authors_tex)
+                # \and is a \maketitle-only construct (article.cls implements
+                # it with tabular switching); inline title blocks need commas.
+                rendered_content = rendered_content.replace(
+                    "__AUTHORS__", authors_tex.replace(" \\and ", ", ")
+                )
                 rendered_content = rendered_content.replace("__INSTITUTES__", institutes_tex)
                 rendered_content = rendered_content.replace("__ABSTRACT__", self._escape_text(doc.abstract))
                 rendered_content = rendered_content.replace("__KEYWORDS__", ", ".join(self._escape_text(k) for k in doc.keywords))
@@ -304,6 +307,7 @@ class LatexRenderer:
                 rendered_content = rendered_content.replace("__REVISED_DATE__", rev)
                 rendered_content = rendered_content.replace("__ACCEPTED_DATE__", acc)
                 rendered_content = rendered_content.replace("__PUBLISHED_DATE__", pub)
+                rendered_content = self._inject_corresponding_email(rendered_content, doc)
 
             # If NSP template, inject graphicx package and redefine biographyps to avoid psfig crash
             is_nsp = "NSP" in template_metadata.get("class_file", "") or "JSAP" in template_metadata.get("name", "")
@@ -323,6 +327,30 @@ class LatexRenderer:
                         "\\makeatother\n"
                     )
                     rendered_content = rendered_content[:begin_doc] + redef + rendered_content[begin_doc:]
+
+            # Structured tables need multirow and cell-colour support.
+            needed_pkgs = []
+            if "\\multirow" in rendered_content and "usepackage{multirow}" not in rendered_content:
+                needed_pkgs.append("\\usepackage{multirow}")
+            if "\\cellcolor" in rendered_content and "usepackage[table]{xcolor}" not in rendered_content:
+                needed_pkgs.append("\\usepackage[table]{xcolor}")
+            if "\\arraybackslash" in rendered_content and "usepackage{array}" not in rendered_content:
+                needed_pkgs.append("\\usepackage{array}")
+            if needed_pkgs:
+                begin_doc_pos = rendered_content.find("\\begin{document}")
+                if begin_doc_pos != -1:
+                    rendered_content = (
+                        rendered_content[:begin_doc_pos]
+                        + "\n".join(needed_pkgs) + "\n"
+                        + rendered_content[begin_doc_pos:]
+                    )
+
+            # Declare Unicode characters that pdfLaTeX would otherwise drop
+            # (e.g. Greek chi in "chi-squared", the true minus sign, and the
+            # dot-below / ayn transliteration marks in Arabic names).  Without
+            # this a value such as "χ² = 3232.818" loses its χ.  Only mappings
+            # for characters actually present are emitted.
+            rendered_content = self._inject_unicode_support(rendered_content)
 
             # 5. Write to main.tex
             main_tex_path = workspace_dir / "main.tex"
@@ -347,6 +375,145 @@ class LatexRenderer:
                 pass
         return {}
 
+    # Unicode characters pdfLaTeX does not set up by default, mapped to a safe
+    # LaTeX rendering.  Latin letters with accents/macrons, dashes and curly
+    # quotes are already handled by the kernel, so they are intentionally omitted.
+    _UNICODE_MAP = {
+        # Greek letters (statistics: chi-squared, eta-squared, alpha, ...)
+        "α": "\\ensuremath{\\alpha}", "β": "\\ensuremath{\\beta}",
+        "γ": "\\ensuremath{\\gamma}", "δ": "\\ensuremath{\\delta}",
+        "ε": "\\ensuremath{\\varepsilon}", "η": "\\ensuremath{\\eta}",
+        "θ": "\\ensuremath{\\theta}", "λ": "\\ensuremath{\\lambda}",
+        "μ": "\\ensuremath{\\mu}", "π": "\\ensuremath{\\pi}",
+        "ρ": "\\ensuremath{\\rho}", "σ": "\\ensuremath{\\sigma}",
+        "τ": "\\ensuremath{\\tau}", "φ": "\\ensuremath{\\varphi}",
+        "χ": "\\ensuremath{\\chi}", "ψ": "\\ensuremath{\\psi}",
+        "ω": "\\ensuremath{\\omega}", "Δ": "\\ensuremath{\\Delta}",
+        "Σ": "\\ensuremath{\\Sigma}", "Ω": "\\ensuremath{\\Omega}",
+        # Mathematical operators / symbols
+        "−": "\\ensuremath{-}", "×": "\\ensuremath{\\times}",
+        "÷": "\\ensuremath{\\div}", "≤": "\\ensuremath{\\leq}",
+        "≥": "\\ensuremath{\\geq}", "≠": "\\ensuremath{\\neq}",
+        "±": "\\ensuremath{\\pm}", "≈": "\\ensuremath{\\approx}",
+        "∑": "\\ensuremath{\\sum}", "√": "\\ensuremath{\\surd}",
+        "·": "\\ensuremath{\\cdot}", "′": "\\ensuremath{{}^{\\prime}}",
+        # Transliteration marks (Arabic romanisation of author names)
+        "ʿ": "{`}", "ʾ": "{'}", "Ḍ": "\\d{D}", "ḍ": "\\d{d}",
+        "Ḥ": "\\d{H}", "ḥ": "\\d{h}", "Ṣ": "\\d{S}",
+        "ṣ": "\\d{s}", "Ṭ": "\\d{T}", "ṭ": "\\d{t}",
+        "Ẓ": "\\d{Z}", "ẓ": "\\d{z}",
+    }
+
+    def _inject_unicode_support(self, rendered_content: str) -> str:
+        """Add \\newunicodechar declarations for characters pdfLaTeX cannot
+        typeset out of the box, so no value silently loses a character."""
+        present = [ch for ch in self._UNICODE_MAP if ch in rendered_content]
+        if not present:
+            return rendered_content
+        begin_doc_pos = rendered_content.find("\\begin{document}")
+        if begin_doc_pos == -1:
+            return rendered_content
+        lines = ["\\usepackage{newunicodechar}"]
+        for ch in present:
+            lines.append(f"\\newunicodechar{{{ch}}}{{{self._UNICODE_MAP[ch]}}}")
+        block = "\n".join(lines) + "\n"
+        return (
+            rendered_content[:begin_doc_pos]
+            + block
+            + rendered_content[begin_doc_pos:]
+        )
+
+    def _inject_corresponding_email(self, rendered_content: str, doc: DocumentModel) -> str:
+        """Populate the corresponding-author e-mail in the rendered template.
+
+        The address is taken from ``doc.corresponding_email`` (extracted from the
+        DOCX footer/footnote/endnote/author block).  If the template exposes a
+        ``\\mail`` placeholder it is replaced in place; otherwise, for journal
+        classes that define ``\\mail`` (e.g. NSP/JSAP), ``\\mail{...}`` is
+        declared just before ``\\maketitle`` so the class renders the label,
+        asterisk, colour, spacing and footer placement exactly as specified by
+        the journal.  A no-op when no e-mail is available.
+        """
+        corresponding_email = getattr(doc, "corresponding_email", "") or ""
+        if not corresponding_email:
+            for author in doc.authors:
+                if author.email:
+                    corresponding_email = author.email
+                    break
+        if not corresponding_email:
+            return rendered_content
+
+        escaped_mail = self._escape_text(corresponding_email)
+        if "\\mail" in rendered_content:
+            return replace_latex_command(rendered_content, "\\mail", escaped_mail)
+
+        maketitle_pos = rendered_content.find("\\maketitle")
+        if maketitle_pos != -1:
+            return (
+                rendered_content[:maketitle_pos]
+                + "\\mail{" + escaped_mail + "}\n"
+                + rendered_content[maketitle_pos:]
+            )
+        return rendered_content
+
+    def _render_heading(self, section) -> str:
+        """Render a section heading.
+
+        When DOCX heading formatting is available, reproduce the Word heading's
+        own appearance locally -- bold, body-relative font size, alignment,
+        space before/after, and keep-with-next -- so the output matches the
+        source document.  This is a self-contained block that does NOT redefine
+        the template's \\section machinery, so a journal template's own
+        sectioning styles are left intact (only this document's headings use
+        the reproduced formatting).  Falls back to plain unnumbered sectioning
+        when no formatting was captured.
+        """
+        title_tex = self._escape_text(section.title)
+        fmt = getattr(section, "heading_format", None)
+
+        if not fmt:
+            cmd = {1: "section", 2: "subsection", 3: "subsubsection"}.get(
+                section.level, "subsubsection"
+            )
+            return f"\\{cmd}*{{{title_tex}}}"
+
+        # Body-relative font size -> a LaTeX size command (keeps the modest
+        # heading/body ratio the Word document actually uses instead of the
+        # template's large \section sizes).
+        ratio = fmt.get("size_ratio") or 1.0
+        if ratio >= 1.45:
+            size_cmd = "\\LARGE"
+        elif ratio >= 1.28:
+            size_cmd = "\\Large"
+        elif ratio >= 1.05:
+            size_cmd = "\\large"
+        else:
+            size_cmd = "\\normalsize"
+
+        weight = "\\bfseries" if fmt.get("bold", True) else ""
+        align = fmt.get("alignment", "left")
+        align_open, align_close = "", ""
+        if align == "center":
+            align_open, align_close = "\\begin{center}", "\\end{center}"
+        # "left"/"both"(justified) -> flush-left heading (default); right is rare.
+        elif align in ("right", "end"):
+            align_open, align_close = "{\\raggedleft ", "\\par}"
+
+        # Space before / after: use the DOCX values when present, else modest
+        # defaults proportional to the heading size.
+        before = fmt.get("space_before_pt")
+        after = fmt.get("space_after_pt")
+        before_tex = f"\\vspace{{{before:.1f}pt}}" if before else "\\medskip"
+        after_tex = f"\\vspace{{{after:.1f}pt}}" if after else "\\smallskip"
+        keep = "\\nopagebreak" if fmt.get("keep_with_next") else ""
+
+        body = f"{{{size_cmd}{weight} {title_tex}\\par}}"
+        if align_open:
+            body = f"{align_open}{size_cmd}{weight} {title_tex}{align_close}"
+        return (
+            f"\\par{before_tex}\\noindent {body}{after_tex}{keep}"
+        )
+
     def _render_block(self, block: DocumentBlock, job_id: str) -> Optional[str]:
         """Render a single DocumentBlock into a LaTeX string."""
         b_type = block.type
@@ -364,50 +531,47 @@ class LatexRenderer:
             relative_path = f"media/{image_name}"
             
             label_str = f"\\label{{{content.get('label')}}}" if content.get("label") else ""
+
+            # Reproduce the original Word size exactly.  Width and height come
+            # straight from the DOCX drawing extent (inches).  When the picture
+            # is narrower than the text block it keeps both dimensions verbatim
+            # (so small figures are NOT blown up to full width); when it is
+            # wider it is scaled down to the line width preserving aspect ratio.
+            width_in = content.get("width_in") or content.get("width_pt")
+            height_in = content.get("height_in")
+            if content.get("width_in") and height_in:
+                w = content["width_in"]
+                include = (
+                    f"\\ifdim {w:.4f}in>\\linewidth\n"
+                    f"  \\includegraphics[width=\\linewidth,keepaspectratio]{{{relative_path}}}\n"
+                    f"\\else\n"
+                    f"  \\includegraphics[width={w:.4f}in,height={height_in:.4f}in]{{{relative_path}}}\n"
+                    f"\\fi"
+                )
+            elif content.get("width_in"):
+                w = content["width_in"]
+                include = (
+                    f"\\includegraphics[width=\\ifdim {w:.4f}in>\\linewidth \\linewidth"
+                    f"\\else {w:.4f}in\\fi,keepaspectratio]{{{relative_path}}}"
+                )
+            else:
+                include = (
+                    f"\\includegraphics[width=\\linewidth,height=0.3\\textheight,"
+                    f"keepaspectratio]{{{relative_path}}}"
+                )
             return (
                 "\\begin{figure}[htbp]\n"
                 "\\centering\n"
-                f"\\includegraphics[width=\\linewidth,height=0.3\\textheight,keepaspectratio]{{{relative_path}}}\n"
+                f"{include}\n"
                 f"\\caption{{{caption}}}\n"
                 f"{label_str}\n"
                 "\\end{figure}"
             )
 
         elif b_type == BlockType.TABLE:
-            caption = self._escape_text(content.get("caption", ""))
-            headers = content.get("headers", [])
-            rows = content.get("rows", [])
-            label_str = f"\\label{{{content.get('label')}}}" if content.get("label") else ""
-
-            # Determine column alignment
-            num_cols = len(headers) if headers else (len(rows[0]) if rows else 1)
-            col_specs = "c" * num_cols
-
-            # Format headers
-            headers_str = ""
-            if headers:
-                headers_str = " & ".join(self._escape_text(h) for h in headers) + " \\\\\n\\hline"
-
-            # Format rows
-            rows_str = ""
-            if rows:
-                rows_str = "\n".join(" & ".join(self._escape_text(cell) for cell in row) + " \\\\" for row in rows)
-
-            return (
-                "\\begin{table}[htbp]\n"
-                "\\centering\n"
-                "\\resizebox{\\linewidth}{!}{%\n"
-                f"\\begin{{tabular}}{{{col_specs}}}\n"
-                "\\hline\n"
-                f"{headers_str}\n"
-                f"{rows_str}\n"
-                "\\hline\n"
-                "\\end{tabular}%\n"
-                "}\n"
-                f"\\caption{{{caption}}}\n"
-                f"{label_str}\n"
-                "\\end{table}"
-            )
+            if content.get("body_rows") or content.get("header_rows"):
+                return self._render_structured_table(content)
+            return self._render_flat_table(content)
 
         elif b_type == BlockType.EQUATION:
             latex_code = content.get("latex_code", "")
@@ -433,6 +597,176 @@ class LatexRenderer:
             )
 
         return None
+
+    def _render_flat_table(self, content: dict) -> str:
+        """Legacy fallback for tables without structural information."""
+        caption = self._escape_text(content.get("caption", ""))
+        headers = content.get("headers", [])
+        rows = content.get("rows", [])
+        label_str = f"\\label{{{content.get('label')}}}" if content.get("label") else ""
+        num_cols = len(headers) if headers else (len(rows[0]) if rows else 1)
+        col_specs = "c" * num_cols
+        headers_str = ""
+        if headers:
+            headers_str = " & ".join(self._escape_text(h) for h in headers) + " \\\\\n\\hline"
+        rows_str = "\n".join(
+            " & ".join(self._escape_text(cell) for cell in row) + " \\\\" for row in rows
+        )
+        return (
+            "\\begin{table}[htbp]\n\\centering\n"
+            "\\resizebox{\\linewidth}{!}{%\n"
+            f"\\begin{{tabular}}{{{col_specs}}}\n\\hline\n"
+            f"{headers_str}\n{rows_str}\n\\hline\n"
+            "\\end{tabular}%\n}\n"
+            f"\\caption{{{caption}}}\n{label_str}\n\\end{{table}}"
+        )
+
+    def _render_structured_table(self, content: dict) -> str:
+        """Render a table preserving merges, widths, alignment, borders,
+        shading and bold header cells."""
+        caption = self._escape_text(content.get("caption", ""))
+        label_str = f"\\label{{{content.get('label')}}}" if content.get("label") else ""
+        colspecs = content.get("colspecs", [])
+        header_rows = content.get("header_rows", [])
+        body_rows = content.get("body_rows", [])
+        has_grid = bool(content.get("has_grid"))
+        shading_rows = content.get("shading_rows", [])
+        row_heights = [h for h in content.get("row_heights", []) if h]
+        # Table width as a fraction of the text column, taken from the DOCX so
+        # the rendered table occupies the same on-page proportion as in Word.
+        width_frac = content.get("width_frac")
+
+        all_rows = header_rows + body_rows
+        num_cols = len(colspecs) or max(
+            (sum(c.get("colspan", 1) for c in row) for row in all_rows), default=1
+        )
+
+        # Column specification.  When the Word table width and per-column
+        # widths are known, each column becomes a p{} box whose width is its
+        # share of (width_frac * \textwidth).  The exact per-column padding
+        # (2*\tabcolsep) is subtracted inside \dimexpr so the assembled table
+        # -- content + padding + rules -- matches the Word width instead of
+        # being squeezed to a narrow block.  Falls back to the previous
+        # relative sizing when the width metadata is unavailable.
+        sep = "|" if has_grid else ""
+        have_widths = width_frac and all(
+            (colspecs[i].get("width") if i < len(colspecs) else None)
+            for i in range(num_cols)
+        )
+        parts = []
+        for i in range(num_cols):
+            spec = colspecs[i] if i < len(colspecs) else {}
+            width = spec.get("width")
+            align = spec.get("align")
+            if have_widths:
+                eff = width * width_frac
+                prefix = {
+                    "c": ">{\\centering\\arraybackslash}",
+                    "r": ">{\\raggedleft\\arraybackslash}",
+                }.get(align, "")
+                parts.append(f"{prefix}p{{\\dimexpr {eff:.4f}\\textwidth-2\\tabcolsep\\relax}}")
+            elif width:
+                parts.append(f"p{{{width * 0.9:.3f}\\linewidth}}")
+            else:
+                parts.append(align or "l")
+        col_spec_str = sep + sep.join(parts) + sep
+
+        # Optional row-height stretch (Word trHeight is in points).
+        stretch = ""
+        if row_heights:
+            avg = sum(row_heights) / len(row_heights)
+            factor = max(1.0, min(2.0, avg / 14.0))
+            if factor > 1.05:
+                stretch = f"\\renewcommand{{\\arraystretch}}{{{factor:.2f}}}"
+
+        # pending[k]: how many rows below the current one column k is still
+        # covered by an open rowspan.
+        pending = [0] * num_cols
+        lines = []
+        if has_grid:
+            lines.append("\\hline")
+        n_header = len(header_rows)
+
+        for r_idx, row in enumerate(all_rows):
+            fills = shading_rows[r_idx] if r_idx < len(shading_rows) else []
+            consumed = [False] * num_cols
+            cells_out = []
+            col = 0
+            for cell in row:
+                # Skip columns occupied by rowspans from earlier rows.
+                while col < num_cols and pending[col] > 0 and not consumed[col]:
+                    cells_out.append("")
+                    consumed[col] = True
+                    col += 1
+                if col >= num_cols:
+                    break
+                text = self._escape_text(cell.get("text", ""))
+                if text and (cell.get("bold") or r_idx < n_header):
+                    text = f"\\textbf{{{text}}}"
+                fill = fills[col] if col < len(fills) else None
+                if fill:
+                    text = f"\\cellcolor[HTML]{{{fill}}}{text}"
+                colspan = max(1, cell.get("colspan", 1))
+                rowspan = max(1, cell.get("rowspan", 1))
+                if rowspan > 1:
+                    text = f"\\multirow{{{rowspan}}}{{*}}{{{text}}}"
+                    for k in range(col, min(col + colspan, num_cols)):
+                        pending[k] = rowspan - 1
+                if colspan > 1:
+                    mc_align = cell.get("align") or "c"
+                    mc_spec = ("|" if has_grid and col == 0 else "") + mc_align + ("|" if has_grid else "")
+                    text = f"\\multicolumn{{{colspan}}}{{{mc_spec}}}{{{text}}}"
+                cells_out.append(text)
+                col += colspan
+            # Trailing columns covered by open rowspans.
+            while col < num_cols:
+                cells_out.append("")
+                if pending[col] > 0:
+                    consumed[col] = True
+                col += 1
+            lines.append(" & ".join(cells_out) + " \\\\")
+
+            # A span consumed on this row expires at this boundary.
+            for k in range(num_cols):
+                if consumed[k] and pending[k] > 0:
+                    pending[k] -= 1
+
+            open_cols = [k for k in range(num_cols) if pending[k] > 0]
+            if has_grid or r_idx == n_header - 1 or r_idx == len(all_rows) - 1:
+                if not open_cols:
+                    lines.append("\\hline")
+                else:
+                    segments = []
+                    start_seg = None
+                    for k in range(num_cols):
+                        if pending[k] == 0:
+                            if start_seg is None:
+                                start_seg = k
+                        elif start_seg is not None:
+                            segments.append((start_seg + 1, k))
+                            start_seg = None
+                    if start_seg is not None:
+                        segments.append((start_seg + 1, num_cols))
+                    for a, b in segments:
+                        lines.append(f"\\cline{{{a}-{b}}}")
+
+        table_body = "\n".join(lines)
+        # A table wider than a single text column would overflow into the
+        # neighbouring column on a two-column body page.  When the Word table
+        # occupies more than about half the text width, promote it to a
+        # full-width spanning float (table*) so its columns -- sized against
+        # \textwidth -- fit; narrower tables stay inline single-column floats.
+        wide = bool(width_frac) and width_frac > 0.5
+        env = "table*" if wide else "table"
+        placement = "[tbp]" if wide else "[htbp]"
+        return (
+            f"\\begin{{{env}}}{placement}\n\\centering\n"
+            f"{{{stretch}\\small\n"
+            f"\\begin{{tabular}}{{{col_spec_str}}}\n"
+            f"{table_body}\n"
+            "\\end{tabular}}\n"
+            f"\\caption{{{caption}}}\n{label_str}\n\\end{{{env}}}"
+        )
 
     def _escape_text(self, text: str) -> str:
         """Escape standard text but preserve inline math ($...$) spans."""

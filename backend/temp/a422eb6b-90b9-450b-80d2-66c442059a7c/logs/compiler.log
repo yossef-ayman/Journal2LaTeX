@@ -1,0 +1,68 @@
+[2026-07-22 01:54:32,608] [INFO] [latex_compiler.py:321]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\a422eb6b-90b9-450b-80d2-66c442059a7c\rendered\main.tex
+[2026-07-22 01:54:32,611] [INFO] [latex_compiler.py:125]: Rendered working directory tree before compilation:
+  author1.jpg
+  author2.jpg
+  author3.jpg
+  fig2_qol.png
+  fig3_bdds.png
+  fig4_sads.png
+  fig5_model.png
+  logo7pt.eps
+  logo7pt.pdf
+  main.pdf
+  main.tex
+  media/
+    image1.jpeg
+    image10.jpeg
+    image4.jpeg
+    image5.png
+    image6.png
+    image7.png
+    image8.jpeg
+    image9.jpeg
+    office_obj_1.png
+  NSP1.cls
+  nsplogo.jpg
+  template.json
+[2026-07-22 01:54:32,613] [INFO] [latex_compiler.py:131]: Template resource manifest (23 files):
+  author1.jpg                              template resource (graphic (JPEG))
+  author2.jpg                              template resource (graphic (JPEG))
+  author3.jpg                              template resource (graphic (JPEG))
+  fig2_qol.png                             template resource (graphic (PNG))
+  fig3_bdds.png                            template resource (graphic (PNG))
+  fig4_sads.png                            template resource (graphic (PNG))
+  fig5_model.png                           template resource (graphic (PNG))
+  logo7pt.eps                              template resource (graphic (EPS))
+  logo7pt.pdf                              template resource (graphic (PDF))
+  main.pdf                                 generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.jpeg                       renderer-generated media
+  media\image4.jpeg                        renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.jpeg                        renderer-generated media
+  media\image9.jpeg                        renderer-generated media
+  media\office_obj_1.png                   renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  nsplogo.jpg                              template resource (graphic (JPEG))
+  template.json                            template metadata
+[2026-07-22 01:54:51,270] [INFO] [latex_compiler.py:144]: Dependency resolution (15 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      tikz
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      array
+  [MISSING] usepackage      newunicodechar
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics nsplogo.jpg
+  [LOCAL  ] includegraphics media/office_obj_1.png
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-07-22 01:54:51,270] [ERROR] [latex_compiler.py:153]: Template is missing required local resource(s); aborting before pdflatex. Ensure the template package ships these files:
+  - usepackage -> newunicodechar

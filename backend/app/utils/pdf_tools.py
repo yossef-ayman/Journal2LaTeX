@@ -43,7 +43,7 @@ def pdf_page_count(pdf_path: Path) -> int:
     if shutil.which("pdfinfo"):
         result = subprocess.run(
             ["pdfinfo", str(pdf_path)],
-            capture_output=True, text=True, check=False, timeout=60,
+            capture_output=True, text=True, check=False, timeout=600,
         )
         match = re.search(r"^Pages:\s+(\d+)", result.stdout, re.MULTILINE)
         if match:
@@ -76,7 +76,7 @@ def render_pdf_to_images(pdf_path: Path, out_dir: Path, dpi: int = 150) -> List[
         prefix = out_dir / "page"
         subprocess.run(
             ["pdftoppm", "-png", "-r", str(dpi), str(pdf_path), str(prefix)],
-            capture_output=True, text=True, check=True, timeout=300,
+            capture_output=True, text=True, check=True, timeout=30000,
         )
         # pdftoppm names files page-1.png / page-01.png depending on count;
         # normalize to page_<n>.png.

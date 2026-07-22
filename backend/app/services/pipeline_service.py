@@ -10,7 +10,7 @@ from app.services.asset_analyzer import AssetAnalyzer
 from app.services.template_manager import TemplateManager, TemplateManagerError
 from app.services.latex_renderer import LatexRenderer, LatexRendererError
 from app.services.fidelity_checker import FidelityChecker
-from app.services.graphics_extractor import GraphicsExtractor
+from app.services.graphics_extractor import GraphicsExtractor, OfficeObjectExtractor
 from app.services.visual_comparator import VisualComparator
 from app.services.layout_optimizer import LayoutOptimizer
 from app.services.header_reconstructor import HeaderReconstructor
@@ -34,6 +34,7 @@ class PipelineService:
         self.latex_compiler = LatexCompiler()
         self.fidelity_checker = FidelityChecker()
         self.graphics_extractor = GraphicsExtractor()
+        self.office_object_extractor = OfficeObjectExtractor()
         self.visual_comparator = VisualComparator()
         self.layout_optimizer = LayoutOptimizer()
         self.header_reconstructor = HeaderReconstructor()
@@ -117,6 +118,16 @@ class PipelineService:
             self.pandoc_service.extract_media(docx_path, media_dir, job_id)
             self.graphics_extractor.extract_graphics(docx_path, media_dir, job_id)
 
+            # Office-native objects (charts, SmartArt, shapes, text boxes,
+            # groups, OLE) are invisible to pandoc: extract and render each one
+            # individually, then splice them into the document model at their
+            # original positions.
+            office_objects = self.office_object_extractor.extract_objects(
+                docx_path, media_dir, job_id
+            )
+            if office_objects:
+                self._merge_office_objects(job_id, office_objects)
+
             # pdflatex cannot include WMF/EMF/SVG (Word often stores equations
             # and drawings as WMF) -- convert them to PNG siblings up front.
             conv_report = convert_unsupported_media(media_dir, job_id)
@@ -135,6 +146,84 @@ class PipelineService:
             logger.error(error_msg)
             self.job_manager.add_error(job_id, error_msg)
             return False
+
+    def _merge_office_objects(self, job_id: str, office_objects: list) -> None:
+        """Insert rendered Office objects into the saved document model.
+
+        Each object becomes a FIGURE block placed after the paragraph it
+        followed in the source document (matched by anchor text), carrying its
+        original size, caption, and a stable label.  The caption paragraph is
+        removed from the body so it is not duplicated below the figure.
+        """
+        logger = get_job_logger(job_id, "system")
+        doc_model = self.load_document_model(job_id)
+        if not doc_model:
+            logger.warning("Cannot merge Office objects: document model unavailable.")
+            return
+
+        from app.models.document import BlockType, DocumentBlock
+
+        def norm(text):
+            return " ".join((text or "").split()).lower()
+
+        rendered_objects = [o for o in office_objects if o.get("rendered") and o.get("file")]
+        report = self.job_manager._get_job_dir(job_id) / "intermediate" / "office_objects.json"
+        report.parent.mkdir(parents=True, exist_ok=True)
+        report.write_text(json.dumps(office_objects, indent=2), encoding="utf-8")
+
+        for obj in rendered_objects:
+            # \caption prints "Figure N:" itself; strip the literal prefix
+            # carried in the Word caption text to avoid "Figure 2: Figure 2:".
+            import re as _re
+            caption_text = _re.sub(
+                r"^(figure|fig\.?)\s*\d+\s*[:.\-]?\s*", "",
+                obj.get("caption") or "", flags=_re.IGNORECASE,
+            )
+            figure = DocumentBlock(
+                type=BlockType.FIGURE,
+                content={
+                    "caption": caption_text,
+                    "path": obj["file"],
+                    "label": obj.get("label"),
+                    "width_pt": obj.get("width_pt"),
+                    "height_pt": obj.get("height_pt"),
+                    "office_object_type": obj.get("type"),
+                },
+            )
+            anchor = norm(obj.get("anchor_text"))[:60]
+            placed = False
+            for section in doc_model.sections:
+                for idx, block in enumerate(section.blocks):
+                    if block.type == BlockType.PARAGRAPH and anchor and \
+                            norm(block.content.get("text", "")).startswith(anchor):
+                        section.blocks.insert(idx + 1, figure)
+                        placed = True
+                        break
+                if placed:
+                    break
+            if not placed:
+                # Anchor text may be a section title rather than a paragraph.
+                target = None
+                for section in doc_model.sections:
+                    if anchor and norm(section.title).startswith(anchor[:40]):
+                        target = section
+                        break
+                (target or doc_model.sections[-1]).blocks.insert(0, figure) \
+                    if doc_model.sections else None
+                placed = bool(doc_model.sections)
+            # Remove the caption paragraph so it is not shown twice.
+            caption = norm(obj.get("caption"))
+            if caption:
+                for section in doc_model.sections:
+                    section.blocks = [
+                        b for b in section.blocks
+                        if not (b.type == BlockType.PARAGRAPH
+                                and norm(b.content.get("text", "")) == caption)
+                    ]
+            logger.info("Office object %s placed=%s", obj.get("label"), placed)
+
+        structure_file = self.job_manager._get_job_dir(job_id) / "intermediate" / "document_structure.json"
+        structure_file.write_text(doc_model.model_dump_json(indent=2), encoding="utf-8")
 
     def analyze_assets(self, job_id: str, doc_model: DocumentModel) -> bool:
         """Run classification on extracted assets and create traceability mappings."""

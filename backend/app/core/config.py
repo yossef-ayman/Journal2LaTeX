@@ -32,7 +32,7 @@ _DEFAULTS = {
     "SOFFICE_PATH": "soffice",
     # Timeouts (seconds)
     "SUBPROCESS_TIMEOUT": 120,
-    "COMPILE_TIMEOUT": 300,
+    "COMPILE_TIMEOUT": 30000,
     # Layout optimizer
     "OPTIMIZER_MAX_ITERATIONS": 12,
     "OPTIMIZER_TARGET_SIMILARITY": 0.95,

@@ -1,0 +1,851 @@
+[2026-07-21 20:10:31,783] [INFO] [latex_compiler.py:321]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\rendered\main.tex
+[2026-07-21 20:10:31,786] [INFO] [latex_compiler.py:125]: Rendered working directory tree before compilation:
+  chart1.png
+  chart2.png
+  chart3.png
+  chart4.png
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.tex
+  media/
+    image1.jpeg
+    image10.jpeg
+    image4.jpeg
+    image5.png
+    image6.png
+    image7.png
+    image8.jpeg
+    image9.jpeg
+  NSP1.cls
+  paper.aux
+  paper.log
+  paper.out
+  paper.pdf
+  paper.synctex.gz
+  paper.tex
+  psfig.sty
+  Ref. JSAP paper.tex
+  template.json
+[2026-07-21 20:10:31,789] [INFO] [latex_compiler.py:131]: Template resource manifest (26 files):
+  chart1.png                               template resource (graphic (PNG))
+  chart2.png                               template resource (graphic (PNG))
+  chart3.png                               template resource (graphic (PNG))
+  chart4.png                               template resource (graphic (PNG))
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.jpeg                       renderer-generated media
+  media\image4.jpeg                        renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.jpeg                        renderer-generated media
+  media\image9.jpeg                        renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper.aux                                generated document / build artefact
+  paper.log                                generated document / build artefact
+  paper.out                                generated document / build artefact
+  paper.pdf                                template resource (graphic (PDF))
+  paper.synctex.gz                         generated document / build artefact
+  paper.tex                                template resource (included source)
+  psfig.sty                                template resource (package / style)
+  Ref. JSAP paper.tex                      template resource (included source)
+  template.json                            template metadata
+[2026-07-21 20:10:31,835] [INFO] [latex_compiler.py:144]: Dependency resolution (24 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      cite
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      placeins
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      makecell
+  [SYSTEM ] usepackage      xcolor
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-07-21 20:10:31,836] [INFO] [latex_compiler.py:357]: Using latexmk compiler.
+[2026-07-21 20:10:35,817] [INFO] [latex_compiler.py:424]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\output\paper.pdf
+[2026-07-21 20:10:35,873] [INFO] [latex_compiler.py:321]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\rendered\main.tex
+[2026-07-21 20:10:35,877] [INFO] [latex_compiler.py:125]: Rendered working directory tree before compilation:
+  chart1.png
+  chart2.png
+  chart3.png
+  chart4.png
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.aux
+  main.fdb_latexmk
+  main.fls
+  main.log
+  main.out
+  main.pdf
+  main.tex
+  media/
+    image1.jpeg
+    image10.jpeg
+    image4.jpeg
+    image5.png
+    image6.png
+    image7.png
+    image8.jpeg
+    image9.jpeg
+  NSP1.cls
+  paper.aux
+  paper.log
+  paper.out
+  paper.pdf
+  paper.synctex.gz
+  paper.tex
+  psfig.sty
+  Ref. JSAP paper.tex
+  template.json
+[2026-07-21 20:10:35,881] [INFO] [latex_compiler.py:131]: Template resource manifest (32 files):
+  chart1.png                               template resource (graphic (PNG))
+  chart2.png                               template resource (graphic (PNG))
+  chart3.png                               template resource (graphic (PNG))
+  chart4.png                               template resource (graphic (PNG))
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.aux                                 generated document / build artefact
+  main.fdb_latexmk                         generated document / build artefact
+  main.fls                                 generated document / build artefact
+  main.log                                 generated document / build artefact
+  main.out                                 generated document / build artefact
+  main.pdf                                 generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.jpeg                       renderer-generated media
+  media\image4.jpeg                        renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.jpeg                        renderer-generated media
+  media\image9.jpeg                        renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper.aux                                generated document / build artefact
+  paper.log                                generated document / build artefact
+  paper.out                                generated document / build artefact
+  paper.pdf                                template resource (graphic (PDF))
+  paper.synctex.gz                         generated document / build artefact
+  paper.tex                                template resource (included source)
+  psfig.sty                                template resource (package / style)
+  Ref. JSAP paper.tex                      template resource (included source)
+  template.json                            template metadata
+[2026-07-21 20:10:36,048] [INFO] [latex_compiler.py:144]: Dependency resolution (25 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      cite
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      placeins
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      makecell
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      geometry
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-07-21 20:10:36,048] [INFO] [latex_compiler.py:357]: Using latexmk compiler.
+[2026-07-21 20:10:39,925] [INFO] [latex_compiler.py:424]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\output\paper.pdf
+[2026-07-21 20:10:55,308] [INFO] [latex_compiler.py:321]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\rendered\main.tex
+[2026-07-21 20:10:55,326] [INFO] [latex_compiler.py:125]: Rendered working directory tree before compilation:
+  chart1.png
+  chart2.png
+  chart3.png
+  chart4.png
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.aux
+  main.fdb_latexmk
+  main.fls
+  main.log
+  main.out
+  main.pdf
+  main.tex
+  media/
+    image1.jpeg
+    image10.jpeg
+    image4.jpeg
+    image5.png
+    image6.png
+    image7.png
+    image8.jpeg
+    image9.jpeg
+  NSP1.cls
+  paper.aux
+  paper.log
+  paper.out
+  paper.pdf
+  paper.synctex.gz
+  paper.tex
+  psfig.sty
+  Ref. JSAP paper.tex
+  template.json
+[2026-07-21 20:10:55,330] [INFO] [latex_compiler.py:131]: Template resource manifest (32 files):
+  chart1.png                               template resource (graphic (PNG))
+  chart2.png                               template resource (graphic (PNG))
+  chart3.png                               template resource (graphic (PNG))
+  chart4.png                               template resource (graphic (PNG))
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.aux                                 generated document / build artefact
+  main.fdb_latexmk                         generated document / build artefact
+  main.fls                                 generated document / build artefact
+  main.log                                 generated document / build artefact
+  main.out                                 generated document / build artefact
+  main.pdf                                 generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.jpeg                       renderer-generated media
+  media\image4.jpeg                        renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.jpeg                        renderer-generated media
+  media\image9.jpeg                        renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper.aux                                generated document / build artefact
+  paper.log                                generated document / build artefact
+  paper.out                                generated document / build artefact
+  paper.pdf                                template resource (graphic (PDF))
+  paper.synctex.gz                         generated document / build artefact
+  paper.tex                                template resource (included source)
+  psfig.sty                                template resource (package / style)
+  Ref. JSAP paper.tex                      template resource (included source)
+  template.json                            template metadata
+[2026-07-21 20:10:55,476] [INFO] [latex_compiler.py:144]: Dependency resolution (25 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      cite
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      placeins
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      makecell
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      geometry
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-07-21 20:10:55,477] [INFO] [latex_compiler.py:357]: Using latexmk compiler.
+[2026-07-21 20:10:59,129] [INFO] [latex_compiler.py:424]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\output\paper.pdf
+[2026-07-21 20:11:07,545] [INFO] [latex_compiler.py:321]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\rendered\main.tex
+[2026-07-21 20:11:07,548] [INFO] [latex_compiler.py:125]: Rendered working directory tree before compilation:
+  chart1.png
+  chart2.png
+  chart3.png
+  chart4.png
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.aux
+  main.fdb_latexmk
+  main.fls
+  main.log
+  main.out
+  main.pdf
+  main.tex
+  media/
+    image1.jpeg
+    image10.jpeg
+    image4.jpeg
+    image5.png
+    image6.png
+    image7.png
+    image8.jpeg
+    image9.jpeg
+  NSP1.cls
+  paper.aux
+  paper.log
+  paper.out
+  paper.pdf
+  paper.synctex.gz
+  paper.tex
+  psfig.sty
+  Ref. JSAP paper.tex
+  template.json
+[2026-07-21 20:11:07,553] [INFO] [latex_compiler.py:131]: Template resource manifest (32 files):
+  chart1.png                               template resource (graphic (PNG))
+  chart2.png                               template resource (graphic (PNG))
+  chart3.png                               template resource (graphic (PNG))
+  chart4.png                               template resource (graphic (PNG))
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.aux                                 generated document / build artefact
+  main.fdb_latexmk                         generated document / build artefact
+  main.fls                                 generated document / build artefact
+  main.log                                 generated document / build artefact
+  main.out                                 generated document / build artefact
+  main.pdf                                 generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.jpeg                       renderer-generated media
+  media\image4.jpeg                        renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.jpeg                        renderer-generated media
+  media\image9.jpeg                        renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper.aux                                generated document / build artefact
+  paper.log                                generated document / build artefact
+  paper.out                                generated document / build artefact
+  paper.pdf                                template resource (graphic (PDF))
+  paper.synctex.gz                         generated document / build artefact
+  paper.tex                                template resource (included source)
+  psfig.sty                                template resource (package / style)
+  Ref. JSAP paper.tex                      template resource (included source)
+  template.json                            template metadata
+[2026-07-21 20:11:07,713] [INFO] [latex_compiler.py:144]: Dependency resolution (25 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      cite
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      placeins
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      makecell
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      geometry
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-07-21 20:11:07,715] [INFO] [latex_compiler.py:357]: Using latexmk compiler.
+[2026-07-21 20:11:11,734] [INFO] [latex_compiler.py:424]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\output\paper.pdf
+[2026-07-21 20:11:20,301] [INFO] [latex_compiler.py:321]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\rendered\main.tex
+[2026-07-21 20:11:20,305] [INFO] [latex_compiler.py:125]: Rendered working directory tree before compilation:
+  chart1.png
+  chart2.png
+  chart3.png
+  chart4.png
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.aux
+  main.fdb_latexmk
+  main.fls
+  main.log
+  main.out
+  main.pdf
+  main.tex
+  media/
+    image1.jpeg
+    image10.jpeg
+    image4.jpeg
+    image5.png
+    image6.png
+    image7.png
+    image8.jpeg
+    image9.jpeg
+  NSP1.cls
+  paper.aux
+  paper.log
+  paper.out
+  paper.pdf
+  paper.synctex.gz
+  paper.tex
+  psfig.sty
+  Ref. JSAP paper.tex
+  template.json
+[2026-07-21 20:11:20,308] [INFO] [latex_compiler.py:131]: Template resource manifest (32 files):
+  chart1.png                               template resource (graphic (PNG))
+  chart2.png                               template resource (graphic (PNG))
+  chart3.png                               template resource (graphic (PNG))
+  chart4.png                               template resource (graphic (PNG))
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.aux                                 generated document / build artefact
+  main.fdb_latexmk                         generated document / build artefact
+  main.fls                                 generated document / build artefact
+  main.log                                 generated document / build artefact
+  main.out                                 generated document / build artefact
+  main.pdf                                 generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.jpeg                       renderer-generated media
+  media\image4.jpeg                        renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.jpeg                        renderer-generated media
+  media\image9.jpeg                        renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper.aux                                generated document / build artefact
+  paper.log                                generated document / build artefact
+  paper.out                                generated document / build artefact
+  paper.pdf                                template resource (graphic (PDF))
+  paper.synctex.gz                         generated document / build artefact
+  paper.tex                                template resource (included source)
+  psfig.sty                                template resource (package / style)
+  Ref. JSAP paper.tex                      template resource (included source)
+  template.json                            template metadata
+[2026-07-21 20:11:20,431] [INFO] [latex_compiler.py:144]: Dependency resolution (25 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      cite
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      placeins
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      makecell
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      geometry
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-07-21 20:11:20,432] [INFO] [latex_compiler.py:357]: Using latexmk compiler.
+[2026-07-21 20:11:25,037] [INFO] [latex_compiler.py:424]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\output\paper.pdf
+[2026-07-21 20:11:33,987] [INFO] [latex_compiler.py:321]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\rendered\main.tex
+[2026-07-21 20:11:33,991] [INFO] [latex_compiler.py:125]: Rendered working directory tree before compilation:
+  chart1.png
+  chart2.png
+  chart3.png
+  chart4.png
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.aux
+  main.fdb_latexmk
+  main.fls
+  main.log
+  main.out
+  main.pdf
+  main.tex
+  media/
+    image1.jpeg
+    image10.jpeg
+    image4.jpeg
+    image5.png
+    image6.png
+    image7.png
+    image8.jpeg
+    image9.jpeg
+  NSP1.cls
+  paper.aux
+  paper.log
+  paper.out
+  paper.pdf
+  paper.synctex.gz
+  paper.tex
+  psfig.sty
+  Ref. JSAP paper.tex
+  template.json
+[2026-07-21 20:11:33,994] [INFO] [latex_compiler.py:131]: Template resource manifest (32 files):
+  chart1.png                               template resource (graphic (PNG))
+  chart2.png                               template resource (graphic (PNG))
+  chart3.png                               template resource (graphic (PNG))
+  chart4.png                               template resource (graphic (PNG))
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.aux                                 generated document / build artefact
+  main.fdb_latexmk                         generated document / build artefact
+  main.fls                                 generated document / build artefact
+  main.log                                 generated document / build artefact
+  main.out                                 generated document / build artefact
+  main.pdf                                 generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.jpeg                       renderer-generated media
+  media\image4.jpeg                        renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.jpeg                        renderer-generated media
+  media\image9.jpeg                        renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper.aux                                generated document / build artefact
+  paper.log                                generated document / build artefact
+  paper.out                                generated document / build artefact
+  paper.pdf                                template resource (graphic (PDF))
+  paper.synctex.gz                         generated document / build artefact
+  paper.tex                                template resource (included source)
+  psfig.sty                                template resource (package / style)
+  Ref. JSAP paper.tex                      template resource (included source)
+  template.json                            template metadata
+[2026-07-21 20:11:34,128] [INFO] [latex_compiler.py:144]: Dependency resolution (25 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      cite
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      placeins
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      makecell
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      geometry
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-07-21 20:11:34,129] [INFO] [latex_compiler.py:357]: Using latexmk compiler.
+[2026-07-21 20:11:38,613] [INFO] [latex_compiler.py:424]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\output\paper.pdf
+[2026-07-21 20:11:47,693] [INFO] [latex_compiler.py:321]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\rendered\main.tex
+[2026-07-21 20:11:47,697] [INFO] [latex_compiler.py:125]: Rendered working directory tree before compilation:
+  chart1.png
+  chart2.png
+  chart3.png
+  chart4.png
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.aux
+  main.fdb_latexmk
+  main.fls
+  main.log
+  main.out
+  main.pdf
+  main.tex
+  media/
+    image1.jpeg
+    image10.jpeg
+    image4.jpeg
+    image5.png
+    image6.png
+    image7.png
+    image8.jpeg
+    image9.jpeg
+  NSP1.cls
+  paper.aux
+  paper.log
+  paper.out
+  paper.pdf
+  paper.synctex.gz
+  paper.tex
+  psfig.sty
+  Ref. JSAP paper.tex
+  template.json
+[2026-07-21 20:11:47,700] [INFO] [latex_compiler.py:131]: Template resource manifest (32 files):
+  chart1.png                               template resource (graphic (PNG))
+  chart2.png                               template resource (graphic (PNG))
+  chart3.png                               template resource (graphic (PNG))
+  chart4.png                               template resource (graphic (PNG))
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.aux                                 generated document / build artefact
+  main.fdb_latexmk                         generated document / build artefact
+  main.fls                                 generated document / build artefact
+  main.log                                 generated document / build artefact
+  main.out                                 generated document / build artefact
+  main.pdf                                 generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.jpeg                       renderer-generated media
+  media\image4.jpeg                        renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.jpeg                        renderer-generated media
+  media\image9.jpeg                        renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper.aux                                generated document / build artefact
+  paper.log                                generated document / build artefact
+  paper.out                                generated document / build artefact
+  paper.pdf                                template resource (graphic (PDF))
+  paper.synctex.gz                         generated document / build artefact
+  paper.tex                                template resource (included source)
+  psfig.sty                                template resource (package / style)
+  Ref. JSAP paper.tex                      template resource (included source)
+  template.json                            template metadata
+[2026-07-21 20:11:47,883] [INFO] [latex_compiler.py:144]: Dependency resolution (25 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      cite
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      placeins
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      makecell
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      geometry
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-07-21 20:11:47,884] [INFO] [latex_compiler.py:357]: Using latexmk compiler.
+[2026-07-21 20:11:51,755] [INFO] [latex_compiler.py:424]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\output\paper.pdf
+[2026-07-21 20:12:00,672] [INFO] [latex_compiler.py:321]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\rendered\main.tex
+[2026-07-21 20:12:00,676] [INFO] [latex_compiler.py:125]: Rendered working directory tree before compilation:
+  chart1.png
+  chart2.png
+  chart3.png
+  chart4.png
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.aux
+  main.fdb_latexmk
+  main.fls
+  main.log
+  main.out
+  main.pdf
+  main.tex
+  media/
+    image1.jpeg
+    image10.jpeg
+    image4.jpeg
+    image5.png
+    image6.png
+    image7.png
+    image8.jpeg
+    image9.jpeg
+  NSP1.cls
+  paper.aux
+  paper.log
+  paper.out
+  paper.pdf
+  paper.synctex.gz
+  paper.tex
+  psfig.sty
+  Ref. JSAP paper.tex
+  template.json
+[2026-07-21 20:12:00,681] [INFO] [latex_compiler.py:131]: Template resource manifest (32 files):
+  chart1.png                               template resource (graphic (PNG))
+  chart2.png                               template resource (graphic (PNG))
+  chart3.png                               template resource (graphic (PNG))
+  chart4.png                               template resource (graphic (PNG))
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.aux                                 generated document / build artefact
+  main.fdb_latexmk                         generated document / build artefact
+  main.fls                                 generated document / build artefact
+  main.log                                 generated document / build artefact
+  main.out                                 generated document / build artefact
+  main.pdf                                 generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.jpeg                       renderer-generated media
+  media\image4.jpeg                        renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.jpeg                        renderer-generated media
+  media\image9.jpeg                        renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper.aux                                generated document / build artefact
+  paper.log                                generated document / build artefact
+  paper.out                                generated document / build artefact
+  paper.pdf                                template resource (graphic (PDF))
+  paper.synctex.gz                         generated document / build artefact
+  paper.tex                                template resource (included source)
+  psfig.sty                                template resource (package / style)
+  Ref. JSAP paper.tex                      template resource (included source)
+  template.json                            template metadata
+[2026-07-21 20:12:00,866] [INFO] [latex_compiler.py:144]: Dependency resolution (25 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      cite
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      placeins
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      makecell
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      geometry
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-07-21 20:12:00,867] [INFO] [latex_compiler.py:357]: Using latexmk compiler.
+[2026-07-21 20:12:05,467] [INFO] [latex_compiler.py:424]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\output\paper.pdf
+[2026-07-21 20:12:14,381] [INFO] [latex_compiler.py:321]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\rendered\main.tex
+[2026-07-21 20:12:14,387] [INFO] [latex_compiler.py:125]: Rendered working directory tree before compilation:
+  chart1.png
+  chart2.png
+  chart3.png
+  chart4.png
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.aux
+  main.fdb_latexmk
+  main.fls
+  main.log
+  main.out
+  main.pdf
+  main.tex
+  media/
+    image1.jpeg
+    image10.jpeg
+    image4.jpeg
+    image5.png
+    image6.png
+    image7.png
+    image8.jpeg
+    image9.jpeg
+  NSP1.cls
+  paper.aux
+  paper.log
+  paper.out
+  paper.pdf
+  paper.synctex.gz
+  paper.tex
+  psfig.sty
+  Ref. JSAP paper.tex
+  template.json
+[2026-07-21 20:12:14,391] [INFO] [latex_compiler.py:131]: Template resource manifest (32 files):
+  chart1.png                               template resource (graphic (PNG))
+  chart2.png                               template resource (graphic (PNG))
+  chart3.png                               template resource (graphic (PNG))
+  chart4.png                               template resource (graphic (PNG))
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.aux                                 generated document / build artefact
+  main.fdb_latexmk                         generated document / build artefact
+  main.fls                                 generated document / build artefact
+  main.log                                 generated document / build artefact
+  main.out                                 generated document / build artefact
+  main.pdf                                 generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.jpeg                       renderer-generated media
+  media\image4.jpeg                        renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.jpeg                        renderer-generated media
+  media\image9.jpeg                        renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper.aux                                generated document / build artefact
+  paper.log                                generated document / build artefact
+  paper.out                                generated document / build artefact
+  paper.pdf                                template resource (graphic (PDF))
+  paper.synctex.gz                         generated document / build artefact
+  paper.tex                                template resource (included source)
+  psfig.sty                                template resource (package / style)
+  Ref. JSAP paper.tex                      template resource (included source)
+  template.json                            template metadata
+[2026-07-21 20:12:14,536] [INFO] [latex_compiler.py:144]: Dependency resolution (25 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      cite
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      placeins
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      makecell
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      geometry
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-07-21 20:12:14,537] [INFO] [latex_compiler.py:357]: Using latexmk compiler.
+[2026-07-21 20:12:18,335] [INFO] [latex_compiler.py:424]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\e42eaeae-f340-4fd5-b10d-dc41ce5c6f63\output\paper.pdf

@@ -20,11 +20,15 @@ export async function startConversion(
   templateId?: string,
   templateName = "default",
 ): Promise<JobMetadata> {
-  const { data } = await apiClient.post<JobMetadata>("/convert", {
-    job_id: jobId,
-    template_id: templateId,
-    template_name: templateName,
-  });
+  const { data } = await apiClient.post<JobMetadata>(
+    "/convert",
+    {
+      job_id: jobId,
+      template_id: templateId,
+      template_name: templateName,
+    },
+    { timeout: 0 }, // long-running: never abort a successful conversion
+  );
   return data;
 }
 
@@ -33,11 +37,15 @@ export async function startCompilation(
   templateId?: string,
   templateName = "default",
 ): Promise<JobMetadata> {
-  const { data } = await apiClient.post<JobMetadata>("/compile", {
-    job_id: jobId,
-    template_id: templateId,
-    template_name: templateName,
-  });
+  const { data } = await apiClient.post<JobMetadata>(
+    "/compile",
+    {
+      job_id: jobId,
+      template_id: templateId,
+      template_name: templateName,
+    },
+    { timeout: 0 }, // long-running: never abort a successful compilation
+  );
   return data;
 }
 

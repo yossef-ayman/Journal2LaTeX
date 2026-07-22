@@ -1,0 +1,101 @@
+\documentclass[10pt]{NSP1}
+% NSP1.cls defines its banner colors via dvips *named* colors, which are
+% undefined unless the dvipsnames driver table is loaded -- the banner then
+% renders black.  Define them (and the class aliases) explicitly.
+\definecolor{LimeGreen}{cmyk}{0.50,0,1,0}
+\definecolor{PineGreen}{cmyk}{0.92,0,0.59,0.25}
+\definecolor{abstractcolor}{rgb}{0.96,0.65,0.15}% orange banner as in the Word original
+\definecolor{rulecolor}{cmyk}{0.92,0,0.59,0.25}
+\usepackage{url,floatflt}
+\usepackage{helvet,times}
+\usepackage{psfig,graphics}
+\usepackage{mathptmx,amsmath,amssymb,bm}
+\usepackage{float}
+\usepackage[bf,hypcap]{caption}
+\usepackage{keyval}
+\makeatletter
+\define@key{psfig}{file}{\def\psfig@file{#1}}
+\define@key{psfig}{width}{\def\psfig@width{#1}}
+\define@key{psfig}{height}{\def\psfig@height{#1}}
+\renewcommand{\psfig}[1]{%
+  \let\par\@@par%
+  \setkeys{psfig}{#1}%
+  \includegraphics[width=3.6truecm,height=5truecm,keepaspectratio]{\psfig@file}%
+}
+\renewenvironment{biographyps}[2]{%
+  \begingroup
+  \endgraf
+  \skip0=0pt plus2cm
+  \advance\skip0 by2\bigskipamount\relax
+  \vskip\skip0
+  \small
+  \setbox0=\vbox\bgroup%
+                 \sloppy
+                 \noindent
+                 \hangindent=113pt
+                 \hangafter=-14\relax
+                 \smash{\raise 6.5pt
+                        \llap{\vbox to0pt{\psfig{#1}%
+                                          \vss}\kern11pt}}%
+                 \if!#2!\else{\sc\ignorespaces#2\/} \fi
+                 \ignorespaces
+}{%
+  \egroup
+  \dimen0=\ht0\advance\dimen0 by\dp0
+  \ifdim\dimen0<5cm
+     \vtop to5cm{\box0\vss}
+  \else
+     \box0
+  \fi
+  \par\addvspace{12pt}%
+  \endgroup
+}
+\makeatother
+
+\addtolength{\oddsidemargin}{.5in}
+\addtolength{\evensidemargin}{-.5in}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\topmargin=0.00cm
+
+\def\sm{\smallskip}
+\def\no{\noindent}
+
+\def\firstpage{1}
+\setcounter{page}{\firstpage}
+\def\thevol{__VOLUME__}
+\def\thenumber{__ISSUE__}
+\def\theyear{__YEAR__}
+
+\shortjournalname{J. Stat. Appl. Pro.}
+\journalname{Journal of Statistics Applications \& Probability}
+
+\begin{document}
+
+% Banner: keep the journal name on a single line (breaking only at the
+% explicit \\ before the subtitle) so it always reads exactly as the printed
+% journal -- title line, then "An International Journal" beneath it.
+\titlefigurecaption{{\large \bf \rm \mbox{Journal of Statistics Applications \& Probability}}\\ {\it\small An International Journal}}
+
+\title{__TITLE__}
+
+\author{__AUTHORS__}
+\institute{__INSTITUTES__}
+\received{__RECEIVED_DATE__}
+\revised{__REVISED_DATE__}
+\accepted{__ACCEPTED_DATE__}
+\published{__PUBLISHED_DATE__}
+
+\abstracttext{__ABSTRACT__}
+
+\keywords{__KEYWORDS__}
+
+\maketitle
+
+__CONTENT__
+
+\end{document}

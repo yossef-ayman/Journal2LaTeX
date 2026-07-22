@@ -1,0 +1,42 @@
+[2026-07-21 19:42:51,834] [INFO] [job_manager.py:136]: Job 280ad2a6-231d-4877-8bfa-5067810947b6 workspace created successfully
+[2026-07-21 19:42:51,864] [INFO] [pipeline_service.py:45]: Starting validation for job: 280ad2a6-231d-4877-8bfa-5067810947b6
+[2026-07-21 19:42:51,879] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-07-21 19:42:51,894] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-07-21 19:42:51,915] [INFO] [pipeline_service.py:60]: Validation successful.
+[2026-07-21 19:42:51,929] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-07-21 19:42:51,929] [INFO] [pipeline_service.py:67]: Starting document analysis for job: 280ad2a6-231d-4877-8bfa-5067810947b6
+[2026-07-21 19:42:51,945] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-21 19:42:51,962] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-21 19:42:51,963] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\280ad2a6-231d-4877-8bfa-5067810947b6\input\The role.docx
+[2026-07-21 19:42:52,865] [INFO] [document_analyzer.py:461]: Parsed document: title='The Role of Social Media in the Spread and Countering of Cyber-Extremism: An Islamic Jurisprudential and Educational Perspective', authors=19, sections=1, references=42
+[2026-07-21 19:42:52,874] [INFO] [pipeline_service.py:95]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\280ad2a6-231d-4877-8bfa-5067810947b6\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\280ad2a6-231d-4877-8bfa-5067810947b6\intermediate\conversion_report.json
+[2026-07-21 19:42:52,894] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-21 19:42:52,894] [INFO] [pipeline_service.py:108]: Starting asset extraction for job: 280ad2a6-231d-4877-8bfa-5067810947b6
+[2026-07-21 19:42:52,909] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-21 19:42:52,926] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-21 19:42:54,130] [INFO] [pipeline_service.py:141]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\280ad2a6-231d-4877-8bfa-5067810947b6\intermediate\media
+[2026-07-21 19:42:54,148] [INFO] [job_manager.py:204]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-21 19:42:54,148] [INFO] [pipeline_service.py:231]: Classifying extracted assets for job: 280ad2a6-231d-4877-8bfa-5067810947b6
+[2026-07-21 19:42:54,148] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 280ad2a6-231d-4877-8bfa-5067810947b6
+[2026-07-21 19:42:54,150] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 7
+[2026-07-21 19:42:54,167] [INFO] [job_manager.py:204]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-21 19:42:54,227] [INFO] [pipeline_service.py:247]: Loading template ff6269f0-7e4a-435a-8d49-d43e5010e752 for job: 280ad2a6-231d-4877-8bfa-5067810947b6
+[2026-07-21 19:42:54,246] [INFO] [job_manager.py:180]: Job status updated to: LOADING_TEMPLATE
+[2026-07-21 19:42:54,263] [INFO] [job_manager.py:204]: Progress updated to 70%: Loading template styles: ff6269f0-7e4a-435a-8d49-d43e5010e752
+[2026-07-21 19:42:54,345] [INFO] [pipeline_service.py:269]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\280ad2a6-231d-4877-8bfa-5067810947b6\rendered
+[2026-07-21 19:42:54,360] [INFO] [job_manager.py:204]: Progress updated to 80%: Template workspace initialized
+[2026-07-21 19:42:54,362] [INFO] [pipeline_service.py:294]: Starting LaTeX rendering for job: 280ad2a6-231d-4877-8bfa-5067810947b6
+[2026-07-21 19:42:54,379] [INFO] [job_manager.py:180]: Job status updated to: RENDERING_LATEX
+[2026-07-21 19:42:54,396] [INFO] [job_manager.py:204]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-21 19:42:54,418] [INFO] [latex_renderer.py:72]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\280ad2a6-231d-4877-8bfa-5067810947b6\rendered
+[2026-07-21 19:42:54,512] [INFO] [latex_renderer.py:355]: LaTeX document main.tex rendered successfully.
+[2026-07-21 19:42:54,674] [INFO] [job_manager.py:204]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-21 19:42:54,676] [INFO] [pipeline_service.py:357]: Starting document compilation for job: 280ad2a6-231d-4877-8bfa-5067810947b6
+[2026-07-21 19:42:54,692] [INFO] [job_manager.py:180]: Job status updated to: COMPILING
+[2026-07-21 19:42:54,707] [INFO] [job_manager.py:204]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-21 19:42:54,906] [ERROR] [pipeline_service.py:385]: LaTeX compilation failed: Template is missing required local resource(s); aborting before pdflatex. Ensure the template package ships these files:
+  - documentclass -> NSP1
+  - usepackage -> psfig
+[2026-07-21 19:42:54,926] [ERROR] [job_manager.py:228]: Job error added: LaTeX compilation failed: Template is missing required local resource(s); aborting before pdflatex. Ensure the template package ships these files:
+  - documentclass -> NSP1
+  - usepackage -> psfig

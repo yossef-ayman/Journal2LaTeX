@@ -1,11 +1,9 @@
 \documentclass[10pt]{NSP1}
-% NSP1.cls defines its banner colors via dvips *named* colors, which are
-% undefined unless the dvipsnames driver table is loaded -- the banner then
-% renders black.  Define them (and the class aliases) explicitly.
-\definecolor{LimeGreen}{cmyk}{0.50,0,1,0}
-\definecolor{PineGreen}{cmyk}{0.92,0,0.59,0.25}
+% The dvips named colours the class uses (LimeGreen, PineGreen, ...) are
+% supplied generically by the compilation compatibility layer, so they are not
+% hardcoded here.  Only the journal's banner tint is set, to match the printed
+% original's orange masthead (the class default would render it green).
 \definecolor{abstractcolor}{rgb}{0.96,0.65,0.15}% orange banner as in the Word original
-\definecolor{rulecolor}{cmyk}{0.92,0,0.59,0.25}
 \usepackage{url,floatflt}
 \usepackage{helvet,times}
 \usepackage{psfig,graphics}
@@ -76,7 +74,10 @@
 
 \begin{document}
 
-\titlefigurecaption{{\large \bf \rm Journal of Statistics Applications \& Probability}\\ {\it\small An International Journal}}
+% Banner: keep the journal name on a single line (breaking only at the
+% explicit \\ before the subtitle) so it always reads exactly as the printed
+% journal -- title line, then "An International Journal" beneath it.
+\titlefigurecaption{{\large \bf \rm \mbox{Journal of Statistics Applications \& Probability}}\\ {\it\small An International Journal}}
 
 \title{__TITLE__}
 

@@ -59,6 +59,19 @@ class DocumentAnalyzer:
                 raise DocumentAnalyzerError(msg)
 
             ast_data = json.loads(result.stdout)
+            # Styling pandoc does not expose (shading, borders, row heights,
+            # exact column widths) is read from the raw XML; body-level w:tbl
+            # order matches pandoc Table order.
+            self._table_styles = self._extract_table_styles(docx_path)
+            self._table_style_idx = 0
+            # Heading formatting (bold/size/alignment/spacing/keepNext) read
+            # directly from the DOCX -- keyed by whitespace-insensitive heading
+            # text so it can enrich sections parsed from the Pandoc AST.
+            self._heading_formats = self._extract_heading_formats(docx_path)
+            # Corresponding-author e-mail is commonly stored in the first-page
+            # footer / a footnote / an endnote rather than the author block, and
+            # pandoc does not surface those parts, so read them from the raw XML.
+            self._corresponding_email = self._extract_corresponding_email(docx_path)
             return self._parse_ast(ast_data, job_id)
 
         except Exception as e:
@@ -158,7 +171,10 @@ class DocumentAnalyzer:
                 continue
 
             emails = email_regex.findall(txt)
-            is_inst = any(k in txt.lower() for k in institution_keywords)
+            is_inst = (
+                any(k in txt.lower() for k in institution_keywords)
+                and len(txt) <= 300  # longer texts are body/abstract, not affiliations
+            )
 
             if emails:
                 if current_author:
@@ -191,6 +207,11 @@ class DocumentAnalyzer:
                 # digits after inline flattening; capture them for affiliation
                 # matching, then strip them from the display name.
                 cleaned = re.sub(r"\^\{\d+\}|\^\d+", "", txt).strip()
+                # An author line is short; a long paragraph here is a summary or
+                # abstract sentence that leaked into the front matter -- never a
+                # name list, so skip it (prevents abstract text becoming authors).
+                if len(cleaned) > 120:
+                    continue
                 names = [n.strip() for n in re.split(r",|\band\b", cleaned) if n.strip()]
                 for name in names:
                     marker_match = re.search(r"(\d+)\s*\*?$", name)
@@ -202,6 +223,14 @@ class DocumentAnalyzer:
                     if marker is not None:
                         author_markers[id(current_author)] = marker
                     authors.append(current_author)
+
+        # Fallback: an unlabelled abstract is usually the longest early paragraph.
+        if not abstract_text:
+            for txt in intro_texts:
+                if len(txt) > 350 and not email_regex.search(txt):
+                    abstract_text = txt
+                    intro_texts.remove(txt)
+                    break
 
         # Fallback if no authors parsed
         if "author" in meta and not authors:
@@ -263,7 +292,24 @@ class DocumentAnalyzer:
             year=year,
             doi=doi
         )
+
+        # Resolve the corresponding-author e-mail.  Priority: an e-mail found in
+        # the front-matter author block (already attached to an author above),
+        # otherwise the e-mail read from the footer/footnote/endnote.  The value
+        # is stored on the model so the renderer can emit it through the
+        # journal template's native corresponding-author command, and is also
+        # attached to the asterisk/first author so the relationship is kept.
+        footer_email = getattr(self, "_corresponding_email", "") or ""
+        existing_email = next((a.email for a in authors if a.email), "")
+        corresponding_email = existing_email or footer_email
+        if corresponding_email:
+            doc.corresponding_email = corresponding_email
+            # Attach to the corresponding author (the one carrying the '*'
+            # marker if identifiable, else the first author) when not already set.
+            if not existing_email and authors and not authors[0].email:
+                authors[0].email = corresponding_email
         current_section = SectionModel(title="Introduction", level=1, blocks=[])
+        current_section_synthetic = True  # drop only if it never gains content
         references_list = []
         global_block_index = 0
 
@@ -290,13 +336,16 @@ class DocumentAnalyzer:
                 if in_abstract or in_keywords or in_references or in_biography:
                     continue
 
-                if current_section and current_section.blocks:
+                if current_section and (current_section.blocks or not current_section_synthetic):
                     doc.sections.append(current_section)
 
-                # Strip manual numbering ("2.1 Methods" -> "Methods"): LaTeX
-                # sectioning renumbers, so keeping it doubles the numbers.
-                clean_title = re.sub(r"^\d+(\.\d+)*\.?\s+", "", header_text).strip() or header_text
-                current_section = SectionModel(title=clean_title, level=level, blocks=[])
+                # Keep Word's own heading number (headings are rendered
+                # unnumbered downstream, so the manual number is what shows).
+                current_section = SectionModel(
+                    title=header_text.strip(), level=level, blocks=[],
+                    heading_format=self._heading_format_for(header_text),
+                )
+                current_section_synthetic = False
                 continue
 
             if t in ("Para", "Plain"):
@@ -423,6 +472,23 @@ class DocumentAnalyzer:
                                 current_bio.biography_text = text
                 continue
 
+            # Many journal manuscripts style section headings as manually
+            # bold-numbered paragraphs ("2. Literature Review", "2.4.3 ...")
+            # instead of Word Heading styles, so pandoc reports them as normal
+            # paragraphs.  Detect them and split sections to restore hierarchy.
+            if t in ("Para", "Plain"):
+                heading_level = self._detect_manual_heading(c)
+                if heading_level is not None:
+                    heading_text = self._stringify_inlines(c).strip()
+                    if current_section and (current_section.blocks or not current_section_synthetic):
+                        doc.sections.append(current_section)
+                    current_section = SectionModel(
+                        title=heading_text, level=heading_level, blocks=[],
+                        heading_format=self._heading_format_for(heading_text),
+                    )
+                    current_section_synthetic = False
+                    continue
+
             parsed_block = self._parse_block(b, job_id, counters)
             if parsed_block and current_section:
                 global_block_index += 1
@@ -431,7 +497,7 @@ class DocumentAnalyzer:
                 parsed_block.source_location = f"Section: {current_section.title}, Block: {global_block_index}"
                 current_section.blocks.append(parsed_block)
 
-        if current_section and current_section.blocks:
+        if current_section and (current_section.blocks or not current_section_synthetic):
             doc.sections.append(current_section)
 
         if current_bio:
@@ -465,13 +531,18 @@ class DocumentAnalyzer:
                 if item_t == "Image":
                     caption = self._stringify_inlines(item_c[1])
                     src = item_c[2][0] if len(item_c) > 2 and len(item_c[2]) > 0 else ""
+                    width_in, height_in = self._image_dimensions_in(item_c)
                     counters["figures"] += 1
                     return DocumentBlock(
                         type=BlockType.FIGURE,
                         content={
                             "caption": caption,
                             "path": src,
-                            "label": None
+                            "label": None,
+                            # Original Word size (inches) from the DOCX drawing
+                            # extent, surfaced by pandoc in the Image attributes.
+                            "width_in": width_in,
+                            "height_in": height_in,
                         }
                     )
 
@@ -501,42 +572,9 @@ class DocumentAnalyzer:
         elif t == "Table":
             counters["tables"] += 1
             try:
-                headers = []
-                rows = []
-                caption = "Table"
-
-                if isinstance(c, list) and len(c) >= 5:
-                    caption_block = c[1]
-                    if isinstance(caption_block, dict) and "c" in caption_block:
-                        caption = self._stringify_blocks(caption_block.get("c", []))
-                    elif isinstance(caption_block, list):
-                        caption = self._stringify_blocks(caption_block)
-
-                    head_block = c[3]
-                    if isinstance(head_block, list) and len(head_block) >= 2:
-                        rows_list = head_block[1]
-                        for row in rows_list:
-                            cells = row[1] if len(row) >= 2 else []
-                            headers = [self._stringify_blocks(cell[4] if len(cell) >= 5 else cell) for cell in cells]
-
-                    bodies = c[4]
-                    for body in bodies:
-                        if isinstance(body, list) and len(body) >= 4:
-                            body_rows = body[3]
-                            for row in body_rows:
-                                cells = row[1] if len(row) >= 2 else []
-                                row_texts = [self._stringify_blocks(cell[4] if len(cell) >= 5 else cell) for cell in cells]
-                                rows.append(row_texts)
-
-                return DocumentBlock(
-                    type=BlockType.TABLE,
-                    content={
-                        "caption": caption,
-                        "headers": headers,
-                        "rows": rows,
-                        "label": None
-                    }
-                )
+                if not isinstance(c, list) or len(c) < 5:
+                    raise ValueError("unexpected table AST shape")
+                return DocumentBlock(type=BlockType.TABLE, content=self._parse_table_rich(c))
             except Exception as e:
                 counters["warnings"].append(f"Table parsing error: {str(e)}")
                 return DocumentBlock(
@@ -613,6 +651,286 @@ class DocumentAnalyzer:
                 parts.append(self._stringify_inlines(c[1]))
         return "".join(parts)
 
+    def _heading_format_for(self, title: str) -> Optional[Dict[str, Any]]:
+        """Look up DOCX heading formatting for a section title (whitespace-
+        insensitive match)."""
+        formats = getattr(self, "_heading_formats", {}) or {}
+        key = "".join((title or "").split()).lower()
+        return formats.get(key)
+
+    def _extract_corresponding_email(self, docx_path: Path) -> str:
+        """Read the corresponding-author e-mail from the raw DOCX parts.
+
+        Journal templates place the corresponding-author note in many different
+        locations, most of which pandoc never surfaces.  Every part that could
+        carry it is scanned -- the body, all footers (first-page / default /
+        even), all headers (first-page / default / even), footnotes, endnotes
+        and author-note parts.  Each e-mail found is scored: a paragraph that
+        also carries a corresponding-author / e-mail label or an asterisk /
+        superscript marker outranks a bare address, and among equal scores the
+        location order above breaks ties.  The single best candidate is
+        returned, so a duplicated address (e.g. repeated in every footer)
+        yields exactly one copy.  Nothing is hardcoded: the address, the label
+        and the author are all read from the file.  Best-effort -- returns ""
+        when no e-mail can be found, so no empty label is ever rendered.
+        """
+        import zipfile
+        import xml.etree.ElementTree as ET
+
+        W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+        email_re = re.compile(r"[\w.\-+]+@[\w\-]+(?:\.[\w\-]+)+")
+        label_re = re.compile(r"correspond|e-?mail\s*:|author\s+note", re.IGNORECASE)
+        marker_re = re.compile("^\\s*[*∗✱٭†‡§\\d]")
+
+        def paragraph_texts(xml_bytes: bytes):
+            """Yield the concatenated text of each <w:p> paragraph."""
+            try:
+                root = ET.fromstring(xml_bytes)
+            except ET.ParseError:
+                return
+            for p in root.iter(f"{W}p"):
+                runs = [t.text or "" for t in p.iter(f"{W}t")]
+                text = "".join(runs).strip()
+                if text:
+                    yield text
+
+        try:
+            with zipfile.ZipFile(docx_path) as zf:
+                names = set(zf.namelist())
+                # Locations in tie-break preference order.  Footers and the
+                # author-note parts are where corresponding-author lines almost
+                # always live; the body and headers are lower-priority fallbacks.
+                footer_parts = sorted(
+                    n for n in names if re.match(r"word/footer\d*\.xml$", n)
+                )
+                header_parts = sorted(
+                    n for n in names if re.match(r"word/header\d*\.xml$", n)
+                )
+                note_parts = [
+                    n for n in ("word/footnotes.xml", "word/endnotes.xml")
+                    if n in names
+                ]
+                body_parts = [n for n in ("word/document.xml",) if n in names]
+                ordered_parts = (
+                    footer_parts + note_parts + body_parts + header_parts
+                )
+
+                best_email = ""
+                best_score = -1
+                for loc_rank, part in enumerate(ordered_parts):
+                    try:
+                        xml_bytes = zf.read(part)
+                    except KeyError:
+                        continue
+                    for text in paragraph_texts(xml_bytes):
+                        m = email_re.search(text)
+                        if not m:
+                            continue
+                        email = m.group(0).rstrip(".,;:)")
+                        # Score: labelled note (+2) beats an asterisk/superscript
+                        # marker (+1) beats a bare address (0); earlier locations
+                        # win ties via a small location bonus.
+                        score = 0
+                        if label_re.search(text):
+                            score += 2
+                        if marker_re.match(text):
+                            score += 1
+                        score = score * 100 + (len(ordered_parts) - loc_rank)
+                        if score > best_score:
+                            best_score = score
+                            best_email = email
+                return best_email
+        except Exception:  # noqa: BLE001 - best-effort extraction
+            return ""
+
+    def _extract_heading_formats(self, docx_path: Path) -> Dict[str, Dict[str, Any]]:
+        """Read per-heading formatting straight from word/document.xml.
+
+        Detects headings by (a) a Heading 1..9 paragraph style, (b) an explicit
+        outline level, or (c) a formatting fallback (fully-bold, numbered, short
+        paragraph -- the same rule used for the Pandoc-AST pass).  For each it
+        records level, bold, absolute + body-relative font size, alignment,
+        space-before / space-after (points), and keep-with-next.  Best-effort:
+        any failure returns an empty map and the renderer falls back to plain
+        sectioning.
+        """
+        import zipfile
+        import xml.etree.ElementTree as ET
+
+        W = self._W_NS
+        formats: Dict[str, Dict[str, Any]] = {}
+        try:
+            with zipfile.ZipFile(docx_path) as zf:
+                doc_root = ET.fromstring(zf.read("word/document.xml"))
+                styles_root = None
+                if "word/styles.xml" in zf.namelist():
+                    styles_root = ET.fromstring(zf.read("word/styles.xml"))
+        except Exception:
+            return formats
+
+        # Body font size + heading-style level/bold/size from styles.xml.
+        body_size = 11.0
+        style_levels: Dict[str, int] = {}
+        style_info: Dict[str, Dict[str, Any]] = {}
+        if styles_root is not None:
+            for st in styles_root.findall(f"{W}style"):
+                sid = st.get(f"{W}styleId", "")
+                name_el = st.find(f"{W}name")
+                name = name_el.get(f"{W}val", "") if name_el is not None else ""
+                st_rpr = st.find(f"{W}rPr")
+                st_bold = st_rpr is not None and st_rpr.find(f"{W}b") is not None
+                st_size = None
+                if st_rpr is not None:
+                    szn = st_rpr.find(f"{W}sz")
+                    if szn is not None:
+                        try:
+                            st_size = int(szn.get(f"{W}val")) / 2.0
+                        except (TypeError, ValueError):
+                            st_size = None
+                if sid == "Normal" and st_size:
+                    body_size = st_size
+                lvl = None
+                m = re.match(r"heading\s*(\d)", name.lower())
+                if m:
+                    lvl = int(m.group(1))
+                else:
+                    olvl = st.find(f"{W}pPr/{W}outlineLvl")
+                    if olvl is not None:
+                        try:
+                            lvl = int(olvl.get(f"{W}val")) + 1
+                        except (TypeError, ValueError):
+                            lvl = None
+                if lvl is not None:
+                    style_levels[sid] = lvl
+                    style_info[sid] = {"bold": st_bold, "size_pt": st_size}
+
+        body = doc_root.find(f"{W}body")
+        if body is None:
+            return formats
+
+        for p in body.findall(f"{W}p"):
+            text = " ".join(t.text for t in p.iter(f"{W}t") if t.text).strip()
+            if not text or len(text) > 120:
+                continue
+            ppr = p.find(f"{W}pPr")
+            style_id = None
+            outline = None
+            if ppr is not None:
+                st = ppr.find(f"{W}pStyle")
+                style_id = st.get(f"{W}val") if st is not None else None
+                ol = ppr.find(f"{W}outlineLvl")
+                if ol is not None:
+                    try:
+                        outline = int(ol.get(f"{W}val")) + 1
+                    except (TypeError, ValueError):
+                        outline = None
+
+            # First run bold + size.
+            bold = False
+            size_pt = None
+            r = p.find(f"{W}r")
+            if r is not None:
+                rpr = r.find(f"{W}rPr")
+                if rpr is not None:
+                    bold = rpr.find(f"{W}b") is not None
+                    sz = rpr.find(f"{W}sz")
+                    if sz is not None:
+                        try:
+                            size_pt = int(sz.get(f"{W}val")) / 2.0
+                        except (TypeError, ValueError):
+                            size_pt = None
+            if ppr is not None and not bold:
+                mark = ppr.find(f"{W}rPr")
+                if mark is not None and mark.find(f"{W}b") is not None:
+                    bold = True
+
+            # Decide heading + level: style > outline > numbered-bold fallback.
+            level = None
+            if style_id in style_levels:
+                level = style_levels[style_id]
+                # Inherit bold / size from the heading style when the run
+                # itself does not set them.
+                info = style_info.get(style_id, {})
+                if not bold and info.get("bold"):
+                    bold = True
+                if size_pt is None and info.get("size_pt"):
+                    size_pt = info["size_pt"]
+            elif outline is not None:
+                level = outline
+            else:
+                num = re.match(r"^(\d+(?:\.\s?\d+)*)\.?\s+\S", text)
+                if num and bold:
+                    depth = len([x for x in re.split(r"\.\s?", num.group(1)) if x])
+                    level = max(1, min(4, depth))
+            if level is None:
+                continue
+
+            align = "left"
+            before_pt = after_pt = None
+            keep_next = False
+            if ppr is not None:
+                jc = ppr.find(f"{W}jc")
+                if jc is not None:
+                    align = jc.get(f"{W}val", "left")
+                sp = ppr.find(f"{W}spacing")
+                if sp is not None:
+                    before_pt = self._twips_to_pt(sp.get(f"{W}before"))
+                    after_pt = self._twips_to_pt(sp.get(f"{W}after"))
+                keep_next = ppr.find(f"{W}keepNext") is not None
+
+            key = "".join(text.split()).lower()
+            formats[key] = {
+                "level": level,
+                "bold": bool(bold),
+                "size_pt": size_pt,
+                "body_size_pt": body_size,
+                "size_ratio": round(size_pt / body_size, 3) if size_pt else 1.0,
+                "alignment": align,
+                "space_before_pt": before_pt,
+                "space_after_pt": after_pt,
+                "keep_with_next": keep_next,
+            }
+        return formats
+
+    @staticmethod
+    def _twips_to_pt(val) -> Optional[float]:
+        try:
+            return round(int(val) / 20.0, 1)
+        except (TypeError, ValueError):
+            return None
+
+    def _detect_manual_heading(self, inlines: List[Dict[str, Any]]) -> Optional[int]:
+        """Return the heading level for a manually-formatted numbered heading
+        paragraph, or None if the paragraph is ordinary body text.
+
+        A heading here is a short, fully-bold paragraph beginning with a
+        dotted section number ("2.", "1.1", "2.4.3 ...").  The level equals the
+        count of numeric components (capped at 4).  Requiring the paragraph to
+        be entirely bold avoids misclassifying numbered body text such as
+        affiliation lines ("3 Associate Professor ...").
+        """
+        text = self._stringify_inlines(inlines).strip()
+        if not text or len(text) > 100:
+            return None
+        m = re.match(r"^(\d+(?:\.\s?\d+)*)\.?\s+\S", text)
+        if not m:
+            return None
+        # Every visible inline must be Strong (bold).
+        saw_bold = False
+        for item in inlines:
+            if not isinstance(item, dict):
+                continue
+            t = item.get("t")
+            if t in ("Space", "SoftBreak", "LineBreak"):
+                continue
+            if t != "Strong":
+                return None
+            saw_bold = True
+        if not saw_bold:
+            return None
+        depth = len([p for p in re.split(r"\.\s?", m.group(1)) if p])
+        return max(1, min(4, depth))
+
     def _stringify_blocks(self, blocks: List[Dict[str, Any]]) -> str:
         """Convert block elements into plain string."""
         parts = []
@@ -637,4 +955,286 @@ class DocumentAnalyzer:
                 list_items = c[1] if t == "OrderedList" else c
                 item_texts = [self._stringify_blocks(item) for item in list_items]
                 parts.append("\n".join(f"- {txt}" for txt in item_texts))
+            elif t == "Table":
+                # Word cells sometimes hold a nested table (e.g. a single-value
+                # box wrapping a p-value like ".701").  Without this the cell
+                # content is dropped and the cell renders blank, so recurse into
+                # the nested table and keep its text.
+                nested = self._stringify_nested_table_text(c)
+                if nested:
+                    parts.append(nested)
         return "\n\n".join(parts)
+
+    def _stringify_nested_table_text(self, c: List[Any]) -> str:
+        """Flatten the visible text of a (possibly nested) pandoc Table node.
+
+        Pandoc Table = [attr, caption, colspecs, head, [bodies], foot].  Each
+        row is [attr, [cells]] and each cell is
+        [attr, align, rowspan, colspan, blocks].  Cell text is collected in
+        row order and joined so multi-value nested tables keep every value.
+        """
+        try:
+            def rows_of(section_rows):
+                out = []
+                for row in section_rows:
+                    if not isinstance(row, list) or len(row) < 2:
+                        continue
+                    cell_texts = []
+                    for cell in row[1]:
+                        if isinstance(cell, list) and len(cell) >= 5:
+                            txt = self._stringify_blocks(cell[4]).strip()
+                            if txt:
+                                cell_texts.append(txt)
+                    if cell_texts:
+                        out.append(" ".join(cell_texts))
+                return out
+
+            lines = []
+            head = c[3] if len(c) > 3 else None
+            if isinstance(head, list) and len(head) >= 2:
+                lines += rows_of(head[1])
+            for body in (c[4] if len(c) > 4 else []):
+                if isinstance(body, list) and len(body) >= 4:
+                    lines += rows_of(body[3])
+            foot = c[5] if len(c) > 5 else None
+            if isinstance(foot, list) and len(foot) >= 2:
+                lines += rows_of(foot[1])
+            return "\n".join(lines)
+        except Exception:
+            return ""
+
+    # ------------------------------------------------------------------ #
+    # Table structure extraction
+    # ------------------------------------------------------------------ #
+
+    _W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+
+    def _extract_table_styles(self, docx_path: Path) -> List[Dict[str, Any]]:
+        """Read shading, borders, row heights and grid widths for each
+        body-level table directly from word/document.xml."""
+        import zipfile
+        import xml.etree.ElementTree as ET
+
+        W = self._W_NS
+        styles: List[Dict[str, Any]] = []
+        try:
+            with zipfile.ZipFile(docx_path) as zf:
+                root = ET.fromstring(zf.read("word/document.xml"))
+                grid_style_ids = self._grid_style_ids(zf)
+            body = root.find(f"{W}body")
+            if body is None:
+                return styles
+            text_width_tw = self._text_width_twips(body, W)
+            for tbl in body.findall(f"{W}tbl"):
+                col_widths = [int(g.get(f"{W}w", 0)) for g in tbl.findall(f"{W}tblGrid/{W}gridCol")]
+                # Table width as a fraction of the text column: prefer an
+                # explicit dxa tblW, else fall back to the grid-column sum.
+                # This lets the renderer reproduce the same on-page proportion.
+                tblw_el = tbl.find(f"{W}tblPr/{W}tblW")
+                total_tw = 0
+                if tblw_el is not None and tblw_el.get(f"{W}type") == "dxa":
+                    total_tw = int(tblw_el.get(f"{W}w", 0) or 0)
+                if total_tw <= 0:
+                    total_tw = sum(w for w in col_widths if w > 0)
+                width_frac = None
+                if text_width_tw and total_tw > 0:
+                    width_frac = round(min(total_tw / text_width_tw, 1.0), 4)
+                style_el = tbl.find(f"{W}tblPr/{W}tblStyle")
+                style_id = style_el.get(f"{W}val", "") if style_el is not None else ""
+                has_grid = (
+                    tbl.find(f"{W}tblPr/{W}tblBorders") is not None
+                    or style_id in grid_style_ids
+                    or "grid" in style_id.lower()
+                )
+                shading_rows = []
+                row_heights = []
+                for tr in tbl.findall(f"{W}tr"):
+                    fills = []
+                    for tc in tr.findall(f"{W}tc"):
+                        shd = tc.find(f"{W}tcPr/{W}shd")
+                        fill = shd.get(f"{W}fill") if shd is not None else None
+                        if fill in (None, "auto"):
+                            fill = None
+                        span_el = tc.find(f"{W}tcPr/{W}gridSpan")
+                        span = int(span_el.get(f"{W}val", 1)) if span_el is not None else 1
+                        fills.extend([fill] * span)
+                    shading_rows.append(fills)
+                    trh = tr.find(f"{W}trPr/{W}trHeight")
+                    row_heights.append(
+                        round(int(trh.get(f"{W}val", 0)) / 20.0, 1) if trh is not None else None
+                    )
+                styles.append({
+                    "col_widths_tw": col_widths,
+                    "has_grid": has_grid,
+                    "shading_rows": shading_rows,
+                    "row_heights": row_heights,
+                    "width_frac": width_frac,
+                })
+        except Exception:
+            pass  # styling is best-effort; structure never depends on it
+        return styles
+
+    @staticmethod
+    def _text_width_twips(body, W) -> int:
+        """Usable text-column width (page width minus L/R margins), in twips."""
+        try:
+            sect = body.find(f"{W}sectPr")
+            if sect is None:
+                for el in body.iter(f"{W}sectPr"):
+                    sect = el
+                    break
+            if sect is None:
+                return 0
+            pg = sect.find(f"{W}pgSz")
+            mar = sect.find(f"{W}pgMar")
+            if pg is None or mar is None:
+                return 0
+            page_w = int(pg.get(f"{W}w", 0) or 0)
+            left = int(mar.get(f"{W}left", 0) or 0)
+            right = int(mar.get(f"{W}right", 0) or 0)
+            return max(page_w - left - right, 0)
+        except Exception:
+            return 0
+
+    def _grid_style_ids(self, zf) -> set:
+        """Style IDs in styles.xml whose definition draws table borders."""
+        import re as _re
+        ids = set()
+        try:
+            styles_xml = zf.read("word/styles.xml").decode("utf-8", "ignore")
+            for m in _re.finditer(
+                r'<w:style [^>]*w:styleId="([^"]+)"(.*?)</w:style>', styles_xml, _re.S
+            ):
+                if "<w:tblBorders>" in m.group(2):
+                    ids.add(m.group(1))
+        except Exception:
+            pass
+        return ids
+
+    _PANDOC_ALIGN = {
+        "AlignLeft": "l", "AlignCenter": "c", "AlignRight": "r", "AlignDefault": None,
+    }
+
+    @staticmethod
+    def _image_dimensions_in(image_c: List[Any]):
+        """Original image size in inches from a pandoc Image node.
+
+        Pandoc copies the DOCX drawing extent into the Image attribute list as
+        ``width``/``height`` (e.g. ``6.36in``, ``480px``, ``12cm``).  Returns
+        ``(width_in, height_in)`` with either value ``None`` when absent or
+        unparseable, so the renderer can reproduce the exact Word dimensions
+        instead of stretching the picture to the line width.
+        """
+        try:
+            attrs = image_c[0][2] if image_c and len(image_c[0]) > 2 else []
+        except (IndexError, TypeError):
+            return None, None
+
+        unit_to_in = {
+            "in": 1.0, "pt": 1.0 / 72.27, "px": 1.0 / 96.0, "bp": 1.0 / 72.0,
+            "cm": 1.0 / 2.54, "mm": 1.0 / 25.4, "pc": 12.0 / 72.27, "em": None,
+        }
+        dims = {}
+        for key, raw in attrs:
+            if key not in ("width", "height"):
+                continue
+            m = re.match(r"^\s*([\d.]+)\s*([a-z%]*)\s*$", str(raw), re.IGNORECASE)
+            if not m:
+                continue
+            value = float(m.group(1))
+            unit = (m.group(2) or "in").lower()
+            factor = unit_to_in.get(unit)
+            if factor is None:  # relative/unknown unit -> let renderer decide
+                continue
+            dims[key] = round(value * factor, 4)
+        return dims.get("width"), dims.get("height")
+
+    def _parse_table_cell(self, cell: List[Any]) -> Dict[str, Any]:
+        """Pandoc Cell = [attr, alignment, rowspan, colspan, blocks]."""
+        attr, align, rowspan, colspan, blocks = cell
+        return {
+            "text": self._stringify_blocks(blocks).strip(),
+            "rowspan": int(rowspan),
+            "colspan": int(colspan),
+            "align": self._PANDOC_ALIGN.get(align.get("t") if isinstance(align, dict) else None),
+            "bold": self._cell_is_bold(blocks),
+        }
+
+    @staticmethod
+    def _cell_is_bold(blocks: List[Any]) -> bool:
+        """True when every visible inline of the cell is Strong-wrapped."""
+        saw_content = False
+        for b in blocks:
+            if not isinstance(b, dict) or b.get("t") not in ("Para", "Plain"):
+                continue
+            for item in b.get("c", []):
+                if not isinstance(item, dict):
+                    continue
+                t = item.get("t")
+                if t in ("Space", "SoftBreak"):
+                    continue
+                if t != "Strong":
+                    return False
+                saw_content = True
+        return saw_content
+
+    def _parse_table_rich(self, c: List[Any]) -> Dict[str, Any]:
+        """Extract the full pandoc table structure plus XML styling."""
+        caption = "Table"
+        caption_block = c[1]
+        if isinstance(caption_block, dict) and "c" in caption_block:
+            caption = self._stringify_blocks(caption_block.get("c", [])) or "Table"
+        elif isinstance(caption_block, list):
+            caption = self._stringify_blocks(caption_block) or "Table"
+
+        colspecs = []
+        for spec in (c[2] or []):
+            align = self._PANDOC_ALIGN.get(spec[0].get("t")) if spec and isinstance(spec[0], dict) else None
+            width = None
+            if len(spec) > 1 and isinstance(spec[1], dict) and spec[1].get("t") == "ColWidth":
+                width = float(spec[1]["c"])
+            colspecs.append({"align": align, "width": width})
+
+        def parse_rows(rows_list):
+            return [
+                [self._parse_table_cell(cell) for cell in row[1]]
+                for row in rows_list
+                if len(row) >= 2
+            ]
+
+        header_rows = parse_rows(c[3][1]) if isinstance(c[3], list) and len(c[3]) >= 2 else []
+        body_rows = []
+        for body in c[4]:
+            if isinstance(body, list) and len(body) >= 4:
+                body_rows.extend(parse_rows(body[3]))
+
+        # Attach XML styling for this table (body-level order == pandoc order).
+        style = {}
+        styles = getattr(self, "_table_styles", [])
+        idx = getattr(self, "_table_style_idx", 0)
+        if idx < len(styles):
+            style = styles[idx]
+        self._table_style_idx = idx + 1
+
+        total_tw = sum(style.get("col_widths_tw", [])) or None
+        if total_tw and not any(cs["width"] for cs in colspecs):
+            for cs, tw in zip(colspecs, style.get("col_widths_tw", [])):
+                cs["width"] = tw / total_tw
+
+        # Legacy flat view (kept for fidelity/asset reports and old renderers).
+        flat_headers = [cell["text"] for cell in header_rows[-1]] if header_rows else []
+        flat_rows = [[cell["text"] for cell in row] for row in body_rows]
+
+        return {
+            "caption": caption,
+            "label": None,
+            "colspecs": colspecs,
+            "header_rows": header_rows,
+            "body_rows": body_rows,
+            "has_grid": style.get("has_grid", False),
+            "shading_rows": style.get("shading_rows", []),
+            "row_heights": style.get("row_heights", []),
+            "width_frac": style.get("width_frac"),
+            "headers": flat_headers,
+            "rows": flat_rows,
+        }

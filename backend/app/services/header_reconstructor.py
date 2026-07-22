@@ -33,6 +33,9 @@ _NS = {
 
 _EMU_PER_PT = 12700.0
 _TWIPS_PER_PT = 20.0
+# Placeholder emitted where a Word PAGE field sits; replaced with \thepage
+# after LaTeX escaping so cached page numbers are never baked into the header.
+_PAGE_FIELD_SENTINEL = "\ue000"
 
 @dataclass
 class HeaderParagraph:
@@ -156,11 +159,45 @@ class HeaderReconstructor:
             )
         return paragraphs, tables, footer_paragraphs, footer_tables, geometry
 
+    def _select_part(self, zf, names, kind):
+        """Return the single header/footer part to reconstruct.
+
+        Word sections reference up to three variants (default / even / first).
+        Merging them duplicates logos and text, so we reproduce only the
+        variant used on ordinary pages: "default", falling back to "even",
+        then "first", then any part present.
+        """
+        by_type = {}
+        try:
+            doc_xml = zf.read("word/document.xml").decode("utf-8", "ignore")
+            rels_xml = zf.read("word/_rels/document.xml.rels").decode("utf-8", "ignore")
+            import re as _re
+            rel_map = dict(_re.findall(r'Id="([^"]+)"[^>]*Target="([^"]+)"', rels_xml))
+            rel_map.update({k: v for v, k in _re.findall(r'Target="([^"]+)"[^>]*Id="([^"]+)"', rels_xml)})
+            for m in _re.finditer(
+                rf'<w:{kind}Reference[^>]*/>', doc_xml
+            ):
+                tag = m.group(0)
+                t = _re.search(r'w:type="(\w+)"', tag)
+                r = _re.search(r'r:id="(\w+)"', tag)
+                if t and r and rel_map.get(r.group(1)):
+                    part = "word/" + rel_map[r.group(1)].lstrip("/")
+                    if part in names:
+                        by_type.setdefault(t.group(1), part)
+        except Exception:
+            pass
+        for preference in ("default", "even", "first"):
+            if preference in by_type:
+                return [by_type[preference]]
+        fallback = sorted(n for n in names if n.startswith(f"word/{kind}") and n.endswith(".xml"))
+        return fallback[:1]
+
     def _extract_parts(self, zf, names, prefix, workspace_dir, report, image_bucket):
-        """Parse all header or footer XML parts, de-duplicated across variants."""
+        """Parse the selected header or footer part of the document."""
         paragraphs: List[HeaderParagraph] = []
         tables: List[Dict[str, Any]] = []
-        parts = sorted(n for n in names if n.startswith(prefix) and n.endswith(".xml"))
+        kind = "header" if "header" in prefix else "footer"
+        parts = self._select_part(zf, names, kind)
         for part in parts:
             rels = self._load_rels(zf, part, names)
             root = ET.fromstring(zf.read(part))
@@ -239,7 +276,18 @@ class HeaderReconstructor:
                 para.has_bottom_border = True
 
         texts = []
+        in_page_field = False  # between PAGE instrText and fldChar end
         for run in p_el.findall(".//w:r", _NS):
+            # Word PAGE fields: emit a sentinel instead of the cached number.
+            instr = run.find("w:instrText", _NS)
+            if instr is not None and instr.text and "PAGE" in instr.text.upper():
+                in_page_field = True
+                texts.append(_PAGE_FIELD_SENTINEL)
+            fld = run.find("w:fldChar", _NS)
+            if fld is not None and fld.attrib.get(f"{{{_NS['w']}}}fldCharType") == "end":
+                in_page_field = False
+                continue
+
             rpr = run.find("w:rPr", _NS)
             if rpr is not None:
                 fonts_el = rpr.find("w:rFonts", _NS)
@@ -255,7 +303,7 @@ class HeaderReconstructor:
                 para.italic = para.italic or rpr.find("w:i", _NS) is not None
 
             for t in run.findall("w:t", _NS):
-                if t.text:
+                if t.text and not in_page_field:  # skip cached field results
                     texts.append(t.text)
 
             for blip in run.findall(".//a:blip", _NS):
@@ -271,6 +319,11 @@ class HeaderReconstructor:
                 if img:
                     para.images.append(img)
                     report[image_bucket].append(img)
+
+        for fld_simple in p_el.findall(".//w:fldSimple", _NS):
+            instr = fld_simple.attrib.get(f"{{{_NS['w']}}}instr", "")
+            if "PAGE" in instr.upper():
+                texts.append(_PAGE_FIELD_SENTINEL)
 
         para.text = " ".join(" ".join(texts).split())
         return para
@@ -338,7 +391,7 @@ class HeaderReconstructor:
             opts = f"height={height}pt" if height else "height=18pt"
             chunks.append(f"\\includegraphics[{opts},keepaspectratio]{{{img['file']}}}")
         if cell.get("text"):
-            chunks.append(_escape(cell["text"]))
+            chunks.append(_escape(cell["text"]).replace(_PAGE_FIELD_SENTINEL, "\\thepage"))
         return " ".join(chunks)
 
     def _render_paragraph(self, para: HeaderParagraph) -> str:
@@ -408,8 +461,13 @@ class HeaderReconstructor:
         for pos, key in (("L", "left"), ("C", "center")):
             if joined[key]:
                 lines.append(f"\\fancyhead[{pos}]{{{joined[key]}}}")
-        right_content = joined["right"] if joined["right"] else "\\thepage"
-        lines.append(f"\\fancyhead[R]{{{right_content}}}")
+        # Add a default right-slot page number only when the reconstructed
+        # header does not already carry one (via a Word PAGE field).
+        header_has_page = any("\\thepage" in v for v in joined.values())
+        if joined["right"]:
+            lines.append(f"\\fancyhead[R]{{{joined['right']}}}")
+        elif not header_has_page:
+            lines.append("\\fancyhead[R]{\\thepage}")
         # Footer: reconstruct extracted content; page number defaults to the
         # footer center only when the header right slot already carries it.
         footer_has_content = any(fjoined.values())

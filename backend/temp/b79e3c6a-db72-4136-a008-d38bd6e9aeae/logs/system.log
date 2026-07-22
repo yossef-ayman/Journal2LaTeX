@@ -1,0 +1,60 @@
+[2026-07-22 12:20:10,125] [INFO] [job_manager.py:136]: Job b79e3c6a-db72-4136-a008-d38bd6e9aeae workspace created successfully
+[2026-07-22 12:20:10,156] [INFO] [pipeline_service.py:45]: Starting validation for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:20:10,173] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-07-22 12:20:10,191] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-07-22 12:20:10,218] [INFO] [pipeline_service.py:60]: Validation successful.
+[2026-07-22 12:20:10,236] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-07-22 12:20:10,236] [INFO] [pipeline_service.py:67]: Starting document analysis for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:20:10,253] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-22 12:20:10,269] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-22 12:20:10,269] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\b79e3c6a-db72-4136-a008-d38bd6e9aeae\input\The role.docx
+[2026-07-22 12:20:11,490] [INFO] [document_analyzer.py:511]: Parsed document: title='The Role of Social Media in the Spread and Countering of Cyber-Extremism: An Islamic Jurisprudential and Educational Perspective', authors=3, sections=41, references=42
+[2026-07-22 12:20:11,501] [INFO] [pipeline_service.py:95]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\b79e3c6a-db72-4136-a008-d38bd6e9aeae\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\b79e3c6a-db72-4136-a008-d38bd6e9aeae\intermediate\conversion_report.json
+[2026-07-22 12:20:11,519] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-22 12:20:11,519] [INFO] [pipeline_service.py:108]: Starting asset extraction for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:20:11,537] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-22 12:20:11,555] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-22 12:20:17,838] [INFO] [pipeline_service.py:223]: Office object fig:office1 placed=True
+[2026-07-22 12:20:17,904] [INFO] [pipeline_service.py:141]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\b79e3c6a-db72-4136-a008-d38bd6e9aeae\intermediate\media
+[2026-07-22 12:20:17,929] [INFO] [job_manager.py:204]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-22 12:20:17,929] [INFO] [pipeline_service.py:231]: Classifying extracted assets for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:20:17,929] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:20:17,934] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 8
+[2026-07-22 12:20:17,951] [INFO] [job_manager.py:204]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-22 12:20:18,001] [INFO] [pipeline_service.py:247]: Loading template 215c49ac-92ad-4a02-b104-659640003103 for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:20:18,019] [INFO] [job_manager.py:180]: Job status updated to: LOADING_TEMPLATE
+[2026-07-22 12:20:18,034] [INFO] [job_manager.py:204]: Progress updated to 70%: Loading template styles: 215c49ac-92ad-4a02-b104-659640003103
+[2026-07-22 12:20:18,110] [INFO] [pipeline_service.py:269]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\b79e3c6a-db72-4136-a008-d38bd6e9aeae\rendered
+[2026-07-22 12:20:18,126] [INFO] [job_manager.py:204]: Progress updated to 80%: Template workspace initialized
+[2026-07-22 12:20:18,128] [INFO] [pipeline_service.py:294]: Starting LaTeX rendering for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:20:18,144] [INFO] [job_manager.py:180]: Job status updated to: RENDERING_LATEX
+[2026-07-22 12:20:18,159] [INFO] [job_manager.py:204]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-22 12:20:18,179] [INFO] [latex_renderer.py:72]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\b79e3c6a-db72-4136-a008-d38bd6e9aeae\rendered
+[2026-07-22 12:20:18,211] [INFO] [latex_renderer.py:359]: LaTeX document main.tex rendered successfully.
+[2026-07-22 12:20:18,363] [INFO] [header_reconstructor.py:124]: Template class draws its own header; skipping fancyhdr injection.
+[2026-07-22 12:20:18,367] [INFO] [job_manager.py:204]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-22 12:20:18,368] [INFO] [pipeline_service.py:357]: Starting document compilation for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:20:18,387] [INFO] [job_manager.py:180]: Job status updated to: COMPILING
+[2026-07-22 12:20:18,406] [INFO] [job_manager.py:204]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-22 12:20:48,061] [INFO] [pipeline_service.py:380]: Compilation completed successfully.
+[2026-07-22 12:20:48,067] [INFO] [pipeline_service.py:395]: Running E2E publication fidelity checker for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:20:48,067] [INFO] [fidelity_checker.py:24]: Generating advanced fidelity report and scores for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:20:48,071] [INFO] [fidelity_checker.py:163]: Fidelity report written to G:\work\Journal2LaTeX\backend\temp\b79e3c6a-db72-4136-a008-d38bd6e9aeae\intermediate\fidelity_report.json. Overall Score: 87.5%, Critical missing: 2
+[2026-07-22 12:20:48,103] [INFO] [pipeline_service.py:357]: Starting document compilation for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:20:54,879] [INFO] [pipeline_service.py:380]: Compilation completed successfully.
+[2026-07-22 12:21:12,533] [INFO] [pipeline_service.py:357]: Starting document compilation for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:21:19,542] [INFO] [pipeline_service.py:380]: Compilation completed successfully.
+[2026-07-22 12:21:28,749] [INFO] [pipeline_service.py:357]: Starting document compilation for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:21:34,894] [INFO] [pipeline_service.py:380]: Compilation completed successfully.
+[2026-07-22 12:21:44,276] [INFO] [pipeline_service.py:357]: Starting document compilation for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:21:51,441] [INFO] [pipeline_service.py:380]: Compilation completed successfully.
+[2026-07-22 12:22:01,468] [INFO] [pipeline_service.py:357]: Starting document compilation for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:22:07,857] [INFO] [pipeline_service.py:380]: Compilation completed successfully.
+[2026-07-22 12:22:17,328] [INFO] [pipeline_service.py:357]: Starting document compilation for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:22:24,922] [INFO] [pipeline_service.py:380]: Compilation completed successfully.
+[2026-07-22 12:22:34,859] [INFO] [pipeline_service.py:357]: Starting document compilation for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:22:40,993] [INFO] [pipeline_service.py:380]: Compilation completed successfully.
+[2026-07-22 12:22:50,235] [INFO] [pipeline_service.py:357]: Starting document compilation for job: b79e3c6a-db72-4136-a008-d38bd6e9aeae
+[2026-07-22 12:22:56,410] [INFO] [pipeline_service.py:380]: Compilation completed successfully.
+[2026-07-22 12:22:56,427] [INFO] [job_manager.py:180]: Job status updated to: COMPLETED
+[2026-07-22 12:22:56,441] [INFO] [job_manager.py:204]: Progress updated to 100%: Pipeline process completed successfully

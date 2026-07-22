@@ -11,6 +11,10 @@ _LATEX_ESCAPES = {
     "}": r"\}",
     "~": r"\textasciitilde{}",
     "^": r"\textasciicircum{}",
+    # Without these, the default font renders `<`/`>` as inverted punctuation
+    # (¡ / ¿) -- e.g. a "< .001" p-value came out as "¡ .001".
+    "<": r"\textless{}",
+    ">": r"\textgreater{}",
 }
 
 

@@ -32,6 +32,11 @@ class SectionModel(BaseModel):
     title: str
     level: int
     blocks: List[DocumentBlock]
+    # Optional formatting for the section heading itself, read from the DOCX
+    # (bold, relative size, alignment, spacing, keep-with-next).  When present
+    # the renderer reproduces the Word heading appearance instead of relying on
+    # the template's sectioning styles.
+    heading_format: Optional[dict] = None
 
 
 class AuthorModel(BaseModel):
@@ -69,3 +74,8 @@ class DocumentModel(BaseModel):
     issue: Optional[str] = ""
     year: Optional[str] = ""
     doi: Optional[str] = ""
+    # Corresponding-author e-mail as it appears in the source document.  Word
+    # papers frequently place this in the first-page footer / a footnote /
+    # endnote rather than the author block, so it is extracted separately and
+    # rendered through the journal template's own corresponding-author command.
+    corresponding_email: Optional[str] = ""
