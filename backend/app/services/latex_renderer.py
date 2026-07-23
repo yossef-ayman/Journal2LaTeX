@@ -83,6 +83,11 @@ class LatexRenderer:
             raise LatexRendererError(msg)
 
         try:
+            # Reset the per-run placement log (populated by the placement policy).
+            self._placement_log = []
+            # Media dir, used to read a figure's *native* aspect ratio (how it
+            # actually renders under keepaspectratio) for the placement policy.
+            self._media_dir = workspace_dir / "media"
             # 1. Render block elements sequentially
             rendered_blocks = []
             for section in doc.sections:
@@ -336,6 +341,16 @@ class LatexRenderer:
                 needed_pkgs.append("\\usepackage[table]{xcolor}")
             if "\\arraybackslash" in rendered_content and "usepackage{array}" not in rendered_content:
                 needed_pkgs.append("\\usepackage{array}")
+            # Inline, in-reading-order figures/tables use \begin{strip} (cuted)
+            # for full-width spanning content and \captionof (caption) for the
+            # numbered caption on non-floating content.
+            if "[H]" in rendered_content and "usepackage{float}" not in rendered_content:
+                needed_pkgs.append("\\usepackage{float}")
+            if "\\begin{strip}" in rendered_content and "usepackage{cuted}" not in rendered_content:
+                needed_pkgs.append("\\usepackage{cuted}")
+            if "\\captionof" in rendered_content and "{caption}" not in rendered_content \
+                    and "{capt-of}" not in rendered_content:
+                needed_pkgs.append("\\usepackage{capt-of}")
             if needed_pkgs:
                 begin_doc_pos = rendered_content.find("\\begin{document}")
                 if begin_doc_pos != -1:
@@ -355,6 +370,18 @@ class LatexRenderer:
             # 5. Write to main.tex
             main_tex_path = workspace_dir / "main.tex"
             main_tex_path.write_text(rendered_content, encoding="utf-8")
+
+            # Persist the placement decisions for the fidelity report.
+            try:
+                import json as _json
+                report_dir = workspace_dir.parent / "intermediate"
+                report_dir.mkdir(parents=True, exist_ok=True)
+                (report_dir / "placement_report.json").write_text(
+                    _json.dumps(self._placement_log, indent=2, ensure_ascii=False),
+                    encoding="utf-8",
+                )
+            except Exception:  # reporting must never break rendering
+                pass
 
             logger.info("LaTeX document main.tex rendered successfully.")
             return main_tex_path
@@ -514,6 +541,182 @@ class LatexRenderer:
             f"\\par{before_tex}\\noindent {body}{after_tex}{keep}"
         )
 
+    # ------------------------------------------------------------------ #
+    # Hybrid figure/table placement policy
+    # ------------------------------------------------------------------ #
+    # The policy scores DOCX-derived signals for each object and picks one of:
+    #   inline_span   -> full-width, non-floating, exact position (cuted strip)
+    #   inline_column -> in-column, non-floating, exact position (center)
+    #   float_h       -> figure[H]/table[H]: pinned in place, in-column
+    #   float_column  -> figure/table [htbp]: normal in-column float
+    #   float_span    -> figure*/table* [tp]: full-width spanning float
+    # It never globally forces [H] nor globally disables floats.
+
+    def _native_aspect(self, relative_path: str):
+        """height/width of the image *file* (how it renders under keepaspectratio),
+        or None when it cannot be read."""
+        try:
+            media_dir = getattr(self, "_media_dir", None)
+            if media_dir is None:
+                return None
+            path = media_dir.parent / relative_path
+            if not path.exists():
+                return None
+            from PIL import Image
+            with Image.open(path) as im:
+                w, h = im.size
+            return (h / w) if w else None
+        except Exception:
+            return None
+
+    def _figure_aspect(self, content: dict):
+        """Best available height/width ratio for a figure: the native image
+        aspect (used by keepaspectratio) if known, else the Word extent's."""
+        na = content.get("native_aspect")
+        if na:
+            return na
+        w_in, h_in = content.get("width_in"), content.get("height_in")
+        if w_in and h_in and w_in > 0:
+            return h_in / w_in
+        return None
+
+    def _rendered_height_in(self, content: dict, is_table: bool,
+                            full_width: bool, tw_in: float) -> float:
+        """Estimate the object's typeset height (inches) at its placement width."""
+        text_h = (tw_in or 6.9) * 1.4
+        if is_table:
+            rows = content.get("num_rows") or 4
+            return min(rows * 0.24, text_h)  # ~0.24in per \small row
+        target_w = tw_in if full_width else max((tw_in or 6.9) / 2.0 - 0.2, 1.0)
+        aspect = self._figure_aspect(content)
+        if aspect:
+            return min(target_w * aspect, text_h)
+        # Unknown dimensions (e.g. an embedded chart) render capped ~0.3\textheight.
+        return 0.3 * text_h
+
+    def _choose_placement(self, content: dict, is_table: bool):
+        """Return (strategy, reason) for one figure/table from DOCX signals."""
+        tw_in = content.get("text_width_in") or 6.9
+        text_h = tw_in * 1.4
+        caption = content.get("caption") or ""
+        clen = len(caption)
+
+        if is_table:
+            wf = content.get("width_frac") or 0.0
+            wide = wf >= 0.55
+            word_float = False           # Word tables are block-level, in-flow
+            width_note = f"table width {wf*100:.0f}% of text"
+        else:
+            w_in = content.get("width_in")
+            if w_in and tw_in:
+                wf = min(w_in / tw_in, 1.0)
+                wide = wf >= 0.55
+            else:
+                wf = 1.0 if content.get("full_width", True) else 0.4
+                wide = bool(content.get("full_width", True))
+            word_float = content.get("word_inline", True) is False
+            width_note = f"image {wf*100:.0f}% of text width"
+
+        rh_col = self._rendered_height_in(content, is_table, False, tw_in)
+        tall_col = rh_col > 0.85 * text_h        # too tall even for a column
+        long_cap = clen > 220
+
+        if wide:
+            # Height the object would take if typeset at the FULL text width.
+            if is_table:
+                rh_full = self._rendered_height_in(content, True, True, tw_in)
+                span_overflow = rh_full > 0.75 * text_h   # would not fit the page
+            else:
+                aspect = self._figure_aspect(content)   # native (rendered) aspect
+                if aspect:
+                    rh_full = tw_in * aspect
+                    aspect_tall = aspect > 0.5          # taller than a short banner
+                else:
+                    rh_full = text_h            # unknown aspect -> assume it may be tall
+                    aspect_tall = True
+                span_overflow = aspect_tall or rh_full > 0.45 * text_h
+
+            if word_float:
+                return ("float_span",
+                        f"wide ({width_note}) and floating in Word -> full-width "
+                        f"spanning float (figure*/table*) reproduces Word's own float "
+                        f"and lets LaTeX place it at a page slot near the reference")
+            if is_table:
+                if span_overflow:
+                    return ("float_span",
+                            f"wide table ({width_note}) that is tall (~{rh_full:.1f}in) "
+                            f"-> spanning float so it is not forced to overflow a page")
+                return ("inline_span",
+                        f"wide table ({width_note}), short (~{rh_full:.1f}in) -> inline "
+                        f"spanning both columns to hold its exact reading-order position")
+            # Wide figure.
+            if span_overflow:
+                return ("float_h",
+                        f"wide figure ({width_note}) but tall/near-square "
+                        f"(~{rh_full:.1f}in at full width) -> pinned in place at column "
+                        f"width ([H]) so it stays in order without overflowing the page")
+            return ("inline_span",
+                    f"wide figure ({width_note}), short banner shape "
+                    f"(~{rh_full:.1f}in) -> inline spanning both columns, exact position")
+        # Narrow: fits within one column.
+        if word_float:
+            return ("float_column",
+                    f"narrow ({width_note}) and floating in Word -> normal single-"
+                    f"column float mirrors Word and lets LaTeX optimise the page")
+        if tall_col:
+            return ("float_column",
+                    f"narrow ({width_note}) but tall (~{rh_col:.1f}in, page-break risk) "
+                    f"-> normal float avoids overflowing the column")
+        return ("float_h",
+                f"narrow ({width_note}), Word-inline, short (~{rh_col:.1f}in) -> pinned "
+                f"in place with [H] so it stays exactly where introduced")
+
+    def _emit_placed(self, inner_tex: str, caption: str, label_str: str,
+                     kind: str, strategy: str) -> str:
+        """Render one object according to the chosen placement strategy."""
+        if strategy in ("inline_span", "inline_column"):
+            caption_tex = f"\\captionof{{{kind}}}{{{caption}}}" if caption else ""
+            parts = [inner_tex]
+            if caption_tex:
+                parts.append(caption_tex)
+            if label_str:
+                parts.append(label_str)
+            # Keep object + caption as one unbreakable unit (never detaches).
+            unit = (
+                "\\noindent\\begin{minipage}{\\linewidth}\n\\centering\n"
+                + "\n".join(parts) + "\n\\end{minipage}"
+            )
+            if strategy == "inline_span":
+                return "\\begin{strip}\n\\centering\n" + unit + "\n\\end{strip}"
+            return "\\begin{center}\n" + unit + "\n\\end{center}"
+
+        env, place = {
+            "float_h": (kind, "[H]"),
+            "float_column": (kind, "[htbp]"),
+            "float_span": (kind + "*", "[tp]"),
+        }[strategy]
+        cap = f"\\caption{{{caption}}}\n" if caption else ""
+        lab = f"{label_str}\n" if label_str else ""
+        return (
+            f"\\begin{{{env}}}{place}\n\\centering\n{inner_tex}\n{cap}{lab}"
+            f"\\end{{{env}}}"
+        )
+
+    def _place_object(self, inner_tex: str, caption: str, label_str: str,
+                      kind: str, content: dict) -> str:
+        """Choose a placement strategy for this object and render it, logging
+        the decision + reason for the placement report."""
+        strategy, reason = self._choose_placement(content, is_table=(kind == "table"))
+        log = getattr(self, "_placement_log", None)
+        if log is not None:
+            log.append({
+                "kind": kind,
+                "caption": (caption or "")[:60],
+                "strategy": strategy,
+                "reason": reason,
+            })
+        return self._emit_placed(inner_tex, caption, label_str, kind, strategy)
+
     def _render_block(self, block: DocumentBlock, job_id: str) -> Optional[str]:
         """Render a single DocumentBlock into a LaTeX string."""
         b_type = block.type
@@ -559,14 +762,16 @@ class LatexRenderer:
                     f"\\includegraphics[width=\\linewidth,height=0.3\\textheight,"
                     f"keepaspectratio]{{{relative_path}}}"
                 )
-            return (
-                "\\begin{figure}[htbp]\n"
-                "\\centering\n"
-                f"{include}\n"
-                f"\\caption{{{caption}}}\n"
-                f"{label_str}\n"
-                "\\end{figure}"
-            )
+            # A wide image is scaled to the line width with keepaspectratio, so
+            # its true height follows the image file's *native* aspect (which can
+            # differ from the possibly-distorted Word extent).  Record it so the
+            # policy estimates the real rendered height.
+            content = dict(content)
+            content["native_aspect"] = self._native_aspect(relative_path)
+            # Hybrid placement policy chooses inline / [H] / normal float /
+            # spanning float per figure from its DOCX signals (Word inline vs
+            # floating, size, height, caption length, two-column fit).
+            return self._place_object(include, caption, label_str, "figure", content)
 
         elif b_type == BlockType.TABLE:
             if content.get("body_rows") or content.get("header_rows"):
@@ -612,14 +817,13 @@ class LatexRenderer:
         rows_str = "\n".join(
             " & ".join(self._escape_text(cell) for cell in row) + " \\\\" for row in rows
         )
-        return (
-            "\\begin{table}[htbp]\n\\centering\n"
+        inner = (
             "\\resizebox{\\linewidth}{!}{%\n"
             f"\\begin{{tabular}}{{{col_specs}}}\n\\hline\n"
             f"{headers_str}\n{rows_str}\n\\hline\n"
-            "\\end{tabular}%\n}\n"
-            f"\\caption{{{caption}}}\n{label_str}\n\\end{{table}}"
+            "\\end{tabular}%\n}"
         )
+        return self._place_object(inner, caption, label_str, "table", content)
 
     def _render_structured_table(self, content: dict) -> str:
         """Render a table preserving merges, widths, alignment, borders,
@@ -751,22 +955,17 @@ class LatexRenderer:
                         lines.append(f"\\cline{{{a}-{b}}}")
 
         table_body = "\n".join(lines)
-        # A table wider than a single text column would overflow into the
-        # neighbouring column on a two-column body page.  When the Word table
-        # occupies more than about half the text width, promote it to a
-        # full-width spanning float (table*) so its columns -- sized against
-        # \textwidth -- fit; narrower tables stay inline single-column floats.
-        wide = bool(width_frac) and width_frac > 0.5
-        env = "table*" if wide else "table"
-        placement = "[tbp]" if wide else "[htbp]"
-        return (
-            f"\\begin{{{env}}}{placement}\n\\centering\n"
+        # Place the table inline in the document flow (no floating), so it keeps
+        # the exact DOCX reading order and its caption stays attached.  A table
+        # wider than about half the text width spans both columns (strip);
+        # a narrower one stays inside the current column.
+        inner = (
             f"{{{stretch}\\small\n"
             f"\\begin{{tabular}}{{{col_spec_str}}}\n"
             f"{table_body}\n"
-            "\\end{tabular}}\n"
-            f"\\caption{{{caption}}}\n{label_str}\n\\end{{{env}}}"
+            "\\end{tabular}}"
         )
+        return self._place_object(inner, caption, label_str, "table", content)
 
     def _escape_text(self, text: str) -> str:
         """Escape standard text but preserve inline math ($...$) spans."""

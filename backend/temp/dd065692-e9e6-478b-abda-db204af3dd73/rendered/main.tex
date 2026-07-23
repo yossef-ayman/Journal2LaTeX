@@ -16,7 +16,9 @@
 \documentclass{NSP1}
 \IfFileExists{amsmath.sty}{\IfFileExists{amsmath.sty}{\usepackage{amsmath}}{}}{}
 \IfFileExists{amssymb.sty}{\IfFileExists{amssymb.sty}{\usepackage{amssymb}}{}}{}
-\IfFileExists{multirow.sty}{\IfFileExists{multirow.sty}{\usepackage{multirow}}{\providecommand\multirow[3]{#3}}}{\providecommand\multirow[3]{#3}}
+\IfFileExists{multirow.sty}
+{\usepackage{multirow}}
+{\providecommand{\multirow}[3]{#3}}
 \IfFileExists{tikz.sty}{\IfFileExists{tikz.sty}{\usepackage{tikz}}{}}{}
 \usetikzlibrary{arrows.meta,positioning}
 
@@ -36,13 +38,14 @@
   {\bfseries#2\unskip\ }\ignorespaces}
 \def\endbiographyps{\par\addvspace{12pt}}
 \makeatother
-\IfFileExists{xcolor.sty}{\IfFileExists{xcolor.sty}{\usepackage[table]{xcolor}}{}}{}
+\IfFileExists{xcolor.sty}
+
+{}
 \IfFileExists{array.sty}{\IfFileExists{array.sty}{\usepackage{array}}{}}{}
-\IfFileExists{newunicodechar.sty}{\IfFileExists{newunicodechar.sty}{\usepackage{newunicodechar}}{\makeatletter\providecommand\newunicodechar[2]{%
-  \begingroup\lccode`\~=`#1\lowercase{\endgroup\def~}{#2}%
-  \catcode`#1=\active}\makeatother}}{\makeatletter\providecommand\newunicodechar[2]{%
-  \begingroup\lccode`\~=`#1\lowercase{\endgroup\def~}{#2}%
-  \catcode`#1=\active}\makeatother}
+\IfFileExists{newunicodechar.sty}{%
+	\usepackage{newunicodechar}
+}{}
+
 \newunicodechar{α}{\ensuremath{\alpha}}
 \newunicodechar{η}{\ensuremath{\eta}}
 \newunicodechar{χ}{\ensuremath{\chi}}
@@ -54,55 +57,10 @@
 \newunicodechar{ṣ}{\d{s}}
 \newunicodechar{ẓ}{\d{z}}
 \begin{document}
-% >>> j2l compat: body-text size (+5%)
-\makeatletter
-\edef\JLTXbasesize{\f@size}
-\@tempdimb=1.2\dimexpr\f@size pt\relax\edef\JLTXbaseskip{\strip@pt\@tempdimb}
-\def\JLTXbodyscale{1.050}
-\let\JLTX@normalsize\normalsize
-\renewcommand\normalsize{%
-  \JLTX@normalsize
-  \@tempdima=\JLTXbodyscale\dimexpr\f@size pt\relax
-  \@tempdimb=1.2\@tempdima
-  \fontsize{\strip@pt\@tempdima}{\strip@pt\@tempdimb}\selectfont}%
-\@ifundefined{@makecaption}{}{%
-  \let\JLTX@makecaption\@makecaption
-  \long\def\@makecaption#1#2{%
-    \begingroup\fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont
-    \let\normalsize\JLTX@normalsize
-    \JLTX@makecaption{#1}{#2}\endgroup}}%
-\@ifundefined{thebibliography}{}{%
-  \let\JLTX@thebibliography\thebibliography
-  \def\thebibliography{%
-    \fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont\JLTX@thebibliography}}%
-\makeatother
-\normalsize
-% <<< j2l compat
+\AtBeginDocument{%
+	\fontsize{10.5pt}{12.6pt}\selectfont
+}
 
-% >>> j2l compat: body-text size (+5%)
-\makeatletter
-\edef\JLTXbasesize{\f@size}
-\@tempdimb=1.2\dimexpr\f@size pt\relax\edef\JLTXbaseskip{\strip@pt\@tempdimb}
-\def\JLTXbodyscale{1.050}
-\let\JLTX@normalsize\normalsize
-\renewcommand\normalsize{%
-  \JLTX@normalsize
-  \@tempdima=\JLTXbodyscale\dimexpr\f@size pt\relax
-  \@tempdimb=1.2\@tempdima
-  \fontsize{\strip@pt\@tempdima}{\strip@pt\@tempdimb}\selectfont}%
-\@ifundefined{@makecaption}{}{%
-  \let\JLTX@makecaption\@makecaption
-  \long\def\@makecaption#1#2{%
-    \begingroup\fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont
-    \let\normalsize\JLTX@normalsize
-    \JLTX@makecaption{#1}{#2}\endgroup}}%
-\@ifundefined{thebibliography}{}{%
-  \let\JLTX@thebibliography\thebibliography
-  \def\thebibliography{%
-    \fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont\JLTX@thebibliography}}%
-\makeatother
-\normalsize
-% <<< j2l compat
 
 
 \journalname{J. Stat. Appl. Pro.}

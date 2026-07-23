@@ -64,6 +64,12 @@ class DocumentAnalyzer:
             # order matches pandoc Table order.
             self._table_styles = self._extract_table_styles(docx_path)
             self._table_style_idx = 0
+            # Usable text-column width (inches) -- lets figure placement decide
+            # whether a picture spans the full width or fits inside one column.
+            self._text_width_in = self._extract_text_width_in(docx_path)
+            # Per-image Word placement (inline-in-text vs anchored/floating),
+            # keyed by media path -- a signal for the placement policy.
+            self._drawing_inline = self._extract_drawing_placement(docx_path)
             # Heading formatting (bold/size/alignment/spacing/keepNext) read
             # directly from the DOCX -- keyed by whitespace-insensitive heading
             # text so it can enrich sections parsed from the Pandoc AST.
@@ -533,6 +539,15 @@ class DocumentAnalyzer:
                     src = item_c[2][0] if len(item_c) > 2 and len(item_c[2]) > 0 else ""
                     width_in, height_in = self._image_dimensions_in(item_c)
                     counters["figures"] += 1
+                    # A picture wider than half the text column cannot sit inside
+                    # one column of a two-column layout, so it must span the full
+                    # width; narrower ones stay inline in the column.  Unknown
+                    # width defaults to spanning (the common journal-figure case).
+                    tw_in = getattr(self, "_text_width_in", 0.0) or 0.0
+                    full_width = (width_in is None) or (not tw_in) or (
+                        width_in > tw_in / 2.0
+                    )
+                    word_inline = getattr(self, "_drawing_inline", {}).get(src, True)
                     return DocumentBlock(
                         type=BlockType.FIGURE,
                         content={
@@ -543,6 +558,10 @@ class DocumentAnalyzer:
                             # extent, surfaced by pandoc in the Image attributes.
                             "width_in": width_in,
                             "height_in": height_in,
+                            "full_width": full_width,
+                            # Placement signals consumed by the renderer's policy.
+                            "word_inline": word_inline,
+                            "text_width_in": tw_in,
                         }
                     )
 
@@ -1074,6 +1093,57 @@ class DocumentAnalyzer:
             pass  # styling is best-effort; structure never depends on it
         return styles
 
+    def _extract_drawing_placement(self, docx_path: Path) -> Dict[str, bool]:
+        """Map each embedded image (by ``media/...`` path) to whether Word placed
+        it *inline* in the text (``wp:inline``) or *floating* (``wp:anchor``).
+
+        This is a placement signal, not styling: an image Word itself floats is
+        a natural LaTeX float, whereas an inline image should hold its position.
+        """
+        import zipfile
+        import xml.etree.ElementTree as ET
+        W = self._W_NS
+        WP = "{http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing}"
+        A = "{http://schemas.openxmlformats.org/drawingml/2006/main}"
+        R = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
+        placement: Dict[str, bool] = {}
+        try:
+            with zipfile.ZipFile(docx_path) as zf:
+                rels: Dict[str, str] = {}
+                try:
+                    rt = ET.fromstring(zf.read("word/_rels/document.xml.rels"))
+                    for rel in rt:
+                        rels[rel.get("Id")] = rel.get("Target") or ""
+                except Exception:
+                    pass
+                root = ET.fromstring(zf.read("word/document.xml"))
+            for dr in root.iter(f"{W}drawing"):
+                is_inline = dr.find(f"{WP}inline") is not None
+                blip = dr.find(f".//{A}blip")
+                emb = blip.get(f"{R}embed") if blip is not None else None
+                tgt = rels.get(emb) if emb else None
+                if tgt:
+                    placement.setdefault("media/" + tgt.split("/")[-1], is_inline)
+        except Exception:
+            pass
+        return placement
+
+    def _extract_text_width_in(self, docx_path: Path) -> float:
+        """Usable text-column width of the document in inches (0.0 if unknown)."""
+        import zipfile
+        import xml.etree.ElementTree as ET
+        W = self._W_NS
+        try:
+            with zipfile.ZipFile(docx_path) as zf:
+                root = ET.fromstring(zf.read("word/document.xml"))
+            body = root.find(f"{W}body")
+            if body is None:
+                return 0.0
+            tw = self._text_width_twips(body, W)
+            return round(tw / 1440.0, 4) if tw else 0.0
+        except Exception:
+            return 0.0
+
     @staticmethod
     def _text_width_twips(body, W) -> int:
         """Usable text-column width (page width minus L/R margins), in twips."""
@@ -1235,6 +1305,9 @@ class DocumentAnalyzer:
             "shading_rows": style.get("shading_rows", []),
             "row_heights": style.get("row_heights", []),
             "width_frac": style.get("width_frac"),
+            # Row count is a page-break-risk signal for the placement policy.
+            "num_rows": len(header_rows) + len(body_rows),
+            "text_width_in": getattr(self, "_text_width_in", 0.0) or 0.0,
             "headers": flat_headers,
             "rows": flat_rows,
         }

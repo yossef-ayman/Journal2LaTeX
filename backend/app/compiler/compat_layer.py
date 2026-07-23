@@ -59,6 +59,20 @@ _PACKAGE_FALLBACKS: Dict[str, str] = {
         "\\providecommand\\toprule{\\hline}\\providecommand\\midrule{\\hline}"
         "\\providecommand\\bottomrule{\\hline}"
     ),
+    # cuted's \begin{strip} places full-width inline content; if it is absent,
+    # fall back to a plain full-line-width block so the document still compiles
+    # (content stays in reading order, just within the current column width).
+    "cuted": (
+        "\\newenvironment{strip}"
+        "{\\par\\medskip\\noindent\\begin{minipage}{\\linewidth}}"
+        "{\\end{minipage}\\par\\medskip}"
+    ),
+    # capt-of / caption supply \captionof for non-floating captions; a minimal
+    # fallback keeps the numbered label attached without a float.
+    "capt-of": (
+        "\\providecommand\\captionof[2]{\\par\\refstepcounter{#1}%\n"
+        "  \\textbf{\\csname #1name\\endcsname\\ \\csname the#1\\endcsname:}\\ #2\\par}"
+    ),
 }
 
 # RGB fall-backs (0-255) for common dvips names, used only if a referenced
