@@ -8,7 +8,6 @@ import {
   History,
   Settings,
   Info,
-  FileText,
 } from "lucide-react";
 
 const navItems = [
@@ -25,23 +24,23 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        "flex flex-col border-r bg-card transition-all duration-300",
-        sidebarOpen ? "w-60" : "w-0 overflow-hidden md:w-16",
+        "flex flex-col border-r border-zinc-200 bg-white transition-all duration-200 ease-in-out",
+        sidebarOpen ? "w-56" : "w-0 overflow-hidden md:w-14",
       )}
       aria-label="Main navigation"
     >
       <div
         className={cn(
-          "flex h-14 items-center gap-3 border-b px-4",
+          "flex h-14 items-center gap-2.5 border-b border-zinc-200 px-4",
           !sidebarOpen && "md:justify-center md:px-0",
         )}
       >
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary">
-          <FileText size={16} className="text-primary-foreground" />
+        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-zinc-900 text-white font-bold text-xs shadow-xs">
+          J2L
         </div>
         <span
           className={cn(
-            "text-sm font-semibold text-foreground transition-opacity",
+            "text-xs font-bold tracking-wider uppercase text-zinc-900 transition-opacity",
             !sidebarOpen && "md:hidden",
           )}
         >
@@ -49,7 +48,7 @@ export function Sidebar() {
         </span>
       </div>
 
-      <nav className="flex-1 space-y-1 p-3" role="navigation">
+      <nav className="flex-1 space-y-1 p-2" role="navigation">
         {navItems.map((item) => (
           <NavLink
             key={item.href}
@@ -57,16 +56,16 @@ export function Sidebar() {
             end={item.href === "/"}
             className={({ isActive }) =>
               cn(
-                "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                "flex items-center gap-2.5 rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                 isActive
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
-                !sidebarOpen && "md:justify-center md:px-2",
+                  ? "bg-zinc-100 text-zinc-900 font-semibold"
+                  : "text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900",
+                !sidebarOpen && "md:justify-center md:px-0",
               )
             }
             aria-label={item.label}
           >
-            <item.icon size={18} className="shrink-0" aria-hidden="true" />
+            <item.icon size={16} className="shrink-0" aria-hidden="true" />
             <span
               className={cn(
                 "transition-opacity",
@@ -79,12 +78,12 @@ export function Sidebar() {
         ))}
       </nav>
 
-      <div className="p-3">
-        <Separator className="mb-3" />
+      <div className="p-2">
+        <Separator className="mb-2 bg-zinc-200" />
         <div
           className={cn(
-            "flex items-center gap-3 rounded-md px-3 py-2 text-xs text-muted-foreground",
-            !sidebarOpen && "md:justify-center md:px-2",
+            "flex items-center justify-between rounded-md px-2.5 py-1 text-[11px] text-zinc-400 font-mono",
+            !sidebarOpen && "md:justify-center md:px-0",
           )}
         >
           <span className={cn(!sidebarOpen && "md:hidden")}>

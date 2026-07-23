@@ -125,83 +125,83 @@ export default function ProcessingPage() {
   return (
     <PageContainer>
       <SectionTitle
-        title={isCompleted ? "Conversion Complete" : "Processing"}
+        title={isCompleted ? "Conversion Complete" : "Conversion Pipeline"}
         description={
           isCompleted
-            ? "Redirecting to results..."
-            : job.current_step || "Converting your document..."
+            ? "Redirecting to your result dashboard..."
+            : job.current_step || "Processing manuscript through LaTeX pipeline..."
         }
       />
 
       <div className="grid gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <Card>
-            <CardContent className="pt-6">
+          <Card className="border-zinc-200 bg-white">
+            <CardContent className="pt-5 pb-6">
               <PipelineDiagram status={job.status} progress={job.progress} />
             </CardContent>
           </Card>
         </div>
 
         <div className="space-y-4">
-          <Card>
-            <CardContent className="pt-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Clock size={16} className="text-muted-foreground" />
-                <span className="text-sm font-medium text-foreground">Timing</span>
+          <Card className="border-zinc-200 bg-white">
+            <CardContent className="pt-5 pb-5">
+              <div className="flex items-center gap-2 mb-3.5 pb-2 border-b border-zinc-100">
+                <Clock size={15} className="text-zinc-500" />
+                <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">Pipeline Timing</span>
               </div>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Elapsed</span>
-                  <span className="font-medium text-foreground">{elapsed}</span>
+              <div className="space-y-2.5 text-xs">
+                <div className="flex justify-between items-center">
+                  <span className="text-zinc-500">Time Elapsed</span>
+                  <span className="font-mono font-semibold text-zinc-900">{elapsed}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Remaining</span>
-                  <span className="font-medium text-foreground">
+                <div className="flex justify-between items-center">
+                  <span className="text-zinc-500">Est. Remaining</span>
+                  <span className="font-mono font-semibold text-zinc-900">
                     {estimateRemaining(job.status, job.progress)}
                   </span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Progress</span>
-                  <span className="font-medium text-foreground">{job.progress}%</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-zinc-500">Current Progress</span>
+                  <span className="font-mono font-semibold text-zinc-900">{job.progress}%</span>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardContent className="pt-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Layers size={16} className="text-muted-foreground" />
-                <span className="text-sm font-medium text-foreground">Job Info</span>
+          <Card className="border-zinc-200 bg-white">
+            <CardContent className="pt-5 pb-5">
+              <div className="flex items-center gap-2 mb-3.5 pb-2 border-b border-zinc-100">
+                <Layers size={15} className="text-zinc-500" />
+                <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">Job Metadata</span>
               </div>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Status</span>
+              <div className="space-y-2.5 text-xs">
+                <div className="flex justify-between items-center">
+                  <span className="text-zinc-500">Current Status</span>
                   <StatusBadge status={job.status} />
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Paper</span>
-                  <span className="truncate max-w-[140px] text-right font-medium text-foreground">
+                <div className="flex justify-between items-center">
+                  <span className="text-zinc-500">Paper Name</span>
+                  <span className="truncate max-w-[140px] text-right font-medium text-zinc-900">
                     {job.paper_name || "Untitled"}
                   </span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Template</span>
-                  <span className="font-medium text-foreground">{job.template_name}</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-zinc-500">LaTeX Template</span>
+                  <span className="font-mono text-[11px] font-semibold text-zinc-900">{job.template_name}</span>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {isFailed && (
-            <Card className="border-destructive/50">
-              <CardContent className="pt-6">
-                <div className="flex items-start gap-3">
-                  <AlertCircle size={18} className="mt-0.5 shrink-0 text-destructive" />
+            <Card className="border-red-200 bg-red-50/50">
+              <CardContent className="pt-5 pb-5">
+                <div className="flex items-start gap-2.5">
+                  <AlertCircle size={17} className="mt-0.5 shrink-0 text-red-600" />
                   <div className="space-y-1">
-                    <p className="text-sm font-medium text-destructive">Conversion failed</p>
+                    <p className="text-xs font-semibold text-red-900">Conversion failed</p>
                     {job.errors.map((err, i) => (
-                      <p key={i} className="text-xs text-destructive/80">{err}</p>
+                      <p key={i} className="text-[11px] text-red-700 leading-normal">{err}</p>
                     ))}
                   </div>
                 </div>
@@ -210,16 +210,16 @@ export default function ProcessingPage() {
           )}
 
           {isCompleted && (
-            <Card className="border-emerald-200 bg-emerald-50">
-              <CardContent className="pt-6">
+            <Card className="border-emerald-200 bg-emerald-50/50">
+              <CardContent className="pt-5 pb-5">
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 animate-scale-in rounded-full bg-emerald-100 flex items-center justify-center">
-                    <FileText size={18} className="text-emerald-600" />
+                  <div className="h-9 w-9 animate-scale-in rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
+                    <FileText size={16} className="text-emerald-700" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-emerald-800">Ready!</p>
-                    <p className="text-xs text-emerald-600">
-                      Redirecting to results in a moment...
+                    <p className="text-xs font-semibold text-emerald-900">Ready!</p>
+                    <p className="text-[11px] text-emerald-700">
+                      Redirecting to results...
                     </p>
                   </div>
                 </div>

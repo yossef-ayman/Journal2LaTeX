@@ -64,32 +64,33 @@ const FileCard = memo(function FileCard({
   onReplace: () => void;
 }) {
   return (
-    <div className="animate-fade-in rounded-lg border-2 border-primary/20 bg-primary/5 p-4">
-      <div className="flex items-start justify-between">
+    <div className="animate-fade-in rounded-xl border border-zinc-200 bg-zinc-50/80 p-4">
+      <div className="flex items-start justify-between gap-4">
         <div className="flex items-start gap-3 min-w-0">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-            <FileText size={20} className="text-primary" />
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-900 text-white font-semibold text-xs shadow-2xs">
+            DOCX
           </div>
           <div className="min-w-0 space-y-1">
-            <p className="text-sm font-medium text-foreground truncate max-w-[300px]">
+            <p className="text-xs font-semibold text-zinc-900 truncate max-w-[280px] sm:max-w-[400px]">
               {file.name}
             </p>
-            <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-              <span>{formatFileSize(file.size)}</span>
-              <span className="flex items-center gap-1">
-                <Clock size={12} />
+            <div className="flex flex-wrap items-center gap-3 text-xs text-zinc-500">
+              <span className="font-mono text-[11px]">{formatFileSize(file.size)}</span>
+              <span className="h-3 w-px bg-zinc-200" />
+              <span className="flex items-center gap-1 text-[11px]">
+                <Clock size={12} className="text-zinc-400" />
                 {estimateProcessingSize(file.size)}
               </span>
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1.5 shrink-0">
           <Button
-            variant="ghost"
+            variant="outline"
             size="sm"
             onClick={onReplace}
             aria-label="Replace file"
-            className="text-xs"
+            className="text-xs h-8"
           >
             Replace
           </Button>
@@ -98,8 +99,9 @@ const FileCard = memo(function FileCard({
             size="icon"
             onClick={onRemove}
             aria-label="Remove file"
+            className="h-8 w-8 text-zinc-400 hover:text-red-600 hover:bg-red-50"
           >
-            <X size={16} className="text-destructive" />
+            <X size={15} />
           </Button>
         </div>
       </div>
@@ -220,16 +222,16 @@ export default function UploadPage() {
     <PageContainer>
       <SectionTitle
         title="Upload Document"
-        description="Upload a .docx academic paper to begin the conversion process"
+        description="Upload an academic .docx manuscript to convert to LaTeX"
       />
 
       <div className="grid gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2 space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Select File</CardTitle>
+          <Card className="border-zinc-200 bg-white">
+            <CardHeader className="pb-3 border-b border-zinc-100">
+              <CardTitle className="text-sm font-semibold text-zinc-900">Document Upload</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 pt-5">
               {!file ? (
                 <div
                   onDrop={onDrop}
@@ -241,44 +243,46 @@ export default function UploadPage() {
                   tabIndex={0}
                   aria-label="Upload DOCX file"
                   className={cn(
-                    "flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed px-6 py-16 text-center transition-all duration-200",
+                    "flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed px-6 py-12 text-center transition-all duration-200",
                     dragOver
-                      ? "border-primary bg-primary/5 scale-[1.01]"
+                      ? "border-zinc-900 bg-zinc-50 scale-[0.99]"
                       : validationError
-                        ? "border-destructive/50 bg-destructive/5"
-                        : "border-border hover:border-primary/50 hover:bg-accent/30",
+                        ? "border-red-300 bg-red-50/30"
+                        : "border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50/50",
                   )}
                 >
                   <div
                     className={cn(
-                      "mb-5 flex h-16 w-16 items-center justify-center rounded-full transition-colors",
-                      validationError ? "bg-destructive/10" : "bg-primary/10",
+                      "mb-4 flex h-12 w-12 items-center justify-center rounded-full transition-colors",
+                      validationError ? "bg-red-100 text-red-600" : "bg-zinc-100 text-zinc-800",
                     )}
                   >
                     {validationError ? (
-                      <FileWarning size={28} className="text-destructive" />
+                      <FileWarning size={22} />
                     ) : (
-                      <Upload size={28} className="text-primary" />
+                      <Upload size={22} />
                     )}
                   </div>
-                  <h3 className="mb-1 text-lg font-medium text-foreground">
-                    {dragOver ? "Drop your file here" : "Drop your DOCX file here"}
+                  <h3 className="mb-1 text-sm font-semibold text-zinc-900">
+                    {dragOver ? "Drop your file here" : "Drag and drop your manuscript (.docx)"}
                   </h3>
-                  <p className="mb-6 text-sm text-muted-foreground">
-                    or click to browse from your computer
+                  <p className="mb-4 text-xs text-zinc-500">
+                    or click to browse files from your computer
                   </p>
                   <Button
                     type="button"
                     variant="outline"
+                    size="sm"
                     onClick={(e) => { e.stopPropagation(); onBrowse(); }}
                     aria-label="Browse files"
+                    className="h-8 text-xs font-medium"
                   >
                     Browse Files
                   </Button>
-                  <div className="mt-6 flex items-center gap-4 text-xs text-muted-foreground">
+                  <div className="mt-6 flex items-center gap-3 text-[11px] text-zinc-400 font-mono">
                     <span>Format: .docx</span>
-                    <span className="h-3 w-px bg-border" />
-                    <span>Max: {MAX_FILE_SIZE / 1024 / 1024}MB</span>
+                    <span className="h-3 w-px bg-zinc-200" />
+                    <span>Max Size: {MAX_FILE_SIZE / 1024 / 1024}MB</span>
                   </div>
                 </div>
               ) : (
@@ -295,19 +299,21 @@ export default function UploadPage() {
               />
 
               {validationError && (
-                <div className="animate-fade-in flex items-center gap-2 rounded-md border border-destructive/50 bg-destructive/5 px-4 py-3 text-sm text-destructive">
-                  <AlertCircle size={16} />
-                  {validationError.message}
+                <div className="animate-fade-in flex items-center gap-2 rounded-lg border border-red-200 bg-red-50/60 px-3.5 py-2.5 text-xs text-red-700">
+                  <AlertCircle size={15} className="shrink-0" />
+                  <span>{validationError.message}</span>
                 </div>
               )}
 
-              <div className="space-y-2">
-                <div className="flex gap-3 items-end">
-                  <div className="flex-1 space-y-2">
-                    <Label htmlFor="template">Template</Label>
+              <div className="space-y-2 pt-2">
+                <div className="flex flex-col sm:flex-row gap-3 sm:items-end">
+                  <div className="flex-1 space-y-1.5">
+                    <Label htmlFor="template" className="text-xs font-semibold text-zinc-700">
+                      Target LaTeX Template
+                    </Label>
                     <div className="relative">
                       <Select value={template} onValueChange={setTemplate}>
-                        <SelectTrigger id="template">
+                        <SelectTrigger id="template" className="h-9 text-xs border-zinc-200">
                           <SelectValue>
                             {templates.data?.find((t) => t.template_id === template)
                               ?.display_name ?? templates.data?.find((t) => t.template_id === template)
@@ -316,7 +322,7 @@ export default function UploadPage() {
                         </SelectTrigger>
                         <SelectContent>
                           {templates.data?.map((t) => (
-                            <SelectItem key={t.template_id} value={t.template_id}>
+                            <SelectItem key={t.template_id} value={t.template_id} className="text-xs">
                               {t.display_name || t.journal_title || t.template_id}
                             </SelectItem>
                           ))}
@@ -327,11 +333,13 @@ export default function UploadPage() {
                   <Button
                     type="button"
                     variant="outline"
+                    size="sm"
                     onClick={handleTemplateUploadClick}
                     disabled={templateUpload.isPending}
                     aria-label="Upload custom template ZIP"
+                    className="h-9 text-xs border-zinc-200 shrink-0"
                   >
-                    {templateUpload.isPending ? "Uploading..." : "Upload ZIP Template"}
+                    {templateUpload.isPending ? "Uploading..." : "Upload Custom ZIP Template"}
                   </Button>
                 </div>
                 <input
@@ -345,26 +353,33 @@ export default function UploadPage() {
               </div>
 
               {apiError && (
-                <div className="animate-fade-in flex items-center gap-2 rounded-md border border-destructive/50 bg-destructive/5 px-4 py-3 text-sm text-destructive">
-                  <AlertCircle size={16} />
-                  {apiError.message}
+                <div className="animate-fade-in flex items-center gap-2 rounded-lg border border-red-200 bg-red-50/60 px-3.5 py-2.5 text-xs text-red-700">
+                  <AlertCircle size={15} className="shrink-0" />
+                  <span>{apiError.message}</span>
                 </div>
               )}
 
-              <div className="flex justify-end gap-3">
+              <div className="flex justify-end gap-2.5 pt-2 border-t border-zinc-100">
                 <Button
                   variant="outline"
+                  size="sm"
                   onClick={handleClear}
                   disabled={(!file && !validationError) || isProcessing}
+                  className="h-9 text-xs"
                 >
-                  <Trash2 size={14} />
+                  <Trash2 size={13} />
                   Clear
                 </Button>
-                <Button onClick={onSubmit} disabled={!file || isProcessing} size="lg">
+                <Button
+                  onClick={onSubmit}
+                  disabled={!file || isProcessing}
+                  size="sm"
+                  className="h-9 text-xs px-5"
+                >
                   {isProcessing ? (
-                    <Loader2 size={16} className="animate-spin" />
+                    <Loader2 size={14} className="animate-spin" />
                   ) : (
-                    <Upload size={16} />
+                    <Upload size={14} />
                   )}
                   {isProcessing ? "Processing..." : "Start Conversion"}
                 </Button>
@@ -374,40 +389,39 @@ export default function UploadPage() {
         </div>
 
         <div className="space-y-4">
-          <Card>
-            <CardHeader>
-              <CardTitle>Supported Formats</CardTitle>
+          <Card className="border-zinc-200 bg-white">
+            <CardHeader className="pb-2 border-b border-zinc-100">
+              <CardTitle className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+                Supported Format
+              </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-sm">
-              <div className="flex items-center gap-3 rounded-md bg-muted/50 px-3 py-2">
-                <FileText size={16} className="text-primary" />
-                <span className="font-medium text-foreground">.docx</span>
-                <span className="ml-auto text-xs text-muted-foreground">Word Document</span>
-              </div>
-              <div className="flex items-center gap-3 rounded-md bg-muted/30 px-3 py-2 text-muted-foreground/50">
-                <FileText size={16} />
-                <span>.pdf</span>
-                <span className="ml-auto text-xs">Coming soon</span>
+            <CardContent className="pt-4 space-y-2 text-xs">
+              <div className="flex items-center gap-2.5 rounded-lg border border-zinc-200 bg-zinc-50/80 px-3 py-2">
+                <FileText size={15} className="text-zinc-800" />
+                <span className="font-semibold text-zinc-900">.docx</span>
+                <span className="ml-auto text-[11px] text-zinc-400">Word Document</span>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>File Requirements</CardTitle>
+          <Card className="border-zinc-200 bg-white">
+            <CardHeader className="pb-2 border-b border-zinc-100">
+              <CardTitle className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+                Requirements
+              </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Max size</span>
-                <span className="font-medium text-foreground">50 MB</span>
+            <CardContent className="pt-4 space-y-2.5 text-xs text-zinc-600">
+              <div className="flex justify-between items-center">
+                <span className="text-zinc-500">Maximum File Size</span>
+                <span className="font-mono text-[11px] font-semibold text-zinc-900">50 MB</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Format</span>
-                <span className="font-medium text-foreground">DOCX only</span>
+              <div className="flex justify-between items-center">
+                <span className="text-zinc-500">Supported Inputs</span>
+                <span className="font-mono text-[11px] font-semibold text-zinc-900">DOCX Manuscripts</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Processing</span>
-                <span className="font-medium text-foreground">15–60s</span>
+              <div className="flex justify-between items-center">
+                <span className="text-zinc-500">Est. Duration</span>
+                <span className="font-mono text-[11px] font-semibold text-zinc-900">15 – 60s</span>
               </div>
             </CardContent>
           </Card>

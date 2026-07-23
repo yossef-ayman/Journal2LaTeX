@@ -12,12 +12,12 @@ export function SectionTitle({
   className,
 }: SectionTitleProps) {
   return (
-    <div className={cn("space-y-1", className)}>
-      <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+    <div className={cn("space-y-1 mb-6", className)}>
+      <h2 className="text-xl font-bold tracking-tight text-zinc-900">
         {title}
       </h2>
       {description && (
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <p className="text-xs text-zinc-500">{description}</p>
       )}
     </div>
   );
