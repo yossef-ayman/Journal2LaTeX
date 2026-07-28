@@ -20,17 +20,18 @@ interface Stage {
   activeLabel: string;
   completedLabel: string;
   icon: React.ReactNode;
+  color: string;
 }
 
 const stages: Stage[] = [
-  { key: "UPLOAD", label: "Upload", activeLabel: "Uploading manuscript", completedLabel: "✓ Upload completed", icon: <Upload size={15} /> },
-  { key: "VALIDATING", label: "Parsing", activeLabel: "Parsing document structure", completedLabel: "✓ Parsing document", icon: <FileSearch size={15} /> },
-  { key: "ANALYZING_DOCUMENT", label: "Analysis", activeLabel: "Analyzing sections & metadata", completedLabel: "✓ Document analysis", icon: <FileText size={15} /> },
-  { key: "EXTRACTING_ASSETS", label: "Figures & Tables", activeLabel: "Extracting figures & tables", completedLabel: "✓ Extracting figures & tables", icon: <Image size={15} /> },
-  { key: "LOADING_TEMPLATE", label: "Template", activeLabel: "Loading target LaTeX template", completedLabel: "✓ Template loaded", icon: <LayoutTemplate size={15} /> },
-  { key: "RENDERING_LATEX", label: "LaTeX Generation", activeLabel: "Generating LaTeX source code", completedLabel: "✓ Generating LaTeX", icon: <Code size={15} /> },
-  { key: "COMPILING", label: "Compilation", activeLabel: "Compiling PDF via TeX engine", completedLabel: "✓ Compiling PDF", icon: <FileDown size={15} /> },
-  { key: "COMPLETED", label: "Finished", activeLabel: "Finalizing & verifying output", completedLabel: "✓ Finished", icon: <ShieldCheck size={15} /> },
+  { key: "UPLOAD", label: "Upload", activeLabel: "Uploading manuscript", completedLabel: "Upload completed", icon: <Upload size={14} />, color: "from-emerald-400 to-emerald-500" },
+  { key: "VALIDATING", label: "Parsing", activeLabel: "Parsing document structure", completedLabel: "Document parsed", icon: <FileSearch size={14} />, color: "from-teal-400 to-teal-500" },
+  { key: "ANALYZING_DOCUMENT", label: "Analysis", activeLabel: "Analyzing sections & metadata", completedLabel: "Document analyzed", icon: <FileText size={14} />, color: "from-cyan-400 to-cyan-500" },
+  { key: "EXTRACTING_ASSETS", label: "Figures & Tables", activeLabel: "Extracting figures & tables", completedLabel: "Assets extracted", icon: <Image size={14} />, color: "from-blue-400 to-blue-500" },
+  { key: "LOADING_TEMPLATE", label: "Template", activeLabel: "Loading target LaTeX template", completedLabel: "Template loaded", icon: <LayoutTemplate size={14} />, color: "from-violet-400 to-violet-500" },
+  { key: "RENDERING_LATEX", label: "LaTeX Generation", activeLabel: "Generating LaTeX source code", completedLabel: "LaTeX generated", icon: <Code size={14} />, color: "from-purple-400 to-purple-500" },
+  { key: "COMPILING", label: "Compilation", activeLabel: "Compiling PDF via TeX engine", completedLabel: "PDF compiled", icon: <FileDown size={14} />, color: "from-pink-400 to-pink-500" },
+  { key: "COMPLETED", label: "Finished", activeLabel: "Finalizing & verifying output", completedLabel: "All done!", icon: <ShieldCheck size={14} />, color: "from-emerald-500 to-emerald-600" },
 ];
 
 const stageOrder = stages.map((s) => s.key);
@@ -53,46 +54,30 @@ export function PipelineDiagram({ status, progress, className }: PipelineDiagram
   const activeIdx = getActiveIndex(status);
   const isFailed = status === "FAILED";
   const isCompleted = status === "COMPLETED";
+  const displayProgress = isCompleted ? 100 : progress;
 
   return (
-    <div className={cn("space-y-6", className)}>
-      {/* Modern Top Progress Bar */}
-      <div className="space-y-2">
-        <div className="flex items-center justify-between text-xs font-semibold text-zinc-700">
-          <span>Overall Conversion Progress</span>
-          <span className="font-mono text-zinc-900">{isCompleted ? 100 : progress}%</span>
-        </div>
-        <div className="h-2 w-full overflow-hidden rounded-full bg-zinc-100 border border-zinc-200/60">
-          <div
-            className={cn(
-              "h-full transition-all duration-500 ease-out rounded-full",
-              isCompleted ? "bg-emerald-500" : isFailed ? "bg-red-500" : "bg-zinc-900"
-            )}
-            style={{ width: `${isCompleted ? 100 : progress}%` }}
-          />
-        </div>
-      </div>
-
-      {/* Step checklist */}
-      <div className="space-y-0" role="list" aria-label="Conversion pipeline stages">
+    <div className={cn("space-y-5", className)}>
+      {/* Step list */}
+      <div className="space-y-1" role="list" aria-label="Conversion pipeline stages">
         {stages.map((stage, i) => {
-          const isPast = i < activeIdx || (isCompleted && i <= stages.length - 1);
+          const isPast = i < activeIdx || isCompleted;
           const isCurrent = i === activeIdx && !isCompleted && !isFailed;
           const isFailedStage = isFailed && i === activeIdx;
-
           return (
-            <div key={stage.key} className="flex items-start gap-3.5" role="listitem">
-              <div className="flex flex-col items-center">
+            <div key={stage.key} className="flex items-start gap-3" role="listitem">
+              {/* Left: dot + connector */}
+              <div className="flex flex-col items-center shrink-0 pt-0.5">
                 <div
                   className={cn(
-                    "flex h-8 w-8 items-center justify-center rounded-full border text-xs transition-all duration-300",
+                    "flex h-8 w-8 items-center justify-center rounded-xl transition-all duration-300",
                     isPast
-                      ? "border-emerald-200 bg-emerald-50 text-emerald-600"
+                      ? `bg-gradient-to-br ${stage.color} text-white shadow-sm`
                       : isCurrent
-                        ? "border-zinc-900 bg-zinc-900 text-white shadow-xs animate-pulse-soft"
+                        ? "bg-emerald-600 text-white shadow-md shadow-emerald-200 animate-pulse-soft"
                         : isFailedStage
-                          ? "border-red-200 bg-red-50 text-red-600"
-                          : "border-zinc-200 bg-zinc-50 text-zinc-400",
+                          ? "bg-red-100 text-red-600 border border-red-200"
+                          : "bg-gray-100 text-gray-400 border border-gray-200",
                   )}
                   aria-current={isCurrent ? "step" : undefined}
                 >
@@ -106,38 +91,46 @@ export function PipelineDiagram({ status, progress, className }: PipelineDiagram
                     stage.icon
                   )}
                 </div>
+                {/* Vertical connector */}
                 {i < stages.length - 1 && (
                   <div
                     className={cn(
-                      "h-7 w-0.5 transition-colors duration-300",
-                      isPast ? "bg-emerald-300" : "bg-zinc-200",
+                      "mt-1 w-0.5 flex-1 min-h-[20px] rounded-full transition-colors duration-300",
+                      isPast ? "bg-emerald-200" : "bg-gray-100",
                     )}
                   />
                 )}
               </div>
-              <div className="flex flex-col justify-center pb-4 pt-1 min-w-0">
-                <span
-                  className={cn(
-                    "text-xs font-semibold transition-colors flex items-center gap-2",
-                    isPast
-                      ? "text-emerald-700"
+
+              {/* Right: text */}
+              <div className={cn("pb-5 pt-1 min-w-0 flex-1", i === stages.length - 1 && "pb-0")}>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span
+                    className={cn(
+                      "text-sm font-semibold transition-colors duration-200",
+                      isPast ? "text-emerald-700" : isCurrent ? "text-gray-900" : isFailedStage ? "text-red-600" : "text-gray-400",
+                    )}
+                  >
+                    {isPast
+                      ? stage.completedLabel
                       : isCurrent
-                        ? "text-zinc-900"
-                        : isFailedStage
-                          ? "text-red-600"
-                          : "text-zinc-400",
-                  )}
-                >
-                  {isPast ? stage.completedLabel : isCurrent ? stage.activeLabel : stage.label}
+                        ? stage.activeLabel
+                        : stage.label}
+                  </span>
                   {isCurrent && (
-                    <span className="inline-flex items-center rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] font-mono text-zinc-600">
+                    <span className="inline-flex items-center rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
                       In progress
                     </span>
                   )}
-                </span>
+                  {isFailedStage && (
+                    <span className="inline-flex items-center rounded-full bg-red-100 px-2 py-0.5 text-[10px] font-semibold text-red-600">
+                      Failed
+                    </span>
+                  )}
+                </div>
                 {isCurrent && (
-                  <span className="text-[11px] text-zinc-500 mt-0.5 animate-fade-in">
-                    Processing step ({progress}% complete)
+                  <span className="text-xs text-gray-400 mt-1 block animate-fade-in">
+                    {displayProgress}% complete
                   </span>
                 )}
               </div>

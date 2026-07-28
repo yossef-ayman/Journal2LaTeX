@@ -8,6 +8,92 @@ from app.models.document import AuthorModel, DocumentBlock, DocumentModel, Secti
 from app.utils.logger import get_job_logger
 
 
+# Manually-formatted numbered heading, e.g. "2. Literature Review", "3.5 Data
+# Analysis", "2.2.1.1 Algorithmic Amplification".  The separator after the
+# number is either whitespace or a trailing dot: Word documents frequently omit
+# the space ("4.2.Descriptive Statistics"), and requiring one silently demoted
+# such headings to body text, which merged their content into the previous
+# section.  The lookahead rejects a following digit so that decimal values are
+# not mistaken for section numbers.  Callers additionally require the paragraph
+# to be short and fully bold.
+_MANUAL_HEADING_RE = r"^(\d+(?:\.\s?\d+)*)(?:\.\s*|\s+)(?=[^\s\d])"
+
+# Roman-numeral section number, the IEEE convention ("II. SYSTEM MODEL").  The
+# alternation is ordered longest-first so that "III" is not matched as "II".
+_ROMAN_HEADING_RE = (
+    r"^((?:X{0,3})(?:IX|IV|V?I{0,3}))[.)]\s+(?=[A-Za-z])"
+)
+# Lettered subsection, also IEEE ("A. Signal Model").  Deliberately requires an
+# upper-case word after the letter and is only consulted for paragraphs that
+# already look like headings by formatting, because "A. Smith" in an author list
+# has exactly the same shape.
+_LETTER_HEADING_RE = r"^([A-Z])[.)]\s+(?=[A-Z])"
+# A word-prefixed hierarchy label: "Chapter 1.", "Part II", "Appendix A".
+# Universities and book-style theses use these instead of a bare number.
+_WORD_HEADING_RE = (
+    r"^(chapter|part|appendix|annex|section)\s+"
+    r"([0-9]+|[IVXLC]+|[A-Z])\b[.:)]?\s*"
+)
+
+# Front-matter labels.  These mark blocks that belong to the title page even
+# when they are formatted as headings, so they must not end the front matter.
+# Matching is done on a normalised form (see _normalise_label) so that the
+# letter-spaced Elsevier variant "A B S T R A C T" and the em-dash IEEE variant
+# "Abstract-We propose" both reduce to the same key.
+_ABSTRACT_LABEL_RE = re.compile(
+    r"^(abstract|summary|graphical abstract|highlights)\b[\s:.–—-]*",
+    re.IGNORECASE,
+)
+_KEYWORD_LABEL_RE = re.compile(
+    r"^(keywords?|key\s*words?|index\s*terms|subject\s*terms|"
+    r"mathematics subject classification|msc)\b[\s:.–—-]*",
+    re.IGNORECASE,
+)
+# Separators used between keywords across publishers: comma, semicolon, the
+# Springer middle dot, and the bullet some templates use instead.
+_KEYWORD_SPLIT_RE = r"[,;·•·]|\s·\s"
+
+_EMAIL_RE = re.compile(r"[\w\.-]+@[\w\.-]+\.\w+")
+
+# Journal / submission furniture that surrounds the real front matter on a
+# reprint or a submission cover page.  Matched generically -- volume and issue
+# tags, identifiers, submission dates, licences -- rather than by naming any
+# particular journal, so no publisher is special-cased.
+_FURNITURE_RE = re.compile(
+    r"(^|\b)("
+    # "Vol." / "No." are abbreviations that occur in a masthead and essentially
+    # never in a title, so they are matched without requiring a following digit:
+    # a reprint header reads "J. Stat. Appl. Pro. Vol. No. (20--) 185", where
+    # the numbers have been left as placeholders.
+    r"vol\.|volume\s+\d|no\.\s|issue\s+\d|pp\.?\s*\d|"
+    r"issn|isbn|doi\s*:|https?://|www\.|"
+    r"received\s*:|revised\s*:|accepted\s*:|published(\s+online)?\s*:|"
+    r"submitted\s*:|available\s+online|"
+    r"copyright|©|all\s+rights\s+reserved|licen[cs]e|creative\s+commons|"
+    r"preprint|manuscript\s+(id|number)"
+    r")",
+    re.IGNORECASE,
+)
+
+
+def _normalise_label(text: str) -> str:
+    """Collapse a display label to a comparable form.
+
+    Elsevier sets section labels letter-spaced ("A B S T R A C T"); Word stores
+    that literally, so a plain comparison against "abstract" fails.  When a
+    string is composed only of single characters separated by spaces the spaces
+    are removed, which maps the letter-spaced form onto the ordinary one and
+    leaves every normal label untouched.
+    """
+    stripped = (text or "").strip()
+    if not stripped:
+        return ""
+    parts = stripped.split()
+    if len(parts) > 2 and all(len(p) == 1 for p in parts):
+        return "".join(parts)
+    return stripped
+
+
 class DocumentAnalyzerError(Exception):
     """Exception raised when document analysis fails."""
     pass
@@ -103,26 +189,71 @@ class DocumentAnalyzer:
             "warnings": []
         }
 
-        # Separate metadata blocks from body blocks
+        # Headings that Word never marked as headings -- direct-formatted
+        # manuscripts, IEEE and Elsevier submissions -- are recovered here so
+        # the split below and the section tree both see a real hierarchy.
+        blocks = self._promote_semantic_headings(blocks)
+        # Word keeps a caption in its own paragraph with no link to the object
+        # it describes; pair them up before parsing so neither is duplicated.
+        blocks = self._attach_captions(blocks)
+
+        # Separate metadata blocks from body blocks.  The boundary is the first
+        # *body* heading.  "Abstract" and "Keywords" are frequently formatted as
+        # headings in their own right, and treating one of those as the start of
+        # the body strands the abstract in section 1 and empties the title page,
+        # so a front-matter label does not close the front matter.
         intro_metadata_blocks = []
         body_blocks = []
         found_header = False
 
         for b in blocks:
-            if b.get("t") == "Header":
-                found_header = True
+            if not found_header and b.get("t") == "Header":
+                c = b.get("c") or []
+                htxt = _normalise_label(
+                    self._stringify_inlines(c[2] if len(c) > 2 else [])
+                )
+                if not (_ABSTRACT_LABEL_RE.match(htxt) or _KEYWORD_LABEL_RE.match(htxt)):
+                    found_header = True
             if not found_header:
                 intro_metadata_blocks.append(b)
             else:
                 body_blocks.append(b)
 
-        # Clean/Stringify the metadata blocks
+        # A manuscript typed with no heading styles and no direct formatting on
+        # its headings ("Introduction" set in the same 11pt regular as the body)
+        # yields no Header at all, so the loop above never closes the front
+        # matter and the entire document is swallowed as metadata: the pipeline
+        # still reports success, but the PDF contains only a title page and
+        # every remaining page is lost.  The front matter has a definite end
+        # whether or not a heading marks it, so when no boundary was found one
+        # is located structurally and the remainder is restored as body.
+        if not found_header and blocks:
+            split_at = self._front_matter_end(blocks)
+            if split_at < len(blocks):
+                intro_metadata_blocks = blocks[:split_at]
+                body_blocks = blocks[split_at:]
+
+        # Clean/Stringify the metadata blocks.  Header text is kept inline with
+        # the paragraphs so that a standalone "Abstract" / "Keywords" label can
+        # still be associated with the text that follows it.
         intro_texts = []
         for b in intro_metadata_blocks:
             if b.get("t") in ("Para", "Plain"):
                 txt = self._stringify_inlines(b.get("c", [])).strip()
                 if txt:
                     intro_texts.append(txt)
+            elif b.get("t") == "Header":
+                c = b.get("c") or []
+                txt = self._stringify_inlines(c[2] if len(c) > 2 else []).strip()
+                if txt:
+                    intro_texts.append(txt)
+            elif b.get("t") == "Table":
+                # Springer and IEEE frequently lay the author block out in an
+                # invisible table.  Its cells are front matter, not a data
+                # table, and were previously discarded outright.
+                for cell in self._table_cell_texts(b):
+                    if cell:
+                        intro_texts.append(cell)
 
         title = ""
         authors: List[AuthorModel] = []
@@ -135,45 +266,89 @@ class DocumentAnalyzer:
             title = self._stringify_inlines(meta["title"].get("c", []))
 
         if not title.strip() and intro_texts:
-            # Check the first few paragraphs. The title is usually longer than a journal volume tag.
-            for txt in intro_texts[:3]:
-                # Skip typical journal metadata strings
-                if any(x in txt.lower() for x in ["j. stat.", "vol.", "issn", "http", "doi:"]):
+            # Search a little deeper than the first few paragraphs: thesis title
+            # pages open with a university name and a degree statement, and
+            # journal reprints open with a masthead.
+            for txt in intro_texts[:8]:
+                if self._is_journal_furniture(txt):
                     continue
-                # First substantial paragraph is likely the title
-                if len(txt) > 20:
+                if _ABSTRACT_LABEL_RE.match(_normalise_label(txt)) or \
+                        _KEYWORD_LABEL_RE.match(_normalise_label(txt)):
+                    break
+                # A title is a substantial line that is not a sentence and not
+                # an address or a name list.
+                if len(txt) > 20 and len(txt) <= 300 and not _EMAIL_RE.search(txt):
                     title = txt
                     intro_texts.remove(txt)
                     break
 
-        # 2. Extract Abstract & Keywords directly from inline paragraphs starting with "Abstract:" or "Keywords:"
-        abstract_para_indices = []
-        keywords_para_indices = []
-
-        for idx, txt in enumerate(list(intro_texts)):
-            txt_lower = txt.lower().strip()
-            if txt_lower.startswith("abstract:") or txt_lower.startswith("abstract"):
-                abstract_text = re.sub(r"^abstract(text)?:?\s*", "", txt, flags=re.IGNORECASE).strip()
-                abstract_para_indices.append(txt)
-            elif txt_lower.startswith("keywords:") or txt_lower.startswith("key words:") or txt_lower.startswith("key-words:"):
-                raw_kw = re.sub(r"^key(words|\s*words)?:?\s*", "", txt, flags=re.IGNORECASE).strip()
-                keywords_list = [w.strip() for w in re.split(r",|;", raw_kw) if w.strip()]
-                keywords_para_indices.append(txt)
+        # 2. Abstract & Keywords.  Publishers differ in both the label wording
+        # ("Abstract", "Summary", "Index Terms", "Key words") and in whether the
+        # label shares a paragraph with its content ("Abstract-We propose ...")
+        # or stands alone as its own heading.  Both layouts are handled, and the
+        # label itself is matched on the normalised form so the letter-spaced
+        # Elsevier variant "A B S T R A C T" is recognised too.
+        consumed: List[str] = []
+        for idx, txt in enumerate(intro_texts):
+            norm = _normalise_label(txt)
+            m_abs = _ABSTRACT_LABEL_RE.match(norm)
+            m_kw = _KEYWORD_LABEL_RE.match(norm)
+            if m_abs and not abstract_text:
+                rest = norm[m_abs.end():].strip()
+                if not rest:
+                    # Standalone label: the abstract is the paragraph after it.
+                    nxt = intro_texts[idx + 1] if idx + 1 < len(intro_texts) else ""
+                    if nxt and not _KEYWORD_LABEL_RE.match(_normalise_label(nxt)):
+                        abstract_text = nxt
+                        consumed.append(nxt)
+                    consumed.append(txt)
+                else:
+                    abstract_text = rest
+                    consumed.append(txt)
+            elif m_kw and not keywords_list:
+                rest = norm[m_kw.end():].strip()
+                if not rest:
+                    nxt = intro_texts[idx + 1] if idx + 1 < len(intro_texts) else ""
+                    if nxt:
+                        rest = nxt
+                        consumed.append(nxt)
+                    consumed.append(txt)
+                else:
+                    consumed.append(txt)
+                keywords_list = [
+                    w.strip(" .;·•") for w in re.split(_KEYWORD_SPLIT_RE, rest)
+                    if w.strip(" .;·•")
+                ]
 
         # Remove abstract and keyword blocks from metadata paragraphs to avoid duplicate processing
-        for txt in abstract_para_indices + keywords_para_indices:
+        for txt in consumed:
             if txt in intro_texts:
                 intro_texts.remove(txt)
 
         # 3. Process Author & Affiliation lists from remaining metadata paragraphs
-        email_regex = re.compile(r"[\w\.-]+@[\w\.-]+\.\w+")
+        email_regex = _EMAIL_RE
         author_markers = {}  # id(AuthorModel) -> superscript affiliation index
-        institution_keywords = ["university", "department", "institute", "school", "college", "lab", "corp", "inc", "ltd", "centre"]
+        institution_keywords = ["university", "department", "institute", "school", "college", "lab",
+                                "corp", "inc", "ltd", "centre", "center", "faculty", "academy",
+                                "hospital", "clinic", "foundation", "polytechnic"]
         current_author: Optional[AuthorModel] = None
+        # Affiliation paragraphs that carried no index marker, kept in reading
+        # order so they can be associated positionally once the whole front
+        # matter has been seen (see the unmarked-affiliation pass below).
+        unmarked_affiliations: List[str] = []
+        # Authors nominated for correspondence by a footnote glyph on the name.
+        starred_authors: List[AuthorModel] = []
 
         for txt in intro_texts:
-            # Skip dates/metadata and journal header markers
-            if any(x in txt.lower() for x in ["received:", "revised:", "accepted:", "published online:", "j. stat.", "vol.", "issn", "http", "doi:", "volume", "issue"]):
+            # Skip masthead / submission metadata.  Detected by shape rather
+            # than by naming journals, so an unfamiliar publisher behaves the
+            # same as a familiar one.
+            if self._is_journal_furniture(txt):
+                continue
+            # A degree statement or a similar title-page sentence is prose, not
+            # a name list; letting it through turned whole sentences into
+            # "authors" on thesis front matter.
+            if len(txt) > 200:
                 continue
 
             emails = email_regex.findall(txt)
@@ -183,12 +358,32 @@ class DocumentAnalyzer:
             )
 
             if emails:
-                if current_author:
+                # Prefer the author the address actually belongs to.  A
+                # corresponding-author note usually appears after the whole
+                # name list, so attaching it to whichever author happened to be
+                # parsed last credited the wrong person; matching the local
+                # part against the surnames fixes that without any per-journal
+                # rule.
+                owner = self._author_for_email(emails[0], authors)
+                if owner is not None:
+                    owner.email = emails[0]
+                elif current_author:
                     current_author.email = emails[0]
                 else:
                     current_author = AuthorModel(name="Corresponding Author", email=emails[0])
                     authors.append(current_author)
-            elif is_inst:
+                # An address very often shares its paragraph with the
+                # affiliation it belongs to ("Institute of Marine Sciences,
+                # University of Bergen, Norway  ingrid.sorensen@uib.no"), so the
+                # paragraph is not finished with once the address is taken: the
+                # remainder is still an affiliation and is processed as one
+                # below.  Treating an address as terminal, which is what the
+                # bare elif used to do, left every author of such a document
+                # with no affiliation at all.
+                txt = email_regex.sub("", txt).strip(" ,;·•∗*")
+                is_inst = is_inst and bool(txt)
+
+            if is_inst:
                 # Affiliation paragraph.  If it starts with an index digit
                 # ("1 Professor in ..."), attach it to the author(s) carrying
                 # that superscript marker; otherwise attach to the latest author.
@@ -203,11 +398,17 @@ class DocumentAnalyzer:
                             matched = True
                     if not matched and current_author:
                         current_author.affiliation = body
-                elif current_author:
-                    current_author.affiliation = txt
-                elif authors:
-                    authors[-1].affiliation = txt
-            else:
+                else:
+                    # No index marker.  Which author the line belongs to cannot
+                    # be decided yet: the paragraph may precede the names
+                    # (Springer/Elsevier put a single shared affiliation under
+                    # the author line, plain Word manuscripts often list one per
+                    # author), so it is queued and associated after the whole
+                    # front matter has been read.  Attaching it to whichever
+                    # author happened to be parsed last -- what this used to do
+                    # -- credited only the final author and left the rest empty.
+                    unmarked_affiliations.append(txt)
+            elif not emails:
                 # Likely a name list: "Abdallah Almahaireh1, Baha' Shawaqfeh2, and ..."
                 # Superscript affiliation markers arrive as plain trailing
                 # digits after inline flattening; capture them for affiliation
@@ -218,17 +419,53 @@ class DocumentAnalyzer:
                 # name list, so skip it (prevents abstract text becoming authors).
                 if len(cleaned) > 120:
                     continue
-                names = [n.strip() for n in re.split(r",|\band\b", cleaned) if n.strip()]
+                # A name list is not a sentence.  Title pages carry degree
+                # statements, dedications and submission notes that are short
+                # enough to pass the length test but are plainly prose.
+                if self._looks_like_prose(cleaned) and not re.search(r"\d\s*$", cleaned):
+                    continue
+                # Springer separates authors with a middle dot rather than a
+                # comma, and several publishers use a bullet; both are treated
+                # as list separators alongside the comma and "and".
+                names = [n.strip() for n in re.split(r",|;|·|•|·|\band\b", cleaned) if n.strip()]
                 for name in names:
-                    marker_match = re.search(r"(\d+)\s*\*?$", name)
+                    marker_match = re.search(r"(\d+)\s*[*†‡§¶°]*$", name)
                     marker = int(marker_match.group(1)) if marker_match else None
-                    display = re.sub(r"\s*\d+\s*\*?$", "", name).strip()
-                    if not display:
+                    # Strip the trailing affiliation / corresponding-author
+                    # marker, whether it is a digit or one of the footnote
+                    # glyphs publishers use in place of one.
+                    display = re.sub(r"[\s,]*\d*\s*[*†‡§¶°∗]*$", "", name).strip()
+                    if not display or not re.search(r"[A-Za-z]", display):
                         continue
                     current_author = AuthorModel(name=display)
                     if marker is not None:
                         author_markers[id(current_author)] = marker
+                    # A footnote glyph on a name is the near-universal way of
+                    # nominating the corresponding author, whatever the
+                    # publisher; it is a signal on the text, not a style name.
+                    if re.search(r"[*∗✱٭†‡]\s*$", name):
+                        starred_authors.append(current_author)
                     authors.append(current_author)
+
+        # Associate the affiliation paragraphs that carried no index marker.
+        # Two shapes cover essentially every manuscript: one affiliation shared
+        # by everyone, and one affiliation per author in the same order as the
+        # name list.  Anything in between falls back to the shared reading,
+        # which is the safer error -- an author with a slightly too general
+        # affiliation still renders, an author with none does not.
+        if unmarked_affiliations and authors:
+            unaffiliated = [a for a in authors if not a.affiliation]
+            if len(unmarked_affiliations) == 1:
+                for author in unaffiliated:
+                    author.affiliation = unmarked_affiliations[0]
+            elif len(unmarked_affiliations) == len(unaffiliated):
+                for author, aff in zip(unaffiliated, unmarked_affiliations):
+                    author.affiliation = aff
+            else:
+                for idx, author in enumerate(unaffiliated):
+                    author.affiliation = unmarked_affiliations[
+                        min(idx, len(unmarked_affiliations) - 1)
+                    ]
 
         # Fallback: an unlabelled abstract is usually the longest early paragraph.
         if not abstract_text:
@@ -310,10 +547,33 @@ class DocumentAnalyzer:
         corresponding_email = existing_email or footer_email
         if corresponding_email:
             doc.corresponding_email = corresponding_email
-            # Attach to the corresponding author (the one carrying the '*'
-            # marker if identifiable, else the first author) when not already set.
-            if not existing_email and authors and not authors[0].email:
-                authors[0].email = corresponding_email
+            # Attach the address to the person it actually belongs to.  The
+            # address's own local part is the strongest signal and is tried
+            # first; failing that, a footnote glyph on a name nominates the
+            # corresponding author; only when neither is available does the
+            # first author stand in.  Blindly crediting the first author, which
+            # is what this used to do, mis-assigned the address on manuscripts
+            # whose corresponding author is not listed first.
+            if not existing_email and authors:
+                target = (
+                    self._author_for_email(corresponding_email, authors)
+                    or (starred_authors[0] if starred_authors else None)
+                    or authors[0]
+                )
+                if not target.email:
+                    target.email = corresponding_email
+
+        # Record who the paper nominates for correspondence.  The author holding
+        # the corresponding address is the definitive answer; a footnote glyph is
+        # the fallback when no address could be resolved to a person.
+        if authors:
+            holder = next((a for a in authors if a.email and a.email == doc.corresponding_email), None)
+            if holder is None and starred_authors:
+                holder = starred_authors[0]
+            if holder is None and doc.corresponding_email:
+                holder = next((a for a in authors if a.email), None)
+            if holder is not None:
+                holder.is_corresponding = True
         current_section = SectionModel(title="Introduction", level=1, blocks=[])
         current_section_synthetic = True  # drop only if it never gains content
         references_list = []
@@ -565,18 +825,11 @@ class DocumentAnalyzer:
                         }
                     )
 
-                if item_t == "Math":
-                    math_type = item_c[0].get("t") if len(item_c) > 0 else ""
-                    latex_code = item_c[1] if len(item_c) > 1 else ""
-                    if math_type == "DisplayMath":
-                        counters["equations"] += 1
-                        return DocumentBlock(
-                            type=BlockType.EQUATION,
-                            content={
-                                "latex_code": latex_code,
-                                "label": None
-                            }
-                        )
+            # Display math is handled after the loop so that the rest of the
+            # paragraph is never discarded (see _display_equation_block).
+            equation = self._display_equation_block(inlines, counters)
+            if equation is not None:
+                return equation
 
             # Standard paragraph block
             text = self._stringify_inlines(inlines)
@@ -652,7 +905,7 @@ class DocumentAnalyzer:
             elif t == "LineBreak":
                 parts.append("\n")
             elif t == "Math":
-                parts.append(f"${c[1]}$")
+                parts.append(self._math_to_text(c))
             elif t in ("Emph", "Strong", "Strikeout", "Superscript", "Subscript",
                        "SmallCaps", "Underline"):
                 # Formatting wrappers: keep the text content (superscripted
@@ -669,6 +922,521 @@ class DocumentAnalyzer:
             elif t == "Cite":
                 parts.append(self._stringify_inlines(c[1]))
         return "".join(parts)
+
+    def _collect_display_math(self, inlines: Any) -> List[str]:
+        """Every DisplayMath body in an inline tree, in reading order.
+
+        The tree is walked recursively because Word wraps equations in
+        character-style runs, which pandoc emits as ``Span``/``Emph``/``Strong``
+        around the ``Math`` node.  Only inspecting the top level -- as the old
+        code did -- missed every styled equation.
+        """
+        found: List[str] = []
+        if not isinstance(inlines, list):
+            return found
+        for item in inlines:
+            if not isinstance(item, dict):
+                continue
+            t = item.get("t")
+            c = item.get("c")
+            if t == "Math":
+                if isinstance(c, list) and len(c) > 1 and isinstance(c[0], dict):
+                    if c[0].get("t") == "DisplayMath" and (c[1] or "").strip():
+                        cleaned = self._sanitize_math(c[1].strip())
+                        if cleaned:
+                            found.append(cleaned)
+            elif t in ("Emph", "Strong", "Strikeout", "Superscript", "Subscript",
+                       "SmallCaps", "Underline"):
+                found.extend(self._collect_display_math(c))
+            elif t in ("Span", "Quoted"):
+                found.extend(self._collect_display_math(c[1] if isinstance(c, list) and len(c) > 1 else None))
+            elif t == "Link":
+                found.extend(self._collect_display_math(c[2] if isinstance(c, list) and len(c) > 2 else None))
+        return found
+
+    def _display_equation_block(self, inlines: Any,
+                                counters: Dict[str, Any]) -> Optional[DocumentBlock]:
+        """Turn a display-equation paragraph into an EQUATION block.
+
+        Returns None when the paragraph is *not* purely an equation, in which
+        case the caller renders it as an ordinary paragraph -- the math still
+        survives, embedded as a ``\\[...\\]`` span, so no equation can ever be
+        lost or downgraded to plain text.  The previous implementation returned
+        an EQUATION block on the first display node and silently discarded every
+        other inline in the paragraph, which threw away the equation number that
+        Word almost always places on the same line.
+        """
+        bodies = self._collect_display_math(inlines)
+        if not bodies:
+            return None
+
+        residual = self._stringify_inlines(inlines)
+        for body in bodies:
+            residual = residual.replace(f"\\[{body}\\]", "", 1)
+
+        # Word writes the equation number as "(3)" on the same line, usually
+        # after a tab.  Capture it so the original numbering is reproduced
+        # exactly instead of being replaced by LaTeX's own counter.
+        number = None
+        num_match = re.search(r"\(\s*([0-9]+(?:[.\-][0-9A-Za-z]+)*|[A-Za-z][.\-][0-9]+)\s*\)",
+                              residual)
+        if num_match:
+            number = num_match.group(1)
+            residual = residual[:num_match.start()] + residual[num_match.end():]
+
+        # Anything left beyond punctuation/whitespace means this paragraph is
+        # prose that happens to contain a display equation; keep it as prose.
+        if re.sub(r"[\s.,;:]", "", residual):
+            return None
+
+        if len(bodies) == 1:
+            latex_code = bodies[0]
+        else:
+            # Several display equations in one Word paragraph form a multi-line
+            # equation; gathered keeps them centred as separate lines.
+            latex_code = ("\\begin{gathered}\n"
+                          + " \\\\\n".join(bodies)
+                          + "\n\\end{gathered}")
+
+        counters["equations"] += 1
+        return DocumentBlock(
+            type=BlockType.EQUATION,
+            content={"latex_code": latex_code, "label": None, "number": number},
+        )
+
+    # Characters Word stores literally inside an equation but which have no
+    # meaning to TeX's math mode.  Left as-is they are either dropped silently
+    # by the font or raise "Package inputenc Error: Unicode character not set
+    # up".  Each maps to the construct a mathematician would have typed.
+    _MATH_UNICODE = {
+        "²": "^{2}", "³": "^{3}", "¹": "^{1}",
+        "⁰": "^{0}", "⁴": "^{4}", "⁵": "^{5}",
+        "⁶": "^{6}", "⁷": "^{7}", "⁸": "^{8}", "⁹": "^{9}",
+        "⁺": "^{+}", "⁻": "^{-}", "ⁿ": "^{n}",
+        "₀": "_{0}", "₁": "_{1}", "₂": "_{2}", "₃": "_{3}",
+        "₄": "_{4}", "₅": "_{5}", "₆": "_{6}", "₇": "_{7}",
+        "₈": "_{8}", "₉": "_{9}",
+        "×": r"\times ", "÷": r"\div ", "±": r"\pm ",
+        "∓": r"\mp ", "≠": r"\neq ", "≤": r"\leq ",
+        "≥": r"\geq ", "≈": r"\approx ", "≡": r"\equiv ",
+        "∞": r"\infty ", "∂": r"\partial ", "∇": r"\nabla ",
+        "√": r"\sqrt{}", "∫": r"\int ", "∑": r"\sum ",
+        "∏": r"\prod ", "∈": r"\in ", "∉": r"\notin ",
+        "⊂": r"\subset ", "⊆": r"\subseteq ", "→": r"\to ",
+        "⇒": r"\Rightarrow ", "⇔": r"\Leftrightarrow ",
+        "∀": r"\forall ", "∃": r"\exists ", "·": r"\cdot ",
+        "…": r"\dots ", "′": "'", "″": "''",
+        "°": r"^{\circ}", "′′": "''",
+    }
+    # Greek letters are named rather than enumerated one by one: the block is
+    # contiguous, so the LaTeX command follows from the code point.
+    _GREEK_LOWER = ("alpha beta gamma delta epsilon zeta eta theta iota kappa "
+                    "lambda mu nu xi omicron pi rho varsigma sigma tau upsilon "
+                    "phi chi psi omega").split()
+    _GREEK_UPPER = ("Alpha Beta Gamma Delta Epsilon Zeta Eta Theta Iota Kappa "
+                    "Lambda Mu Nu Xi Omicron Pi Rho Sigmaf Sigma Tau Upsilon "
+                    "Phi Chi Psi Omega").split()
+    # Upper-case Greek letters that TeX has no command for are identical to
+    # Latin capitals and are written as such.
+    _GREEK_UPPER_LATIN = {"Alpha": "A", "Beta": "B", "Epsilon": "E", "Zeta": "Z",
+                          "Eta": "H", "Iota": "I", "Kappa": "K", "Mu": "M",
+                          "Nu": "N", "Omicron": "O", "Rho": "P", "Tau": "T",
+                          "Chi": "X", "Sigmaf": r"\Sigma "}
+
+    @classmethod
+    def _sanitize_math(cls, body: str) -> str:
+        """Make an equation body safe for TeX math mode without changing it.
+
+        Word stores many symbols as literal Unicode even inside an equation --
+        a superscript two, a Greek letter typed from the keyboard, a times sign
+        -- because the OMML only records the glyph.  Pandoc passes them through
+        verbatim, and in math mode they are dropped or raise an inputenc error,
+        which is how an exponent silently disappeared from a rendered matrix.
+        Each is replaced by the equivalent TeX construct, so the equation is
+        preserved exactly rather than being degraded or lost.
+        """
+        if not body:
+            return ""
+        out = []
+        for ch in body:
+            mapped = cls._MATH_UNICODE.get(ch)
+            if mapped is not None:
+                out.append(mapped)
+                continue
+            code = ord(ch)
+            if 0x03B1 <= code <= 0x03C9:  # lower-case Greek
+                out.append("\\" + cls._GREEK_LOWER[code - 0x03B1] + " ")
+                continue
+            if 0x0391 <= code <= 0x03A9:  # upper-case Greek
+                name = cls._GREEK_UPPER[code - 0x0391]
+                out.append(cls._GREEK_UPPER_LATIN.get(name) or ("\\" + name + " "))
+                continue
+            out.append(ch)
+        # Collapse the spaces the replacements introduce; TeX ignores them in
+        # math mode anyway and the result is easier to read.
+        return re.sub(r"\s{2,}", " ", "".join(out)).strip()
+
+    @staticmethod
+    def _math_to_text(c: Any) -> str:
+        """Render a pandoc ``Math`` inline as a delimited LaTeX math span.
+
+        Display and inline math are kept distinct.  Flattening display math into
+        ``$...$`` (as this used to do) breaks every multi-line construct: a
+        ``\\\\`` row separator or an ``aligned`` environment inside single-dollar
+        math is a hard LaTeX error ("Missing $ inserted").  ``\\(``/``\\[`` are
+        used rather than ``$`` so that a literal currency ``$`` elsewhere in the
+        same paragraph can never be mistaken for a delimiter.
+        """
+        if not isinstance(c, list) or len(c) < 2:
+            return ""
+        kind = c[0].get("t") if isinstance(c[0], dict) else ""
+        body = (c[1] or "").strip()
+        if not body:
+            return ""
+        body = DocumentAnalyzer._sanitize_math(body)
+        if not body:
+            return ""
+        if kind == "DisplayMath":
+            return f"\\[{body}\\]"
+        return f"\\({body}\\)"
+
+    @staticmethod
+    def _author_for_email(email: str, authors: List[AuthorModel]) -> Optional[AuthorModel]:
+        """The author whose name appears in an address's local part, if any.
+
+        Institutional addresses are built from the person's name in a handful of
+        shapes ("j.whitfield@", "alvarez@", "mei_ling.chou@"), so the surname --
+        the longest name token -- is looked for among the local part's own
+        tokens.  Returns None when no author matches, leaving the caller's
+        positional fallback in charge.
+        """
+        local = (email or "").split("@")[0].lower()
+        if not local:
+            return None
+        pieces = {p for p in re.split(r"[._\-0-9]+", local) if len(p) >= 3}
+        if not pieces:
+            return None
+        best = None
+        best_len = 0
+        for author in authors:
+            for token in re.split(r"[\s.\-']+", (author.name or "").lower()):
+                if len(token) >= 3 and token in pieces and len(token) > best_len:
+                    best, best_len = author, len(token)
+        if best is not None:
+            return best
+        # Some addresses run the name together with no separator at all
+        # ("jwhitfield@", "mkowalczyk@"), so no token boundary exists to split
+        # on.  Only the surname -- the last name token -- is looked for as a
+        # substring: given names are shared across people far too often for a
+        # bare substring hit on one to identify anybody, and the length floor
+        # keeps short particles ("de", "van", "abu") from matching by accident.
+        for author in authors:
+            tokens = [t for t in re.split(r"[\s.\-']+", (author.name or "").lower()) if t]
+            if not tokens:
+                continue
+            surname = tokens[-1]
+            if len(surname) >= 5 and surname in local and len(surname) > best_len:
+                best, best_len = author, len(surname)
+        return best
+
+    @staticmethod
+    def _is_journal_furniture(text: str) -> bool:
+        """True for masthead / submission-metadata lines on a title page."""
+        t = (text or "").strip()
+        if not t:
+            return True
+        return bool(_FURNITURE_RE.search(t))
+
+    # A caption paragraph: a label, a number, then a separator or a capitalised
+    # phrase.  The trailing condition is what separates a caption from a
+    # cross-reference in running text -- "Table 1. Residual bias" and "Table 1:
+    # Results" are captions, while "Table 1 summarises the residual bias" is a
+    # sentence that merely mentions the table.
+    _CAPTION_RE = re.compile(
+        r"^(?P<kind>table|tab\.|figure|fig\.|chart|scheme|plate|exhibit)\s*"
+        r"(?P<num>[0-9]+(?:\.[0-9]+)*|[IVXLC]+|[A-Z](?:\.[0-9]+)?)\s*"
+        r"(?:(?P<sep>[.:—–)-]\s*)|(?=[A-Z]))",
+        re.IGNORECASE,
+    )
+
+    def _caption_text(self, caption_block: Any) -> str:
+        """Text of a pandoc ``Caption``, whatever shape it arrives in.
+
+        A pandoc 3 Caption is ``[maybe-short-caption, [blocks]]``; older paths
+        in this file also saw it wrapped in a dict.  Reading the list form as if
+        it were a plain block list yields "" because its first element is the
+        short caption (usually null), which made every real caption look empty.
+        """
+        if isinstance(caption_block, dict):
+            return self._stringify_blocks(caption_block.get("c", []) or []).strip()
+        if isinstance(caption_block, list):
+            if len(caption_block) == 2 and isinstance(caption_block[1], list):
+                return self._stringify_blocks(caption_block[1]).strip()
+            return self._stringify_blocks(
+                [b for b in caption_block if isinstance(b, dict)]).strip()
+        return ""
+
+    @classmethod
+    def _caption_kind(cls, text: str) -> Optional[str]:
+        """"table" / "figure" when a paragraph is a caption, else None."""
+        t = (text or "").strip()
+        if not t or len(t) > 400:
+            return None
+        m = cls._CAPTION_RE.match(t)
+        if not m:
+            return None
+        rest = t[m.end():].strip()
+        # A caption says something; a bare label with nothing after it is not
+        # one, and a remainder starting lower-case is running prose.
+        if not rest or (rest[:1].islower() and not m.group("sep")):
+            return None
+        kind = m.group("kind").lower().rstrip(".")
+        return "table" if kind in ("table", "tab") else "figure"
+
+    def _strip_caption_label(self, inlines: List[Dict[str, Any]],
+                             text: str) -> List[Dict[str, Any]]:
+        """Drop the "Table 1." / "Figure 2:" prefix from caption inlines.
+
+        LaTeX generates the label and number itself, so keeping Word's copy
+        renders "Table 1: Table 1. Residual bias ...".  The prefix is removed by
+        character count rather than by rebuilding the text, which preserves any
+        formatting, symbols or math the rest of the caption contains.
+        """
+        m = self._CAPTION_RE.match((text or "").strip())
+        if not m:
+            return inlines
+        remaining = m.end()
+        out: List[Dict[str, Any]] = []
+        for item in inlines:
+            if remaining <= 0:
+                out.append(item)
+                continue
+            if not isinstance(item, dict):
+                continue
+            t = item.get("t")
+            if t == "Space":
+                remaining -= 1
+                continue
+            if t == "Str":
+                s = item.get("c") or ""
+                if len(s) <= remaining:
+                    remaining -= len(s)
+                    continue
+                out.append({"t": "Str", "c": s[remaining:]})
+                remaining = 0
+                continue
+            # A non-text inline (math, an image) cannot be part of the label.
+            remaining = 0
+            out.append(item)
+        # Never return an empty caption -- that would look like no caption at
+        # all and re-trigger the placeholder.
+        while out and isinstance(out[0], dict) and out[0].get("t") == "Space":
+            out.pop(0)
+        return out or inlines
+
+    def _attach_captions(self, blocks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Pair caption paragraphs with the table or figure they describe.
+
+        Word has no structural link between a picture and the "Figure 3. ..."
+        paragraph under it -- they are two independent paragraphs -- so a
+        caption used to be rendered twice: once as loose body text and once as
+        the auto-generated "Table 1: Table" that the renderer emitted for a
+        table it believed to be uncaptioned.  Each uncaptioned table/figure
+        therefore adopts the caption paragraph immediately after it, or
+        immediately before it when the manuscript places captions above (the
+        convention for tables at most publishers).
+        """
+        texts = [
+            self._stringify_inlines(b.get("c") or []).strip()
+            if isinstance(b, dict) and b.get("t") in ("Para", "Plain") else ""
+            for b in blocks
+        ]
+        kinds = [self._caption_kind(t) for t in texts]
+        used: set = set()
+
+        def find(target: str, index: int) -> Optional[int]:
+            for j in (index + 1, index - 1):
+                if 0 <= j < len(blocks) and j not in used and kinds[j] == target:
+                    return j
+            return None
+
+        for i, b in enumerate(blocks):
+            if not isinstance(b, dict):
+                continue
+            if b.get("t") == "Table":
+                c = b.get("c")
+                if not isinstance(c, list) or len(c) < 2:
+                    continue
+                if self._caption_text(c[1]):
+                    continue  # already captioned in the DOCX
+                j = find("table", i)
+                if j is None:
+                    continue
+                inlines = self._strip_caption_label(blocks[j].get("c") or [], texts[j])
+                if isinstance(c[1], dict):
+                    c[1]["c"] = [{"t": "Plain", "c": inlines}]
+                else:
+                    c[1] = [None, [{"t": "Plain", "c": inlines}]]
+                used.add(j)
+            elif b.get("t") in ("Para", "Plain") and i not in used:
+                for item in (b.get("c") or []):
+                    if not isinstance(item, dict) or item.get("t") != "Image":
+                        continue
+                    item_c = item.get("c") or []
+                    if len(item_c) < 2 or self._stringify_inlines(item_c[1]).strip():
+                        continue
+                    j = find("figure", i)
+                    if j is None:
+                        continue
+                    item_c[1] = self._strip_caption_label(
+                        blocks[j].get("c") or [], texts[j])
+                    used.add(j)
+                    break
+
+        return [b for i, b in enumerate(blocks) if i not in used]
+
+    def _table_cell_texts(self, block: Dict[str, Any]) -> List[str]:
+        """Plain text of every cell in a pandoc ``Table``, in reading order.
+
+        The pandoc 3 table AST is deeply nested and its exact shape varies with
+        the presence of a caption, head and foot, so the structure is walked
+        generically for ``Para``/``Plain`` nodes rather than indexed positionally.
+        """
+        texts: List[str] = []
+
+        def walk(node: Any) -> None:
+            if isinstance(node, dict):
+                if node.get("t") in ("Para", "Plain"):
+                    txt = self._stringify_inlines(node.get("c") or []).strip()
+                    if txt:
+                        texts.append(txt)
+                    return
+                for v in node.values():
+                    walk(v)
+            elif isinstance(node, list):
+                for v in node:
+                    walk(v)
+
+        walk(block.get("c"))
+        return texts
+
+    def _front_matter_end(self, blocks: List[Dict[str, Any]]) -> int:
+        """Index of the first body block when no heading marks the boundary.
+
+        Used only as a safety net: a document whose headings carry no style, no
+        outline level and no visual distinction produces no ``Header``, and
+        without a boundary every block is read as front matter and the body is
+        lost.  Two structural landmarks are tried, in order of reliability.
+
+        The keywords / abstract labels are the one convention every publisher
+        shares, so the last of them ends the front matter -- plus the paragraph
+        after it when the label stands alone and its content follows.  Failing
+        that, running prose is itself the landmark: title, authors and
+        affiliations are all short, unpunctuated lines, so the first long
+        sentence-bearing paragraph is where the body starts.  Both are capped so
+        a pathological document cannot swallow more than the opening pages, and
+        the caller only ever widens the body, never narrows it.
+        """
+        texts: List[str] = []
+        for b in blocks:
+            t = b.get("t")
+            if t in ("Para", "Plain"):
+                texts.append(self._stringify_inlines(b.get("c") or []).strip())
+            elif t == "Header":
+                c = b.get("c") or []
+                texts.append(self._stringify_inlines(c[2] if len(c) > 2 else []).strip())
+            else:
+                texts.append("")
+
+        limit = min(len(texts), 25)
+        last_label = -1
+        label_standalone = False
+        for idx in range(limit):
+            norm = _normalise_label(texts[idx])
+            if not norm:
+                continue
+            m = _ABSTRACT_LABEL_RE.match(norm) or _KEYWORD_LABEL_RE.match(norm)
+            if m:
+                last_label = idx
+                label_standalone = not norm[m.end():].strip()
+        if last_label >= 0:
+            end = last_label + (2 if label_standalone else 1)
+            return min(end, len(blocks))
+
+        for idx in range(1, limit):
+            txt = texts[idx]
+            if len(txt) >= 200 and re.search(r"[.!?]\s", txt):
+                return idx
+        return len(blocks)
+
+    def _promote_semantic_headings(self, blocks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Turn semantically-detected headings into real pandoc ``Header`` blocks.
+
+        Pandoc emits a ``Header`` only for paragraphs carrying a Word *Heading*
+        style.  A manuscript that was typed with direct formatting -- bold, a
+        larger font, all-caps -- therefore arrives as an unbroken run of ``Para``
+        blocks, and every downstream stage (front-matter boundary, section
+        tree, numbering) collapses.  The raw-XML pass has already classified
+        those paragraphs by document semantics; this rewrites the AST to agree
+        with it, so the rest of the analyzer needs no special case.
+
+        Only paragraphs whose *entire* text matches a detected heading are
+        rewritten, and a paragraph that pandoc already made a Header is left
+        alone, so the pass is a no-op on documents that do use heading styles.
+        """
+        formats = getattr(self, "_heading_formats", {}) or {}
+        if not formats:
+            return blocks
+
+        # The title of a paper carries exactly the signals of a heading -- bold,
+        # larger, centred -- so promoting inside the front matter would turn the
+        # title into section 1 and leave the title page empty.  The front matter
+        # is bounded by the abstract / keywords labels, which is the one
+        # structural landmark every publisher shares; when a manuscript has
+        # neither, only the opening few blocks are protected.
+        texts = [
+            self._stringify_inlines(b.get("c") or []).strip()
+            if isinstance(b, dict) and b.get("t") in ("Para", "Plain") else ""
+            for b in blocks
+        ]
+        front_end = -1
+        for i, t in enumerate(texts[:40]):
+            if not t:
+                continue
+            norm = _normalise_label(t)
+            if _ABSTRACT_LABEL_RE.match(norm) or _KEYWORD_LABEL_RE.match(norm):
+                front_end = i
+        if front_end < 0:
+            front_end = 2
+
+        promoted: List[Dict[str, Any]] = []
+        count = 0
+        for index, b in enumerate(blocks):
+            if not isinstance(b, dict) or b.get("t") not in ("Para", "Plain"):
+                promoted.append(b)
+                continue
+            inlines = b.get("c") or []
+            text = texts[index]
+            if not text or len(text) > 120:
+                promoted.append(b)
+                continue
+            if index <= front_end:
+                # Front matter: never a section heading, and the labels
+                # themselves must stay ordinary paragraphs so that the
+                # metadata extraction can still read their content.
+                promoted.append(b)
+                continue
+            fmt = formats.get("".join(text.split()).lower())
+            if not fmt:
+                promoted.append(b)
+                continue
+            level = max(1, min(6, int(fmt.get("level") or 1)))
+            promoted.append({"t": "Header", "c": [level, ["", [], []], inlines]})
+            count += 1
+
+        if count:
+            self._promoted_heading_count = count
+        return promoted
 
     def _heading_format_for(self, title: str) -> Optional[Dict[str, Any]]:
         """Look up DOCX heading formatting for a section title (whitespace-
@@ -827,6 +1595,16 @@ class DocumentAnalyzer:
         if body is None:
             return formats
 
+        # Every paragraph's text in reading order.  The per-paragraph loop below
+        # can only see one paragraph at a time, but a document that gives its
+        # headings no visual distinction at all can only be read from context --
+        # what surrounds a line -- so the sequence is kept for the structural
+        # pass that runs after it.
+        para_texts = [
+            " ".join(t.text for t in p.iter(f"{W}t") if t.text).strip()
+            for p in body.findall(f"{W}p")
+        ]
+
         for p in body.findall(f"{W}p"):
             text = " ".join(t.text for t in p.iter(f"{W}t") if t.text).strip()
             if not text or len(text) > 120:
@@ -863,27 +1641,9 @@ class DocumentAnalyzer:
                 if mark is not None and mark.find(f"{W}b") is not None:
                     bold = True
 
-            # Decide heading + level: style > outline > numbered-bold fallback.
-            level = None
-            if style_id in style_levels:
-                level = style_levels[style_id]
-                # Inherit bold / size from the heading style when the run
-                # itself does not set them.
-                info = style_info.get(style_id, {})
-                if not bold and info.get("bold"):
-                    bold = True
-                if size_pt is None and info.get("size_pt"):
-                    size_pt = info["size_pt"]
-            elif outline is not None:
-                level = outline
-            else:
-                num = re.match(r"^(\d+(?:\.\s?\d+)*)\.?\s+\S", text)
-                if num and bold:
-                    depth = len([x for x in re.split(r"\.\s?", num.group(1)) if x])
-                    level = max(1, min(4, depth))
-            if level is None:
-                continue
-
+            # Paragraph-level presentation.  Read before the level decision
+            # because the semantic fallback below uses alignment and spacing as
+            # corroborating heading signals.
             align = "left"
             before_pt = after_pt = None
             keep_next = False
@@ -897,6 +1657,29 @@ class DocumentAnalyzer:
                     after_pt = self._twips_to_pt(sp.get(f"{W}after"))
                 keep_next = ppr.find(f"{W}keepNext") is not None
 
+            # Decide heading + level: style > outline > semantic fallback.
+            level = None
+            if style_id in style_levels:
+                level = style_levels[style_id]
+                # Inherit bold / size from the heading style when the run
+                # itself does not set them.
+                info = style_info.get(style_id, {})
+                if not bold and info.get("bold"):
+                    bold = True
+                if size_pt is None and info.get("size_pt"):
+                    size_pt = info["size_pt"]
+            elif outline is not None:
+                level = outline
+            else:
+                # Multi-signal semantic detection: the manuscript need not use
+                # Word heading styles at all, which is the normal case for a
+                # plain Word paper and for IEEE / Elsevier submissions.
+                level = self._semantic_heading_level(
+                    text, bold, size_pt, body_size, align, before_pt, keep_next
+                )
+            if level is None:
+                continue
+
             key = "".join(text.split()).lower()
             formats[key] = {
                 "level": level,
@@ -908,8 +1691,217 @@ class DocumentAnalyzer:
                 "space_before_pt": before_pt,
                 "space_after_pt": after_pt,
                 "keep_with_next": keep_next,
+                # Recorded so the tiering pass below can tell a heading found by
+                # the semantic fallback from one the document declared outright.
+                "semantic": level is not None and style_id not in style_levels and outline is None,
+                "numbered": self._numbering_depth(text) is not None,
             }
+
+        # Structural pass for documents that declare no headings at all: no
+        # heading style, no outline level, and no bold / size / spacing contrast
+        # for the semantic fallback to find.  Such a manuscript is not
+        # unstructured -- its headings are still short standalone lines wedged
+        # between paragraphs of running prose -- but that structure is only
+        # visible in the sequence, never in one paragraph.  This runs solely when
+        # nothing else matched, so a document that does declare its headings is
+        # untouched and cannot regress.
+        if not formats:
+            for idx, text in enumerate(para_texts):
+                if not text or len(text) > 60:
+                    continue
+                # A heading is a label, not a sentence: it does not end in
+                # terminal punctuation and it is not an address or a citation.
+                if re.search(r"[.,;:!?]$", text) or _EMAIL_RE.search(text):
+                    continue
+                if len(text.split()) > 8:
+                    continue
+                norm = _normalise_label(text)
+                if _ABSTRACT_LABEL_RE.match(norm) or _KEYWORD_LABEL_RE.match(norm):
+                    continue
+                # The line must actually head something: the paragraph after it
+                # is running prose.  Without this every short line in the front
+                # matter -- author names, affiliations, dates -- would qualify.
+                nxt = next((t for t in para_texts[idx + 1:idx + 3] if t), "")
+                if len(nxt) < 200 or not re.search(r"[.!?]", nxt):
+                    continue
+                # ... and it must follow prose too, which is what separates a
+                # heading from the title and author lines opening the document.
+                prev = next((t for t in reversed(para_texts[max(0, idx - 3):idx]) if t), "")
+                prev_norm = _normalise_label(prev)
+                closes_front_matter = bool(
+                    _ABSTRACT_LABEL_RE.match(prev_norm) or _KEYWORD_LABEL_RE.match(prev_norm)
+                )
+                if len(prev) < 200 and not closes_front_matter:
+                    continue
+                key = "".join(text.split()).lower()
+                formats.setdefault(key, {
+                    "level": self._numbering_depth(text) or 1,
+                    "bold": False,
+                    "size_pt": body_size,
+                    "body_size_pt": body_size,
+                    "size_ratio": 1.0,
+                    "alignment": "left",
+                    "space_before_pt": None,
+                    "space_after_pt": None,
+                    "keep_with_next": False,
+                    "semantic": True,
+                    "numbered": self._numbering_depth(text) is not None,
+                })
+
+        # Rank the unnumbered headings the semantic fallback found.  Their level
+        # cannot be decided one paragraph at a time -- "set apart from the body"
+        # is all a single paragraph can show -- but across the document the sizes
+        # separate cleanly into tiers: whatever size the largest of them uses is
+        # the section level, and anything set smaller than that is a subsection.
+        # Without this every unnumbered heading collapsed to level 1 and the
+        # subsection hierarchy was lost.
+        semantic_sizes = [
+            info["size_pt"] for info in formats.values()
+            if info.get("semantic") and not info.get("numbered") and info.get("size_pt")
+        ]
+        if semantic_sizes:
+            # The section tier is the size that *recurs*, not the largest one.
+            # A paper's title carries the same signals as a heading and is set
+            # larger than any of them, so keying off the maximum demoted every
+            # real section to a subsection.  Sections repeat; a title appears
+            # once, so the modal size identifies the tier without the extractor
+            # needing to know where the front matter ends.
+            counts = {}
+            for size in semantic_sizes:
+                counts[size] = counts.get(size, 0) + 1
+            section_size = max(counts, key=lambda s: (counts[s], s))
+            for info in formats.values():
+                if info.get("semantic") and not info.get("numbered") and info.get("size_pt") \
+                        and info["size_pt"] < section_size and info["level"] == 1:
+                    info["level"] = 2
         return formats
+
+    @staticmethod
+    def _numbering_depth(text: str) -> Optional[int]:
+        """Hierarchy depth implied by a section number, or None if unnumbered.
+
+        Covers the four numbering conventions that appear across publishers:
+        decimal ("3.2.1"), roman ("IV."), word-prefixed ("Chapter 2.") and, at
+        the end, single-letter ("B.").  The letter form is reported as depth 2
+        because IEEE uses it exclusively for subsections under a roman-numbered
+        section.
+        """
+        t = (text or "").strip()
+        if not t:
+            return None
+        m = re.match(_MANUAL_HEADING_RE, t)
+        if m:
+            return max(1, min(4, len([x for x in re.split(r"\.\s?", m.group(1)) if x])))
+        if re.match(_WORD_HEADING_RE, t, re.IGNORECASE):
+            return 1
+        if re.match(_ROMAN_HEADING_RE, t) and re.match(r"^[IVX]+[.)]", t):
+            return 1
+        if re.match(_LETTER_HEADING_RE, t):
+            return 2
+        return None
+
+    @staticmethod
+    def _looks_like_prose(text: str) -> bool:
+        """True when a short paragraph is still a sentence rather than a title.
+
+        Headings do not end in a full stop (a trailing dot after a bare section
+        number is not one), do not contain sentence-internal punctuation, and are
+        not long.  Applying this before any formatting signal is what stops a
+        short bold lead-in sentence from being promoted to a section.
+        """
+        t = (text or "").strip()
+        if not t:
+            return True
+        if len(t.split()) > 14:
+            return True
+        # Strip any leading section number first, in every convention, so that
+        # the punctuation test below judges the title itself.  Without this,
+        # "Chapter 1. Introduction" reads as a sentence because of the dot that
+        # belongs to the numbering.
+        body = t
+        for pattern in (_WORD_HEADING_RE, _MANUAL_HEADING_RE, _ROMAN_HEADING_RE,
+                        _LETTER_HEADING_RE):
+            stripped = re.sub(pattern, "", body, count=1, flags=re.IGNORECASE)
+            if stripped != body:
+                body = stripped.strip()
+                break
+        # A trailing full stop marks a sentence.  Personal initials ("J. A.
+        # Whitfield") and common abbreviations are not sentence punctuation, so
+        # only a stop after a real word counts.
+        if re.search(r"(?<![A-Z])[a-z]{2,}[.?!]$", body) or body.endswith(("?", "!")):
+            return True
+        if ";" in body:
+            return True
+        return False
+
+    def _semantic_heading_level(
+        self,
+        text: str,
+        bold: bool,
+        size_pt: Optional[float],
+        body_size: float,
+        align: str,
+        space_before: Optional[float],
+        keep_next: bool,
+    ) -> Optional[int]:
+        """Heading level from document semantics, or None for body text.
+
+        This is the fallback used when a paragraph carries neither a Heading
+        style nor an outline level -- the normal situation in a plain Word
+        manuscript, an IEEE paper, or anything a co-author has retyped.  No
+        single signal is sufficient on its own: a numbered line can be an
+        affiliation ("3 Associate Professor ..."), an all-caps line can be an
+        acronym, and bold text can be a lead-in.  A level is therefore returned
+        only when a *numbering* or *prominence* signal is corroborated by a
+        second, independent one.
+        """
+        t = (text or "").strip()
+        if not t or self._looks_like_prose(t):
+            return None
+
+        letters = [ch for ch in t if ch.isalpha()]
+        if not letters:
+            return None
+
+        depth = self._numbering_depth(t)
+        all_caps = len(letters) >= 3 and all(ch.isupper() for ch in letters)
+        larger = bool(size_pt and body_size and size_pt >= body_size * 1.12)
+        # A weaker size signal: any increase over the body size at all.  Running
+        # text never steps its size up mid-document, so even a one-point rise is
+        # evidence of a heading -- but only evidence, which is why it is counted
+        # alongside the others rather than acting alone.  Subheadings are exactly
+        # where this matters: a publisher that sets sections a few points above
+        # the body typically sets subsections only one point above it.
+        slightly_larger = bool(size_pt and body_size and size_pt > body_size)
+        spaced = bool(space_before and space_before >= 6.0)
+        centered = align in ("center", "centre")
+
+        # Independent corroborating evidence that this line is set apart.
+        prominence = sum(
+            (1 if bold else 0,
+             1 if larger else (1 if slightly_larger else 0),
+             1 if all_caps else 0,
+             1 if keep_next else 0,
+             1 if spaced else 0)
+        )
+
+        if depth is not None:
+            # A number plus any one prominence signal.  Without corroboration a
+            # numbered line is far more likely to be a list item or an indexed
+            # affiliation than a section.
+            if prominence >= 1:
+                # The single-letter form is ambiguous enough to demand that the
+                # rest of the line be set apart in its own right.
+                if depth == 2 and re.match(_LETTER_HEADING_RE, t) and not (bold or all_caps):
+                    return None
+                return depth
+            return None
+
+        # Unnumbered: needs two prominence signals, one of which must be a
+        # visual weight (bold / larger / caps) rather than mere spacing.
+        if prominence >= 2 and (bold or larger or all_caps or slightly_larger):
+            return 2 if centered and not (bold or larger) else 1
+        return None
 
     @staticmethod
     def _twips_to_pt(val) -> Optional[float]:
@@ -931,7 +1923,7 @@ class DocumentAnalyzer:
         text = self._stringify_inlines(inlines).strip()
         if not text or len(text) > 100:
             return None
-        m = re.match(r"^(\d+(?:\.\s?\d+)*)\.?\s+\S", text)
+        m = re.match(_MANUAL_HEADING_RE, text)
         if not m:
             return None
         # Every visible inline must be Strong (bold).
@@ -1250,12 +2242,10 @@ class DocumentAnalyzer:
 
     def _parse_table_rich(self, c: List[Any]) -> Dict[str, Any]:
         """Extract the full pandoc table structure plus XML styling."""
-        caption = "Table"
-        caption_block = c[1]
-        if isinstance(caption_block, dict) and "c" in caption_block:
-            caption = self._stringify_blocks(caption_block.get("c", [])) or "Table"
-        elif isinstance(caption_block, list):
-            caption = self._stringify_blocks(caption_block) or "Table"
+        # Read through _caption_text so that the pandoc 3 Caption shape
+        # ([short-caption, blocks]) is understood; reading it as a bare block
+        # list returned "" and every table was captioned "Table".
+        caption = self._caption_text(c[1]) or "Table"
 
         colspecs = []
         for spec in (c[2] or []):

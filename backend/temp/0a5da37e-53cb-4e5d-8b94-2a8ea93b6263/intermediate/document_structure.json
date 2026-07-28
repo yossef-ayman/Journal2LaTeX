@@ -1,0 +1,1696 @@
+{
+  "title": "Modeling the Dual Impact of Behavioral Avoidance and Hybrid Immunity on SARS-CoV-2 Transmission: A Fractional-Order Epidemiological Approach",
+  "authors": [
+    {
+      "name": "Corresponding Author",
+      "affiliation": null,
+      "email": "aliakgul@siirt.edu.tr",
+      "photo_path": null
+    },
+    {
+      "name": "Subject Classification",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Primary: Mathematical Biology / Epidemiological Modeling",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Secondary: Immunology",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Public Health",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Infectious Disease Dynamics",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "MSC 2020: 92D30 (Epidemiology)",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "34A08 (Fractional differential equations)",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "92C60 (Public health models)",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "MeSH Terms: COVID-",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Vaccination",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Immunity",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Hybrid",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Disease Outbreaks",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Theoretical Models",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Fractional Calculus",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Keywords",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "1. Introduction",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "2. MATHEMATICAL MODEL",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "2.1 Basic definitions :[54]",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    }
+  ],
+  "abstract": "The trajectory of the SARS-CoV-2 pandemic has been significantly influenced by both immunological diversity and human behavior. In this work, we investigate how two contrasting population subgroups—COVID dodgers, the individuals who actively avoid both infection and vaccination, and those with hybrid immunity (from prior infection plus vaccination), shape transmission patterns and long-term control prospects. While hybrid immunity provides robust, sustained protection against severe outcomes and reduces secondary transmission, “dodgers” remain a persistent reservoir of susceptibility that can fuel outbreaks, especially as population immunity wanes. We assess real-world vaccine effectiveness across variants in preventing infection, hospitalization, and death, supported by immunological data on antibody kinetics, T-cell responses, and the temporal decay of protection. Breakthrough infections are analyzed to identify risk factors, and natural immunity is compared with vaccine-induced responses to clarify their relative durability and breadth. To capture these complex interactions, we formulate a novel compartmental model using fractional-order calculus, which incorporates distinct classes for susceptible, vaccinated, infected, hybrid-immune, dodger individuals. The model accounts for time-varying vaccine efficacy, variant-driven immune escape, and behavioral feedback. We establish the existence, uniqueness, and boundedness of solutions, and examine the stability of disease-free and endemic equilibria. Sensitivity analysis reveals that the proportion of “dodgers” and the strength of hybrid immunity are among the most influential parameters in determining long-term incidence. Importantly, the fractional order, representing memory effects in biological and behavioral systems, modulates epidemic persistence and response to interventions. Our findings underscore that effective pandemic management requires integrated strategies that address not only virological threats but also the behavioral dimensions of disease spread, particularly in heterogeneous populations.",
+  "keywords": [],
+  "sections": [
+    {
+      "title": "2.2 Model Formulation",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "This section deals with the formulation of the mathematical model. This SVIH model is an epidemic compartmental model in fractional derivatives of ABC type, which help to examine the disease dynamics. We partition the total population N (t) into four compartments:"
+          },
+          "block_index": 1,
+          "original_page_number": null,
+          "original_order": 1,
+          "source_location": "Section: 2.2 Model Formulation, Block: 1"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "S(t): Susceptible (never infected/vaccinated):"
+            ],
+            "ordered": false
+          },
+          "block_index": 2,
+          "original_page_number": null,
+          "original_order": 2,
+          "source_location": "Section: 2.2 Model Formulation, Block: 2"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "0\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ ABCD_{t}^{\\alpha}\\ S(t)\\  = \\ (1 - \\varphi)a\\  - \\ \\beta S(t)I(t)\\  - \\ vS(t - \\tau_{1})\\  - \\ \\mu S(t)",
+            "label": null
+          },
+          "block_index": 3,
+          "original_page_number": null,
+          "original_order": 3,
+          "source_location": "Section: 2.2 Model Formulation, Block: 3"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "V (t): Vaccinated:"
+            ],
+            "ordered": false
+          },
+          "block_index": 4,
+          "original_page_number": null,
+          "original_order": 4,
+          "source_location": "Section: 2.2 Model Formulation, Block: 4"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "$\\ 0ABCD_{t}^{\\alpha}\\ V(t) = \\ vS\\left( t - \\tau_{1} \\right) + vI\\left( t - \\tau_{2} \\right)\\ {+ \\sigma}_{H}\\ H(t) - \\ \\varepsilon(t)\\beta V(t)I(t) - (\\ \\rho + \\mu)V(t)$"
+          },
+          "block_index": 5,
+          "original_page_number": null,
+          "original_order": 5,
+          "source_location": "Section: 2.2 Model Formulation, Block: 5"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "I(t): Infected:"
+            ],
+            "ordered": false
+          },
+          "block_index": 6,
+          "original_page_number": null,
+          "original_order": 6,
+          "source_location": "Section: 2.2 Model Formulation, Block: 6"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "This compartment includes the infected people, who were exposed to infection prior to vaccination, and transmission varies seasonally, $\\beta(t) = \\beta 0\\left( \\ 1 + \\ \\varepsilon\\ \\sin\\left( \\frac{2\\pi t}{365} \\right)\\  \\right),\\ $ ε = 0.35."
+          },
+          "block_index": 7,
+          "original_page_number": null,
+          "original_order": 7,
+          "source_location": "Section: 2.2 Model Formulation, Block: 7"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "H(t): Hybrid-immune (infected plus vaccinated):"
+            ],
+            "ordered": false
+          },
+          "block_index": 8,
+          "original_page_number": null,
+          "original_order": 8,
+          "source_location": "Section: 2.2 Model Formulation, Block: 8"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "$\\varphi$∈ [0, 1]: Fraction of births entering the dodger class.",
+              "ϵ(t) = $\\epsilon_{0}$e−ωt: Waning booster efficacy ($\\epsilon_{0}$ = 0.88, ω = 0.003/day).",
+              "$\\sigma_{H}$ ≪ 1: Hybrid immunity drastically lowers reinfection risk.",
+              "Delays: $\\tau_{1}$ = 30 days (vaccination logistics), $\\tau_{2}$ = 180 days (post-infection waiting)."
+            ],
+            "ordered": false
+          },
+          "block_index": 9,
+          "original_page_number": null,
+          "original_order": 9,
+          "source_location": "Section: 2.2 Model Formulation, Block: 9"
+        },
+        {
+          "type": "table",
+          "content": {
+            "caption": "Table",
+            "label": null,
+            "colspecs": [
+              {
+                "align": "l",
+                "width": 0.25172031076581575
+              },
+              {
+                "align": "l",
+                "width": 0.3619311875693674
+              },
+              {
+                "align": "l",
+                "width": 0.3146503884572697
+              }
+            ],
+            "header_rows": [],
+            "body_rows": [
+              [
+                {
+                  "text": "Symbol",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "Description",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "Value",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "a",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "Recruitment rate",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.069 87 d−1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "µ",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "Natural death rate",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.000 02 d−1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "δ",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "Disease-induced death",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.000 03 d−1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "β",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "Transmission rate (unvaccinated)",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.03 d−1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "ϵ0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "Initial booster efficacy",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.88",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "ω",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "Efficacy decay rate",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.003 d−1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "v",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "Vaccination rate",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.000 699 d−1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "$\\gamma$",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Recovery rate",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.985 d−1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "$\\ \\rho$",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Hybrid immunity acquisition",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.000 33 d−1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "$\\varphi$",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Dodger fraction",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.18",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "$\\sigma_{H}$",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Hybrid immunity factor",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.15",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": null,
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ]
+            ],
+            "has_grid": false,
+            "shading_rows": [
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ]
+            ],
+            "row_heights": [
+              27.6,
+              14.1,
+              11.9,
+              11.9,
+              11.9,
+              11.9,
+              11.9,
+              11.9,
+              11.9,
+              11.9,
+              11.9,
+              11.9,
+              11.9
+            ],
+            "width_frac": 0.9262,
+            "num_rows": 13,
+            "text_width_in": 6.2708,
+            "headers": [],
+            "rows": [
+              [
+                "Symbol",
+                "Description",
+                "Value"
+              ],
+              [
+                "a",
+                "Recruitment rate",
+                "0.069 87 d−1"
+              ],
+              [
+                "µ",
+                "Natural death rate",
+                "0.000 02 d−1"
+              ],
+              [
+                "δ",
+                "Disease-induced death",
+                "0.000 03 d−1"
+              ],
+              [
+                "β",
+                "Transmission rate (unvaccinated)",
+                "0.03 d−1"
+              ],
+              [
+                "ϵ0",
+                "Initial booster efficacy",
+                "0.88"
+              ],
+              [
+                "ω",
+                "Efficacy decay rate",
+                "0.003 d−1"
+              ],
+              [
+                "v",
+                "Vaccination rate",
+                "0.000 699 d−1"
+              ],
+              [
+                "$\\gamma$",
+                "Recovery rate",
+                "0.985 d−1"
+              ],
+              [
+                "$\\ \\rho$",
+                "Hybrid immunity acquisition",
+                "0.000 33 d−1"
+              ],
+              [
+                "$\\varphi$",
+                "Dodger fraction",
+                "0.18"
+              ],
+              [
+                "$\\sigma_{H}$",
+                "Hybrid immunity factor",
+                "0.15"
+              ],
+              [
+                "",
+                "",
+                ""
+              ]
+            ]
+          },
+          "block_index": 10,
+          "original_page_number": null,
+          "original_order": 10,
+          "source_location": "Section: 2.2 Model Formulation, Block: 10"
+        }
+      ],
+      "heading_format": {
+        "level": 2,
+        "bold": true,
+        "size_pt": 11.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "3 Model Analysis",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": null,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "3.1 Positivity and Boundedness",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In epidemiological modeling, positivity ensures compartments remain non-negative, while boundedness prevents unrealistic divergence. These properties guarantee biological feasibility and numerical stability. Without them, simulations may yield negative populations or unbounded growth, rendering policy insights meaningless."
+          },
+          "block_index": 11,
+          "original_page_number": null,
+          "original_order": 11,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 11"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Theorem 1:"
+          },
+          "block_index": 12,
+          "original_page_number": null,
+          "original_order": 12,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 12"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Solutions of (3) with non-negative initial conditions remain non-negative and bounded for all t ≥ 0."
+          },
+          "block_index": 13,
+          "original_page_number": null,
+          "original_order": 13,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 13"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Proof."
+          },
+          "block_index": 14,
+          "original_page_number": null,
+          "original_order": 14,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 14"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Let us assume that, $\\left( S(t) \\geq 0,V(t) \\geq 0,I(t) \\geq 0,H(t) \\geq 0 \\right) \\in R_{+}^{4}$,"
+          },
+          "block_index": 15,
+          "original_page_number": null,
+          "original_order": 15,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 15"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Summing up all equations in (3), we have,"
+          },
+          "block_index": 16,
+          "original_page_number": null,
+          "original_order": 16,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 16"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "0ABCD_{t}^{\\alpha}N(t) = \\ a\\  - \\ \\mu N(t) - \\ \\delta I(t) \\leq a\\  - \\ \\mu N(t).",
+            "label": null
+          },
+          "block_index": 17,
+          "original_page_number": null,
+          "original_order": 17,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 17"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "$N(t) \\leq \\ \\frac{a}{\\mu} + N(0)E_{\\alpha}\\left( - µ{\\ t}^{\\alpha} \\right)$."
+          },
+          "block_index": 18,
+          "original_page_number": null,
+          "original_order": 18,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 18"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Hence, solutions are bounded in the invariant region, consistent across the vector boundary field."
+          },
+          "block_index": 19,
+          "original_page_number": null,
+          "original_order": 19,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 19"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "$\\mathrm{\\Omega} = \\{(S,V,I,H) \\in R_{+}^{4}\\ :N \\leq \\frac{a}{\\mu}\\}$."
+          },
+          "block_index": 20,
+          "original_page_number": null,
+          "original_order": 20,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 20"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "E^{0} = \\ \\left\\lbrack \\frac{(1 - \\varphi)a}{\\mu + v},\\frac{v(1 - \\varphi)a}{\\left\\lbrack \\mu(\\mu + v) \\right\\rbrack},\\ 0,\\ 0 \\right\\rbrack",
+            "label": null
+          },
+          "block_index": 21,
+          "original_page_number": null,
+          "original_order": 21,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 21"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The eigenvalues are: $\\ \\lambda_{1} = - (µ + v) < 0,$"
+          },
+          "block_index": 22,
+          "original_page_number": null,
+          "original_order": 22,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 22"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "{\\ \\ \\ \\lambda}_{2} = - (µ + \\rho) < 0,",
+            "label": null
+          },
+          "block_index": 23,
+          "original_page_number": null,
+          "original_order": 23,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 23"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Also, the transmission rate, shows a rapid mitigation at $\\Upsilon_{\\beta}$ =−0.41, with substantial growth in vaccine supply without delay, $\\Upsilon_{\\bar{\\varepsilon}}$= −0.33, and with hike in recovery rate$\\ ,\\ \\Upsilon_{\\gamma}$ = −0.29. As booster shots increases , it would eventually help in reducing the wave spread seasonally too with initial booster efficacy rate, $\\Upsilon_{v =}$−0.37, resist against several waves.The most critical way, is the Reduced community engagement, which is more impactful than increasing v, highlighting the need for behavioral interventions alongside supply-side vaccination."
+          },
+          "block_index": 24,
+          "original_page_number": null,
+          "original_order": 24,
+          "source_location": "Section: 3.1 Positivity and Boundedness, Block: 24"
+        }
+      ],
+      "heading_format": {
+        "level": 2,
+        "bold": true,
+        "size_pt": null,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "Numerical Simulations and Validation",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 11.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": 2.4,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "Numerical Scheme",
+      "level": 2,
+      "blocks": [],
+      "heading_format": {
+        "level": 2,
+        "bold": true,
+        "size_pt": 11.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": 8.7,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "with weights, $\\mathbf{b}_{\\mathbf{j,n + 1}}\\mathbf{= \\ }\\frac{\\mathbf{h}^{\\mathbf{\\alpha}}}{\\mathbf{\\alpha}}\\left\\lbrack \\left( \\mathbf{n}\\mathbf{+ 1 -}\\mathbf{j} \\right)^{\\mathbf{\\alpha}}\\mathbf{–\\ }\\left( \\mathbf{n}\\mathbf{-}\\mathbf{j} \\right)^{\\mathbf{\\alpha}} \\right\\rbrack\\mathbf{.}$",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "Spectral methods, even though precise for even solutions, subvert when modeling unforeseen policy swings or variant-driven spread. The predictor-corrector scheme conserves second-order convergence while obviously curbing high-frequency blast through its inherent corrector step. Most prominently for public healthiness, its memory weighting edifice unswervingly echoes immunological realism. Antibody titers wane steadily rather than tersely, and population averting behaviors persist yonder immediate epidemic periods. This physical interpretability, where numerical weights parallel to computable immune waning rates, makes the method ,an epidemiological acumen generator.",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "4.2 Data Calibration",
+      "level": 2,
+      "blocks": [],
+      "heading_format": {
+        "level": 2,
+        "bold": true,
+        "size_pt": 11.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": 12.4,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "We fit model (3) to India’s weekly COVID-19 cases (Jan 2020–Jan 2026) from WHO and Our World in Data, using least-squares optimization. Seasonal forcing is captured via time-varying $\\mathbf{\\beta}$(t) = $\\mathbf{\\beta}$0[1 + η cos(2πt/365)], with η = 0.3 (monsoon amplification). Validation against India's six-year case series confirmed that α=0.85 with this solver reproduced observed wave plateaus that integer-order models consistently overestimated as sharp peaks. Best-fit parameters are found to be α = 0.85, φ = 0.18, σH = 0.15, ϵ0 = 0.88.",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "figure",
+          "content": {
+            "caption": "C:\\Users\\HP\\Downloads\\stabled.jpg",
+            "path": "media/image3.png",
+            "label": null,
+            "width_in": 3.4896,
+            "height_in": 2.7188,
+            "full_width": true,
+            "word_inline": false,
+            "text_width_in": 6.2708
+          },
+          "block_index": 25,
+          "original_page_number": null,
+          "original_order": 25,
+          "source_location": "Section: We fit model (3) to India’s weekly COVID-19 cases (Jan 2020–Jan 2026) from WHO and Our World in Data, using least-squares optimization. Seasonal forcing is captured via time-varying $\\mathbf{\\beta}$(t) = $\\mathbf{\\beta}$0[1 + η cos(2πt/365)], with η = 0.3 (monsoon amplification). Validation against India's six-year case series confirmed that α=0.85 with this solver reproduced observed wave plateaus that integer-order models consistently overestimated as sharp peaks. Best-fit parameters are found to be α = 0.85, φ = 0.18, σH = 0.15, ϵ0 = 0.88., Block: 25"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "C:\\Users\\HP\\Downloads\\stablec.jpg",
+            "path": "media/image4.png",
+            "label": null,
+            "width_in": 3.2493,
+            "height_in": 2.7396,
+            "full_width": true,
+            "word_inline": false,
+            "text_width_in": 6.2708
+          },
+          "block_index": 26,
+          "original_page_number": null,
+          "original_order": 26,
+          "source_location": "Section: We fit model (3) to India’s weekly COVID-19 cases (Jan 2020–Jan 2026) from WHO and Our World in Data, using least-squares optimization. Seasonal forcing is captured via time-varying $\\mathbf{\\beta}$(t) = $\\mathbf{\\beta}$0[1 + η cos(2πt/365)], with η = 0.3 (monsoon amplification). Validation against India's six-year case series confirmed that α=0.85 with this solver reproduced observed wave plateaus that integer-order models consistently overestimated as sharp peaks. Best-fit parameters are found to be α = 0.85, φ = 0.18, σH = 0.15, ϵ0 = 0.88., Block: 26"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "operator"
+          },
+          "block_index": 27,
+          "original_page_number": null,
+          "original_order": 27,
+          "source_location": "Section: We fit model (3) to India’s weekly COVID-19 cases (Jan 2020–Jan 2026) from WHO and Our World in Data, using least-squares optimization. Seasonal forcing is captured via time-varying $\\mathbf{\\beta}$(t) = $\\mathbf{\\beta}$0[1 + η cos(2πt/365)], with η = 0.3 (monsoon amplification). Validation against India's six-year case series confirmed that α=0.85 with this solver reproduced observed wave plateaus that integer-order models consistently overestimated as sharp peaks. Best-fit parameters are found to be α = 0.85, φ = 0.18, σH = 0.15, ϵ0 = 0.88., Block: 27"
+        }
+      ],
+      "heading_format": null
+    },
+    {
+      "title": "This plot juxtaposes observed weekly case counts from India's Integrated Disease Surveillance Programme against model outputs across six years. The fractional simulation (α=0.85) successfully replicates four distinct epidemiological phases that integer-order models fail to capture simultaneously: the modest first wave (mid-2020) limited by early lockdowns; the catastrophic Delta surge (April–June 2021) with its characteristic sharp ascent and prolonged tail; the Omicron wave (January 2022) showing higher case counts but reduced severity due to accumulated hybrid immunity; and the subsequent seasonal oscillations (2023–2025) amplified during monsoon months. Crucially, the model reproduces the \"flattened\" wave morphology, where case numbers plateau for weeks rather than peaking abruptly—observed in actual Indian data. This plateauing emerges directly from the fractional order's memory effect: as α decreases below 1, the system's response to transmission changes becomes more gradual, simulating how population-level immunity and behavioral adaptation accumulate slowly rather than instantaneously. The 18% dodger fraction (φ=0.18) prevents complete suppression during inter-wave periods, maintaining a susceptible reservoir that fuels seasonal resurgences when monsoon-driven contact rates increase (η=0.3).",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image7.png",
+            "label": null,
+            "width_in": 6.1339,
+            "height_in": 3.317,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.2708
+          },
+          "block_index": 28,
+          "original_page_number": null,
+          "original_order": 28,
+          "source_location": "Section: , Block: 28"
+        }
+      ],
+      "heading_format": null
+    },
+    {
+      "title": "This comparative simulation isolates the impact of vaccination scheduling independent of coverage levels. Two scenarios are modeled with identical total doses but different administration intervals: biannual boosters (every 6 months, timed before monsoon onset in May and winter peaks in October) versus annual boosters (every 12 months). The 6-month strategy reduces peak infections by 42% and shortens wave duration by approximately five weeks. Mechanistically, this occurs because immunity elevation coincides with seasonal transmission amplification—monsoons increase indoor crowding while reducing UV-mediated viral inactivation. The fractional framework reveals an additional nuance: with α=0.85, the protective effect of timely boosters exhibits extended persistence due to memory-enhanced immune recall. Antibody kinetics modeled through ϵ(t)=$\\mathbf{\\epsilon}_{\\mathbf{0}}$e⁻ᵚᵗ show that boosting during high-transmission seasons stimulates broader T-cell responses that decay more slowly (ω=0.003/day) than responses generated during low-transmission periods. This finding directly challenges calendar-based booster policies, advocating instead for meteorologically synchronized campaigns that anticipate India's bimodal transmission seasonality.",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "Figure 6. Hybrid immunity reduces secondary transmission by 3.2× over 600 days.",
+      "level": 2,
+      "blocks": [],
+      "heading_format": {
+        "level": 2,
+        "bold": true,
+        "size_pt": 11.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": 8.7,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "This figure tracks secondary attack rates from index cases with three distinct immunity profiles over 600 days: vaccination-only (two doses, no prior infection), infection-only (recovered unvaccinated), and hybrid immunity (recovered then vaccinated after τ₁=180 days). Hybrid-immune individuals reduce onward transmission by a factor of 3.2 compared to vaccination-only and 5.8 versus infection-only cases. The transmission reduction stems from two modeled mechanisms: enhanced neutralizing antibody breadth (σₕ=0.15 representing cross-variant reactivity against evolving strains) and durable tissue-resident memory T-cells that maintain surveillance beyond circulating antibody decay. Critically, the fractional derivative captures the temporal stability of this protection—while vaccine-only immunity wanes to 40% efficacy by day 300, hybrid immunity maintains >70% transmission-blocking capacity through day 600. This persistence emerges from the non-local kernel's weighting structure: past infection events continue influencing current immune competence through fractional memory terms, mirroring empirical observations of long-lived bone marrow plasma cells in hybrid-immune individuals. Public health implications are substantial: prioritizing vaccination for recovered individuals (\"test-and-vaccinate\") could achieve equivalent population protection with 35% fewer doses than universal booster campaigns, a critical consideration for resource-constrained settings.",
+      "level": 2,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "Conclusion and Future Work",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "This study establishes that fractional-order models with behavioral and immunological granularity are indispensable for pandemic planning in heterogeneous populations. By integrating dodgers, hybrid immunity, and seasonal forcing, we provide actionable insights:"
+          },
+          "block_index": 29,
+          "original_page_number": null,
+          "original_order": 29,
+          "source_location": "Section: Conclusion and Future Work, Block: 29"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "Target dodgers through localized outreach (e.g., mobile clinics, community influencers).",
+              "Schedule boosters every 6 months ahead of seasonal peaks (May–June for monsoon, October for winter).",
+              "Leverage hybrid immunity as a natural amplifier of protection—prioritize vaccination for re- covered individuals."
+            ],
+            "ordered": true
+          },
+          "block_index": 30,
+          "original_page_number": null,
+          "original_order": 30,
+          "source_location": "Section: Conclusion and Future Work, Block: 30"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 11.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "",
+      "level": 3,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "Future directions:",
+      "level": 3,
+      "blocks": [
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "Couple with climate variables (humidity, temperature) to predict monsoon-driven outbreaks.",
+              "Integrate genomic surveillance data to model variant competition (e.g., JN.1).",
+              "Apply optimal control theory to design cost-effective booster schedules.",
+              "Embed agent-based behavioral modules to simulate misinformation spread among “dodgers.”"
+            ],
+            "ordered": false
+          },
+          "block_index": 31,
+          "original_page_number": null,
+          "original_order": 31,
+          "source_location": "Section: Future directions:, Block: 31"
+        }
+      ],
+      "heading_format": {
+        "level": 3,
+        "bold": true,
+        "size_pt": 11.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "",
+      "level": 1,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "Acknowledgments",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 11.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": 0.1,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "Funding",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 11.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "Data Availability",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 11.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.0,
+        "alignment": "both",
+        "space_before_pt": 0.1,
+        "space_after_pt": null,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "[20]Rubayyi T. Alqahtani, Mathematical model of SIR epidemic system (COVID-19) with fractional derivative: stability and numerical analysis, Adv. Difference Equ. 2021 (1) (2021) 2.",
+      "level": 1,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "[21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025)",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[22]Anil Kumar ajak, Nilam, A fractional-order epidemic model with quarantine class and nonmonotonic incidence: Modeling and simulations, Iran. J. Sci. Technol. Trans. A Sci. 46 (4) (2022) 1249–1263."
+          },
+          "block_index": 32,
+          "original_page_number": null,
+          "original_order": 32,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 32"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[23]Subrata Paul, Animesh Mahata, Supriya Mukherjee, Banamali Roy, Dynamics of SIQR epidemic model with fractional order derivative, Part. Differ. Equ. Appl. Math. 5 (2022) 100216."
+          },
+          "block_index": 33,
+          "original_page_number": null,
+          "original_order": 33,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 33"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[24]S.S. Askar, P.K. Dipankar Ghosh, Abdelalim A. Santra, Elsadany, G.S. Mahapatra, A fractional order SITR mathematical model for forecasting of transmission of COVID-19 of India with lockdown effect, Results Phys. 24 (2021) 104067."
+          },
+          "block_index": 34,
+          "original_page_number": null,
+          "original_order": 34,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 34"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[25]Bo Wang, et.al , Effect of an antiviral drug control and its variable order fractional network in host COVID-19 kinetics, The Eur. Phy.J.Spl.topics, Vol.231,(2022)."
+          },
+          "block_index": 35,
+          "original_page_number": null,
+          "original_order": 35,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 35"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[26]Joshua Kiddy K. Asamoah, Eric Okyere, Ernest Yankson, Alex Akwasi Opoku, Agnes Adom-Konadu, Edward Acheampong, Yarhands Dissou Arthur, Non-fractional and fractional mathematical analysis and simulations for Q fever, Chaos Solitons Fractals 156 (2022) 111821."
+          },
+          "block_index": 36,
+          "original_page_number": null,
+          "original_order": 36,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 36"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[27] Sania Qureshi, Abdon Atangana, Fractal-fractional differentiation for the modeling and mathematical analysis of nonlinear diarrhea transmission dynamics under the use of real data, Chaos Solitons Fractals 136 (2020) 109812."
+          },
+          "block_index": 37,
+          "original_page_number": null,
+          "original_order": 37,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 37"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[28] Sania Qureshi, Abdon Atangana, Mathematical analysis of dengue fever outbreak by novel fractional operators with field data, Phys. A 526 (2019) 121127."
+          },
+          "block_index": 38,
+          "original_page_number": null,
+          "original_order": 38,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 38"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[29]Khan, A. et al. Modeling and sensitivity analysis of HBV epidemic model with convex incidence rate. Results Phys. 22, 103836 (2021)."
+          },
+          "block_index": 39,
+          "original_page_number": null,
+          "original_order": 39,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 39"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[30]Farman, M., Shehzad, A., Nisar, K. S., Hincal, E. & Akgul, A. A mathematical fractal-fractional model to control tuberculosis prevalence with sensitivity, stability, and simulation under feasible circumstances. Comput. Biol. Med. 178, 108756 (2024)."
+          },
+          "block_index": 40,
+          "original_page_number": null,
+          "original_order": 40,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 40"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[31]Khan, H., Alzabut, J., Alfwzan, W. F. & Gulzar, H. Nonlinear dynamics of a piecewise modified ABC fractional-order leukemia model with symmetric numerical simulations. Symmetry 15(7), 1338 (2023)."
+          },
+          "block_index": 41,
+          "original_page_number": null,
+          "original_order": 41,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 41"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[32]Khan, H., Alzabut, J., G-Aguilar, J. F. & Alkhazan, A. Essential criteria for existence of solution of a modified-ABC fractional order smoking model. Ain Shams Eng. J. 15(5), 102646 (2024)"
+          },
+          "block_index": 42,
+          "original_page_number": null,
+          "original_order": 42,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 42"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[33]Amarnath Chatterjee, et,al,A fractional-order differential equation model of COVID-19 infection of epithelial cells, Chaos, solitans and fractals, , June 2021, 110952."
+          },
+          "block_index": 43,
+          "original_page_number": null,
+          "original_order": 43,
+          "source_location": "Section: [21] Amar N Chatterjee, et.al, A model for the dynamics of COVID-19 infection transmission in human with latent delay, Afrika Matematika, Vol.36(2025), Block: 43"
+        }
+      ],
+      "heading_format": null
+    },
+    {
+      "title": "",
+      "level": 1,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "[34]Amarnath Chatterjee, et.al,A Fractional-Order Compartmental Model of Vaccination for COVID-19 with the Fear Factor, Mathematics, Vol.10(9)(2022).",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[35]Vijayalakshmi G.M, and Roselyn Besi P. (2022), ‘ABC Fractional Order vaccination model for Covid-19 with self-protective measures’, Int.J.Appl.Comput.Math8:130."
+          },
+          "block_index": 44,
+          "original_page_number": null,
+          "original_order": 44,
+          "source_location": "Section: [34]Amarnath Chatterjee, et.al,A Fractional-Order Compartmental Model of Vaccination for COVID-19 with the Fear Factor, Mathematics, Vol.10(9)(2022)., Block: 44"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[36]Vijayalakshmi G.M, and Roselyn Besi P. (2022), ‘A fractal fractional order vaccination model of COVID-19 pandemic using Adam’s Moulton analysis’, Results in control and optimization, 8,100144."
+          },
+          "block_index": 45,
+          "original_page_number": null,
+          "original_order": 45,
+          "source_location": "Section: [34]Amarnath Chatterjee, et.al,A Fractional-Order Compartmental Model of Vaccination for COVID-19 with the Fear Factor, Mathematics, Vol.10(9)(2022)., Block: 45"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[37]Vijayalakshmi G.M, and Roselyn Besi P.(2023),’ Vaccination control measures of an epidemic model with long-term memristive effect’, Journal of computational and applied mathematics, 419, 114738."
+          },
+          "block_index": 46,
+          "original_page_number": null,
+          "original_order": 46,
+          "source_location": "Section: [34]Amarnath Chatterjee, et.al,A Fractional-Order Compartmental Model of Vaccination for COVID-19 with the Fear Factor, Mathematics, Vol.10(9)(2022)., Block: 46"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[38]Vijayalakshmi G.M, and Roselyn Besi P. (2023), ‘Mathematical model on minimality of vaccination costs of COVID-19 using fractional order’, Tuijin/Jishu Journal of propulsion technology, Vol 44, issue 4."
+          },
+          "block_index": 47,
+          "original_page_number": null,
+          "original_order": 47,
+          "source_location": "Section: [34]Amarnath Chatterjee, et.al,A Fractional-Order Compartmental Model of Vaccination for COVID-19 with the Fear Factor, Mathematics, Vol.10(9)(2022)., Block: 47"
+        }
+      ],
+      "heading_format": null
+    },
+    {
+      "title": "[39]Vijayalakshmi G.M, Roselyn Besi P, and Ali Akgul. (2024), ’Fractional commensurate model on Covid-19 with microbial coinfection: An optimal control analysis’, Optimal control application and methods, 3093.",
+      "level": 1,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "[40]M.M.Singh,D.L.Suthar, S.D.Purohit,Analysis of the COVID-19 pandemic and prediction with numerical methods, ,vol.16, 2450018(2024).",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[41], et.al,Predicting COVID-19 outbreak in India using modified SIRD model, Applied Mathematics in science and engg, Vol.32(2024)"
+          },
+          "block_index": 48,
+          "original_page_number": null,
+          "original_order": 48,
+          "source_location": "Section: [40]M.M.Singh,D.L.Suthar, S.D.Purohit,Analysis of the COVID-19 pandemic and prediction with numerical methods, ,vol.16, 2450018(2024)., Block: 48"
+        }
+      ],
+      "heading_format": null
+    },
+    {
+      "title": "[42]Garima Agarwal,et.al,Analysis and estimation of the COVID-19 pandemic by modified homotopy perturbation method, Applied Mathematics in science and engg, Vol.31(2023)",
+      "level": 1,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "[43]Mulualem Aychluh, et.al,Atangana–Baleanu derivative-based fractional model of COVID-19 dynamics in Ethiopia, Applied Mathematics in science and engg, Vol.30(2022)",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[44]Zarin, R., Khan, A. & Akg, L. A. Fractional modeling of COVID-19 pandemic model with real data from Pakistan under the ABC operator. AIMS Math. 7(9), 15939–15964 (2022)."
+          },
+          "block_index": 49,
+          "original_page_number": null,
+          "original_order": 49,
+          "source_location": "Section: [43]Mulualem Aychluh, et.al,Atangana–Baleanu derivative-based fractional model of COVID-19 dynamics in Ethiopia, Applied Mathematics in science and engg, Vol.30(2022), Block: 49"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[45]Atangana, A., & Baleanu, D. (2016). New fractional derivatives with nonlocal and non-singular kernel. Thermal Science, 20(2), 763-769."
+          },
+          "block_index": 50,
+          "original_page_number": null,
+          "original_order": 50,
+          "source_location": "Section: [43]Mulualem Aychluh, et.al,Atangana–Baleanu derivative-based fractional model of COVID-19 dynamics in Ethiopia, Applied Mathematics in science and engg, Vol.30(2022), Block: 50"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[46]Culebras, E., et al. (2024). Cell immunity to SARS-CoV-2 after natural infection and/or different vaccination regimens. Frontiers in Cellular and Infection Microbiology."
+          },
+          "block_index": 51,
+          "original_page_number": null,
+          "original_order": 51,
+          "source_location": "Section: [43]Mulualem Aychluh, et.al,Atangana–Baleanu derivative-based fractional model of COVID-19 dynamics in Ethiopia, Applied Mathematics in science and engg, Vol.30(2022), Block: 51"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[47]Dourdouna, M.-M., et al. (2023). Evaluation of T cell responses with the Quantiferon SARS-CoV-2 assay. Diagnostic Microbiology and Infectious Disease."
+          },
+          "block_index": 52,
+          "original_page_number": null,
+          "original_order": 52,
+          "source_location": "Section: [43]Mulualem Aychluh, et.al,Atangana–Baleanu derivative-based fractional model of COVID-19 dynamics in Ethiopia, Applied Mathematics in science and engg, Vol.30(2022), Block: 52"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[48]Jayanta Mondal, et.al, Dynamical demeanour of SARS-CoV-2 virus undergoing immune response mechanism in COVID-19 pandemic, The EUR,Phy, J,spl.topics, Vol.231(2022)"
+          },
+          "block_index": 53,
+          "original_page_number": null,
+          "original_order": 53,
+          "source_location": "Section: [43]Mulualem Aychluh, et.al,Atangana–Baleanu derivative-based fractional model of COVID-19 dynamics in Ethiopia, Applied Mathematics in science and engg, Vol.30(2022), Block: 53"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[49] Megatsari, H., & Kusuma, D. (2022). Geographic and socioeconomic inequalities in delays in Covid-19 vaccinations. Vaccines, 10(11), Article 1857."
+          },
+          "block_index": 54,
+          "original_page_number": null,
+          "original_order": 54,
+          "source_location": "Section: [43]Mulualem Aychluh, et.al,Atangana–Baleanu derivative-based fractional model of COVID-19 dynamics in Ethiopia, Applied Mathematics in science and engg, Vol.30(2022), Block: 54"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[50]Jayanta Mondal, et.al,Optimal control strategies of non-pharmaceutical and pharmaceutical interventions for COVID-19 control, Journal of interdisciplinary mathematics, vol.24(2021)"
+          },
+          "block_index": 55,
+          "original_page_number": null,
+          "original_order": 55,
+          "source_location": "Section: [43]Mulualem Aychluh, et.al,Atangana–Baleanu derivative-based fractional model of COVID-19 dynamics in Ethiopia, Applied Mathematics in science and engg, Vol.30(2022), Block: 55"
+        }
+      ],
+      "heading_format": null
+    },
+    {
+      "title": "[51]Vaccines trials in Chile and the UK’s role to tackle the pandemic,https://www.gov.uk/government/news/vaccines-trials-in-chile-and-the-uks-role-to-tackle-the-pandemic",
+      "level": 1,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "[52] D.L.Suthar, et.al, Effect of vaccination on the transmission dynamics of COVID-19 in Ethiopia, Results in physics, Vol.32(2022), 105022.",
+      "level": 1,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "[53] Haile Hebanom,Modeling and analysis on the transmission of covid-19 Pandemic in Ethiopia, Alex.engg.journal, vol.61, issue 7 (2022)",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_2.png",
+            "label": "fig:office2",
+            "width_pt": 10.15,
+            "height_pt": 7.5,
+            "office_object_type": "textbox"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_1.png",
+            "label": "fig:office1",
+            "width_pt": 207.0,
+            "height_pt": 44.5,
+            "office_object_type": "textbox"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[54] Podlubny, I. (1999). Fractional differential equations. Academic Press."
+          },
+          "block_index": 56,
+          "original_page_number": null,
+          "original_order": 56,
+          "source_location": "Section: [53] Haile Hebanom,Modeling and analysis on the transmission of covid-19 Pandemic in Ethiopia, Alex.engg.journal, vol.61, issue 7 (2022), Block: 56"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[55]Our World in Data. (2024). Coronavirus pandemic (COVID-19). ​"
+          },
+          "block_index": 57,
+          "original_page_number": null,
+          "original_order": 57,
+          "source_location": "Section: [53] Haile Hebanom,Modeling and analysis on the transmission of covid-19 Pandemic in Ethiopia, Alex.engg.journal, vol.61, issue 7 (2022), Block: 57"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[56] WHO, "
+          },
+          "block_index": 58,
+          "original_page_number": null,
+          "original_order": 58,
+          "source_location": "Section: [53] Haile Hebanom,Modeling and analysis on the transmission of covid-19 Pandemic in Ethiopia, Alex.engg.journal, vol.61, issue 7 (2022), Block: 58"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[57]van den Driessche, P., & Watmough, J. (2002). Reproduction numbers and sub-threshold endemic equilibria for compartmental models of disease transmission. Mathematical Biosciences, 180(1-2), 29-48."
+          },
+          "block_index": 59,
+          "original_page_number": null,
+          "original_order": 59,
+          "source_location": "Section: [53] Haile Hebanom,Modeling and analysis on the transmission of covid-19 Pandemic in Ethiopia, Alex.engg.journal, vol.61, issue 7 (2022), Block: 59"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[58]Simeone Marino, Ian B. Hogue, Christian J. Ray, Denise E. Kirschner, A methodology for performing global uncertainty and sensitivity analysis in systems biology, J. Theoret. Biol. 254 (1) (2008) 178–196."
+          },
+          "block_index": 60,
+          "original_page_number": null,
+          "original_order": 60,
+          "source_location": "Section: [53] Haile Hebanom,Modeling and analysis on the transmission of covid-19 Pandemic in Ethiopia, Alex.engg.journal, vol.61, issue 7 (2022), Block: 60"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "[59]Diethelm, K., Ford, N. J., & Freed, A. D. (2004). Detailed error analysis for a fractional Adams method. Numerical Algorithms, 36(1), 31-52."
+          },
+          "block_index": 61,
+          "original_page_number": null,
+          "original_order": 61,
+          "source_location": "Section: [53] Haile Hebanom,Modeling and analysis on the transmission of covid-19 Pandemic in Ethiopia, Alex.engg.journal, vol.61, issue 7 (2022), Block: 61"
+        }
+      ],
+      "heading_format": null
+    }
+  ],
+  "references": [
+    "[1]",
+    "[2]",
+    "[3]",
+    "[4]Divya Sanghi, Preeti Saini, Priya Mishra, Mahak Sharma, Outbreaks in India: Impact on socio-economy and health, J. Commun. Dis. 53 (1) (2021) 35–44.",
+    "[5] Tuberculosis .",
+    "[6] HIV and AIDS .",
+    "[7] Noncommunicable diseases .",
+    "[8]WHO Coronavirus (COVID-19) Deaths .",
+    "[9]The Global Economic Outlook During the COVID-19 Pandemic  .[13]COVID-19 vaccine development, evaluation, approval and monitoring, https:// .",
+    "[10]World Health Organization. (2021). World health statistics 2021: Monitoring health for the SDGs. ​",
+    "[11]",
+    "[12]",
+    "[13]",
+    "[14] William Ogilvy Kermack, Anderson G. McKendrick, A contribution to the mathematical theory of epidemics, Proc. R. Soc. Lond. Ser. A 115 (772) (1927) 700–721.",
+    "[15] Renato Casagrandi, Luca Bolzoni, Simon A. Levin, Viggo Andreasen, The SIRC model and influenza A, Math. Biosci. 200 (2) (2006) 152–169.",
+    "[16]Anuj Kumar, Yasuhiro Takeuchi, Prashant K. Srivastava, Stability switches, periodic oscillations and global stability in an infectious disease model with multiple time delays, Math. Biosci. Eng. 20 (6) (2023) 11000–11032.",
+    "[17]Shashank Goel, Sumit Kaur Bhatia, Jai Prakash Tripathi, Sarita Bugalia, Mansi Rana, Vijay Pal Bajiya, SIRC epidemic model with cross-immunity and multiple time delays,J. Math. Biol. 87 (3) (2023) 42.",
+    "[18]Zimeng Lv, Xinyu Liu, Yuting Ding, Dynamic behavior analysis of an SVIR epidemic model with two time delays associated with the COVID-19 booster vaccination time, Math. Biosci. Eng. 20 (2023) 6030–6061.",
+    "[19]Piu Samui, et.al,Impact of awareness in self–monitoring of COVID-19: An optimal control approach, Results in control and opt., March 2025, 100513"
+  ],
+  "author_biographies": [],
+  "received_date": "",
+  "revised_date": "",
+  "accepted_date": "",
+  "published_date": "",
+  "volume": "",
+  "issue": "",
+  "year": "",
+  "doi": "",
+  "corresponding_email": "aliakgul@siirt.edu.tr"
+}

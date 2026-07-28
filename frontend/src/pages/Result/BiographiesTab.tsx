@@ -3,6 +3,7 @@ import { BiographyCard } from "@/components/BiographyCard";
 import { EmptyState } from "@/components/EmptyState";
 import { User } from "lucide-react";
 import type { DocumentStructure } from "@/types";
+import { getAssetUrl } from "@/services";
 
 interface BiographiesTabProps {
   doc: DocumentStructure;
@@ -37,7 +38,7 @@ export function BiographiesTab({ doc, jobId }: BiographiesTabProps) {
           <BiographyCard
             key={i}
             authorName={b.author_name}
-            imagePath={b.image_path ? `/api/job/${jobId}/assets/${b.image_path}` : null}
+            imagePath={b.image_path ? getAssetUrl(jobId, b.image_path) : null}
             biographyText={b.biography_text}
           />
         ))}

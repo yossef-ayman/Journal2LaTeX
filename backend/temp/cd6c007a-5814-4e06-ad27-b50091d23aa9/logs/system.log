@@ -1,0 +1,43 @@
+[2026-07-28 17:51:47,054] [INFO] [job_manager.py:136]: Job cd6c007a-5814-4e06-ad27-b50091d23aa9 workspace created successfully
+[2026-07-28 17:51:47,086] [INFO] [pipeline_service.py:46]: Starting validation for job: cd6c007a-5814-4e06-ad27-b50091d23aa9
+[2026-07-28 17:51:47,105] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-07-28 17:51:47,121] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-07-28 17:51:47,143] [INFO] [pipeline_service.py:61]: Validation successful.
+[2026-07-28 17:51:47,160] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-07-28 17:51:47,160] [INFO] [pipeline_service.py:68]: Starting document analysis for job: cd6c007a-5814-4e06-ad27-b50091d23aa9
+[2026-07-28 17:51:47,176] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-28 17:51:47,191] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-28 17:51:47,191] [INFO] [document_analyzer.py:44]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\cd6c007a-5814-4e06-ad27-b50091d23aa9\input\4.docx
+[2026-07-28 17:51:51,605] [INFO] [document_analyzer.py:528]: Parsed document: title='Analytical Dynamics of a Monkeypox Model Using Caputo-Fabrizio Fractional Derivative and Sumudu Transform Method', authors=177, sections=0, references=0
+[2026-07-28 17:51:51,618] [INFO] [pipeline_service.py:96]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\cd6c007a-5814-4e06-ad27-b50091d23aa9\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\cd6c007a-5814-4e06-ad27-b50091d23aa9\intermediate\conversion_report.json
+[2026-07-28 17:51:51,633] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-28 17:51:51,633] [INFO] [pipeline_service.py:109]: Starting asset extraction for job: cd6c007a-5814-4e06-ad27-b50091d23aa9
+[2026-07-28 17:51:51,646] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-28 17:51:51,662] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-28 17:51:54,491] [INFO] [pipeline_service.py:142]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\cd6c007a-5814-4e06-ad27-b50091d23aa9\intermediate\media
+[2026-07-28 17:51:54,509] [INFO] [job_manager.py:204]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-28 17:51:54,509] [INFO] [pipeline_service.py:259]: Classifying extracted assets for job: cd6c007a-5814-4e06-ad27-b50091d23aa9
+[2026-07-28 17:51:54,509] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: cd6c007a-5814-4e06-ad27-b50091d23aa9
+[2026-07-28 17:51:54,524] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 3
+[2026-07-28 17:51:54,538] [INFO] [job_manager.py:204]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-28 17:51:54,629] [INFO] [pipeline_service.py:275]: Loading template ee4b027a-aa97-4cac-9057-e98b8c643b1c for job: cd6c007a-5814-4e06-ad27-b50091d23aa9
+[2026-07-28 17:51:54,657] [INFO] [job_manager.py:180]: Job status updated to: LOADING_TEMPLATE
+[2026-07-28 17:51:54,681] [INFO] [job_manager.py:204]: Progress updated to 70%: Loading template styles: ee4b027a-aa97-4cac-9057-e98b8c643b1c
+[2026-07-28 17:51:54,747] [INFO] [pipeline_service.py:297]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\cd6c007a-5814-4e06-ad27-b50091d23aa9\rendered
+[2026-07-28 17:51:54,765] [INFO] [job_manager.py:204]: Progress updated to 80%: Template workspace initialized
+[2026-07-28 17:51:54,767] [INFO] [pipeline_service.py:322]: Starting LaTeX rendering for job: cd6c007a-5814-4e06-ad27-b50091d23aa9
+[2026-07-28 17:51:54,784] [INFO] [job_manager.py:180]: Job status updated to: RENDERING_LATEX
+[2026-07-28 17:51:54,799] [INFO] [job_manager.py:204]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-28 17:51:54,818] [INFO] [latex_renderer.py:104]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\cd6c007a-5814-4e06-ad27-b50091d23aa9\rendered
+[2026-07-28 17:51:54,844] [INFO] [latex_renderer.py:479]: LaTeX document main.tex rendered successfully.
+[2026-07-28 17:51:55,131] [INFO] [header_reconstructor.py:124]: Template class draws its own header; skipping fancyhdr injection.
+[2026-07-28 17:51:55,141] [INFO] [job_manager.py:204]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-28 17:51:55,141] [INFO] [pipeline_service.py:385]: Starting document compilation for job: cd6c007a-5814-4e06-ad27-b50091d23aa9
+[2026-07-28 17:51:55,159] [INFO] [job_manager.py:180]: Job status updated to: COMPILING
+[2026-07-28 17:51:55,174] [INFO] [job_manager.py:204]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-28 17:51:58,892] [INFO] [pipeline_service.py:408]: Compilation completed successfully.
+[2026-07-28 17:51:58,894] [INFO] [pipeline_service.py:423]: Running E2E publication fidelity checker for job: cd6c007a-5814-4e06-ad27-b50091d23aa9
+[2026-07-28 17:51:58,894] [INFO] [fidelity_checker.py:24]: Generating advanced fidelity report and scores for job: cd6c007a-5814-4e06-ad27-b50091d23aa9
+[2026-07-28 17:51:58,897] [INFO] [fidelity_checker.py:175]: Fidelity report written to G:\work\Journal2LaTeX\backend\temp\cd6c007a-5814-4e06-ad27-b50091d23aa9\intermediate\fidelity_report.json. Overall Score: 91.6%, Critical missing: 0
+[2026-07-28 17:51:58,912] [INFO] [job_manager.py:180]: Job status updated to: COMPLETED
+[2026-07-28 17:51:58,927] [INFO] [job_manager.py:204]: Progress updated to 100%: Pipeline process completed successfully

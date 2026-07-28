@@ -8,6 +8,9 @@ const ProcessingPage = lazy(() => import("@/pages/Processing"));
 const ResultPage = lazy(() => import("@/pages/Result"));
 const HistoryPage = lazy(() => import("@/pages/History"));
 const SettingsPage = lazy(() => import("@/pages/Settings"));
+const TemplatesPage = lazy(() => import("@/pages/Templates"));
+const TemplateEditorPage = lazy(() => import("@/pages/Templates/Editor"));
+const AboutPage = lazy(() => import("@/pages/About"));
 const NotFoundPage = lazy(() => import("@/pages/NotFound"));
 
 const Loader = () => (
@@ -29,9 +32,12 @@ export const router = createBrowserRouter([
       { path: "/processing/:jobId", element: <Lazy><ProcessingPage /></Lazy> },
       { path: "/result/:jobId", element: <Lazy><ResultPage /></Lazy> },
       { path: "/history", element: <Lazy><HistoryPage /></Lazy> },
+      { path: "/templates", element: <Lazy><TemplatesPage /></Lazy> },
+      { path: "/templates/:templateId", element: <Lazy><TemplateEditorPage /></Lazy> },
       { path: "/settings", element: <Lazy><SettingsPage /></Lazy> },
-      { path: "/404", element: <Lazy><NotFoundPage /></Lazy> },
-      { path: "*", element: <Navigate to="/404" replace /> },
+    { path: "/about", element: <Lazy><AboutPage /></Lazy> },
+    { path: "/404", element: <Lazy><NotFoundPage /></Lazy> },
+    { path: "*", element: <Navigate to="/404" replace /> },
     ],
   },
 ]);

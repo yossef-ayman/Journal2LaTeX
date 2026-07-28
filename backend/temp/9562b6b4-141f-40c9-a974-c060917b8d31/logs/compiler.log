@@ -1,0 +1,73 @@
+[2026-07-23 15:28:38,372] [INFO] [latex_compiler.py:337]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\9562b6b4-141f-40c9-a974-c060917b8d31\rendered\main.tex
+[2026-07-23 15:28:38,391] [INFO] [latex_compiler.py:364]: Applied template compatibility layer to main.tex
+[2026-07-23 15:28:38,393] [INFO] [latex_compiler.py:126]: Rendered working directory tree before compilation:
+  default.cls
+  default.sty
+  logo.png
+  main.tex
+  media/
+    office_obj_1.png
+    office_obj_2.png
+  template.json
+  template.tex
+[2026-07-23 15:28:38,396] [INFO] [latex_compiler.py:132]: Template resource manifest (8 files):
+  default.cls                              template resource (document class)
+  default.sty                              template resource (package / style)
+  logo.png                                 template resource (graphic (PNG))
+  main.tex                                 generated document / build artefact
+  media\office_obj_1.png                   renderer-generated media
+  media\office_obj_2.png                   renderer-generated media
+  template.json                            template metadata
+  template.tex                             template resource (included source)
+[2026-07-23 15:28:38,416] [INFO] [latex_compiler.py:154]: Dependency resolution (6 references):
+  [LOCAL  ] documentclass   default
+  [SYSTEM ] usepackage      xcolor
+  [LOCAL  ] usepackage      default
+  [SYSTEM ] usepackage      float
+  [LOCAL  ] includegraphics media/office_obj_1.png
+  [LOCAL  ] includegraphics media/office_obj_2.png
+[2026-07-23 15:28:38,416] [INFO] [latex_compiler.py:395]: Using latexmk compiler.
+[2026-07-23 15:28:41,205] [INFO] [latex_compiler.py:462]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\9562b6b4-141f-40c9-a974-c060917b8d31\output\paper.pdf
+[2026-07-23 15:28:41,236] [INFO] [latex_compiler.py:337]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\9562b6b4-141f-40c9-a974-c060917b8d31\rendered\main.tex
+[2026-07-23 15:28:41,254] [INFO] [latex_compiler.py:364]: Applied template compatibility layer to main.tex
+[2026-07-23 15:28:41,256] [INFO] [latex_compiler.py:126]: Rendered working directory tree before compilation:
+  default.cls
+  default.sty
+  logo.png
+  main.aux
+  main.fdb_latexmk
+  main.fls
+  main.log
+  main.out
+  main.pdf
+  main.tex
+  media/
+    office_obj_1.png
+    office_obj_2.png
+  template.json
+  template.tex
+[2026-07-23 15:28:41,257] [INFO] [latex_compiler.py:132]: Template resource manifest (14 files):
+  default.cls                              template resource (document class)
+  default.sty                              template resource (package / style)
+  logo.png                                 template resource (graphic (PNG))
+  main.aux                                 generated document / build artefact
+  main.fdb_latexmk                         generated document / build artefact
+  main.fls                                 generated document / build artefact
+  main.log                                 generated document / build artefact
+  main.out                                 generated document / build artefact
+  main.pdf                                 generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\office_obj_1.png                   renderer-generated media
+  media\office_obj_2.png                   renderer-generated media
+  template.json                            template metadata
+  template.tex                             template resource (included source)
+[2026-07-23 15:28:41,274] [INFO] [latex_compiler.py:154]: Dependency resolution (7 references):
+  [LOCAL  ] documentclass   default
+  [SYSTEM ] usepackage      xcolor
+  [LOCAL  ] usepackage      default
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      geometry
+  [LOCAL  ] includegraphics media/office_obj_1.png
+  [LOCAL  ] includegraphics media/office_obj_2.png
+[2026-07-23 15:28:41,275] [INFO] [latex_compiler.py:395]: Using latexmk compiler.
+[2026-07-23 15:28:43,841] [INFO] [latex_compiler.py:462]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\9562b6b4-141f-40c9-a974-c060917b8d31\output\paper.pdf

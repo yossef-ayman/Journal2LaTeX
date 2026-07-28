@@ -1,0 +1,87 @@
+[2026-07-26 22:23:50,529] [INFO] [latex_compiler.py:337]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\675db015-6a2b-49dc-ad7f-5758b5e83e56\rendered\main.tex
+[2026-07-26 22:23:50,580] [INFO] [latex_compiler.py:364]: Applied template compatibility layer to main.tex
+[2026-07-26 22:23:50,583] [INFO] [latex_compiler.py:126]: Rendered working directory tree before compilation:
+  chart1.png
+  chart2.png
+  chart3.png
+  chart4.png
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.tex
+  media/
+    image2.jpeg
+    office_obj_1.png
+    office_obj_2.png
+    office_obj_3.png
+    office_obj_4.png
+  NSP1.cls
+  paper.aux
+  paper.log
+  paper.out
+  paper.pdf
+  paper.synctex.gz
+  paper.tex
+  psfig.sty
+  Ref. JSAP paper.tex
+  template.json
+[2026-07-26 22:23:50,586] [INFO] [latex_compiler.py:132]: Template resource manifest (23 files):
+  chart1.png                               template resource (graphic (PNG))
+  chart2.png                               template resource (graphic (PNG))
+  chart3.png                               template resource (graphic (PNG))
+  chart4.png                               template resource (graphic (PNG))
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.tex                                 generated document / build artefact
+  media\image2.jpeg                        renderer-generated media
+  media\office_obj_1.png                   renderer-generated media
+  media\office_obj_2.png                   renderer-generated media
+  media\office_obj_3.png                   renderer-generated media
+  media\office_obj_4.png                   renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper.aux                                generated document / build artefact
+  paper.log                                generated document / build artefact
+  paper.out                                generated document / build artefact
+  paper.pdf                                template resource (graphic (PDF))
+  paper.synctex.gz                         generated document / build artefact
+  paper.tex                                template resource (included source)
+  psfig.sty                                template resource (package / style)
+  Ref. JSAP paper.tex                      template resource (included source)
+  template.json                            template metadata
+[2026-07-26 22:23:53,943] [INFO] [latex_compiler.py:154]: Dependency resolution (33 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphics
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      hyperref
+  [SYSTEM ] usepackage      tabularx
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      afterpage
+  [SYSTEM ] usepackage      algorithm
+  [SYSTEM ] usepackage      algpseudocode
+  [SYSTEM ] usepackage      longtable
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      cuted
+  [SYSTEM ] usepackage      newunicodechar
+  [SYSTEM ] usepackage      type1cm
+  [SYSTEM ] usepackage      fix-cm
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/office_obj_1.png
+  [LOCAL  ] includegraphics media/office_obj_2.png
+  [LOCAL  ] includegraphics media/office_obj_3.png
+  [LOCAL  ] includegraphics media/office_obj_4.png
+[2026-07-26 22:23:53,943] [INFO] [latex_compiler.py:395]: Using latexmk compiler.
+[2026-07-26 22:23:57,349] [INFO] [latex_compiler.py:462]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\675db015-6a2b-49dc-ad7f-5758b5e83e56\output\paper.pdf

@@ -32,8 +32,15 @@ _DEFAULTS = {
     "SOFFICE_PATH": "soffice",
     # Timeouts (seconds)
     "SUBPROCESS_TIMEOUT": 120,
-    "COMPILE_TIMEOUT": 30000,
+    "COMPILE_TIMEOUT": 300,
     # Layout optimizer
+    # The SSIM-driven layout-optimization loop is part of the Visual Fidelity
+    # Engine roadmap.  It recompiles the document up to MAX_ITERATIONS times
+    # and depends on a LibreOffice reference render, which makes production
+    # jobs slow and their output environment-sensitive.  It is therefore
+    # disabled by default and must be opted into explicitly; the production
+    # DOCX -> LaTeX -> PDF pipeline is deterministic without it.
+    "OPTIMIZER_ENABLED": False,
     "OPTIMIZER_MAX_ITERATIONS": 12,
     "OPTIMIZER_TARGET_SIMILARITY": 0.95,
     "OPTIMIZER_PATIENCE": 3,
@@ -77,6 +84,7 @@ if _HAS_PYDANTIC_SETTINGS:
         SOFFICE_PATH: str = _DEFAULTS["SOFFICE_PATH"]
         SUBPROCESS_TIMEOUT: int = _DEFAULTS["SUBPROCESS_TIMEOUT"]
         COMPILE_TIMEOUT: int = _DEFAULTS["COMPILE_TIMEOUT"]
+        OPTIMIZER_ENABLED: bool = _DEFAULTS["OPTIMIZER_ENABLED"]
         OPTIMIZER_MAX_ITERATIONS: int = _DEFAULTS["OPTIMIZER_MAX_ITERATIONS"]
         OPTIMIZER_TARGET_SIMILARITY: float = _DEFAULTS["OPTIMIZER_TARGET_SIMILARITY"]
         OPTIMIZER_PATIENCE: int = _DEFAULTS["OPTIMIZER_PATIENCE"]

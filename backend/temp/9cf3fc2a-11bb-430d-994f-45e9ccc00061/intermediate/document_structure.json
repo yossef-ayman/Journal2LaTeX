@@ -1,0 +1,1615 @@
+{
+  "title": "Mittag-Leffler Stability Analysis for a fractional order model of co-contaminated soil and water pollution",
+  "authors": [
+    {
+      "name": "Priya P.",
+      "affiliation": "Department of Mathematics, Coimbatore Institute of Technology,",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Roselyn Besi P.1 Revathy M",
+      "affiliation": "Department of Mathematics, Coimbatore Institute of Technology,",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Ali Akgul",
+      "affiliation": "Department of Electronics and Communication Engineering, Saveetha School of Engineering,SIMATS, Chennai, Tamilnadu, India",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "*",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Coimbatore",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Tamil Nadu",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "India",
+      "affiliation": "Siirt University, Art and Science Faculty, Department of Mathematics, 56100 Siirt, Türkiye",
+      "email": "priyabarath612@gmail.com1",
+      "photo_path": null
+    },
+    {
+      "name": "$R_{0} = \\ \\frac{LaN}{\\Phi_{C}\\ \\left( \\Phi + \\ \\gamma \\right)}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "1. Introduction",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "2. Mathematical Preliminaries",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "2.1 Fractional Calculus Fundamentals",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "The two-parameter Mittag-Leffler function is:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$E_{\\alpha",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\beta}(z) = \\sum_{k = 0}^{\\infty}{}\\frac{z^{k}}{\\Gamma(\\alpha k + \\beta)}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\quad\\alpha",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\beta >",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "z \\in C.$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "2.2 Mittag-Leffler Stability Theory",
+      "affiliation": "Lemma 2.1 (Fractional Comparison Principle). [11] Let $u(t) \\in C^{1}\\left( \\lbrack 0,T\\rbrack,R_{+} \\right)$ satisfy: $^{ABC}D_{t}^{\\alpha}u(t) \\leq - \\lambda u(t),\\quad u(0) = u_{0}$ Then: $u(t) \\leq u_{0}E_{\\alpha}\\left( - \\lambda t^{\\alpha} \\right)$",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "3. Model Formulation",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Consider the fractional-order system with Atangana-Baleanu-Caputo derivatives:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$tABCC = \\ aN\\  - \\ LCS_{P} - \\ BCW\\  - \\ \\Phi_{C}C$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$tABCW = \\ \\delta_{1}\\ S_{p}\\ W\\  - \\ \\rho\\ WF\\  - \\ \\Phi_{3}\\ W$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$tABCF = \\ \\delta_{2}\\ S_{p}\\ F\\  + \\ \\rho\\ WF\\  - \\ \\gamma_{2}\\ F\\  - \\ \\Phi_{4}\\ F$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$tABCS_{R} = \\ \\gamma_{1}\\ S_{p}\\  + \\ \\gamma_{2}F\\  - \\ \\Phi_{5}\\ S_{R}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "(1.1)",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "With the initial conditions",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "${\\ C} = C(0) \\geq",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ S_{p} = S_{p}(0) \\geq",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ W = W(0) \\geq",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ F = F(0) \\geq",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ S_{R} = S_{R}(0) \\geq 0$.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "a – Effluent Concentration",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "N – Total Area",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$L$ – Rate of contaminated sediments in soil",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\beta$ – Rate of contaminated settlements in water",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\delta_{1}$ – Washout rate of effluents from soil into water",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\delta_{2}$ – Polluted settlements in farmland",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\rho$ – Polluted water affecting farmland",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\gamma_{1}$ – Remedy in polluted soil",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\gamma_{2}$- remedial measure in farmland",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\phi_{1}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ \\phi_{2}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\phi_{3}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ \\phi_{4}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ \\phi_{5}$ - Mortality rate of all the compartments",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "C- Effluent Concentration",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$S_{p}$ – Polluted Soil",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "W – Water Contamination",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "F – Farmland pollution",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$S_{R}$ – Remedied Soil",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "4. Equilibrium Point",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Stability analysis:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Trivial Equilibrium Point $(E_{0})$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "This equilibrium represents a state where pollution is absent in the soil",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "water",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "farmland compartments.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$E_{0}\\  = \\ \\left( \\frac{aN}{\\varnothing_{C}}\\",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ 0 \\right).$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "The components are:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$C_{0}\\  = \\frac{aN}{\\varnothing_{C}}\\ $: Effluent concentration reaches a baseline level.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$S_{P0} = \\ 0$: No polluted soil.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$W_{0}\\  = \\ 0$: No water contamination.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$F_{0}\\  = \\ 0$: No farmland pollution.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$S_{R0} = \\ 0$: No remediated soil.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Endemic Equilibrium Point ($E^{*}$):",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "This equilibrium represents a state where pollution persists in all environmental compartments.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\ \\ \\ \\ \\ \\ \\ \\ E^{*}\\  = \\ \\left( C^{*}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ S_{p}^{*}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ W^{*}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ F^{*}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\ S_{R}^{*} \\right).$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$C^{*}\\  = \\frac{\\left( aN\\  - \\ LC_{S}\\  - \\ BC_{W} \\right)}{\\Phi_{C}}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$S_{p}^{*}\\  = \\ \\frac{LC_{S}}{\\left( \\delta_{1}\\ W\\  + \\ \\delta_{2}\\ F\\  + \\ \\Phi_{2}\\  + \\ \\gamma_{1} \\right)}\\ $",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$W^{*}\\  = \\ \\frac{\\delta_{1}\\ S_{p}}{(\\rho\\ F\\  + \\ \\Phi_{3})}\\ \\ $",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$F^{*}\\  = \\frac{\\left( \\delta_{2}\\ S_{p}\\  + \\ \\rho\\ W \\right)}{\\left( \\gamma_{2}\\  + \\ \\Phi_{4} \\right)}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$S_{R}^{*}\\  = \\frac{\\left( \\gamma_{1}\\ S_{p}\\  + \\ \\gamma_{2}\\ F \\right)}{\\Phi_{5}}.$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "4.2 Stability analysis",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "4.2.1 Local Stability Analysis",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Jacobian Matrix Computation",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Local Stability of Trivial Equilibrium",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Proposition 4.1. The trivial equilibrium point $E_{0} = \\left( \\frac{aN}{\\Phi_{C}}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "0 \\right)$ has Jacobian matrix:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Proof. The characteristic equation is:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "The eigenvalues are:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "- $\\lambda_{1} = - \\Phi_{C} < 0$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "- $\\lambda_{2} = - \\Phi_{3} < 0$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "- $\\lambda_{3} = - \\Phi_{5} < 0$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "- $\\lambda_{4} = - \\left( \\gamma_{2} + \\Phi_{4} \\right) < 0$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "- $\\lambda_{5} = L\\frac{aN}{\\Phi_{C}} - \\Phi_{2} - \\gamma_{1}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For stability",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "we require $\\lambda_{5} < 0$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "which gives the condition:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$L\\frac{aN}{\\Phi_{C}} < \\Phi_{2} + \\gamma_{1}$",
+      "affiliation": "Since $0 < \\alpha < 1$, we have $\\frac{\\alpha\\pi}{2} < \\frac{\\pi}{2}$, so $\\cos\\left( \\frac{\\alpha\\pi}{2} \\right) > 0$. For real eigenvalues, the stability condition $\\left| \\arg(\\lambda) \\right| > \\frac{\\alpha\\pi}{2}$ is equivalent to $\\lambda < 0$ when $\\lambda$ is real and negative. ◻",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Local Stability of Endemic Equilibrium",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For the remaining $4 \\times 4$ subsystem",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "let:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "The characteristic polynomial of $J_{4}$ is:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$P_{4}(\\lambda) = \\lambda + a_{3}\\lambda + a_{2}\\lambda + a_{1}\\lambda + a_{0}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "where: To derive the coefficients of the characteristic polynomial",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "we compute the determinant of $J_{4} - \\lambda I$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Expanding along the first row:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "where $M_{ij}$ are the corresponding cofactors.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Computing the cofactors:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Expanding this $3 \\times 3$ determinant:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Combining all terms:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Expanding",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "collecting terms by powers of $\\lambda$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\det\\left( J_{4} - \\lambda I \\right) = \\lambda + a_{3}\\lambda + a_{2}\\lambda + a_{1}\\lambda + a_{0}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "where the coefficients are:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For the determinant of the full Jacobian matrix:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Therefore",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "the constant term of the full characteristic polynomial is:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$a_{0}^{(full)} = \\Phi_{5} \\cdot a_{0}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "By the Routh-Hurwitz criterion adapted for fractional systems",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$E^{*}$ is locally asymptotically stable if:",
+      "affiliation": "Since all system parameters are positive and at endemic equilibrium $S_{p}^{*},W^{*},F^{*} > 0$, conditions (1) and (4) are automatically satisfied. The remaining conditions depend on the specific parameter values and equilibrium magnitudes. ◻",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "4.3 Global Stability Analysis",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Global Stability of Trivial Equilibrium",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Proof. We construct a Lyapunov function for the subsystem involving $\\left( S_{p}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "W",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "F \\right)$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$V_{1}\\left( S_{p}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "W",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "F \\right) = S_{p} + W + F$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "The fractional derivative of $V_{1}$ along solutions is:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For the full system",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "consider:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "where $C_{0} = \\frac{aN}{\\Phi_{C}}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$S_{R0} = 0$.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "The derivative of the first term is:",
+      "affiliation": "Since $C_{0} = \\frac{aN}{\\Phi_{C}}$ and at equilibrium $aN = \\Phi_{C}C_{0}$:",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For the remediated soil component:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$^{ABC}D_{t}^{\\alpha}S_{R} = \\gamma_{1}S_{p} + \\gamma_{2}F - \\Phi_{5}S_{R}$",
+      "affiliation": "Combining all terms and using LaSalle’s invariance principle for fractional systems, we conclude global asymptotic stability when $L\\frac{aN}{\\Phi_{C}} < \\Phi_{2} + \\gamma_{1}$. ◻",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Global Stability of Endemic Equilibrium",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Theorem 4.4. If the endemic equilibrium $E^{*}$ exists",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "the following conditions hold:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "then $E^{*}$ is globally asymptotically stable in the interior of $R_{+}$.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Proof. We construct a Lyapunov function of Goh-Volterra type:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "4.3 Basic Reproduction Number",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Threshold Dynamics",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Proof. Using the next-generation matrix method",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "we identify:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "At the trivial equilibrium $E_{0}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "we have $C_{0} = \\frac{aN}{\\Phi_{C}}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "so:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Corollary 2. The stability threshold can be expressed in terms of the basic reproduction number:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "4.4 Mittag-Leffler Stability Analysis",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Fractional Lyapunov Direct Method",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "then the origin is asymptotically Mittag-Leffler stable.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Mittag-Leffler Stability of Trivial Equilibrium",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Proof. We construct a fractional Lyapunov function candidate:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$V(t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "X) = V_{1}(t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "C) + V_{2}\\left( t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "S_{p} \\right) + V_{3}(t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "W) + V_{4}(t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "F) + V_{5}\\left( t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "S_{R} \\right)$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "where:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Bounding the Lyapunov Function",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Clearly:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\frac{1}{2} \\parallel X - E_{0} \\parallel \\leq V(t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "X) \\leq \\frac{1}{2} \\parallel X - E_{0} \\parallel$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "where $\\parallel X - E_{0} \\parallel = \\left( C - C_{0} \\right) + S_{p} + W + F + S_{R}$.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Computing the Fractional Derivative",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "using the property of fractional derivatives:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$^{ABC}D_{t}^{\\alpha}V(t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "X) = \\sum_{i = 1}{}\\frac{\\partial V}{\\partial x_{i}} \\cdot^{ABC}D_{t}^{\\alpha}x_{i}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Computing each term:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For $V_{1}$:",
+      "affiliation": "Since at equilibrium $aN = \\Phi_{C}C_{0}$:",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$^{ABC}D_{t}^{\\alpha}V_{1} = \\left( C - C_{0} \\right)\\left( - LCS_{p} - BCW - \\Phi_{C}\\left( C - C_{0} \\right) \\right)$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$= - \\left( C - C_{0} \\right)\\Phi_{C} - \\left( C - C_{0} \\right)LCS_{p} - \\left( C - C_{0} \\right)BCW$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For $V_{2}$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$= S_{p}\\left( LC - \\delta_{1}W - \\delta_{2}F - \\Phi_{2} - \\gamma_{1} \\right) - \\delta_{1}S_{p}W - \\delta_{2}S_{p}F$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For $V_{3}$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$^{ABC}D_{t}^{\\alpha}V_{3} = W \\cdot^{ABC}D_{t}^{\\alpha}W = W\\left( \\delta_{1}S_{p}W - \\rho WF - \\Phi_{3}W \\right)$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$= \\delta_{1}S_{p}W - \\rho WF - \\Phi_{3}W$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For $V_{4}$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$= \\delta_{2}S_{p}F + \\rho WF - \\left( \\gamma_{2} + \\Phi_{4} \\right)F$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For $V_{5}$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$= \\gamma_{1}S_{p}S_{R} + \\gamma_{2}FS_{R} - \\Phi_{5}S_{R}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Summing all terms:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Using Young’s inequality",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Cauchy-Schwarz inequality to bound cross terms:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For $\\left( C - C_{0} \\right)LCS_{p}$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For $\\left( C - C_{0} \\right)BCW$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For $\\gamma_{1}S_{p}S_{R}$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\gamma_{1}S_{p}S_{R} \\leq \\frac{\\epsilon_{3}}{2}S_{p} + \\frac{\\gamma_{1}}{2\\epsilon_{3}}S_{R}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "For $\\gamma_{2}FS_{R}$:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\gamma_{2}FS_{R} \\leq \\frac{\\epsilon_{4}}{2}F + \\frac{\\gamma_{2}}{2\\epsilon_{4}}S_{R}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Choosing appropriate $\\epsilon_{i}$ values",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "collecting terms:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "where the coefficients depend on system parameters",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "the condition $R_{0} < 1$.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Specifically",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "for the $S_{p}$ term:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\lambda_{2} = \\Phi_{2} + \\gamma_{1} - LCC_{0} - (positive\\ correction\\ terms)$",
+      "affiliation": "Since $C_{0} = \\frac{aN}{\\Phi_{C}}$:",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Therefore",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "if $R_{0} < 1$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "then $\\lambda_{2} > 0$ for sufficiently small cross-term contributions.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "We have established:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$^{ABC}D_{t}^{\\alpha}V(t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "X) \\leq - \\lambda V(t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "X)$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "where $\\lambda = min\\{\\lambda_{1}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\lambda_{2}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\lambda_{3}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\lambda_{4}",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "\\lambda_{5}\\} > 0$ when $R_{0} < 1$.",
+      "affiliation": "By the fractional comparison principle:",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$V(t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "X) \\leq V\\left(",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "X_{0} \\right)E_{\\alpha}\\left( - \\lambda t^{\\alpha} \\right)$",
+      "affiliation": "Since $V(t,X) \\geq \\frac{1}{2} \\parallel X - E_{0} \\parallel^{2}$:",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$\\parallel X(t) - E_{0} \\parallel \\leq 2V\\left(",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "X_{0} \\right)E_{\\alpha}\\left( - \\lambda t^{\\alpha} \\right)$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Therefore:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Convergence Rate Analysis",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "This shows algebraic decay",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "which is slower than exponential decay for $\\alpha < 1$.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Parameter Sensitivity Analysis",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "The Mittag-Leffler stability condition $R_{0} < 1$ can be written as:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$L < \\frac{\\Phi_{C}\\left( \\Phi_{2} + \\gamma_{1} \\right)}{aN}$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "This provides clear guidelines for pollution control:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Mittag-Leffler Stability of Endemic Equilibrium",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Proof. The proof follows similar steps using a Lyapunov function of the form:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$V(t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "X) = \\sum_{i = 1}{}\\underline{x_{i}}H\\left( \\frac{x_{i}}{\\underline{x_{i}}} \\right)$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "The fractional derivative satisfies:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "$^{ABC}D_{t}^{\\alpha}V(t",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "X) \\leq - \\mu\\sum_{i = 1}{}\\left( x_{i} - \\underline{x_{i}} \\right)$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "for some $\\mu > 0$",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "establishing local Mittag-Leffler stability. ◻",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "5. Numerical Scheme for ABC Fractional Model",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Trapezoidal Product-Integration Rule for ABC Derivatives",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "The numerical approximation at time $t_{n} = n\\Delta t$ is given by:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "where the weights are defined as:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Improved Predictor-Corrector Scheme",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "We implement an improved second-order predictor-corrector method with adaptive step-size control:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Predictor Step:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Corrector Step:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "where:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Implementation for the Pollution Model",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "The numerical scheme becomes:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Component-wise Predictor:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Component-wise Corrector:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "5. Numerical Simulations",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Discussion",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "To further analyze the system’s behavior",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "we examine the dynamics of each compartment individually.",
+      "affiliation": "Fig3: Simulated dynamics of Polluted Soil $S_{p}(t)$ for $R_{0} = 4.55$. The level increases from its initial value and stabilizes at a positive value $S_{p}^{*}$. This confirms the existence and stability of the endemic equilibrium $E^{*}$, as $S_{p}^{*} > 0$ is a defining characteristic.",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "The numerical simulations for $R_{0} = 4.55$ provide strong evidence supporting the theoretical stability analysis:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "6. Conclusion",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "CRediT authorship contribution statement:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Priya P.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Roselyn Besi P. Conceptualization",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Methodology",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Writing-Original draft",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "formal analysis",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "investigation.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Sabarmathi A.: Scrutinized the work.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Declaration of Competing interest:",
+      "affiliation": "Data Availability:",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Data will be provided by corresponding author on reasonable request.",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Funding:",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "No Funding",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "References",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    }
+  ],
+  "abstract": "Environmental pollution is a serious and long-lasting problem, and understanding how it spreads and how it can be controlled requires robust mathematical models. In this work, we study a five-compartment fractional-order model that describes how pollution moves between different environmental components, namely effluent, soil, water, and farmland. To capture the memory and hereditary effects that naturally occur in environmental processes, we use the Atangana–Baleanu–Caputo (ABC) fractional derivative, which provides a more realistic description than classical integer-order models. We first analyze the qualitative behavior of the model. Using linearization, Lyapunov function, and tools from fractional calculus, we establish the local and global asymptotic stability of two important equilibrium points: the pollution-free equilibrium (E₀) and the endemic (polluted) equilibrium (E*). In particular, we apply the concept of Mittag-Leffler stability, which is well-suited to fractional-order systems. A central result of the analysis is the derivation of the basic reproduction number",
+  "keywords": [
+    "Co-Contamination",
+    "ABC mathematical model",
+    "fixed point",
+    "Adaptive control",
+    "Adams-Bhashforth."
+  ],
+  "sections": [],
+  "references": [],
+  "author_biographies": [],
+  "received_date": "",
+  "revised_date": "",
+  "accepted_date": "",
+  "published_date": "",
+  "volume": "",
+  "issue": "",
+  "year": "",
+  "doi": "",
+  "corresponding_email": "priyabarath612@gmail.com1"
+}

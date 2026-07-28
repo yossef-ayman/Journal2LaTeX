@@ -1,0 +1,43 @@
+[2026-07-28 18:05:53,534] [INFO] [job_manager.py:136]: Job 52322ce9-d7f2-4398-9e19-71221dc19e37 workspace created successfully
+[2026-07-28 18:05:53,569] [INFO] [pipeline_service.py:46]: Starting validation for job: 52322ce9-d7f2-4398-9e19-71221dc19e37
+[2026-07-28 18:05:53,585] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-07-28 18:05:53,603] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-07-28 18:05:53,625] [INFO] [pipeline_service.py:61]: Validation successful.
+[2026-07-28 18:05:53,641] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-07-28 18:05:53,642] [INFO] [pipeline_service.py:68]: Starting document analysis for job: 52322ce9-d7f2-4398-9e19-71221dc19e37
+[2026-07-28 18:05:53,658] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-28 18:05:53,675] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-28 18:05:53,675] [INFO] [document_analyzer.py:44]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\52322ce9-d7f2-4398-9e19-71221dc19e37\input\6.docx
+[2026-07-28 18:05:56,048] [INFO] [document_analyzer.py:528]: Parsed document: title='A Fractional Fuzzy Dynamical Model for Math-Phobia with Optimal Learning Intervention Strategies', authors=232, sections=0, references=0
+[2026-07-28 18:05:56,059] [INFO] [pipeline_service.py:96]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\52322ce9-d7f2-4398-9e19-71221dc19e37\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\52322ce9-d7f2-4398-9e19-71221dc19e37\intermediate\conversion_report.json
+[2026-07-28 18:05:56,076] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-28 18:05:56,076] [INFO] [pipeline_service.py:109]: Starting asset extraction for job: 52322ce9-d7f2-4398-9e19-71221dc19e37
+[2026-07-28 18:05:56,090] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-28 18:05:56,104] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-28 18:05:58,090] [INFO] [pipeline_service.py:142]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\52322ce9-d7f2-4398-9e19-71221dc19e37\intermediate\media
+[2026-07-28 18:05:58,110] [INFO] [job_manager.py:204]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-28 18:05:58,110] [INFO] [pipeline_service.py:259]: Classifying extracted assets for job: 52322ce9-d7f2-4398-9e19-71221dc19e37
+[2026-07-28 18:05:58,110] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 52322ce9-d7f2-4398-9e19-71221dc19e37
+[2026-07-28 18:05:58,120] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 6
+[2026-07-28 18:05:58,137] [INFO] [job_manager.py:204]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-28 18:05:58,201] [INFO] [pipeline_service.py:275]: Loading template fa327c9a-0fdf-471b-81a9-79293fffe992 for job: 52322ce9-d7f2-4398-9e19-71221dc19e37
+[2026-07-28 18:05:58,220] [INFO] [job_manager.py:180]: Job status updated to: LOADING_TEMPLATE
+[2026-07-28 18:05:58,235] [INFO] [job_manager.py:204]: Progress updated to 70%: Loading template styles: fa327c9a-0fdf-471b-81a9-79293fffe992
+[2026-07-28 18:05:58,322] [INFO] [pipeline_service.py:297]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\52322ce9-d7f2-4398-9e19-71221dc19e37\rendered
+[2026-07-28 18:05:58,342] [INFO] [job_manager.py:204]: Progress updated to 80%: Template workspace initialized
+[2026-07-28 18:05:58,345] [INFO] [pipeline_service.py:322]: Starting LaTeX rendering for job: 52322ce9-d7f2-4398-9e19-71221dc19e37
+[2026-07-28 18:05:58,360] [INFO] [job_manager.py:180]: Job status updated to: RENDERING_LATEX
+[2026-07-28 18:05:58,374] [INFO] [job_manager.py:204]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-28 18:05:58,398] [INFO] [latex_renderer.py:104]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\52322ce9-d7f2-4398-9e19-71221dc19e37\rendered
+[2026-07-28 18:05:58,432] [INFO] [latex_renderer.py:479]: LaTeX document main.tex rendered successfully.
+[2026-07-28 18:05:58,634] [INFO] [header_reconstructor.py:124]: Template class draws its own header; skipping fancyhdr injection.
+[2026-07-28 18:05:58,644] [INFO] [job_manager.py:204]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-28 18:05:58,645] [INFO] [pipeline_service.py:385]: Starting document compilation for job: 52322ce9-d7f2-4398-9e19-71221dc19e37
+[2026-07-28 18:05:58,665] [INFO] [job_manager.py:180]: Job status updated to: COMPILING
+[2026-07-28 18:05:58,679] [INFO] [job_manager.py:204]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-28 18:06:02,692] [INFO] [pipeline_service.py:408]: Compilation completed successfully.
+[2026-07-28 18:06:02,695] [INFO] [pipeline_service.py:423]: Running E2E publication fidelity checker for job: 52322ce9-d7f2-4398-9e19-71221dc19e37
+[2026-07-28 18:06:02,695] [INFO] [fidelity_checker.py:24]: Generating advanced fidelity report and scores for job: 52322ce9-d7f2-4398-9e19-71221dc19e37
+[2026-07-28 18:06:02,698] [INFO] [fidelity_checker.py:175]: Fidelity report written to G:\work\Journal2LaTeX\backend\temp\52322ce9-d7f2-4398-9e19-71221dc19e37\intermediate\fidelity_report.json. Overall Score: 94.5%, Critical missing: 0
+[2026-07-28 18:06:02,715] [INFO] [job_manager.py:180]: Job status updated to: COMPLETED
+[2026-07-28 18:06:02,731] [INFO] [job_manager.py:204]: Progress updated to 100%: Pipeline process completed successfully

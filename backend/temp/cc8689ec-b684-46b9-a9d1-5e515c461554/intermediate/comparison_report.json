@@ -1,0 +1,71 @@
+{
+  "header_match": 40.0,
+  "title_match": 100.0,
+  "author_match": 100.0,
+  "affiliation_match": 25.0,
+  "abstract_match": 100.0,
+  "keyword_match": 100.0,
+  "section_match": 100.0,
+  "figure_match": 100.0,
+  "table_match": 100.0,
+  "reference_match": 100.0,
+  "biography_match": 100.0,
+  "layout_match": 67.5,
+  "typography_match": 37.0,
+  "first_page_match": 77.5,
+  "overall_score": 81.9,
+  "mismatches": {
+    "header_match": [
+      {
+        "expected": "Journal volume details present",
+        "actual": "Missing or generic volume",
+        "reason": "Volume not detected in DOCX header",
+        "proposed_fix": "Extract volume metadata from first page header"
+      },
+      {
+        "expected": "Received/Revised/Accepted dates present",
+        "actual": "Missing dates",
+        "reason": "Dates not detected in DOCX metadata",
+        "proposed_fix": "Extract dates from header blocks"
+      },
+      {
+        "expected": "DOI identifier present",
+        "actual": "Missing DOI",
+        "reason": "DOI not detected in DOCX",
+        "proposed_fix": "Generate standard DOI prefix in templates"
+      }
+    ],
+    "affiliation_match": [
+      {
+        "expected": "Affiliations for all authors",
+        "actual": "Missing affiliations for: Coimbatore, Tamil Nadu, \\[R_{0} = \\ \\frac{LaN}{\\Phi_{C}\\ \\left( \\Phi + \\ \\gamma \\right)}",
+        "reason": "Affiliation paragraphs not grouped with author names",
+        "proposed_fix": "Implement proximity grouping in author analyzer"
+      }
+    ],
+    "layout_match": [
+      {
+        "expected": "No LaTeX layout warnings or overflows",
+        "actual": "1 layout issues detected",
+        "reason": "Hbox/Vbox overflows or bad scaling",
+        "proposed_fix": "Verify graphics scaling and table wrapping styles"
+      }
+    ],
+    "typography_match": [
+      {
+        "expected": "Zero text line overflows",
+        "actual": "21 line overflows",
+        "reason": "Long math equation or long table column widths",
+        "proposed_fix": "Implement auto-wrapping or auto-resizing styles"
+      }
+    ],
+    "first_page_match": [
+      {
+        "expected": "High fidelity first page layout",
+        "actual": "First page match score: 77.5%",
+        "reason": "Metadata fields mismatch or generic formatting",
+        "proposed_fix": "Override document class metadata macros"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "table",
+    "caption": "Table",
+    "strategy": "inline_span",
+    "reason": "wide table (table width 93% of text), short (~3.1in) -> inline spanning both columns to hold its exact reading-order position"
+  },
+  {
+    "kind": "figure",
+    "caption": "C:\\textbackslash{}Users\\textbackslash{}HP\\textbackslash{}Dow",
+    "strategy": "float_span",
+    "reason": "wide (image 56% of text width) and floating in Word -> full-width spanning float (figure*/table*) reproduces Word's own float and lets LaTeX place it at a page slot near the reference"
+  },
+  {
+    "kind": "figure",
+    "caption": "C:\\textbackslash{}Users\\textbackslash{}HP\\textbackslash{}Dow",
+    "strategy": "float_column",
+    "reason": "narrow (image 52% of text width) and floating in Word -> normal single-column float mirrors Word and lets LaTeX optimise the page"
+  },
+  {
+    "kind": "figure",
+    "caption": "",
+    "strategy": "float_h",
+    "reason": "wide figure (image 98% of text width) but tall/near-square (~3.4in at full width) -> pinned in place at column width ([H]) so it stays in order without overflowing the page"
+  },
+  {
+    "kind": "figure",
+    "caption": "",
+    "strategy": "inline_span",
+    "reason": "wide figure (image 100% of text width), short banner shape (~1.2in) -> inline spanning both columns, exact position"
+  },
+  {
+    "kind": "figure",
+    "caption": "",
+    "strategy": "inline_span",
+    "reason": "wide figure (image 100% of text width), short banner shape (~0.6in) -> inline spanning both columns, exact position"
+  }
+]

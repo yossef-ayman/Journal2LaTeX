@@ -1,0 +1,195 @@
+
+
+
+
+
+
+% >>> j2l compat: xcolor / named-colour compatibility
+\PassOptionsToPackage{dvipsnames}{color}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
+\RequirePackage{xcolor}
+\makeatletter\@namedef{ver@color.sty}{2021/01/01}\makeatother
+\makeatletter\@ifundefined{providecolor}{}{%
+  \providecolor{CarnationPink}{RGB}{128,128,128}
+  \providecolor{Lavender}{RGB}{128,128,128}
+  \providecolor{abstractcolor}{RGB}{128,128,128}
+  \providecolor{rulecolor}{RGB}{128,128,128}
+}\makeatother
+% <<< j2l compat
+\documentclass[10pt]{NSP1}
+
+\IfFileExists{url.sty}{\usepackage{url}}{}
+\IfFileExists{floatflt.sty}{\usepackage{floatflt}}{}
+
+\IfFileExists{helvet.sty}{\usepackage{helvet}}{}
+\IfFileExists{times.sty}{\usepackage{times}}{}
+
+\IfFileExists{psfig.sty}{\usepackage{psfig}}{}
+\IfFileExists{graphics.sty}{\usepackage{graphics}}{}
+
+\IfFileExists{mathptmx.sty}{\usepackage{mathptmx}}{}
+\IfFileExists{amsmath.sty}{\usepackage{amsmath}}{}
+\IfFileExists{amssymb.sty}{\usepackage{amssymb}}{}
+\IfFileExists{bm.sty}{\usepackage{bm}}{}
+
+\IfFileExists{float.sty}{\usepackage{float}}{}
+
+\IfFileExists{caption.sty}{\usepackage[bf,hypcap]{caption}}{}
+
+
+
+\IfFileExists{xcolor.sty}{\usepackage[dvipsnames,table,xcdraw]{xcolor}}{}
+
+
+
+\tolerance=1
+
+\emergencystretch=\maxdimen
+
+\hyphenpenalty=10000
+
+\hbadness=10000
+
+
+
+\topmargin=0.00cm
+
+
+
+\def\sm{\smallskip}
+
+\def\no{\noindent}
+
+
+
+\def\firstpage{1}
+
+\setcounter{page}{\firstpage}
+
+\def\thevol{}
+
+\def\thenumber{}
+
+\def\theyear{}
+
+
+
+
+
+\IfFileExists{graphicx.sty}{\usepackage{graphicx}}{}
+\makeatletter
+\def\biographyps#1#2{%
+  \par\addvspace{21dd}\small\noindent
+  \if!#1!\else
+    \noindent\includegraphics[width=1in,height=1.25in,keepaspectratio]{#1}\par\smallskip
+  \fi
+  {\bfseries#2\unskip\ }\ignorespaces}
+\def\endbiographyps{\par\addvspace{12pt}}
+\makeatother
+
+% >>> j2l compat: scalable Computer Modern (arbitrary font sizes)
+\IfFileExists{type1cm.sty}{\usepackage{type1cm}}{}
+\IfFileExists{fix-cm.sty}{\usepackage{fix-cm}}{}
+% <<< j2l compat
+\begin{document}
+% >>> j2l compat: body-text size (+5%)
+\makeatletter
+\edef\JLTXbasesize{\f@size}
+\@tempdimb=1.2\dimexpr\f@size pt\relax\edef\JLTXbaseskip{\strip@pt\@tempdimb}
+\def\JLTXbodyscale{1.050}
+\let\JLTX@normalsize\normalsize
+\renewcommand\normalsize{%
+  \JLTX@normalsize
+  \@tempdima=\JLTXbodyscale\dimexpr\f@size pt\relax
+  \@tempdimb=1.2\@tempdima
+  \fontsize{\strip@pt\@tempdima}{\strip@pt\@tempdimb}\selectfont}%
+\@ifundefined{@makecaption}{}{%
+  \let\JLTX@makecaption\@makecaption
+  \long\def\@makecaption#1#2{%
+    \begingroup\fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont
+    \let\normalsize\JLTX@normalsize
+    \JLTX@makecaption{#1}{#2}\endgroup}}%
+\@ifundefined{thebibliography}{}{%
+  \let\JLTX@thebibliography\thebibliography
+  \def\thebibliography{%
+    \fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont\JLTX@thebibliography}}%
+\makeatother
+\normalsize
+% <<< j2l compat
+
+
+
+
+\titlefigurecaption{{\large \bf \rm Progress in Fractional Differentiation
+
+and Applications}\\ {\it\small An International Journal}}
+
+
+
+\title{Mittag-Leffler Stability Analysis for a fractional order model of co-contaminated soil and water pollution}
+
+
+
+\author{Priya P.$^{1}$ \and Roselyn Besi P.1 Revathy M$^{1}$ \and Ali Akgul$^{2}$ \and * \and Coimbatore \and Tamil Nadu \and India$^{3}$ \and $R_{0} = \ \frac{LaN}{\Phi_{C}\ \left( \Phi + \ \gamma \right)}$ \and $$ \and 1. Introduction \and 2. Mathematical Preliminaries \and 2.1 Fractional Calculus Fundamentals \and The two-parameter Mittag-Leffler function is: \and $E_{\alpha$ \and \textbackslash{}beta\}(z) = \textbackslash{}sum\_\{k = 0\}\textasciicircum{}\{\textbackslash{}infty\}\{\}\textbackslash{}frac\{z\textasciicircum{}\{k\}\}\{\textbackslash{}Gamma(\textbackslash{}alpha k + \textbackslash{}beta)\} \and \textbackslash{}quad\textbackslash{}alpha \and \textbackslash{}beta \textgreater{} \and z \textbackslash{}in C.$$ \and 2.2 Mittag-Leffler Stability Theory$^{4}$ \and 3. Model Formulation \and Consider the fractional-order system with Atangana-Baleanu-Caputo derivatives: \and $tABCC = \ aN\  - \ LCS_{P} - \ BCW\  - \ \Phi_{C}C$ \and $tABCW = \ \delta_{1}\ S_{p}\ W\  - \ \rho\ WF\  - \ \Phi_{3}\ W$ \and $tABCF = \ \delta_{2}\ S_{p}\ F\  + \ \rho\ WF\  - \ \gamma_{2}\ F\  - \ \Phi_{4}\ F$ \and $tABCS_{R} = \ \gamma_{1}\ S_{p}\  + \ \gamma_{2}F\  - \ \Phi_{5}\ S_{R}$ \and (1.1) \and With the initial conditions \and ${\ C} = C(0) \geq$ \and \textbackslash{} S\_\{p\} = S\_\{p\}(0) \textbackslash{}geq \and \textbackslash{} W = W(0) \textbackslash{}geq \and \textbackslash{} F = F(0) \textbackslash{}geq \and \textbackslash{} S\_\{R\} = S\_\{R\}(0) \textbackslash{}geq 0$.$ \and a – Effluent Concentration \and N – Total Area \and $L$ – Rate of contaminated sediments in soil \and $\beta$ – Rate of contaminated settlements in water \and $\delta_{1}$ – Washout rate of effluents from soil into water \and $\delta_{2}$ – Polluted settlements in farmland \and $\rho$ – Polluted water affecting farmland \and $\gamma_{1}$ – Remedy in polluted soil \and $\gamma_{2}$- remedial measure in farmland \and $\phi_{1}$ \and \textbackslash{} \textbackslash{}phi\_\{2\} \and \textbackslash{}phi\_\{3\} \and \textbackslash{} \textbackslash{}phi\_\{4\} \and \textbackslash{} \textbackslash{}phi\_\{5\}$ - Mortality rate of all the compartments$ \and C- Effluent Concentration \and $S_{p}$ – Polluted Soil \and W – Water Contamination \and F – Farmland pollution \and $S_{R}$ – Remedied Soil \and 4. Equilibrium Point \and Stability analysis: \and Trivial Equilibrium Point $(E_{0})$: \and This equilibrium represents a state where pollution is absent in the soil \and water \and farmland compartments. \and $E_{0}\  = \ \left( \frac{aN}{\varnothing_{C}}\$ \and \textbackslash{} \and \textbackslash{} \and \textbackslash{} \and \textbackslash{} 0 \textbackslash{}right).$$ \and The components are: \and $C_{0}\  = \frac{aN}{\varnothing_{C}}\ $: Effluent concentration reaches a baseline level. \and $S_{P0} = \ 0$: No polluted soil. \and $W_{0}\  = \ 0$: No water contamination. \and $F_{0}\  = \ 0$: No farmland pollution. \and $S_{R0} = \ 0$: No remediated soil. \and Endemic Equilibrium Point ($E^{*}$): \and This equilibrium represents a state where pollution persists in all environmental compartments. \and $\ \ \ \ \ \ \ \ E^{*}\  = \ \left( C^{*}$ \and \textbackslash{} S\_\{p\}\textasciicircum{}\{*\} \and \textbackslash{} W\textasciicircum{}\{*\} \and \textbackslash{} F\textasciicircum{}\{*\} \and \textbackslash{} S\_\{R\}\textasciicircum{}\{*\} \textbackslash{}right).$$ \and $C^{*}\  = \frac{\left( aN\  - \ LC_{S}\  - \ BC_{W} \right)}{\Phi_{C}}$ \and $S_{p}^{*}\  = \ \frac{LC_{S}}{\left( \delta_{1}\ W\  + \ \delta_{2}\ F\  + \ \Phi_{2}\  + \ \gamma_{1} \right)}\ $ \and $W^{*}\  = \ \frac{\delta_{1}\ S_{p}}{(\rho\ F\  + \ \Phi_{3})}\ \ $ \and $F^{*}\  = \frac{\left( \delta_{2}\ S_{p}\  + \ \rho\ W \right)}{\left( \gamma_{2}\  + \ \Phi_{4} \right)}$ \and $S_{R}^{*}\  = \frac{\left( \gamma_{1}\ S_{p}\  + \ \gamma_{2}\ F \right)}{\Phi_{5}}.$ \and 4.2 Stability analysis \and 4.2.1 Local Stability Analysis \and Jacobian Matrix Computation \and Local Stability of Trivial Equilibrium \and Proposition 4.1. The trivial equilibrium point $E_{0} = \left( \frac{aN}{\Phi_{C}}$ \and 0 \textbackslash{}right)$ has Jacobian matrix:$ \and Proof. The characteristic equation is: \and The eigenvalues are: \and - $\lambda_{1} = - \Phi_{C} < 0$ \and - $\lambda_{2} = - \Phi_{3} < 0$ \and - $\lambda_{3} = - \Phi_{5} < 0$ \and - $\lambda_{4} = - \left( \gamma_{2} + \Phi_{4} \right) < 0$ \and - $\lambda_{5} = L\frac{aN}{\Phi_{C}} - \Phi_{2} - \gamma_{1}$ \and For stability \and we require $\lambda_{5} < 0$ \and which gives the condition: \and $L\frac{aN}{\Phi_{C}} < \Phi_{2} + \gamma_{1}$$^{5}$ \and Local Stability of Endemic Equilibrium \and For the remaining $4 \times 4$ subsystem \and let: \and The characteristic polynomial of $J_{4}$ is: \and $P_{4}(\lambda) = \lambda + a_{3}\lambda + a_{2}\lambda + a_{1}\lambda + a_{0}$ \and where: To derive the coefficients of the characteristic polynomial \and we compute the determinant of $J_{4} - \lambda I$: \and Expanding along the first row: \and where $M_{ij}$ are the corresponding cofactors. \and Computing the cofactors: \and Expanding this $3 \times 3$ determinant: \and Combining all terms: \and Expanding \and collecting terms by powers of $\lambda$: \and $\det\left( J_{4} - \lambda I \right) = \lambda + a_{3}\lambda + a_{2}\lambda + a_{1}\lambda + a_{0}$ \and where the coefficients are: \and For the determinant of the full Jacobian matrix: \and Therefore \and the constant term of the full characteristic polynomial is: \and $a_{0}^{(full)} = \Phi_{5} \cdot a_{0}$ \and By the Routh-Hurwitz criterion adapted for fractional systems \and $E^{*}$ is locally asymptotically stable if:$^{6}$ \and 4.3 Global Stability Analysis \and Global Stability of Trivial Equilibrium \and Proof. We construct a Lyapunov function for the subsystem involving $\left( S_{p}$ \and W \and F \textbackslash{}right)$:$ \and $V_{1}\left( S_{p}$ \and W \and F \textbackslash{}right) = S\_\{p\} + W + F$$ \and The fractional derivative of $V_{1}$ along solutions is: \and For the full system \and consider: \and where $C_{0} = \frac{aN}{\Phi_{C}}$ \and $S_{R0} = 0$. \and The derivative of the first term is:$^{7}$ \and For the remediated soil component: \and $^{ABC}D_{t}^{\alpha}S_{R} = \gamma_{1}S_{p} + \gamma_{2}F - \Phi_{5}S_{R}$$^{8}$ \and Global Stability of Endemic Equilibrium \and Theorem 4.4. If the endemic equilibrium $E^{*}$ exists \and the following conditions hold: \and then $E^{*}$ is globally asymptotically stable in the interior of $R_{+}$. \and Proof. We construct a Lyapunov function of Goh-Volterra type: \and 4.3 Basic Reproduction Number \and Threshold Dynamics \and Proof. Using the next-generation matrix method \and we identify: \and At the trivial equilibrium $E_{0}$ \and we have $C_{0} = \frac{aN}{\Phi_{C}}$ \and so: \and Corollary 2. The stability threshold can be expressed in terms of the basic reproduction number: \and 4.4 Mittag-Leffler Stability Analysis \and Fractional Lyapunov Direct Method \and then the origin is asymptotically Mittag-Leffler stable. \and Mittag-Leffler Stability of Trivial Equilibrium \and Proof. We construct a fractional Lyapunov function candidate: \and $V(t$ \and X) = V\_\{1\}(t \and C) + V\_\{2\}\textbackslash{}left( t \and S\_\{p\} \textbackslash{}right) + V\_\{3\}(t \and W) + V\_\{4\}(t \and F) + V\_\{5\}\textbackslash{}left( t \and S\_\{R\} \textbackslash{}right)$$ \and where: \and Bounding the Lyapunov Function \and Clearly: \and $\frac{1}{2} \parallel X - E_{0} \parallel \leq V(t$ \and X) \textbackslash{}leq \textbackslash{}frac\{1\}\{2\} \textbackslash{}parallel X - E\_\{0\} \textbackslash{}parallel$$ \and where $\parallel X - E_{0} \parallel = \left( C - C_{0} \right) + S_{p} + W + F + S_{R}$. \and Computing the Fractional Derivative \and using the property of fractional derivatives: \and $^{ABC}D_{t}^{\alpha}V(t$ \and X) = \textbackslash{}sum\_\{i = 1\}\{\}\textbackslash{}frac\{\textbackslash{}partial V\}\{\textbackslash{}partial x\_\{i\}\} \textbackslash{}cdot\textasciicircum{}\{ABC\}D\_\{t\}\textasciicircum{}\{\textbackslash{}alpha\}x\_\{i\}$$ \and Computing each term: \and For $V_{1}$:$^{9}$ \and $^{ABC}D_{t}^{\alpha}V_{1} = \left( C - C_{0} \right)\left( - LCS_{p} - BCW - \Phi_{C}\left( C - C_{0} \right) \right)$ \and $= - \left( C - C_{0} \right)\Phi_{C} - \left( C - C_{0} \right)LCS_{p} - \left( C - C_{0} \right)BCW$ \and For $V_{2}$: \and $= S_{p}\left( LC - \delta_{1}W - \delta_{2}F - \Phi_{2} - \gamma_{1} \right) - \delta_{1}S_{p}W - \delta_{2}S_{p}F$ \and For $V_{3}$: \and $^{ABC}D_{t}^{\alpha}V_{3} = W \cdot^{ABC}D_{t}^{\alpha}W = W\left( \delta_{1}S_{p}W - \rho WF - \Phi_{3}W \right)$ \and $= \delta_{1}S_{p}W - \rho WF - \Phi_{3}W$ \and For $V_{4}$: \and $= \delta_{2}S_{p}F + \rho WF - \left( \gamma_{2} + \Phi_{4} \right)F$ \and For $V_{5}$: \and $= \gamma_{1}S_{p}S_{R} + \gamma_{2}FS_{R} - \Phi_{5}S_{R}$ \and Summing all terms: \and Using Young’s inequality \and Cauchy-Schwarz inequality to bound cross terms: \and For $\left( C - C_{0} \right)LCS_{p}$: \and For $\left( C - C_{0} \right)BCW$: \and For $\gamma_{1}S_{p}S_{R}$: \and $\gamma_{1}S_{p}S_{R} \leq \frac{\epsilon_{3}}{2}S_{p} + \frac{\gamma_{1}}{2\epsilon_{3}}S_{R}$ \and For $\gamma_{2}FS_{R}$: \and $\gamma_{2}FS_{R} \leq \frac{\epsilon_{4}}{2}F + \frac{\gamma_{2}}{2\epsilon_{4}}S_{R}$ \and Choosing appropriate $\epsilon_{i}$ values \and collecting terms: \and where the coefficients depend on system parameters \and the condition $R_{0} < 1$. \and Specifically \and for the $S_{p}$ term: \and $\lambda_{2} = \Phi_{2} + \gamma_{1} - LCC_{0} - (positive\ correction\ terms)$$^{10}$ \and Therefore \and if $R_{0} < 1$ \and then $\lambda_{2} > 0$ for sufficiently small cross-term contributions. \and We have established: \and $^{ABC}D_{t}^{\alpha}V(t$ \and X) \textbackslash{}leq - \textbackslash{}lambda V(t \and X)$$ \and where $\lambda = min\{\lambda_{1}$ \and \textbackslash{}lambda\_\{2\} \and \textbackslash{}lambda\_\{3\} \and \textbackslash{}lambda\_\{4\} \and \textbackslash{}lambda\_\{5\}\textbackslash{}\} \textgreater{} 0$ when $R\_\{0\} \textless{} 1$.$$^{11}$ \and $V(t$ \and X) \textbackslash{}leq V\textbackslash{}left( \and X\_\{0\} \textbackslash{}right)E\_\{\textbackslash{}alpha\}\textbackslash{}left( - \textbackslash{}lambda t\textasciicircum{}\{\textbackslash{}alpha\} \textbackslash{}right)$$$^{12}$ \and $\parallel X(t) - E_{0} \parallel \leq 2V\left($ \and X\_\{0\} \textbackslash{}right)E\_\{\textbackslash{}alpha\}\textbackslash{}left( - \textbackslash{}lambda t\textasciicircum{}\{\textbackslash{}alpha\} \textbackslash{}right)$$ \and Therefore: \and Convergence Rate Analysis \and This shows algebraic decay \and which is slower than exponential decay for $\alpha < 1$. \and Parameter Sensitivity Analysis \and The Mittag-Leffler stability condition $R_{0} < 1$ can be written as: \and $L < \frac{\Phi_{C}\left( \Phi_{2} + \gamma_{1} \right)}{aN}$ \and This provides clear guidelines for pollution control: \and Mittag-Leffler Stability of Endemic Equilibrium \and Proof. The proof follows similar steps using a Lyapunov function of the form: \and $V(t$ \and X) = \textbackslash{}sum\_\{i = 1\}\{\}\textbackslash{}underline\{x\_\{i\}\}H\textbackslash{}left( \textbackslash{}frac\{x\_\{i\}\}\{\textbackslash{}underline\{x\_\{i\}\}\} \textbackslash{}right)$$ \and The fractional derivative satisfies: \and $^{ABC}D_{t}^{\alpha}V(t$ \and X) \textbackslash{}leq - \textbackslash{}mu\textbackslash{}sum\_\{i = 1\}\{\}\textbackslash{}left( x\_\{i\} - \textbackslash{}underline\{x\_\{i\}\} \textbackslash{}right)$$ \and for some $\mu > 0$ \and establishing local Mittag-Leffler stability. ◻ \and 5. Numerical Scheme for ABC Fractional Model \and Trapezoidal Product-Integration Rule for ABC Derivatives \and The numerical approximation at time $t_{n} = n\Delta t$ is given by: \and where the weights are defined as: \and Improved Predictor-Corrector Scheme \and We implement an improved second-order predictor-corrector method with adaptive step-size control: \and Predictor Step: \and Corrector Step: \and where: \and Implementation for the Pollution Model \and The numerical scheme becomes: \and Component-wise Predictor: \and Component-wise Corrector: \and 5. Numerical Simulations \and Discussion \and To further analyze the system’s behavior \and we examine the dynamics of each compartment individually.$^{13}$ \and The numerical simulations for $R_{0} = 4.55$ provide strong evidence supporting the theoretical stability analysis: \and 6. Conclusion \and CRediT authorship contribution statement: \and Priya P. \and Roselyn Besi P. Conceptualization \and Methodology \and Writing-Original draft \and formal analysis \and investigation. \and Sabarmathi A.: Scrutinized the work. \and Declaration of Competing interest:$^{14}$ \and Data will be provided by corresponding author on reasonable request. \and Funding: \and No Funding \and References}
+
+\institute{$^{1}$ Department of Mathematics, Coimbatore Institute of Technology, \\ $^{2}$ Department of Electronics and Communication Engineering, Saveetha School of Engineering,SIMATS, Chennai, Tamilnadu, India \\ $^{3}$ Siirt University, Art and Science Faculty, Department of Mathematics, 56100 Siirt, Türkiye \\ $^{4}$ Lemma 2.1 (Fractional Comparison Principle). [11] Let $u(t) \in C^{1}\left( \lbrack 0,T\rbrack,R_{+} \right)$ satisfy: $^{ABC}D_{t}^{\alpha}u(t) \leq - \lambda u(t),\quad u(0) = u_{0}$ Then: $u(t) \leq u_{0}E_{\alpha}\left( - \lambda t^{\alpha} \right)$ \\ $^{5}$ Since $0 < \alpha < 1$, we have $\frac{\alpha\pi}{2} < \frac{\pi}{2}$, so $\cos\left( \frac{\alpha\pi}{2} \right) > 0$. For real eigenvalues, the stability condition $\left| \arg(\lambda) \right| > \frac{\alpha\pi}{2}$ is equivalent to $\lambda < 0$ when $\lambda$ is real and negative. ◻ \\ $^{6}$ Since all system parameters are positive and at endemic equilibrium $S_{p}^{*},W^{*},F^{*} > 0$, conditions (1) and (4) are automatically satisfied. The remaining conditions depend on the specific parameter values and equilibrium magnitudes. ◻ \\ $^{7}$ Since $C_{0} = \frac{aN}{\Phi_{C}}$ and at equilibrium $aN = \Phi_{C}C_{0}$: \\ $^{8}$ Combining all terms and using LaSalle’s invariance principle for fractional systems, we conclude global asymptotic stability when $L\frac{aN}{\Phi_{C}} < \Phi_{2} + \gamma_{1}$. ◻ \\ $^{9}$ Since at equilibrium $aN = \Phi_{C}C_{0}$: \\ $^{10}$ Since $C_{0} = \frac{aN}{\Phi_{C}}$: \\ $^{11}$ By the fractional comparison principle: \\ $^{12}$ Since $V(t,X) \geq \frac{1}{2} \parallel X - E_{0} \parallel^{2}$: \\ $^{13}$ Fig3: Simulated dynamics of Polluted Soil $S_{p}(t)$ for $R_{0} = 4.55$. The level increases from its initial value and stabilizes at a positive value $S_{p}^{*}$. This confirms the existence and stability of the endemic equilibrium $E^{*}$, as $S_{p}^{*} > 0$ is a defining characteristic. \\ $^{14}$ Data Availability:}
+
+
+
+\titlerunning{Mittag-Leffler Stability Analysis for a fractional order model of co-contaminated soil and water pollution}
+
+\authorrunning{Priya P. et al.}
+
+
+
+
+
+\mail{priyabarath612@gmail.com1}
+
+
+
+\received{}
+
+\revised{}
+
+\accepted{}
+
+\published{}
+
+
+
+\abstracttext{Environmental pollution is a serious and long-lasting problem, and understanding how it spreads and how it can be controlled requires robust mathematical models. In this work, we study a five-compartment fractional-order model that describes how pollution moves between different environmental components, namely effluent, soil, water, and farmland. To capture the memory and hereditary effects that naturally occur in environmental processes, we use the Atangana–Baleanu–Caputo (ABC) fractional derivative, which provides a more realistic description than classical integer-order models. We first analyze the qualitative behavior of the model. Using linearization, Lyapunov function, and tools from fractional calculus, we establish the local and global asymptotic stability of two important equilibrium points: the pollution-free equilibrium (E₀) and the endemic (polluted) equilibrium (E*). In particular, we apply the concept of Mittag-Leffler stability, which is well-suited to fractional-order systems. A central result of the analysis is the derivation of the basic reproduction number}
+
+
+
+\keywords{Co-Contamination, ABC mathematical model, fixed point, Adaptive control, Adams-Bhashforth.}
+
+
+
+\maketitle
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

@@ -1,0 +1,222 @@
+[2026-07-23 15:28:47,394] [INFO] [job_manager.py:136]: Job 97355f4b-4574-4e35-bddd-72c65ba576a7 workspace created successfully
+[2026-07-23 15:28:47,415] [INFO] [pipeline_service.py:45]: Starting validation for job: 97355f4b-4574-4e35-bddd-72c65ba576a7
+[2026-07-23 15:28:47,432] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-07-23 15:28:47,447] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-07-23 15:28:55,497] [INFO] [pipeline_service.py:60]: Validation successful.
+[2026-07-23 15:28:55,513] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-07-23 15:28:55,513] [INFO] [pipeline_service.py:67]: Starting document analysis for job: 97355f4b-4574-4e35-bddd-72c65ba576a7
+[2026-07-23 15:28:55,528] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-23 15:28:55,541] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-23 15:28:55,542] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\97355f4b-4574-4e35-bddd-72c65ba576a7\input\normal_paper.docx
+[2026-07-23 15:28:56,300] [INFO] [document_analyzer.py:517]: Parsed document: title='Modification of the Authentication in the Routing Protocols in Mobile Ad Hoc Networks (MANETs)', authors=6, sections=8, references=14
+[2026-07-23 15:28:56,305] [INFO] [pipeline_service.py:95]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\97355f4b-4574-4e35-bddd-72c65ba576a7\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\97355f4b-4574-4e35-bddd-72c65ba576a7\intermediate\conversion_report.json
+[2026-07-23 15:28:56,319] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-23 15:28:56,319] [INFO] [pipeline_service.py:108]: Starting asset extraction for job: 97355f4b-4574-4e35-bddd-72c65ba576a7
+[2026-07-23 15:28:56,334] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-23 15:28:56,350] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-23 15:53:58,718] [INFO] [pipeline_service.py:223]: Office object fig:office1 placed=True
+[2026-07-23 15:53:58,718] [INFO] [pipeline_service.py:223]: Office object fig:office2 placed=True
+[2026-07-23 15:53:58,719] [INFO] [pipeline_service.py:223]: Office object fig:office3 placed=True
+[2026-07-23 15:53:58,719] [INFO] [pipeline_service.py:223]: Office object fig:office4 placed=True
+[2026-07-23 15:53:58,720] [INFO] [pipeline_service.py:223]: Office object fig:office5 placed=True
+[2026-07-23 15:53:58,720] [INFO] [pipeline_service.py:223]: Office object fig:office6 placed=True
+[2026-07-23 15:53:58,720] [INFO] [pipeline_service.py:223]: Office object fig:office7 placed=True
+[2026-07-23 15:53:58,720] [INFO] [pipeline_service.py:223]: Office object fig:office8 placed=True
+[2026-07-23 15:53:58,721] [INFO] [pipeline_service.py:223]: Office object fig:office9 placed=True
+[2026-07-23 15:53:58,722] [INFO] [pipeline_service.py:223]: Office object fig:office10 placed=True
+[2026-07-23 15:53:58,722] [INFO] [pipeline_service.py:223]: Office object fig:office11 placed=True
+[2026-07-23 15:53:58,723] [INFO] [pipeline_service.py:223]: Office object fig:office12 placed=True
+[2026-07-23 15:53:58,723] [INFO] [pipeline_service.py:223]: Office object fig:office13 placed=True
+[2026-07-23 15:53:58,723] [INFO] [pipeline_service.py:223]: Office object fig:office14 placed=True
+[2026-07-23 15:53:58,724] [INFO] [pipeline_service.py:223]: Office object fig:office15 placed=True
+[2026-07-23 15:53:58,724] [INFO] [pipeline_service.py:223]: Office object fig:office16 placed=True
+[2026-07-23 15:53:58,724] [INFO] [pipeline_service.py:223]: Office object fig:office17 placed=True
+[2026-07-23 15:53:58,724] [INFO] [pipeline_service.py:223]: Office object fig:office18 placed=True
+[2026-07-23 15:53:58,725] [INFO] [pipeline_service.py:223]: Office object fig:office19 placed=True
+[2026-07-23 15:53:58,725] [INFO] [pipeline_service.py:223]: Office object fig:office20 placed=True
+[2026-07-23 15:53:58,725] [INFO] [pipeline_service.py:223]: Office object fig:office21 placed=True
+[2026-07-23 15:53:58,726] [INFO] [pipeline_service.py:223]: Office object fig:office22 placed=True
+[2026-07-23 15:53:58,726] [INFO] [pipeline_service.py:223]: Office object fig:office23 placed=True
+[2026-07-23 15:53:58,726] [INFO] [pipeline_service.py:223]: Office object fig:office24 placed=True
+[2026-07-23 15:53:58,727] [INFO] [pipeline_service.py:223]: Office object fig:office25 placed=True
+[2026-07-23 15:53:58,727] [INFO] [pipeline_service.py:223]: Office object fig:office26 placed=True
+[2026-07-23 15:53:58,727] [INFO] [pipeline_service.py:223]: Office object fig:office44 placed=True
+[2026-07-23 15:53:58,728] [INFO] [pipeline_service.py:223]: Office object fig:office45 placed=True
+[2026-07-23 15:53:58,728] [INFO] [pipeline_service.py:223]: Office object fig:office46 placed=True
+[2026-07-23 15:53:58,729] [INFO] [pipeline_service.py:223]: Office object fig:office47 placed=True
+[2026-07-23 15:53:58,729] [INFO] [pipeline_service.py:223]: Office object fig:office48 placed=True
+[2026-07-23 15:53:58,730] [INFO] [pipeline_service.py:223]: Office object fig:office49 placed=True
+[2026-07-23 15:53:58,730] [INFO] [pipeline_service.py:223]: Office object fig:office50 placed=True
+[2026-07-23 15:53:58,731] [INFO] [pipeline_service.py:223]: Office object fig:office51 placed=True
+[2026-07-23 15:53:58,731] [INFO] [pipeline_service.py:223]: Office object fig:office52 placed=True
+[2026-07-23 15:53:58,731] [INFO] [pipeline_service.py:223]: Office object fig:office53 placed=True
+[2026-07-23 15:53:58,732] [INFO] [pipeline_service.py:223]: Office object fig:office54 placed=True
+[2026-07-23 15:53:58,732] [INFO] [pipeline_service.py:223]: Office object fig:office55 placed=True
+[2026-07-23 15:53:58,732] [INFO] [pipeline_service.py:223]: Office object fig:office56 placed=True
+[2026-07-23 15:53:58,733] [INFO] [pipeline_service.py:223]: Office object fig:office57 placed=True
+[2026-07-23 15:53:58,733] [INFO] [pipeline_service.py:223]: Office object fig:office58 placed=True
+[2026-07-23 15:53:58,733] [INFO] [pipeline_service.py:223]: Office object fig:office59 placed=True
+[2026-07-23 15:53:58,734] [INFO] [pipeline_service.py:223]: Office object fig:office60 placed=True
+[2026-07-23 15:53:58,734] [INFO] [pipeline_service.py:223]: Office object fig:office61 placed=True
+[2026-07-23 15:53:58,734] [INFO] [pipeline_service.py:223]: Office object fig:office62 placed=True
+[2026-07-23 15:53:58,734] [INFO] [pipeline_service.py:223]: Office object fig:office63 placed=True
+[2026-07-23 15:53:58,735] [INFO] [pipeline_service.py:223]: Office object fig:office64 placed=True
+[2026-07-23 15:53:58,736] [INFO] [pipeline_service.py:223]: Office object fig:office65 placed=True
+[2026-07-23 15:53:58,736] [INFO] [pipeline_service.py:223]: Office object fig:office66 placed=True
+[2026-07-23 15:53:58,737] [INFO] [pipeline_service.py:223]: Office object fig:office67 placed=True
+[2026-07-23 15:53:58,737] [INFO] [pipeline_service.py:223]: Office object fig:office68 placed=True
+[2026-07-23 15:53:58,737] [INFO] [pipeline_service.py:223]: Office object fig:office69 placed=True
+[2026-07-23 15:53:58,738] [INFO] [pipeline_service.py:223]: Office object fig:office70 placed=True
+[2026-07-23 15:53:58,738] [INFO] [pipeline_service.py:223]: Office object fig:office71 placed=True
+[2026-07-23 15:53:58,739] [INFO] [pipeline_service.py:223]: Office object fig:office72 placed=True
+[2026-07-23 15:53:58,739] [INFO] [pipeline_service.py:223]: Office object fig:office73 placed=True
+[2026-07-23 15:53:58,739] [INFO] [pipeline_service.py:223]: Office object fig:office74 placed=True
+[2026-07-23 15:53:58,739] [INFO] [pipeline_service.py:223]: Office object fig:office75 placed=True
+[2026-07-23 15:53:58,740] [INFO] [pipeline_service.py:223]: Office object fig:office76 placed=True
+[2026-07-23 15:53:58,740] [INFO] [pipeline_service.py:223]: Office object fig:office77 placed=True
+[2026-07-23 15:53:58,741] [INFO] [pipeline_service.py:223]: Office object fig:office78 placed=True
+[2026-07-23 15:53:58,741] [INFO] [pipeline_service.py:223]: Office object fig:office79 placed=True
+[2026-07-23 15:53:58,741] [INFO] [pipeline_service.py:223]: Office object fig:office80 placed=True
+[2026-07-23 15:53:58,741] [INFO] [pipeline_service.py:223]: Office object fig:office81 placed=True
+[2026-07-23 15:53:58,742] [INFO] [pipeline_service.py:223]: Office object fig:office82 placed=True
+[2026-07-23 15:53:58,743] [INFO] [pipeline_service.py:223]: Office object fig:office83 placed=True
+[2026-07-23 15:53:58,743] [INFO] [pipeline_service.py:223]: Office object fig:office84 placed=True
+[2026-07-23 15:53:58,743] [INFO] [pipeline_service.py:223]: Office object fig:office85 placed=True
+[2026-07-23 15:53:58,744] [INFO] [pipeline_service.py:223]: Office object fig:office86 placed=True
+[2026-07-23 15:53:58,744] [INFO] [pipeline_service.py:223]: Office object fig:office87 placed=True
+[2026-07-23 15:53:58,744] [INFO] [pipeline_service.py:223]: Office object fig:office88 placed=True
+[2026-07-23 15:53:58,745] [INFO] [pipeline_service.py:223]: Office object fig:office89 placed=True
+[2026-07-23 15:53:58,745] [INFO] [pipeline_service.py:223]: Office object fig:office90 placed=True
+[2026-07-23 15:53:58,746] [INFO] [pipeline_service.py:223]: Office object fig:office91 placed=True
+[2026-07-23 15:53:58,746] [INFO] [pipeline_service.py:223]: Office object fig:office92 placed=True
+[2026-07-23 15:53:58,746] [INFO] [pipeline_service.py:223]: Office object fig:office93 placed=True
+[2026-07-23 15:53:58,747] [INFO] [pipeline_service.py:223]: Office object fig:office94 placed=True
+[2026-07-23 15:53:58,747] [INFO] [pipeline_service.py:223]: Office object fig:office95 placed=True
+[2026-07-23 15:53:58,747] [INFO] [pipeline_service.py:223]: Office object fig:office96 placed=True
+[2026-07-23 15:53:58,748] [INFO] [pipeline_service.py:223]: Office object fig:office97 placed=True
+[2026-07-23 15:53:58,748] [INFO] [pipeline_service.py:223]: Office object fig:office98 placed=True
+[2026-07-23 15:53:58,748] [INFO] [pipeline_service.py:223]: Office object fig:office99 placed=True
+[2026-07-23 15:53:58,749] [INFO] [pipeline_service.py:223]: Office object fig:office100 placed=True
+[2026-07-23 15:53:58,750] [INFO] [pipeline_service.py:223]: Office object fig:office101 placed=True
+[2026-07-23 15:53:58,750] [INFO] [pipeline_service.py:223]: Office object fig:office102 placed=True
+[2026-07-23 15:53:58,751] [INFO] [pipeline_service.py:223]: Office object fig:office106 placed=True
+[2026-07-23 15:53:58,751] [INFO] [pipeline_service.py:223]: Office object fig:office107 placed=True
+[2026-07-23 15:53:58,751] [INFO] [pipeline_service.py:223]: Office object fig:office108 placed=True
+[2026-07-23 15:53:58,752] [INFO] [pipeline_service.py:223]: Office object fig:office109 placed=True
+[2026-07-23 15:53:58,752] [INFO] [pipeline_service.py:223]: Office object fig:office110 placed=True
+[2026-07-23 15:53:58,753] [INFO] [pipeline_service.py:223]: Office object fig:office111 placed=True
+[2026-07-23 15:53:58,753] [INFO] [pipeline_service.py:223]: Office object fig:office112 placed=True
+[2026-07-23 15:53:58,753] [INFO] [pipeline_service.py:223]: Office object fig:office113 placed=True
+[2026-07-23 15:53:58,754] [INFO] [pipeline_service.py:223]: Office object fig:office114 placed=True
+[2026-07-23 15:53:58,754] [INFO] [pipeline_service.py:223]: Office object fig:office115 placed=True
+[2026-07-23 15:53:58,754] [INFO] [pipeline_service.py:223]: Office object fig:office116 placed=True
+[2026-07-23 15:53:58,755] [INFO] [pipeline_service.py:223]: Office object fig:office117 placed=True
+[2026-07-23 15:53:58,755] [INFO] [pipeline_service.py:223]: Office object fig:office118 placed=True
+[2026-07-23 15:53:58,755] [INFO] [pipeline_service.py:223]: Office object fig:office119 placed=True
+[2026-07-23 15:53:58,756] [INFO] [pipeline_service.py:223]: Office object fig:office120 placed=True
+[2026-07-23 15:53:58,756] [INFO] [pipeline_service.py:223]: Office object fig:office121 placed=True
+[2026-07-23 15:53:58,757] [INFO] [pipeline_service.py:223]: Office object fig:office122 placed=True
+[2026-07-23 15:53:58,757] [INFO] [pipeline_service.py:223]: Office object fig:office123 placed=True
+[2026-07-23 15:53:58,758] [INFO] [pipeline_service.py:223]: Office object fig:office124 placed=True
+[2026-07-23 15:53:58,758] [INFO] [pipeline_service.py:223]: Office object fig:office125 placed=True
+[2026-07-23 15:53:58,758] [INFO] [pipeline_service.py:223]: Office object fig:office126 placed=True
+[2026-07-23 15:53:58,759] [INFO] [pipeline_service.py:223]: Office object fig:office127 placed=True
+[2026-07-23 15:53:58,759] [INFO] [pipeline_service.py:223]: Office object fig:office128 placed=True
+[2026-07-23 15:53:58,759] [INFO] [pipeline_service.py:223]: Office object fig:office129 placed=True
+[2026-07-23 15:53:58,759] [INFO] [pipeline_service.py:223]: Office object fig:office130 placed=True
+[2026-07-23 15:53:58,760] [INFO] [pipeline_service.py:223]: Office object fig:office131 placed=True
+[2026-07-23 15:53:58,760] [INFO] [pipeline_service.py:223]: Office object fig:office132 placed=True
+[2026-07-23 15:53:58,760] [INFO] [pipeline_service.py:223]: Office object fig:office133 placed=True
+[2026-07-23 15:53:58,761] [INFO] [pipeline_service.py:223]: Office object fig:office134 placed=True
+[2026-07-23 15:53:58,761] [INFO] [pipeline_service.py:223]: Office object fig:office135 placed=True
+[2026-07-23 15:53:58,761] [INFO] [pipeline_service.py:223]: Office object fig:office136 placed=True
+[2026-07-23 15:53:58,762] [INFO] [pipeline_service.py:223]: Office object fig:office137 placed=True
+[2026-07-23 15:53:58,762] [INFO] [pipeline_service.py:223]: Office object fig:office138 placed=True
+[2026-07-23 15:53:58,762] [INFO] [pipeline_service.py:223]: Office object fig:office139 placed=True
+[2026-07-23 15:53:58,763] [INFO] [pipeline_service.py:223]: Office object fig:office140 placed=True
+[2026-07-23 15:53:58,764] [INFO] [pipeline_service.py:223]: Office object fig:office141 placed=True
+[2026-07-23 15:53:58,764] [INFO] [pipeline_service.py:223]: Office object fig:office142 placed=True
+[2026-07-23 15:53:58,764] [INFO] [pipeline_service.py:223]: Office object fig:office143 placed=True
+[2026-07-23 15:53:58,765] [INFO] [pipeline_service.py:223]: Office object fig:office144 placed=True
+[2026-07-23 15:53:58,765] [INFO] [pipeline_service.py:223]: Office object fig:office145 placed=True
+[2026-07-23 15:53:58,765] [INFO] [pipeline_service.py:223]: Office object fig:office146 placed=True
+[2026-07-23 15:53:58,766] [INFO] [pipeline_service.py:223]: Office object fig:office147 placed=True
+[2026-07-23 15:53:58,766] [INFO] [pipeline_service.py:223]: Office object fig:office148 placed=True
+[2026-07-23 15:53:58,766] [INFO] [pipeline_service.py:223]: Office object fig:office149 placed=True
+[2026-07-23 15:53:58,767] [INFO] [pipeline_service.py:223]: Office object fig:office150 placed=True
+[2026-07-23 15:53:58,767] [INFO] [pipeline_service.py:223]: Office object fig:office151 placed=True
+[2026-07-23 15:53:58,767] [INFO] [pipeline_service.py:223]: Office object fig:office152 placed=True
+[2026-07-23 15:53:58,767] [INFO] [pipeline_service.py:223]: Office object fig:office153 placed=True
+[2026-07-23 15:53:58,768] [INFO] [pipeline_service.py:223]: Office object fig:office154 placed=True
+[2026-07-23 15:53:58,768] [INFO] [pipeline_service.py:223]: Office object fig:office155 placed=True
+[2026-07-23 15:53:58,768] [INFO] [pipeline_service.py:223]: Office object fig:office156 placed=True
+[2026-07-23 15:53:58,835] [WARNING] [media_convert.py:88]: 80 vector media files need conversion but LibreOffice is unavailable.
+[2026-07-23 15:53:58,836] [WARNING] [job_manager.py:250]: Job warning added: 80 vector media files could not be converted to PNG and may be missing from the output.
+[2026-07-23 15:53:58,836] [INFO] [pipeline_service.py:141]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\97355f4b-4574-4e35-bddd-72c65ba576a7\intermediate\media
+[2026-07-23 15:53:58,856] [INFO] [job_manager.py:204]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-23 15:53:58,857] [INFO] [pipeline_service.py:231]: Classifying extracted assets for job: 97355f4b-4574-4e35-bddd-72c65ba576a7
+[2026-07-23 15:53:58,857] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 97355f4b-4574-4e35-bddd-72c65ba576a7
+[2026-07-23 15:53:58,870] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 217
+[2026-07-23 15:53:58,884] [INFO] [job_manager.py:204]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-23 15:53:58,905] [INFO] [pipeline_service.py:247]: Loading template default for job: 97355f4b-4574-4e35-bddd-72c65ba576a7
+[2026-07-23 15:53:58,922] [INFO] [job_manager.py:180]: Job status updated to: LOADING_TEMPLATE
+[2026-07-23 15:53:58,940] [INFO] [job_manager.py:204]: Progress updated to 70%: Loading template styles: default
+[2026-07-23 15:53:59,188] [INFO] [pipeline_service.py:269]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\97355f4b-4574-4e35-bddd-72c65ba576a7\rendered
+[2026-07-23 15:53:59,203] [INFO] [job_manager.py:204]: Progress updated to 80%: Template workspace initialized
+[2026-07-23 15:53:59,204] [INFO] [pipeline_service.py:294]: Starting LaTeX rendering for job: 97355f4b-4574-4e35-bddd-72c65ba576a7
+[2026-07-23 15:53:59,219] [INFO] [job_manager.py:180]: Job status updated to: RENDERING_LATEX
+[2026-07-23 15:53:59,232] [INFO] [job_manager.py:204]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-23 15:53:59,248] [INFO] [latex_renderer.py:72]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\97355f4b-4574-4e35-bddd-72c65ba576a7\rendered
+[2026-07-23 15:54:01,079] [INFO] [latex_renderer.py:386]: LaTeX document main.tex rendered successfully.
+[2026-07-23 15:54:01,170] [INFO] [job_manager.py:204]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-23 15:54:01,171] [INFO] [pipeline_service.py:357]: Starting document compilation for job: 97355f4b-4574-4e35-bddd-72c65ba576a7
+[2026-07-23 15:54:01,185] [INFO] [job_manager.py:180]: Job status updated to: COMPILING
+[2026-07-23 15:54:01,201] [INFO] [job_manager.py:204]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-23 15:54:01,324] [ERROR] [pipeline_service.py:385]: LaTeX compilation failed: Template is missing required local resource(s); aborting before pdflatex. Ensure the template package ships these files:
+  - includegraphics -> media/image3.png
+  - includegraphics -> media/image4.png
+  - includegraphics -> media/image5.png
+  - includegraphics -> media/image6.png
+  - includegraphics -> media/image7.png
+  - includegraphics -> media/image8.png
+  - includegraphics -> media/image9.png
+  - includegraphics -> media/image10.png
+  - includegraphics -> media/image14.png
+  - includegraphics -> media/image51.png
+  - includegraphics -> media/image11.png
+  - includegraphics -> media/image53.png
+  - includegraphics -> media/image61.png
+  - includegraphics -> media/image65.png
+  - includegraphics -> media/image55.png
+  - includegraphics -> media/image71.png
+  - includegraphics -> media/image72.png
+  - includegraphics -> media/image81.png
+  - includegraphics -> media/image83.png
+  - includegraphics -> media/image84.png
+  - includegraphics -> media/image85.png
+  - includegraphics -> media/image86.png
+  - includegraphics -> media/image90.png
+[2026-07-23 15:54:01,339] [ERROR] [job_manager.py:228]: Job error added: LaTeX compilation failed: Template is missing required local resource(s); aborting before pdflatex. Ensure the template package ships these files:
+  - includegraphics -> media/image3.png
+  - includegraphics -> media/image4.png
+  - includegraphics -> media/image5.png
+  - includegraphics -> media/image6.png
+  - includegraphics -> media/image7.png
+  - includegraphics -> media/image8.png
+  - includegraphics -> media/image9.png
+  - includegraphics -> media/image10.png
+  - includegraphics -> media/image14.png
+  - includegraphics -> media/image51.png
+  - includegraphics -> media/image11.png
+  - includegraphics -> media/image53.png
+  - includegraphics -> media/image61.png
+  - includegraphics -> media/image65.png
+  - includegraphics -> media/image55.png
+  - includegraphics -> media/image71.png
+  - includegraphics -> media/image72.png
+  - includegraphics -> media/image81.png
+  - includegraphics -> media/image83.png
+  - includegraphics -> media/image84.png
+  - includegraphics -> media/image85.png
+  - includegraphics -> media/image86.png
+  - includegraphics -> media/image90.png

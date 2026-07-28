@@ -15,16 +15,19 @@ export function LoadingSpinner({
   return (
     <div
       className={cn(
-        "flex flex-col items-center justify-center gap-3 py-12",
+        "flex flex-col items-center justify-center gap-3 py-16",
         className,
       )}
     >
-      <Loader2
-        className="animate-spin text-primary"
-        size={size}
-      />
+      <div className="relative">
+        <div className="h-10 w-10 rounded-full border-2 border-emerald-100" />
+        <Loader2
+          className="absolute inset-0 animate-spin text-emerald-500"
+          size={size}
+        />
+      </div>
       {text && (
-        <p className="text-sm text-muted-foreground">{text}</p>
+        <p className="text-sm font-medium text-gray-500">{text}</p>
       )}
     </div>
   );

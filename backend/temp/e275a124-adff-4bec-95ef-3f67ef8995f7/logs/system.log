@@ -1,0 +1,42 @@
+[2026-07-28 21:28:34,434] [INFO] [job_manager.py:136]: Job e275a124-adff-4bec-95ef-3f67ef8995f7 workspace created successfully
+[2026-07-28 21:28:34,473] [INFO] [pipeline_service.py:46]: Starting validation for job: e275a124-adff-4bec-95ef-3f67ef8995f7
+[2026-07-28 21:28:34,488] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-07-28 21:28:34,505] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-07-28 21:28:34,528] [INFO] [pipeline_service.py:61]: Validation successful.
+[2026-07-28 21:28:34,546] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-07-28 21:28:34,546] [INFO] [pipeline_service.py:68]: Starting document analysis for job: e275a124-adff-4bec-95ef-3f67ef8995f7
+[2026-07-28 21:28:34,560] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-28 21:28:34,576] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-28 21:28:34,576] [INFO] [document_analyzer.py:119]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\e275a124-adff-4bec-95ef-3f67ef8995f7\input\paper1.docx
+[2026-07-28 21:28:35,551] [INFO] [document_analyzer.py:777]: Parsed document: title='Optimal control strategies for overwhelming social media scrolling addiction by using fractional order mathematical modelling', authors=1, sections=14, references=0
+[2026-07-28 21:28:35,565] [INFO] [pipeline_service.py:96]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\e275a124-adff-4bec-95ef-3f67ef8995f7\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\e275a124-adff-4bec-95ef-3f67ef8995f7\intermediate\conversion_report.json
+[2026-07-28 21:28:35,582] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-28 21:28:35,582] [INFO] [pipeline_service.py:109]: Starting asset extraction for job: e275a124-adff-4bec-95ef-3f67ef8995f7
+[2026-07-28 21:28:35,598] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-28 21:28:35,615] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-28 21:28:36,436] [INFO] [pipeline_service.py:156]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\e275a124-adff-4bec-95ef-3f67ef8995f7\intermediate\media
+[2026-07-28 21:28:36,453] [INFO] [job_manager.py:204]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-28 21:28:36,453] [INFO] [pipeline_service.py:273]: Classifying extracted assets for job: e275a124-adff-4bec-95ef-3f67ef8995f7
+[2026-07-28 21:28:36,453] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: e275a124-adff-4bec-95ef-3f67ef8995f7
+[2026-07-28 21:28:36,456] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 7
+[2026-07-28 21:28:36,471] [INFO] [job_manager.py:204]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-28 21:28:36,550] [INFO] [pipeline_service.py:289]: Loading template 2024-PFDA for job: e275a124-adff-4bec-95ef-3f67ef8995f7
+[2026-07-28 21:28:36,569] [INFO] [job_manager.py:180]: Job status updated to: LOADING_TEMPLATE
+[2026-07-28 21:28:36,583] [INFO] [job_manager.py:204]: Progress updated to 70%: Loading template styles: 2024-PFDA
+[2026-07-28 21:28:36,662] [INFO] [pipeline_service.py:311]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\e275a124-adff-4bec-95ef-3f67ef8995f7\rendered
+[2026-07-28 21:28:36,676] [INFO] [job_manager.py:204]: Progress updated to 80%: Template workspace initialized
+[2026-07-28 21:28:36,679] [INFO] [pipeline_service.py:336]: Starting LaTeX rendering for job: e275a124-adff-4bec-95ef-3f67ef8995f7
+[2026-07-28 21:28:36,695] [INFO] [job_manager.py:180]: Job status updated to: RENDERING_LATEX
+[2026-07-28 21:28:36,710] [INFO] [job_manager.py:204]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-28 21:28:36,727] [INFO] [latex_renderer.py:104]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\e275a124-adff-4bec-95ef-3f67ef8995f7\rendered
+[2026-07-28 21:28:36,761] [INFO] [latex_renderer.py:507]: LaTeX document main.tex rendered successfully.
+[2026-07-28 21:28:36,814] [INFO] [job_manager.py:204]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-28 21:28:36,814] [INFO] [pipeline_service.py:399]: Starting document compilation for job: e275a124-adff-4bec-95ef-3f67ef8995f7
+[2026-07-28 21:28:36,829] [INFO] [job_manager.py:180]: Job status updated to: COMPILING
+[2026-07-28 21:28:36,843] [INFO] [job_manager.py:204]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-28 21:28:40,136] [INFO] [pipeline_service.py:422]: Compilation completed successfully.
+[2026-07-28 21:28:40,139] [INFO] [pipeline_service.py:437]: Running E2E publication fidelity checker for job: e275a124-adff-4bec-95ef-3f67ef8995f7
+[2026-07-28 21:28:40,140] [INFO] [fidelity_checker.py:70]: Generating advanced fidelity report and scores for job: e275a124-adff-4bec-95ef-3f67ef8995f7
+[2026-07-28 21:28:40,146] [INFO] [fidelity_checker.py:250]: Fidelity report written to G:\work\Journal2LaTeX\backend\temp\e275a124-adff-4bec-95ef-3f67ef8995f7\intermediate\fidelity_report.json. Overall Score: 94.6%, Critical missing: 1
+[2026-07-28 21:28:40,162] [INFO] [job_manager.py:180]: Job status updated to: COMPLETED
+[2026-07-28 21:28:40,176] [INFO] [job_manager.py:204]: Progress updated to 100%: Pipeline process completed successfully

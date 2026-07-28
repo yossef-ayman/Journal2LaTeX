@@ -6,8 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { StatusBadge } from "@/components/StatusBadge";
 import { PipelineDiagram } from "@/components/PipelineDiagram";
 import { SkeletonCard } from "@/components/Skeleton";
+import { Progress } from "@/components/ui/progress";
 import { useJobStatus, useCompileMutation } from "@/hooks";
-import { AlertCircle, XCircle, Clock, FileText, Layers } from "lucide-react";
+import { AlertCircle, XCircle, Layers, CheckCircle2, Timer } from "lucide-react";
 
 function useElapsed(startedAt: string | null) {
   const [elapsed, setElapsed] = useState("0s");
@@ -52,6 +53,15 @@ function estimateRemaining(status: string, progress: number): string {
   return `~${Math.round(remaining / 60)}m remaining`;
 }
 
+function MetaRow({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
+      <span className="text-sm text-gray-500">{label}</span>
+      <div className="text-sm font-medium text-gray-900">{children}</div>
+    </div>
+  );
+}
+
 export default function ProcessingPage() {
   const { jobId } = useParams<{ jobId: string }>();
   const navigate = useNavigate();
@@ -90,7 +100,7 @@ export default function ProcessingPage() {
   if (isLoading) {
     return (
       <PageContainer>
-        <SectionTitle title="Processing" description="Starting conversion..." />
+        <SectionTitle title="Processing" description="Starting conversion pipeline..." />
         <SkeletonCard lines={6} />
       </PageContainer>
     );
@@ -101,17 +111,22 @@ export default function ProcessingPage() {
       <PageContainer>
         <SectionTitle title="Processing Error" />
         <Card>
-          <CardContent className="flex flex-col items-center gap-4 py-16">
-            <XCircle size={48} className="text-destructive" />
-            <p className="text-sm text-muted-foreground">
-              {error?.message ?? "Failed to load job status"}
-            </p>
+          <CardContent className="flex flex-col items-center gap-5 py-20">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-red-500">
+              <XCircle size={32} />
+            </div>
+            <div className="text-center space-y-1">
+              <p className="text-base font-semibold text-gray-900">Failed to load job</p>
+              <p className="text-sm text-gray-500">
+                {error?.message ?? "Failed to load job status"}
+              </p>
+            </div>
             <button
               type="button"
               onClick={() => window.location.reload()}
-              className="text-sm text-primary underline underline-offset-2 hover:text-primary/80"
+              className="text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors"
             >
-              Retry
+              Try again →
             </button>
           </CardContent>
         </Card>
@@ -125,83 +140,93 @@ export default function ProcessingPage() {
   return (
     <PageContainer>
       <SectionTitle
-        title={isCompleted ? "Conversion Complete" : "Conversion Pipeline"}
+        title={isCompleted ? "Conversion Complete" : "Processing Pipeline"}
         description={
           isCompleted
-            ? "Redirecting to your result dashboard..."
+            ? "Redirecting to your results dashboard..."
             : job.current_step || "Processing manuscript through LaTeX pipeline..."
         }
       />
 
+      {/* Progress bar at the top */}
+      {!isCompleted && !isFailed && (
+        <div className="space-y-2">
+          <div className="flex items-center justify-between text-xs text-gray-500">
+            <span className="font-medium">{job.current_step || "Processing..."}</span>
+            <span className="font-mono font-semibold text-gray-700">{job.progress}%</span>
+          </div>
+          <Progress value={job.progress} variant="default" />
+        </div>
+      )}
+
       <div className="grid gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <Card className="border-zinc-200 bg-white">
-            <CardContent className="pt-5 pb-6">
+          <Card>
+            <CardContent className="pt-6 pb-6">
               <PipelineDiagram status={job.status} progress={job.progress} />
             </CardContent>
           </Card>
         </div>
 
         <div className="space-y-4">
-          <Card className="border-zinc-200 bg-white">
+          {/* Timing Card */}
+          <Card>
             <CardContent className="pt-5 pb-5">
-              <div className="flex items-center gap-2 mb-3.5 pb-2 border-b border-zinc-100">
-                <Clock size={15} className="text-zinc-500" />
-                <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">Pipeline Timing</span>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+                  <Timer size={14} />
+                </div>
+                <span className="text-sm font-semibold text-gray-900">Pipeline Timing</span>
               </div>
-              <div className="space-y-2.5 text-xs">
-                <div className="flex justify-between items-center">
-                  <span className="text-zinc-500">Time Elapsed</span>
-                  <span className="font-mono font-semibold text-zinc-900">{elapsed}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-zinc-500">Est. Remaining</span>
-                  <span className="font-mono font-semibold text-zinc-900">
-                    {estimateRemaining(job.status, job.progress)}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-zinc-500">Current Progress</span>
-                  <span className="font-mono font-semibold text-zinc-900">{job.progress}%</span>
-                </div>
+              <div className="space-y-0">
+                <MetaRow label="Time Elapsed">
+                  <span className="font-mono text-sm">{elapsed}</span>
+                </MetaRow>
+                <MetaRow label="Est. Remaining">
+                  <span className="font-mono text-sm">{estimateRemaining(job.status, job.progress)}</span>
+                </MetaRow>
+                <MetaRow label="Progress">
+                  <span className="font-mono text-sm">{job.progress}%</span>
+                </MetaRow>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-zinc-200 bg-white">
+          {/* Job Metadata Card */}
+          <Card>
             <CardContent className="pt-5 pb-5">
-              <div className="flex items-center gap-2 mb-3.5 pb-2 border-b border-zinc-100">
-                <Layers size={15} className="text-zinc-500" />
-                <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">Job Metadata</span>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
+                  <Layers size={14} />
+                </div>
+                <span className="text-sm font-semibold text-gray-900">Job Metadata</span>
               </div>
-              <div className="space-y-2.5 text-xs">
-                <div className="flex justify-between items-center">
-                  <span className="text-zinc-500">Current Status</span>
+              <div className="space-y-0">
+                <MetaRow label="Status">
                   <StatusBadge status={job.status} />
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-zinc-500">Paper Name</span>
-                  <span className="truncate max-w-[140px] text-right font-medium text-zinc-900">
-                    {job.paper_name || "Untitled"}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-zinc-500">LaTeX Template</span>
-                  <span className="font-mono text-[11px] font-semibold text-zinc-900">{job.template_name}</span>
-                </div>
+                </MetaRow>
+                <MetaRow label="Paper Name">
+                  <span className="truncate max-w-[130px] text-right text-sm">{job.paper_name || "Untitled"}</span>
+                </MetaRow>
+                <MetaRow label="LaTeX Template">
+                  <span className="font-mono text-xs bg-gray-100 rounded px-1.5 py-0.5">{job.template_name}</span>
+                </MetaRow>
               </div>
             </CardContent>
           </Card>
 
+          {/* Failure Card */}
           {isFailed && (
-            <Card className="border-red-200 bg-red-50/50">
+            <Card className="border-red-100 bg-red-50/50">
               <CardContent className="pt-5 pb-5">
-                <div className="flex items-start gap-2.5">
-                  <AlertCircle size={17} className="mt-0.5 shrink-0 text-red-600" />
-                  <div className="space-y-1">
-                    <p className="text-xs font-semibold text-red-900">Conversion failed</p>
+                <div className="flex items-start gap-3">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-red-100 text-red-600">
+                    <AlertCircle size={15} />
+                  </div>
+                  <div className="space-y-1 min-w-0">
+                    <p className="text-sm font-semibold text-red-900">Conversion failed</p>
                     {job.errors.map((err, i) => (
-                      <p key={i} className="text-[11px] text-red-700 leading-normal">{err}</p>
+                      <p key={i} className="text-xs text-red-700 leading-relaxed break-words">{err}</p>
                     ))}
                   </div>
                 </div>
@@ -209,16 +234,17 @@ export default function ProcessingPage() {
             </Card>
           )}
 
+          {/* Success Card */}
           {isCompleted && (
-            <Card className="border-emerald-200 bg-emerald-50/50">
+            <Card className="border-emerald-200 bg-gradient-to-br from-emerald-50 to-white">
               <CardContent className="pt-5 pb-5">
-                <div className="flex items-center gap-3">
-                  <div className="h-9 w-9 animate-scale-in rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
-                    <FileText size={16} className="text-emerald-700" />
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 animate-scale-in rounded-2xl bg-emerald-100 flex items-center justify-center shrink-0 shadow-sm">
+                    <CheckCircle2 size={22} className="text-emerald-600" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-emerald-900">Ready!</p>
-                    <p className="text-[11px] text-emerald-700">
+                    <p className="text-sm font-bold text-emerald-900">Ready!</p>
+                    <p className="text-xs text-emerald-700 mt-0.5">
                       Redirecting to results...
                     </p>
                   </div>

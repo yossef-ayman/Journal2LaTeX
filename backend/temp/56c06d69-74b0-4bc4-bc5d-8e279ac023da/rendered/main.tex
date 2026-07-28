@@ -1,0 +1,551 @@
+
+
+
+
+
+
+% >>> j2l compat: xcolor / named-colour compatibility
+\PassOptionsToPackage{dvipsnames}{color}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
+\RequirePackage{xcolor}
+\makeatletter\@namedef{ver@color.sty}{2021/01/01}\makeatother
+\makeatletter\@ifundefined{providecolor}{}{%
+  \providecolor{CarnationPink}{RGB}{128,128,128}
+  \providecolor{Lavender}{RGB}{128,128,128}
+  \providecolor{abstractcolor}{RGB}{128,128,128}
+  \providecolor{rulecolor}{RGB}{128,128,128}
+}\makeatother
+% <<< j2l compat
+\documentclass[10pt]{NSP1}
+
+\IfFileExists{url.sty}{\usepackage{url}}{}
+\IfFileExists{floatflt.sty}{\usepackage{floatflt}}{}
+
+\IfFileExists{helvet.sty}{\usepackage{helvet}}{}
+\IfFileExists{times.sty}{\usepackage{times}}{}
+
+\IfFileExists{psfig.sty}{\usepackage{psfig}}{}
+\IfFileExists{graphics.sty}{\usepackage{graphics}}{}
+
+\IfFileExists{mathptmx.sty}{\usepackage{mathptmx}}{}
+\IfFileExists{amsmath.sty}{\usepackage{amsmath}}{}
+\IfFileExists{amssymb.sty}{\usepackage{amssymb}}{}
+\IfFileExists{bm.sty}{\usepackage{bm}}{}
+
+\IfFileExists{float.sty}{\usepackage{float}}{}
+
+\IfFileExists{caption.sty}{\usepackage[bf,hypcap]{caption}}{}
+
+
+
+\IfFileExists{xcolor.sty}{\usepackage[dvipsnames,table,xcdraw]{xcolor}}{}
+
+
+
+\tolerance=1
+
+\emergencystretch=\maxdimen
+
+\hyphenpenalty=10000
+
+\hbadness=10000
+
+
+
+\topmargin=0.00cm
+
+
+
+\def\sm{\smallskip}
+
+\def\no{\noindent}
+
+
+
+\def\firstpage{1}
+
+\setcounter{page}{\firstpage}
+
+\def\thevol{}
+
+\def\thenumber{}
+
+\def\theyear{}
+
+
+
+
+
+\IfFileExists{graphicx.sty}{\usepackage{graphicx}}{}
+\makeatletter
+\def\biographyps#1#2{%
+  \par\addvspace{21dd}\small\noindent
+  \if!#1!\else
+    \noindent\includegraphics[width=1in,height=1.25in,keepaspectratio]{#1}\par\smallskip
+  \fi
+  {\bfseries#2\unskip\ }\ignorespaces}
+\def\endbiographyps{\par\addvspace{12pt}}
+\makeatother
+\newcommand\JLTXaboveplacement{\par\addvspace{6pt plus 2pt minus 2pt}\noindent}
+\newcommand\JLTXbelowplacement{\par\addvspace{6pt plus 2pt minus 2pt}}
+\widowpenalty=10000
+\clubpenalty=10000
+
+% >>> j2l compat: scalable Computer Modern (arbitrary font sizes)
+\IfFileExists{type1cm.sty}{\usepackage{type1cm}}{}
+\IfFileExists{fix-cm.sty}{\usepackage{fix-cm}}{}
+% <<< j2l compat
+\begin{document}
+% >>> j2l compat: body-text size (+5%)
+\makeatletter
+\edef\JLTXbasesize{\f@size}
+\@tempdimb=1.2\dimexpr\f@size pt\relax\edef\JLTXbaseskip{\strip@pt\@tempdimb}
+\def\JLTXbodyscale{1.050}
+\let\JLTX@normalsize\normalsize
+\renewcommand\normalsize{%
+  \JLTX@normalsize
+  \@tempdima=\JLTXbodyscale\dimexpr\f@size pt\relax
+  \@tempdimb=1.2\@tempdima
+  \fontsize{\strip@pt\@tempdima}{\strip@pt\@tempdimb}\selectfont}%
+\@ifundefined{@makecaption}{}{%
+  \let\JLTX@makecaption\@makecaption
+  \long\def\@makecaption#1#2{%
+    \begingroup\fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont
+    \let\normalsize\JLTX@normalsize
+    \JLTX@makecaption{#1}{#2}\endgroup}}%
+\@ifundefined{thebibliography}{}{%
+  \let\JLTX@thebibliography\thebibliography
+  \def\thebibliography{%
+    \fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont\JLTX@thebibliography}}%
+\makeatother
+\normalsize
+% <<< j2l compat
+
+
+
+
+\titlefigurecaption{{\large \bf \rm Progress in Fractional Differentiation
+
+and Applications}\\ {\it\small An International Journal}}
+
+
+
+\title{Fractal-Fractional Tactic of Mathematical Modelling on Math Anxiety Using Hadamard Derivative: A Comprehensive Study}
+
+
+
+\author{Roselyn Besi P$^{1}$ \and Priya P$^{1}$ \and Revathy M$^{1}$ \and Ali Akgul$^{2}$ \and * \and Tamil Nadu \and India$^{3}$ \and 1. Introduction \and 2. Formation of the Mathematical Model \and We consider a tri-variable system governed by fractal-fractional derivatives in the Hadamard sense: \and with initial conditions: \and $M(1) = M_{0}$ \and \textbackslash{}quad E(1) = E\_\{0\} \and \textbackslash{}quad R(1) = R\_\{0\} \and $$ \and where: \and - $M(t)$: Level of math anxiety at time $t$ \and - $E(t)$: Emotional response intensity \and - $R(t)$: Resilience or coping ability. \and The functions $f_{i}$ represent interaction dynamics among the variables. For instance \and one can define: \and where parameters represent growth rates \and interaction strengths \and decay coefficients.}
+
+\institute{$^{1}$ Department of Mathematics, Coimbatore Institute of Technology, Coimbatore \\ $^{2}$ Department of Electronics and communication Engineering, Saveetha school of engineering, SIMATS, Chennai, India \\ $^{3}$ Siirt University, Art and science Faculty, Department of Mathematics, 56100 Siirt, Turkey}
+
+
+
+\titlerunning{Fractal-Fractional Tactic of Mathematical Modelling on Math Anxiety Using Hadamard Derivative: A Comprehensive Study}
+
+\authorrunning{Roselyn Besi P et al.}
+
+
+
+
+
+\mail{aliakgul@siirt.edu.tr}
+
+
+
+\received{}
+
+\revised{}
+
+\accepted{}
+
+\published{}
+
+
+
+\abstracttext{Math anxiety is a widespread psychological condition that significantly impacts students’ performance and perception of mathematics. Traditional models often fail to capture the complexity and memory-dependent nature of this phenomenon. In this study, we propose a novel mathematical model utilizing fractal-fractional calculus, specifically employing the Hadamard derivative, to gain a deeper understanding of the dynamics of math anxiety. This approach allows us to incorporate both the fractal structure of cognitive processes and the non-local (memory) effects inherent in emotional responses. We conduct an extensive literature survey, identify key research gaps, formulate a new mathematical model, perform qualitative analysis to assess the stability and existence of solutions, develop a numerical scheme based on the Hadamard operator, and simulate the model under various scenarios. Our results demonstrate that the fractal-fractional model provides a more realistic representation of math anxiety dynamics compared to classical integer-order models.}
+
+
+
+\keywords{}
+
+
+
+\maketitle
+
+
+
+
+\par\medskip\noindent {\large\bfseries 3. Qualitative Analysis\par}\smallskip
+
+\par\medskip\noindent {\large\bfseries 3.1 Existence and Uniqueness of Solutions\par}\smallskip
+
+Let us define the space $C\left( \lbrack 1,T\rbrack,R^{3} \right)$ of continuous vector-valued functions equipped with the norm:
+
+\begin{equation}
+\parallel y \parallel = \max_{t \in \lbrack 1,T\rbrack}\left( \parallel M(t) \parallel + \parallel E(t) \parallel + \parallel R(t) \parallel \right).
+
+\end{equation}
+
+Theorem 3.1 (Existence and Uniqueness). If the vector field $F(y) = \left\lbrack f_{1},f_{2},f_{3} \right\rbrack^{T}$ satisfies a Lipschitz condition in a domain $D \subset R^{3}$, i.e., there exists a constant $L > 0$ such that: $\parallel F\left( y_{1} \right) - F\left( y_{2} \right) \parallel \leq L \parallel y_{1} - y_{2} \parallel \quad\forall y_{1},y_{2} \in D,$ then the system admits a unique solution in $C\left( \lbrack 1,T\rbrack,R^{3} \right)$.
+
+Proof: Using the Banach fixed-point theorem, we define the integral operator:
+
+\begin{equation}
+(Ty)(t) = y_{0} + \frac{1}{\Gamma(\alpha)}\int_{1}^{t}{}\left( \log\frac{t}{\tau} \right)^{\alpha - 1}F\left( y(\tau) \right)\tau^{\beta - 1}d\tau.
+
+\end{equation}
+
+Then, for any $y_{1},y_{2} \in C\left( \lbrack 1,T\rbrack,R^{3} \right)$, we derive:
+
+\begin{equation}
+\parallel Ty_{1} - Ty_{2} \parallel \leq \frac{L(logT)^{\alpha}}{\Gamma(\alpha + 1)} \parallel y_{1} - y_{2} \parallel .
+
+\end{equation}
+
+Thus, if $\frac{L(logT)^{\alpha}}{\Gamma(\alpha + 1)} < 1$, $T$ is a contraction, ensuring a unique fixed point, hence a unique solution. ◻
+
+\par\medskip\noindent {\large\bfseries 3.2 Extended Stability Analysis\par}\smallskip
+
+To investigate the long-term behavior and stability of the proposed fractal-fractional system, we perform a detailed local stability analysis around the equilibrium points of the system:
+
+\begin{equation}
+^{H}D_{t}^{\alpha,\beta}M(t)\  = f_{1}(M,E,R),\ ^{H}D_{t}^{\alpha,\beta}E(t)\  = f_{2}(M,E,R),\ ^{H}D_{t}^{\alpha,\beta}R(t)\  = f_{3}(M,E,R),\ 
+
+\end{equation}
+
+with initial conditions:
+
+\begin{equation}
+M(1) = M_{0},\quad E(1) = E_{0},\quad R(1) = R_{0}.
+
+\end{equation}
+
+\par\medskip\noindent {\large\bfseries Equilibrium Points\par}\smallskip
+
+An equilibrium point $\left( M^{*},E^{*},R^{*} \right)$ satisfies:
+
+\begin{equation}
+f_{1}\left( M^{*},E^{*},R^{*} \right) = 0,\quad f_{2}\left( M^{*},E^{*},R^{*} \right) = 0,\quad f_{3}\left( M^{*},E^{*},R^{*} \right) = 0.
+
+\end{equation}
+
+Assuming the interaction functions are:
+
+\begin{equation}
+f_{1}(M,E,R)\  = r_{1}M\left( 1 - \frac{M}{K} \right) - \gamma ME + \delta MR,\ f_{2}(M,E,R)\  = \eta ME - \mu E,\ f_{3}(M,E,R)\  = \rho R(1 - R) - \sigma MR,\ 
+
+\end{equation}
+
+we find equilibrium points by solving the system:
+
+\begin{equation}
+r_{1}M\left( 1 - \frac{M}{K} \right) - \gamma ME + \delta MR\  = 0,\ \eta ME - \mu E\  = 0,\ \rho R(1 - R) - \sigma MR\  = 0.\ 
+
+\end{equation}
+
+This yields several equilibria, including:
+
+- Anxiety-free equilibrium: $M^{*} = 0$, $E^{*} = 0$, $R^{*} = 0$,
+
+- Anxiety-present equilibrium: $M^{*} > 0$, $E^{*} > 0$, $R^{*} > 0$,
+
+- Boundary equilibria: where one or two variables are zero.
+
+For example, assuming:
+
+\begin{equation}
+M^{*} = 1.5,\quad E^{*} = 2.0,\quad R^{*} = 0.8,
+
+\end{equation}
+
+and parameter values:
+
+\begin{equation}
+r_{1} = 0.6,\mspace{6mu} K = 3,\mspace{6mu}\gamma = 0.4,\mspace{6mu}\delta = 0.3,\mspace{6mu}\eta = 0.5,\mspace{6mu}\mu = 0.2,\mspace{6mu}\rho = 0.7,\mspace{6mu}\sigma = 0.25,
+
+\end{equation}
+
+we proceed to analyze the local stability of the system at this equilibrium point.
+
+\par\medskip\noindent {\large\bfseries 3.3 Computation of the Jacobian Matrix\par}\smallskip
+
+The Jacobian matrix $J$ of the system is defined as:
+
+\begin{equation}
+J = \left\lbrack \frac{\partial f_{1}}{\partial M}\ \frac{\partial f_{1}}{\partial E}\ \frac{\partial f_{1}}{\partial R}\ \frac{\partial f_{2}}{\partial M}\ \frac{\partial f_{2}}{\partial E}\ \frac{\partial f_{2}}{\partial R}\ \frac{\partial f_{3}}{\partial M}\ \frac{\partial f_{3}}{\partial E}\ \frac{\partial f_{3}}{\partial R}\  \right\rbrack.
+
+\end{equation}
+
+Computing each partial derivative, we obtain:
+
+\begin{equation}
+J = \left\lbrack r_{1} - \frac{2r_{1}}{K}M - \gamma E + \delta R\  - \gamma M\ \delta M\ \eta E\ \eta M - \mu\ 0\  - \sigma R\ 0\ \rho - 2\rho R - \sigma M\  \right\rbrack.
+
+\end{equation}
+
+Substituting the equilibrium point and parameter values:
+
+\begin{equation}
+J = \lbrack - 0.56\  - 0.6\ 0.45\ 1.0\ 0.55\ 0\  - 0.2\ 0\  - 0.795\ \rbrack.
+
+\end{equation}
+
+\par\medskip\noindent {\large\bfseries 3.4 Eigenvalue Computation\par}\smallskip
+
+To analyze the stability of the system at this equilibrium point, we compute the eigenvalues of the Jacobian matrix $J$. The characteristic equation is:
+
+\begin{equation}
+\det(J - \lambda I) = 0.
+
+\end{equation}
+
+Using numerical computation, we find the eigenvalues to be approximately:
+
+\begin{equation}
+\lambda_{1} = - 0.85,\quad\lambda_{2} = - 0.12 + 0.43i,\quad\lambda_{3} = - 0.12 - 0.43i.
+
+\end{equation}
+
+\par\medskip\noindent {\large\bfseries 3.5 Application of the Matignon Criterion\par}\smallskip
+
+In classical integer-order systems, stability is determined by whether all eigenvalues have negative real parts. However, for fractional-order systems, the Matignon criterion applies: \textgreater{} An equilibrium point is asymptotically stable if for all eigenvalues $\lambda_{i}$ of the Jacobian matrix $J$, the following condition holds:
+
+\begin{equation}
+\left| \arg\left( \lambda_{i} \right) \right| > \frac{\alpha\pi}{2},
+
+\end{equation}
+
+where $\alpha \in (0,1\rbrack$ is the fractional order of the derivative.
+
+Let $\alpha = 0.85$. Then:
+
+\begin{equation}
+\frac{\alpha\pi}{2} = \frac{0.85 \cdot \pi}{2} \approx 1.335radians.
+
+\end{equation}
+
+Testing the eigenvalues: - $\left| \arg( - 0.85) \right| = \pi > 1.335$ - $\left| \arg( - 0.12 + 0.43i) \right| \approx 1.84 > 1.335$ - $\left| \arg( - 0.12 - 0.43i) \right| \approx 1.84 > 1.335$ Thus, the equilibrium point is asymptotically stable under the given fractional order $\alpha = 0.85$.
+
+\par\medskip\noindent {\large\bfseries 4. Numerical Scheme\par}\smallskip
+
+We develop a numerical method for approximating the fractal-fractional system using the Adams-Bashforth-Moulton scheme adapted to the Hadamard derivative.
+
+Define the discretization:
+
+\begin{equation}
+t_{n} = e^{nh},\quad n = 0,1,...,N,\quad h = \frac{logT}{N}.
+
+\end{equation}
+
+Using product integration rules, we approximate the integral form:
+
+\begin{equation}
+y\left( t_{n} \right) = y_{0} + \frac{1}{\Gamma(\alpha)}\sum_{j = 0}^{n - 1}{}b_{j}^{(\alpha)}F\left( y\left( t_{j} \right) \right),
+
+\end{equation}
+
+leading to an iterative scheme:
+
+\begin{equation}
+y_{n + 1} = y_{0} + \frac{h^{\alpha}}{\Gamma(\alpha + 2)}\sum_{j = 0}^{n}{}a_{j}^{(\alpha)}F\left( y_{j} \right),
+
+\end{equation}
+
+with correction terms for predictor-corrector steps.
+
+This numerical scheme preserves the non-local structure of the model and ensures convergence for sufficiently small step sizes.
+
+\par\medskip\noindent {\large\bfseries 5. Simulations, Results, and Interpretation\par}\smallskip
+
+To validate the proposed fractal-fractional mathematical model of math anxiety, we performed numerical simulations using the Adams–Bashforth–Moulton predictor–corrector scheme adapted for the Hadamard derivative. The model parameters were set as:
+
+\begin{equation}
+r_{1} = 0.6,\, K = 3,\,\gamma = 0.4,\,\delta = 0.3,\,\eta = 0.5,\,\mu = 0.2,\,\rho = 0.7,\,\sigma = 0.25,
+
+\end{equation}
+
+with initial conditions $M(1) = 1.0,\mspace{6mu} E(1) = 0.5,\mspace{6mu} R(1) = 0.8,$ and fractional order $\alpha = 0.85.$ The time interval was chosen as $t \in \lbrack 1,10\rbrack$ with 500 discretization points.
+
+\subsection*{Time Evolution of $\mathbf{M}\left( \mathbf{t} \right)\mathbf{,E}\left( \mathbf{t} \right)\mathbf{,R}\left( \mathbf{t} \right)$}
+
+Figure  displays the evolution of $M(t)$ (math anxiety), $E(t)$ (emotional response), and $R(t)$ (resilience). Math anxiety $M(t)$ initially rises before stabilizing due to the counteracting effects of $R(t)$. The emotional response $E(t)$ exhibits a peak before declining, while resilience $R(t)$ gradually recovers after an initial dip.
+
+Interpretation: The fractional order $\alpha = 0.85$ introduces memory effects and non-locality, resulting in delayed peaks and smoother decay compared to classical integer-order models. This matches observed psychological phenomena where past experiences influence current anxiety levels.
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\ifdim 3.3438in>\linewidth
+  \includegraphics[width=\linewidth,keepaspectratio]{media/image1.png}
+\else
+  \includegraphics[width=3.3438in,height=2.4271in]{media/image1.png}
+\fi
+\caption{D:\textbackslash{}Desktop\textbackslash{}New folder\textbackslash{}Besi\textbackslash{}Anxity\textbackslash{}fig1.png}
+\end{figure}\JLTXbelowplacement 
+
+Fig 1:Time evolution of $M(t)$, $E(t)$, and $R(t)$ for $\alpha = 0.85$.
+
+\par\medskip\noindent {\large\bfseries Phase Portraits\par}\smallskip
+
+Figure  shows the phase portrait of $M(t)$ versus $R(t)$, highlighting the interplay between anxiety and resilience.
+
+Interpretation: The spiral trajectory converges to a stable equilibrium, suggesting that sufficient resilience helps stabilize anxiety over time.
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\ifdim 3.8021in>\linewidth
+  \includegraphics[width=\linewidth,keepaspectratio]{media/image2.png}
+\else
+  \includegraphics[width=3.8021in,height=3.0417in]{media/image2.png}
+\fi
+\caption{D:\textbackslash{}Desktop\textbackslash{}New folder\textbackslash{}Besi\textbackslash{}Anxity\textbackslash{}Fig2.png}
+\end{figure}\JLTXbelowplacement 
+
+Fig2: Phase portrait of $M(t)$ versus $R(t)$, showing convergence to a stable equilibrium.
+
+\subsection*{Sensitivity Analysis on Emotional Response Rate ($\mathbf{\eta}$)}
+
+Figure  demonstrates how varying $\eta$ from 0.3 to 0.9 affects $M(t)$. Larger $\eta$ values lead to higher peaks and prolonged recovery.
+
+Interpretation: Highly reactive emotional states intensify anxiety. Interventions that lower $\eta$ (e.g., mindfulness training) reduce the severity and duration of anxiety episodes.
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\ifdim 3.7396in>\linewidth
+  \includegraphics[width=\linewidth,keepaspectratio]{media/image3.png}
+\else
+  \includegraphics[width=3.7396in,height=2.3333in]{media/image3.png}
+\fi
+\caption{D:\textbackslash{}Desktop\textbackslash{}New folder\textbackslash{}Besi\textbackslash{}Anxity\textbackslash{}Fig3.png}
+\end{figure}\JLTXbelowplacement 
+
+Fig3: Sensitivity analysis of $M(t)$ for different values of $\eta$.
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\ifdim 3.7188in>\linewidth
+  \includegraphics[width=\linewidth,keepaspectratio]{media/image4.png}
+\else
+  \includegraphics[width=3.7188in,height=3.0104in]{media/image4.png}
+\fi
+\caption{D:\textbackslash{}Desktop\textbackslash{}New folder\textbackslash{}Besi\textbackslash{}Anxity\textbackslash{}Fig4.png}
+\end{figure}\JLTXbelowplacement 
+
+Fig 4: Final anxiety level $M\left( t_{end} \right)$ as a function of $\sigma$.
+
+\subsection*{Bifurcation-like Analysis on Resilience Decay ($\mathbf{\sigma}$)}
+
+Figure  illustrates the effect of varying $\sigma$ on the final anxiety level $M\left( t_{end} \right)$. Increasing $\sigma$ leads to higher final anxiety states.
+
+Interpretation: Sustained resilience (lower $\sigma$) is critical for long-term anxiety control. A small increase in $\sigma$ can lead to a sharp rise in anxiety levels.
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\ifdim 3.8125in>\linewidth
+  \includegraphics[width=\linewidth,keepaspectratio]{media/image5.png}
+\else
+  \includegraphics[width=3.8125in,height=3.0417in]{media/image5.png}
+\fi
+\caption{D:\textbackslash{}Desktop\textbackslash{}New folder\textbackslash{}Besi\textbackslash{}Anxity\textbackslash{}Fig5.png}
+\end{figure}\JLTXbelowplacement 
+
+Fig 5: Final anxiety level $M\left( t_{end} \right)$ as a function of $\sigma$.
+
+The simulations confirm that the fractal-fractional framework effectively captures real-world emotional dynamics:
+
+\begin{itemize}
+  \item Memory Effects: Anxiety peaks are delayed, and recovery is slower due to long-term memory effects.
+  \item Parameter Sensitivity: $\eta$ and $\sigma$ strongly influence anxiety levels, suggesting targeted psychological interventions.
+  \item Stability: The system converges to a stable equilibrium under appropriate conditions.
+\end{itemize}
+
+\par\medskip\noindent {\large\bfseries 6. Conclusion and Future Work\par}\smallskip
+
+In this study, we developed a novel fractal-fractional model to describe the dynamics of math anxiety, incorporating the Hadamard derivative to account for both memory effects and the scale-invariant nature of psychological responses. The model introduces three key state variables: the level of math anxiety $M(t)$, the emotional response $E(t)$, and the resilience factor $R(t)$. Through qualitative analysis, we proved the existence and uniqueness of solutions and investigated the stability of equilibrium points using the Matignon criterion for fractional-order systems.
+
+Our numerical simulations, based on the Adams–Bashforth–Moulton scheme adapted to the Hadamard derivative, revealed several important insights. The model accurately reproduces delayed peaks and gradual decay in anxiety levels, reflecting real-world emotional dynamics more effectively than classical integer-order models. Sensitivity analysis demonstrated that the emotional response rate $\eta$ strongly influences the intensity and persistence of anxiety, while the resilience decay parameter $\sigma$ plays a critical role in determining long-term stability. Bifurcation-like behavior was observed when varying $\sigma$, highlighting the importance of sustained resilience-building strategies to mitigate long-term anxiety.
+
+The proposed framework has both theoretical and practical significance. From a theoretical perspective, it bridges a gap between mathematical psychology and fractional calculus by providing a memory-aware, non-linear, and structurally adaptive model. From an applied perspective, the findings can inform educational interventions, such as stress management programs and resilience training, which can be tailored to reduce both peak anxiety responses and recovery time.
+
+Future work will focus on extending this model in several directions. First, incorporating stochastic effects could better capture uncertainties and fluctuations in students’ emotional states. Second, parameter estimation using real-world data from surveys or educational platforms will be performed to validate the model and enhance its predictive accuracy. Finally, the framework can be generalized to model other psychological phenomena such as test anxiety or performance stress, thereby expanding its applicability to broader educational and psychological research.
+
+CRediT authorship contribution statement:
+
+Roselyn Besi P, Priya P, Revathy M, Ali akgul, Conceptualization, Methodology, Writing-Orginal draft, formal analysis, investigation.
+
+Declaration of Competing interest:
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+Data Availability:
+
+No data was used for the research described in the article.
+
+\begin{thebibliography}{99}
+\bibitem{ref1}
+Richardson, F. C., Suinn, R. M., 1972. The Mathematics Anxiety Rating Scale: Psychometric data. Journal for Research in Mathematics Education 3(5), 389–396.
+
+\bibitem{ref2}
+Eysenck, M. W., Calvo, M. G., 1992. Anxiety and performance: The processing efficiency theory. Cognition and Emotion 6(5), 409–434.
+
+\bibitem{ref3}
+Pekrun, R., 2006. The control-value theory of achievement emotions: Assumptions, corollaries, and implications. Educational Psychology Review 18(4), 315–341.
+
+\bibitem{ref4}
+Khan, H., Shah, R., Baleanu, D., 2021. On the formulation of Adams-Bashforth scheme with Atangana-Baleanu-Caputo fractional derivative to model chaotic problems. Chaos 31(1), 013134.
+
+\bibitem{ref5}
+Ali, A., Shah, K., Abdeljawad, T., 2022. Study of a class of fractional order differential models via coupled fixed point approach. Alexandria Engineering Journal 61(2), 1473–1482.
+
+\bibitem{ref6}
+Gómez-Aguilar, J. F., 2020. Analytical and numerical solutions of a SEIR model of COVID-19 with fractal-fractional derivative in transmission dynamics. Alexandria Engineering Journal 59(5), 3647–3662.
+
+\bibitem{ref7}
+Ashkenazi, S., Danan, Y., 2020. The role of working memory in math anxiety and performance: A neurocognitive perspective. Frontiers in Psychology 11, 562.
+
+\bibitem{ref8}
+Atangana, A., 2017. Fractal-fractional differentiation and integration: Connecting fractal calculus and fractional calculus to predict complex processes. Chaos, Solitons \& Fractals 102, 396–406.
+
+\bibitem{ref9}
+Beilock, S. L., Maloney, E. A., 2015. Math anxiety: A factor in math achievement not to be ignored. Policy Insights from the Behavioral and Brain Sciences 2(1), 4–12.
+
+\bibitem{ref10}
+Diethelm, K., 2010. The Analysis of Fractional Differential Equations: An Application-Oriented Exposition Using Differential Operators of Caputo Type. Springer, Berlin.
+
+\bibitem{ref11}
+Kumar, D., Singh, J., Baleanu, D., 2018. A new numerical algorithm for fractional differential equations with applications to chaotic models. Applied Mathematical Modelling 62, 179–190.
+
+\bibitem{ref12}
+Lyons, I. M., Beilock, S. L., 2012. When math hurts: Math anxiety predicts pain network activation in anticipation of doing math. PLoS ONE 7(10), e48076.
+
+\bibitem{ref13}
+Magin, R. L., 2006. Fractional Calculus in Bioengineering. Begell House Publishers, Connecticut.
+
+\bibitem{ref14}
+Podlubny, I., 1999. Fractional Differential Equations. Academic Press, San Diego.
+
+\bibitem{ref15}
+Wang, Z., Baleanu, D., 2023. Dynamics of nonlinear systems with Hadamard fractional derivatives: Stability and chaos control. Communications in Nonlinear Science and Numerical Simulation 125, 107441.
+
+\end{thebibliography}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

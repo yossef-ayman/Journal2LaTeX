@@ -197,6 +197,12 @@ class TemplateManager:
                 # If all security checks pass, extract the archive
                 zip_ref.extractall(extract_dir)
 
+            # Users routinely zip the template FOLDER rather than its contents,
+            # producing a single wrapper directory ("MyTemplate/...").  Flatten
+            # it (repeatedly, for nested wrappers) so template files sit at the
+            # template root where the compiler expects them.
+            self._flatten_single_wrapper(extract_dir)
+
             # Search for entry .tex file using robust heuristics
             tex_files = list(extract_dir.rglob("*.tex"))
             if not tex_files:
@@ -220,16 +226,9 @@ class TemplateManager:
                     continue
 
             if primary_candidates:
-                # Prefer common entry point filenames
-                preferred_names = {"template.tex", "main.tex", "paper.tex", "bare_jrnl.tex", "manuscript.tex"}
-                for p in primary_candidates:
-                    if p.name.lower() in preferred_names:
-                        entry_file_path = p
-                        break
-                if not entry_file_path:
-                    entry_file_path = primary_candidates[0]
+                entry_file_path = self._choose_entry_file(extract_dir, primary_candidates)
             elif secondary_candidates:
-                entry_file_path = secondary_candidates[0]
+                entry_file_path = self._choose_entry_file(extract_dir, secondary_candidates)
             else:
                 entry_file_path = tex_files[0]
 
@@ -266,6 +265,326 @@ class TemplateManager:
             if extract_dir.exists():
                 shutil.rmtree(extract_dir)
             raise TemplateManagerError(f"Failed to process template package: {str(e)}")
+
+    @staticmethod
+    def _choose_entry_file(extract_dir: Path, candidates: List[Path]) -> Path:
+        """Pick the manuscript entry point out of several compilable .tex files.
+
+        Journal packages routinely ship more than one compilable file: the
+        manuscript skeleton the author is meant to fill in, plus class
+        documentation, style guides and worked examples.  Choosing by filename
+        alone fails whenever the publisher uses its own naming ("ijca.tex",
+        "sample-sigconf.tex"), so the decision is made from the *structure* of
+        each file and the filename only breaks ties.
+
+        Signals, in the order they matter:
+          * files that another candidate \\input or \\include are components,
+            never the entry point;
+          * the entry point carries manuscript front matter (\\maketitle, a
+            title/author block, an abstract) and body sectioning;
+          * package documentation is recognised by its own markers (\\DocInput,
+            \\OnlyDescription, ltxdoc/doc) and rejected;
+          * shallower paths beat files buried in doc/ or examples/.
+        """
+        texts = {}
+        for path in candidates:
+            try:
+                texts[path] = read_text_file(path)
+            except Exception:
+                texts[path] = ""
+
+        # Files pulled in by another candidate are components of it.
+        included = set()
+        for path, content in texts.items():
+            for other in candidates:
+                if other == path:
+                    continue
+                stem = other.stem
+                if f"{{{stem}}}" in content and (
+                    "\\input" in content or "\\include" in content
+                ):
+                    included.add(other)
+
+        def score(path: Path) -> tuple:
+            rel = path.relative_to(extract_dir)
+            content = texts.get(path, "")
+            lowered = content.lower()
+            points = 0
+            if path in included:
+                points -= 60
+            if any(
+                marker in content
+                for marker in ("\\DocInput", "\\OnlyDescription", "\\DocumentMetadata")
+            ) or "documentclass{ltxdoc}" in content.replace(" ", ""):
+                points -= 50
+            for part in rel.parts[:-1]:
+                if part.lower() in {"doc", "docs", "documentation", "example", "examples", "sample", "samples"}:
+                    points -= 25
+            for marker, weight in (
+                ("\\maketitle", 12),
+                ("\\title", 10),
+                ("\\author", 8),
+                ("\\begin{abstract}", 8),
+                ("\\bibliography", 4),
+                ("\\keywords", 3),
+            ):
+                if marker in content:
+                    points += weight
+            # Placeholder-style templates are unambiguous entry points.
+            if "__CONTENT__" in content or "__TITLE__" in content:
+                points += 20
+            # A fully written-out body marks a worked example paper shipped
+            # alongside the blank skeleton; the skeleton is what a manuscript
+            # should be rendered into.  \section is deliberately *not* a positive
+            # signal for the same reason -- a blank template has none.
+            if content.count("\\section") >= 3:
+                points -= 8
+            if "lipsum" in lowered or "your text here" in lowered:
+                points += 2
+            points -= 3 * (len(rel.parts) - 1)
+            # Filename is the final tiebreaker only.
+            preferred = {"template.tex", "main.tex", "paper.tex", "manuscript.tex", "bare_jrnl.tex"}
+            name_bonus = 1 if rel.name.lower() in preferred else 0
+            return (points, name_bonus, -len(rel.as_posix()))
+
+        return max(candidates, key=score)
+
+    @staticmethod
+    def _flatten_single_wrapper(extract_dir: Path) -> None:
+        """Hoist contents when the archive extracted to one wrapper directory.
+
+        Applied repeatedly so double-zipped archives also flatten.  A root that
+        already contains files (or several entries) is left untouched, so a
+        legitimate multi-entry layout with subfolders is preserved.
+        """
+        for _ in range(5):  # bounded: no realistic archive nests deeper
+            entries = [p for p in extract_dir.iterdir() if not p.name.startswith(".")]
+            if len(entries) != 1 or not entries[0].is_dir():
+                return
+            wrapper = entries[0]
+            for item in wrapper.iterdir():
+                shutil.move(str(item), str(extract_dir / item.name))
+            wrapper.rmdir()
+
+    # ------------------------------------------------------------------ #
+    # Template file management (browse / preview / edit / add / delete /
+    # download / validate) -- the ZIP Template Editor backend.
+    # ------------------------------------------------------------------ #
+
+    #: extensions never accepted inside a template
+    FORBIDDEN_EXTENSIONS = {".sh", ".bat", ".exe", ".py", ".pl", ".php", ".js"}
+    #: extensions treated as editable text
+    TEXT_EXTENSIONS = {
+        ".tex", ".cls", ".sty", ".bst", ".bib", ".txt", ".md", ".json",
+        ".cfg", ".def", ".clo", ".ins", ".dtx", ".csv", ".log",
+    }
+
+    def _resolve_member(self, template_id: str, rel_path: str,
+                        must_exist: bool = True) -> Path:
+        """Resolve *rel_path* inside the template dir, rejecting traversal."""
+        template_dir = self.get_template_path(template_id)
+        candidate = (template_dir / rel_path).resolve()
+        root = template_dir.resolve()
+        if root != candidate and root not in candidate.parents:
+            raise TemplateManagerError("Invalid path: escapes the template directory.")
+        if must_exist and not candidate.exists():
+            raise TemplateManagerError(f"File not found in template: {rel_path}")
+        return candidate
+
+    def _require_uploaded(self, template_id: str) -> Path:
+        """Return the template dir, ensuring it is an uploaded (editable) one."""
+        template_dir = self.get_template_path(template_id)
+        if self.uploaded_root.resolve() not in template_dir.resolve().parents:
+            raise TemplateManagerError(
+                "Built-in templates are read-only; upload a copy to edit it."
+            )
+        return template_dir
+
+    def list_files(self, template_id: str) -> List[dict]:
+        """Recursive file listing of a template: path, size, kind, editability."""
+        template_dir = self.get_template_path(template_id)
+        entries: List[dict] = []
+        for path in sorted(template_dir.rglob("*")):
+            if any(part.startswith(".") for part in path.relative_to(template_dir).parts):
+                continue
+            rel = path.relative_to(template_dir).as_posix()
+            if path.is_dir():
+                entries.append({"path": rel, "type": "dir", "size": None})
+            else:
+                suffix = path.suffix.lower()
+                entries.append({
+                    "path": rel,
+                    "type": "file",
+                    "size": path.stat().st_size,
+                    "is_text": suffix in self.TEXT_EXTENSIONS,
+                })
+        return entries
+
+    def read_file(self, template_id: str, rel_path: str) -> dict:
+        """Preview one template file.  Text files return their content; binary
+        files return base64 so images can still be previewed client-side."""
+        path = self._resolve_member(template_id, rel_path)
+        if path.is_dir():
+            raise TemplateManagerError(f"'{rel_path}' is a directory, not a file.")
+        suffix = path.suffix.lower()
+        size = path.stat().st_size
+        if suffix in self.TEXT_EXTENSIONS:
+            return {
+                "path": rel_path, "encoding": "text", "size": size,
+                "content": read_text_file(path),
+            }
+        import base64
+        if size > 10 * 1024 * 1024:
+            raise TemplateManagerError("File too large to preview (limit 10 MB).")
+        return {
+            "path": rel_path, "encoding": "base64", "size": size,
+            "content": base64.b64encode(path.read_bytes()).decode("ascii"),
+        }
+
+    def write_file(self, template_id: str, rel_path: str, content: str,
+                   encoding: str = "text") -> dict:
+        """Create or replace one file in an uploaded template.
+
+        ``encoding='text'`` writes UTF-8 text; ``'base64'`` decodes and writes
+        bytes (for replacing images/logos).  Parent directories are created.
+        """
+        self._require_uploaded(template_id)
+        suffix = Path(rel_path).suffix.lower()
+        if suffix in self.FORBIDDEN_EXTENSIONS:
+            raise TemplateManagerError(
+                f"Files with the '{suffix}' extension are not allowed in templates."
+            )
+        path = self._resolve_member(template_id, rel_path, must_exist=False)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            if encoding == "base64":
+                import base64
+                path.write_bytes(base64.b64decode(content))
+            else:
+                path.write_text(content, encoding="utf-8")
+        except Exception as e:
+            raise TemplateManagerError(f"Failed to write '{rel_path}': {e}")
+        return {"path": rel_path, "size": path.stat().st_size}
+
+    def delete_file(self, template_id: str, rel_path: str) -> None:
+        """Delete one file (or empty directory) from an uploaded template."""
+        self._require_uploaded(template_id)
+        if Path(rel_path).as_posix() == "template.json":
+            raise TemplateManagerError("template.json is managed by the system and cannot be deleted.")
+        path = self._resolve_member(template_id, rel_path)
+        try:
+            if path.is_dir():
+                # Only empty directories -- deleting a tree must be deliberate.
+                path.rmdir()
+            else:
+                path.unlink()
+        except OSError as e:
+            raise TemplateManagerError(f"Failed to delete '{rel_path}': {e}")
+
+    def export_zip(self, template_id: str, dest_dir: Path) -> Path:
+        """Package a template directory (built-in or uploaded, including any
+        edits) into a fresh zip for download.  Returns the zip path."""
+        template_dir = self.get_template_path(template_id)
+        dest_dir.mkdir(parents=True, exist_ok=True)
+        zip_path = dest_dir / f"{template_id}.zip"
+        try:
+            with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
+                for path in sorted(template_dir.rglob("*")):
+                    rel = path.relative_to(template_dir)
+                    if any(part.startswith(".") for part in rel.parts):
+                        continue
+                    if path.is_file():
+                        zf.write(path, rel.as_posix())
+        except Exception as e:
+            raise TemplateManagerError(f"Failed to package template: {e}")
+        return zip_path
+
+    def validate_template(self, template_id: str) -> dict:
+        """Static validation of a template before conversion.
+
+        Checks the entry file exists and is a compilable document, that every
+        locally-referenced resource (class/style/graphics/inputs) is present
+        either in the template or the TeX installation, and reports missing
+        required files.  Returns {'valid', 'errors', 'warnings', 'checks'}.
+        """
+        errors: List[str] = []
+        warnings: List[str] = []
+        checks: List[dict] = []
+
+        def check(name: str, ok: bool, detail: str, fatal: bool = True):
+            checks.append({"name": name, "ok": bool(ok), "detail": detail})
+            if not ok:
+                (errors if fatal else warnings).append(f"{name}: {detail}")
+
+        try:
+            template_dir = self.get_template_path(template_id)
+        except TemplateManagerError as e:
+            return {"valid": False, "errors": [str(e)], "warnings": [], "checks": []}
+
+        meta = self.get_template_metadata(template_id)
+        entry_rel = meta.get("entry_file") or "template.tex"
+        entry = template_dir / entry_rel
+        check("entry_file_exists", entry.is_file(),
+              f"entry file '{entry_rel}'" + ("" if entry.is_file() else " is missing"))
+
+        source = ""
+        if entry.is_file():
+            try:
+                source = read_text_file(entry)
+            except Exception as e:
+                check("entry_file_readable", False, f"cannot read '{entry_rel}': {e}")
+        if source:
+            check("has_documentclass",
+                  "\\documentclass" in source or "\\documentstyle" in source,
+                  "\\documentclass declaration present"
+                  if "\\documentclass" in source else "no \\documentclass found")
+            check("has_begin_document", "\\begin{document}" in source,
+                  "\\begin{document} present" if "\\begin{document}" in source
+                  else "no \\begin{document} found")
+
+            # Resolve every dependency the entry file references, using the
+            # compiler's own resolution rules (local file, TeX tree, missing).
+            from app.compiler.latex_compiler import LatexCompiler
+            missing_local: List[str] = []
+            missing_packages: List[str] = []
+            for kind, target in LatexCompiler._extract_dependencies(source):
+                status = LatexCompiler._resolve_dependency(kind, target, template_dir)
+                if status == "missing":
+                    if kind in ("usepackage", "requirepackage"):
+                        missing_packages.append(target)
+                    else:
+                        missing_local.append(f"{kind} -> {target}")
+            check("required_resources_present", not missing_local,
+                  "all referenced local resources found" if not missing_local
+                  else "missing: " + ", ".join(missing_local))
+            check("optional_packages_available", not missing_packages,
+                  "all packages available" if not missing_packages
+                  else "not installed (skipped at compile time via the "
+                       "compatibility layer): " + ", ".join(missing_packages),
+                  fatal=False)
+
+        class_file = meta.get("class_file")
+        if class_file:
+            check("class_file_present", (template_dir / class_file).is_file(),
+                  f"class file '{class_file}'"
+                  + ("" if (template_dir / class_file).is_file() else " is missing"),
+                  fatal=False)
+
+        forbidden = [
+            p.relative_to(template_dir).as_posix()
+            for p in template_dir.rglob("*")
+            if p.is_file() and p.suffix.lower() in self.FORBIDDEN_EXTENSIONS
+        ]
+        check("no_forbidden_files", not forbidden,
+              "no forbidden file types" if not forbidden
+              else "forbidden files present: " + ", ".join(forbidden))
+
+        return {
+            "valid": not errors,
+            "errors": errors,
+            "warnings": warnings,
+            "checks": checks,
+        }
 
     def delete_template(self, template_id: str) -> None:
         """Delete an uploaded template directory.

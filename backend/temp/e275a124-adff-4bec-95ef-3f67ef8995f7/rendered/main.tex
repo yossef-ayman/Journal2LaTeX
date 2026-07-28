@@ -1,0 +1,806 @@
+
+
+
+
+
+
+% >>> j2l compat: xcolor / named-colour compatibility
+\PassOptionsToPackage{dvipsnames}{color}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
+\RequirePackage{xcolor}
+\makeatletter\@namedef{ver@color.sty}{2021/01/01}\makeatother
+\makeatletter\@ifundefined{providecolor}{}{%
+  \providecolor{abstractcolor}{RGB}{128,128,128}
+  \providecolor{rulecolor}{RGB}{128,128,128}
+}\makeatother
+% <<< j2l compat
+\documentclass[10pt]{NSP1}
+
+\IfFileExists{url.sty}{\usepackage{url}}{}
+\IfFileExists{floatflt.sty}{\usepackage{floatflt}}{}
+
+\IfFileExists{helvet.sty}{\usepackage{helvet}}{}
+\IfFileExists{times.sty}{\usepackage{times}}{}
+
+\IfFileExists{psfig.sty}{\usepackage{psfig}}{}
+\IfFileExists{graphics.sty}{\usepackage{graphics}}{}
+
+\IfFileExists{mathptmx.sty}{\usepackage{mathptmx}}{}
+\IfFileExists{amsmath.sty}{\usepackage{amsmath}}{}
+\IfFileExists{amssymb.sty}{\usepackage{amssymb}}{}
+\IfFileExists{bm.sty}{\usepackage{bm}}{}
+
+\IfFileExists{float.sty}{\usepackage{float}}{}
+
+\IfFileExists{caption.sty}{\usepackage[bf,hypcap]{caption}}{}
+
+
+
+\IfFileExists{xcolor.sty}{\usepackage[dvipsnames,table,xcdraw]{xcolor}}{}
+
+
+
+\tolerance=1
+
+\emergencystretch=\maxdimen
+
+\hyphenpenalty=10000
+
+\hbadness=10000
+
+
+
+\topmargin=0.00cm
+
+
+
+\def\sm{\smallskip}
+
+\def\no{\noindent}
+
+
+
+\def\firstpage{1}
+
+\setcounter{page}{\firstpage}
+
+\def\thevol{}
+
+\def\thenumber{}
+
+\def\theyear{}
+
+
+
+
+
+\newcommand\JLTXaboveplacement{\par\addvspace{6pt plus 2pt minus 2pt}\noindent}
+\newcommand\JLTXbelowplacement{\par\addvspace{6pt plus 2pt minus 2pt}}
+\widowpenalty=10000
+\clubpenalty=10000
+\IfFileExists{newunicodechar.sty}{\usepackage{newunicodechar}}{\makeatletter\providecommand\newunicodechar[2]{%
+  \begingroup\lccode`\~=`#1\lowercase{\endgroup\def~}{#2}%
+  \catcode`#1=\active}\makeatother}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+\newunicodechar{′}{\ensuremath{{}^{\prime}}}
+
+% >>> j2l compat: scalable Computer Modern (arbitrary font sizes)
+\IfFileExists{type1cm.sty}{\usepackage{type1cm}}{}
+\IfFileExists{fix-cm.sty}{\usepackage{fix-cm}}{}
+% <<< j2l compat
+\begin{document}
+% >>> j2l compat: body-text size (+5%)
+\makeatletter
+\edef\JLTXbasesize{\f@size}
+\@tempdimb=1.2\dimexpr\f@size pt\relax\edef\JLTXbaseskip{\strip@pt\@tempdimb}
+\def\JLTXbodyscale{1.050}
+\let\JLTX@normalsize\normalsize
+\renewcommand\normalsize{%
+  \JLTX@normalsize
+  \@tempdima=\JLTXbodyscale\dimexpr\f@size pt\relax
+  \@tempdimb=1.2\@tempdima
+  \fontsize{\strip@pt\@tempdima}{\strip@pt\@tempdimb}\selectfont}%
+\@ifundefined{@makecaption}{}{%
+  \let\JLTX@makecaption\@makecaption
+  \long\def\@makecaption#1#2{%
+    \begingroup\fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont
+    \let\normalsize\JLTX@normalsize
+    \JLTX@makecaption{#1}{#2}\endgroup}}%
+\@ifundefined{thebibliography}{}{%
+  \let\JLTX@thebibliography\thebibliography
+  \def\thebibliography{%
+    \fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont\JLTX@thebibliography}}%
+\makeatother
+\normalsize
+% <<< j2l compat
+
+% >>> j2l: keep the journal banner with the title block
+\makeatletter
+\let\JLTXorig@newpage\newpage
+\let\JLTXorig@clearpage\clearpage
+\let\JLTXorig@cleardoublepage\cleardoublepage
+\let\newpage\relax\let\clearpage\relax\let\cleardoublepage\relax
+\makeatother
+% <<< j2l
+
+
+
+
+\titlefigurecaption{{\large \bf \rm Progress in Fractional Differentiation
+
+and Applications}\\ {\it\small An International Journal}}
+
+
+
+\title{Optimal control strategies for overwhelming social media scrolling addiction by using fractional order mathematical modelling}
+
+
+
+\author{Corresponding Author$^{1}$}
+
+\institute{$^{1}$ \(^{1}\) Department of Mathematics, Vel Tech Rangarajan Dr. Sagunthala R \& D Institute of Science and Technology, Avadi, Tamil Nadu, 600 062, India}
+
+
+
+\titlerunning{Optimal control strategies for overwhelming social media scrolling addiction by using fractional order mathematical modelling}
+
+\authorrunning{Corresponding Author}
+
+
+
+
+
+\mail{aliakgul@siirt.edu.tr}
+
+
+
+\received{}
+
+\revised{}
+
+\accepted{}
+
+\published{}
+
+
+
+\abstracttext{Scrolling in mobile allows navigation through information beyond the visible display. Scrolling addiction, sometimes known as "doom scrolling" or excessive feed consumption, has become a severe behavioral concern in the digital age. However, its addictive nature has generated worries about excessive screen time, mental weariness, a detrimental influence on mental health, social comparison, low self-esteem, and decreased productivity. This study introduces a novel fractional order mathematical model for scrolling, taking into account the app’s usage as an epidemic. The model is carefully confirmed using stability analyses of both local and global equilibrium. Furthermore, disease-free and non-trivial equilibrium scenarios are examined by estimating their reproduction rates. This study seeks to raise awareness of scrolling’s possible misuse and to investigate control theory remedies to addiction by using Optimal control theory. Furthermore, statistical data is used to illustrate numerical findings and investigate the effect of control factors on the scrolling model.}
+
+
+
+\keywords{Scrolling addiction, Fractional–order Caputo model, Optimal control theory, Numerical Simulation, Behavioural epidemiology, Mental health intervention}
+
+
+
+\maketitle
+% >>> j2l: page breaking restored after the title block
+\makeatletter
+\let\newpage\JLTXorig@newpage
+\let\clearpage\JLTXorig@clearpage
+\let\cleardoublepage\JLTXorig@cleardoublepage
+\makeatother
+% <<< j2l
+
+
+
+
+
+\par\medskip\noindent {\LARGE\bfseries Introduction\par}\smallskip
+
+In the current digital era, smartphones have become an essential part of our lives, especially for young people. With more than 6.04 billion individuals using the internet worldwide, social media networks have become more significant but also present challenges. Particularly among Indian youth, more than 60\% of those between the ages of 9 and 17 spend more than three hours a day on social media or gaming websites. Concerns regarding scrolling addiction, a behavioral habit characterized by excessive and compulsive scrolling and mental health issues sometimes accompanied by feelings of guilt, anxiety and decreased productivity have been raised by this increased screen time .
+
+Strong tools for comprehending such intricate biological and social systems are mathematical models. They offer organized frameworks for depicting interactions, forecasting results, and identifying trends in data. Models show how changes in one component affect system-wide behavior by quantifying important variables. Mathematical modeling is used in many different domains, such as fluid mechanics, neurobiology, and the dynamics of infectious diseases. Crucially, these models enable researchers to replicate situations that could be difficult, expensive, or immoral to evaluate experimentally . This prediction ability advances scientific knowledge and directs evidence-based decision-making in public health, neurology, and medicine. Fractional mathematical models have become more significant in recent years due to their ability to better represent real-world dynamics, especially memory and heredity effects, which are generally ignored by classical integer-order models .
+
+When examining irregular phenomena like anomalous diffusion, fractional calculus provides more flexibility , allowing for the creation of more practical and efficient solutions. The complexity of drug addiction is reflected in the literature. The interaction of biological, psychological, and social elements in determining addiction consequences is constantly highlighted by research. Research highlights the significance of neurochemical changes, environmental stresses, hereditary predisposition, and the difficulties of chronicity and relapse. For instance, Vandaele and Ahmed (2021) investigated the shift from voluntary behavior to compulsive usage, concentrating on underlying brain circuits, while De Angelis et al. (2020) showed the negative consequences of smoking, drinking, and drug addiction on female fertility.
+
+Ceceli, Bradberry, and Goldstein (2022) examined prefrontal brain pathology and shown how addiction affects impulse control and decision-making. Zanib et al. (2024) presented a compartmental framework (SD, ED, HD, LD, RD, CD) that differentiates between severe and light addiction in addition to rehabilitation from a modeling standpoint. The significance of early detection and treatment in managing addiction was emphasized by their simulations using the RK4 approach in Maple. In their comprehensive review of recovery capital, Bunaciu et al. (2024) offered instruments to assess the strengths that facilitate long-term recovery.
+
+While Muli (2025) expanded this paradigm to incorporate policing and rehabilitation, drawing comparisons with infectious disease models, other studies, including Mamo et al. (2024) , looked at the dynamic interaction between crime and drug misuse. Targeted interventions can significantly lower addiction rates and social costs, according to Alharbi et al. (2025) ’s four-compartment model that incorporates social factors. Artificial intelligence (AI) has also been incorporated into new methods. According to Kim et al. (2025) , AI-mediated communication can increase participation and health outcomes by improving treatment, prevention, and control techniques.
+
+Following a review of the literature, we discovered a number of research gaps. In order to fill these gaps, we created a mathematical model that distinguishes between those who are at high and low risk of addiction by incorporating the crucial idea of proneness. This idea is used in conjunction with treatment as a control technique to lessen drug addiction. It represents the vulnerability of people or communities to particular consequences. Proneness is frequently used to evaluate vulnerabilities resulting from social and environmental factors, such as disease outbreaks and ecological shifts . The current study offers a thorough mathematical model of drug addiction dynamics, building on this foundation. The model determines important threshold values, evaluates stability and sensitivity, and categorizes groups based on risk level and treatment status.
+
+Numerical simulations illustrate the crucial elements affecting the spread and control of addiction, while the fundamental reproduction number is computed to evaluate the potential for addiction transmission. The results highlight the significance of prompt treatment interventions and offer insightful information for developing successful public health initiatives to lower substance usage .
+
+\par\medskip\noindent {\LARGE\bfseries Fractional Elementary Concepts\par}\smallskip
+
+The basic definitions are presented related to fractional calculus.
+
+Definition 2.1 (Riemann–Liouville fractional integral, RLFI)
+
+A function \(B(t) \in L^{1}\left( \lbrack a,b\rbrack,\mathbb{R} \right)\) has a fractional integral of order \(\alpha^{*} \in \mathbb{R}^{+}\), which is specified as
+
+\[
+I_{a +}^{\alpha^{*}}B(t) = \frac{1}{\Gamma\left( \alpha^{*} \right)}\int_{0}^{t}(t - s)^{\alpha^{*} - 1}B(s)\, ds.
+\]
+
+Definition 2.2 (Caputo fractional derivative, CFOD)
+
+The function’s Caputo fractional-order derivative is
+
+\[
+^{c}D_{0 +}^{\alpha^{*}}B(t) = \frac{1}{\Gamma\left( n - \alpha^{*} \right)}\int_{0}^{t}(t - s)^{n - \alpha^{*} - 1}B^{(n)}(s)\, ds,
+\]
+
+where \(B(t) \in C^{n}\lbrack a,b\rbrack\), \(0 < \alpha^{*} < 1\), and \(n = \lfloor\alpha^{*}\rfloor + 1\).
+
+\par\medskip\noindent {\LARGE\bfseries Model Formulation\par}\smallskip
+
+To analyse the transmission of addiction dynamics through the Caputo fractional operator, we examine the tuberculosis model given in . Based on their correlation with scrolling addiction, the entire human population is divided into six groups. The social media Scrolling Addiction Model (SAM), which takes into consideration different treatment types and risk levels, is broken up into six compartments. They are
+
+\begin{itemize}
+  \item – Susceptible: Individuals that are susceptible to scrolling addiction, frequently as a result of their social media presence or peer influence.
+  \item – Exposed: People who are occasionally exposed to scrolling triggers but have not yet become hooked.
+  \item – Addicted: Individuals who engage in compulsive scrolling have reported negative consequences on their mental health or relationships.
+  \item – Treated: People seeking assistance or implementing ways to reduce scrolling.
+  \item – Recovered: Those who’ve reduced scrolling.
+  \item – Relapse: Those who return to excessive scrolling after attempting recovery.
+\end{itemize}
+
+\par\medskip\noindent {\large\bfseries Scrolling Addiction Model\par}\smallskip
+
+\par\medskip\noindent {\large\bfseries Parameters\par}\smallskip
+
+\begin{itemize}
+  \item λ – Recruitment rate.
+  \item b – Contact/interaction rate between susceptible and addicted individuals.
+  \item N – Total population size.
+  \item ξ – Natural exit rate.
+  \item β – Progression rate from exposed to addicted.
+  \item τ – Transition feedback from exposed to latent.
+  \item γ – Treatment rate.
+  \item δ – Recovery rate.
+  \item ρ – Relapse rate.
+  \item σ – Latent return rate.
+\end{itemize}
+
+The nonlinear fractional differential system under these assumptions is described as follows:
+
+\[
+\begin{matrix}
+^{C}D_{t}^{\alpha}S(t) & = \lambda - \frac{bSI}{N} - \xi S, \\
+^{C}D_{t}^{\alpha}E(t) & = \frac{bSI}{N} - \xi E - \beta E + \tau E, \\
+^{C}D_{t}^{\alpha}I(t) & = \beta E(t) - \xi I - \gamma I + \sigma L, \\
+^{C}D_{t}^{\alpha}T(t) & = \gamma I - \xi T - \delta T, \\
+^{C}D_{t}^{\alpha}R(t) & = \delta T - \xi R - \rho R, \\
+^{C}D_{t}^{\alpha}L(t) & = \rho R - \xi L - \sigma L - \tau E.
+\end{matrix}
+\]
+
+\par\medskip\noindent {\large\bfseries Properties of the Model\par}\smallskip
+
+\par\medskip\noindent {\large\bfseries Positively Invariant Region\par}\smallskip
+
+SAM is explored in a feasible region \(\Omega \subset \mathbb{R}_{+}^{6}\) such that
+
+\[
+\Omega = \left\{ S(t),E(t),I(t),T(t),R(t),L(t) \in \mathbb{R}_{+}^{6}\mspace{6mu}:\mspace{6mu} N(t) \leq \frac{\lambda}{\xi} \right\}.
+\]
+
+Lemma 3.1 \(\Omega \subset \mathbb{R}_{+}^{6}\) is a region that is positively invariant and has nonnegative beginning conditions for model (3.1) in \(\mathbb{R}_{+}^{6}\).
+
+Proof. The net population becomes
+
+\[
+^{C}D_{t}^{\alpha}N(t) =^{C}D_{t}^{\alpha}S(t) +^{C}D_{t}^{\alpha}E(t) +^{C}D_{t}^{\alpha}I(t) +^{C}D_{t}^{\alpha}T(t) +^{C}D_{t}^{\alpha}R(t) +^{C}D_{t}^{\alpha}L(t),
+\]
+
+and then we have
+
+\[
+^{C}D_{t}^{\alpha}N(t) + \xi N(t) \leq \lambda.
+\]
+
+Integrating (3.3) we get
+
+\[
+N(t) \leq \frac{\lambda}{\xi}.
+\]
+
+Our SAM solution with nonnegative requirements in Ω remains in \(\mathbb{R}_{+}^{6}\), since Ω is positive invariant and attracts all solutions in Ω.
+
+We now define the positivity of the model solution:
+
+\[
+\mathbb{R}_{+}^{6} = \left\{ u \in \mathbb{R}_{+}^{6}\mspace{6mu}:\mspace{6mu} u(t) = \left( S(t),E(t),I(t),T(t),R(t),L(t) \right)^{T} \right\}.
+\]
+
+Lemma 3.2 We recognized that \(j(t) \in U\lbrack c,d\rbrack\) and \(^{C}D_{t}^{\alpha}j(t) \in (c,d\rbrack\) where α∈(0,1].
+
+If \(^{C}D_{t}^{\alpha}j(t) \in (c,d\rbrack \geq 0,\mspace{6mu}\forall u \in (c,d)\) then \(j(t)\) is non-decreasing.
+
+If \(^{C}D_{t}^{\alpha}j(t) \in (c,d\rbrack \leq 0,\mspace{6mu}\forall u \in (c,d)\) then \(j(t)\) is decreasing.
+
+\par\medskip\noindent {\large\bfseries Positivity and Boundedness\par}\smallskip
+
+Lemma 3.3. The SAM solution is non-negative and bounded
+
+\(\forall\,\left( S(0),E(0),I(0),T(0),R(0),L(0) \right) \in \mathbb{R}_{+}^{6}\), ∀ t\textgreater{}0.
+
+Proof. At the initial condition Model (3.1) gives
+
+\[
+\begin{matrix}
+^{C}D_{t}^{\alpha}S|_{S = 0} & = \lambda > 0,\quad^{C}D_{t}^{\alpha}E\left|_{E = 0} = \frac{bSI}{N} \geq 0,\quad^{C}D_{t}^{\alpha}I \right|_{I = 0} = \beta E(t) + \sigma L \geq 0, \\
+^{C}D_{t}^{\alpha}T|_{T = 0} & = \gamma I \geq 0,\quad^{C}D_{t}^{\alpha}R\left|_{R = 0} = \delta T \geq 0,\quad^{C}D_{t}^{\alpha}L \right|_{L = 0} = \rho R \geq 0,
+\end{matrix}
+\]
+
+then by Lemma 3.2 \(S(t),E(t),I(t),T(t),R(t)\) and \(L(t)\) are non-decreasing. Hence
+
+\[
+\Omega = \left\{ (S,E,I,T,R,L) \in \mathbb{R}_{+}^{5}\mspace{6mu}:\mspace{6mu}(S,E,I,T,R,L) \geq 0 \right\}.
+\]
+
+As a result, the SAM solution is bounded.
+
+\par\medskip\noindent {\large\bfseries Basic reproduction number\par}\smallskip
+
+To find the reproduction number we use Next Generation Matrix method. \(SS^{*}\)
+
+\[
+\mathbf{y} = (S\mspace{6mu} E\mspace{6mu} I\mspace{6mu} T\mspace{6mu} R\mspace{6mu} L)
+\]
+
+We take our model as
+
+\[
+\frac{dy}{dt} = v(y) - w(y),
+\]
+
+where
+
+\[
+v(y) = \begin{pmatrix}
+\frac{bSI}{N} \\
+0 \\
+0 \\
+0
+\end{pmatrix},\quad\quad w(y) = \begin{pmatrix}
+(\xi + \beta)E \\ - \beta E + (\xi + \gamma)I - \sigma L \\ - \gamma I + (\xi + \delta)T \\ - \rho R + (\xi + \sigma)L
+\end{pmatrix}.
+\]
+
+Then the Jacobian matrices for \(v(y)\) and \(w(y)\) are given as
+
+\[
+J_{D_{f}}^{w} = \begin{pmatrix}
+\xi + \beta - \tau & 0 & 0 & 0 \\ - \beta & \xi + \gamma & 0 & - \sigma \\
+0 & - \gamma & \xi + \delta & 0 \\ - \tau & 0 & 0 & \xi + \sigma
+\end{pmatrix},\quad\quad J_{D_{f}}^{v} = \begin{pmatrix}
+\frac{bS}{N} & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}.
+\]
+
+The basic reproduction number is the spectral radius of \(J_{D_{f}}^{v}\left( J_{D_{f}}^{w} \right)^{- 1}\). Thus the reproduction number \(R_{0}\) is given by
+
+\[
+R_{0} = \frac{b\lambda(\xi + \delta)\left\lbrack \beta(\xi + \sigma) + \tau\sigma \right\rbrack}{N\xi(\xi + \beta - \tau)\left\lbrack (\xi + \gamma)(\xi + \delta)(\xi + \sigma) \right\rbrack}.
+\]
+
+If \(R_{0} < 1\), scrolling addiction dies out and if \(R_{0} > 1\), addiction persists at endemic levels.
+
+\par\medskip\noindent {\large\bfseries SAM equilibriums\par}\smallskip
+
+The fractional system (3.1) has at most two equilibriums: scrolling addiction-free equilibrium (SAFE) \(E_{0} = \left( \frac{\lambda}{\xi},0,0,0,0,0 \right)\) and scrolling addiction endemic equilibrium (SAEE) \(E_{1} = \left( S^{*},E^{*},I^{*},T^{*},R^{*},L^{*} \right)\).among the population
+
+Theorem 3.1 SAM admits a unique SAFE given by
+
+\[
+E_{0} = \left( \frac{\lambda}{\xi},0,0,0,0,0 \right).
+\]
+
+Proof. At \((S,0,0,0,0,0)\) the addiction free or SAFE is
+
+\[
+E_{0} = \left( \frac{\lambda}{\xi},0,0,0,0,0 \right).
+\]
+
+Theorem 3.2 SAM admits a unique SAEE
+
+\[
+E_{1} = \left( S^{*}(t),E^{*}(t),I^{*}(t),T^{*}(t),R^{*}(t),L^{*}(t) \right).
+\]
+
+Proof. Scrolling addiction persists in the population, given by
+
+\[
+E_{1} = \left( S^{*}(t),E^{*}(t),I^{*}(t),T^{*}(t),R^{*}(t),L^{*}(t) \right).
+\]
+
+To get the equilibria for scrolling addiction system (3.1)
+
+\[
+^{C}D_{t}^{\alpha}S =^{C}D_{t}^{\alpha}E =^{C}D_{t}^{\alpha}I =^{C}D_{t}^{\alpha}T =^{C}D_{t}^{\alpha}R =^{C}D_{t}^{\alpha}L = 0.
+\]
+
+Therefore.
+
+\[
+\begin{matrix}
+\lambda - \frac{bSI}{N} - \xi S & = 0, \\
+\frac{bSI}{N} - \xi E - \beta E & = 0, \\
+\beta E(t) - \xi I - \gamma I + \sigma L & = 0, \\
+\gamma I - \xi T - \delta T & = 0, \\
+\delta T - \xi R - \rho R & = 0, \\
+\rho R - \xi L - \sigma L & = 0.
+\end{matrix}
+\]
+
+If we solve the above equations we get
+
+\[
+\begin{matrix}
+S^{*}(t) & = \frac{N}{R_{0}}, \\
+E^{*}(t) & = \frac{\xi + \gamma - \sigma K}{\beta}I^{*} = \frac{(\xi + \gamma - \sigma K)\xi N}{\beta b}\left( R_{0} - 1 \right), \\
+I^{*}(t) & = \frac{\xi N}{b}\left( R_{0} - 1 \right), \\
+T^{*}(t) & = \frac{\gamma}{(\xi + \delta)}I^{*} = \frac{\gamma\xi N}{(\xi + \delta)b}\left( R_{0} - 1 \right), \\
+R^{*}(t) & = \frac{\delta}{(\xi + \rho)}T^{*} = \frac{\delta\gamma\xi N}{(\xi + \rho)(\xi + \delta)b}\left( R_{0} - 1 \right), \\
+L^{*}(t) & = \frac{\rho}{(\xi + \sigma)}R^{*} = \frac{\rho\delta\gamma\xi N}{(\xi + \rho)(\xi + \delta)(\xi + \sigma)b}\left( R_{0} - 1 \right).
+\end{matrix}
+\]
+
+\par\medskip\noindent {\LARGE\bfseries Stability analysis\par}\smallskip
+
+Theorem 4.1 The fractional order SAM is locally asymptotically stable at SAFE if \(R_{0} < 1\).
+
+Proof. The Jacobian matrix of \(E_{0}\) is defined by
+
+\[
+J\left( E_{0} \right) = \begin{pmatrix} - \xi & 0 & - b & 0 & 0 & 0 \\
+0 & - (\xi + \beta) & b & 0 & 0 & 0 \\
+0 & \beta & - (\xi + \gamma) & 0 & 0 & \sigma \\
+0 & 0 & \gamma & - (\xi + \delta) & 0 & 0 \\
+0 & 0 & 0 & \delta & - (\xi + \rho) & 0 \\
+0 & - \tau & 0 & 0 & \rho & - (\xi + \sigma)
+\end{pmatrix}.
+\]
+
+Let the diagonal elements be
+
+\[
+c_{1} = \xi,\quad c_{2} = \xi + \beta,\quad c_{3} = \xi + \gamma,\quad c_{4} = \xi + \delta,\quad c_{5} = \xi + \rho,\quad c_{6} = \xi + \sigma.
+\]
+
+The characteristic polynomial of the above Jacobian matrix is
+
+\[
+\left| J\left( E_{0} \right) - \lambda I \right| = \lambda^{6} + A_{1}\lambda^{5} + A_{2}\lambda^{4} + A_{3}\lambda^{3} + A_{4}\lambda^{2} + A_{5}\lambda + A_{6},
+\]
+
+where
+
+\[
+\begin{matrix}
+A_{1} & = \sum_{i = 1}^{6}c_{i}, \\
+A_{2} & = \sum_{1 \leq i < j \leq 6}^{}c_{i}c_{j} - b\beta, \\
+A_{3} & = \sum_{1 \leq i < j < k \leq 4}^{}c_{i}c_{j}c_{k} + \left( c_{5} + c_{6} \right)\sum_{1 \leq i < j \leq 4}^{}c_{i}c_{j} + \left( c_{5}c_{6} - b\beta \right)\sum_{i = 1}^{4}c_{i}, \\
+A_{4} & = \sum_{1 \leq i < j < k < l \leq 4}^{}c_{i}c_{j}c_{k}c_{l} + \left( c_{5} + c_{6} \right)\sum_{1 \leq i < j < k \leq 4}^{}c_{i}c_{j}c_{k} + \left( c_{5}c_{6} - b\beta \right)\sum_{1 \leq i < j \leq 4}^{}c_{i}c_{j}, \\
+A_{5} & = \left( c_{5} + c_{6} \right)c_{1}c_{2}c_{3}c_{4} + \left( c_{5}c_{6} - b\beta \right)\sum_{1 \leq i < j < k \leq 4}^{}c_{i}c_{j}c_{k}, \\
+A_{6} & = \xi(\xi + \delta)(\xi + \sigma)(\xi + \rho)\left\lbrack (\xi + \beta)(\xi + \gamma) - b\beta \right\rbrack.
+\end{matrix}
+\]
+
+It is clearly observed that \(A_{3},A_{4}\) and \(A_{5}\) are strictly positive. \(A_{5}\) and \(A_{6} > 0\) only if \(R_{0} < 1\). Therefore SAFE is locally asymptotically stable only if \(R_{0} < 1\).
+
+Theorem 4.2 The fractional order SAM is globally asymptotically stable at SAFE if \(R_{0} < 1\).
+
+Let us define the Lyapunov function V as
+
+\[
+\begin{matrix}
+V = & x_{1}\left( S - S^{*} - S^{*}\ln\frac{S}{S^{*}} \right) + x_{2}\left( E - E^{*} - E^{*}\ln\frac{E}{E^{*}} \right) \\ & + x_{3}\left( I - I^{*} - I^{*}\ln\frac{I}{I^{*}} \right) + x_{4}\left( T - T^{*} - T^{*}\ln\frac{T}{T^{*}} \right) \\ & + x_{5}\left( R - R^{*} - R^{*}\ln\frac{R}{R^{*}} \right) \\ & + x_{6}\left( L - L^{*} - L^{*}\ln\frac{L}{L^{*}} \right).
+\end{matrix}
+\]
+
+where \(x_{i}\) are undetermined coefficients. Then
+
+\[
+\begin{matrix}
+V' & = x_{1}\left( 1 - \frac{S}{S^{*}} \right)S' + x_{2}\left( 1 - \frac{E}{E^{*}} \right)E' + x_{3}\left( 1 - \frac{I}{I^{*}} \right)I' \\ & \quad + x_{4}\left( 1 - \frac{T}{T^{*}} \right)T' + x_{5}\left( 1 - \frac{R}{R^{*}} \right)R' + x_{6}\left( 1 - \frac{L}{L^{*}} \right)L'.
+\end{matrix}
+\]
+
+\[
+\begin{matrix}
+V' & = x_{1}\left( 1 - \frac{S}{S^{*}} \right)\left( \lambda - \frac{bSI}{N} - \xi S \right) \\ & \quad + x_{2}\left( 1 - \frac{E}{E^{*}} \right)\left( \frac{bSI}{N} - \xi E - \beta E + \tau E \right) \\ & \quad + x_{3}\left( 1 - \frac{I}{I^{*}} \right)\left( \beta E(t) - \xi I - \gamma I + \sigma L \right) \\ & \quad + x_{4}\left( 1 - \frac{T}{T^{*}} \right)(\gamma I - \xi T - \delta T) \\ & \quad + x_{5}\left( 1 - \frac{R}{R^{*}} \right)(\delta T - \xi R - \rho R) \\ & \quad + x_{6}\left( 1 - \frac{L}{L^{*}} \right)(\rho R - \xi L - \sigma L - \tau E).
+\end{matrix}
+\]
+
+\[
+\begin{matrix}
+V' & = x_{1}\left( 1 - \frac{S}{S^{*}} \right)\left( \lambda - \frac{bSI}{N} - \xi S \right) \\ & \quad + x_{2}\left( 1 - \frac{E}{E^{*}} \right)\left( \frac{bSI}{N} - \xi E - \beta E + \tau E \right) \\ & \quad + x_{3}\left( 1 - \frac{I}{I^{*}} \right)\left( \beta E(t) - \xi I - \gamma I + \sigma L \right) \\ & \quad + x_{4}\left( 1 - \frac{T}{T^{*}} \right)(\gamma I - \xi T - \delta T) \\ & \quad + x_{5}\left( 1 - \frac{R}{R^{*}} \right)(\delta T - \xi R - \rho R) \\ & \quad + x_{6}\left( 1 - \frac{L}{L^{*}} \right)(\rho R - \xi L - \sigma L - \tau E).
+\end{matrix}
+\]
+
+\[
+\begin{matrix}
+V' & = x_{1}\left( 1 - \frac{S}{S^{*}} \right)\left( \lambda - \frac{bSI}{N} - \xi S \right) \\ & \quad + x_{2}\left( 1 - \frac{E}{E^{*}} \right)\left( \frac{bSI}{N} - \xi E - \beta E + \tau E \right) \\ & \quad + x_{3}\left( 1 - \frac{I}{I^{*}} \right)\left( \beta E(t) - \xi I - \gamma I + \sigma L \right) \\ & \quad + x_{4}\left( 1 - \frac{T}{T^{*}} \right)(\gamma I - \xi T - \delta T) \\ & \quad + x_{5}\left( 1 - \frac{R}{R^{*}} \right)(\delta T - \xi R - \rho R) \\ & \quad + x_{6}\left( 1 - \frac{L}{L^{*}} \right)(\rho R - \xi L - \sigma L - \tau E).
+\end{matrix}
+\]
+
+Substituting the derivatives from (3.1) and using the equilibrium conditions, after simplification we obtain at addiction-free equilibrium \(E^{*} = I^{*} = T^{*} = R^{*} = L^{*} = 0\):
+
+\[
+V' = x_{1}\left( 1 - \frac{S}{S^{*}} \right)(\lambda - \xi S) < - x_{1}\xi.
+\]
+
+Thus V′\textless{}0 whenever \(R_{0} < 1\). Therefore, fractional order SAM is globally asymptotically stable at the SAFE if \(R_{0} < 1\).
+
+\par\medskip\noindent {\LARGE\bfseries Optimal Control Theory\par}\smallskip
+
+In this section, we initially created three control variables, \(u_{1}\), \(u_{2}\), and \(u_{3}\) based on the presence status of the scrolling addiction from being hooked to scrolling since the addiction is present in the susceptible and exposed population. Among these, \(u_{1}\) stands for education or awareness control, which, for instance, lowers contact rate b and susceptibility. \(u_{2}\) denotes prompt symptomatic treatment and rehabilitation for monitoring, which speeds up the transition from addiction to recovery and treatment. \(u_{3}\) stands for relapse prevention control, which lowers immunity loss and relapse. The forward-backward scanning algorithm optimizes the control function. We obtain the following equation based on our control variables:
+
+\[
+\begin{matrix}
+^{C}D_{t}^{\alpha}S(t) & = \lambda - \frac{b\left( 1 - u_{1} \right)SI}{N} - \xi S, \\
+^{C}D_{t}^{\alpha}E(t) & = \frac{b\left( 1 - u_{1} \right)SI}{N} - \xi E - \beta E + \tau E, \\
+^{C}D_{t}^{\alpha}I(t) & = \beta E(t) - \left( \xi + \gamma + u_{2} \right)I + \sigma L, \\
+^{C}D_{t}^{\alpha}T(t) & = \left( \gamma + u_{2} \right)I - \xi T - \delta T, \\
+^{C}D_{t}^{\alpha}R(t) & = \delta T - \left( \xi + \rho\left( 1 - u_{3} \right) \right)R, \\
+^{C}D_{t}^{\alpha}L(t) & = \rho\left( 1 - u_{3} \right)R - \xi L - \sigma\left( 1 - u_{3} \right)L - \tau E,
+\end{matrix}
+\]
+
+subject to the initial condition
+
+\[
+S(0) = S_{0},\quad E(0) = E_{0},\quad I(0) = I_{0},\quad T(0) = T_{0},\quad R(0) = R_{0},\quad L(0) = L_{0}.
+\]
+
+In our system three control variables are applied in optimal control analysis with the two primary goals of minimizing control costs and controlling addiction. To do this, we present the objective function that follows. The objective functional for the minimization problem is:
+
+\[
+\mathcal{O} = \min_{\left( u_{1},u_{2},u_{3} \right)}\int_{0}^{t_{f}}\left( c_{1}S + c_{2}I + c_{3}L + \frac{1}{2}\left( c_{3}u_{1}^{2} + c_{4}u_{2}^{2} + c_{5}u_{3}^{2} \right) \right)dt,
+\]
+
+each control is bounded \(0 \leq u_{i} \leq 1\), i=1,2,3.
+
+The weight constants of S,I and L are denoted by \(c_{1},c_{2}\) and \(c_{3}\), while the weight constants of the control variables \(u_{1},u_{2}\) and \(u_{3}\) are denoted by \(c_{3},c_{4}\) and \(c_{5}\). Additionally, these control variables are defined as \(u_{1}\) for S to lessen vulnerability and exposure to addictive scrolling, \(u_{2}\) for I to improve recovery and treatment success, and \(u_{3}\) for L to lessen immunity loss and relapse.
+
+Only terms that can benefit from these controls have been assigned these parameters. For example, the term \(\frac{bSI}{N}\), describes the population among susceptible interacting users with infected ones. As a result, in comparison to other populations, the control parameter will effectively affect these variables.
+
+Fractional optimum control issues can now be solved using Pontryagin’s maximum principle (PMP).
+
+The Hamiltonian function is defined by
+
+\[
+\begin{matrix}
+H & = c_{1}S + c_{2}I + c_{3}L + \frac{1}{2}\left( c_{3}u_{1}^{2} + c_{4}u_{2}^{2} + c_{5}u_{3}^{2} \right) \\ & \quad + \Phi_{1}^{C}D_{t}^{\alpha}S(t) + \Phi_{2}^{C}D_{t}^{\alpha}E(t) + \Phi_{3}^{C}D_{t}^{\alpha}I(t) + \Phi_{4}^{C}D_{t}^{\alpha}T(t) + \Phi_{5}^{C}D_{t}^{\alpha}R(t) + \Phi_{6}^{C}D_{t}^{\alpha}L(t).
+\end{matrix}
+\]
+
+The adjoint variables \(\Phi_{1},\Phi_{2},\Phi_{3},\Phi_{4},\Phi_{5},\Phi_{6}\) correspond to the state variables S,E,I,T,R,L respectively.
+
+Next, we will use Agrawal’s method to solve fractional optimal control problems (FOCP) .
+
+Theorem 5.1. Set \(u_{1}^{*},u_{2}^{*}\) and \(u_{3}^{*}\) for the control system of control variables. Then the control variable can be expressed as
+
+\[
+u_{1}^{*} = \left\{ 0,\left( 1,\frac{\left( \Phi_{1} - \Phi_{2} \right)SI}{c_{1}} \right) \right\},\quad u_{2}^{*} = \left\{ 0,\left( 1,\frac{\left( \Phi_{2} - \Phi_{3} \right)I}{c_{2}} \right) \right\},\quad u_{3}^{*} = \left\{ 0,\left( 1,\frac{\left( \Phi_{3} - \Phi_{6} \right)L}{c_{3}} \right) \right\}.
+\]
+
+where the adjoint variables \(\Phi_{1},\Phi_{2},\Phi_{3},\Phi_{4},\Phi_{5},\Phi_{6}\) satisfy
+
+\[
+\begin{matrix}
+^{C}D_{0 +}^{\alpha}\Phi_{1} & = - c_{1} + \frac{b\left( 1 - u_{1} \right)I}{N}\left( \Phi_{1} - \Phi_{2} \right) + \xi\Phi_{1}, \\
+^{C}D_{0 +}^{\alpha}\Phi_{2} & = \beta\left( \Phi_{2} - \Phi_{3} \right) + \Phi_{2}\xi + \left( \Phi_{6} - \Phi_{2} \right)\tau, \\
+^{C}D_{0 +}^{\alpha}\Phi_{3} & = \frac{b\left( 1 - u_{1} \right)S}{N}\left( \Phi_{1} - \Phi_{3} \right) + \left( \gamma + u_{2} \right)\left( \Phi_{3} - \Phi_{4} \right) + \xi\Phi_{3}, \\
+^{C}D_{0 +}^{\alpha}\Phi_{4} & = \delta\left( \Phi_{4} - \Phi_{5} \right) + \xi\Phi_{4}, \\
+^{C}D_{0 +}^{\alpha}\Phi_{5} & = \left( \Phi_{5} - \Phi_{6} \right)\rho\left( 1 - u_{3} \right) + \Phi_{5}\xi, \\
+^{C}D_{0 +}^{\alpha}\Phi_{6} & = - c_{3}\left( \Phi_{6} - \Phi_{3} \right)\sigma + \Phi_{6}\xi.
+\end{matrix}
+\]
+
+with boundary conditions \(\Phi_{1}\left( t_{f} \right) = \Phi_{2}\left( t_{f} \right) = \Phi_{3}\left( t_{f} \right) = \Phi_{4}\left( t_{f} \right) = \Phi_{5}\left( t_{f} \right) = \Phi_{6}\left( t_{f} \right) = 0\).
+
+Proof. The system of adjoint variables can be formed from the Hamiltonian function using the following relations and have boundary conditions. Proof. The system of adjoint variables can be formed from the Hamiltonian function using the following relations and have boundary conditions.
+
+\[
+\begin{matrix}
+^{C}D_{0 +}^{\alpha}\Phi_{1} & = - \frac{\partial H}{\partial S} = - c_{1} + \Phi_{1}\left\lbrack \frac{b\left( 1 - u_{1} \right)I}{N} + \xi \right\rbrack - \Phi_{2}\left\lbrack \frac{b\left( 1 - u_{1} \right)I}{N} \right\rbrack \\ & = - c_{1} + \frac{b\left( 1 - u_{1} \right)I}{N}\left( \Phi_{1} - \Phi_{2} \right) + \xi\Phi_{1}, \\
+^{C}D_{0 +}^{\alpha}\Phi_{2} & = - \frac{\partial H}{\partial E} = \Phi_{2}(\xi + \beta - \tau) - \Phi_{3}\beta + \Phi_{6}\tau \\ & = \beta\left( \Phi_{2} - \Phi_{3} \right) + \Phi_{2}\xi + \left( \Phi_{6} - \Phi_{2} \right)\tau, \\
+^{C}D_{0 +}^{\alpha}\Phi_{3} & = - \frac{\partial H}{\partial I} = - c_{2} + \Phi_{1}\frac{b\left( 1 - u_{1} \right)S}{N} - \Phi_{2}\frac{b\left( 1 - u_{1} \right)S}{N} + \Phi_{3}\left( \xi + \gamma + u_{2} \right) - \Phi_{4}\left( \gamma + u_{2} \right), \\ & = \frac{b\left( 1 - u_{1} \right)S}{N}\left( \Phi_{1} - \Phi_{3} \right) + \left( \gamma + u_{2} \right)\left( \Phi_{3} - \Phi_{4} \right) + \xi\Phi_{3}, \\
+^{C}D_{0 +}^{\alpha}\Phi_{4} & = - \frac{\partial H}{\partial T} = \Phi_{4}(\xi + \delta) - \Phi_{5}\delta = \delta\left( \Phi_{4} - \Phi_{5} \right) + \xi\Phi_{4}, \\
+^{C}D_{0 +}^{\alpha}\Phi_{5} & = - \frac{\partial H}{\partial R} = \Phi_{5}\left( \xi + \rho\left( 1 - u_{3} \right) \right) - \Phi_{6}\rho\left( 1 - u_{3} \right) \\ & = \left( \Phi_{5} - \Phi_{6} \right)\rho\left( 1 - u_{3} \right) + \Phi_{5}\xi, \\
+^{C}D_{0 +}^{\alpha}\Phi_{6} & = - \frac{\partial H}{\partial L} = - c_{3} - \Phi_{3}\sigma + \Phi_{6}(\xi + \sigma) \\ & = - c_{3}\left( \Phi_{6} - \Phi_{3} \right)\sigma + \Phi_{6}\xi.
+\end{matrix}
+\]
+
+The optimal control variables can be obtained from
+
+\[
+\frac{\partial H}{\partial u_{1}} = 0,\quad\frac{\partial H}{\partial u_{2}} = 0,\quad\frac{\partial H}{\partial u_{3}} = 0,
+\]
+
+Thus,
+
+\[
+\begin{matrix}
+\frac{\partial H}{\partial u_{1}} & = c_{3}u_{1} - \Phi_{1}\frac{b( - 1)SI}{N} + \Phi_{2}\frac{b( - 1)SI}{N} \\ & = c_{3}u_{1} + \left( \Phi_{1} - \Phi_{2} \right)\frac{b( - 1)SI}{N} = 0, \\
+\frac{\partial H}{\partial u_{2}} & = c_{4}u_{2} - \Phi_{3}I + \Phi_{4}I = c_{4}u_{2} + \left( \Phi_{4} - \Phi_{3} \right)I = 0, \\
+\frac{\partial H}{\partial u_{3}} & = c_{5}u_{3} - \Phi_{5}\rho( - 1)R + \Phi_{6}\rho( - 1)R \\ & = c_{5}u_{3} + \left( \Phi_{6} - \Phi_{5} \right)\rho R = 0.
+\end{matrix}
+\]
+
+The optimal control variables can be obtained from
+
+\[
+\frac{\partial H}{\partial u_{1}} = 0,\quad\frac{\partial H}{\partial u_{2}} = 0,\quad\frac{\partial H}{\partial u_{3}} = 0.
+\]
+
+Thus,
+
+\[
+\begin{matrix}
+\frac{\partial H}{\partial u_{1}} & = c_{3}u_{1} - \Phi_{1}\frac{b( - 1)SI}{N} + \Phi_{2}\frac{b( - 1)SI}{N} \\ & = c_{3}u_{1} + \left( \Phi_{1} - \Phi_{2} \right)\frac{b( - 1)SI}{N} = 0, \\
+\frac{\partial H}{\partial u_{2}} & = c_{4}u_{2} - \Phi_{3}I + \Phi_{4}I = c_{4}u_{2} + \left( \Phi_{4} - \Phi_{3} \right)I = 0, \\
+\frac{\partial H}{\partial u_{3}} & = c_{5}u_{3} - \Phi_{5}\rho( - 1)R + \Phi_{6}\rho( - 1)R \\ & = c_{5}u_{3} + \left( \Phi_{6} - \Phi_{5} \right)\rho R = 0.
+\end{matrix}
+\]
+
+Hence the proof.
+
+\JLTXaboveplacement \begin{table}[H]
+\centering
+{\small
+\begin{tabular}{p{0.254\linewidth}p{0.254\linewidth}p{0.254\linewidth}}
+\textbf{Parameters} & \textbf{Values/day} & \textbf{Source} \\
+\hline
+λ & 0.0001 &  \\
+b & 0.005–0.02 &  \\
+ξ & 0.002 &  \\
+β & 0.1–0.4 &  \\
+τ & 0.005–0.02 &  \\
+γ & 0.15–0.6 &  \\
+δ & 0.05–0.2 &  \\
+ρ & 0.005–0.2 &  \\
+σ & 0.005–0.2 &  \\
+\hline
+\end{tabular}}
+\caption{Parameter values used in the simulation}
+\end{table}\JLTXbelowplacement 
+
+\par\medskip\noindent {\LARGE\bfseries Numerical simulation\par}\smallskip
+
+The simulation results demonstrate that the susceptible population declines rapidly over time, and the rate of decline is strongly influenced by the contact/interaction rate b. Higher values of b accelerate the depletion of susceptibles, indicating that increased exposure and interaction with addicted individuals significantly heightens the risk of transitioning into addiction. Conversely, lower values of b slow down this process, allowing the susceptible population to remain larger for a longer period. This sensitivity analysis highlights the critical role of the contact rate in shaping addiction dynamics and underscores the importance of preventive strategies, such as awareness campaigns and behavioral interventions, which effectively reduce the effective contact rate. By controlling b, the spread of scrolling addiction can be mitigated, thereby preserving the susceptible population and promoting healthier digital habits.
+
+The simulation results for the exposed population reveal how the progression rate β significantly influences addiction dynamics. At the beginning, the exposed population rises sharply, reflecting the initial influx of individuals transitioning from susceptibility to exposure. However, the long-term behavior depends on the value of β. When β is low (β=0.05), individuals remain in the exposed class for a longer period, leading to a slower decline and a higher steady-state level of exposure. As β increases (β=0.1 and β=0.2), the exposed population progresses more quickly into the addicted class, causing a faster decline in exposure and a lower equilibrium level. This pattern highlights that higher progression rates accelerate the movement of individuals into addiction, while lower rates prolong the exposure stage. The analysis underscores the importance of controlling β through interventions such as awareness campaigns or preventive measures, which can slow down progression and reduce the overall burden of addiction in the population.
+
+The simulation results clearly show that the treatment rate γ plays a decisive role in reducing the addicted population over time. When the treatment rate is low (γ=0.025), the addicted population reaches a higher peak and stabilizes at a relatively large steady-state level, indicating that insufficient treatment allows addiction to persist widely. As the treatment rate increases (γ=0.05 and γ=0.1), both the peak and the long-term equilibrium of the addicted population decline significantly. This demonstrates that stronger treatment efforts accelerate recovery, lower the maximum burden of addiction, and ultimately stabilize the system at a healthier state. The analysis highlights the importance of effective rehabilitation programs and interventions, as higher treatment rates directly translate into fewer individuals remaining addicted in the long run.
+
+The simulation results for the treated population highlight the impact of the recovery rate δ on treatment dynamics. When the recovery rate is low (δ=0.025), the treated population reaches a higher peak and remains elevated for a longer period, reflecting slower recovery and prolonged treatment duration. As δ increases (δ=0.05 and δ=0.075), the peak of the treated population becomes progressively lower, and the system stabilizes at smaller equilibrium levels. This indicates that higher recovery rates accelerate the transition of individuals from treatment to full recovery, thereby reducing the overall size of the treated class. The analysis emphasizes that effective recovery mechanisms shorten treatment periods and lower the long-term burden on rehabilitation resources, ultimately contributing to healthier outcomes in managing scrolling addiction.
+
+The simulation results for the recovered population demonstrate how relapse rate ρ directly affects long-term recovery outcomes. When relapse is low, the recovered population reaches its highest peak and stabilizes at a relatively large level, indicating that most individuals remain in recovery. As relapse increases, the recovered population peaks at progressively lower values and declines more sharply, reflecting the fact that more individuals slip back into addiction. This pattern highlights that higher relapse rates undermine the sustainability of recovery, while lower relapse rates strengthen the recovered class. The analysis emphasizes the importance of relapse prevention strategies, such as continuous support programs and behavioral interventions, which help maintain recovery and reduce the risk of individuals returning to addictive scrolling behavior.
+
+The simulation results for the latent population reveal that the transition feedback parameter τ strongly influences the build up of individuals in the latent class. When τ is small (τ=0.005), the latent population grows more slowly and stabilizes at a lower level, indicating limited re-entry of individuals into latency. As τ increases (τ=0.01 and τ=0.015), the latent population rises more quickly and reaches higher equilibrium values, reflecting stronger feedback that channels individuals back into the latent stage. This behavior shows that higher transition feedback sustains a larger latent population.
+
+\par\medskip\noindent {\LARGE\bfseries Conclusion\par}\smallskip
+
+In this research, a fractional order compartmental framework for scrolling addiction is established and thoroughly examined using threshold dynamics, positivity, boundedness, invariant areas, and equilibrium stability. The findings demonstrate that while persistence happens above the reproduction threshold, addiction can be eradicated when it is less than unity. Numerical simulations revealed that awareness, treatment, and relapse prevention were the best control techniques for lowering prevalence. When taken as a whole, these results give a solid mathematical basis and practical insights for reducing scrolling addiction, providing direction for behavioral therapies and digital health policy in the contemporary period. The mathematical framework can be strengthened, empirical validation can be strengthened, and policy relevance can be expanded through future study. As a result, the model will become more practical, useful, and significant for both theory and practice.
+
+99
+
+Christiane Eichenber, Raphaela Schneider and Helena Rumpl, Social media addiction associations with attachment style, mental distress, and personality. BMC Psychiatry. (2024) 24-278.
+
+Abu Safyan Ali, Zesha Faiz and Farhan Khan, Analysis of fractional order mathematical model of social media addiction and depression. Modeling Earth Systems and Environment. 9(2026) 12.
+
+Caroline Brand, Camila Felin Fochesatto, Anelise Reis Gaya, Felipe Barreto Schuch and José Francisco López-Gil, Scrolling through adolescence: unveiling the relationship of the use of social networks and its addictive behavior with psychosocial health, Child and Adolescent, Psychiatry and Mental Health. (2024) 18-107.
+
+Sanjay Bhatter, Sangeeta Kumawat, Sunil Dutt Purohit \& D. L. Suthar, Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data. Scientific reports. 15 (2025) 12672.
+
+Rajeshwari S., S. Meenakshi, The age of doom scrolling Social media’s attractive addiction. Journal of Education and Health Promotion. (2023) 838 – 22.
+
+Xiao-Hong Zhang, Aatif Ali, Muhammad Altaf Khan, Mohammad Y. Alshahrani, Taseer Muhammad and Saeed Islam, Mathematical Analysis of the TB Model with Treatment via Caputo-Type Fractional Derivative. Hindawi 2021(2021) 9512371-86.
+
+Mostofa Kamal, Md. Al Amin, Mostak Ahmed, Payer Ahmed, Md. Asraful Islam, Mathematical modeling and optimal control of social media addiction with stability and sensitivity analysis. Franklin Open. 12 (2025) 100354.
+
+Young, K. S., Psychology of computer use: Addictive use of the internet, a case that breaks the stereotype. Psychological Reports, 79 (1996) 899-902.
+
+Changhe Wu, Walton Wider, Wei Xuan Yew, Khine Zar Zar Thet, Chengen Li, Alex S. Borromeo, Exploring the negative impact of social media on employee mental health in Malaysia: A Delphi study, Online Journal of Communication and Media Technologies, 2026, 16(2), e202616.
+
+Amjad Islam Amjad, Sana Javaid, Sair, Shamim Akhter, Mohamad Ahmad Saleem Khasawneh, Thabet Bin Saeed Al-Kahlan, Influence of digital media use, environmental awareness, and eco-anxiety on university students’ mental health, Discover Psychology (2026) 6:103.
+
+Ye Hoon Lee, Juhee Hwang, Walking for Mental Health: Effects of Mobile-Based Walking on Stress and Affectivity in College Students. Int. J. Ment. Health Promot. 27(2), (2025) 179-191.
+
+Chen, T. M., Rui, J., Wang, A mathematical model for simulating the phase-based transmissibility of a novel corona virus. Infectious diseases of poverty. 9(1)(2020) 1-8.
+
+Khan, M. A., Atangana A., Modeling the dynamics of novel coronavirus (2019-nCov) with fractional derivative. Alexandria. 59 (2020) 2379-2389.
+
+Hussain, Z., Griffiths, M. D., The associations between problematic social networking site use and sleep quality, attention-deficit hyperactivity disorder, depression, anxiety and stress. International Journal of Mental Health and Addiction. (2019) 1–15.
+
+Ravi Shankar Dubey, Manvendra Narayan Mishra, Effect of Covid-19 in India- A prediction through mathematical modeling using Atangana Baleanu fractional derivative. Journal of Interdisciplinary Mathematics. 25(2022) 2431–2444.
+
+Weidong Li, Zh Yeng Chong, Yaqing Mao, Wanying Zhang, Wei Xu, Mingwei Li, Yiyun Wang, Huaxia Xiong, The Impacts of a Teaching Personal and Social Responsibility Intervention on Social and Emotional Competence in Physical Education, A Quasi-Experimental Study. Int. J. Ment. Health Promot. 27 (2025) 1462-3730.
+
+Huo, H., Jing, S.L., Wang, X.Y., Xiang, H., Modelling and analysis of an alcoholism model with treatment and effect of Twitter. AIMS Math. 16 (2019) 3595–3622.
+
+Li, T., Guo, Y., Stability and optimal control in a mathematical model of online game addiction. Filomat 33(17) (2019) 5691–5711.
+
+Samad, S.A., Islam, M.T., Tomal, S.T.H., Biswas, M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh. Int. J. Sci. Manag. Stud. 3(2) (2020) 36–48.
+
+Lu, X., Huang, P., Feng, X., He, Y., A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput. 92(3) (2022) 104.
+
+Alemneh, H.T., Alemu, N.Y.: Mathematical modeling with optimal control analysis of social media addiction. Infect. Dis. Model. 6 (2021) 405–419.
+
+Lu, X., Huang, P., Feng, X., He, Y., A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput. 92(3) (2022) 104.
+
+Kongson, J., Thaiprayoon, C., Sudsutad, W., Analysis of a fractional model for HIV CD4+ T-cells with treatment under generalized Caputo fractional derivative. AIMS Math. 6(7) (2021) 7285–7304.
+
+Tianyi Pu, Marco Fasondini, The numerical solution of fractional integral equations via orthogonal polynomials in fractional Powers. Adv Comput Math. 49(2023) 7.
+
+Shenghu Xu, Yanhui Hu, Dynamic analysis of a Caputo fractional-order SEIR model with a general incidence rate. Scientific reports. 15 (2025) 17561.
+
+Muhammad Farman, Cicik Alfniyah, Muhammad Saqib, Global Stability with Lyapunov Function and Dynamics of SEIR-Modified Lassa Fever Model in Sight Power Law Kernel. Hindawi. 27 (2024) 3562684.
+
+Fareeha Sami Khan, M. Khalid Ali, Hasan Ali, F. Ghanim, Optimal control strategies for taming TikTok addiction: a mathematical model and analysis. Arabian Journal of Mathematics. (2025).
+
+Ling Zhang, Xuewen Tan, Jia Li and Fan Yang, Dynamic analysis and optimal control of leptospirosis based on Caputo fractional derivative. Network and Heterogeneous Media. 19(3) (2024) 1262–1285.
+
+Bentout S, Age-structured modeling of COVID-19 epidemic in the USA, UAE and Algeria. 60(1) (2021) 401–411.
+
+Djilali, Lahbib Benahmadi, Abdessamad, Khadia., Modeling the impact of unreported cases of the COVID-19 in the north African countries. 9(11) (2020) 373.
+
+Salih Djilali, Soufiane Bentout, Sunil Kumar, Tarik Mohammed Touaoula, Approximating the asymptomatic infectious cases of the COVID-19 disease in Algeria, and India. 13(4) (2022).
+
+Michele Caputo and Mauro Fabrizio, A new definition of fractional derivative without singular kernel. 73 (2015).
+
+I. Podlubny, Fractional Differential Equations, Academic Press, San Diego, 1999.
+
+Abdon Atangana, Dumitru Baleanu., New fractional derivatives with nonlocal and non-singular kernel theory and application to heat transfer model thermal Science. 20 (2016).
+
+A Atangana, S Qureshi., Modeling attractors of chaotic dynamical systems with fractal-fractional operators. Chaos, solitons \& fractals, 123 (2019) 320-337.
+
+Lei Shi, Jiaying Zhou, Yong Ye., Global stability and Hopf bifurcation of networked respiratory disease model with delay, 151 (2024) 109000.
+
+HF Huo, Q Wang., Modelling the influence of awareness programs by media on the drinking dynamics. Abstract and Applied Analysis, 2014(1)(2014) 938080.
+
+Om P. Agrawal, Ozlem Defterli, Dumitru Baleanu, Fractional Optimal Control Problems with Several State and Control Variables. Journal of Vibration and Control. 16(13) (2010).
+
+Tingting Li, Youming Guo., Stability and optimal control in a mathematical model of online game addiction. Filomat. 33 (2019), 5691–5711.
+
+Abdon Atangana, Seda Igret., Fractional Stochastic Differential Equations. Springer, 2022.
+
+Vijayalakshmi. G.M, P. Roselin Besi., Ali Akgul., Fractional commensurate model on Covid-19 with microbial confections. An optimal control analysis. 45(3) (2024) 1108-1121.
+
+Vijayalakshmi G.M, M. Ariyanatchi, Adams–Bashforth Moulton Numerical Approach on Dengue Fractional Atangana Baleanu Caputo Model and Stability Analysis. 10(32) (2024).
+
+G. M. Vijayalakshmi, M. Ariyanatchi, Vediyappan Govindan, Haewon Byeon, Busayamas Pimpunchat., Stability and Hopf Bifurcations Analysis in a Three-Phase Dengue Diffusion Model With Time Delay in Fractional Derivative and Laplace–Adomian Decomposition Numerical Approach. Mathematical Methods in the Applied Science. 48(12) (2025).
+
+Vijayalakshmi G.M, Nisar. K.S, Shiva Reddy. K, Mittag–Leffler kernel operator on prey-predator model interfusing intra-specific competition and prey fear factor, 9 (2024).
+
+G. M. Vijayalakshmi., P. Roselyn Besi., ABC fractional order vaccination model for COVID-19 with self-productive measures. 8 (132) (2022).
+
+G. M. Vijayalakshmi., P. Roselyn Besi., A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis. Result in control and Optimization, 8 (2022).
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

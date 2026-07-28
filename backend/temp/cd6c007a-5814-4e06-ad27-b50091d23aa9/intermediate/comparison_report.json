@@ -1,0 +1,87 @@
+{
+  "header_match": 40.0,
+  "title_match": 100.0,
+  "author_match": 100.0,
+  "affiliation_match": 0.0,
+  "abstract_match": 100.0,
+  "keyword_match": 0.0,
+  "section_match": 0.0,
+  "figure_match": 100.0,
+  "table_match": 100.0,
+  "reference_match": 0.0,
+  "biography_match": 100.0,
+  "layout_match": 97.0,
+  "typography_match": 100.0,
+  "first_page_match": 56.7,
+  "overall_score": 63.8,
+  "mismatches": {
+    "header_match": [
+      {
+        "expected": "Journal volume details present",
+        "actual": "Missing or generic volume",
+        "reason": "Volume not detected in DOCX header",
+        "proposed_fix": "Extract volume metadata from first page header"
+      },
+      {
+        "expected": "Received/Revised/Accepted dates present",
+        "actual": "Missing dates",
+        "reason": "Dates not detected in DOCX metadata",
+        "proposed_fix": "Extract dates from header blocks"
+      },
+      {
+        "expected": "DOI identifier present",
+        "actual": "Missing DOI",
+        "reason": "DOI not detected in DOCX",
+        "proposed_fix": "Generate standard DOI prefix in templates"
+      }
+    ],
+    "affiliation_match": [
+      {
+        "expected": "Affiliations for all authors",
+        "actual": "Missing affiliations for: Keywords, 1.Introduction, 2. Preliminaries, The Sumudu transform over the set of functions, Is defined as, $G(u) = S\\left\\lbrack \u04fa(\u0565) \\right\\rbrack = \\int_{0}^{\\infty}{}e^{- u\u0565}\\ \u04fa(\u0565)d\u0565$ (1), The Sumudu transform of Caputo fractional derivative is explained below, 3. Model Formulation, Human Population Compartments:, The human population is divided into four compartments:, Animal Population Compartments:, The animal population is categorized into three compartments:, Model Dynamics:, $\\frac{\u0503\u211e_{\u0253}}{\u0503\u0565} = \\gamma_{\u0253}\u026c_{\u0253} - \\theta_{\u0253}\u211e_{\u0253} - \\mu_{\u0253}\u211e_{\u0253}$, $\\frac{\u0503\u2c63_{\u0253}}{\u0503\u0565} = \u2c63_{\u0253}\\pi_{\u0253} + \\theta_{\u0253}\u211e_{\u0253} - \\mu_{\u0253}\u2c63_{\u0253}$, $\\frac{\u0503\u015e_{\u0251}}{\u0503\u0565} = \\pi_{\u0251} - \\frac{\\beta_{\u0251}\u015e_{\u0251}\u026c_{\u0251}}{N_{\u0251}} - \\mu_{\u0251}\u015e_{\u0251}$, $\\frac{d\u026c_{\u0251}}{\u0503\u0565} = \\frac{\\beta_{\u0251}\u015e_{\u0251}\u026c_{\u0251}}{N_{\u0251}} - \\left( \\gamma_{\u0251} + \\mu_{\u0251} + \u0503_{\u0251} \\right)\u026c_{\u0251}$, $\\frac{\u0503\u211e_{\u0251}}{\u0503\u0565} = \\gamma_{\u0251}\u026c_{\u0251} - \\mu_{\u0251}\u211e_{\u0251}$ (4), ${0CfD}_{\u0565}^{\\alpha}\u211e_{\u0253}\\  = \\gamma_{\u0253}\u026c_{\u0253} - \\theta_{\u0253}\u211e_{\u0253} - \\mu_{\u0253}\u211e_{\u0253}$, ${0CfD}_{\u0565}^{\\alpha}\u2c63_{\u0253}\\  = \u2c63_{\u0253}\\pi_{\u0253} + \\theta_{\u0253}\u211e_{\u0253} - \\mu_{\u0253}\u2c63_{\u0253}$, ${0CfD}_{\u0565}^{\\alpha}\u015e_{\u0251}\\  = \\pi_{\u0251} - \\frac{\\beta_{\u0251}\u015e_{\u0251}\u026c_{\u0251}}{N_{\u0251}} - \\mu_{\u0251}\u015e_{\u0251}$, ${0CfD}_{\u0565}^{\\alpha}\u026c_{\u0251} = \\frac{\\beta_{\u0251}\u015e_{\u0251}\u026c_{\u0251}}{N_{\u0251}} - \\left( \\gamma_{\u0251} + \\mu_{\u0251} + \u0503_{\u0251} \\right)\u026c_{\u0251}$, ${0CfD}_{\u0565}^{\\alpha}\u211e_{\u0251} = \\gamma_{\u0251}\u026c_{\u0251} - \\mu_{\u0251}\u211e_{\u0251}$ (5), These equations describe the dynamic evolution of the variables $\u015e_{\u0253} \\geq, \u026c_{\u0253} \\geq, \\ \u211e_{\u0253} \\geq, $, Table 1. Parameter values used in the proposed fuzzy fractional-order monkeypox transmission model., 3. Qualitative Analysis, 3.1 Existence of the solutions of desired model, Theorem 3., Describe $Q_{1}, \\ Q_{2}, Q_{3}, Q_{4}, Q_{5}, Q_{6}, Q_{7}$, explain how they relate to variables., Proof, Transforming the aforementioned proposed system (5) into an integral equation system-, $\u211e_{\u0253}(\u0565) - \u211e_{\u0253}(0) = {0CFT}_{\u0565}^{\\alpha}\\left\\lbrack \\gamma_{\u0253}\u026c_{\u0253} - \\theta_{\u0253}\u211e_{\u0253} - \\mu_{\u0253}\u211e_{\u0253} \\right\\rbrack$, $\u2c63_{\u0253}(\u0565) - \u2c63_{\u0253}(0) = {0CFT}_{\u0565}^{\\alpha}\\left\\lbrack \\pi_{\u0253}\u2c63_{\u0253} + \\theta_{\u0253}\u211e_{\u0253} - \\mu_{\u0253}\u2c63_{\u0253} \\right\\rbrack$, $\u211e_{\u0251}(\u0565) - \u211e_{\u0251}(0) = {0CFT}_{\u0565}^{\\alpha}\\left\\lbrack \\gamma_{\u0251}\u026c_{\u0251} - \\mu_{\u0251}\u211e_{\u0251} \\right\\rbrack$ (6), Using Nieto\u2019s definition, we then arrive at, Let\u2019s now assume that the kernels are provided as, $Q_{3}\\left( \u0565, \u211e_{\u0253} \\right) = \\gamma_{\u0253}\u026c_{\u0253}(\u0565) - \\theta_{\u0253}\u211e_{\u0253}(\u0565) - \\mu_{\u0253}\u211e_{\u0253}(\u0565)$, $Q_{4}\\left( \u0565, \u2c63_{\u0253} \\right) = \\pi_{\u0253}\u2c63_{\u0253}(\u0565) + \\theta_{\u0253}\u211e_{\u0253}(\u0565) - \\mu_{\u0253}\u2c63_{\u0253}(\u0565)$, $Q_{5}\\left( \u0565, \u015e_{\u0251} \\right) = \\pi_{\u0251} - \\frac{\\beta_{\u0251}\u015e_{\u0251}(\u0565)\u026c_{\u0251}(\u0565)}{N_{\u0251}(\u0565)} - \\mu_{\u0251}\u015e_{\u0251}(\u0565)$, $Q_{7}\\left( \u0565, \u211e_{\u0251} \\right) = \\gamma_{\u0251}\u026c_{\u0251}(\u0565) - \\mu_{\u0251}\u211e_{\u0251}(\u0565)$ (8), Theorem 3., Demonstrate that $Q_{1}, \\ Q_{2}, Q_{3}, Q_{4}, Q_{5}, Q_{6}$, $\\ Q_{7}$ fulfil the Lipschitz requirement., Proof, We will first demonstrate this for $Q_{1}$. Considering that $\u015e_{\u0253}$, ${\u015e_{\u0253}}_{1}$ are any two functions, we have, $\\| Q_{1}\\left( \u0565, \u015e_{\u0253} \\right) - Q_{1}\\left( \u0565, {\u015e_{\u0253}}_{1} \\right)\\| \\leq \u2c67_{1}\\| \u015e_{\u0253}(\u0565) - {\u015e_{\u0253}}_{1}(\u0565)\\|$, Similarly, we can have, $\\leq \\|\\left( \\gamma_{\u0253} + \\mu_{\u0253} + \u0503_{\u0253} \\right)\\|\\| \u026c_{\u0253}(\u0565) - {\u026c_{\u0253}}_{1}(\u0565)\\|$, $\\| Q_{2}\\left( \u0565, \u026c_{\u0253} \\right) - Q_{2}\\left( \u0565, {\u026c_{\u0253}}_{1} \\right)\\| \\leq \u2c67_{2}\\| \u026c_{\u0253}(\u0565) - {\u026c_{\u0253}}_{1}(\u0565)\\|$, Where $\\|\\left( \\gamma_{\u0253} + \\mu_{\u0253} + \u0503_{\u0253} \\right)\\| \\leq \u2c67_{2} < 1$., Now, $\\leq \\|\\left( \\theta_{\u0253} + \\mu_{\u0253} \\right)\\|\\| \u211e_{\u0253}(\u0565) - {\u211e_{\u0253}}_{1}(\u0565)\\|$, $\\| Q_{3}\\left( \u0565, \u211e_{\u0253} \\right) - Q_{3}\\left( \u0565, {\u211e_{\u0253}}_{1} \\right)\\| \\leq \u2c67_{3}\\| \u211e_{\u0253}(\u0565) - {\u211e_{\u0253}}_{1}(\u0565)\\|$, Where $\\|\\left( \\theta_{\u0253} + \\mu_{\u0253} \\right)\\| \\leq \u2c67_{3} < 1$., $\\| Q_{4}\\left( \u0565, \u2c63_{\u0253} \\right) - Q_{4}\\left( \u0565, {\u2c63_{\u0253}}_{1} \\right)\\| \\leq \u2c67_{4}\\| \u2c63_{\u0253}(\u0565) - {\u2c63_{\u0253}}_{1}(\u0565)\\|$, Where $\\|\\left( \\pi_{\u0253} + \\mu_{\u0253} \\right)\\| \\leq \u2c67_{4} < 1$, $\\| Q_{5}\\left( \u0565, \u015e_{\u0251} \\right) - Q_{5}\\left( \u0565, {\u015e_{\u0251}}_{1} \\right)\\| \\leq \u2c67_{5}\\| \u015e_{\u0251}(\u0565) - {\u015e_{\u0251}}_{1}(\u0565)\\|$, Where $\\|\\left( \\frac{\\beta_{\u0251}\u026c_{\u0251}(\u0565)}{N_{\u0251}(\u0565)} + \\mu_{\u0251} \\right)\\| \\leq \u2c67_{5} < 1$., $\\| Q_{6}\\left( \u0565, \u026c_{\u0251} \\right) - Q_{6}\\left( \u0565, {\u026c_{\u0251}}_{1} \\right)\\| \\leq \u2c67_{6}\\| \u026c_{\u0251}(\u0565) - {\u026c_{\u0251}}_{1}(\u0565)\\|$, Now consider the recurrence formula, (10), Now, $\\| U_{r}(\u0565)\\| = \\|{\u015e_{\u0253}}_{r}(\u0565) - {\u015e_{\u0253}}_{r - 1}(\u0565)\\|$, But $Q_{1}$ satisfies Lipchitz condition so, In the same way, we have, Theorem 3., Proof, Using a recursive approach in above equation (13) - (19) presents the set of equation as follows, Consequently, the presence of results, which are also continuous, are confirmed., We now get, $\u015e_{\u0253}(\u0565) = {\u015e_{\u0253}}_{r}(\u0565) - E_{, r}(\u0565), \u026c_{\u0253}(\u0565) = {\u026c_{\u0253}}_{r}(\u0565) - E_{, r}(\u0565), \u026c_{\u0253}(\u0565) = {\u026c_{\u0253}}_{r}(\u0565) - E_{, r}(\u0565), $, $\u211e_{\u0251}(\u0565) = {\u211e_{\u0251}}_{r}(\u0565) - E_{, r}(\u0565).$ (27), $T_{m}(\u0565) - {T_{m}}_{r}(\u0565) = \\frac{2(1 - \\alpha)}{(2 - \\alpha)\u2c6e(\\alpha)}Q_{7}\\left( \u0565, T_{m} - E_{, r}(\u0565) \\right)$, $+ \\frac{2\\alpha}{(2 - \\alpha)\u2c6e(\\alpha)} \\times \\int_{0}^{\u0565}{}Q_{7}\\left( s, T_{m} - E_{, r}(s) \\right)ds$ (28), By applying the Lipschitz axiom, using the terms on both sides, the above claim is established., When lim$\\ r \\rightarrow \\infty$ is used, it indicates that, It demonstrates the results, such as the above-mentioned solutions as provided by the proposed model's Eqn. (5)., Theorem 3., The suggested fractional order epidemiological model Eqn. (5) has a unique solution., Proof, Using the norm on both sides, we obtain, Lipchitz condition is used to get, Which is true for all$\\ r, \\ $so $\u015e_{\u0253} = {\u015e_{\u0253}}_{1}$, Hence, it claims uniqueness of the system., 4. Results of the Model Using Sumudu Transform with Caputo-Fabrizio Derivative, Using the Caputo Fabrizio approach defined by the Sumudu Transform we obtain the following:, By rearranging, Using inverse Sumudu transform on system (35), we get, Given recursive technique is as follows, the solution is given, $\u015e_{\u0253}(\u0565) = \u015e_{\u0253_{n}}(\u0565)\\, \u026c_{\u0253}(\u0565) = \u026c_{\u0253_{n}}(\u0565)\\, \u211e_{\u0253}(\u0565) = \u211e_{\u0253_{n}}(\u0565)\\, $, $\u2c63_{\u0253}(\u0565) = \u2c63_{\u0253_{n}}(\u0565)\\, \u015e_{\u0251}(\u0565) = \u015e_{\u0251_{n}}(\u0565)\\, \u026c_{\u0251}(\u0565) = \u026c_{\u0251_{n}}(\u0565)\\, $, $\u211e_{\u0251}(t) = \u211e_{\u0251_{n}}(t)\\ .$ (38), 5. Result, Discussion, 6.Conclusion, Declaration of competing interest, The authors declare there is no competing interest., Acknowledgement, All authors have read, approved the article., Author\u2019s credit, Funding, No funding received., References",
+        "reason": "Affiliation paragraphs not grouped with author names",
+        "proposed_fix": "Implement proximity grouping in author analyzer"
+      }
+    ],
+    "keyword_match": [
+      {
+        "expected": "Keywords list extracted",
+        "actual": "0 keywords",
+        "reason": "Keywords paragraph not found",
+        "proposed_fix": "Verify keyword prefix detection"
+      }
+    ],
+    "section_match": [
+      {
+        "expected": "Document sections extracted",
+        "actual": "0 sections",
+        "reason": "No section headers detected",
+        "proposed_fix": "Verify header block parsing in AST"
+      }
+    ],
+    "reference_match": [
+      {
+        "expected": "References parsed",
+        "actual": "0 references",
+        "reason": "References section empty or not detected",
+        "proposed_fix": "Verify paragraph check for references transition"
+      }
+    ],
+    "layout_match": [
+      {
+        "expected": "No LaTeX layout warnings or overflows",
+        "actual": "3 layout issues detected",
+        "reason": "Hbox/Vbox overflows or bad scaling",
+        "proposed_fix": "Verify graphics scaling and table wrapping styles"
+      }
+    ],
+    "first_page_match": [
+      {
+        "expected": "High fidelity first page layout",
+        "actual": "First page match score: 56.7%",
+        "reason": "Metadata fields mismatch or generic formatting",
+        "proposed_fix": "Override document class metadata macros"
+      }
+    ]
+  }
+}

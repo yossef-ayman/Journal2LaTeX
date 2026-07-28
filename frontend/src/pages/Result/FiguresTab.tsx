@@ -3,6 +3,7 @@ import { FigureCard } from "@/components/FigureCard";
 import { EmptyState } from "@/components/EmptyState";
 import { ImageIcon } from "lucide-react";
 import type { AssetReport } from "@/types";
+import { getAssetUrl } from "@/services";
 
 interface FiguresTabProps {
   assets: AssetReport;
@@ -41,7 +42,7 @@ export function FiguresTab({ assets, jobId }: FiguresTabProps) {
             caption={f.caption || f.nearby_captions?.[0] || ""}
             filename={f.path?.split("/").pop() || `figure-${i}`}
             sourceLocation={f.original_relationship_id || null}
-            assetPath={f.path ? `/api/job/${jobId}/assets/${f.path}` : undefined}
+            assetPath={f.path ? getAssetUrl(jobId, f.path) : undefined}
           />
         ))}
       </div>

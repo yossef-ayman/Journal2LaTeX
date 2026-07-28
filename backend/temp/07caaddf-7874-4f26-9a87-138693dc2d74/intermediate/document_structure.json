@@ -1,0 +1,2820 @@
+{
+  "title": "A Fractional Fuzzy Dynamical Model for Math-Phobia with Optimal Learning Intervention Strategies",
+  "authors": [
+    {
+      "name": "M. Ariyanatchi",
+      "affiliation": "Department of Mathematics, Academy of Maritime Education and Training (Deemed to be University), ECR, Kanathur, Chennai – 603 112, Tamil Nadu, India",
+      "email": null,
+      "photo_path": null,
+      "is_corresponding": false
+    },
+    {
+      "name": "P. Roselyn Besi2 I. Paulraj Jayasimman",
+      "affiliation": "Department of Mathematics, Academy of Maritime Education and Training (Deemed to be University), ECR, Kanathur, Chennai – 603 112, Tamil Nadu, India",
+      "email": null,
+      "photo_path": null,
+      "is_corresponding": false
+    },
+    {
+      "name": "Ali Akgül",
+      "affiliation": "Siirt University, Art and Science Faculty, Department of Mathematics, 56100 Siirt, Türkiye",
+      "email": "aliakgul@siirt.edu.tr",
+      "photo_path": null,
+      "is_corresponding": true
+    }
+  ],
+  "abstract": "This paper introduces a new six-compartment fuzzy fractional-order epidemic model that describes the spread and mitigation of math-phobia in student populations. The susceptible \\(Ş(t)\\), mathphobic \\(M(t)\\), not interested \\(N(t)\\), intervention-aware \\(₳(t)\\), interested \\(ƚ(t)\\), and recovered \\(Ɍ(t)\\) compartments capture key behavioural transitions influenced by psychological, social, and educational factors. Caputo-type fuzzy fractional differential equations are used to derive these dynamics, considering memory effects and epistemic uncertainty in the transmission and recovery rates. By applying fixed-point theory, we prove the existence and uniqueness of the solution under fuzzy initial conditions, hence guaranteeing mathematical coherence of the model.",
+  "keywords": [
+    "Fuzzy fractional differential equations",
+    "Caputo derivative",
+    "Optimal control",
+    "Math-phobia Five-compartment model",
+    "Adomian decomposition",
+    "Fuzzy Laplace transform",
+    "educational intervention"
+  ],
+  "sections": [
+    {
+      "title": "1. Introduction",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Mathematics anxiety, generally known as mathphobia, is a psychological condition in which one feels overwhelming fear, tension, and avoidance behaviours concerning mathematics. It has become so evident in people of all ages and levels of education; this has shorn away performance and confidence in individuals in mathematics-related tasks. Previous studies estimate that a strong percentage of students suffer from different mathphobia levels, which influences their academic and professional courses (Ashcraft & Moore, 2009). Mathphobia is typically manifested by diminished problem-solving ability, negative attitude towards quantitative subjects, and increased cognitive interference associated with mathematical reasoning (Maloney & Beilock, 2012; Hembree, 1990)."
+          },
+          "block_index": 1,
+          "original_page_number": null,
+          "original_order": 1,
+          "source_location": "Section: 1. Introduction, Block: 1"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "While mathphobia has not been identified as a clinical disorder, it does share characteristics with other anxiety disorders, such as avoidance behaviour, physiological stress responses, and impaired cognitive function associated with Dowker et al. (2016). Such attempts to understand and alleviate mathphobia have been made with the help of psychological testing, pedagogical interventions, and, increasingly in recent times, advanced mathematical modeling in order to describe its dynamic course."
+          },
+          "block_index": 2,
+          "original_page_number": null,
+          "original_order": 2,
+          "source_location": "Section: 1. Introduction, Block: 2"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Fuzzy fractional derivatives have developed as an influential tool to model complex, uncertain, and time-dependent phenomena like mathphobia. Fuzzy logic provides the facility for accommodating imprecise, ambiguous, and varied anxiety experienced by the individuals, which represents real-world behavioural uncertainty. Fractional calculus, with its memory effects and temporal dependence, enriches our understanding of the rrole that past experiences and interventions play in current math anxiety levels. Combination of fuzzy logic with fractional calculus therefore forms a comprehensive framework within which mathphobia dynamics can be analysed and specific intervention strategies can be designed."
+          },
+          "block_index": 3,
+          "original_page_number": null,
+          "original_order": 3,
+          "source_location": "Section: 1. Introduction, Block: 3"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "A new fuzzy fractional derivative model for describing the progress of mathphobia is presented in this study, introducing optimal control methods to devise effective management approaches. This research develops the precision of modeling and mitigating the impact of mathphobia on learners by combining the nuanced representation capability of fuzzy fractional derivatives with the adaptability of optimal control."
+          },
+          "block_index": 4,
+          "original_page_number": null,
+          "original_order": 4,
+          "source_location": "Section: 1. Introduction, Block: 4"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "Literature Review",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Research on mathphobia has evolved from purely psychological and educational domains to include quantitative and computational modeling, thereby allowing for a much finer-grain understanding of dynamics of anxiety and the impact of interventions. In the foundational studies, the prevalence and cognitive effects of math anxiety were explored by Ashcraft & Ridley (2005) and Hembree (1990), with early treatment approaches based on behavioral theories focused on desensitization and cognitive-behavioral therapy (Beilock & Maloney, 2015; Dowker et al., 2016)."
+          },
+          "block_index": 5,
+          "original_page_number": null,
+          "original_order": 5,
+          "source_location": "Section: Literature Review, Block: 5"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Fractional order mathematical models have been crucial for the correct representation of phenomena that involve memory and hereditary effects. This is because fractional derivatives explicitly represent the effects of previous states on the current behavior of a system, which is very crucial in chronic and recurrent psychological conditions like mathphobia. This provides higher fidelity in modeling compared to traditional integer-order models (Maayah & Arqub, 2023; Kongson et al., 2021). Such models have carved success through epidemiology and psychology by capturing persistence, relapse, and gradual recovery phases."
+          },
+          "block_index": 6,
+          "original_page_number": null,
+          "original_order": 6,
+          "source_location": "Section: Literature Review, Block: 6"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Along with this, in the context of psychological measurements, fuzzy mathematical models address uncertainty and imprecision by treating each variable as a fuzzy set with degrees of membership rather than precise values. Such methodology goes side by side with the nature of mathphobia because in reality it has a spectrum-like manifestation across individuals and contexts (Liang et al., 2021; Van Hoa, 2019). Integrating such frameworks into FFDEs may establish a powerful tool to model nonlinear, uncertain, and history-dependent processes related to psychological and educational systems (Arshad, 2024; Qayyum et al., 2024)."
+          },
+          "block_index": 7,
+          "original_page_number": null,
+          "original_order": 7,
+          "source_location": "Section: Literature Review, Block: 7"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Recent analyses have employed compartmental and structural equation models to characterize the different stages of psychological anxiety and some possible mitigation pathways (Abi et al., 2023; Mitropoulou et al., 2022; Sheinov & Dziavitsyn, 2021). Other works, such as Juhari et al. (2024) and Alemneh & Alemu (2021), illustrate the use of optimal control theory combined with fractional models in the optimization of intervention timing, intensity, and resources for higher efficacy and cost-effectiveness. Sheinov & Dziavitsyn (2021) present the development of a fractional behavioral model that involves cognitive, emotional, and social factors of addiction, offering insights transferable to mathphobia dynamics."
+          },
+          "block_index": 8,
+          "original_page_number": null,
+          "original_order": 8,
+          "source_location": "Section: Literature Review, Block: 8"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In this respect, the fuzzy fractional Caputo derivative provides a privileged mathematical framework in developing models of real systems that are driven by incomplete or imprecise information with a dependency on the history. The nonlinearities, imprecision, and noise in data can be better understood and addressed using the fuzzy fractional Caputo model compared to its classical/integer-order counterparts in behavioral studies (Liang et al., 2021; Van Hoa, 2019)."
+          },
+          "block_index": 9,
+          "original_page_number": null,
+          "original_order": 9,
+          "source_location": "Section: Literature Review, Block: 9"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Complementary to these models, optimal control theory provides the decision-making frameworks needed to optimize the timing of interventions, their intensities, and resource allocation. Such works have been developed by Juhari et al. (2024), Alemneh & Alemu (2021). Combined fuzzy fractional and optimal control-based models represent state-of-the-art tools to devise adaptive, data-driven policies toward the reduction of mathphobia."
+          },
+          "block_index": 10,
+          "original_page_number": null,
+          "original_order": 10,
+          "source_location": "Section: Literature Review, Block: 10"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Whereas there has been some progress with regard to fractional modeling in psychology and education, applications to mathphobia specifically remain limited, but promising. This study tries to fill the gap by presenting a fuzzy fractional mathematical model with optimal control for enhanced analysis and better management of mathphobia."
+          },
+          "block_index": 11,
+          "original_page_number": null,
+          "original_order": 11,
+          "source_location": "Section: Literature Review, Block: 11"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Novelty and Objectives",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In this paper, a new fuzzy fractional derivative model for mathphobia is presented, utilizing the Caputo fractional operator and fuzzy logic to enhance the descriptive accuracy regarding the development of anxiety over time. An optimal control approach is integrated into the model in order to identify strategies of intervention that are both effective and adaptive, which alter trajectories of anxiety. This two-pronged approach goes much further toward understanding the dynamics underlying mathphobia by incorporating behavioral uncertainty, long-term dependencies, and real-time control measures-a comprehensive methodology hardly explored so far in the literature."
+          },
+          "block_index": 12,
+          "original_page_number": null,
+          "original_order": 12,
+          "source_location": "Section: Novelty and Objectives, Block: 12"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The organization is as follows: The second section gives some necessary mathematical preliminaries, including fuzzy sets, fractional calculus, and the Atangana–Baleanu–Caputo fractional derivative. In the third section, the paper develops the fuzzy fractional model relevant to mathphobia, outlining the methods of incorporating fuzzy operators and parameters that might describe anxiety dynamics. Section four discusses the mathematical analysis, focusing on stability and the existence of solutions of the proposed model. Section five describes the numerical approaches used, with an emphasis on the use of fuzzy fractional Laplace transforms for solving and simulating the system. Numerical results are presented in section six, where an interpretation of these results is made within the context of intervention strategies and how they might best be used to manage math anxiety. Finally, the seventh section concludes the paper, summarizing key findings and suggesting avenues for future research. This structure allows a comprehensive investigation into the topic, starting from theoretical foundations to practical implications."
+          },
+          "block_index": 13,
+          "original_page_number": null,
+          "original_order": 13,
+          "source_location": "Section: Novelty and Objectives, Block: 13"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "2. Model Construction",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The proposed fuzzy fractional Caputo model divides the student population into six compartments: susceptible \\(Ş(t)\\), mathphobic \\(M(t)\\), not interested \\(N(t)\\), intervention-aware \\(₳(t)\\), interested \\(ƚ(t)\\), and recovered \\(Ɍ(t)\\). New students enter the system at rate \\(\\Lambda\\). Susceptible students can develop mathphobia due to academic stress or peer influence at rate \\(\\beta_{1}\\), or become disinterested at rate \\(\\beta_{2}\\). Positive educational exposure enables susceptible students to become interested at rate \\(\\theta\\). Mathphobic students might reduce anxiety and transition to the not interested group at rate \\(\\alpha\\) or enter the intervention-aware category if they join anxiety reduction programs, at rate \\(\\delta_{1}\\). Similarly, not interested students can move into intervention-aware at rate \\(\\delta_{2}\\). Recoveries from mathphobia, disinterest, interest, and intervention groups occur at rates \\(\\gamma_{1},\\gamma_{2},\\gamma_{3},\\) and \\(\\gamma_{4}\\), respectively. The natural dropout rate \\(\\mu\\) affects all compartments. These dynamics are captured using the fuzzy fractional Caputo derivative operator of order \\(\\vartheta\\), denoted here as \\(0FFCD_{t}^{\\vartheta}\\)."
+          },
+          "block_index": 14,
+          "original_page_number": null,
+          "original_order": 14,
+          "source_location": "Section: 2. Model Construction, Block: 14"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The system of fuzzy fractional differential equations is given by:"
+          },
+          "block_index": 15,
+          "original_page_number": null,
+          "original_order": 15,
+          "source_location": "Section: 2. Model Construction, Block: 15"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}\\ Ş = \\widetilde{\\Lambda} - \\widetilde{\\beta_{1}}\\ ŞM - \\widetilde{\\beta_{2}}\\ ŞN - \\left( \\ \\widetilde{Ө} + \\widetilde{\\mu\\ } \\right)Ş\\)"
+          },
+          "block_index": 16,
+          "original_page_number": null,
+          "original_order": 16,
+          "source_location": "Section: 2. Model Construction, Block: 16"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}\\ M\\ = \\widetilde{\\beta_{1}}\\ ŞM - \\left( \\widetilde{\\Upsilon_{1}} + \\ \\widetilde{\\alpha} + \\widetilde{\\delta_{1}} + \\widetilde{\\mu\\ } \\right)M\\)"
+          },
+          "block_index": 17,
+          "original_page_number": null,
+          "original_order": 17,
+          "source_location": "Section: 2. Model Construction, Block: 17"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}N = \\widetilde{\\beta_{2}}\\ ŞN + \\widetilde{\\alpha}M - \\left( \\widetilde{\\Upsilon_{2}} + \\widetilde{\\delta_{2}} + \\widetilde{\\mu\\ } \\right)N\\)"
+          },
+          "block_index": 18,
+          "original_page_number": null,
+          "original_order": 18,
+          "source_location": "Section: 2. Model Construction, Block: 18"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}\\ ₳ = \\widetilde{\\delta_{1}}M + \\widetilde{\\delta_{2}}N - \\left( \\widetilde{\\Upsilon_{3}} + \\widetilde{\\mu\\ } \\right)₳\\)"
+          },
+          "block_index": 19,
+          "original_page_number": null,
+          "original_order": 19,
+          "source_location": "Section: 2. Model Construction, Block: 19"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}ƚ = \\widetilde{Ө}Ş - \\left( \\widetilde{\\Upsilon_{4}} + \\widetilde{\\mu\\ } \\right)ƚ\\)"
+          },
+          "block_index": 20,
+          "original_page_number": null,
+          "original_order": 20,
+          "source_location": "Section: 2. Model Construction, Block: 20"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}\\ Ɍ = \\widetilde{\\Upsilon_{1}}M + \\widetilde{\\Upsilon_{2}}N + \\widetilde{\\Upsilon_{3}}₳ + \\widetilde{\\Upsilon_{4}}ƚ - \\widetilde{\\mu\\ }Ɍ\\)"
+          },
+          "block_index": 21,
+          "original_page_number": null,
+          "original_order": 21,
+          "source_location": "Section: 2. Model Construction, Block: 21"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The initial conditions for the model are defined as:"
+          },
+          "block_index": 22,
+          "original_page_number": null,
+          "original_order": 22,
+          "source_location": "Section: 2. Model Construction, Block: 22"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "Ş(0) = Ş_{0},M(0) = M_{0},N(0) = N_{0},₳(0) = ₳_{0},ƚ(0) = ƚ_{0},Ɍ(0) = Ɍ_{0},",
+            "label": null,
+            "number": null
+          },
+          "block_index": 23,
+          "original_page_number": null,
+          "original_order": 23,
+          "source_location": "Section: 2. Model Construction, Block: 23"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "where these values represent the initial state of students in each compartment at time zero."
+          },
+          "block_index": 24,
+          "original_page_number": null,
+          "original_order": 24,
+          "source_location": "Section: 2. Model Construction, Block: 24"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "Table 1: Parameter Description Table",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "table",
+          "content": {
+            "caption": "Table",
+            "label": null,
+            "colspecs": [
+              {
+                "align": "c",
+                "width": 0.14795918367346939
+              },
+              {
+                "align": "l",
+                "width": 0.842058562555457
+              }
+            ],
+            "header_rows": [
+              [
+                {
+                  "text": "Parameter",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Description",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": true
+                }
+              ]
+            ],
+            "body_rows": [
+              [
+                {
+                  "text": "Λ",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Recruitment rate of new students entering the system",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\beta_{1}\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Rate at which susceptible students develop mathphobia",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\beta_{2}\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Rate at which susceptible students become not interested",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\theta\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Rate of susceptible students gaining interest via positive exposure",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\alpha\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Rate at which mathphobic students become not interested",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\delta_{1}\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Rate at which mathphobic students join intervention programs",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\delta_{1}\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Rate at which not interested students join intervention programs",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\gamma_{1}\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Recovery rate from mathphobia to recovered",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\gamma_{2}\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Recovery rate from not interested to recovered",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\gamma_{3}\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Recovery rate from interested to recovered",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\gamma_{4}\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Recovery rate from intervention-aware to recovered",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\mu\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Natural dropout rate (graduation, transfer, etc.)",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "\\[\\vartheta\\]",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "Order of fuzzy fractional Caputo derivative",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ]
+            ],
+            "has_grid": true,
+            "shading_rows": [
+              [
+                "F2F2F2",
+                "F2F2F2"
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ],
+              [
+                null,
+                null
+              ]
+            ],
+            "row_heights": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "width_frac": 0.9889,
+            "num_rows": 14,
+            "text_width_in": 6.2681,
+            "headers": [
+              "Parameter",
+              "Description"
+            ],
+            "rows": [
+              [
+                "Λ",
+                "Recruitment rate of new students entering the system"
+              ],
+              [
+                "\\[\\beta_{1}\\]",
+                "Rate at which susceptible students develop mathphobia"
+              ],
+              [
+                "\\[\\beta_{2}\\]",
+                "Rate at which susceptible students become not interested"
+              ],
+              [
+                "\\[\\theta\\]",
+                "Rate of susceptible students gaining interest via positive exposure"
+              ],
+              [
+                "\\[\\alpha\\]",
+                "Rate at which mathphobic students become not interested"
+              ],
+              [
+                "\\[\\delta_{1}\\]",
+                "Rate at which mathphobic students join intervention programs"
+              ],
+              [
+                "\\[\\delta_{1}\\]",
+                "Rate at which not interested students join intervention programs"
+              ],
+              [
+                "\\[\\gamma_{1}\\]",
+                "Recovery rate from mathphobia to recovered"
+              ],
+              [
+                "\\[\\gamma_{2}\\]",
+                "Recovery rate from not interested to recovered"
+              ],
+              [
+                "\\[\\gamma_{3}\\]",
+                "Recovery rate from interested to recovered"
+              ],
+              [
+                "\\[\\gamma_{4}\\]",
+                "Recovery rate from intervention-aware to recovered"
+              ],
+              [
+                "\\[\\mu\\]",
+                "Natural dropout rate (graduation, transfer, etc.)"
+              ],
+              [
+                "\\[\\vartheta\\]",
+                "Order of fuzzy fractional Caputo derivative"
+              ]
+            ]
+          },
+          "block_index": 25,
+          "original_page_number": null,
+          "original_order": 25,
+          "source_location": "Section: Table 1: Parameter Description Table, Block: 25"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "3.Mathematical analysis of model",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "3.1. Positivity and boundedness of the crisp model",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The positivity and boundedness of the proposed model are crucial aspects for which theorems, along with proofs, are provided as follows:"
+          },
+          "block_index": 26,
+          "original_page_number": null,
+          "original_order": 26,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 26"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Theorem 1. The solution trajectories of the crisp model (1) are all positive at any time instant in \\({\\ R}_{+}^{6}\\)."
+          },
+          "block_index": 27,
+          "original_page_number": null,
+          "original_order": 27,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 27"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Proof. From the system (4), we get"
+          },
+          "block_index": 28,
+          "original_page_number": null,
+          "original_order": 28,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 28"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\({0FFCD_{t}^{\\vartheta}\\ Ş(t)|}_{Ş = 0} = \\Lambda\\\\), \\({0FFCD_{t}^{\\vartheta}\\ M(t)|}_{ƚ = 0} = 0\\), \\({0FFCD_{t}^{\\vartheta}\\ N(t)|}_{ƚ = 0} = \\widetilde{\\alpha}M,\\\\)"
+          },
+          "block_index": 29,
+          "original_page_number": null,
+          "original_order": 29,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 29"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\({0FFCD_{t}^{\\vartheta}\\ ₳(t)|}_{₳ = 0} = \\widetilde{\\delta_{1}}M + \\widetilde{\\delta_{2}}N\\), \\({0FFCD_{t}^{\\vartheta}\\ ƚ(t)|}_{ƚ = 0} = \\widetilde{Ө}Ş\\), \\({0FFCD_{t}^{\\vartheta}\\ Ɍ(t)|}_{Ɍ = 0} = \\widetilde{\\Upsilon_{1}}M + \\widetilde{\\Upsilon_{2}}N + \\widetilde{\\Upsilon_{3}}₳ + \\widetilde{\\Upsilon_{4}}ƚ\\)."
+          },
+          "block_index": 30,
+          "original_page_number": null,
+          "original_order": 30,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 30"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "All the above-mentioned rates are nonnegative, and so are the solution trajectories in the non-negative of \\({\\ R}_{+}^{6}\\)."
+          },
+          "block_index": 31,
+          "original_page_number": null,
+          "original_order": 31,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 31"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Theorem 2. The solution of crisp \\(ŞMN₳\\ ƚɌ\\) model (1) is uniformly bounded."
+          },
+          "block_index": 32,
+          "original_page_number": null,
+          "original_order": 32,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 32"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Proof."
+          },
+          "block_index": 33,
+          "original_page_number": null,
+          "original_order": 33,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 33"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Let (𝑡) = \\(Ş(t)\\) + \\(M\\) (𝑡) + \\(N\\)(𝑡) +\\(₳\\\\)(𝑡) + \\(ƚ\\)(𝑡) + \\(Ɍ\\)(𝑡), then we obtain"
+          },
+          "block_index": 34,
+          "original_page_number": null,
+          "original_order": 34,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 34"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}N(t) +\\)𝜇𝑁 = \\(\\Lambda\\)"
+          },
+          "block_index": 35,
+          "original_page_number": null,
+          "original_order": 35,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 35"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Integrating both sides of above equation and using initial conditions for infections outbreak we get"
+          },
+          "block_index": 36,
+          "original_page_number": null,
+          "original_order": 36,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 36"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "e^{\\mu t}N = \\frac{\\Lambda e^{\\mu t}}{\\mu}\\ + \\ \\left( N_{0} - \\frac{\\ \\Lambda}{\\mu} \\right)",
+            "label": null,
+            "number": null
+          },
+          "block_index": 37,
+          "original_page_number": null,
+          "original_order": 37,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 37"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "N = \\frac{\\Lambda}{\\mu}\\ + \\ \\left( N_{0} - \\frac{\\ \\Lambda}{\\mu} \\right)e^{- \\mu t}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 38,
+          "original_page_number": null,
+          "original_order": 38,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 38"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "as \\(t \\rightarrow \\infty\\), we obtain"
+          },
+          "block_index": 39,
+          "original_page_number": null,
+          "original_order": 39,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 39"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ş(t)\\ + \\ M\\ (t)\\ + \\ N(t)\\ + ₳\\ (t)\\ + \\ ƚ(t)\\ + \\ Ɍ(t) \\leq \\ \\frac{\\Lambda}{\\mu}\\)"
+          },
+          "block_index": 40,
+          "original_page_number": null,
+          "original_order": 40,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 40"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "N(t) \\leq \\ \\frac{\\Lambda}{\\mu}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 41,
+          "original_page_number": null,
+          "original_order": 41,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 41"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "0 \\leq N(t)\\ \\leq \\ \\frac{\\Lambda}{\\mu}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 42,
+          "original_page_number": null,
+          "original_order": 42,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 42"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Hence, all the solution trajectories of system (1) are bounded in the spanned output space."
+          },
+          "block_index": 43,
+          "original_page_number": null,
+          "original_order": 43,
+          "source_location": "Section: 3.1. Positivity and boundedness of the crisp model, Block: 43"
+        }
+      ],
+      "heading_format": {
+        "level": 2,
+        "bold": false,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "3.2. Existence and Uniqueness Results",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "This section describes the existence and distinctiveness of the solution to the following fuzzy fractional model. Here, this study looked into a set of fuzzy fractional-order differential equations in the sense of Atangan-Baleanu Caputo, which depicts an epidemic model of childhood sickness with initial data uncertainty. For \\(0 < \\vartheta \\leq 1\\),"
+          },
+          "block_index": 44,
+          "original_page_number": null,
+          "original_order": 44,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 44"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\{ 0FFCD_{t}^{\\vartheta}\\ Ş(t) = \\widetilde{\\Lambda} - \\widetilde{\\beta_{1}}\\ ŞM - \\widetilde{\\beta_{2}}\\ Ş\\ N - \\left( \\ \\widetilde{Ө} + \\widetilde{\\mu\\ } \\right)Ş\\ \\ \\ \\ 0FFCD_{t}^{\\vartheta}\\ M(t) = \\widetilde{\\beta_{1}}\\ ŞM - \\left( \\widetilde{\\Upsilon_{1}} + \\ \\widetilde{\\alpha} + \\widetilde{\\delta_{1}} + \\widetilde{\\mu\\ } \\right)M\\ \\ 0FFCD_{t}^{\\vartheta}\\ N(t) = \\widetilde{\\beta_{2}}\\ ŞN + \\widetilde{\\alpha}M - \\left( \\widetilde{\\Upsilon_{2}} + \\widetilde{\\delta_{2}} + \\widetilde{\\mu\\ } \\right)N\\ \\ 0FFCD_{t}^{\\vartheta}\\ ₳(t) = \\widetilde{\\delta_{1}}M + \\widetilde{\\delta_{2}}N - \\left( \\widetilde{\\Upsilon_{3}} + \\widetilde{\\mu\\ } \\right)₳\\ 0FFCD_{t}^{\\vartheta}\\ ƚ(t) = \\widetilde{Ө}Ş - \\left( \\widetilde{\\Upsilon_{4}} + \\widetilde{\\mu\\ } \\right)ƚ\\ \\ 0FFCD_{t}^{\\vartheta}\\ Ɍ(t) = \\widetilde{\\Upsilon_{1}}M + \\widetilde{\\Upsilon_{2}}N + \\widetilde{\\Upsilon_{3}}₳ + \\widetilde{\\Upsilon_{4}}ƚ - \\widetilde{\\mu\\ }Ɍ\\ \\ \\\\) (2)"
+          },
+          "block_index": 45,
+          "original_page_number": null,
+          "original_order": 45,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 45"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Now the right-hand side of (2) becomes,"
+          },
+          "block_index": 46,
+          "original_page_number": null,
+          "original_order": 46,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 46"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\{\\psi_{1}\\left( t,Ş(t) \\right) = \\widetilde{\\Lambda} - \\widetilde{\\beta_{1}}\\ ŞM - \\widetilde{\\beta_{2}}\\ Ş\\ N - \\left( \\ \\widetilde{Ө} + \\widetilde{\\mu\\ } \\right)Ş\\ \\ \\ \\ \\ \\psi_{2}\\left( t,M(t) \\right) = \\widetilde{\\beta_{1}}\\ ŞM - \\left( \\widetilde{\\Upsilon_{1}} + \\ \\widetilde{\\alpha} + \\widetilde{\\delta_{1}} + \\widetilde{\\mu\\ } \\right)M\\ \\ \\psi_{3}\\left( t,N(t) \\right) = \\widetilde{\\beta_{2}}\\ ŞN + \\widetilde{\\alpha}M - \\left( \\widetilde{\\Upsilon_{2}} + \\widetilde{\\delta_{2}} + \\widetilde{\\mu\\ } \\right)N\\ \\psi_{3}\\left( t,₳(t) \\right) = \\widetilde{\\delta_{1}}M + \\widetilde{\\delta_{2}}N - \\left( \\widetilde{\\Upsilon_{3}} + \\widetilde{\\mu\\ } \\right)₳\\ \\psi_{4}\\left( t,ƚ(t) \\right) = \\widetilde{Ө}Ş - \\left( \\widetilde{\\Upsilon_{4}} + \\widetilde{\\mu\\ } \\right)ƚ\\ \\ \\psi_{5}\\left( t,Ɍ(t) \\right) = \\widetilde{\\Upsilon_{1}}M + \\widetilde{\\Upsilon_{2}}N + \\widetilde{\\Upsilon_{3}}₳ + \\widetilde{\\Upsilon_{4}}ƚ - \\widetilde{\\mu\\ }Ɍ\\ \\ \\\\) (3)"
+          },
+          "block_index": 47,
+          "original_page_number": null,
+          "original_order": 47,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 47"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Where the fuzzy functions are \\(\\psi_{1},\\psi_{2},\\psi_{3},\\psi_{4},\\psi_{5}\\), \\(\\psi_{6}\\) then, for \\(ɤ \\in \\lbrack 0,1\\rbrack\\), model (2) gets the form"
+          },
+          "block_index": 48,
+          "original_page_number": null,
+          "original_order": 48,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 48"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\{ 0FFCD_{t}^{\\vartheta}\\ Ş(t) = \\psi_{1}\\left( t,Ş(t) \\right)\\ 0FFCD_{t}^{\\vartheta}\\ M(t) = \\psi_{2}\\left( t,M(t) \\right)\\ 0FFCD_{t}^{\\vartheta}\\ N(t) = \\psi_{3}\\left( t,N(t) \\right)\\ 0FFCD_{t}^{\\vartheta}\\ ₳(t) = \\psi_{4}\\left( t,\\ ₳(t) \\right)\\ 0FFCD_{t}^{\\vartheta}\\ ƚ(t) = \\psi_{4}\\left( t,\\ ƚ(t) \\right)\\ 0FFCD_{t}^{\\vartheta}\\ Ɍ(t) = \\psi_{5}\\left( t,Ɍ(t) \\right)\\\\) (4)"
+          },
+          "block_index": 49,
+          "original_page_number": null,
+          "original_order": 49,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 49"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "With fuzzy initial conditions"
+          },
+          "block_index": 50,
+          "original_page_number": null,
+          "original_order": 50,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 50"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\widetilde{Ş}(0,ɤ) = \\left\\lbrack \\underline{Ş}(0,ɤ),\\underline{Ş}(0,ɤ) \\right\\rbrack\\)"
+          },
+          "block_index": 51,
+          "original_page_number": null,
+          "original_order": 51,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 51"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\widetilde{M}(0,ɤ) = \\left\\lbrack \\underline{M}(0,ɤ),\\underline{M}(0,ɤ) \\right\\rbrack\\)"
+          },
+          "block_index": 52,
+          "original_page_number": null,
+          "original_order": 52,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 52"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\widetilde{N}(0,ɤ) = \\left\\lbrack \\underline{N}(0,ɤ),\\underline{N}(0,ɤ) \\right\\rbrack\\)"
+          },
+          "block_index": 53,
+          "original_page_number": null,
+          "original_order": 53,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 53"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\widetilde{₳}(0,ɤ) = \\left\\lbrack \\underline{₳}(0,ɤ),\\underline{₳}(0,ɤ) \\right\\rbrack\\)"
+          },
+          "block_index": 54,
+          "original_page_number": null,
+          "original_order": 54,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 54"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\widetilde{ƚ}(0,ɤ) = \\left\\lbrack \\underline{ƚ}(0,ɤ),\\underline{ƚ}(0,ɤ) \\right\\rbrack\\)"
+          },
+          "block_index": 55,
+          "original_page_number": null,
+          "original_order": 55,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 55"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\widetilde{Ɍ}\\ (0,ɤ) = \\left\\lbrack \\underline{Ɍ}(0,ɤ),\\underline{Ɍ}(0,ɤ) \\right\\rbrack\\)"
+          },
+          "block_index": 56,
+          "original_page_number": null,
+          "original_order": 56,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 56"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Now, using fuzzy fractional integral \\(I^{\\vartheta}\\) and using initial conditions, one can get"
+          },
+          "block_index": 57,
+          "original_page_number": null,
+          "original_order": 57,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 57"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\{ Ş(t) = \\widetilde{Ş}(0,ɤ) + \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - Ϛ)^{\\vartheta - 1}\\psi_{1}\\left( Ϛ,Ş(Ϛ) \\right)\\ dϚ\\ M(t) = \\widetilde{M}(0,ɤ) + \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - Ϛ)^{\\vartheta - 1}\\psi_{2}\\left( Ϛ,M(Ϛ) \\right)\\ dϚ\\ N(t) = \\widetilde{N}(0,ɤ) + \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - Ϛ)^{\\vartheta - 1}\\psi_{3}\\left( Ϛ,N(Ϛ) \\right)\\ dϚ\\ ₳(t) = \\widetilde{₳}(0,ɤ) + \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - Ϛ)^{\\vartheta - 1}\\psi_{4}\\left( Ϛ,₳(Ϛ) \\right)\\ dϚ\\ ƚ(t) = \\widetilde{ƚ}(0,ɤ) + \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - Ϛ)^{\\vartheta - 1}\\psi_{5}\\left( Ϛ,ƚ(Ϛ) \\right)\\ dϚ\\ Ɍ(t) = \\widetilde{Ɍ}(0,ɤ) + \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - Ϛ)^{\\vartheta - 1}\\psi_{6}\\left( Ϛ,Ɍ(Ϛ) \\right)\\ dϚ\\\\) (5)"
+          },
+          "block_index": 58,
+          "original_page_number": null,
+          "original_order": 58,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 58"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Banach space is defined as follows based on the fuzzy norm"
+          },
+          "block_index": 59,
+          "original_page_number": null,
+          "original_order": 59,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 59"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ꞗ = Ꞗ_{1} \\times Ꞗ_{2} \\times Ꞗ_{3} \\times Ꞗ_{4} \\times Ꞗ_{5} \\times Ꞗ_{6}\\),"
+          },
+          "block_index": 60,
+          "original_page_number": null,
+          "original_order": 60,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 60"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\| Ş(t),\\ M(t),N(t)\\ ,\\ ₳(t)\\ ,\\ \\ ƚ(t)\\ ,\\ Ɍ(t)\\ \\| = \\ \\left| Ş(t) + M(t) + N(t) + ₳(t) + \\ \\ ƚ(t) + Ɍ(t) \\right|\\\\)"
+          },
+          "block_index": 61,
+          "original_page_number": null,
+          "original_order": 61,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 61"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Thus, the equation (5) is written as"
+          },
+          "block_index": 62,
+          "original_page_number": null,
+          "original_order": 62,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 62"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\widetilde{ǥ}(t) = \\widetilde{ǥ}(0,ɤ) + \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - \\xi)^{\\vartheta - 1}\\ \\Theta\\left( \\xi,\\widetilde{ǥ}(\\xi) \\right)\\ d\\xi\\) (6)"
+          },
+          "block_index": 63,
+          "original_page_number": null,
+          "original_order": 63,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 63"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Where"
+          },
+          "block_index": 64,
+          "original_page_number": null,
+          "original_order": 64,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 64"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\widetilde{ǥ}(t) =\\) \\(\\{ Ş(t)\\ M(t)\\ N(t)\\ ₳(t)\\ ƚ(t)\\ Ɍ(t)\\\\)"
+          },
+          "block_index": 65,
+          "original_page_number": null,
+          "original_order": 65,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 65"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\widetilde{ǥ}(0,ɤ) =\\) \\(\\{\\widetilde{Ş}(0,ɤ)\\ \\widetilde{M}(0,ɤ)\\ \\widetilde{N}(0,ɤ)\\ \\widetilde{₳}(0,ɤ)\\ \\widetilde{ƚ}(0,ɤ)\\ \\widetilde{Ɍ}(0,ɤ)\\\\)"
+          },
+          "block_index": 66,
+          "original_page_number": null,
+          "original_order": 66,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 66"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\Theta\\left( t,\\widetilde{ǥ}(t) \\right) = \\{\\psi_{1}\\left( t,Ş(t) \\right)\\ \\psi_{2}\\left( t,M(t) \\right)\\ \\psi_{2}\\left( t,N(t) \\right)\\ \\psi_{3}\\left( t,₳(t) \\right)\\ \\psi_{4}\\left( t,ƚ(t) \\right)\\ \\psi_{5}\\left( t,Ɍ(t) \\right)\\\\)"
+          },
+          "block_index": 67,
+          "original_page_number": null,
+          "original_order": 67,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 67"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In order to obtain the required results, we consider the following assumptions"
+          },
+          "block_index": 68,
+          "original_page_number": null,
+          "original_order": 68,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 68"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "(A1) There exists a constant \\(Ƥ_{ǥ} > 0\\) and \\(Ɋ_{ǥ} > 0\\ \\ni \\\\)"
+          },
+          "block_index": 69,
+          "original_page_number": null,
+          "original_order": 69,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 69"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\left| \\Theta\\left( t,\\widetilde{ǥ}(t) \\right) \\right| \\leq Ƥ_{ǥ}\\left| \\widetilde{ǥ}(t) \\right| + Ɋ_{ǥ}\\\\) (7)"
+          },
+          "block_index": 70,
+          "original_page_number": null,
+          "original_order": 70,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 70"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "(A2) There exists constant \\(К_{ǥ} > 0\\) such that for each \\({\\widetilde{ǥ}}_{1},{\\widetilde{ǥ}}_{2} \\in Ꞗ\\) we have"
+          },
+          "block_index": 71,
+          "original_page_number": null,
+          "original_order": 71,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 71"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\left| \\Theta\\left( t,\\ {\\widetilde{ǥ}}_{1}(t) \\right) - \\Theta\\left( t,\\ {\\widetilde{ǥ}}_{2}(t) \\right) \\right| \\leq К_{ǥ}\\left| \\ {\\widetilde{ǥ}}_{1}(t) - \\ {\\widetilde{ǥ}}_{2}(t) \\right|\\) (8)"
+          },
+          "block_index": 72,
+          "original_page_number": null,
+          "original_order": 72,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 72"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Theorem 4. By using the assumption (A1) the prescribed system has atleast one solution."
+          },
+          "block_index": 73,
+          "original_page_number": null,
+          "original_order": 73,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 73"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Proof."
+          },
+          "block_index": 74,
+          "original_page_number": null,
+          "original_order": 74,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 74"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ơ = \\left\\{ \\widetilde{ǥ}(t) \\in Ꞗ:\\|\\widetilde{ǥ}(t)\\| \\leq ɤ \\right\\} \\subset Ꞗ\\) be a convex and closed fuzzy set is considered."
+          },
+          "block_index": 75,
+          "original_page_number": null,
+          "original_order": 75,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 75"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Taking the mapping \\(Ѵ:Ơ \\rightarrow Ơ\\) such that"
+          },
+          "block_index": 76,
+          "original_page_number": null,
+          "original_order": 76,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 76"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ѵ\\left( \\widetilde{ǥ}(t) \\right) = \\widetilde{ǥ}(0,ɤ) + \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - \\xi)^{\\vartheta - 1}\\ \\Theta\\left( \\xi,\\widetilde{ǥ}(\\xi) \\right)\\ d\\xi\\)"
+          },
+          "block_index": 77,
+          "original_page_number": null,
+          "original_order": 77,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 77"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "For any \\(\\widetilde{ǥ}(t) \\in Ơ\\), one can obtain"
+          },
+          "block_index": 78,
+          "original_page_number": null,
+          "original_order": 78,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 78"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\| Ѵ\\left( \\widetilde{ǥ}(t) \\right)\\| = \\left| \\widetilde{ǥ}(0,ɤ) + \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - \\xi)^{\\vartheta - 1}\\ \\Theta\\left( \\xi,\\widetilde{ǥ}(\\xi) \\right)\\ d\\xi \\right|\\\\)"
+          },
+          "block_index": 79,
+          "original_page_number": null,
+          "original_order": 79,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 79"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\leq \\left| \\widetilde{ǥ}(0,ɤ) \\right| + \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - \\xi)^{\\vartheta - 1}\\left| \\Theta\\left( \\xi,\\widetilde{ǥ}(\\xi) \\right) \\right|\\ d\\xi\\)"
+          },
+          "block_index": 80,
+          "original_page_number": null,
+          "original_order": 80,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 80"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\leq \\left| \\widetilde{ǥ}(0,ɤ) \\right| + \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - \\xi)^{\\vartheta - 1}\\left\\lbrack Ƥ_{ǥ}\\left| \\widetilde{ǥ}(t) \\right| + Ɋ_{ǥ} \\right\\rbrack\\ d\\xi\\)"
+          },
+          "block_index": 81,
+          "original_page_number": null,
+          "original_order": 81,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 81"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\leq \\left| \\widetilde{ǥ}(0,ɤ) \\right| + \\frac{t^{\\vartheta}}{\\lceil\\vartheta}\\left\\lbrack Ƥ_{ǥ}\\left| \\widetilde{ǥ}(t) \\right| + Ɋ_{ǥ} \\right\\rbrack\\)"
+          },
+          "block_index": 82,
+          "original_page_number": null,
+          "original_order": 82,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 82"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Here. Ѵ(0) ⊂ 0 and hence we conclude that Ѵ is bounded."
+          },
+          "block_index": 83,
+          "original_page_number": null,
+          "original_order": 83,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 83"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Next, completely continuous property of the operator Ѵ is proved."
+          },
+          "block_index": 84,
+          "original_page_number": null,
+          "original_order": 84,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 84"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "For any \\(Ѵ_{1},Ѵ_{2} \\in \\lbrack 0,T\\rbrack\\) such that \\(Ѵ_{2} > Ѵ_{1}\\) gives"
+          },
+          "block_index": 85,
+          "original_page_number": null,
+          "original_order": 85,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 85"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\| Ѵ\\left( \\widetilde{ǥ}(t) \\right)Ѵ_{2} - Ѵ\\left( \\widetilde{ǥ}(t) \\right)Ѵ_{1}\\| = \\left| \\frac{1}{\\lceil\\vartheta}\\int_{0}^{Ѵ_{2}}{}\\left( Ѵ_{2} - \\xi \\right)^{\\vartheta - 1}\\Theta\\left( \\xi,\\widetilde{ǥ}(\\xi) \\right)d\\xi\\ - \\frac{1}{\\lceil\\vartheta}\\int_{0}^{Ѵ_{1}}{}\\left( Ѵ_{1} - \\xi \\right)^{\\vartheta - 1}\\Theta\\left( \\xi,\\widetilde{ǥ}(\\xi) \\right)d\\xi \\right|\\)"
+          },
+          "block_index": 86,
+          "original_page_number": null,
+          "original_order": 86,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 86"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Which implies that \\(\\| Ѵ\\left( \\widetilde{ǥ}(t) \\right)Ѵ_{2} - Ѵ\\left( \\widetilde{ǥ}(t) \\right)Ѵ_{1}\\| \\rightarrow 0\\) as \\(Ѵ_{2} \\rightarrow Ѵ_{1}\\). As a result, the operator Ѵ is equi-continuous. The completely continuous nature of the operator Ѵ is shown by the Arzela-Ascoli theorem. According to Schauder’s fixed point theorem, there is atleast one solution to the aforementioned fuzzy fractional model."
+          },
+          "block_index": 87,
+          "original_page_number": null,
+          "original_order": 87,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 87"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Theorem 5. The considered system (1) has a single solution under the assumption (A2) provided that \\(Ф^{\\vartheta}L_{F} < \\lceil(\\vartheta + 1)\\)"
+          },
+          "block_index": 88,
+          "original_page_number": null,
+          "original_order": 88,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 88"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Proof."
+          },
+          "block_index": 89,
+          "original_page_number": null,
+          "original_order": 89,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 89"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Let \\({\\widetilde{ǥ}}_{1}(t),{\\widetilde{ǥ}}_{2}(t) \\in Ꞗ\\) then,"
+          },
+          "block_index": 90,
+          "original_page_number": null,
+          "original_order": 90,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 90"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\|\\left( Ѵ\\left( {\\widetilde{ǥ}}_{n_{1}}(t) \\right) - Ѵ\\left( {\\widetilde{ǥ}}_{n_{2}}(t) \\right) \\right)\\| = \\left| \\frac{1}{\\lceil\\vartheta}\\int_{0}^{t}{}(t - \\xi)^{\\vartheta - 1}\\Theta\\left( \\xi,{\\widetilde{ǥ}}_{n_{1}}(\\xi) \\right)d\\xi - \\frac{1}{\\lceil(\\vartheta)}\\int_{0}^{t}{}(t - \\xi)^{\\vartheta - 1}\\Theta\\left( \\xi,{\\widetilde{ǥ}}_{n_{2}}(\\xi) \\right)d\\xi \\right|\\\\)"
+          },
+          "block_index": 91,
+          "original_page_number": null,
+          "original_order": 91,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 91"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\leq \\frac{Ф^{\\vartheta}}{\\lceil(\\vartheta + 1)}L_{F}\\left| {\\widetilde{ǥ}}_{n_{1}}(t) - {\\widetilde{ǥ}}_{n_{2}}(t) \\right|",
+            "label": null,
+            "number": null
+          },
+          "block_index": 92,
+          "original_page_number": null,
+          "original_order": 92,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 92"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Hence Ѵ is contraction. The Banach contraction principle guarantees that the suggested model (1) has just one solution."
+          },
+          "block_index": 93,
+          "original_page_number": null,
+          "original_order": 93,
+          "source_location": "Section: 3.2. Existence and Uniqueness Results, Block: 93"
+        }
+      ],
+      "heading_format": {
+        "level": 2,
+        "bold": false,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "4. Numerical Analysis",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The primary goal of this section is to use the Laplace transform (LT) [Allahviranloo et al., 2010] to determine how to solve the fuzzy fractional model under consideration. In order to obtain the fuzzy LT model, we have:"
+          },
+          "block_index": 94,
+          "original_page_number": null,
+          "original_order": 94,
+          "source_location": "Section: 4. Numerical Analysis, Block: 94"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ Ş(t) \\right\\rbrack = Ỻ\\left\\lbrack \\psi_{1}\\left( t,Ş(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 95,
+          "original_page_number": null,
+          "original_order": 95,
+          "source_location": "Section: 4. Numerical Analysis, Block: 95"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ M(t) \\right\\rbrack = Ỻ\\left\\lbrack \\psi_{2}\\left( t,M(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 96,
+          "original_page_number": null,
+          "original_order": 96,
+          "source_location": "Section: 4. Numerical Analysis, Block: 96"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ N(t) \\right\\rbrack = Ỻ\\left\\lbrack \\psi_{3}\\left( t,N(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 97,
+          "original_page_number": null,
+          "original_order": 97,
+          "source_location": "Section: 4. Numerical Analysis, Block: 97"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ ₳(t) \\right\\rbrack = Ỻ\\left\\lbrack \\psi_{4}\\left( t,₳(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 98,
+          "original_page_number": null,
+          "original_order": 98,
+          "source_location": "Section: 4. Numerical Analysis, Block: 98"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ ƚ(t) \\right\\rbrack = Ỻ\\left\\lbrack \\psi_{5}\\left( t,ƚ(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 99,
+          "original_page_number": null,
+          "original_order": 99,
+          "source_location": "Section: 4. Numerical Analysis, Block: 99"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ Ɍ(t) \\right\\rbrack = Ỻ\\left\\lbrack \\psi_{6}\\left( t,Ɍ(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 100,
+          "original_page_number": null,
+          "original_order": 100,
+          "source_location": "Section: 4. Numerical Analysis, Block: 100"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Under the zero initial condition, one can obtain:"
+          },
+          "block_index": 101,
+          "original_page_number": null,
+          "original_order": 101,
+          "source_location": "Section: 4. Numerical Analysis, Block: 101"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(ȿ^{\\vartheta}Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ Ş(t) \\right\\rbrack = ȿ^{\\vartheta - 1}\\widetilde{Ş}(0,r) + Ỻ\\left\\lbrack \\psi_{1}\\left( t,Ş(t) \\right) \\right\\rbrack,\\)"
+          },
+          "block_index": 102,
+          "original_page_number": null,
+          "original_order": 102,
+          "source_location": "Section: 4. Numerical Analysis, Block: 102"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(ȿ^{\\vartheta}Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ M(t) \\right\\rbrack = ȿ^{\\vartheta - 1}\\widetilde{M}(0,r) + Ỻ\\left\\lbrack \\psi_{2}\\left( t,M(t) \\right) \\right\\rbrack,\\)"
+          },
+          "block_index": 103,
+          "original_page_number": null,
+          "original_order": 103,
+          "source_location": "Section: 4. Numerical Analysis, Block: 103"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(ȿ^{\\vartheta}Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ N(t) \\right\\rbrack = ȿ^{\\vartheta - 1}\\widetilde{N}(0,r) + Ỻ\\left\\lbrack \\psi_{3}\\left( t,N(t) \\right) \\right\\rbrack,\\\\)"
+          },
+          "block_index": 104,
+          "original_page_number": null,
+          "original_order": 104,
+          "source_location": "Section: 4. Numerical Analysis, Block: 104"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(ȿ^{\\vartheta}Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ ₳(t) \\right\\rbrack = ȿ^{\\vartheta - 1}\\widetilde{₳}(0,r) + Ỻ\\left\\lbrack \\psi_{4}\\left( t,₳(t) \\right) \\right\\rbrack,\\)"
+          },
+          "block_index": 105,
+          "original_page_number": null,
+          "original_order": 105,
+          "source_location": "Section: 4. Numerical Analysis, Block: 105"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(ȿ^{\\vartheta}Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ ƚ(t) \\right\\rbrack = ȿ^{\\vartheta - 1}\\widetilde{ƚ}(0,r) + Ỻ\\left\\lbrack \\psi_{5}\\left( t,ƚ(t) \\right) \\right\\rbrack,\\)"
+          },
+          "block_index": 106,
+          "original_page_number": null,
+          "original_order": 106,
+          "source_location": "Section: 4. Numerical Analysis, Block: 106"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(ȿ^{\\vartheta}Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ Ɍ(t) \\right\\rbrack = ȿ^{\\vartheta - 1}\\widetilde{Ɍ}(0,r) + Ỻ\\left\\lbrack \\psi_{6}\\left( t,Ɍ(t) \\right) \\right\\rbrack\\)."
+          },
+          "block_index": 107,
+          "original_page_number": null,
+          "original_order": 107,
+          "source_location": "Section: 4. Numerical Analysis, Block: 107"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "which implies that:"
+          },
+          "block_index": 108,
+          "original_page_number": null,
+          "original_order": 108,
+          "source_location": "Section: 4. Numerical Analysis, Block: 108"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ Ş(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{Ş}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{1}\\left( t,Ş(t) \\right) \\right\\rbrack,\\)"
+          },
+          "block_index": 109,
+          "original_page_number": null,
+          "original_order": 109,
+          "source_location": "Section: 4. Numerical Analysis, Block: 109"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}M(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{M}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{2}\\left( t,M(t) \\right) \\right\\rbrack,\\)"
+          },
+          "block_index": 110,
+          "original_page_number": null,
+          "original_order": 110,
+          "source_location": "Section: 4. Numerical Analysis, Block: 110"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ N(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{N}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{3}\\left( t,N(t) \\right) \\right\\rbrack,\\)"
+          },
+          "block_index": 111,
+          "original_page_number": null,
+          "original_order": 111,
+          "source_location": "Section: 4. Numerical Analysis, Block: 111"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ ₳(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{₳}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{4}\\left( t,₳(t) \\right) \\right\\rbrack,\\)"
+          },
+          "block_index": 112,
+          "original_page_number": null,
+          "original_order": 112,
+          "source_location": "Section: 4. Numerical Analysis, Block: 112"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ ƚ(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{ƚ}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{5}\\left( t,ƚ(t) \\right) \\right\\rbrack,\\)"
+          },
+          "block_index": 113,
+          "original_page_number": null,
+          "original_order": 113,
+          "source_location": "Section: 4. Numerical Analysis, Block: 113"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack 0FFCD_{t}^{\\vartheta}\\ Ɍ(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{Ɍ}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{6}\\left( t,Ɍ(t) \\right) \\right\\rbrack.\\)"
+          },
+          "block_index": 114,
+          "original_page_number": null,
+          "original_order": 114,
+          "source_location": "Section: 4. Numerical Analysis, Block: 114"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Based on the infinite series solution, one can obtain:"
+          },
+          "block_index": 115,
+          "original_page_number": null,
+          "original_order": 115,
+          "source_location": "Section: 4. Numerical Analysis, Block: 115"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ş(t) = \\sum_{n = 0}^{\\infty}{}Ş_{n}(t)\\)"
+          },
+          "block_index": 116,
+          "original_page_number": null,
+          "original_order": 116,
+          "source_location": "Section: 4. Numerical Analysis, Block: 116"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(M(t) = \\sum_{n = 0}^{\\infty}{}M_{n}(t)\\)"
+          },
+          "block_index": 117,
+          "original_page_number": null,
+          "original_order": 117,
+          "source_location": "Section: 4. Numerical Analysis, Block: 117"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(N(t) = \\sum_{n = 0}^{\\infty}{}N_{n}(t)\\)"
+          },
+          "block_index": 118,
+          "original_page_number": null,
+          "original_order": 118,
+          "source_location": "Section: 4. Numerical Analysis, Block: 118"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(₳(t) = \\sum_{n = 0}^{\\infty}{}₳_{n}(t)\\)"
+          },
+          "block_index": 119,
+          "original_page_number": null,
+          "original_order": 119,
+          "source_location": "Section: 4. Numerical Analysis, Block: 119"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(ƚ(t) = \\sum_{n = 0}^{\\infty}{}ƚ_{n}(t)\\)"
+          },
+          "block_index": 120,
+          "original_page_number": null,
+          "original_order": 120,
+          "source_location": "Section: 4. Numerical Analysis, Block: 120"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ɍ(t) = \\sum_{n = 0}^{\\infty}{}Ɍ_{n}(t)\\)"
+          },
+          "block_index": 121,
+          "original_page_number": null,
+          "original_order": 121,
+          "source_location": "Section: 4. Numerical Analysis, Block: 121"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "From (2), the nonlinear term can be rewritten as follows:"
+          },
+          "block_index": 122,
+          "original_page_number": null,
+          "original_order": 122,
+          "source_location": "Section: 4. Numerical Analysis, Block: 122"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ş(t)M(t) = \\sum_{n = 0}^{\\infty}{}B_{1,n}\\) and \\(Ş(t)N(t) = \\sum_{n = 0}^{\\infty}{}B_{2,n}\\)"
+          },
+          "block_index": 123,
+          "original_page_number": null,
+          "original_order": 123,
+          "source_location": "Section: 4. Numerical Analysis, Block: 123"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Here, \\(B_{1,n}\\) and \\(B_{2,n}\\) represents the Adomian polynomial for the nonlinear term. The above equations can be rewritten as:"
+          },
+          "block_index": 124,
+          "original_page_number": null,
+          "original_order": 124,
+          "source_location": "Section: 4. Numerical Analysis, Block: 124"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack \\sum_{n = 0}^{\\infty}{}Ş_{n}(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{Ş}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{1}\\left( t,\\sum_{n = 0}^{\\infty}{}Ş_{n}(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 125,
+          "original_page_number": null,
+          "original_order": 125,
+          "source_location": "Section: 4. Numerical Analysis, Block: 125"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack \\sum_{n = 0}^{\\infty}{}M_{n}(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{M}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{2}\\left( t,\\sum_{n = 0}^{\\infty}{}M_{n}(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 126,
+          "original_page_number": null,
+          "original_order": 126,
+          "source_location": "Section: 4. Numerical Analysis, Block: 126"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack \\sum_{n = 0}^{\\infty}{}N_{n}(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{N}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{3}\\left( t,\\sum_{n = 0}^{\\infty}{}N_{n}(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 127,
+          "original_page_number": null,
+          "original_order": 127,
+          "source_location": "Section: 4. Numerical Analysis, Block: 127"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack \\sum_{n = 0}^{\\infty}{}₳_{n}(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{₳}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{4}\\left( t,\\sum_{n = 0}^{\\infty}{}₳_{n}(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 128,
+          "original_page_number": null,
+          "original_order": 128,
+          "source_location": "Section: 4. Numerical Analysis, Block: 128"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack \\sum_{n = 0}^{\\infty}{}ƚ_{n}(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{ƚ}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{5}\\left( t,\\sum_{n = 0}^{\\infty}{}ƚ_{n}(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 129,
+          "original_page_number": null,
+          "original_order": 129,
+          "source_location": "Section: 4. Numerical Analysis, Block: 129"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ỻ\\left\\lbrack \\sum_{n = 0}^{\\infty}{}Ɍ_{n}(t) \\right\\rbrack = \\frac{1}{ȿ}\\widetilde{Ҏ}(0,r) + \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{6}\\left( t,\\sum_{n = 0}^{\\infty}{}Ɍ_{n}(t) \\right) \\right\\rbrack\\)"
+          },
+          "block_index": 130,
+          "original_page_number": null,
+          "original_order": 130,
+          "source_location": "Section: 4. Numerical Analysis, Block: 130"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Taking the inverse LT, we have:"
+          },
+          "block_index": 131,
+          "original_page_number": null,
+          "original_order": 131,
+          "source_location": "Section: 4. Numerical Analysis, Block: 131"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\sum_{n = 0}^{\\infty}{}Ş_{n}(t) = \\widetilde{Ş}(0,r) + Ỻ^{- 1}\\left\\lbrack \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{1}\\left( t,\\sum_{n = 0}^{\\infty}{}Ş_{n}(t) \\right) \\right\\rbrack \\right\\rbrack\\)"
+          },
+          "block_index": 132,
+          "original_page_number": null,
+          "original_order": 132,
+          "source_location": "Section: 4. Numerical Analysis, Block: 132"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\sum_{n = 0}^{\\infty}{}M_{n}(t) = \\widetilde{M}(0,r) + Ỻ^{- 1}\\left\\lbrack \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{2}\\left( t,\\sum_{n = 0}^{\\infty}{}M_{n}(t) \\right) \\right\\rbrack \\right\\rbrack\\)"
+          },
+          "block_index": 133,
+          "original_page_number": null,
+          "original_order": 133,
+          "source_location": "Section: 4. Numerical Analysis, Block: 133"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\sum_{n = 0}^{\\infty}{}N_{n}(t) = \\widetilde{N}(0,r) + Ỻ^{- 1}\\left\\lbrack \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{3}\\left( t,\\sum_{n = 0}^{\\infty}{}N_{n}(t) \\right) \\right\\rbrack \\right\\rbrack\\)"
+          },
+          "block_index": 134,
+          "original_page_number": null,
+          "original_order": 134,
+          "source_location": "Section: 4. Numerical Analysis, Block: 134"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\sum_{n = 0}^{\\infty}{}₳_{n}(t) = \\widetilde{₳}(0,r) + Ỻ^{- 1}\\left\\lbrack \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{4}\\left( t,\\sum_{n = 0}^{\\infty}{}₳_{n}(t) \\right) \\right\\rbrack \\right\\rbrack\\)"
+          },
+          "block_index": 135,
+          "original_page_number": null,
+          "original_order": 135,
+          "source_location": "Section: 4. Numerical Analysis, Block: 135"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\sum_{n = 0}^{\\infty}{}ƚ_{n}(t) = \\widetilde{ƚ}(0,r) + Ỻ^{- 1}\\left\\lbrack \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{5}\\left( t,\\sum_{n = 0}^{\\infty}{}ƚ_{n}(t) \\right) \\right\\rbrack \\right\\rbrack,\\)"
+          },
+          "block_index": 136,
+          "original_page_number": null,
+          "original_order": 136,
+          "source_location": "Section: 4. Numerical Analysis, Block: 136"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\sum_{n = 0}^{\\infty}{}Ɍ_{n}(t) = \\widetilde{Ɍ}(0,r) + Ỻ^{- 1}\\left\\lbrack \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\psi_{6}\\left( t,\\sum_{n = 0}^{\\infty}{}Ɍ_{n}(t) \\right) \\right\\rbrack \\right\\rbrack,\\)"
+          },
+          "block_index": 137,
+          "original_page_number": null,
+          "original_order": 137,
+          "source_location": "Section: 4. Numerical Analysis, Block: 137"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The terms in the parametric form are compared, and we have:"
+          },
+          "block_index": 138,
+          "original_page_number": null,
+          "original_order": 138,
+          "source_location": "Section: 4. Numerical Analysis, Block: 138"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\({\\underline{Ş}}_{0}(t) = \\underline{Ş}(0,r),{\\underline{Ş}}_{0}(t) = \\underline{Ş}(0,r),\\)"
+          },
+          "block_index": 139,
+          "original_page_number": null,
+          "original_order": 139,
+          "source_location": "Section: 4. Numerical Analysis, Block: 139"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\({\\underline{M}}_{0}(t) = \\underline{M}(0,r),{\\underline{M}}_{0}(t) = \\underline{M}(0,r),\\)"
+          },
+          "block_index": 140,
+          "original_page_number": null,
+          "original_order": 140,
+          "source_location": "Section: 4. Numerical Analysis, Block: 140"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\({\\underline{N}}_{0}(t) = \\underline{N}(0,r),{\\underline{N}}_{0}(t) = \\underline{N}(0,r),\\)"
+          },
+          "block_index": 141,
+          "original_page_number": null,
+          "original_order": 141,
+          "source_location": "Section: 4. Numerical Analysis, Block: 141"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\({\\underline{₳}}_{0}(t) = \\underline{₳}(0,r),{\\underline{₳}}_{0}(t) = \\underline{₳}(0,r),\\)"
+          },
+          "block_index": 142,
+          "original_page_number": null,
+          "original_order": 142,
+          "source_location": "Section: 4. Numerical Analysis, Block: 142"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\({\\underline{ƚ}}_{0}(t) = \\underline{ƚ}(0,r),{\\underline{ƚ}}_{0}(t) = \\underline{ƚ}(0,r),\\)"
+          },
+          "block_index": 143,
+          "original_page_number": null,
+          "original_order": 143,
+          "source_location": "Section: 4. Numerical Analysis, Block: 143"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\({\\underline{Ɍ}}_{0}(t) = \\underline{Ɍ}(0,r),{\\underline{Ɍ}}_{0}(t) = \\underline{Ɍ}(0,r),\\)"
+          },
+          "block_index": 144,
+          "original_page_number": null,
+          "original_order": 144,
+          "source_location": "Section: 4. Numerical Analysis, Block: 144"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "and"
+          },
+          "block_index": 145,
+          "original_page_number": null,
+          "original_order": 145,
+          "source_location": "Section: 4. Numerical Analysis, Block: 145"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\({\\underline{Ş}}_{1}(t) = Ỻ^{- 1}\\left\\lbrack \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\widetilde{\\Lambda} - \\widetilde{\\beta_{1}}\\ {\\underline{Ş}}_{0}{\\underline{M}}_{0} - \\widetilde{\\beta_{2}}{\\underline{Ş}}_{0}{\\underline{N}}_{0} - \\left( \\widetilde{Ө} + \\widetilde{\\mu} \\right){\\underline{Ş}}_{0} \\right\\rbrack \\right\\rbrack,\\)"
+          },
+          "block_index": 146,
+          "original_page_number": null,
+          "original_order": 146,
+          "source_location": "Section: 4. Numerical Analysis, Block: 146"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\({\\underline{Ş}}_{1}(t) = Ỻ^{- 1}\\left\\lbrack \\frac{1}{ȿ^{\\vartheta}}Ỻ\\left\\lbrack \\widetilde{\\Lambda} - \\widetilde{\\beta_{1}}\\ {\\underline{Ş}}_{0}{\\underline{M}}_{0} - \\widetilde{\\beta_{2}}{\\underline{Ş}}_{0}{\\underline{N}}_{0} - \\left( \\widetilde{Ө} + \\widetilde{\\mu} \\right){\\underline{Ş}}_{0} \\right\\rbrack \\right\\rbrack\\),"
+          },
+          "block_index": 147,
+          "original_page_number": null,
+          "original_order": 147,
+          "source_location": "Section: 4. Numerical Analysis, Block: 147"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In light of the aforementioned ideas, it is easy to get the remaining terms. Thus, the generic series solutions are written as follows."
+          },
+          "block_index": 148,
+          "original_page_number": null,
+          "original_order": 148,
+          "source_location": "Section: 4. Numerical Analysis, Block: 148"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\underline{Ş} = {\\underline{Ş}}_{0}(t) + {\\underline{Ş}}_{1}(t) + {\\underline{Ş}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\ \\underline{Ş} = {\\underline{Ş}}_{0}(t) + {\\underline{Ş}}_{1}(t) + {\\underline{Ş}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\)"
+          },
+          "block_index": 149,
+          "original_page_number": null,
+          "original_order": 149,
+          "source_location": "Section: 4. Numerical Analysis, Block: 149"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\underline{M} = {\\underline{M}}_{0}(t) + {\\underline{M}}_{1}(t) + {\\underline{M}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\ \\underline{M} = {\\underline{M}}_{0}(t) + {\\underline{M}}_{1}(t) + {\\underline{M}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\)"
+          },
+          "block_index": 150,
+          "original_page_number": null,
+          "original_order": 150,
+          "source_location": "Section: 4. Numerical Analysis, Block: 150"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\underline{N} = {\\underline{N}}_{0}(t) + {\\underline{N}}_{1}(t) + {\\underline{N}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\ \\underline{N} = {\\underline{N}}_{0}(t) + {\\underline{N}}_{1}(t) + {\\underline{N}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\)"
+          },
+          "block_index": 151,
+          "original_page_number": null,
+          "original_order": 151,
+          "source_location": "Section: 4. Numerical Analysis, Block: 151"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\underline{₳} = {\\underline{₳}}_{0}(t) + {\\underline{₳}}_{1}(t) + {\\underline{₳}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\ \\underline{₳} = {\\underline{₳}}_{0}(t) + {\\underline{₳}}_{1}(t) + {\\underline{₳}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\)"
+          },
+          "block_index": 152,
+          "original_page_number": null,
+          "original_order": 152,
+          "source_location": "Section: 4. Numerical Analysis, Block: 152"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\underline{ƚ} = {\\underline{ƚ}}_{0}(t) + {\\underline{ƚ}}_{1}(t) + {\\underline{ƚ}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\ \\underline{ƚ} = {\\underline{ƚ}}_{0}(t) + {\\underline{ƚ}}_{1}(t) + {\\underline{ƚ}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\)"
+          },
+          "block_index": 153,
+          "original_page_number": null,
+          "original_order": 153,
+          "source_location": "Section: 4. Numerical Analysis, Block: 153"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\underline{Ɍ} = {\\underline{Ɍ}}_{0}(t) + {\\underline{Ɍ}}_{1}(t) + {\\underline{Ɍ}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\ \\underline{Ɍ} = {\\underline{Ɍ}}_{0}(t) + {\\underline{Ɍ}}_{1}(t) + {\\underline{Ɍ}}_{2}(t) + \\ .\\ \\ .\\ \\ .\\ \\ ,\\)"
+          },
+          "block_index": 154,
+          "original_page_number": null,
+          "original_order": 154,
+          "source_location": "Section: 4. Numerical Analysis, Block: 154"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "5.Optimal control system",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The proposed fuzzy fractional Caputo mathphobia model is extended by incorporating optimal control functions to capture intervention strategies aimed at reducing anxiety and increasing recovery. We introduce three control variables:"
+          },
+          "block_index": 155,
+          "original_page_number": null,
+          "original_order": 155,
+          "source_location": "Section: 5.Optimal control system, Block: 155"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "\\(u_{1}(t)\\): psychological counseling intensity targeting mathphobic students to accelerate recovery and transition to intervention-aware or recovered states.",
+              "\\(u_{2}(t)\\): educational engagement programs aimed at increasing interest among susceptible students.",
+              "\\(u_{3}(t)\\): preventive awareness programs to reduce the progression from susceptible to mathphobic or not interested groups."
+            ],
+            "ordered": false
+          },
+          "block_index": 156,
+          "original_page_number": null,
+          "original_order": 156,
+          "source_location": "Section: 5.Optimal control system, Block: 156"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Including these controls, the fuzzy fractional differential equations become:"
+          },
+          "block_index": 157,
+          "original_page_number": null,
+          "original_order": 157,
+          "source_location": "Section: 5.Optimal control system, Block: 157"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}\\ Ş = \\widetilde{\\Lambda} - \\widetilde{\\beta_{1}}\\ ŞM - \\widetilde{\\beta_{2}}\\ ŞN - \\left( \\ \\widetilde{Ө} + \\widetilde{\\mu\\ } \\right)Ş - u_{2}(t)Ş\\)"
+          },
+          "block_index": 158,
+          "original_page_number": null,
+          "original_order": 158,
+          "source_location": "Section: 5.Optimal control system, Block: 158"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}\\ M\\ = \\widetilde{\\beta_{1}}\\ ŞM - \\left( \\widetilde{\\Upsilon_{1}} + \\ \\widetilde{\\alpha} + \\widetilde{\\delta_{1}} + \\widetilde{\\mu\\ } \\right)M - u_{1}(t)M\\)"
+          },
+          "block_index": 159,
+          "original_page_number": null,
+          "original_order": 159,
+          "source_location": "Section: 5.Optimal control system, Block: 159"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}N = \\widetilde{\\beta_{2}}\\ ŞN + \\widetilde{\\alpha}M - \\left( \\widetilde{\\Upsilon_{2}} + \\widetilde{\\delta_{2}} + \\widetilde{\\mu\\ } \\right)N - u_{1}(t)N\\)"
+          },
+          "block_index": 160,
+          "original_page_number": null,
+          "original_order": 160,
+          "source_location": "Section: 5.Optimal control system, Block: 160"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}\\ ₳ = \\widetilde{\\delta_{1}}M + \\widetilde{\\delta_{2}}N - \\left( \\widetilde{\\Upsilon_{3}} + \\widetilde{\\mu\\ } \\right)₳ + u_{1}(t)(M + N) - u_{3}(t)₳\\)"
+          },
+          "block_index": 161,
+          "original_page_number": null,
+          "original_order": 161,
+          "source_location": "Section: 5.Optimal control system, Block: 161"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}ƚ = \\widetilde{Ө}Ş - \\left( \\widetilde{\\Upsilon_{4}} + \\widetilde{\\mu\\ } \\right)ƚ + u_{2}(t)Ş\\)"
+          },
+          "block_index": 162,
+          "original_page_number": null,
+          "original_order": 162,
+          "source_location": "Section: 5.Optimal control system, Block: 162"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(0FFCD_{t}^{\\vartheta}\\ Ɍ = \\widetilde{\\Upsilon_{1}}M + \\widetilde{\\Upsilon_{2}}N + \\widetilde{\\Upsilon_{3}}₳ + \\widetilde{\\Upsilon_{4}}ƚ - \\widetilde{\\mu\\ }Ɍ + u_{3}(t)₳\\)"
+          },
+          "block_index": 163,
+          "original_page_number": null,
+          "original_order": 163,
+          "source_location": "Section: 5.Optimal control system, Block: 163"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Here, \\(u_{1}(t)\\) increases recovery and intervention effectiveness for \\(M(t)\\) and \\(N(t)\\), \\(u_{2}(t)\\) enhances the transition of susceptible students to interested, and \\(u_{3}(t)\\) supports the sustained recovery of intervention-aware students. The controls \\(u_{1}(t),u_{2}(t),u_{3}(t)\\) are time-dependent and bounded within admissible ranges, optimized to minimize a cost functional reflecting anxiety prevalence, intervention costs, and recovery goals."
+          },
+          "block_index": 164,
+          "original_page_number": null,
+          "original_order": 164,
+          "source_location": "Section: 5.Optimal control system, Block: 164"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The goal is to minimize both the burden of mathphobia and the cost of interventions over a finite time horizon \\(\\left\\lbrack 0,\\ t_{f} \\right\\rbrack.\\) The objective functional is defined as:"
+          },
+          "block_index": 165,
+          "original_page_number": null,
+          "original_order": 165,
+          "source_location": "Section: 5.Optimal control system, Block: 165"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(J\\left( u_{1},u_{2},u_{3} \\right) = \\int_{0}^{t_{f}}{}\\left( A_{1}M(t) + A_{2}\\ N(t) + A_{3}\\ ₳(t) + \\frac{C_{1}}{2}u_{1}^{2} + \\frac{C_{2}}{2}u_{2}^{2} + \\frac{C_{3}}{2}u_{3}^{2} \\right)dt\\)"
+          },
+          "block_index": 166,
+          "original_page_number": null,
+          "original_order": 166,
+          "source_location": "Section: 5.Optimal control system, Block: 166"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "where \\(A_{1}\\), \\(A_{2}\\) and \\(A_{3}\\) are the weight coefficients reflecting the relative importance of reducing each risk group. The constants \\(C_{1}\\), \\(C_{2}\\), \\(C_{3}\\) are the cost coefficients for the control variables \\(u_{1}\\), \\(u_{2}\\), \\(u_{3}\\)."
+          },
+          "block_index": 167,
+          "original_page_number": null,
+          "original_order": 167,
+          "source_location": "Section: 5.Optimal control system, Block: 167"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The set of optimal control is"
+          },
+          "block_index": 168,
+          "original_page_number": null,
+          "original_order": 168,
+          "source_location": "Section: 5.Optimal control system, Block: 168"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(U = \\{\\left( u_{1},u_{2},u_{3} \\right) \\mid u_{i}(t)\\ is\\ Lebesgue\\ measurable\\ on\\ \\lbrack 0,1\\rbrack,0 \\leq u_{i}(t) \\leq 1,i = 1,2,3\\}.\\)"
+          },
+          "block_index": 169,
+          "original_page_number": null,
+          "original_order": 169,
+          "source_location": "Section: 5.Optimal control system, Block: 169"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "find an optimal control \\((u_{1}^{*},u_{2}^{*},u_{3}^{*}) \\in U\\) such that"
+          },
+          "block_index": 170,
+          "original_page_number": null,
+          "original_order": 170,
+          "source_location": "Section: 5.Optimal control system, Block: 170"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(J\\left( u_{1}^{*},u_{2}^{*},u_{3}^{*} \\right) = J\\left( u_{1},u_{2},u_{3} \\right)\\ ,\\)"
+          },
+          "block_index": 171,
+          "original_page_number": null,
+          "original_order": 171,
+          "source_location": "Section: 5.Optimal control system, Block: 171"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Subject to the fractional state system above and initial conditions:"
+          },
+          "block_index": 172,
+          "original_page_number": null,
+          "original_order": 172,
+          "source_location": "Section: 5.Optimal control system, Block: 172"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(Ş(0) = Ş_{0}\\), \\(M(0) = M_{0}\\), \\(N(0) = N_{0}\\), \\(₳(0) = ₳_{0},\\) \\(ƚ(0) = ƚ_{0}\\), \\(Ɍ(0) = Ɍ_{0}\\)."
+          },
+          "block_index": 173,
+          "original_page_number": null,
+          "original_order": 173,
+          "source_location": "Section: 5.Optimal control system, Block: 173"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "According to the Pontryagin’s maximum principle, define the Hamiltonian function as follows:"
+          },
+          "block_index": 174,
+          "original_page_number": null,
+          "original_order": 174,
+          "source_location": "Section: 5.Optimal control system, Block: 174"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(H = A_{1}M(t) + A_{2}\\ N(t) + A_{3}\\ ₳(t) + \\frac{C_{1}}{2}u_{1}^{2} + \\frac{C_{2}}{2}u_{2}^{2} + \\frac{C_{3}}{2}u_{3}^{2}\\) \\(+ \\psi_{1}\\left\\lbrack \\widetilde{\\Lambda} - \\widetilde{\\beta_{1}}\\ ŞM - \\widetilde{\\beta_{2}}\\ ŞN - \\left( \\ \\widetilde{Ө} + \\widetilde{\\mu\\ } \\right)Ş - u_{2}(t)Ş\\ \\ \\right\\rbrack\\) \\(+ \\psi_{2}\\left\\lbrack \\widetilde{\\beta_{1}}\\ ŞM - \\left( \\widetilde{\\Upsilon_{1}} + \\ \\widetilde{\\alpha} + \\widetilde{\\delta_{1}} + \\widetilde{\\mu\\ } \\right)M - u_{1}(t)M\\ \\right\\rbrack + \\psi_{3}\\left\\lbrack \\widetilde{\\beta_{2}}\\ ŞN + \\widetilde{\\alpha}M - \\left( \\widetilde{\\Upsilon_{2}} + \\widetilde{\\delta_{2}} + \\widetilde{\\mu\\ } \\right)N - u_{1}(t)N\\ \\right\\rbrack\\) \\(+ \\psi_{4}\\left\\lbrack \\widetilde{\\delta_{1}}M + \\widetilde{\\delta_{2}}N - \\left( \\widetilde{\\Upsilon_{3}} + \\widetilde{\\mu\\ } \\right)₳ + u_{1}(t)(M + N) - u_{3}(t)₳ \\right\\rbrack\\) \\(+ \\psi_{5}\\left\\lbrack \\widetilde{Ө}Ş - \\left( \\widetilde{\\Upsilon_{4}} + \\widetilde{\\mu\\ } \\right)ƚ + u_{2}(t)Ş\\ \\right\\rbrack\\) \\(+ \\psi_{6}\\left\\lbrack \\widetilde{\\Upsilon_{1}}M + \\widetilde{\\Upsilon_{2}}N + \\widetilde{\\Upsilon_{3}}₳ + \\widetilde{\\Upsilon_{4}}ƚ - \\widetilde{\\mu\\ }Ɍ + u_{3}(t)₳ \\right\\rbrack\\) (9)"
+          },
+          "block_index": 175,
+          "original_page_number": null,
+          "original_order": 175,
+          "source_location": "Section: 5.Optimal control system, Block: 175"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Where \\(\\psi_{i},\\ (i = 1,2,3,4,5,6)\\) are the adjoint variables."
+          },
+          "block_index": 176,
+          "original_page_number": null,
+          "original_order": 176,
+          "source_location": "Section: 5.Optimal control system, Block: 176"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Given optimal control pairs \\(\\left( u_{1}^{*},u_{2}^{*},u_{3}^{*} \\right)\\) and solutions \\(Ȿ(t),M(t),N(t),₳(t),\\ ƚ(t),Ɍ(t)\\) of the state system (9), there exist adjoint variables \\(\\psi_{i}\\), satisfying the following adjoint system"
+          },
+          "block_index": 177,
+          "original_page_number": null,
+          "original_order": 177,
+          "source_location": "Section: 5.Optimal control system, Block: 177"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\psi_{1}' = - \\frac{\\partial H}{\\partial Ȿ}(t) = \\psi_{1}\\left\\lbrack \\widetilde{\\beta_{1}}\\ M + \\widetilde{\\beta_{2}}N + \\left( \\ \\widetilde{Ө} + \\widetilde{\\mu\\ } \\right) + u_{2}(t) \\right\\rbrack - \\psi_{2}\\widetilde{\\beta_{1}}\\ M\\)"
+          },
+          "block_index": 178,
+          "original_page_number": null,
+          "original_order": 178,
+          "source_location": "Section: 5.Optimal control system, Block: 178"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\psi_{2}'(t) = - \\frac{\\partial H}{\\partial Ę}(t) = - A_{1}\\)+\\(\\psi_{1}\\widetilde{\\beta_{1}}\\ Ş\\)+\\(+ \\psi_{2}\\left\\lbrack \\widetilde{\\beta_{1}}\\ Ş - \\left( \\widetilde{\\Upsilon_{1}} + \\ \\widetilde{\\alpha} + \\widetilde{\\delta_{1}} + \\widetilde{\\mu\\ } \\right) - u_{1}\\ \\right\\rbrack - \\psi_{3}\\widetilde{\\alpha}{- \\psi}_{4}\\widetilde{\\delta_{1}}\\) \\(- \\psi_{6}\\widetilde{\\Upsilon_{1}}\\)"
+          },
+          "block_index": 179,
+          "original_page_number": null,
+          "original_order": 179,
+          "source_location": "Section: 5.Optimal control system, Block: 179"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\psi_{3}'(t) = - \\frac{\\partial H}{\\partial N}(t) = - A_{2} + \\psi_{1}\\widetilde{\\beta_{2}}\\ Ş\\) \\(- \\psi_{3}\\left\\lbrack \\widetilde{\\beta_{2}}\\ Ş - \\left( \\widetilde{\\Upsilon_{2}} + \\widetilde{\\delta_{2}} + \\widetilde{\\mu\\ } \\right) - u_{1}(t) \\right\\rbrack\\) \\(- \\psi_{4}\\widetilde{\\delta_{2}}\\) \\(- \\psi_{6}\\widetilde{\\Upsilon_{2}}\\\\) ,"
+          },
+          "block_index": 180,
+          "original_page_number": null,
+          "original_order": 180,
+          "source_location": "Section: 5.Optimal control system, Block: 180"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\psi_{4}'(t) = - \\frac{\\partial H}{\\partial ₳}(t) = - A_{3}\\) \\(+ \\psi_{4}\\left( \\widetilde{\\Upsilon_{3}} + \\widetilde{\\mu\\ } + u_{3}(t) \\right) - \\psi_{6}\\left\\lbrack \\widetilde{\\Upsilon_{3}} + u_{3}(t) \\right\\rbrack\\) ,"
+          },
+          "block_index": 181,
+          "original_page_number": null,
+          "original_order": 181,
+          "source_location": "Section: 5.Optimal control system, Block: 181"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\psi_{5}'(t) = - \\frac{\\partial H}{\\partial ƚ}(t) = \\psi_{5}\\left( \\widetilde{\\Upsilon_{4}} + \\widetilde{\\mu\\ } \\right) - \\psi_{6}\\widetilde{\\Upsilon_{4}}\\) ,"
+          },
+          "block_index": 182,
+          "original_page_number": null,
+          "original_order": 182,
+          "source_location": "Section: 5.Optimal control system, Block: 182"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\psi_{6}'(t) = - \\frac{\\partial H}{\\partial Ɍ}(t) =\\) \\(\\psi_{6}\\widetilde{\\mu\\ }\\) ."
+          },
+          "block_index": 183,
+          "original_page_number": null,
+          "original_order": 183,
+          "source_location": "Section: 5.Optimal control system, Block: 183"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The terminal condition of adjoint equations is given by"
+          },
+          "block_index": 184,
+          "original_page_number": null,
+          "original_order": 184,
+          "source_location": "Section: 5.Optimal control system, Block: 184"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\psi_{i}(t_{f}) = 0,\\ i = 1,2,3,4,5,6,7.\\) (10)"
+          },
+          "block_index": 185,
+          "original_page_number": null,
+          "original_order": 185,
+          "source_location": "Section: 5.Optimal control system, Block: 185"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Minimizing H pointwise with respect to \\(u_{1},u_{2},u_{3}\\):"
+          },
+          "block_index": 186,
+          "original_page_number": null,
+          "original_order": 186,
+          "source_location": "Section: 5.Optimal control system, Block: 186"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\frac{\\partial H}{\\partial u_{1}} = C_{1}u_{1} - \\psi_{2}M - \\psi_{3}N + \\psi_{4}(M + N) = 0\\),"
+          },
+          "block_index": 187,
+          "original_page_number": null,
+          "original_order": 187,
+          "source_location": "Section: 5.Optimal control system, Block: 187"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\Longrightarrow u_{1}^{*} = \\frac{1}{C_{1}}\\left\\lbrack \\left( \\psi_{2} - \\psi_{4} \\right)M + \\left( \\psi_{3} - \\psi_{4} \\right)N \\right\\rbrack\\),"
+          },
+          "block_index": 188,
+          "original_page_number": null,
+          "original_order": 188,
+          "source_location": "Section: 5.Optimal control system, Block: 188"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\frac{\\partial H}{\\partial u_{2}} = C_{2}u_{2} - \\psi_{1}Ȿ + \\psi_{5}Ȿ = 0\\),"
+          },
+          "block_index": 189,
+          "original_page_number": null,
+          "original_order": 189,
+          "source_location": "Section: 5.Optimal control system, Block: 189"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\frac{\\partial H}{\\partial u_{3}} = C_{3}u_{3} - \\psi_{4}₳ - \\psi_{6}₳ = 0\\)"
+          },
+          "block_index": 190,
+          "original_page_number": null,
+          "original_order": 190,
+          "source_location": "Section: 5.Optimal control system, Block: 190"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "applying the boundedness \\(0 \\leq u_{i}(t) \\leq 1\\), we get the optimal controls"
+          },
+          "block_index": 191,
+          "original_page_number": null,
+          "original_order": 191,
+          "source_location": "Section: 5.Optimal control system, Block: 191"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\{ u_{1}^{*} = min\\left\\{ 1,max\\left\\{ 0,\\frac{\\left( \\psi_{2} - \\psi_{4} \\right)M + \\left( \\psi_{3} - \\psi_{4} \\right)N}{C_{1}} \\right\\} \\right\\}\\ u_{2}^{*} = min\\left\\{ 1,max\\left\\{ 0,\\frac{\\left( \\psi_{1} - \\psi_{5} \\right)Ş}{C_{2}} \\right\\} \\right\\}\\ u_{3}^{*} = min\\left\\{ 1,max\\left\\{ 0,\\frac{\\left( \\psi_{4} - \\psi_{6} \\right)₳}{C_{3}} \\right\\} \\right\\}\\\\)"
+          },
+          "block_index": 192,
+          "original_page_number": null,
+          "original_order": 192,
+          "source_location": "Section: 5.Optimal control system, Block: 192"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Where \\(i = 1,2,3\\). By solving the above equations, the proof is completed."
+          },
+          "block_index": 193,
+          "original_page_number": null,
+          "original_order": 193,
+          "source_location": "Section: 5.Optimal control system, Block: 193"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "6.Results and Discussion",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "This section presents the outcomes of implementing optimal control and conducting numerical simulations via the Laplace transform method on the fuzzy fractional Caputo model of mathphobia. The analyses leverage the parameter set detailed in Table 1, which governs the progression and recovery dynamics across different student groups. Figures 1 through 6 illustrate how the populations in the six compartments evolve over time for various fractional orders \\(\\vartheta\\), highlighting the critical role of memory effects in psychological state transitions."
+          },
+          "block_index": 194,
+          "original_page_number": null,
+          "original_order": 194,
+          "source_location": "Section: 6.Results and Discussion, Block: 194"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "As the fractional order \\(\\vartheta\\)approaches one, indicating weaker memory influence, all compartments stabilize more rapidly. Specifically, Figure 1 shows that the susceptible student population decreases faster because individuals more quickly transition into other states such as mathphobic, not interested, or interested. Conversely, for lower \\(\\vartheta\\)values, the decline in susceptible students is more gradual, reflective of prolonged retention of past states."
+          },
+          "block_index": 195,
+          "original_page_number": null,
+          "original_order": 195,
+          "source_location": "Section: 6.Results and Discussion, Block: 195"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Figure 2 reveals that the mathphobic group maintains higher and more sustained levels when \\(\\vartheta\\)is smaller, signaling that stronger memory effects exacerbate anxiety persistence. Similarly, Figure 3 illustrates that not interested students exhibit delayed dynamics and prolonged disengagement under strong memory influence."
+          },
+          "block_index": 196,
+          "original_page_number": null,
+          "original_order": 196,
+          "source_location": "Section: 6.Results and Discussion, Block: 196"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Figure 4 highlights the behavior of intervention-aware students, showing that higher \\(\\vartheta\\)values produce sharper peaks representing more rapid intervention uptake and release, whereas lower \\(\\vartheta\\)leads to slower, sustained engagement in support programs."
+          },
+          "block_index": 197,
+          "original_page_number": null,
+          "original_order": 197,
+          "source_location": "Section: 6.Results and Discussion, Block: 197"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Figure 5 depicts the interested students, where higher fractional orders facilitate faster growth and earlier stabilization of enthusiasm towards math, while lower \\(\\vartheta\\)delays these transitions. Finally, Figure 6 demonstrates that recovery accumulates swiftly for high \\(\\vartheta\\), indicating rapid restoration of confidence, but lags significantly when memory effects are strong, prolonging recovery time."
+          },
+          "block_index": 198,
+          "original_page_number": null,
+          "original_order": 198,
+          "source_location": "Section: 6.Results and Discussion, Block: 198"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "These findings confirm that the fuzzy fractional Caputo framework effectively incorporates memory to modulate the speed and extent of psychological transitions. This tunable memory characteristic can guide tailored intervention strategies, optimizing timing and intensity to address mathphobia based on the behavioral persistence observed in student populations."
+          },
+          "block_index": 199,
+          "original_page_number": null,
+          "original_order": 199,
+          "source_location": "Section: 6.Results and Discussion, Block: 199"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Figure 1. Temporal dynamics of the susceptible student population \\(Ş(t)\\)for varying fractional orders \\(\\vartheta\\).",
+            "path": "media/image1.png",
+            "label": null,
+            "width_in": 5.95,
+            "height_in": 3.6583,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.2681
+          },
+          "block_index": 200,
+          "original_page_number": null,
+          "original_order": 200,
+          "source_location": "Section: 6.Results and Discussion, Block: 200"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Figure 2. Dynamics of the mathphobic student compartment \\(M(t)\\)under different fractional orders \\(\\vartheta\\).",
+            "path": "media/image2.png",
+            "label": null,
+            "width_in": 5.8144,
+            "height_in": 3.8065,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.2681
+          },
+          "block_index": 201,
+          "original_page_number": null,
+          "original_order": 201,
+          "source_location": "Section: 6.Results and Discussion, Block: 201"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Figure 3. Variation over time of not interested students \\(N(t)\\)at multiple fractional orders \\(\\vartheta\\).",
+            "path": "media/image3.png",
+            "label": null,
+            "width_in": 5.7764,
+            "height_in": 3.3583,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.2681
+          },
+          "block_index": 202,
+          "original_page_number": null,
+          "original_order": 202,
+          "source_location": "Section: 6.Results and Discussion, Block: 202"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Figure 4. Trajectory of intervention-aware students \\(₳(t)\\)for distinct fractional orders \\(\\vartheta\\).",
+            "path": "media/image4.png",
+            "label": null,
+            "width_in": 5.375,
+            "height_in": 3.2417,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.2681
+          },
+          "block_index": 203,
+          "original_page_number": null,
+          "original_order": 203,
+          "source_location": "Section: 6.Results and Discussion, Block: 203"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Figure 5. Growth and stabilization of interested students \\(ƚ(t)\\\\)across fractional orders \\(\\vartheta\\).",
+            "path": "media/image5.png",
+            "label": null,
+            "width_in": 5.6505,
+            "height_in": 3.2586,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.2681
+          },
+          "block_index": 204,
+          "original_page_number": null,
+          "original_order": 204,
+          "source_location": "Section: 6.Results and Discussion, Block: 204"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Figure 6. Cumulative recovery \\(Ɍ(t)\\) in students as influenced by fractional order \\(\\vartheta\\).",
+            "path": "media/image6.png",
+            "label": null,
+            "width_in": 5.5005,
+            "height_in": 3.0669,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.2681
+          },
+          "block_index": 205,
+          "original_page_number": null,
+          "original_order": 205,
+          "source_location": "Section: 6.Results and Discussion, Block: 205"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "7.Conclusion",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "This paper introduces a new six-compartment fuzzy fractional-order model capturing the dynamics of mathphobia in student populations, including susceptible, mathphobic, not interested, intervention-aware, interested, and recovered classes. Using Caputo-type fuzzy fractional differential equations, the model incorporates memory effects and uncertainty in transmission and recovery rates. Existence and uniqueness of solutions are established via fixed-point theory, ensuring mathematical consistency. An optimal control framework models time-dependent interventions like workshops and counseling, demonstrating through numerical simulations that combined strategies significantly reduce mathphobic and apathetic students while increasing interested and recovered individuals. This approach offers a robust quantitative foundation for designing evidence-based educational policies addressing math anxiety."
+          },
+          "block_index": 206,
+          "original_page_number": null,
+          "original_order": 206,
+          "source_location": "Section: 7.Conclusion, Block: 206"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The key advantages of this work include improved behavioral realism through fuzzy fractional calculus, ability to capture long-term dependencies, and integration of adaptive control for targeted interventions. Future work could extend the model to account for social network effects, individual heterogeneity, and stochastic influences, as well as develop machine learning-based control policies for personalized anxiety management. This model lays the groundwork for more nuanced and effective approaches to mitigating mathphobia in educational environments."
+          },
+          "block_index": 207,
+          "original_page_number": null,
+          "original_order": 207,
+          "source_location": "Section: 7.Conclusion, Block: 207"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Reference"
+          },
+          "block_index": 208,
+          "original_page_number": null,
+          "original_order": 208,
+          "source_location": "Section: 7.Conclusion, Block: 208"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "Abi, S., Zouai, O., Fessi, H., & Ramaswamy, M. (2023). A compartmental model of TikTok addiction using SEI1I2R format: Application to social media addiction stages. Mathematical Biosciences, 350, 108900. ",
+              "Alemneh, D. B., & Alemu, A. M. (2021). Optimal control strategies for reducing social media addiction: An integrated mathematical model approach. Applied Mathematics and Computation, 410, 126476. ",
+              "Ashcraft, M. H., & Moore, A. M. (2009). Mathematics anxiety and the affective drop in performance. Journal of Psychoeducational Assessment, 27(3), 197–205. ",
+              "Arshad, M. (2024). Fractional analysis of non-linear fuzzy partial differential equations and rapid-convergent analytical solutions. Nature, 628(7986), 290–299. ",
+              "Ashcraft, M. H., & Ridley, K. S. (2005). Math anxiety and its correlates. The Affective Dimensions of Math Learning, 8, 23–46.",
+              "Beilock, S. L., & Maloney, E. A. (2015). Math anxiety: A review of its cognitive consequences, and interventions. Current Directions in Psychological Science, 24(1), 52–58. ",
+              "Dasumani, M., Lassong, B. S., Adu, I. K., Wireko, F. A., & Moore, S. E. (2024). Fractional Derivative Technique for Modeling the Dynamics of Social Media Impacts. Discrete Dynamics in Nature and Society, 2024(1), 5578416.",
+              "Dowker, A., Sarkar, A., & Looi, C. Y. (2016). Mathematics anxiety: What have we learned in 60 years? Frontiers in Psychology, 7, 508. ",
+              "Hembree, R. (1990). The nature, effects, and relief of mathematics anxiety. Journal for Research in Mathematics Education, 21(1), 33–46.",
+              "Juhari, J., Alisah, E., Safitri, A. A., & Sujarwo, I. (2024). Optimal Control of a Modified Mathematical Model of Social Media Addiction. InPrime: Indonesian Journal of Pure and Applied Mathematics, 6(2), 112-123",
+              "Kongson, K., Gaffar, A., & Baleanu, D. (2021). Modeling anxiety dynamics using Atangana–Baleanu–Caputo fractional derivatives. Communications in Nonlinear Science and Numerical Simulation, 96, 105715. ",
+              "Liang, M., Zhang, J., & Xu, C. (2021). Fuzzy fractional differential equations and applications to uncertain dynamic systems. Applied Mathematical Modelling, 92, 39–54. ",
+              "Maayah, H., & Arqub, O. (2023). Fractional modeling of anxiety persistence using Caputo derivatives. Fractional Calculus and Applied Analysis, 26(2), 498–514. ",
+              "Momani, S., Chauhan, R. P., Kumar, S., & Hadid, S. (2023). Analysis of social media addiction model with singular operator. Fractals, 31(10), 2340097.",
+              "Mitropoulou, B., Panagopoulos, I., & Tsanakas, J. (2022). Structural equation modelling of self-compassion's impact on math anxiety. Educational Psychology, 42(7), 908–919. ",
+              "Sheinov, V. V., & Dziavitsyn, I. A. (2021). Modeling cognitive, behavioural, and emotional interplay in addiction: A three-factor fractional approach. Chaos, Solitons & Fractals, 144, 110695. ",
+              "Van Hoa, N. (2019). Fuzzy fractional differential equations under Caputo derivative. Fuzzy Sets and Systems, 461, 98–112. ",
+              "Qayyum, M., et al. (2024). Fuzzy-fractional modeling of Korteweg-de Vries equations for nonlinear waves. Applied Mathematics and Computation, 447, 127270. "
+            ],
+            "ordered": true
+          },
+          "block_index": 209,
+          "original_page_number": null,
+          "original_order": 209,
+          "source_location": "Section: 7.Conclusion, Block: 209"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    }
+  ],
+  "references": [],
+  "author_biographies": [],
+  "received_date": "",
+  "revised_date": "",
+  "accepted_date": "",
+  "published_date": "",
+  "volume": "",
+  "issue": "",
+  "year": "",
+  "doi": "",
+  "corresponding_email": "aliakgul@siirt.edu.tr"
+}

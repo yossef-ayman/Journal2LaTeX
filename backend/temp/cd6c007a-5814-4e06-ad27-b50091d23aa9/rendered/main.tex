@@ -1,0 +1,195 @@
+
+
+
+
+
+
+% >>> j2l compat: xcolor / named-colour compatibility
+\PassOptionsToPackage{dvipsnames}{color}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
+\RequirePackage{xcolor}
+\makeatletter\@namedef{ver@color.sty}{2021/01/01}\makeatother
+\makeatletter\@ifundefined{providecolor}{}{%
+  \providecolor{CarnationPink}{RGB}{128,128,128}
+  \providecolor{Lavender}{RGB}{128,128,128}
+  \providecolor{abstractcolor}{RGB}{128,128,128}
+  \providecolor{rulecolor}{RGB}{128,128,128}
+}\makeatother
+% <<< j2l compat
+\documentclass[10pt]{NSP1}
+
+\IfFileExists{url.sty}{\usepackage{url}}{}
+\IfFileExists{floatflt.sty}{\usepackage{floatflt}}{}
+
+\IfFileExists{helvet.sty}{\usepackage{helvet}}{}
+\IfFileExists{times.sty}{\usepackage{times}}{}
+
+\IfFileExists{psfig.sty}{\usepackage{psfig}}{}
+\IfFileExists{graphics.sty}{\usepackage{graphics}}{}
+
+\IfFileExists{mathptmx.sty}{\usepackage{mathptmx}}{}
+\IfFileExists{amsmath.sty}{\usepackage{amsmath}}{}
+\IfFileExists{amssymb.sty}{\usepackage{amssymb}}{}
+\IfFileExists{bm.sty}{\usepackage{bm}}{}
+
+\IfFileExists{float.sty}{\usepackage{float}}{}
+
+\IfFileExists{caption.sty}{\usepackage[bf,hypcap]{caption}}{}
+
+
+
+\IfFileExists{xcolor.sty}{\usepackage[dvipsnames,table,xcdraw]{xcolor}}{}
+
+
+
+\tolerance=1
+
+\emergencystretch=\maxdimen
+
+\hyphenpenalty=10000
+
+\hbadness=10000
+
+
+
+\topmargin=0.00cm
+
+
+
+\def\sm{\smallskip}
+
+\def\no{\noindent}
+
+
+
+\def\firstpage{1}
+
+\setcounter{page}{\firstpage}
+
+\def\thevol{}
+
+\def\thenumber{}
+
+\def\theyear{}
+
+
+
+
+
+\IfFileExists{graphicx.sty}{\usepackage{graphicx}}{}
+\makeatletter
+\def\biographyps#1#2{%
+  \par\addvspace{21dd}\small\noindent
+  \if!#1!\else
+    \noindent\includegraphics[width=1in,height=1.25in,keepaspectratio]{#1}\par\smallskip
+  \fi
+  {\bfseries#2\unskip\ }\ignorespaces}
+\def\endbiographyps{\par\addvspace{12pt}}
+\makeatother
+
+% >>> j2l compat: scalable Computer Modern (arbitrary font sizes)
+\IfFileExists{type1cm.sty}{\usepackage{type1cm}}{}
+\IfFileExists{fix-cm.sty}{\usepackage{fix-cm}}{}
+% <<< j2l compat
+\begin{document}
+% >>> j2l compat: body-text size (+5%)
+\makeatletter
+\edef\JLTXbasesize{\f@size}
+\@tempdimb=1.2\dimexpr\f@size pt\relax\edef\JLTXbaseskip{\strip@pt\@tempdimb}
+\def\JLTXbodyscale{1.050}
+\let\JLTX@normalsize\normalsize
+\renewcommand\normalsize{%
+  \JLTX@normalsize
+  \@tempdima=\JLTXbodyscale\dimexpr\f@size pt\relax
+  \@tempdimb=1.2\@tempdima
+  \fontsize{\strip@pt\@tempdima}{\strip@pt\@tempdimb}\selectfont}%
+\@ifundefined{@makecaption}{}{%
+  \let\JLTX@makecaption\@makecaption
+  \long\def\@makecaption#1#2{%
+    \begingroup\fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont
+    \let\normalsize\JLTX@normalsize
+    \JLTX@makecaption{#1}{#2}\endgroup}}%
+\@ifundefined{thebibliography}{}{%
+  \let\JLTX@thebibliography\thebibliography
+  \def\thebibliography{%
+    \fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont\JLTX@thebibliography}}%
+\makeatother
+\normalsize
+% <<< j2l compat
+
+
+
+
+\titlefigurecaption{{\large \bf \rm Progress in Fractional Differentiation
+
+and Applications}\\ {\it\small An International Journal}}
+
+
+
+\title{Analytical Dynamics of a Monkeypox Model Using Caputo-Fabrizio Fractional Derivative and Sumudu Transform Method}
+
+
+
+\author{Ariyanatchi M$^{1}$ \and G.M.Vijayalakshmi$^{2}$ \and Paulraj Jayasimman$^{3}$ \and Roselyn Besi P$^{4}$ \and Ali Akgül$^{5}$ \and *$^{6}$ \and Keywords \and 1.Introduction \and 2. Preliminaries \and The Sumudu transform over the set of functions \and Is defined as \and $G(u) = S\left\lbrack Ӻ(ե) \right\rbrack = \int_{0}^{\infty}{}e^{- uե}\ Ӻ(ե)dե$ (1) \and The Sumudu transform of Caputo fractional derivative is explained below \and 3. Model Formulation \and Human Population Compartments: \and The human population is divided into four compartments: \and Animal Population Compartments: \and The animal population is categorized into three compartments: \and Model Dynamics: \and $\frac{ԃ℞_{ɓ}}{ԃե} = \gamma_{ɓ}ɬ_{ɓ} - \theta_{ɓ}℞_{ɓ} - \mu_{ɓ}℞_{ɓ}$ \and $\frac{ԃⱣ_{ɓ}}{ԃե} = Ᵽ_{ɓ}\pi_{ɓ} + \theta_{ɓ}℞_{ɓ} - \mu_{ɓ}Ᵽ_{ɓ}$ \and $\frac{ԃŞ_{ɑ}}{ԃե} = \pi_{ɑ} - \frac{\beta_{ɑ}Ş_{ɑ}ɬ_{ɑ}}{N_{ɑ}} - \mu_{ɑ}Ş_{ɑ}$ \and $\frac{dɬ_{ɑ}}{ԃե} = \frac{\beta_{ɑ}Ş_{ɑ}ɬ_{ɑ}}{N_{ɑ}} - \left( \gamma_{ɑ} + \mu_{ɑ} + ԃ_{ɑ} \right)ɬ_{ɑ}$ \and $\frac{ԃ℞_{ɑ}}{ԃե} = \gamma_{ɑ}ɬ_{ɑ} - \mu_{ɑ}℞_{ɑ}$ (4) \and ${0CfD}_{ե}^{\alpha}℞_{ɓ}\  = \gamma_{ɓ}ɬ_{ɓ} - \theta_{ɓ}℞_{ɓ} - \mu_{ɓ}℞_{ɓ}$ \and ${0CfD}_{ե}^{\alpha}Ᵽ_{ɓ}\  = Ᵽ_{ɓ}\pi_{ɓ} + \theta_{ɓ}℞_{ɓ} - \mu_{ɓ}Ᵽ_{ɓ}$ \and ${0CfD}_{ե}^{\alpha}Ş_{ɑ}\  = \pi_{ɑ} - \frac{\beta_{ɑ}Ş_{ɑ}ɬ_{ɑ}}{N_{ɑ}} - \mu_{ɑ}Ş_{ɑ}$ \and ${0CfD}_{ե}^{\alpha}ɬ_{ɑ} = \frac{\beta_{ɑ}Ş_{ɑ}ɬ_{ɑ}}{N_{ɑ}} - \left( \gamma_{ɑ} + \mu_{ɑ} + ԃ_{ɑ} \right)ɬ_{ɑ}$ \and ${0CfD}_{ե}^{\alpha}℞_{ɑ} = \gamma_{ɑ}ɬ_{ɑ} - \mu_{ɑ}℞_{ɑ}$ (5) \and These equations describe the dynamic evolution of the variables $Ş_{ɓ} \geq$ \and ɬ\_\{ɓ\} \textbackslash{}geq \and \textbackslash{} ℞\_\{ɓ\} \textbackslash{}geq \and $$ \and Table 1. Parameter values used in the proposed fuzzy fractional-order monkeypox transmission model. \and 3. Qualitative Analysis \and 3.1 Existence of the solutions of desired model \and Theorem 3. \and Describe $Q_{1}$ \and \textbackslash{} Q\_\{2\} \and Q\_\{3\} \and Q\_\{4\} \and Q\_\{5\} \and Q\_\{6\} \and Q\_\{7\}$$ \and explain how they relate to variables. \and Proof \and Transforming the aforementioned proposed system (5) into an integral equation system- \and $℞_{ɓ}(ե) - ℞_{ɓ}(0) = {0CFT}_{ե}^{\alpha}\left\lbrack \gamma_{ɓ}ɬ_{ɓ} - \theta_{ɓ}℞_{ɓ} - \mu_{ɓ}℞_{ɓ} \right\rbrack$ \and $Ᵽ_{ɓ}(ե) - Ᵽ_{ɓ}(0) = {0CFT}_{ե}^{\alpha}\left\lbrack \pi_{ɓ}Ᵽ_{ɓ} + \theta_{ɓ}℞_{ɓ} - \mu_{ɓ}Ᵽ_{ɓ} \right\rbrack$ \and $℞_{ɑ}(ե) - ℞_{ɑ}(0) = {0CFT}_{ե}^{\alpha}\left\lbrack \gamma_{ɑ}ɬ_{ɑ} - \mu_{ɑ}℞_{ɑ} \right\rbrack$ (6) \and Using Nieto’s definition \and we then arrive at \and Let’s now assume that the kernels are provided as \and $Q_{3}\left( ե$ \and ℞\_\{ɓ\} \textbackslash{}right) = \textbackslash{}gamma\_\{ɓ\}ɬ\_\{ɓ\}(ե) - \textbackslash{}theta\_\{ɓ\}℞\_\{ɓ\}(ե) - \textbackslash{}mu\_\{ɓ\}℞\_\{ɓ\}(ե)$$ \and $Q_{4}\left( ե$ \and Ᵽ\_\{ɓ\} \textbackslash{}right) = \textbackslash{}pi\_\{ɓ\}Ᵽ\_\{ɓ\}(ե) + \textbackslash{}theta\_\{ɓ\}℞\_\{ɓ\}(ե) - \textbackslash{}mu\_\{ɓ\}Ᵽ\_\{ɓ\}(ե)$$ \and $Q_{5}\left( ե$ \and Ş\_\{ɑ\} \textbackslash{}right) = \textbackslash{}pi\_\{ɑ\} - \textbackslash{}frac\{\textbackslash{}beta\_\{ɑ\}Ş\_\{ɑ\}(ե)ɬ\_\{ɑ\}(ե)\}\{N\_\{ɑ\}(ե)\} - \textbackslash{}mu\_\{ɑ\}Ş\_\{ɑ\}(ե)$$ \and $Q_{7}\left( ե$ \and ℞\_\{ɑ\} \textbackslash{}right) = \textbackslash{}gamma\_\{ɑ\}ɬ\_\{ɑ\}(ե) - \textbackslash{}mu\_\{ɑ\}℞\_\{ɑ\}(ե)$ (8)$ \and Theorem 3. \and Demonstrate that $Q_{1}$ \and \textbackslash{} Q\_\{2\} \and Q\_\{3\} \and Q\_\{4\} \and Q\_\{5\} \and Q\_\{6\}$$ \and $\ Q_{7}$ fulfil the Lipschitz requirement. \and Proof \and We will first demonstrate this for $Q_{1}$. Considering that $Ş_{ɓ}$ \and ${Ş_{ɓ}}_{1}$ are any two functions \and we have \and $\| Q_{1}\left( ե$ \and Ş\_\{ɓ\} \textbackslash{}right) - Q\_\{1\}\textbackslash{}left( ե \and \{Ş\_\{ɓ\}\}\_\{1\} \textbackslash{}right)\textbackslash{}| \textbackslash{}leq Ⱨ\_\{1\}\textbackslash{}| Ş\_\{ɓ\}(ե) - \{Ş\_\{ɓ\}\}\_\{1\}(ե)\textbackslash{}|$$ \and Similarly \and we can have \and $\leq \|\left( \gamma_{ɓ} + \mu_{ɓ} + ԃ_{ɓ} \right)\|\| ɬ_{ɓ}(ե) - {ɬ_{ɓ}}_{1}(ե)\|$ \and $\| Q_{2}\left( ե$ \and ɬ\_\{ɓ\} \textbackslash{}right) - Q\_\{2\}\textbackslash{}left( ե \and \{ɬ\_\{ɓ\}\}\_\{1\} \textbackslash{}right)\textbackslash{}| \textbackslash{}leq Ⱨ\_\{2\}\textbackslash{}| ɬ\_\{ɓ\}(ե) - \{ɬ\_\{ɓ\}\}\_\{1\}(ե)\textbackslash{}|$$ \and Where $\|\left( \gamma_{ɓ} + \mu_{ɓ} + ԃ_{ɓ} \right)\| \leq Ⱨ_{2} < 1$. \and Now \and $\leq \|\left( \theta_{ɓ} + \mu_{ɓ} \right)\|\| ℞_{ɓ}(ե) - {℞_{ɓ}}_{1}(ե)\|$ \and $\| Q_{3}\left( ե$ \and ℞\_\{ɓ\} \textbackslash{}right) - Q\_\{3\}\textbackslash{}left( ե \and \{℞\_\{ɓ\}\}\_\{1\} \textbackslash{}right)\textbackslash{}| \textbackslash{}leq Ⱨ\_\{3\}\textbackslash{}| ℞\_\{ɓ\}(ե) - \{℞\_\{ɓ\}\}\_\{1\}(ե)\textbackslash{}|$$ \and Where $\|\left( \theta_{ɓ} + \mu_{ɓ} \right)\| \leq Ⱨ_{3} < 1$. \and $\| Q_{4}\left( ե$ \and Ᵽ\_\{ɓ\} \textbackslash{}right) - Q\_\{4\}\textbackslash{}left( ե \and \{Ᵽ\_\{ɓ\}\}\_\{1\} \textbackslash{}right)\textbackslash{}| \textbackslash{}leq Ⱨ\_\{4\}\textbackslash{}| Ᵽ\_\{ɓ\}(ե) - \{Ᵽ\_\{ɓ\}\}\_\{1\}(ե)\textbackslash{}|$$ \and Where $\|\left( \pi_{ɓ} + \mu_{ɓ} \right)\| \leq Ⱨ_{4} < 1$ \and $\| Q_{5}\left( ե$ \and Ş\_\{ɑ\} \textbackslash{}right) - Q\_\{5\}\textbackslash{}left( ե \and \{Ş\_\{ɑ\}\}\_\{1\} \textbackslash{}right)\textbackslash{}| \textbackslash{}leq Ⱨ\_\{5\}\textbackslash{}| Ş\_\{ɑ\}(ե) - \{Ş\_\{ɑ\}\}\_\{1\}(ե)\textbackslash{}|$$ \and Where $\|\left( \frac{\beta_{ɑ}ɬ_{ɑ}(ե)}{N_{ɑ}(ե)} + \mu_{ɑ} \right)\| \leq Ⱨ_{5} < 1$. \and $\| Q_{6}\left( ե$ \and ɬ\_\{ɑ\} \textbackslash{}right) - Q\_\{6\}\textbackslash{}left( ե \and \{ɬ\_\{ɑ\}\}\_\{1\} \textbackslash{}right)\textbackslash{}| \textbackslash{}leq Ⱨ\_\{6\}\textbackslash{}| ɬ\_\{ɑ\}(ե) - \{ɬ\_\{ɑ\}\}\_\{1\}(ե)\textbackslash{}|$$ \and Now consider the recurrence formula \and we can acquire$^{7}$ \and (10) \and Now \and $\| U_{r}(ե)\| = \|{Ş_{ɓ}}_{r}(ե) - {Ş_{ɓ}}_{r - 1}(ե)\|$ \and But $Q_{1}$ satisfies Lipchitz condition so \and In the same way \and we have \and Theorem 3. \and Proof \and Using a recursive approach in above equation (13) - (19) presents the set of equation as follows \and Consequently \and the presence of results \and which are also continuous \and are confirmed. \and We now get \and $Ş_{ɓ}(ե) = {Ş_{ɓ}}_{r}(ե) - E_{$ \and r\}(ե) \and ɬ\_\{ɓ\}(ե) = \{ɬ\_\{ɓ\}\}\_\{r\}(ե) - E\_\{ \and r\}(ե) \and ɬ\_\{ɓ\}(ե) = \{ɬ\_\{ɓ\}\}\_\{r\}(ե) - E\_\{ \and r\}(ե) \and $$ \and $℞_{ɑ}(ե) = {℞_{ɑ}}_{r}(ե) - E_{$ \and r\}(ե).$ (27)$ \and $T_{m}(ե) - {T_{m}}_{r}(ե) = \frac{2(1 - \alpha)}{(2 - \alpha)Ɱ(\alpha)}Q_{7}\left( ե$ \and T\_\{m\} - E\_\{ \and r\}(ե) \textbackslash{}right)$$ \and $+ \frac{2\alpha}{(2 - \alpha)Ɱ(\alpha)} \times \int_{0}^{ե}{}Q_{7}\left( s$ \and T\_\{m\} - E\_\{ \and r\}(s) \textbackslash{}right)ds$ (28)$ \and By applying the Lipschitz axiom \and using the terms on both sides \and the above claim is established. \and When lim$\ r \rightarrow \infty$ is used \and it indicates that \and It demonstrates the results \and such as the above-mentioned solutions as provided by the proposed model's Eqn. (5). \and 3.2 Uniqueness of Result$^{8}$ \and Theorem 3. \and The suggested fractional order epidemiological model Eqn. (5) has a unique solution. \and Proof \and Using the norm on both sides \and we obtain \and Lipchitz condition is used to get \and Which is true for all$\ r$ \and \textbackslash{} $so $Ş\_\{ɓ\} = \{Ş\_\{ɓ\}\}\_\{1\}$$ \and Hence \and it claims uniqueness of the system. \and 4. Results of the Model Using Sumudu Transform with Caputo-Fabrizio Derivative \and Using the Caputo Fabrizio approach defined by the Sumudu Transform we obtain the following: \and By rearranging \and Using inverse Sumudu transform on system (35) \and we get \and Given recursive technique is as follows \and the solution is given \and $Ş_{ɓ}(ե) = Ş_{ɓ_{n}}(ե)\$ \and ɬ\_\{ɓ\}(ե) = ɬ\_\{ɓ\_\{n\}\}(ե)\textbackslash{} \and ℞\_\{ɓ\}(ե) = ℞\_\{ɓ\_\{n\}\}(ե)\textbackslash{} \and $$ \and $Ᵽ_{ɓ}(ե) = Ᵽ_{ɓ_{n}}(ե)\$ \and Ş\_\{ɑ\}(ե) = Ş\_\{ɑ\_\{n\}\}(ե)\textbackslash{} \and ɬ\_\{ɑ\}(ե) = ɬ\_\{ɑ\_\{n\}\}(ե)\textbackslash{} \and $$ \and $℞_{ɑ}(t) = ℞_{ɑ_{n}}(t)\ .$ (38) \and 5. Result \and Discussion \and 6.Conclusion \and Declaration of competing interest \and The authors declare there is no competing interest. \and Acknowledgement \and All authors have read \and approved the article. \and Author’s credit \and Funding \and No funding received. \and References}
+
+\institute{$^{1}$ Post Doctoral Fellow, Mathematics, AMET University, Chennai. \\ $^{2}$ Professor, Mathematics, Vel tech Rangarajan Dr Sagunthala R\&D Institute of science and technology, Chennai.Department of Mathematics, \\ $^{3}$ Professor,Department of Mathematics,AMET University, Chennai. \\ $^{4}$ Coimbatore Institute of technology, Coimbatore, India. \\ $^{5}$ Department of Electronics and Communication Engineering, Saveetha School of Engineering,SIMATS, Chennai, Tamilnadu, India \\ $^{6}$ Siirt University, Art and Science Faculty, Department of Mathematics, 56100 Siirt, Türkiye \\ $^{7}$ When a norm is used in the concept of majorizing, the distinction between sub-sequent terms that implies \\ $^{8}$ In the following section, we will attempt to establish that the outcomes that were mentioned in the section that came before this one are completely independent. We presume that more sets of results are available for the configuration specified in Eqn. (29).}
+
+
+
+\titlerunning{Analytical Dynamics of a Monkeypox Model Using Caputo-Fabrizio Fractional Derivative and Sumudu Transform Method}
+
+\authorrunning{Ariyanatchi M et al.}
+
+
+
+
+
+\mail{aliakgul@siirt.edu.tr}
+
+
+
+\received{}
+
+\revised{}
+
+\accepted{}
+
+\published{}
+
+
+
+\abstracttext{This study presents a fractional-order mathematical model for the transmission dynamics of monkeypox, formulated using the Caputo-Fabrizio fractional derivative to better capture the memory and hereditary properties inherent in real-world biological systems. The model incorporates key epidemiological compartments to reflect the stages of monkeypox infection and transmission. To obtain analytical solutions, the Sumudu transform method is employed due to its efficiency in handling fractional differential equations. The existence and uniqueness of solutions are rigorously verified using fixed-point theory and the Picard–Lindelöf approach, ensuring mathematical consistency and reliability of the model. The proposed framework provides deeper insights into the progression of monkeypox and offers a robust analytical approach for studying disease dynamics under fractional-order settings. This work contributes significantly to understanding the impact of memory effects in disease modelling and can inform future control strategies for emerging infectious diseases like monkeypox.}
+
+
+
+\keywords{}
+
+
+
+\maketitle
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

@@ -3,6 +3,7 @@ import shutil
 import time
 from pathlib import Path
 from typing import Optional
+from app.core.config import settings
 from app.services.job_manager import JobManager
 from app.services.pandoc_service import PandocService, PandocException
 from app.services.document_analyzer import DocumentAnalyzer, DocumentAnalyzerError
@@ -138,6 +139,20 @@ class PipelineService:
                     f"and may be missing from the output.",
                 )
 
+            # Refresh the original-asset inventory now that every extractor has
+            # run.  pandoc_service snapshots it as soon as *its* own extraction
+            # finishes, which is before the graphics extractor and the
+            # Office-native object renderer have contributed anything; a
+            # chart-only manuscript therefore recorded an empty inventory while
+            # the workspace held four rendered charts.  The snapshot is a plain
+            # name-for-name copy, so it stays deterministic.
+            orig_assets_dir = job_dir / "intermediate" / "original_assets"
+            orig_assets_dir.mkdir(parents=True, exist_ok=True)
+            if media_dir.is_dir():
+                for item in sorted(media_dir.iterdir()):
+                    if item.is_file() and not (orig_assets_dir / item.name).exists():
+                        shutil.copy2(item, orig_assets_dir / item.name)
+
             logger.info("Assets extracted to: %s", media_dir)
             self.job_manager.update_progress(job_id, 60, "Document assets extracted successfully")
             return True
@@ -166,6 +181,11 @@ class PipelineService:
         def norm(text):
             return " ".join((text or "").split()).lower()
 
+        def tight(text):
+            # Whitespace-insensitive key: Word captions carry stray spaces
+            # ("age ." vs "age.") that break plain normalization.
+            return "".join((text or "").split()).lower()
+
         rendered_objects = [o for o in office_objects if o.get("rendered") and o.get("file")]
         report = self.job_manager._get_job_dir(job_id) / "intermediate" / "office_objects.json"
         report.parent.mkdir(parents=True, exist_ok=True)
@@ -190,17 +210,37 @@ class PipelineService:
                     "office_object_type": obj.get("type"),
                 },
             )
-            anchor = norm(obj.get("anchor_text"))[:60]
             placed = False
-            for section in doc_model.sections:
-                for idx, block in enumerate(section.blocks):
-                    if block.type == BlockType.PARAGRAPH and anchor and \
-                            norm(block.content.get("text", "")).startswith(anchor):
-                        section.blocks.insert(idx + 1, figure)
-                        placed = True
+
+            # Preferred anchor: the object's own caption paragraph ("Figure N:
+            # ...").  In the source XML the object sits immediately beside its
+            # caption, so replacing that caption paragraph with the figure puts
+            # it in exactly the right place -- more reliable than scanning
+            # backwards over neighbouring Figure/Table caption lines.
+            caption_key = tight(obj.get("caption"))
+            if caption_key:
+                for section in doc_model.sections:
+                    for idx, block in enumerate(section.blocks):
+                        if block.type == BlockType.PARAGRAPH and \
+                                tight(block.content.get("text", "")) == caption_key:
+                            section.blocks[idx] = figure  # caption -> figure in place
+                            placed = True
+                            break
+                    if placed:
                         break
-                if placed:
-                    break
+
+            # Fallback: anchor to the nearest preceding body paragraph.
+            if not placed:
+                anchor = norm(obj.get("anchor_text"))[:60]
+                for section in doc_model.sections:
+                    for idx, block in enumerate(section.blocks):
+                        if block.type == BlockType.PARAGRAPH and anchor and \
+                                norm(block.content.get("text", "")).startswith(anchor):
+                            section.blocks.insert(idx + 1, figure)
+                            placed = True
+                            break
+                    if placed:
+                        break
             if not placed:
                 # Anchor text may be a section title rather than a paragraph.
                 target = None
@@ -211,14 +251,16 @@ class PipelineService:
                 (target or doc_model.sections[-1]).blocks.insert(0, figure) \
                     if doc_model.sections else None
                 placed = bool(doc_model.sections)
-            # Remove the caption paragraph so it is not shown twice.
-            caption = norm(obj.get("caption"))
-            if caption:
+
+            # Remove any leftover duplicate of the caption paragraph.
+            if caption_key:
                 for section in doc_model.sections:
                     section.blocks = [
                         b for b in section.blocks
-                        if not (b.type == BlockType.PARAGRAPH
-                                and norm(b.content.get("text", "")) == caption)
+                        if b is figure or not (
+                            b.type == BlockType.PARAGRAPH
+                            and tight(b.content.get("text", "")) == caption_key
+                        )
                     ]
             logger.info("Office object %s placed=%s", obj.get("label"), placed)
 
@@ -397,12 +439,16 @@ class PipelineService:
         job_dir = self.job_manager._get_job_dir(job_id)
         try:
             self.fidelity_checker.generate_fidelity_report(job_id, doc_model, job_dir)
-            
-            # Run layout optimization loop to iteratively refine visual layout match
-            try:
-                self.layout_optimizer.optimize_layout(self, job_id, doc_model, job_dir)
-            except Exception as e:
-                logger.error("Layout optimization failed: %s", str(e))
+
+            # The SSIM-driven layout-optimization loop belongs to the Visual
+            # Fidelity Engine roadmap.  It is opt-in (OPTIMIZER_ENABLED) so the
+            # production pipeline stays fast and deterministic: one render, one
+            # compile, same output for the same input.
+            if settings.OPTIMIZER_ENABLED:
+                try:
+                    self.layout_optimizer.optimize_layout(self, job_id, doc_model, job_dir)
+                except Exception as e:
+                    logger.error("Layout optimization failed: %s", str(e))
             
             # Transition job status only if no fatal error occurred meanwhile.
             metadata = self.job_manager.get_job(job_id)

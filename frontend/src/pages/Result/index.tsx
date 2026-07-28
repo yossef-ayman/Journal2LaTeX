@@ -1,9 +1,9 @@
 import { useState, memo } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { PageContainer } from "@/components/PageContainer";
-import { SectionTitle } from "@/components/SectionTitle";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { StatusBadge } from "@/components/StatusBadge";
 import { SkeletonCard } from "@/components/Skeleton";
@@ -13,6 +13,7 @@ import {
   getAssetReport,
   getDocumentStructure,
   getLatexSource,
+  getDownloadUrl,
 } from "@/services";
 import { OverviewTab } from "./OverviewTab";
 import { DocumentTab } from "./DocumentTab";
@@ -33,6 +34,8 @@ import {
   FileJson,
   Code,
   XCircle,
+  ArrowLeft,
+  FileDown,
 } from "lucide-react";
 
 const TABS = [
@@ -49,10 +52,10 @@ const TABS = [
 
 const SkeletonTabs = memo(function SkeletonTabs() {
   return (
-    <div className="space-y-4">
-      <div className="flex gap-2">
+    <div className="space-y-6">
+      <div className="flex gap-1 border-b border-gray-100 pb-0">
         {Array.from({ length: 5 }).map((_, i) => (
-          <div key={i} className="h-9 w-24 animate-pulse rounded-md bg-muted" />
+          <div key={i} className="h-10 w-24 animate-pulse rounded-t-lg bg-gray-100" />
         ))}
       </div>
       <SkeletonCard lines={6} />
@@ -62,6 +65,7 @@ const SkeletonTabs = memo(function SkeletonTabs() {
 
 export default function ResultPage() {
   const { jobId } = useParams<{ jobId: string }>();
+  const navigate = useNavigate();
   const [tab, setTab] = useState("overview");
 
   const job = useJobStatus(jobId ?? null);
@@ -93,7 +97,8 @@ export default function ResultPage() {
   if (job.isLoading) {
     return (
       <PageContainer>
-        <SectionTitle title="Result" description="Loading job data..." />
+        <div className="h-8 w-64 rounded-lg bg-gray-100 animate-pulse mb-2" />
+        <div className="h-4 w-40 rounded bg-gray-100 animate-pulse mb-8" />
         <SkeletonTabs />
       </PageContainer>
     );
@@ -102,13 +107,21 @@ export default function ResultPage() {
   if (job.isError || !job.data) {
     return (
       <PageContainer>
-        <SectionTitle title="Result" />
         <Card>
-          <CardContent className="flex flex-col items-center gap-4 py-16">
-            <XCircle size={48} className="text-destructive" />
-            <p className="text-sm text-muted-foreground">
-              {job.error?.message ?? "Job not found"}
-            </p>
+          <CardContent className="flex flex-col items-center gap-5 py-20">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-red-500">
+              <XCircle size={32} />
+            </div>
+            <div className="text-center space-y-1">
+              <p className="text-base font-semibold text-gray-900">Job not found</p>
+              <p className="text-sm text-gray-500">
+                {job.error?.message ?? "This job may have been deleted or does not exist."}
+              </p>
+            </div>
+            <Button variant="outline" size="sm" onClick={() => navigate("/history")} className="gap-2">
+              <ArrowLeft size={14} />
+              Back to History
+            </Button>
           </CardContent>
         </Card>
       </PageContainer>
@@ -117,34 +130,68 @@ export default function ResultPage() {
 
   const j = job.data;
   const isCompleted = j.status === "COMPLETED";
+  const pdfUrl = getDownloadUrl(j.job_id);
 
   return (
     <PageContainer>
-      <div className="flex items-center justify-between">
-        <SectionTitle
-          title={j.paper_name || "Conversion Result"}
-          description={`Job ${j.job_id.slice(0, 8)}...`}
-        />
-        <StatusBadge status={j.status} />
+      {/* Page Header */}
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-2 mb-1">
+            <button
+              onClick={() => navigate("/history")}
+              className="text-sm text-gray-400 hover:text-gray-600 transition-colors flex items-center gap-1"
+            >
+              <ArrowLeft size={13} />
+              History
+            </button>
+            <span className="text-gray-300">/</span>
+            <span className="text-sm text-gray-500 truncate max-w-[200px]">
+              {j.paper_name || "Untitled"}
+            </span>
+          </div>
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 leading-tight truncate">
+            {j.paper_name || "Conversion Result"}
+          </h2>
+          <p className="text-sm text-gray-400 font-mono mt-1">
+            {j.job_id.slice(0, 8)}… · {new Date(j.created_at).toLocaleDateString()}
+          </p>
+        </div>
+        <div className="flex items-center gap-3 shrink-0">
+          <StatusBadge status={j.status} />
+          {j.compile_success && (
+            <a href={pdfUrl} download target="_blank" rel="noreferrer">
+              <Button size="sm" className="gap-2 h-9">
+                <FileDown size={14} />
+                Download PDF
+              </Button>
+            </a>
+          )}
+        </div>
       </div>
 
+      {/* Error banner for failed jobs */}
       {j.status === "FAILED" && (
-        <Card className="border-destructive/50">
-          <CardContent className="space-y-2 pt-6">
-            <p className="text-sm font-medium text-destructive">Conversion failed</p>
-            {j.errors.map((err, i) => (
-              <p key={i} className="text-xs text-destructive/80">{err}</p>
-            ))}
-          </CardContent>
-        </Card>
+        <div className="rounded-2xl border border-red-200 bg-red-50 p-5">
+          <div className="flex items-start gap-3">
+            <XCircle size={18} className="text-red-500 shrink-0 mt-0.5" />
+            <div className="space-y-1 min-w-0">
+              <p className="text-sm font-semibold text-red-900">Conversion Failed</p>
+              {j.errors.map((err, i) => (
+                <p key={i} className="text-xs text-red-700 leading-relaxed break-words">{err}</p>
+              ))}
+            </div>
+          </div>
+        </div>
       )}
 
+      {/* Tabs */}
       {isCompleted && (
         <Tabs value={tab} onValueChange={setTab}>
-          <TabsList className="flex-wrap">
+          <TabsList className="overflow-x-auto">
             {TABS.map((t) => (
-              <TabsTrigger key={t.value} value={t.value}>
-                <t.icon size={14} className="mr-1" />
+              <TabsTrigger key={t.value} value={t.value} className="gap-1.5 shrink-0">
+                <t.icon size={13} />
                 {t.label}
               </TabsTrigger>
             ))}

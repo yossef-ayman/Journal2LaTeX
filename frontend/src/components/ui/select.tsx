@@ -27,7 +27,7 @@ function Select({ value, onValueChange, children }: SelectProps) {
   const [open, setOpen] = React.useState(false);
   return (
     <SelectContext.Provider value={{ value, onValueChange, open, setOpen }}>
-      {children}
+      <div className="relative">{children}</div>
     </SelectContext.Provider>
   );
 }
@@ -43,13 +43,16 @@ const SelectTrigger = React.forwardRef<
       type="button"
       onClick={() => setOpen(!open)}
       className={cn(
-        "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-9 w-full items-center justify-between rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1 focus:border-emerald-400 disabled:cursor-not-allowed disabled:opacity-50 hover:border-gray-300",
+        open && "ring-2 ring-emerald-500 border-emerald-400",
         className,
       )}
       {...props}
     >
       {children}
-      <ChevronDown className="h-4 w-4 opacity-50" />
+      <ChevronDown
+        className={cn("h-4 w-4 text-gray-400 transition-transform duration-200 shrink-0", open && "rotate-180")}
+      />
     </button>
   );
 });
@@ -59,7 +62,7 @@ const SelectValue = React.forwardRef<
   HTMLSpanElement,
   React.HTMLAttributes<HTMLSpanElement>
 >(({ className, ...props }, ref) => (
-  <span ref={ref} className={cn("text-sm", className)} {...props} />
+  <span ref={ref} className={cn("text-sm truncate", className)} {...props} />
 ));
 SelectValue.displayName = "SelectValue";
 
@@ -78,7 +81,7 @@ function SelectContent({ className, children }: SelectContentProps) {
       />
       <div
         className={cn(
-          "absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-md border bg-popover text-popover-foreground shadow-md animate-in",
+          "absolute z-50 top-full mt-1.5 max-h-60 w-full overflow-auto rounded-xl border border-gray-100 bg-white text-gray-900 shadow-lg shadow-black/10 animate-scale-in py-1",
           className,
         )}
       >
@@ -104,14 +107,14 @@ const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
           setOpen(false);
         }}
         className={cn(
-          "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground",
-          isSelected && "bg-accent text-accent-foreground",
+          "relative flex cursor-pointer select-none items-center px-3 py-2 text-sm outline-none transition-colors hover:bg-emerald-50 hover:text-emerald-700 rounded-lg mx-1",
+          isSelected && "bg-emerald-50 text-emerald-700 font-medium",
           className,
         )}
         {...props}
       >
         <span className="flex-1">{children}</span>
-        {isSelected && <Check className="ml-2 h-4 w-4" />}
+        {isSelected && <Check className="ml-2 h-3.5 w-3.5 text-emerald-600" />}
       </div>
     );
   },

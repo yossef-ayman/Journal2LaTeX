@@ -5,9 +5,9 @@ import { Footer } from "./Footer";
 
 export function AppLayout() {
   return (
-    <div className="flex h-screen overflow-hidden bg-background">
+    <div className="flex h-screen overflow-hidden bg-[#f8faf8]">
       <Sidebar />
-      <div className="flex flex-1 flex-col overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden min-w-0">
         <Header />
         <main className="flex-1 overflow-y-auto">
           <Outlet />

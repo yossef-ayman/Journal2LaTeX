@@ -197,7 +197,16 @@ class PandocService:
                         shutil.move(str(item), str(output_dir / item.name))
                 shutil.rmtree(nested_media)
 
-            # Save to original_assets folder for fidelity verification
+            # Snapshot the extracted media for fidelity verification.  The
+            # throwaway markdown output is a by-product of the extraction
+            # command, not an asset of the document, so it is removed first --
+            # leaving it in made every asset report list "dummy.md" as an
+            # original asset that the renderer had failed to carry through.
+            try:
+                if dummy_out.exists():
+                    dummy_out.unlink()
+            except OSError:
+                pass
             orig_assets_dir = output_dir.parent / "original_assets"
             orig_assets_dir.mkdir(parents=True, exist_ok=True)
             for item in output_dir.iterdir():

@@ -1,0 +1,86 @@
+[2026-07-26 16:00:53,770] [INFO] [latex_compiler.py:337]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\ee94f6ae-35ad-4e10-919e-86604d7b5d31\rendered\main.tex
+[2026-07-26 16:00:53,855] [INFO] [latex_compiler.py:364]: Applied template compatibility layer to main.tex
+[2026-07-26 16:00:53,859] [INFO] [latex_compiler.py:126]: Rendered working directory tree before compilation:
+  010102.aux
+  010102.log
+  010102.out
+  010102.pdf
+  010102.synctex.gz
+  default.cls
+  default.sty
+  everyshi.sty
+  FDESPFDA2014revised1.eps
+  logo.png
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.tex
+  media/
+    image1.png
+    image2.png
+    image3.png
+    image4.png
+    image5.png
+    image6.png
+    image7.png
+    office_obj_1.png
+    office_obj_2.png
+    office_obj_3.png
+  NSP1.cls
+  psfig.sty
+  template.tex
+[2026-07-26 16:00:53,863] [INFO] [latex_compiler.py:132]: Template resource manifest (26 files):
+  010102.aux                               generated document / build artefact
+  010102.log                               generated document / build artefact
+  010102.out                               generated document / build artefact
+  010102.pdf                               template resource (graphic (PDF))
+  010102.synctex.gz                        generated document / build artefact
+  default.cls                              template resource (document class)
+  default.sty                              template resource (package / style)
+  everyshi.sty                             template resource (package / style)
+  FDESPFDA2014revised1.eps                 template resource (graphic (EPS))
+  logo.png                                 template resource (graphic (PNG))
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.tex                                 generated document / build artefact
+  media\image1.png                         renderer-generated media
+  media\image2.png                         renderer-generated media
+  media\image3.png                         renderer-generated media
+  media\image4.png                         renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\office_obj_1.png                   renderer-generated media
+  media\office_obj_2.png                   renderer-generated media
+  media\office_obj_3.png                   renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  psfig.sty                                template resource (package / style)
+  template.tex                             template resource (included source)
+[2026-07-26 16:01:00,471] [INFO] [latex_compiler.py:154]: Dependency resolution (26 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphics
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      cuted
+  [SYSTEM ] usepackage      newunicodechar
+  [LOCAL  ] includegraphics media/image1.png
+  [LOCAL  ] includegraphics media/office_obj_1.png
+  [LOCAL  ] includegraphics media/office_obj_3.png
+  [LOCAL  ] includegraphics media/office_obj_2.png
+  [LOCAL  ] includegraphics media/image2.png
+  [LOCAL  ] includegraphics media/image3.png
+  [LOCAL  ] includegraphics media/image4.png
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-07-26 16:01:01,146] [INFO] [latex_compiler.py:395]: Using latexmk compiler.
+[2026-07-26 16:01:04,118] [ERROR] [latex_compiler.py:450]: LaTeX compilation failed. PDF not generated. Check raw logs for details.

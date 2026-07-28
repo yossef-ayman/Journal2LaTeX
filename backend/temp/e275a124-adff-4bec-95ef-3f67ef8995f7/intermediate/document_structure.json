@@ -1,0 +1,2513 @@
+{
+  "title": "Optimal control strategies for overwhelming social media scrolling addiction by using fractional order mathematical modelling",
+  "authors": [
+    {
+      "name": "Corresponding Author",
+      "affiliation": "\\(^{1}\\) Department of Mathematics, Vel Tech Rangarajan Dr. Sagunthala R & D Institute of Science and Technology, Avadi, Tamil Nadu, 600 062, India",
+      "email": "aliakgul@siirt.edu.tr",
+      "photo_path": null,
+      "is_corresponding": true
+    }
+  ],
+  "abstract": "Scrolling in mobile allows navigation through information beyond the visible display. Scrolling addiction, sometimes known as \"doom scrolling\" or excessive feed consumption, has become a severe behavioral concern in the digital age. However, its addictive nature has generated worries about excessive screen time, mental weariness, a detrimental influence on mental health, social comparison, low self-esteem, and decreased productivity. This study introduces a novel fractional order mathematical model for scrolling, taking into account the app’s usage as an epidemic. The model is carefully confirmed using stability analyses of both local and global equilibrium. Furthermore, disease-free and non-trivial equilibrium scenarios are examined by estimating their reproduction rates. This study seeks to raise awareness of scrolling’s possible misuse and to investigate control theory remedies to addiction by using Optimal control theory. Furthermore, statistical data is used to illustrate numerical findings and investigate the effect of control factors on the scrolling model.",
+  "keywords": [
+    "Scrolling addiction",
+    "Fractional–order Caputo model",
+    "Optimal control theory",
+    "Numerical Simulation",
+    "Behavioural epidemiology",
+    "Mental health intervention"
+  ],
+  "sections": [
+    {
+      "title": "Introduction",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In the current digital era, smartphones have become an essential part of our lives, especially for young people. With more than 6.04 billion individuals using the internet worldwide, social media networks have become more significant but also present challenges. Particularly among Indian youth, more than 60% of those between the ages of 9 and 17 spend more than three hours a day on social media or gaming websites. Concerns regarding scrolling addiction, a behavioral habit characterized by excessive and compulsive scrolling and mental health issues sometimes accompanied by feelings of guilt, anxiety and decreased productivity have been raised by this increased screen time ."
+          },
+          "block_index": 1,
+          "original_page_number": null,
+          "original_order": 1,
+          "source_location": "Section: Introduction, Block: 1"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Strong tools for comprehending such intricate biological and social systems are mathematical models. They offer organized frameworks for depicting interactions, forecasting results, and identifying trends in data. Models show how changes in one component affect system-wide behavior by quantifying important variables. Mathematical modeling is used in many different domains, such as fluid mechanics, neurobiology, and the dynamics of infectious diseases. Crucially, these models enable researchers to replicate situations that could be difficult, expensive, or immoral to evaluate experimentally . This prediction ability advances scientific knowledge and directs evidence-based decision-making in public health, neurology, and medicine. Fractional mathematical models have become more significant in recent years due to their ability to better represent real-world dynamics, especially memory and heredity effects, which are generally ignored by classical integer-order models ."
+          },
+          "block_index": 2,
+          "original_page_number": null,
+          "original_order": 2,
+          "source_location": "Section: Introduction, Block: 2"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "When examining irregular phenomena like anomalous diffusion, fractional calculus provides more flexibility , allowing for the creation of more practical and efficient solutions. The complexity of drug addiction is reflected in the literature. The interaction of biological, psychological, and social elements in determining addiction consequences is constantly highlighted by research. Research highlights the significance of neurochemical changes, environmental stresses, hereditary predisposition, and the difficulties of chronicity and relapse. For instance, Vandaele and Ahmed (2021) investigated the shift from voluntary behavior to compulsive usage, concentrating on underlying brain circuits, while De Angelis et al. (2020) showed the negative consequences of smoking, drinking, and drug addiction on female fertility."
+          },
+          "block_index": 3,
+          "original_page_number": null,
+          "original_order": 3,
+          "source_location": "Section: Introduction, Block: 3"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Ceceli, Bradberry, and Goldstein (2022) examined prefrontal brain pathology and shown how addiction affects impulse control and decision-making. Zanib et al. (2024) presented a compartmental framework (SD, ED, HD, LD, RD, CD) that differentiates between severe and light addiction in addition to rehabilitation from a modeling standpoint. The significance of early detection and treatment in managing addiction was emphasized by their simulations using the RK4 approach in Maple. In their comprehensive review of recovery capital, Bunaciu et al. (2024) offered instruments to assess the strengths that facilitate long-term recovery."
+          },
+          "block_index": 4,
+          "original_page_number": null,
+          "original_order": 4,
+          "source_location": "Section: Introduction, Block: 4"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "While Muli (2025) expanded this paradigm to incorporate policing and rehabilitation, drawing comparisons with infectious disease models, other studies, including Mamo et al. (2024) , looked at the dynamic interaction between crime and drug misuse. Targeted interventions can significantly lower addiction rates and social costs, according to Alharbi et al. (2025) ’s four-compartment model that incorporates social factors. Artificial intelligence (AI) has also been incorporated into new methods. According to Kim et al. (2025) , AI-mediated communication can increase participation and health outcomes by improving treatment, prevention, and control techniques."
+          },
+          "block_index": 5,
+          "original_page_number": null,
+          "original_order": 5,
+          "source_location": "Section: Introduction, Block: 5"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Following a review of the literature, we discovered a number of research gaps. In order to fill these gaps, we created a mathematical model that distinguishes between those who are at high and low risk of addiction by incorporating the crucial idea of proneness. This idea is used in conjunction with treatment as a control technique to lessen drug addiction. It represents the vulnerability of people or communities to particular consequences. Proneness is frequently used to evaluate vulnerabilities resulting from social and environmental factors, such as disease outbreaks and ecological shifts . The current study offers a thorough mathematical model of drug addiction dynamics, building on this foundation. The model determines important threshold values, evaluates stability and sensitivity, and categorizes groups based on risk level and treatment status."
+          },
+          "block_index": 6,
+          "original_page_number": null,
+          "original_order": 6,
+          "source_location": "Section: Introduction, Block: 6"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Numerical simulations illustrate the crucial elements affecting the spread and control of addiction, while the fundamental reproduction number is computed to evaluate the potential for addiction transmission. The results highlight the significance of prompt treatment interventions and offer insightful information for developing successful public health initiatives to lower substance usage ."
+          },
+          "block_index": 7,
+          "original_page_number": null,
+          "original_order": 7,
+          "source_location": "Section: Introduction, Block: 7"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 16.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.455,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Fractional Elementary Concepts",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The basic definitions are presented related to fractional calculus."
+          },
+          "block_index": 8,
+          "original_page_number": null,
+          "original_order": 8,
+          "source_location": "Section: Fractional Elementary Concepts, Block: 8"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Definition 2.1 (Riemann–Liouville fractional integral, RLFI)"
+          },
+          "block_index": 9,
+          "original_page_number": null,
+          "original_order": 9,
+          "source_location": "Section: Fractional Elementary Concepts, Block: 9"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "A function \\(B(t) \\in L^{1}\\left( \\lbrack a,b\\rbrack,\\mathbb{R} \\right)\\) has a fractional integral of order \\(\\alpha^{*} \\in \\mathbb{R}^{+}\\), which is specified as"
+          },
+          "block_index": 10,
+          "original_page_number": null,
+          "original_order": 10,
+          "source_location": "Section: Fractional Elementary Concepts, Block: 10"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "I_{a +}^{\\alpha^{*}}B(t) = \\frac{1}{\\Gamma\\left( \\alpha^{*} \\right)}\\int_{0}^{t}(t - s)^{\\alpha^{*} - 1}B(s)\\, ds.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 11,
+          "original_page_number": null,
+          "original_order": 11,
+          "source_location": "Section: Fractional Elementary Concepts, Block: 11"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Definition 2.2 (Caputo fractional derivative, CFOD)"
+          },
+          "block_index": 12,
+          "original_page_number": null,
+          "original_order": 12,
+          "source_location": "Section: Fractional Elementary Concepts, Block: 12"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The function’s Caputo fractional-order derivative is"
+          },
+          "block_index": 13,
+          "original_page_number": null,
+          "original_order": 13,
+          "source_location": "Section: Fractional Elementary Concepts, Block: 13"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "^{c}D_{0 +}^{\\alpha^{*}}B(t) = \\frac{1}{\\Gamma\\left( n - \\alpha^{*} \\right)}\\int_{0}^{t}(t - s)^{n - \\alpha^{*} - 1}B^{(n)}(s)\\, ds,",
+            "label": null,
+            "number": null
+          },
+          "block_index": 14,
+          "original_page_number": null,
+          "original_order": 14,
+          "source_location": "Section: Fractional Elementary Concepts, Block: 14"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "where \\(B(t) \\in C^{n}\\lbrack a,b\\rbrack\\), \\(0 < \\alpha^{*} < 1\\), and \\(n = \\lfloor\\alpha^{*}\\rfloor + 1\\)."
+          },
+          "block_index": 15,
+          "original_page_number": null,
+          "original_order": 15,
+          "source_location": "Section: Fractional Elementary Concepts, Block: 15"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 16.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.455,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Model Formulation",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "To analyse the transmission of addiction dynamics through the Caputo fractional operator, we examine the tuberculosis model given in . Based on their correlation with scrolling addiction, the entire human population is divided into six groups. The social media Scrolling Addiction Model (SAM), which takes into consideration different treatment types and risk levels, is broken up into six compartments. They are"
+          },
+          "block_index": 16,
+          "original_page_number": null,
+          "original_order": 16,
+          "source_location": "Section: Model Formulation, Block: 16"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "– Susceptible: Individuals that are susceptible to scrolling addiction, frequently as a result of their social media presence or peer influence.",
+              "– Exposed: People who are occasionally exposed to scrolling triggers but have not yet become hooked.",
+              "– Addicted: Individuals who engage in compulsive scrolling have reported negative consequences on their mental health or relationships.",
+              "– Treated: People seeking assistance or implementing ways to reduce scrolling.",
+              "– Recovered: Those who’ve reduced scrolling.",
+              "– Relapse: Those who return to excessive scrolling after attempting recovery."
+            ],
+            "ordered": false
+          },
+          "block_index": 17,
+          "original_page_number": null,
+          "original_order": 17,
+          "source_location": "Section: Model Formulation, Block: 17"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 16.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.455,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Scrolling Addiction Model",
+      "level": 2,
+      "blocks": [],
+      "heading_format": {
+        "level": 2,
+        "bold": true,
+        "size_pt": 14.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.273,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Parameters",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "λ – Recruitment rate.",
+              "b – Contact/interaction rate between susceptible and addicted individuals.",
+              "N – Total population size.",
+              "ξ – Natural exit rate.",
+              "β – Progression rate from exposed to addicted.",
+              "τ – Transition feedback from exposed to latent.",
+              "γ – Treatment rate.",
+              "δ – Recovery rate.",
+              "ρ – Relapse rate.",
+              "σ – Latent return rate."
+            ],
+            "ordered": false
+          },
+          "block_index": 18,
+          "original_page_number": null,
+          "original_order": 18,
+          "source_location": "Section: Parameters, Block: 18"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The nonlinear fractional differential system under these assumptions is described as follows:"
+          },
+          "block_index": 19,
+          "original_page_number": null,
+          "original_order": 19,
+          "source_location": "Section: Parameters, Block: 19"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\n^{C}D_{t}^{\\alpha}S(t) & = \\lambda - \\frac{bSI}{N} - \\xi S, \\\\\n^{C}D_{t}^{\\alpha}E(t) & = \\frac{bSI}{N} - \\xi E - \\beta E + \\tau E, \\\\\n^{C}D_{t}^{\\alpha}I(t) & = \\beta E(t) - \\xi I - \\gamma I + \\sigma L, \\\\\n^{C}D_{t}^{\\alpha}T(t) & = \\gamma I - \\xi T - \\delta T, \\\\\n^{C}D_{t}^{\\alpha}R(t) & = \\delta T - \\xi R - \\rho R, \\\\\n^{C}D_{t}^{\\alpha}L(t) & = \\rho R - \\xi L - \\sigma L - \\tau E.\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 20,
+          "original_page_number": null,
+          "original_order": 20,
+          "source_location": "Section: Parameters, Block: 20"
+        }
+      ],
+      "heading_format": {
+        "level": 2,
+        "bold": true,
+        "size_pt": 14.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.273,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Properties of the Model",
+      "level": 2,
+      "blocks": [],
+      "heading_format": {
+        "level": 2,
+        "bold": true,
+        "size_pt": 14.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.273,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Positively Invariant Region",
+      "level": 3,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "SAM is explored in a feasible region \\(\\Omega \\subset \\mathbb{R}_{+}^{6}\\) such that"
+          },
+          "block_index": 21,
+          "original_page_number": null,
+          "original_order": 21,
+          "source_location": "Section: Positively Invariant Region, Block: 21"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\Omega = \\left\\{ S(t),E(t),I(t),T(t),R(t),L(t) \\in \\mathbb{R}_{+}^{6}\\mspace{6mu}:\\mspace{6mu} N(t) \\leq \\frac{\\lambda}{\\xi} \\right\\}.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 22,
+          "original_page_number": null,
+          "original_order": 22,
+          "source_location": "Section: Positively Invariant Region, Block: 22"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Lemma 3.1 \\(\\Omega \\subset \\mathbb{R}_{+}^{6}\\) is a region that is positively invariant and has nonnegative beginning conditions for model (3.1) in \\(\\mathbb{R}_{+}^{6}\\)."
+          },
+          "block_index": 23,
+          "original_page_number": null,
+          "original_order": 23,
+          "source_location": "Section: Positively Invariant Region, Block: 23"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Proof. The net population becomes"
+          },
+          "block_index": 24,
+          "original_page_number": null,
+          "original_order": 24,
+          "source_location": "Section: Positively Invariant Region, Block: 24"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "^{C}D_{t}^{\\alpha}N(t) =^{C}D_{t}^{\\alpha}S(t) +^{C}D_{t}^{\\alpha}E(t) +^{C}D_{t}^{\\alpha}I(t) +^{C}D_{t}^{\\alpha}T(t) +^{C}D_{t}^{\\alpha}R(t) +^{C}D_{t}^{\\alpha}L(t),",
+            "label": null,
+            "number": null
+          },
+          "block_index": 25,
+          "original_page_number": null,
+          "original_order": 25,
+          "source_location": "Section: Positively Invariant Region, Block: 25"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "and then we have"
+          },
+          "block_index": 26,
+          "original_page_number": null,
+          "original_order": 26,
+          "source_location": "Section: Positively Invariant Region, Block: 26"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "^{C}D_{t}^{\\alpha}N(t) + \\xi N(t) \\leq \\lambda.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 27,
+          "original_page_number": null,
+          "original_order": 27,
+          "source_location": "Section: Positively Invariant Region, Block: 27"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Integrating (3.3) we get"
+          },
+          "block_index": 28,
+          "original_page_number": null,
+          "original_order": 28,
+          "source_location": "Section: Positively Invariant Region, Block: 28"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "N(t) \\leq \\frac{\\lambda}{\\xi}.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 29,
+          "original_page_number": null,
+          "original_order": 29,
+          "source_location": "Section: Positively Invariant Region, Block: 29"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Our SAM solution with nonnegative requirements in Ω remains in \\(\\mathbb{R}_{+}^{6}\\), since Ω is positive invariant and attracts all solutions in Ω."
+          },
+          "block_index": 30,
+          "original_page_number": null,
+          "original_order": 30,
+          "source_location": "Section: Positively Invariant Region, Block: 30"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "We now define the positivity of the model solution:"
+          },
+          "block_index": 31,
+          "original_page_number": null,
+          "original_order": 31,
+          "source_location": "Section: Positively Invariant Region, Block: 31"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\mathbb{R}_{+}^{6} = \\left\\{ u \\in \\mathbb{R}_{+}^{6}\\mspace{6mu}:\\mspace{6mu} u(t) = \\left( S(t),E(t),I(t),T(t),R(t),L(t) \\right)^{T} \\right\\}.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 32,
+          "original_page_number": null,
+          "original_order": 32,
+          "source_location": "Section: Positively Invariant Region, Block: 32"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Lemma 3.2 We recognized that \\(j(t) \\in U\\lbrack c,d\\rbrack\\) and \\(^{C}D_{t}^{\\alpha}j(t) \\in (c,d\\rbrack\\) where α∈(0,1]."
+          },
+          "block_index": 33,
+          "original_page_number": null,
+          "original_order": 33,
+          "source_location": "Section: Positively Invariant Region, Block: 33"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "If \\(^{C}D_{t}^{\\alpha}j(t) \\in (c,d\\rbrack \\geq 0,\\mspace{6mu}\\forall u \\in (c,d)\\) then \\(j(t)\\) is non-decreasing."
+          },
+          "block_index": 34,
+          "original_page_number": null,
+          "original_order": 34,
+          "source_location": "Section: Positively Invariant Region, Block: 34"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "If \\(^{C}D_{t}^{\\alpha}j(t) \\in (c,d\\rbrack \\leq 0,\\mspace{6mu}\\forall u \\in (c,d)\\) then \\(j(t)\\) is decreasing."
+          },
+          "block_index": 35,
+          "original_page_number": null,
+          "original_order": 35,
+          "source_location": "Section: Positively Invariant Region, Block: 35"
+        }
+      ],
+      "heading_format": {
+        "level": 3,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Positivity and Boundedness",
+      "level": 3,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Lemma 3.3. The SAM solution is non-negative and bounded"
+          },
+          "block_index": 36,
+          "original_page_number": null,
+          "original_order": 36,
+          "source_location": "Section: Positivity and Boundedness, Block: 36"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\forall\\,\\left( S(0),E(0),I(0),T(0),R(0),L(0) \\right) \\in \\mathbb{R}_{+}^{6}\\), ∀ t>0."
+          },
+          "block_index": 37,
+          "original_page_number": null,
+          "original_order": 37,
+          "source_location": "Section: Positivity and Boundedness, Block: 37"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Proof. At the initial condition Model (3.1) gives"
+          },
+          "block_index": 38,
+          "original_page_number": null,
+          "original_order": 38,
+          "source_location": "Section: Positivity and Boundedness, Block: 38"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\n^{C}D_{t}^{\\alpha}S|_{S = 0} & = \\lambda > 0,\\quad^{C}D_{t}^{\\alpha}E\\left|_{E = 0} = \\frac{bSI}{N} \\geq 0,\\quad^{C}D_{t}^{\\alpha}I \\right|_{I = 0} = \\beta E(t) + \\sigma L \\geq 0, \\\\\n^{C}D_{t}^{\\alpha}T|_{T = 0} & = \\gamma I \\geq 0,\\quad^{C}D_{t}^{\\alpha}R\\left|_{R = 0} = \\delta T \\geq 0,\\quad^{C}D_{t}^{\\alpha}L \\right|_{L = 0} = \\rho R \\geq 0,\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 39,
+          "original_page_number": null,
+          "original_order": 39,
+          "source_location": "Section: Positivity and Boundedness, Block: 39"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "then by Lemma 3.2 \\(S(t),E(t),I(t),T(t),R(t)\\) and \\(L(t)\\) are non-decreasing. Hence"
+          },
+          "block_index": 40,
+          "original_page_number": null,
+          "original_order": 40,
+          "source_location": "Section: Positivity and Boundedness, Block: 40"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\Omega = \\left\\{ (S,E,I,T,R,L) \\in \\mathbb{R}_{+}^{5}\\mspace{6mu}:\\mspace{6mu}(S,E,I,T,R,L) \\geq 0 \\right\\}.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 41,
+          "original_page_number": null,
+          "original_order": 41,
+          "source_location": "Section: Positivity and Boundedness, Block: 41"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "As a result, the SAM solution is bounded."
+          },
+          "block_index": 42,
+          "original_page_number": null,
+          "original_order": 42,
+          "source_location": "Section: Positivity and Boundedness, Block: 42"
+        }
+      ],
+      "heading_format": {
+        "level": 3,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Basic reproduction number",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "To find the reproduction number we use Next Generation Matrix method. \\(SS^{*}\\)"
+          },
+          "block_index": 43,
+          "original_page_number": null,
+          "original_order": 43,
+          "source_location": "Section: Basic reproduction number, Block: 43"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\mathbf{y} = (S\\mspace{6mu} E\\mspace{6mu} I\\mspace{6mu} T\\mspace{6mu} R\\mspace{6mu} L)",
+            "label": null,
+            "number": null
+          },
+          "block_index": 44,
+          "original_page_number": null,
+          "original_order": 44,
+          "source_location": "Section: Basic reproduction number, Block: 44"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "We take our model as"
+          },
+          "block_index": 45,
+          "original_page_number": null,
+          "original_order": 45,
+          "source_location": "Section: Basic reproduction number, Block: 45"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\frac{dy}{dt} = v(y) - w(y),",
+            "label": null,
+            "number": null
+          },
+          "block_index": 46,
+          "original_page_number": null,
+          "original_order": 46,
+          "source_location": "Section: Basic reproduction number, Block: 46"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "where"
+          },
+          "block_index": 47,
+          "original_page_number": null,
+          "original_order": 47,
+          "source_location": "Section: Basic reproduction number, Block: 47"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "v(y) = \\begin{pmatrix}\n\\frac{bSI}{N} \\\\\n0 \\\\\n0 \\\\\n0\n\\end{pmatrix},\\quad\\quad w(y) = \\begin{pmatrix}\n(\\xi + \\beta)E \\\\ - \\beta E + (\\xi + \\gamma)I - \\sigma L \\\\ - \\gamma I + (\\xi + \\delta)T \\\\ - \\rho R + (\\xi + \\sigma)L\n\\end{pmatrix}.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 48,
+          "original_page_number": null,
+          "original_order": 48,
+          "source_location": "Section: Basic reproduction number, Block: 48"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Then the Jacobian matrices for \\(v(y)\\) and \\(w(y)\\) are given as"
+          },
+          "block_index": 49,
+          "original_page_number": null,
+          "original_order": 49,
+          "source_location": "Section: Basic reproduction number, Block: 49"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "J_{D_{f}}^{w} = \\begin{pmatrix}\n\\xi + \\beta - \\tau & 0 & 0 & 0 \\\\ - \\beta & \\xi + \\gamma & 0 & - \\sigma \\\\\n0 & - \\gamma & \\xi + \\delta & 0 \\\\ - \\tau & 0 & 0 & \\xi + \\sigma\n\\end{pmatrix},\\quad\\quad J_{D_{f}}^{v} = \\begin{pmatrix}\n\\frac{bS}{N} & 0 & 0 & 0 \\\\\n0 & 0 & 0 & 0 \\\\\n0 & 0 & 0 & 0 \\\\\n0 & 0 & 0 & 0\n\\end{pmatrix}.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 50,
+          "original_page_number": null,
+          "original_order": 50,
+          "source_location": "Section: Basic reproduction number, Block: 50"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The basic reproduction number is the spectral radius of \\(J_{D_{f}}^{v}\\left( J_{D_{f}}^{w} \\right)^{- 1}\\). Thus the reproduction number \\(R_{0}\\) is given by"
+          },
+          "block_index": 51,
+          "original_page_number": null,
+          "original_order": 51,
+          "source_location": "Section: Basic reproduction number, Block: 51"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "R_{0} = \\frac{b\\lambda(\\xi + \\delta)\\left\\lbrack \\beta(\\xi + \\sigma) + \\tau\\sigma \\right\\rbrack}{N\\xi(\\xi + \\beta - \\tau)\\left\\lbrack (\\xi + \\gamma)(\\xi + \\delta)(\\xi + \\sigma) \\right\\rbrack}.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 52,
+          "original_page_number": null,
+          "original_order": 52,
+          "source_location": "Section: Basic reproduction number, Block: 52"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "If \\(R_{0} < 1\\), scrolling addiction dies out and if \\(R_{0} > 1\\), addiction persists at endemic levels."
+          },
+          "block_index": 53,
+          "original_page_number": null,
+          "original_order": 53,
+          "source_location": "Section: Basic reproduction number, Block: 53"
+        }
+      ],
+      "heading_format": {
+        "level": 2,
+        "bold": true,
+        "size_pt": 14.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.273,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "SAM equilibriums",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The fractional system (3.1) has at most two equilibriums: scrolling addiction-free equilibrium (SAFE) \\(E_{0} = \\left( \\frac{\\lambda}{\\xi},0,0,0,0,0 \\right)\\) and scrolling addiction endemic equilibrium (SAEE) \\(E_{1} = \\left( S^{*},E^{*},I^{*},T^{*},R^{*},L^{*} \\right)\\).among the population"
+          },
+          "block_index": 54,
+          "original_page_number": null,
+          "original_order": 54,
+          "source_location": "Section: SAM equilibriums, Block: 54"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Theorem 3.1 SAM admits a unique SAFE given by"
+          },
+          "block_index": 55,
+          "original_page_number": null,
+          "original_order": 55,
+          "source_location": "Section: SAM equilibriums, Block: 55"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "E_{0} = \\left( \\frac{\\lambda}{\\xi},0,0,0,0,0 \\right).",
+            "label": null,
+            "number": null
+          },
+          "block_index": 56,
+          "original_page_number": null,
+          "original_order": 56,
+          "source_location": "Section: SAM equilibriums, Block: 56"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Proof. At \\((S,0,0,0,0,0)\\) the addiction free or SAFE is"
+          },
+          "block_index": 57,
+          "original_page_number": null,
+          "original_order": 57,
+          "source_location": "Section: SAM equilibriums, Block: 57"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "E_{0} = \\left( \\frac{\\lambda}{\\xi},0,0,0,0,0 \\right).",
+            "label": null,
+            "number": null
+          },
+          "block_index": 58,
+          "original_page_number": null,
+          "original_order": 58,
+          "source_location": "Section: SAM equilibriums, Block: 58"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Theorem 3.2 SAM admits a unique SAEE"
+          },
+          "block_index": 59,
+          "original_page_number": null,
+          "original_order": 59,
+          "source_location": "Section: SAM equilibriums, Block: 59"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "E_{1} = \\left( S^{*}(t),E^{*}(t),I^{*}(t),T^{*}(t),R^{*}(t),L^{*}(t) \\right).",
+            "label": null,
+            "number": null
+          },
+          "block_index": 60,
+          "original_page_number": null,
+          "original_order": 60,
+          "source_location": "Section: SAM equilibriums, Block: 60"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Proof. Scrolling addiction persists in the population, given by"
+          },
+          "block_index": 61,
+          "original_page_number": null,
+          "original_order": 61,
+          "source_location": "Section: SAM equilibriums, Block: 61"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "E_{1} = \\left( S^{*}(t),E^{*}(t),I^{*}(t),T^{*}(t),R^{*}(t),L^{*}(t) \\right).",
+            "label": null,
+            "number": null
+          },
+          "block_index": 62,
+          "original_page_number": null,
+          "original_order": 62,
+          "source_location": "Section: SAM equilibriums, Block: 62"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "To get the equilibria for scrolling addiction system (3.1)"
+          },
+          "block_index": 63,
+          "original_page_number": null,
+          "original_order": 63,
+          "source_location": "Section: SAM equilibriums, Block: 63"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "^{C}D_{t}^{\\alpha}S =^{C}D_{t}^{\\alpha}E =^{C}D_{t}^{\\alpha}I =^{C}D_{t}^{\\alpha}T =^{C}D_{t}^{\\alpha}R =^{C}D_{t}^{\\alpha}L = 0.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 64,
+          "original_page_number": null,
+          "original_order": 64,
+          "source_location": "Section: SAM equilibriums, Block: 64"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Therefore."
+          },
+          "block_index": 65,
+          "original_page_number": null,
+          "original_order": 65,
+          "source_location": "Section: SAM equilibriums, Block: 65"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\n\\lambda - \\frac{bSI}{N} - \\xi S & = 0, \\\\\n\\frac{bSI}{N} - \\xi E - \\beta E & = 0, \\\\\n\\beta E(t) - \\xi I - \\gamma I + \\sigma L & = 0, \\\\\n\\gamma I - \\xi T - \\delta T & = 0, \\\\\n\\delta T - \\xi R - \\rho R & = 0, \\\\\n\\rho R - \\xi L - \\sigma L & = 0.\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 66,
+          "original_page_number": null,
+          "original_order": 66,
+          "source_location": "Section: SAM equilibriums, Block: 66"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "If we solve the above equations we get"
+          },
+          "block_index": 67,
+          "original_page_number": null,
+          "original_order": 67,
+          "source_location": "Section: SAM equilibriums, Block: 67"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\nS^{*}(t) & = \\frac{N}{R_{0}}, \\\\\nE^{*}(t) & = \\frac{\\xi + \\gamma - \\sigma K}{\\beta}I^{*} = \\frac{(\\xi + \\gamma - \\sigma K)\\xi N}{\\beta b}\\left( R_{0} - 1 \\right), \\\\\nI^{*}(t) & = \\frac{\\xi N}{b}\\left( R_{0} - 1 \\right), \\\\\nT^{*}(t) & = \\frac{\\gamma}{(\\xi + \\delta)}I^{*} = \\frac{\\gamma\\xi N}{(\\xi + \\delta)b}\\left( R_{0} - 1 \\right), \\\\\nR^{*}(t) & = \\frac{\\delta}{(\\xi + \\rho)}T^{*} = \\frac{\\delta\\gamma\\xi N}{(\\xi + \\rho)(\\xi + \\delta)b}\\left( R_{0} - 1 \\right), \\\\\nL^{*}(t) & = \\frac{\\rho}{(\\xi + \\sigma)}R^{*} = \\frac{\\rho\\delta\\gamma\\xi N}{(\\xi + \\rho)(\\xi + \\delta)(\\xi + \\sigma)b}\\left( R_{0} - 1 \\right).\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 68,
+          "original_page_number": null,
+          "original_order": 68,
+          "source_location": "Section: SAM equilibriums, Block: 68"
+        }
+      ],
+      "heading_format": {
+        "level": 2,
+        "bold": true,
+        "size_pt": 14.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.273,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Stability analysis",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Theorem 4.1 The fractional order SAM is locally asymptotically stable at SAFE if \\(R_{0} < 1\\)."
+          },
+          "block_index": 69,
+          "original_page_number": null,
+          "original_order": 69,
+          "source_location": "Section: Stability analysis, Block: 69"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Proof. The Jacobian matrix of \\(E_{0}\\) is defined by"
+          },
+          "block_index": 70,
+          "original_page_number": null,
+          "original_order": 70,
+          "source_location": "Section: Stability analysis, Block: 70"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "J\\left( E_{0} \\right) = \\begin{pmatrix} - \\xi & 0 & - b & 0 & 0 & 0 \\\\\n0 & - (\\xi + \\beta) & b & 0 & 0 & 0 \\\\\n0 & \\beta & - (\\xi + \\gamma) & 0 & 0 & \\sigma \\\\\n0 & 0 & \\gamma & - (\\xi + \\delta) & 0 & 0 \\\\\n0 & 0 & 0 & \\delta & - (\\xi + \\rho) & 0 \\\\\n0 & - \\tau & 0 & 0 & \\rho & - (\\xi + \\sigma)\n\\end{pmatrix}.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 71,
+          "original_page_number": null,
+          "original_order": 71,
+          "source_location": "Section: Stability analysis, Block: 71"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Let the diagonal elements be"
+          },
+          "block_index": 72,
+          "original_page_number": null,
+          "original_order": 72,
+          "source_location": "Section: Stability analysis, Block: 72"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "c_{1} = \\xi,\\quad c_{2} = \\xi + \\beta,\\quad c_{3} = \\xi + \\gamma,\\quad c_{4} = \\xi + \\delta,\\quad c_{5} = \\xi + \\rho,\\quad c_{6} = \\xi + \\sigma.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 73,
+          "original_page_number": null,
+          "original_order": 73,
+          "source_location": "Section: Stability analysis, Block: 73"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The characteristic polynomial of the above Jacobian matrix is"
+          },
+          "block_index": 74,
+          "original_page_number": null,
+          "original_order": 74,
+          "source_location": "Section: Stability analysis, Block: 74"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\left| J\\left( E_{0} \\right) - \\lambda I \\right| = \\lambda^{6} + A_{1}\\lambda^{5} + A_{2}\\lambda^{4} + A_{3}\\lambda^{3} + A_{4}\\lambda^{2} + A_{5}\\lambda + A_{6},",
+            "label": null,
+            "number": null
+          },
+          "block_index": 75,
+          "original_page_number": null,
+          "original_order": 75,
+          "source_location": "Section: Stability analysis, Block: 75"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "where"
+          },
+          "block_index": 76,
+          "original_page_number": null,
+          "original_order": 76,
+          "source_location": "Section: Stability analysis, Block: 76"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\nA_{1} & = \\sum_{i = 1}^{6}c_{i}, \\\\\nA_{2} & = \\sum_{1 \\leq i < j \\leq 6}^{}c_{i}c_{j} - b\\beta, \\\\\nA_{3} & = \\sum_{1 \\leq i < j < k \\leq 4}^{}c_{i}c_{j}c_{k} + \\left( c_{5} + c_{6} \\right)\\sum_{1 \\leq i < j \\leq 4}^{}c_{i}c_{j} + \\left( c_{5}c_{6} - b\\beta \\right)\\sum_{i = 1}^{4}c_{i}, \\\\\nA_{4} & = \\sum_{1 \\leq i < j < k < l \\leq 4}^{}c_{i}c_{j}c_{k}c_{l} + \\left( c_{5} + c_{6} \\right)\\sum_{1 \\leq i < j < k \\leq 4}^{}c_{i}c_{j}c_{k} + \\left( c_{5}c_{6} - b\\beta \\right)\\sum_{1 \\leq i < j \\leq 4}^{}c_{i}c_{j}, \\\\\nA_{5} & = \\left( c_{5} + c_{6} \\right)c_{1}c_{2}c_{3}c_{4} + \\left( c_{5}c_{6} - b\\beta \\right)\\sum_{1 \\leq i < j < k \\leq 4}^{}c_{i}c_{j}c_{k}, \\\\\nA_{6} & = \\xi(\\xi + \\delta)(\\xi + \\sigma)(\\xi + \\rho)\\left\\lbrack (\\xi + \\beta)(\\xi + \\gamma) - b\\beta \\right\\rbrack.\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 77,
+          "original_page_number": null,
+          "original_order": 77,
+          "source_location": "Section: Stability analysis, Block: 77"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "It is clearly observed that \\(A_{3},A_{4}\\) and \\(A_{5}\\) are strictly positive. \\(A_{5}\\) and \\(A_{6} > 0\\) only if \\(R_{0} < 1\\). Therefore SAFE is locally asymptotically stable only if \\(R_{0} < 1\\)."
+          },
+          "block_index": 78,
+          "original_page_number": null,
+          "original_order": 78,
+          "source_location": "Section: Stability analysis, Block: 78"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Theorem 4.2 The fractional order SAM is globally asymptotically stable at SAFE if \\(R_{0} < 1\\)."
+          },
+          "block_index": 79,
+          "original_page_number": null,
+          "original_order": 79,
+          "source_location": "Section: Stability analysis, Block: 79"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Let us define the Lyapunov function V as"
+          },
+          "block_index": 80,
+          "original_page_number": null,
+          "original_order": 80,
+          "source_location": "Section: Stability analysis, Block: 80"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\nV = & x_{1}\\left( S - S^{*} - S^{*}\\ln\\frac{S}{S^{*}} \\right) + x_{2}\\left( E - E^{*} - E^{*}\\ln\\frac{E}{E^{*}} \\right) \\\\ & + x_{3}\\left( I - I^{*} - I^{*}\\ln\\frac{I}{I^{*}} \\right) + x_{4}\\left( T - T^{*} - T^{*}\\ln\\frac{T}{T^{*}} \\right) \\\\ & + x_{5}\\left( R - R^{*} - R^{*}\\ln\\frac{R}{R^{*}} \\right) \\\\ & + x_{6}\\left( L - L^{*} - L^{*}\\ln\\frac{L}{L^{*}} \\right).\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 81,
+          "original_page_number": null,
+          "original_order": 81,
+          "source_location": "Section: Stability analysis, Block: 81"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "where \\(x_{i}\\) are undetermined coefficients. Then"
+          },
+          "block_index": 82,
+          "original_page_number": null,
+          "original_order": 82,
+          "source_location": "Section: Stability analysis, Block: 82"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\nV' & = x_{1}\\left( 1 - \\frac{S}{S^{*}} \\right)S' + x_{2}\\left( 1 - \\frac{E}{E^{*}} \\right)E' + x_{3}\\left( 1 - \\frac{I}{I^{*}} \\right)I' \\\\ & \\quad + x_{4}\\left( 1 - \\frac{T}{T^{*}} \\right)T' + x_{5}\\left( 1 - \\frac{R}{R^{*}} \\right)R' + x_{6}\\left( 1 - \\frac{L}{L^{*}} \\right)L'.\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 83,
+          "original_page_number": null,
+          "original_order": 83,
+          "source_location": "Section: Stability analysis, Block: 83"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\nV' & = x_{1}\\left( 1 - \\frac{S}{S^{*}} \\right)\\left( \\lambda - \\frac{bSI}{N} - \\xi S \\right) \\\\ & \\quad + x_{2}\\left( 1 - \\frac{E}{E^{*}} \\right)\\left( \\frac{bSI}{N} - \\xi E - \\beta E + \\tau E \\right) \\\\ & \\quad + x_{3}\\left( 1 - \\frac{I}{I^{*}} \\right)\\left( \\beta E(t) - \\xi I - \\gamma I + \\sigma L \\right) \\\\ & \\quad + x_{4}\\left( 1 - \\frac{T}{T^{*}} \\right)(\\gamma I - \\xi T - \\delta T) \\\\ & \\quad + x_{5}\\left( 1 - \\frac{R}{R^{*}} \\right)(\\delta T - \\xi R - \\rho R) \\\\ & \\quad + x_{6}\\left( 1 - \\frac{L}{L^{*}} \\right)(\\rho R - \\xi L - \\sigma L - \\tau E).\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 84,
+          "original_page_number": null,
+          "original_order": 84,
+          "source_location": "Section: Stability analysis, Block: 84"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\nV' & = x_{1}\\left( 1 - \\frac{S}{S^{*}} \\right)\\left( \\lambda - \\frac{bSI}{N} - \\xi S \\right) \\\\ & \\quad + x_{2}\\left( 1 - \\frac{E}{E^{*}} \\right)\\left( \\frac{bSI}{N} - \\xi E - \\beta E + \\tau E \\right) \\\\ & \\quad + x_{3}\\left( 1 - \\frac{I}{I^{*}} \\right)\\left( \\beta E(t) - \\xi I - \\gamma I + \\sigma L \\right) \\\\ & \\quad + x_{4}\\left( 1 - \\frac{T}{T^{*}} \\right)(\\gamma I - \\xi T - \\delta T) \\\\ & \\quad + x_{5}\\left( 1 - \\frac{R}{R^{*}} \\right)(\\delta T - \\xi R - \\rho R) \\\\ & \\quad + x_{6}\\left( 1 - \\frac{L}{L^{*}} \\right)(\\rho R - \\xi L - \\sigma L - \\tau E).\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 85,
+          "original_page_number": null,
+          "original_order": 85,
+          "source_location": "Section: Stability analysis, Block: 85"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\nV' & = x_{1}\\left( 1 - \\frac{S}{S^{*}} \\right)\\left( \\lambda - \\frac{bSI}{N} - \\xi S \\right) \\\\ & \\quad + x_{2}\\left( 1 - \\frac{E}{E^{*}} \\right)\\left( \\frac{bSI}{N} - \\xi E - \\beta E + \\tau E \\right) \\\\ & \\quad + x_{3}\\left( 1 - \\frac{I}{I^{*}} \\right)\\left( \\beta E(t) - \\xi I - \\gamma I + \\sigma L \\right) \\\\ & \\quad + x_{4}\\left( 1 - \\frac{T}{T^{*}} \\right)(\\gamma I - \\xi T - \\delta T) \\\\ & \\quad + x_{5}\\left( 1 - \\frac{R}{R^{*}} \\right)(\\delta T - \\xi R - \\rho R) \\\\ & \\quad + x_{6}\\left( 1 - \\frac{L}{L^{*}} \\right)(\\rho R - \\xi L - \\sigma L - \\tau E).\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 86,
+          "original_page_number": null,
+          "original_order": 86,
+          "source_location": "Section: Stability analysis, Block: 86"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Substituting the derivatives from (3.1) and using the equilibrium conditions, after simplification we obtain at addiction-free equilibrium \\(E^{*} = I^{*} = T^{*} = R^{*} = L^{*} = 0\\):"
+          },
+          "block_index": 87,
+          "original_page_number": null,
+          "original_order": 87,
+          "source_location": "Section: Stability analysis, Block: 87"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "V' = x_{1}\\left( 1 - \\frac{S}{S^{*}} \\right)(\\lambda - \\xi S) < - x_{1}\\xi.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 88,
+          "original_page_number": null,
+          "original_order": 88,
+          "source_location": "Section: Stability analysis, Block: 88"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Thus V′<0 whenever \\(R_{0} < 1\\). Therefore, fractional order SAM is globally asymptotically stable at the SAFE if \\(R_{0} < 1\\)."
+          },
+          "block_index": 89,
+          "original_page_number": null,
+          "original_order": 89,
+          "source_location": "Section: Stability analysis, Block: 89"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 16.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.455,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Optimal Control Theory",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In this section, we initially created three control variables, \\(u_{1}\\), \\(u_{2}\\), and \\(u_{3}\\) based on the presence status of the scrolling addiction from being hooked to scrolling since the addiction is present in the susceptible and exposed population. Among these, \\(u_{1}\\) stands for education or awareness control, which, for instance, lowers contact rate b and susceptibility. \\(u_{2}\\) denotes prompt symptomatic treatment and rehabilitation for monitoring, which speeds up the transition from addiction to recovery and treatment. \\(u_{3}\\) stands for relapse prevention control, which lowers immunity loss and relapse. The forward-backward scanning algorithm optimizes the control function. We obtain the following equation based on our control variables:"
+          },
+          "block_index": 90,
+          "original_page_number": null,
+          "original_order": 90,
+          "source_location": "Section: Optimal Control Theory, Block: 90"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\n^{C}D_{t}^{\\alpha}S(t) & = \\lambda - \\frac{b\\left( 1 - u_{1} \\right)SI}{N} - \\xi S, \\\\\n^{C}D_{t}^{\\alpha}E(t) & = \\frac{b\\left( 1 - u_{1} \\right)SI}{N} - \\xi E - \\beta E + \\tau E, \\\\\n^{C}D_{t}^{\\alpha}I(t) & = \\beta E(t) - \\left( \\xi + \\gamma + u_{2} \\right)I + \\sigma L, \\\\\n^{C}D_{t}^{\\alpha}T(t) & = \\left( \\gamma + u_{2} \\right)I - \\xi T - \\delta T, \\\\\n^{C}D_{t}^{\\alpha}R(t) & = \\delta T - \\left( \\xi + \\rho\\left( 1 - u_{3} \\right) \\right)R, \\\\\n^{C}D_{t}^{\\alpha}L(t) & = \\rho\\left( 1 - u_{3} \\right)R - \\xi L - \\sigma\\left( 1 - u_{3} \\right)L - \\tau E,\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 91,
+          "original_page_number": null,
+          "original_order": 91,
+          "source_location": "Section: Optimal Control Theory, Block: 91"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "subject to the initial condition"
+          },
+          "block_index": 92,
+          "original_page_number": null,
+          "original_order": 92,
+          "source_location": "Section: Optimal Control Theory, Block: 92"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "S(0) = S_{0},\\quad E(0) = E_{0},\\quad I(0) = I_{0},\\quad T(0) = T_{0},\\quad R(0) = R_{0},\\quad L(0) = L_{0}.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 93,
+          "original_page_number": null,
+          "original_order": 93,
+          "source_location": "Section: Optimal Control Theory, Block: 93"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In our system three control variables are applied in optimal control analysis with the two primary goals of minimizing control costs and controlling addiction. To do this, we present the objective function that follows. The objective functional for the minimization problem is:"
+          },
+          "block_index": 94,
+          "original_page_number": null,
+          "original_order": 94,
+          "source_location": "Section: Optimal Control Theory, Block: 94"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\mathcal{O} = \\min_{\\left( u_{1},u_{2},u_{3} \\right)}\\int_{0}^{t_{f}}\\left( c_{1}S + c_{2}I + c_{3}L + \\frac{1}{2}\\left( c_{3}u_{1}^{2} + c_{4}u_{2}^{2} + c_{5}u_{3}^{2} \\right) \\right)dt,",
+            "label": null,
+            "number": null
+          },
+          "block_index": 95,
+          "original_page_number": null,
+          "original_order": 95,
+          "source_location": "Section: Optimal Control Theory, Block: 95"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "each control is bounded \\(0 \\leq u_{i} \\leq 1\\), i=1,2,3."
+          },
+          "block_index": 96,
+          "original_page_number": null,
+          "original_order": 96,
+          "source_location": "Section: Optimal Control Theory, Block: 96"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The weight constants of S,I and L are denoted by \\(c_{1},c_{2}\\) and \\(c_{3}\\), while the weight constants of the control variables \\(u_{1},u_{2}\\) and \\(u_{3}\\) are denoted by \\(c_{3},c_{4}\\) and \\(c_{5}\\). Additionally, these control variables are defined as \\(u_{1}\\) for S to lessen vulnerability and exposure to addictive scrolling, \\(u_{2}\\) for I to improve recovery and treatment success, and \\(u_{3}\\) for L to lessen immunity loss and relapse."
+          },
+          "block_index": 97,
+          "original_page_number": null,
+          "original_order": 97,
+          "source_location": "Section: Optimal Control Theory, Block: 97"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Only terms that can benefit from these controls have been assigned these parameters. For example, the term \\(\\frac{bSI}{N}\\), describes the population among susceptible interacting users with infected ones. As a result, in comparison to other populations, the control parameter will effectively affect these variables."
+          },
+          "block_index": 98,
+          "original_page_number": null,
+          "original_order": 98,
+          "source_location": "Section: Optimal Control Theory, Block: 98"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Fractional optimum control issues can now be solved using Pontryagin’s maximum principle (PMP)."
+          },
+          "block_index": 99,
+          "original_page_number": null,
+          "original_order": 99,
+          "source_location": "Section: Optimal Control Theory, Block: 99"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The Hamiltonian function is defined by"
+          },
+          "block_index": 100,
+          "original_page_number": null,
+          "original_order": 100,
+          "source_location": "Section: Optimal Control Theory, Block: 100"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\nH & = c_{1}S + c_{2}I + c_{3}L + \\frac{1}{2}\\left( c_{3}u_{1}^{2} + c_{4}u_{2}^{2} + c_{5}u_{3}^{2} \\right) \\\\ & \\quad + \\Phi_{1}^{C}D_{t}^{\\alpha}S(t) + \\Phi_{2}^{C}D_{t}^{\\alpha}E(t) + \\Phi_{3}^{C}D_{t}^{\\alpha}I(t) + \\Phi_{4}^{C}D_{t}^{\\alpha}T(t) + \\Phi_{5}^{C}D_{t}^{\\alpha}R(t) + \\Phi_{6}^{C}D_{t}^{\\alpha}L(t).\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 101,
+          "original_page_number": null,
+          "original_order": 101,
+          "source_location": "Section: Optimal Control Theory, Block: 101"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The adjoint variables \\(\\Phi_{1},\\Phi_{2},\\Phi_{3},\\Phi_{4},\\Phi_{5},\\Phi_{6}\\) correspond to the state variables S,E,I,T,R,L respectively."
+          },
+          "block_index": 102,
+          "original_page_number": null,
+          "original_order": 102,
+          "source_location": "Section: Optimal Control Theory, Block: 102"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Next, we will use Agrawal’s method to solve fractional optimal control problems (FOCP) ."
+          },
+          "block_index": 103,
+          "original_page_number": null,
+          "original_order": 103,
+          "source_location": "Section: Optimal Control Theory, Block: 103"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Theorem 5.1. Set \\(u_{1}^{*},u_{2}^{*}\\) and \\(u_{3}^{*}\\) for the control system of control variables. Then the control variable can be expressed as"
+          },
+          "block_index": 104,
+          "original_page_number": null,
+          "original_order": 104,
+          "source_location": "Section: Optimal Control Theory, Block: 104"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "u_{1}^{*} = \\left\\{ 0,\\left( 1,\\frac{\\left( \\Phi_{1} - \\Phi_{2} \\right)SI}{c_{1}} \\right) \\right\\},\\quad u_{2}^{*} = \\left\\{ 0,\\left( 1,\\frac{\\left( \\Phi_{2} - \\Phi_{3} \\right)I}{c_{2}} \\right) \\right\\},\\quad u_{3}^{*} = \\left\\{ 0,\\left( 1,\\frac{\\left( \\Phi_{3} - \\Phi_{6} \\right)L}{c_{3}} \\right) \\right\\}.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 105,
+          "original_page_number": null,
+          "original_order": 105,
+          "source_location": "Section: Optimal Control Theory, Block: 105"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "where the adjoint variables \\(\\Phi_{1},\\Phi_{2},\\Phi_{3},\\Phi_{4},\\Phi_{5},\\Phi_{6}\\) satisfy"
+          },
+          "block_index": 106,
+          "original_page_number": null,
+          "original_order": 106,
+          "source_location": "Section: Optimal Control Theory, Block: 106"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\n^{C}D_{0 +}^{\\alpha}\\Phi_{1} & = - c_{1} + \\frac{b\\left( 1 - u_{1} \\right)I}{N}\\left( \\Phi_{1} - \\Phi_{2} \\right) + \\xi\\Phi_{1}, \\\\\n^{C}D_{0 +}^{\\alpha}\\Phi_{2} & = \\beta\\left( \\Phi_{2} - \\Phi_{3} \\right) + \\Phi_{2}\\xi + \\left( \\Phi_{6} - \\Phi_{2} \\right)\\tau, \\\\\n^{C}D_{0 +}^{\\alpha}\\Phi_{3} & = \\frac{b\\left( 1 - u_{1} \\right)S}{N}\\left( \\Phi_{1} - \\Phi_{3} \\right) + \\left( \\gamma + u_{2} \\right)\\left( \\Phi_{3} - \\Phi_{4} \\right) + \\xi\\Phi_{3}, \\\\\n^{C}D_{0 +}^{\\alpha}\\Phi_{4} & = \\delta\\left( \\Phi_{4} - \\Phi_{5} \\right) + \\xi\\Phi_{4}, \\\\\n^{C}D_{0 +}^{\\alpha}\\Phi_{5} & = \\left( \\Phi_{5} - \\Phi_{6} \\right)\\rho\\left( 1 - u_{3} \\right) + \\Phi_{5}\\xi, \\\\\n^{C}D_{0 +}^{\\alpha}\\Phi_{6} & = - c_{3}\\left( \\Phi_{6} - \\Phi_{3} \\right)\\sigma + \\Phi_{6}\\xi.\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 107,
+          "original_page_number": null,
+          "original_order": 107,
+          "source_location": "Section: Optimal Control Theory, Block: 107"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "with boundary conditions \\(\\Phi_{1}\\left( t_{f} \\right) = \\Phi_{2}\\left( t_{f} \\right) = \\Phi_{3}\\left( t_{f} \\right) = \\Phi_{4}\\left( t_{f} \\right) = \\Phi_{5}\\left( t_{f} \\right) = \\Phi_{6}\\left( t_{f} \\right) = 0\\)."
+          },
+          "block_index": 108,
+          "original_page_number": null,
+          "original_order": 108,
+          "source_location": "Section: Optimal Control Theory, Block: 108"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Proof. The system of adjoint variables can be formed from the Hamiltonian function using the following relations and have boundary conditions. Proof. The system of adjoint variables can be formed from the Hamiltonian function using the following relations and have boundary conditions."
+          },
+          "block_index": 109,
+          "original_page_number": null,
+          "original_order": 109,
+          "source_location": "Section: Optimal Control Theory, Block: 109"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\n^{C}D_{0 +}^{\\alpha}\\Phi_{1} & = - \\frac{\\partial H}{\\partial S} = - c_{1} + \\Phi_{1}\\left\\lbrack \\frac{b\\left( 1 - u_{1} \\right)I}{N} + \\xi \\right\\rbrack - \\Phi_{2}\\left\\lbrack \\frac{b\\left( 1 - u_{1} \\right)I}{N} \\right\\rbrack \\\\ & = - c_{1} + \\frac{b\\left( 1 - u_{1} \\right)I}{N}\\left( \\Phi_{1} - \\Phi_{2} \\right) + \\xi\\Phi_{1}, \\\\\n^{C}D_{0 +}^{\\alpha}\\Phi_{2} & = - \\frac{\\partial H}{\\partial E} = \\Phi_{2}(\\xi + \\beta - \\tau) - \\Phi_{3}\\beta + \\Phi_{6}\\tau \\\\ & = \\beta\\left( \\Phi_{2} - \\Phi_{3} \\right) + \\Phi_{2}\\xi + \\left( \\Phi_{6} - \\Phi_{2} \\right)\\tau, \\\\\n^{C}D_{0 +}^{\\alpha}\\Phi_{3} & = - \\frac{\\partial H}{\\partial I} = - c_{2} + \\Phi_{1}\\frac{b\\left( 1 - u_{1} \\right)S}{N} - \\Phi_{2}\\frac{b\\left( 1 - u_{1} \\right)S}{N} + \\Phi_{3}\\left( \\xi + \\gamma + u_{2} \\right) - \\Phi_{4}\\left( \\gamma + u_{2} \\right), \\\\ & = \\frac{b\\left( 1 - u_{1} \\right)S}{N}\\left( \\Phi_{1} - \\Phi_{3} \\right) + \\left( \\gamma + u_{2} \\right)\\left( \\Phi_{3} - \\Phi_{4} \\right) + \\xi\\Phi_{3}, \\\\\n^{C}D_{0 +}^{\\alpha}\\Phi_{4} & = - \\frac{\\partial H}{\\partial T} = \\Phi_{4}(\\xi + \\delta) - \\Phi_{5}\\delta = \\delta\\left( \\Phi_{4} - \\Phi_{5} \\right) + \\xi\\Phi_{4}, \\\\\n^{C}D_{0 +}^{\\alpha}\\Phi_{5} & = - \\frac{\\partial H}{\\partial R} = \\Phi_{5}\\left( \\xi + \\rho\\left( 1 - u_{3} \\right) \\right) - \\Phi_{6}\\rho\\left( 1 - u_{3} \\right) \\\\ & = \\left( \\Phi_{5} - \\Phi_{6} \\right)\\rho\\left( 1 - u_{3} \\right) + \\Phi_{5}\\xi, \\\\\n^{C}D_{0 +}^{\\alpha}\\Phi_{6} & = - \\frac{\\partial H}{\\partial L} = - c_{3} - \\Phi_{3}\\sigma + \\Phi_{6}(\\xi + \\sigma) \\\\ & = - c_{3}\\left( \\Phi_{6} - \\Phi_{3} \\right)\\sigma + \\Phi_{6}\\xi.\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 110,
+          "original_page_number": null,
+          "original_order": 110,
+          "source_location": "Section: Optimal Control Theory, Block: 110"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The optimal control variables can be obtained from"
+          },
+          "block_index": 111,
+          "original_page_number": null,
+          "original_order": 111,
+          "source_location": "Section: Optimal Control Theory, Block: 111"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\frac{\\partial H}{\\partial u_{1}} = 0,\\quad\\frac{\\partial H}{\\partial u_{2}} = 0,\\quad\\frac{\\partial H}{\\partial u_{3}} = 0,",
+            "label": null,
+            "number": null
+          },
+          "block_index": 112,
+          "original_page_number": null,
+          "original_order": 112,
+          "source_location": "Section: Optimal Control Theory, Block: 112"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Thus,"
+          },
+          "block_index": 113,
+          "original_page_number": null,
+          "original_order": 113,
+          "source_location": "Section: Optimal Control Theory, Block: 113"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\n\\frac{\\partial H}{\\partial u_{1}} & = c_{3}u_{1} - \\Phi_{1}\\frac{b( - 1)SI}{N} + \\Phi_{2}\\frac{b( - 1)SI}{N} \\\\ & = c_{3}u_{1} + \\left( \\Phi_{1} - \\Phi_{2} \\right)\\frac{b( - 1)SI}{N} = 0, \\\\\n\\frac{\\partial H}{\\partial u_{2}} & = c_{4}u_{2} - \\Phi_{3}I + \\Phi_{4}I = c_{4}u_{2} + \\left( \\Phi_{4} - \\Phi_{3} \\right)I = 0, \\\\\n\\frac{\\partial H}{\\partial u_{3}} & = c_{5}u_{3} - \\Phi_{5}\\rho( - 1)R + \\Phi_{6}\\rho( - 1)R \\\\ & = c_{5}u_{3} + \\left( \\Phi_{6} - \\Phi_{5} \\right)\\rho R = 0.\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 114,
+          "original_page_number": null,
+          "original_order": 114,
+          "source_location": "Section: Optimal Control Theory, Block: 114"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The optimal control variables can be obtained from"
+          },
+          "block_index": 115,
+          "original_page_number": null,
+          "original_order": 115,
+          "source_location": "Section: Optimal Control Theory, Block: 115"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\frac{\\partial H}{\\partial u_{1}} = 0,\\quad\\frac{\\partial H}{\\partial u_{2}} = 0,\\quad\\frac{\\partial H}{\\partial u_{3}} = 0.",
+            "label": null,
+            "number": null
+          },
+          "block_index": 116,
+          "original_page_number": null,
+          "original_order": 116,
+          "source_location": "Section: Optimal Control Theory, Block: 116"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Thus,"
+          },
+          "block_index": 117,
+          "original_page_number": null,
+          "original_order": 117,
+          "source_location": "Section: Optimal Control Theory, Block: 117"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "\\begin{matrix}\n\\frac{\\partial H}{\\partial u_{1}} & = c_{3}u_{1} - \\Phi_{1}\\frac{b( - 1)SI}{N} + \\Phi_{2}\\frac{b( - 1)SI}{N} \\\\ & = c_{3}u_{1} + \\left( \\Phi_{1} - \\Phi_{2} \\right)\\frac{b( - 1)SI}{N} = 0, \\\\\n\\frac{\\partial H}{\\partial u_{2}} & = c_{4}u_{2} - \\Phi_{3}I + \\Phi_{4}I = c_{4}u_{2} + \\left( \\Phi_{4} - \\Phi_{3} \\right)I = 0, \\\\\n\\frac{\\partial H}{\\partial u_{3}} & = c_{5}u_{3} - \\Phi_{5}\\rho( - 1)R + \\Phi_{6}\\rho( - 1)R \\\\ & = c_{5}u_{3} + \\left( \\Phi_{6} - \\Phi_{5} \\right)\\rho R = 0.\n\\end{matrix}",
+            "label": null,
+            "number": null
+          },
+          "block_index": 118,
+          "original_page_number": null,
+          "original_order": 118,
+          "source_location": "Section: Optimal Control Theory, Block: 118"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Hence the proof."
+          },
+          "block_index": 119,
+          "original_page_number": null,
+          "original_order": 119,
+          "source_location": "Section: Optimal Control Theory, Block: 119"
+        },
+        {
+          "type": "table",
+          "content": {
+            "caption": "Parameter values used in the simulation",
+            "label": null,
+            "colspecs": [
+              {
+                "align": "l",
+                "width": 0.2826552462526767
+              },
+              {
+                "align": "l",
+                "width": 0.2826552462526767
+              },
+              {
+                "align": "l",
+                "width": 0.2826552462526767
+              }
+            ],
+            "header_rows": [
+              [
+                {
+                  "text": "Parameters",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": true
+                },
+                {
+                  "text": "Values/day",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": true
+                },
+                {
+                  "text": "Source",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": true
+                }
+              ]
+            ],
+            "body_rows": [
+              [
+                {
+                  "text": "λ",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.0001",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "b",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.005–0.02",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "ξ",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.002",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "β",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.1–0.4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "τ",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.005–0.02",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "γ",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.15–0.6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "δ",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.05–0.2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "ρ",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.005–0.2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "σ",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "0.005–0.2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ]
+            ],
+            "has_grid": false,
+            "shading_rows": [
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null
+              ]
+            ],
+            "row_heights": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "width_frac": null,
+            "num_rows": 10,
+            "text_width_in": 0.0,
+            "headers": [
+              "Parameters",
+              "Values/day",
+              "Source"
+            ],
+            "rows": [
+              [
+                "λ",
+                "0.0001",
+                ""
+              ],
+              [
+                "b",
+                "0.005–0.02",
+                ""
+              ],
+              [
+                "ξ",
+                "0.002",
+                ""
+              ],
+              [
+                "β",
+                "0.1–0.4",
+                ""
+              ],
+              [
+                "τ",
+                "0.005–0.02",
+                ""
+              ],
+              [
+                "γ",
+                "0.15–0.6",
+                ""
+              ],
+              [
+                "δ",
+                "0.05–0.2",
+                ""
+              ],
+              [
+                "ρ",
+                "0.005–0.2",
+                ""
+              ],
+              [
+                "σ",
+                "0.005–0.2",
+                ""
+              ]
+            ]
+          },
+          "block_index": 120,
+          "original_page_number": null,
+          "original_order": 120,
+          "source_location": "Section: Optimal Control Theory, Block: 120"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 16.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.455,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Numerical simulation",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The simulation results demonstrate that the susceptible population declines rapidly over time, and the rate of decline is strongly influenced by the contact/interaction rate b. Higher values of b accelerate the depletion of susceptibles, indicating that increased exposure and interaction with addicted individuals significantly heightens the risk of transitioning into addiction. Conversely, lower values of b slow down this process, allowing the susceptible population to remain larger for a longer period. This sensitivity analysis highlights the critical role of the contact rate in shaping addiction dynamics and underscores the importance of preventive strategies, such as awareness campaigns and behavioral interventions, which effectively reduce the effective contact rate. By controlling b, the spread of scrolling addiction can be mitigated, thereby preserving the susceptible population and promoting healthier digital habits."
+          },
+          "block_index": 121,
+          "original_page_number": null,
+          "original_order": 121,
+          "source_location": "Section: Numerical simulation, Block: 121"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The simulation results for the exposed population reveal how the progression rate β significantly influences addiction dynamics. At the beginning, the exposed population rises sharply, reflecting the initial influx of individuals transitioning from susceptibility to exposure. However, the long-term behavior depends on the value of β. When β is low (β=0.05), individuals remain in the exposed class for a longer period, leading to a slower decline and a higher steady-state level of exposure. As β increases (β=0.1 and β=0.2), the exposed population progresses more quickly into the addicted class, causing a faster decline in exposure and a lower equilibrium level. This pattern highlights that higher progression rates accelerate the movement of individuals into addiction, while lower rates prolong the exposure stage. The analysis underscores the importance of controlling β through interventions such as awareness campaigns or preventive measures, which can slow down progression and reduce the overall burden of addiction in the population."
+          },
+          "block_index": 122,
+          "original_page_number": null,
+          "original_order": 122,
+          "source_location": "Section: Numerical simulation, Block: 122"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The simulation results clearly show that the treatment rate γ plays a decisive role in reducing the addicted population over time. When the treatment rate is low (γ=0.025), the addicted population reaches a higher peak and stabilizes at a relatively large steady-state level, indicating that insufficient treatment allows addiction to persist widely. As the treatment rate increases (γ=0.05 and γ=0.1), both the peak and the long-term equilibrium of the addicted population decline significantly. This demonstrates that stronger treatment efforts accelerate recovery, lower the maximum burden of addiction, and ultimately stabilize the system at a healthier state. The analysis highlights the importance of effective rehabilitation programs and interventions, as higher treatment rates directly translate into fewer individuals remaining addicted in the long run."
+          },
+          "block_index": 123,
+          "original_page_number": null,
+          "original_order": 123,
+          "source_location": "Section: Numerical simulation, Block: 123"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The simulation results for the treated population highlight the impact of the recovery rate δ on treatment dynamics. When the recovery rate is low (δ=0.025), the treated population reaches a higher peak and remains elevated for a longer period, reflecting slower recovery and prolonged treatment duration. As δ increases (δ=0.05 and δ=0.075), the peak of the treated population becomes progressively lower, and the system stabilizes at smaller equilibrium levels. This indicates that higher recovery rates accelerate the transition of individuals from treatment to full recovery, thereby reducing the overall size of the treated class. The analysis emphasizes that effective recovery mechanisms shorten treatment periods and lower the long-term burden on rehabilitation resources, ultimately contributing to healthier outcomes in managing scrolling addiction."
+          },
+          "block_index": 124,
+          "original_page_number": null,
+          "original_order": 124,
+          "source_location": "Section: Numerical simulation, Block: 124"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The simulation results for the recovered population demonstrate how relapse rate ρ directly affects long-term recovery outcomes. When relapse is low, the recovered population reaches its highest peak and stabilizes at a relatively large level, indicating that most individuals remain in recovery. As relapse increases, the recovered population peaks at progressively lower values and declines more sharply, reflecting the fact that more individuals slip back into addiction. This pattern highlights that higher relapse rates undermine the sustainability of recovery, while lower relapse rates strengthen the recovered class. The analysis emphasizes the importance of relapse prevention strategies, such as continuous support programs and behavioral interventions, which help maintain recovery and reduce the risk of individuals returning to addictive scrolling behavior."
+          },
+          "block_index": 125,
+          "original_page_number": null,
+          "original_order": 125,
+          "source_location": "Section: Numerical simulation, Block: 125"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The simulation results for the latent population reveal that the transition feedback parameter τ strongly influences the build up of individuals in the latent class. When τ is small (τ=0.005), the latent population grows more slowly and stabilizes at a lower level, indicating limited re-entry of individuals into latency. As τ increases (τ=0.01 and τ=0.015), the latent population rises more quickly and reaches higher equilibrium values, reflecting stronger feedback that channels individuals back into the latent stage. This behavior shows that higher transition feedback sustains a larger latent population."
+          },
+          "block_index": 126,
+          "original_page_number": null,
+          "original_order": 126,
+          "source_location": "Section: Numerical simulation, Block: 126"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 16.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.455,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Conclusion",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In this research, a fractional order compartmental framework for scrolling addiction is established and thoroughly examined using threshold dynamics, positivity, boundedness, invariant areas, and equilibrium stability. The findings demonstrate that while persistence happens above the reproduction threshold, addiction can be eradicated when it is less than unity. Numerical simulations revealed that awareness, treatment, and relapse prevention were the best control techniques for lowering prevalence. When taken as a whole, these results give a solid mathematical basis and practical insights for reducing scrolling addiction, providing direction for behavioral therapies and digital health policy in the contemporary period. The mathematical framework can be strengthened, empirical validation can be strengthened, and policy relevance can be expanded through future study. As a result, the model will become more practical, useful, and significant for both theory and practice."
+          },
+          "block_index": 127,
+          "original_page_number": null,
+          "original_order": 127,
+          "source_location": "Section: Conclusion, Block: 127"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "99"
+          },
+          "block_index": 128,
+          "original_page_number": null,
+          "original_order": 128,
+          "source_location": "Section: Conclusion, Block: 128"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Christiane Eichenber, Raphaela Schneider and Helena Rumpl, Social media addiction associations with attachment style, mental distress, and personality. BMC Psychiatry. (2024) 24-278."
+          },
+          "block_index": 129,
+          "original_page_number": null,
+          "original_order": 129,
+          "source_location": "Section: Conclusion, Block: 129"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Abu Safyan Ali, Zesha Faiz and Farhan Khan, Analysis of fractional order mathematical model of social media addiction and depression. Modeling Earth Systems and Environment. 9(2026) 12."
+          },
+          "block_index": 130,
+          "original_page_number": null,
+          "original_order": 130,
+          "source_location": "Section: Conclusion, Block: 130"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Caroline Brand, Camila Felin Fochesatto, Anelise Reis Gaya, Felipe Barreto Schuch and José Francisco López-Gil, Scrolling through adolescence: unveiling the relationship of the use of social networks and its addictive behavior with psychosocial health, Child and Adolescent, Psychiatry and Mental Health. (2024) 18-107."
+          },
+          "block_index": 131,
+          "original_page_number": null,
+          "original_order": 131,
+          "source_location": "Section: Conclusion, Block: 131"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Sanjay Bhatter, Sangeeta Kumawat, Sunil Dutt Purohit & D. L. Suthar, Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data. Scientific reports. 15 (2025) 12672."
+          },
+          "block_index": 132,
+          "original_page_number": null,
+          "original_order": 132,
+          "source_location": "Section: Conclusion, Block: 132"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Rajeshwari S., S. Meenakshi, The age of doom scrolling Social media’s attractive addiction. Journal of Education and Health Promotion. (2023) 838 – 22."
+          },
+          "block_index": 133,
+          "original_page_number": null,
+          "original_order": 133,
+          "source_location": "Section: Conclusion, Block: 133"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Xiao-Hong Zhang, Aatif Ali, Muhammad Altaf Khan, Mohammad Y. Alshahrani, Taseer Muhammad and Saeed Islam, Mathematical Analysis of the TB Model with Treatment via Caputo-Type Fractional Derivative. Hindawi 2021(2021) 9512371-86."
+          },
+          "block_index": 134,
+          "original_page_number": null,
+          "original_order": 134,
+          "source_location": "Section: Conclusion, Block: 134"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Mostofa Kamal, Md. Al Amin, Mostak Ahmed, Payer Ahmed, Md. Asraful Islam, Mathematical modeling and optimal control of social media addiction with stability and sensitivity analysis. Franklin Open. 12 (2025) 100354."
+          },
+          "block_index": 135,
+          "original_page_number": null,
+          "original_order": 135,
+          "source_location": "Section: Conclusion, Block: 135"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Young, K. S., Psychology of computer use: Addictive use of the internet, a case that breaks the stereotype. Psychological Reports, 79 (1996) 899-902."
+          },
+          "block_index": 136,
+          "original_page_number": null,
+          "original_order": 136,
+          "source_location": "Section: Conclusion, Block: 136"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Changhe Wu, Walton Wider, Wei Xuan Yew, Khine Zar Zar Thet, Chengen Li, Alex S. Borromeo, Exploring the negative impact of social media on employee mental health in Malaysia: A Delphi study, Online Journal of Communication and Media Technologies, 2026, 16(2), e202616."
+          },
+          "block_index": 137,
+          "original_page_number": null,
+          "original_order": 137,
+          "source_location": "Section: Conclusion, Block: 137"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Amjad Islam Amjad, Sana Javaid, Sair, Shamim Akhter, Mohamad Ahmad Saleem Khasawneh, Thabet Bin Saeed Al-Kahlan, Influence of digital media use, environmental awareness, and eco-anxiety on university students’ mental health, Discover Psychology (2026) 6:103."
+          },
+          "block_index": 138,
+          "original_page_number": null,
+          "original_order": 138,
+          "source_location": "Section: Conclusion, Block: 138"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Ye Hoon Lee, Juhee Hwang, Walking for Mental Health: Effects of Mobile-Based Walking on Stress and Affectivity in College Students. Int. J. Ment. Health Promot. 27(2), (2025) 179-191."
+          },
+          "block_index": 139,
+          "original_page_number": null,
+          "original_order": 139,
+          "source_location": "Section: Conclusion, Block: 139"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Chen, T. M., Rui, J., Wang, A mathematical model for simulating the phase-based transmissibility of a novel corona virus. Infectious diseases of poverty. 9(1)(2020) 1-8."
+          },
+          "block_index": 140,
+          "original_page_number": null,
+          "original_order": 140,
+          "source_location": "Section: Conclusion, Block: 140"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Khan, M. A., Atangana A., Modeling the dynamics of novel coronavirus (2019-nCov) with fractional derivative. Alexandria. 59 (2020) 2379-2389."
+          },
+          "block_index": 141,
+          "original_page_number": null,
+          "original_order": 141,
+          "source_location": "Section: Conclusion, Block: 141"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Hussain, Z., Griffiths, M. D., The associations between problematic social networking site use and sleep quality, attention-deficit hyperactivity disorder, depression, anxiety and stress. International Journal of Mental Health and Addiction. (2019) 1–15."
+          },
+          "block_index": 142,
+          "original_page_number": null,
+          "original_order": 142,
+          "source_location": "Section: Conclusion, Block: 142"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Ravi Shankar Dubey, Manvendra Narayan Mishra, Effect of Covid-19 in India- A prediction through mathematical modeling using Atangana Baleanu fractional derivative. Journal of Interdisciplinary Mathematics. 25(2022) 2431–2444."
+          },
+          "block_index": 143,
+          "original_page_number": null,
+          "original_order": 143,
+          "source_location": "Section: Conclusion, Block: 143"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Weidong Li, Zh Yeng Chong, Yaqing Mao, Wanying Zhang, Wei Xu, Mingwei Li, Yiyun Wang, Huaxia Xiong, The Impacts of a Teaching Personal and Social Responsibility Intervention on Social and Emotional Competence in Physical Education, A Quasi-Experimental Study. Int. J. Ment. Health Promot. 27 (2025) 1462-3730."
+          },
+          "block_index": 144,
+          "original_page_number": null,
+          "original_order": 144,
+          "source_location": "Section: Conclusion, Block: 144"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Huo, H., Jing, S.L., Wang, X.Y., Xiang, H., Modelling and analysis of an alcoholism model with treatment and effect of Twitter. AIMS Math. 16 (2019) 3595–3622."
+          },
+          "block_index": 145,
+          "original_page_number": null,
+          "original_order": 145,
+          "source_location": "Section: Conclusion, Block: 145"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Li, T., Guo, Y., Stability and optimal control in a mathematical model of online game addiction. Filomat 33(17) (2019) 5691–5711."
+          },
+          "block_index": 146,
+          "original_page_number": null,
+          "original_order": 146,
+          "source_location": "Section: Conclusion, Block: 146"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Samad, S.A., Islam, M.T., Tomal, S.T.H., Biswas, M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh. Int. J. Sci. Manag. Stud. 3(2) (2020) 36–48."
+          },
+          "block_index": 147,
+          "original_page_number": null,
+          "original_order": 147,
+          "source_location": "Section: Conclusion, Block: 147"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Lu, X., Huang, P., Feng, X., He, Y., A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput. 92(3) (2022) 104."
+          },
+          "block_index": 148,
+          "original_page_number": null,
+          "original_order": 148,
+          "source_location": "Section: Conclusion, Block: 148"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Alemneh, H.T., Alemu, N.Y.: Mathematical modeling with optimal control analysis of social media addiction. Infect. Dis. Model. 6 (2021) 405–419."
+          },
+          "block_index": 149,
+          "original_page_number": null,
+          "original_order": 149,
+          "source_location": "Section: Conclusion, Block: 149"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Lu, X., Huang, P., Feng, X., He, Y., A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput. 92(3) (2022) 104."
+          },
+          "block_index": 150,
+          "original_page_number": null,
+          "original_order": 150,
+          "source_location": "Section: Conclusion, Block: 150"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Kongson, J., Thaiprayoon, C., Sudsutad, W., Analysis of a fractional model for HIV CD4+ T-cells with treatment under generalized Caputo fractional derivative. AIMS Math. 6(7) (2021) 7285–7304."
+          },
+          "block_index": 151,
+          "original_page_number": null,
+          "original_order": 151,
+          "source_location": "Section: Conclusion, Block: 151"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Tianyi Pu, Marco Fasondini, The numerical solution of fractional integral equations via orthogonal polynomials in fractional Powers. Adv Comput Math. 49(2023) 7."
+          },
+          "block_index": 152,
+          "original_page_number": null,
+          "original_order": 152,
+          "source_location": "Section: Conclusion, Block: 152"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Shenghu Xu, Yanhui Hu, Dynamic analysis of a Caputo fractional-order SEIR model with a general incidence rate. Scientific reports. 15 (2025) 17561."
+          },
+          "block_index": 153,
+          "original_page_number": null,
+          "original_order": 153,
+          "source_location": "Section: Conclusion, Block: 153"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Muhammad Farman, Cicik Alfniyah, Muhammad Saqib, Global Stability with Lyapunov Function and Dynamics of SEIR-Modified Lassa Fever Model in Sight Power Law Kernel. Hindawi. 27 (2024) 3562684."
+          },
+          "block_index": 154,
+          "original_page_number": null,
+          "original_order": 154,
+          "source_location": "Section: Conclusion, Block: 154"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Fareeha Sami Khan, M. Khalid Ali, Hasan Ali, F. Ghanim, Optimal control strategies for taming TikTok addiction: a mathematical model and analysis. Arabian Journal of Mathematics. (2025)."
+          },
+          "block_index": 155,
+          "original_page_number": null,
+          "original_order": 155,
+          "source_location": "Section: Conclusion, Block: 155"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Ling Zhang, Xuewen Tan, Jia Li and Fan Yang, Dynamic analysis and optimal control of leptospirosis based on Caputo fractional derivative. Network and Heterogeneous Media. 19(3) (2024) 1262–1285."
+          },
+          "block_index": 156,
+          "original_page_number": null,
+          "original_order": 156,
+          "source_location": "Section: Conclusion, Block: 156"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Bentout S, Age-structured modeling of COVID-19 epidemic in the USA, UAE and Algeria. 60(1) (2021) 401–411."
+          },
+          "block_index": 157,
+          "original_page_number": null,
+          "original_order": 157,
+          "source_location": "Section: Conclusion, Block: 157"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Djilali, Lahbib Benahmadi, Abdessamad, Khadia., Modeling the impact of unreported cases of the COVID-19 in the north African countries. 9(11) (2020) 373."
+          },
+          "block_index": 158,
+          "original_page_number": null,
+          "original_order": 158,
+          "source_location": "Section: Conclusion, Block: 158"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Salih Djilali, Soufiane Bentout, Sunil Kumar, Tarik Mohammed Touaoula, Approximating the asymptomatic infectious cases of the COVID-19 disease in Algeria, and India. 13(4) (2022)."
+          },
+          "block_index": 159,
+          "original_page_number": null,
+          "original_order": 159,
+          "source_location": "Section: Conclusion, Block: 159"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Michele Caputo and Mauro Fabrizio, A new definition of fractional derivative without singular kernel. 73 (2015)."
+          },
+          "block_index": 160,
+          "original_page_number": null,
+          "original_order": 160,
+          "source_location": "Section: Conclusion, Block: 160"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "I. Podlubny, Fractional Differential Equations, Academic Press, San Diego, 1999."
+          },
+          "block_index": 161,
+          "original_page_number": null,
+          "original_order": 161,
+          "source_location": "Section: Conclusion, Block: 161"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Abdon Atangana, Dumitru Baleanu., New fractional derivatives with nonlocal and non-singular kernel theory and application to heat transfer model thermal Science. 20 (2016)."
+          },
+          "block_index": 162,
+          "original_page_number": null,
+          "original_order": 162,
+          "source_location": "Section: Conclusion, Block: 162"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "A Atangana, S Qureshi., Modeling attractors of chaotic dynamical systems with fractal-fractional operators. Chaos, solitons & fractals, 123 (2019) 320-337."
+          },
+          "block_index": 163,
+          "original_page_number": null,
+          "original_order": 163,
+          "source_location": "Section: Conclusion, Block: 163"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Lei Shi, Jiaying Zhou, Yong Ye., Global stability and Hopf bifurcation of networked respiratory disease model with delay, 151 (2024) 109000."
+          },
+          "block_index": 164,
+          "original_page_number": null,
+          "original_order": 164,
+          "source_location": "Section: Conclusion, Block: 164"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "HF Huo, Q Wang., Modelling the influence of awareness programs by media on the drinking dynamics. Abstract and Applied Analysis, 2014(1)(2014) 938080."
+          },
+          "block_index": 165,
+          "original_page_number": null,
+          "original_order": 165,
+          "source_location": "Section: Conclusion, Block: 165"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Om P. Agrawal, Ozlem Defterli, Dumitru Baleanu, Fractional Optimal Control Problems with Several State and Control Variables. Journal of Vibration and Control. 16(13) (2010)."
+          },
+          "block_index": 166,
+          "original_page_number": null,
+          "original_order": 166,
+          "source_location": "Section: Conclusion, Block: 166"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Tingting Li, Youming Guo., Stability and optimal control in a mathematical model of online game addiction. Filomat. 33 (2019), 5691–5711."
+          },
+          "block_index": 167,
+          "original_page_number": null,
+          "original_order": 167,
+          "source_location": "Section: Conclusion, Block: 167"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Abdon Atangana, Seda Igret., Fractional Stochastic Differential Equations. Springer, 2022."
+          },
+          "block_index": 168,
+          "original_page_number": null,
+          "original_order": 168,
+          "source_location": "Section: Conclusion, Block: 168"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Vijayalakshmi. G.M, P. Roselin Besi., Ali Akgul., Fractional commensurate model on Covid-19 with microbial confections. An optimal control analysis. 45(3) (2024) 1108-1121."
+          },
+          "block_index": 169,
+          "original_page_number": null,
+          "original_order": 169,
+          "source_location": "Section: Conclusion, Block: 169"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Vijayalakshmi G.M, M. Ariyanatchi, Adams–Bashforth Moulton Numerical Approach on Dengue Fractional Atangana Baleanu Caputo Model and Stability Analysis. 10(32) (2024)."
+          },
+          "block_index": 170,
+          "original_page_number": null,
+          "original_order": 170,
+          "source_location": "Section: Conclusion, Block: 170"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "G. M. Vijayalakshmi, M. Ariyanatchi, Vediyappan Govindan, Haewon Byeon, Busayamas Pimpunchat., Stability and Hopf Bifurcations Analysis in a Three-Phase Dengue Diffusion Model With Time Delay in Fractional Derivative and Laplace–Adomian Decomposition Numerical Approach. Mathematical Methods in the Applied Science. 48(12) (2025)."
+          },
+          "block_index": 171,
+          "original_page_number": null,
+          "original_order": 171,
+          "source_location": "Section: Conclusion, Block: 171"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Vijayalakshmi G.M, Nisar. K.S, Shiva Reddy. K, Mittag–Leffler kernel operator on prey-predator model interfusing intra-specific competition and prey fear factor, 9 (2024)."
+          },
+          "block_index": 172,
+          "original_page_number": null,
+          "original_order": 172,
+          "source_location": "Section: Conclusion, Block: 172"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "G. M. Vijayalakshmi., P. Roselyn Besi., ABC fractional order vaccination model for COVID-19 with self-productive measures. 8 (132) (2022)."
+          },
+          "block_index": 173,
+          "original_page_number": null,
+          "original_order": 173,
+          "source_location": "Section: Conclusion, Block: 173"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "G. M. Vijayalakshmi., P. Roselyn Besi., A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis. Result in control and Optimization, 8 (2022)."
+          },
+          "block_index": 174,
+          "original_page_number": null,
+          "original_order": 174,
+          "source_location": "Section: Conclusion, Block: 174"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 16.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.455,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": false
+      }
+    }
+  ],
+  "references": [],
+  "author_biographies": [],
+  "received_date": "",
+  "revised_date": "",
+  "accepted_date": "",
+  "published_date": "",
+  "volume": "",
+  "issue": "",
+  "year": "",
+  "doi": "",
+  "corresponding_email": "aliakgul@siirt.edu.tr"
+}

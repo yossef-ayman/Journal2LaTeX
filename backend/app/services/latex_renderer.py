@@ -14,6 +14,38 @@ class LatexRendererError(Exception):
     pass
 
 
+def find_active_command(content: str, command: str, start: int = 0) -> int:
+    """Index of the first *live* occurrence of ``command`` in ``content``.
+
+    Occurrences inside a LaTeX comment (anything after an unescaped ``%`` up
+    to the end of that line) are skipped.  Journal templates routinely mention
+    commands such as ``\\maketitle`` in explanatory comments; treating those
+    mentions as real code makes the renderer splice content -- or inject
+    ``\\mail{...}`` -- into the middle of a comment, which breaks the comment
+    and turns the remainder of the sentence into live LaTeX.  Returns -1 when
+    no live occurrence exists.
+    """
+    pos = content.find(command, start)
+    while pos != -1:
+        line_start = content.rfind("\n", 0, pos) + 1
+        prefix = content[line_start:pos]
+        commented = False
+        i = 0
+        while i < len(prefix):
+            ch = prefix[i]
+            if ch == "\\":
+                i += 2
+                continue
+            if ch == "%":
+                commented = True
+                break
+            i += 1
+        if not commented:
+            return pos
+        pos = content.find(command, pos + 1)
+    return -1
+
+
 def replace_latex_command(content: str, command_name: str, replacement: str) -> str:
     """Find and replace the argument of a LaTeX command handling nested braces."""
     idx = 0
@@ -269,28 +301,54 @@ class LatexRenderer:
                 rendered_content = rendered_content.replace("__ACCEPTED_DATE__", acc)
                 rendered_content = rendered_content.replace("__PUBLISHED_DATE__", pub)
 
-                # Merge Document Body (find first \section or \chapter after \begin{document})
-                begin_doc = rendered_content.find("\\begin{document}")
+                # Merge Document Body.  Everything from the splice point to
+                # \end{document} is replaced by the rendered body, so the splice
+                # point must sit AFTER the template's title block.  Preference
+                # order:
+                #   1. immediately after \maketitle   (the title block ends
+                #      exactly there, so this is the boundary whenever the
+                #      template has one)
+                #   2. the first \section / \chapter after the title block
+                #      (templates that render their front matter inline and
+                #      never call \maketitle)
+                #   3. immediately after \begin{document}  (no title block at all)
+                #
+                # \maketitle is checked FIRST and a \section is only accepted
+                # when it follows the title block.  Templates ship sample
+                # sections ("\section*{Note to authors}") above \maketitle, and
+                # splicing there both discarded the title block and left the
+                # body sitting in front of it -- and because a journal class
+                # typically opens its title block with \newpage, that stranded
+                # the journal banner alone on page one with the title starting
+                # on page two.
+                begin_doc = find_active_command(rendered_content, "\\begin{document}")
                 if begin_doc != -1:
-                    first_sec = rendered_content.find("\\section", begin_doc)
-                    if first_sec == -1:
-                        first_sec = rendered_content.find("\\chapter", begin_doc)
-                        
-                    end_doc = rendered_content.find("\\end{document}", begin_doc)
-                    
-                    if first_sec != -1 and end_doc != -1 and first_sec < end_doc:
+                    end_doc = find_active_command(rendered_content, "\\end{document}", begin_doc)
+
+                    splice_at = -1
+                    maketitle = find_active_command(rendered_content, "\\maketitle", begin_doc)
+                    if maketitle != -1 and (end_doc == -1 or maketitle < end_doc):
+                        splice_at = maketitle + len("\\maketitle")
+
+                    # Search for a sectioning command only after the title
+                    # block, so a sample section above it can never be chosen.
+                    search_from = splice_at if splice_at != -1 else begin_doc
+                    section_at = find_active_command(rendered_content, "\\section", search_from)
+                    if section_at == -1:
+                        section_at = find_active_command(rendered_content, "\\chapter", search_from)
+                    if section_at != -1 and (end_doc == -1 or section_at < end_doc):
+                        splice_at = section_at
+
+                    if splice_at == -1:
+                        splice_at = begin_doc + len("\\begin{document}")
+
+                    if end_doc != -1 and splice_at < end_doc:
                         rendered_content = (
-                            rendered_content[:first_sec] +
-                            content_tex + "\n\n" +
+                            rendered_content[:splice_at] +
+                            "\n" + content_tex + "\n\n" +
                             rendered_content[end_doc:]
                         )
-                    elif end_doc != -1:
-                        insert_pos = begin_doc + len("\\begin{document}")
-                        rendered_content = (
-                            rendered_content[:insert_pos] +
-                            "\n" + content_tex + "\n" +
-                            rendered_content[end_doc:]
-                        )
+                    rendered_content = self._keep_banner_with_title(rendered_content)
             else:
                 # 6.b Default Placeholder Replacement Strategy
                 rendered_content = template_content
@@ -313,6 +371,10 @@ class LatexRenderer:
                 rendered_content = rendered_content.replace("__ACCEPTED_DATE__", acc)
                 rendered_content = rendered_content.replace("__PUBLISHED_DATE__", pub)
                 rendered_content = self._inject_corresponding_email(rendered_content, doc)
+                # No e-mail extracted -> leave nothing behind, and never emit
+                # an empty label.
+                rendered_content = rendered_content.replace("__CORRESPONDING__", "")
+                rendered_content = self._keep_banner_with_title(rendered_content)
 
             # If NSP template, inject graphicx package and redefine biographyps to avoid psfig crash
             is_nsp = "NSP" in template_metadata.get("class_file", "") or "JSAP" in template_metadata.get("name", "")
@@ -346,17 +408,76 @@ class LatexRenderer:
             # numbered caption on non-floating content.
             if "[H]" in rendered_content and "usepackage{float}" not in rendered_content:
                 needed_pkgs.append("\\usepackage{float}")
-            if "\\begin{strip}" in rendered_content and "usepackage{cuted}" not in rendered_content:
-                needed_pkgs.append("\\usepackage{cuted}")
+            # Full-width spanning content.  cuted's \begin{strip} only works
+            # in a two-column body; in a one-column document it silently
+            # swallows its contents (the object disappears from the PDF while
+            # its caption stays behind) and emits "Overfull \hbox ... while
+            # \output is active".  jltxspan therefore dispatches at use time:
+            # \strip when \if@twocolumn is true, an ordinary full-width block
+            # otherwise.  Both branches keep the same surrounding spacing.
+            if "\\begin{jltxspan}" in rendered_content:
+                if "usepackage{cuted}" not in rendered_content:
+                    needed_pkgs.append("\\usepackage{cuted}")
+                if "newenvironment{jltxspan}" not in rendered_content:
+                    needed_pkgs.append(
+                        "\\makeatletter\n"
+                        "\\newcommand\\jltx@wideopen{\\par\\addvspace{\\medskipamount}\\noindent}\n"
+                        "\\newcommand\\jltx@wideclose{\\par\\addvspace{\\medskipamount}}\n"
+                        "\\newenvironment{jltxspan}\n"
+                        "  {\\if@twocolumn\\let\\jltx@spannext\\strip\\else"
+                        "\\let\\jltx@spannext\\jltx@wideopen\\fi\\jltx@spannext}\n"
+                        "  {\\if@twocolumn\\let\\jltx@spanend\\endstrip\\else"
+                        "\\let\\jltx@spanend\\jltx@wideclose\\fi\\jltx@spanend}\n"
+                        "\\makeatother"
+                    )
             if "\\captionof" in rendered_content and "{caption}" not in rendered_content \
                     and "{capt-of}" not in rendered_content:
                 needed_pkgs.append("\\usepackage{capt-of}")
+            # Math support must never depend on the template.  Word equations
+            # convert to constructs that are amsmath-only (\text, \dfrac, \tag,
+            # aligned/gathered) and amssymb-only (\mathbb, \leqslant); a
+            # user-uploaded template that omits them turns every equation into a
+            # fatal "Undefined control sequence".
+            if any(marker in rendered_content for marker in
+                   ("\\begin{equation}", "\\[", "\\(", "\\begin{align")):
+                # Substring test, not an exact \usepackage{amsmath} match:
+                # templates commonly load it in a group ("mathptmx,amsmath,bm").
+                if "amsmath" not in rendered_content:
+                    needed_pkgs.append("\\usepackage{amsmath}")
+                if "amssymb" not in rendered_content:
+                    needed_pkgs.append("\\usepackage{amssymb}")
             if needed_pkgs:
                 begin_doc_pos = rendered_content.find("\\begin{document}")
                 if begin_doc_pos != -1:
                     rendered_content = (
                         rendered_content[:begin_doc_pos]
                         + "\n".join(needed_pkgs) + "\n"
+                        + rendered_content[begin_doc_pos:]
+                    )
+
+            # Uniform vertical spacing macros used by the placement engine
+            # around every inline/pinned unit ~ mirrors Word's default 6pt
+            # above/below a floating object.  Also tighten paragraph->object
+            # cohesion so LaTeX prefers to keep the introducing paragraph on
+            # the same page as the object it introduces.
+            if "\\JLTXaboveplacement" in rendered_content and \
+                    "\\JLTXaboveplacement}" not in rendered_content:
+                begin_doc_pos = rendered_content.find("\\begin{document}")
+                if begin_doc_pos != -1:
+                    space_defs = (
+                        "\\newcommand\\JLTXaboveplacement"
+                        "{\\par\\addvspace{6pt plus 2pt minus 2pt}\\noindent}\n"
+                        "\\newcommand\\JLTXbelowplacement"
+                        "{\\par\\addvspace{6pt plus 2pt minus 2pt}}\n"
+                        # Discourage lone-widow lines above objects.  These are
+                        # LaTeX kernel penalties; higher = LaTeX tries harder to
+                        # avoid the break at that spot.
+                        "\\widowpenalty=10000\n"
+                        "\\clubpenalty=10000\n"
+                    )
+                    rendered_content = (
+                        rendered_content[:begin_doc_pos]
+                        + space_defs
                         + rendered_content[begin_doc_pos:]
                     )
 
@@ -450,6 +571,62 @@ class LatexRenderer:
             + rendered_content[begin_doc_pos:]
         )
 
+    _BANNER_GUARD_BEGIN = (
+        "% >>> j2l: keep the journal banner with the title block\n"
+        "\\makeatletter\n"
+        "\\let\\JLTXorig@newpage\\newpage\n"
+        "\\let\\JLTXorig@clearpage\\clearpage\n"
+        "\\let\\JLTXorig@cleardoublepage\\cleardoublepage\n"
+        "\\let\\newpage\\relax\\let\\clearpage\\relax\\let\\cleardoublepage\\relax\n"
+        "\\makeatother\n"
+        "% <<< j2l\n"
+    )
+    _BANNER_GUARD_END = (
+        "\n% >>> j2l: page breaking restored after the title block\n"
+        "\\makeatletter\n"
+        "\\let\\newpage\\JLTXorig@newpage\n"
+        "\\let\\clearpage\\JLTXorig@clearpage\n"
+        "\\let\\cleardoublepage\\JLTXorig@cleardoublepage\n"
+        "\\makeatother\n"
+        "% <<< j2l\n"
+    )
+
+    def _keep_banner_with_title(self, rendered_content: str) -> str:
+        """Guarantee the journal banner and the title block share page one.
+
+        Journal classes routinely open their title block with ``\\newpage`` (NSP
+        does), so *anything* that typesets between ``\\begin{document}`` and
+        ``\\maketitle`` -- a stray page break, leftover sample text, a rule --
+        pushes the whole title block onto page two and leaves page one holding
+        nothing but the running masthead: the isolated banner page.  Rather than
+        trying to enumerate every construct that could occupy that gap, page
+        breaking is simply switched off from the start of the document until the
+        title block has been set, and restored immediately afterwards.  The
+        title block therefore always lands on page one together with the banner,
+        the DOI line, the authors, the abstract and the keywords, exactly as the
+        template lays them out, and no forced break can precede or follow it.
+
+        A no-op for templates that render their front matter inline and never
+        call ``\\maketitle`` -- those have no class-issued page break to defuse.
+        """
+        if "JLTXorig@newpage" in rendered_content:
+            return rendered_content
+        begin_doc = find_active_command(rendered_content, "\\begin{document}")
+        if begin_doc == -1:
+            return rendered_content
+        maketitle = find_active_command(rendered_content, "\\maketitle", begin_doc)
+        if maketitle == -1:
+            return rendered_content
+        after_maketitle = maketitle + len("\\maketitle")
+        after_begin = begin_doc + len("\\begin{document}")
+        return (
+            rendered_content[:after_begin]
+            + "\n" + self._BANNER_GUARD_BEGIN
+            + rendered_content[after_begin:after_maketitle]
+            + self._BANNER_GUARD_END
+            + rendered_content[after_maketitle:]
+        )
+
     def _inject_corresponding_email(self, rendered_content: str, doc: DocumentModel) -> str:
         """Populate the corresponding-author e-mail in the rendered template.
 
@@ -471,10 +648,19 @@ class LatexRenderer:
             return rendered_content
 
         escaped_mail = self._escape_text(corresponding_email)
+        # Templates that render their title block inline (no \maketitle, no
+        # \mail) expose __CORRESPONDING__ instead, so the address still shows
+        # up in the front matter rather than being silently dropped.
+        if "__CORRESPONDING__" in rendered_content:
+            return rendered_content.replace(
+                "__CORRESPONDING__",
+                "{\\small $^{*}$ Corresponding author e-mail: "
+                + escaped_mail + "\\par}",
+            )
         if "\\mail" in rendered_content:
             return replace_latex_command(rendered_content, "\\mail", escaped_mail)
 
-        maketitle_pos = rendered_content.find("\\maketitle")
+        maketitle_pos = find_active_command(rendered_content, "\\maketitle")
         if maketitle_pos != -1:
             return (
                 rendered_content[:maketitle_pos]
@@ -671,6 +857,12 @@ class LatexRenderer:
                 f"narrow ({width_note}), Word-inline, short (~{rh_col:.1f}in) -> pinned "
                 f"in place with [H] so it stays exactly where introduced")
 
+    # Uniform pre/post vertical space around every placement unit; comparable
+    # to Word's default 6pt/6pt around a floating object and independent of
+    # the chosen strategy so spacing looks consistent across the document.
+    _SPACE_BEFORE = "\\JLTXaboveplacement "
+    _SPACE_AFTER = "\\JLTXbelowplacement "
+
     def _emit_placed(self, inner_tex: str, caption: str, label_str: str,
                      kind: str, strategy: str) -> str:
         """Render one object according to the chosen placement strategy."""
@@ -682,13 +874,29 @@ class LatexRenderer:
             if label_str:
                 parts.append(label_str)
             # Keep object + caption as one unbreakable unit (never detaches).
+            # \samepage + samepage-safe minipage + no widow/orphan splits keeps
+            # the object attached to its surrounding paragraphs whenever the
+            # combined block still fits on the current page.
             unit = (
-                "\\noindent\\begin{minipage}{\\linewidth}\n\\centering\n"
-                + "\n".join(parts) + "\n\\end{minipage}"
+                # The trailing %% matters: a newline after \end{minipage}
+                # contributes an interword space, and a \linewidth-wide
+                # minipage plus that space overflows the line by ~2.4pt.
+                "\\noindent\\begin{minipage}{\\linewidth}%\n\\centering\n"
+                + "\n".join(parts) + "%\n\\end{minipage}%"
             )
             if strategy == "inline_span":
-                return "\\begin{strip}\n\\centering\n" + unit + "\n\\end{strip}"
-            return "\\begin{center}\n" + unit + "\n\\end{center}"
+                return (
+                    # No outer \centering: the unit is already a full-width
+                    # minipage that centres its own contents, and the extra
+                    # \centering added ~2.3pt of glue to the enclosing line,
+                    # producing an Overfull \hbox for every placed object.
+                    f"{self._SPACE_BEFORE}\\begin{{jltxspan}}%\n"
+                    + unit + "\n\\end{jltxspan}" + self._SPACE_AFTER
+                )
+            return (
+                f"{self._SPACE_BEFORE}\\begin{{center}}\n" + unit
+                + "\n\\end{center}" + self._SPACE_AFTER
+            )
 
         env, place = {
             "float_h": (kind, "[H]"),
@@ -697,9 +905,13 @@ class LatexRenderer:
         }[strategy]
         cap = f"\\caption{{{caption}}}\n" if caption else ""
         lab = f"{label_str}\n" if label_str else ""
+        # [H] is placed in-flow -- add uniform spacing.  Real floats
+        # (htbp/tp) are placed by LaTeX and get its own spacing rules.
+        pre = self._SPACE_BEFORE if place == "[H]" else ""
+        post = self._SPACE_AFTER if place == "[H]" else ""
         return (
-            f"\\begin{{{env}}}{place}\n\\centering\n{inner_tex}\n{cap}{lab}"
-            f"\\end{{{env}}}"
+            f"{pre}\\begin{{{env}}}{place}\n\\centering\n{inner_tex}\n{cap}{lab}"
+            f"\\end{{{env}}}{post}"
         )
 
     def _place_object(self, inner_tex: str, caption: str, label_str: str,
@@ -779,15 +991,31 @@ class LatexRenderer:
             return self._render_flat_table(content)
 
         elif b_type == BlockType.EQUATION:
-            latex_code = content.get("latex_code", "")
-            label_str = f"\\label{{{content.get('label')}}}" if content.get("label") else ""
-            # Mathematical syntax is left completely raw
-            return (
-                "\\begin{equation}\n"
-                f"{latex_code}\n"
-                f"{label_str}\n"
-                "\\end{equation}"
-            )
+            latex_code = (content.get("latex_code") or "").strip()
+            if not latex_code:
+                return None
+            label_str = f"\n\\label{{{content.get('label')}}}" if content.get("label") else ""
+            number = content.get("number")
+            # Mathematical syntax is left completely raw.
+            if number:
+                # Reproduce Word's own equation number via \tag rather than
+                # letting LaTeX renumber: the manuscript's cross-references
+                # ("as shown in (3)") are plain text and would otherwise point
+                # at the wrong equation.
+                return (
+                    "\\begin{equation}\n"
+                    f"{latex_code}\n"
+                    f"\\tag{{{self._escape_text(str(number))}}}{label_str}\n"
+                    "\\end{equation}"
+                )
+            if label_str:
+                return (
+                    "\\begin{equation}\n"
+                    f"{latex_code}{label_str}\n"
+                    "\\end{equation}"
+                )
+            # Unnumbered in Word -> unnumbered here.
+            return f"\\[\n{latex_code}\n\\]"
 
         elif b_type == BlockType.LIST:
             items = content.get("items", [])
@@ -857,18 +1085,47 @@ class LatexRenderer:
             (colspecs[i].get("width") if i < len(colspecs) else None)
             for i in range(num_cols)
         )
+        # Renormalise per-column widths so the assembled tabular -- content
+        # boxes + inter-column rules + edge borders -- fits inside \textwidth
+        # exactly, while preserving the original Word column proportions.  This
+        # kills the Overfull \hbox warnings that occur when width_frac is close
+        # to 1.0 and vertical rules push the assembled table just past the edge.
+        # The reservation is a fraction of \textwidth kept for the rules.
+        # Rule width is subtracted exactly, in TeX units, from each p{} box
+        # below (\arrayrulewidth per column) rather than estimated as a
+        # fraction of the line width -- an estimate cannot be right for every
+        # column count and left a residual 2-7pt Overfull \hbox on wide
+        # tables.  A small fixed fraction is still held back so that the
+        # closing rule and rounding never push the assembled box over.
+        rules_reserve = 0.004 if has_grid else 0.0
+        available = max(0.0, 1.0 - rules_reserve)
+        if have_widths:
+            eff_frac = min(width_frac, available)  # never exceed available
+            raw_total = sum(colspecs[i].get("width") or 0 for i in range(num_cols)) or 1.0
+            # Scale so the sum of column widths equals exactly eff_frac
+            scale = eff_frac / raw_total
         parts = []
         for i in range(num_cols):
             spec = colspecs[i] if i < len(colspecs) else {}
             width = spec.get("width")
             align = spec.get("align")
             if have_widths:
-                eff = width * width_frac
+                eff = (width or 0) * scale
+                # Left-aligned p{} columns are set ragged-right: Word does not
+                # justify table cell text, and justifying a narrow fixed-width
+                # box produces a stream of Underfull \hbox warnings.
                 prefix = {
                     "c": ">{\\centering\\arraybackslash}",
                     "r": ">{\\raggedleft\\arraybackslash}",
-                }.get(align, "")
-                parts.append(f"{prefix}p{{\\dimexpr {eff:.4f}\\textwidth-2\\tabcolsep\\relax}}")
+                }.get(align, ">{\\raggedright\\arraybackslash}")
+                # \linewidth, not \textwidth: inside a two-column body the
+                # available width is \columnwidth (== \linewidth), and sizing
+                # to \textwidth overflows every table by a full column.
+                rule_sub = "-\\arrayrulewidth" if has_grid else ""
+                parts.append(
+                    f"{prefix}p{{\\dimexpr {eff:.4f}\\linewidth"
+                    f"-2\\tabcolsep{rule_sub}\\relax}}"
+                )
             elif width:
                 parts.append(f"p{{{width * 0.9:.3f}\\linewidth}}")
             else:

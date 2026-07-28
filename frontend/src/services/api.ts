@@ -88,7 +88,22 @@ export async function listTemplates(): Promise<TemplateMetadata[]> {
 }
 
 export function getDownloadUrl(jobId: string): string {
-  return `${apiClient.defaults.baseURL}/download/${jobId}`;
+  // Use the same job-based path pattern as other job endpoints to avoid 404s
+  return `${apiClient.defaults.baseURL}/job/${jobId}/download`;
+}
+
+export function getLatexUrl(jobId: string): string {
+  return `${apiClient.defaults.baseURL}/job/${jobId}/latex`;
+}
+
+export function getLogUrl(jobId: string): string {
+  return `${apiClient.defaults.baseURL}/job/${jobId}/log`;
+}
+
+export function getAssetUrl(jobId: string, assetPath: string): string {
+  // assetPath may already be a relative path; ensure no leading slash duplication
+  const normalized = assetPath.startsWith("/") ? assetPath.slice(1) : assetPath;
+  return `${apiClient.defaults.baseURL}/job/${jobId}/assets/${normalized}`;
 }
 
 export async function getFidelityReport(

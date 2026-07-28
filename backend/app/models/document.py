@@ -46,6 +46,10 @@ class AuthorModel(BaseModel):
     affiliation: Optional[str] = None
     email: Optional[str] = None
     photo_path: Optional[str] = None
+    # Whether this author is the one the paper nominates for correspondence.
+    # Carried on the author rather than only as a document-level e-mail so the
+    # relationship between the person and the address survives extraction.
+    is_corresponding: bool = False
 
 
 class AuthorBiography(BaseModel):

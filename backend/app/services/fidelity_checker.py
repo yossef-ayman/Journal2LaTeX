@@ -6,8 +6,54 @@ from app.models.document import DocumentModel, BlockType
 from app.utils.logger import get_job_logger
 
 
+_INCLUDEGRAPHICS_RE = re.compile(r"\\includegraphics\s*(?:\[[^\]]*\])?\s*\{([^}]*)\}")
+
+# Extensions probed when \includegraphics is written without one, matching what
+# the LaTeX graphics driver itself will try.
+_GRAPHIC_EXTS = (".pdf", ".png", ".jpg", ".jpeg", ".eps")
+
+
 class FidelityChecker:
     """Service to validate LaTeX rendering outputs and calculate fidelity quality scores."""
+
+    @staticmethod
+    def _referenced_media(rendered_dir: Path) -> set:
+        """Media filenames the generated LaTeX asks for, under ``media/``.
+
+        Only ``media/`` references are considered: a template ships its own
+        graphics (a publisher logo, a class ornament) whose presence is the
+        template's business, not the converter's.
+        """
+        names = set()
+        for tex in sorted(rendered_dir.glob("*.tex")):
+            try:
+                source = tex.read_text(encoding="utf-8", errors="ignore")
+            except OSError:
+                continue
+            for match in _INCLUDEGRAPHICS_RE.finditer(source):
+                target = match.group(1).strip().replace("\\", "/")
+                if target.startswith("media/"):
+                    names.add(target[len("media/"):])
+        return names
+
+    @staticmethod
+    def _media_present(name: str, rendered_files: set) -> bool:
+        """Whether a reference resolves to a file the compiler can actually use.
+
+        Two allowances mirror what happens at compile time: a reference given
+        without an extension is satisfied by any graphics format, and a vector
+        source (WMF/EMF/SVG) is included through the PNG sibling that
+        ``convert_unsupported_media`` produced, so the sibling counts.
+        """
+        if name in rendered_files:
+            return True
+        stem = Path(name).stem
+        suffix = Path(name).suffix.lower()
+        if not suffix:
+            return any(f"{stem}{ext}" in rendered_files for ext in _GRAPHIC_EXTS)
+        if suffix in (".wmf", ".emf", ".svg"):
+            return f"{stem}.png" in rendered_files
+        return False
 
     def generate_fidelity_report(self, job_id: str, doc_model: DocumentModel, temp_folder: Path) -> Dict[str, Any]:
         """Generate a detailed fidelity report comparing inputs and output PDF.
@@ -35,11 +81,23 @@ class FidelityChecker:
         # Content match calculation
         expected_sections_count = len(doc_model.sections)
         actual_sections_count = 0
-        for section in doc_model.sections:
+        sections = doc_model.sections
+        for index, section in enumerate(sections):
             if section.blocks:
                 actual_sections_count += 1
-            else:
-                missing_sections.append(f"Empty section content: {section.title}")
+                continue
+            # A heading whose next sibling is a *deeper* heading is a container
+            # ("2. Literature Review" followed immediately by "2.1 ..."), which
+            # is normal in academic manuscripts.  Its text lives in the
+            # subsections, so nothing has been lost and flagging it as missing
+            # content is a false positive.
+            nxt = sections[index + 1] if index + 1 < len(sections) else None
+            own_level = getattr(section, "level", None) or 1
+            next_level = getattr(nxt, "level", None) or 1 if nxt else None
+            if nxt is not None and next_level > own_level:
+                actual_sections_count += 1
+                continue
+            missing_sections.append(f"Empty section content: {section.title}")
 
         if expected_sections_count == 0:
             content_match_score = 100.0
@@ -58,19 +116,42 @@ class FidelityChecker:
         if rendered_assets_dir.exists():
             rendered_files = {f.name for f in rendered_assets_dir.iterdir() if f.is_file()}
 
-        matched_files = original_files.intersection(rendered_files)
-        missing_files = list(original_files - rendered_files)
-        unexpected_files = list(rendered_files - original_files)
+        # Asset match asks one question: does every image the generated
+        # document asks for actually resolve in the compilation workspace?
+        #
+        # Comparing the two directories as sets, which is what this used to do,
+        # answered a different and largely meaningless question.  Assets reach
+        # the workspace by three independent routes -- pandoc media extraction,
+        # the Office-native object renderer, and the header reconstructor, which
+        # copies a masthead straight out of word/media at render time -- so the
+        # two directories are never expected to be equal.  A chart-only
+        # manuscript scored 0% with four correctly rendered charts, purely
+        # because pandoc had contributed nothing to the snapshot.  Conversely a
+        # source image that the analyzer legitimately turns into real LaTeX (an
+        # equation stored as WMF) is not a lost asset, but set difference
+        # counted it as one.
+        referenced = self._referenced_media(rendered_dir)
+        resolved, unresolved = set(), set()
+        for name in referenced:
+            (resolved if self._media_present(name, rendered_files) else unresolved).add(name)
+
+        # An asset sitting in the workspace that nothing refers to is dead
+        # weight, not a defect; it is reported but does not affect the score.
+        referenced_stems = {Path(n).stem for n in referenced}
+        unused_files = sorted(f for f in rendered_files if Path(f).stem not in referenced_stems)
+
+        missing_files = sorted(unresolved)
+        unexpected_files = unused_files
 
         total_original = len(original_files)
         total_rendered = len(rendered_files)
-        matched_count = len(matched_files)
+        matched_count = len(resolved)
 
         # Asset match score
-        if total_original == 0:
+        if not referenced:
             asset_match_score = 100.0
         else:
-            asset_match_score = (matched_count / total_original) * 100.0
+            asset_match_score = (matched_count / len(referenced)) * 100.0
 
         # Document structure figure validation
         for section in doc_model.sections:
@@ -78,7 +159,10 @@ class FidelityChecker:
                 if block.type == BlockType.FIGURE:
                     img_path = block.content.get("path", "")
                     img_name = Path(img_path).name
-                    if img_name not in rendered_files:
+                    # Resolved through the same rules the compiler uses, so a
+                    # figure carried as WMF and included via its PNG sibling is
+                    # not reported as a missing image.
+                    if not self._media_present(img_name, rendered_files):
                         missing_assets.append(f"Figure image missing: {img_name}")
                         missing_figures.append(f"Missing figure caption: {block.content.get('caption')}")
                 elif block.type == BlockType.TABLE:
@@ -140,8 +224,11 @@ class FidelityChecker:
             "assets_validation": {
                 "total_original_assets": total_original,
                 "total_rendered_assets": total_rendered,
+                "total_referenced_assets": len(referenced),
                 "matched_assets": matched_count,
+                # References the compiler cannot resolve -- a genuine defect.
                 "missing_assets": missing_files,
+                # Files shipped into the workspace that nothing refers to.
                 "unexpected_assets": unexpected_files
             },
             "missing_assets": missing_assets,

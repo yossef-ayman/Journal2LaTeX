@@ -35,8 +35,9 @@ const TabsList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
+    role="tablist"
     className={cn(
-      "inline-flex h-9 items-center justify-start rounded-lg border border-zinc-200 bg-zinc-50/80 p-1 text-zinc-500 shadow-2xs gap-0.5",
+      "flex items-center gap-1 border-b border-gray-100 px-1 pb-0",
       className,
     )}
     {...props}
@@ -50,7 +51,7 @@ interface TabsTriggerProps
 }
 
 const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
-  ({ className, value, ...props }, ref) => {
+  ({ className, value, children, ...props }, ref) => {
     const { value: selected, onValueChange } = useTabsContext();
     const isActive = selected === value;
     return (
@@ -58,16 +59,19 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
         ref={ref}
         role="tab"
         type="button"
+        aria-selected={isActive}
         onClick={() => onValueChange(value)}
         className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-xs font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer",
+          "relative inline-flex items-center justify-center gap-1.5 whitespace-nowrap px-4 py-2.5 text-sm font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-1 cursor-pointer select-none",
           isActive
-            ? "bg-white text-zinc-900 shadow-xs font-semibold"
-            : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100/50",
+            ? "text-emerald-700 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:rounded-full after:bg-emerald-500"
+            : "text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg",
           className,
         )}
         {...props}
-      />
+      >
+        {children}
+      </button>
     );
   },
 );
@@ -86,7 +90,7 @@ const TabsContent = React.forwardRef<HTMLDivElement, TabsContentProps>(
         ref={ref}
         role="tabpanel"
         className={cn(
-          "mt-4 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+          "mt-6 animate-fade-in-up focus-visible:outline-none",
           className,
         )}
         {...props}

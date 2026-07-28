@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { PageContainer } from "@/components/PageContainer";
 import { SectionTitle } from "@/components/SectionTitle";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/StatusBadge";
 import { SearchInput } from "@/components/SearchInput";
@@ -19,6 +19,8 @@ import {
   XCircle,
   FileDown,
   History,
+  ArrowRight,
+  FileText,
 } from "lucide-react";
 import type { JobSummary, JobStatus } from "@/types";
 
@@ -32,7 +34,7 @@ const SORT_OPTIONS = [
 ];
 
 const STATUS_OPTIONS: { value: JobStatus | "all"; label: string }[] = [
-  { value: "all", label: "All" },
+  { value: "all", label: "All statuses" },
   { value: "COMPLETED", label: "Completed" },
   { value: "FAILED", label: "Failed" },
   { value: "COMPILING", label: "Compiling" },
@@ -54,85 +56,116 @@ function HistoryTable({
 }) {
   return (
     <div className="overflow-x-auto">
-      <table className="w-full text-sm" role="table">
+      <table className="w-full" role="table">
         <thead>
-          <tr className="border-b text-left text-xs text-muted-foreground">
-            <th className="px-4 py-3 font-medium" scope="col">Paper</th>
-            <th className="px-4 py-3 font-medium" scope="col">Template</th>
-            <th className="px-4 py-3 font-medium" scope="col">Status</th>
-            <th className="px-4 py-3 font-medium" scope="col">Compile</th>
-            <th className="px-4 py-3 font-medium" scope="col">Progress</th>
-            <th className="px-4 py-3 font-medium" scope="col">Created</th>
-            <th className="px-4 py-3 font-medium" scope="col">
+          <tr className="border-b border-gray-100">
+            <th className="px-5 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide" scope="col">Paper</th>
+            <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide" scope="col">Template</th>
+            <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide" scope="col">Status</th>
+            <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide" scope="col">Compile</th>
+            <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide hidden md:table-cell" scope="col">Progress</th>
+            <th className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide hidden sm:table-cell" scope="col">Created</th>
+            <th className="px-4 py-3 text-right text-xs font-semibold text-gray-500 uppercase tracking-wide" scope="col">
               <span className="sr-only">Actions</span>
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="divide-y divide-gray-50">
           {jobs.map((j) => (
             <tr
               key={j.job_id}
-              className="group border-b last:border-0 transition-colors hover:bg-accent/50"
+              className="group transition-colors hover:bg-emerald-50/40"
             >
-              <td className="max-w-[180px] truncate px-4 py-3 font-medium text-foreground">
+              <td className="px-5 py-4">
                 <button
                   type="button"
                   onClick={() => onOpen(j.job_id)}
-                  className="hover:text-primary transition-colors"
+                  className="flex items-center gap-3 text-left group/btn"
                   aria-label={`Open ${j.paper_name || "Untitled"}`}
                 >
-                  {j.paper_name || "Untitled"}
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 border border-emerald-100">
+                    <FileText size={13} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900 group-hover/btn:text-emerald-700 transition-colors max-w-[160px] truncate">
+                      {j.paper_name || "Untitled"}
+                    </p>
+                    <p className="text-[11px] text-gray-400 font-mono mt-0.5">
+                      {j.job_id.slice(0, 8)}…
+                    </p>
+                  </div>
                 </button>
               </td>
-              <td className="px-4 py-3 text-muted-foreground">
-                {j.template_name || "-"}
+              <td className="px-4 py-4">
+                <span className="text-xs text-gray-500 bg-gray-100 rounded px-2 py-1 font-mono">
+                  {j.template_name || "—"}
+                </span>
               </td>
-              <td className="px-4 py-3">
+              <td className="px-4 py-4">
                 <StatusBadge status={j.status} />
               </td>
-              <td className="px-4 py-3">
+              <td className="px-4 py-4">
                 {j.compile_success === true ? (
-                  <CheckCircle size={14} className="text-emerald-500" />
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle size={14} className="text-emerald-500" />
+                    <span className="text-xs text-emerald-600 font-medium hidden lg:block">Pass</span>
+                  </div>
                 ) : j.compile_success === false ? (
-                  <XCircle size={14} className="text-destructive" />
+                  <div className="flex items-center gap-1.5">
+                    <XCircle size={14} className="text-red-500" />
+                    <span className="text-xs text-red-600 font-medium hidden lg:block">Fail</span>
+                  </div>
                 ) : (
-                  <span className="text-muted-foreground">-</span>
+                  <span className="text-gray-300">—</span>
                 )}
               </td>
-              <td className="px-4 py-3 text-muted-foreground">
-                {j.progress}%
+              <td className="px-4 py-4 hidden md:table-cell">
+                <div className="flex items-center gap-2">
+                  <div className="flex-1 h-1.5 rounded-full bg-gray-100 max-w-[60px] overflow-hidden">
+                    <div
+                      className="h-full rounded-full bg-emerald-400 transition-all"
+                      style={{ width: `${j.progress}%` }}
+                    />
+                  </div>
+                  <span className="text-xs text-gray-500 font-mono w-8">{j.progress}%</span>
+                </div>
               </td>
-              <td className="px-4 py-3 text-muted-foreground">
-                {new Date(j.created_at).toLocaleDateString()}
+              <td className="px-4 py-4 hidden sm:table-cell">
+                <span className="text-xs text-gray-400">
+                  {new Date(j.created_at).toLocaleDateString()}
+                </span>
               </td>
-              <td className="px-4 py-3">
-                <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <td className="px-4 py-4">
+                <div className="flex items-center justify-end gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
                   <Button
                     variant="ghost"
-                    size="sm"
+                    size="icon-sm"
                     onClick={() => onOpen(j.job_id)}
                     aria-label={`View result for ${j.paper_name || "Untitled"}`}
+                    className="h-7 w-7 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50"
                   >
-                    <ExternalLink size={14} />
+                    <ExternalLink size={13} />
                   </Button>
                   {j.compile_success && (
                     <Button
                       variant="ghost"
-                      size="sm"
+                      size="icon-sm"
                       onClick={() => onDownload(j.job_id)}
                       aria-label={`Download PDF for ${j.paper_name || "Untitled"}`}
+                      className="h-7 w-7 text-gray-400 hover:text-blue-600 hover:bg-blue-50"
                     >
-                      <FileDown size={14} />
+                      <FileDown size={13} />
                     </Button>
                   )}
                   <Button
                     variant="ghost"
-                    size="sm"
+                    size="icon-sm"
                     onClick={() => onDelete(j)}
                     disabled={deletePending}
                     aria-label={`Delete ${j.paper_name || "Untitled"}`}
+                    className="h-7 w-7 text-gray-400 hover:text-red-600 hover:bg-red-50"
                   >
-                    <Trash2 size={14} className="text-destructive" />
+                    <Trash2 size={13} />
                   </Button>
                 </div>
               </td>
@@ -209,7 +242,7 @@ export default function HistoryPage() {
   if (isLoading) {
     return (
       <PageContainer>
-        <SectionTitle title="Conversion History" />
+        <SectionTitle title="Conversion History" description="View and manage your converted documents" />
         <SkeletonTable rows={5} />
       </PageContainer>
     );
@@ -220,15 +253,16 @@ export default function HistoryPage() {
       <PageContainer>
         <SectionTitle title="Conversion History" />
         <Card>
-          <CardContent className="py-16 text-center">
-            <div className="mb-4 flex justify-center">
-              <XCircle size={48} className="text-destructive" />
+          <CardContent className="flex flex-col items-center gap-5 py-20">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-red-500">
+              <XCircle size={32} />
             </div>
-            <p className="text-sm text-muted-foreground mb-4">
-              Failed to load jobs. Is the backend running?
-            </p>
-            <Button variant="outline" onClick={() => window.location.reload()}>
-              Retry
+            <div className="text-center space-y-1">
+              <p className="text-base font-semibold text-gray-900">Failed to load history</p>
+              <p className="text-sm text-gray-500">Is the backend running?</p>
+            </div>
+            <Button variant="outline" size="sm" onClick={() => window.location.reload()}>
+              Try again
             </Button>
           </CardContent>
         </Card>
@@ -236,13 +270,39 @@ export default function HistoryPage() {
     );
   }
 
+  const completedCount = jobs?.filter(j => j.status === "COMPLETED").length ?? 0;
+  const failedCount = jobs?.filter(j => j.status === "FAILED").length ?? 0;
+
   return (
     <PageContainer>
       <SectionTitle
         title="Conversion History"
-        description="View previously converted documents"
+        description="View and manage your previously converted documents"
+        action={
+          <Button size="sm" onClick={() => navigate("/upload")} className="gap-2">
+            <ArrowRight size={14} />
+            New Conversion
+          </Button>
+        }
       />
 
+      {/* Summary Stats */}
+      {jobs && jobs.length > 0 && (
+        <div className="grid grid-cols-3 gap-3">
+          {[
+            { label: "Total Jobs", value: jobs.length, color: "text-gray-900" },
+            { label: "Completed", value: completedCount, color: "text-emerald-700" },
+            { label: "Failed", value: failedCount, color: "text-red-600" },
+          ].map(({ label, value, color }) => (
+            <div key={label} className="rounded-2xl border border-gray-100 bg-white shadow-sm p-4 text-center">
+              <p className={`text-2xl font-bold ${color}`}>{value}</p>
+              <p className="text-xs text-gray-400 mt-0.5">{label}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Filters */}
       <div className="flex flex-wrap items-center gap-3">
         <SearchInput
           value={search}
@@ -253,42 +313,47 @@ export default function HistoryPage() {
         <select
           value={statusFilter}
           onChange={(e) => { setStatusFilter(e.target.value as JobStatus | "all"); setPage(0); }}
-          className="h-9 appearance-none rounded-md border bg-background px-3 text-sm text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary"
+          className="h-9 appearance-none rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
           aria-label="Filter by status"
         >
           {STATUS_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>{opt.label}</option>
           ))}
         </select>
-        <SortSelect options={SORT_OPTIONS} value={sort} onChange={(v) => { setSort(v); setPage(0); }} className="w-36" />
+        <SortSelect options={SORT_OPTIONS} value={sort} onChange={(v) => { setSort(v); setPage(0); }} className="w-40" />
       </div>
 
       {filtered.length === 0 ? (
         <Card>
-          <CardContent className="flex flex-col items-center gap-4 py-16">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-muted">
-              <History size={40} className="text-muted-foreground" />
+          <CardContent className="flex flex-col items-center gap-5 py-20">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 text-emerald-400">
+              <History size={28} strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-medium text-foreground">
-              {search || statusFilter !== "all" ? "No matching jobs" : "No conversions yet"}
-            </h3>
-            <p className="max-w-sm text-center text-sm text-muted-foreground">
-              {search || statusFilter !== "all"
-                ? "Try a different search term or filter."
-                : "Your first converted document will appear here."}
-            </p>
+            <div className="text-center space-y-1.5">
+              <h3 className="text-base font-semibold text-gray-900">
+                {search || statusFilter !== "all" ? "No matching jobs" : "No conversions yet"}
+              </h3>
+              <p className="text-sm text-gray-500 max-w-xs leading-relaxed">
+                {search || statusFilter !== "all"
+                  ? "Try a different search term or filter."
+                  : "Upload your first manuscript to get started."}
+              </p>
+            </div>
             {!search && statusFilter === "all" && (
-              <Button onClick={() => navigate("/upload")}>Start Conversion</Button>
+              <Button size="sm" onClick={() => navigate("/upload")} className="gap-2">
+                <ArrowRight size={14} />
+                Start First Conversion
+              </Button>
             )}
           </CardContent>
         </Card>
       ) : (
         <Card>
-          <CardHeader className="pb-3 flex flex-row items-center justify-between">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
-              {filtered.length} job{filtered.length !== 1 ? "s" : ""}
-            </CardTitle>
-          </CardHeader>
+          <div className="flex items-center justify-between px-5 py-3.5 border-b border-gray-50">
+            <span className="text-xs font-semibold text-gray-500">
+              {filtered.length} job{filtered.length !== 1 ? "s" : ""} found
+            </span>
+          </div>
           <CardContent className="p-0">
             <HistoryTable
               jobs={paged}
@@ -301,6 +366,7 @@ export default function HistoryPage() {
         </Card>
       )}
 
+      {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex items-center justify-center gap-2 pt-2" role="navigation" aria-label="Pagination">
           <Button
@@ -310,20 +376,25 @@ export default function HistoryPage() {
             onClick={() => setPage((p) => Math.max(0, p - 1))}
             aria-label="Previous page"
           >
-            Previous
+            ← Previous
           </Button>
-          {Array.from({ length: totalPages }, (_, i) => (
-            <Button
-              key={i}
-              variant={i === safePage ? "default" : "outline"}
-              size="sm"
-              onClick={() => setPage(i)}
-              aria-label={`Page ${i + 1}`}
-              aria-current={i === safePage ? "page" : undefined}
-            >
-              {i + 1}
-            </Button>
-          ))}
+          <div className="flex items-center gap-1">
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => setPage(i)}
+                aria-label={`Page ${i + 1}`}
+                aria-current={i === safePage ? "page" : undefined}
+                className={`h-8 w-8 rounded-lg text-sm font-medium transition-all ${
+                  i === safePage
+                    ? "bg-emerald-600 text-white shadow-sm"
+                    : "text-gray-500 hover:bg-gray-100"
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
           <Button
             variant="outline"
             size="sm"
@@ -331,7 +402,7 @@ export default function HistoryPage() {
             onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
             aria-label="Next page"
           >
-            Next
+            Next →
           </Button>
         </div>
       )}

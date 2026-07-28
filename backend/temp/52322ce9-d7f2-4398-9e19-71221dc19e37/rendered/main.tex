@@ -1,0 +1,195 @@
+
+
+
+
+
+
+% >>> j2l compat: xcolor / named-colour compatibility
+\PassOptionsToPackage{dvipsnames}{color}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
+\RequirePackage{xcolor}
+\makeatletter\@namedef{ver@color.sty}{2021/01/01}\makeatother
+\makeatletter\@ifundefined{providecolor}{}{%
+  \providecolor{CarnationPink}{RGB}{128,128,128}
+  \providecolor{Lavender}{RGB}{128,128,128}
+  \providecolor{abstractcolor}{RGB}{128,128,128}
+  \providecolor{rulecolor}{RGB}{128,128,128}
+}\makeatother
+% <<< j2l compat
+\documentclass[10pt]{NSP1}
+
+\IfFileExists{url.sty}{\usepackage{url}}{}
+\IfFileExists{floatflt.sty}{\usepackage{floatflt}}{}
+
+\IfFileExists{helvet.sty}{\usepackage{helvet}}{}
+\IfFileExists{times.sty}{\usepackage{times}}{}
+
+\IfFileExists{psfig.sty}{\usepackage{psfig}}{}
+\IfFileExists{graphics.sty}{\usepackage{graphics}}{}
+
+\IfFileExists{mathptmx.sty}{\usepackage{mathptmx}}{}
+\IfFileExists{amsmath.sty}{\usepackage{amsmath}}{}
+\IfFileExists{amssymb.sty}{\usepackage{amssymb}}{}
+\IfFileExists{bm.sty}{\usepackage{bm}}{}
+
+\IfFileExists{float.sty}{\usepackage{float}}{}
+
+\IfFileExists{caption.sty}{\usepackage[bf,hypcap]{caption}}{}
+
+
+
+\IfFileExists{xcolor.sty}{\usepackage[dvipsnames,table,xcdraw]{xcolor}}{}
+
+
+
+\tolerance=1
+
+\emergencystretch=\maxdimen
+
+\hyphenpenalty=10000
+
+\hbadness=10000
+
+
+
+\topmargin=0.00cm
+
+
+
+\def\sm{\smallskip}
+
+\def\no{\noindent}
+
+
+
+\def\firstpage{1}
+
+\setcounter{page}{\firstpage}
+
+\def\thevol{}
+
+\def\thenumber{}
+
+\def\theyear{}
+
+
+
+
+
+\IfFileExists{graphicx.sty}{\usepackage{graphicx}}{}
+\makeatletter
+\def\biographyps#1#2{%
+  \par\addvspace{21dd}\small\noindent
+  \if!#1!\else
+    \noindent\includegraphics[width=1in,height=1.25in,keepaspectratio]{#1}\par\smallskip
+  \fi
+  {\bfseries#2\unskip\ }\ignorespaces}
+\def\endbiographyps{\par\addvspace{12pt}}
+\makeatother
+
+% >>> j2l compat: scalable Computer Modern (arbitrary font sizes)
+\IfFileExists{type1cm.sty}{\usepackage{type1cm}}{}
+\IfFileExists{fix-cm.sty}{\usepackage{fix-cm}}{}
+% <<< j2l compat
+\begin{document}
+% >>> j2l compat: body-text size (+5%)
+\makeatletter
+\edef\JLTXbasesize{\f@size}
+\@tempdimb=1.2\dimexpr\f@size pt\relax\edef\JLTXbaseskip{\strip@pt\@tempdimb}
+\def\JLTXbodyscale{1.050}
+\let\JLTX@normalsize\normalsize
+\renewcommand\normalsize{%
+  \JLTX@normalsize
+  \@tempdima=\JLTXbodyscale\dimexpr\f@size pt\relax
+  \@tempdimb=1.2\@tempdima
+  \fontsize{\strip@pt\@tempdima}{\strip@pt\@tempdimb}\selectfont}%
+\@ifundefined{@makecaption}{}{%
+  \let\JLTX@makecaption\@makecaption
+  \long\def\@makecaption#1#2{%
+    \begingroup\fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont
+    \let\normalsize\JLTX@normalsize
+    \JLTX@makecaption{#1}{#2}\endgroup}}%
+\@ifundefined{thebibliography}{}{%
+  \let\JLTX@thebibliography\thebibliography
+  \def\thebibliography{%
+    \fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont\JLTX@thebibliography}}%
+\makeatother
+\normalsize
+% <<< j2l compat
+
+
+
+
+\titlefigurecaption{{\large \bf \rm Progress in Fractional Differentiation
+
+and Applications}\\ {\it\small An International Journal}}
+
+
+
+\title{A Fractional Fuzzy Dynamical Model for Math-Phobia with Optimal Learning Intervention Strategies}
+
+
+
+\author{M. Ariyanatchi$^{1}$ \and P. Roselyn Besi2 I. Paulraj Jayasimman$^{1}$ \and Ali Akgül$^{2}$ \and *$^{3}$ \and Keywords \and 1. Introduction \and Literature Review \and Novelty \and Objectives \and 2. Model Construction \and The system of fuzzy fractional differential equations is given by: \and $0FFCD_{t}^{\vartheta}ƚ = \widetilde{Ө}Ş - \left( \widetilde{\Upsilon_{4}} + \widetilde{\mu\ } \right)ƚ$ \and The initial conditions for the model are defined as: \and $Ş(0) = Ş_{0}$ \and M(0) = M\_\{0\} \and N(0) = N\_\{0\} \and ₳(0) = ₳\_\{0\} \and ƚ(0) = ƚ\_\{0\} \and Ɍ(0) = Ɍ\_\{0\} \and $$ \and where these values represent the initial state of students in each compartment at time zero. \and Table 1: Parameter Description Table \and 3.Mathematical analysis of model \and 3.1. Positivity \and boundedness of the crisp model \and Theorem 1. The solution trajectories of the crisp model (1) are all positive at any time instant in ${\ R}_{+}$. \and Proof. From the system (4) \and we get \and All the above-mentioned rates are nonnegative \and so are the solution trajectories in the non-negative of ${\ R}_{+}$. \and Theorem 2. The solution of crisp $ŞMN₳\ ƚɌ$ model (1) is uniformly bounded. \and Proof. \and Let (𝑡) = $Ş(t)$ + $M$ (𝑡) + $N$(𝑡) +$₳\ $(𝑡) + $ƚ$(𝑡) + $Ɍ$(𝑡) \and then we obtain \and $0FFCD_{t}^{\vartheta}N(t) +$𝜇𝑁 = $\Lambda$ \and Integrating both sides of above equation \and using initial conditions for infections outbreak we get \and $e^{\mu t}N = \frac{\Lambda e^{\mu t}}{\mu}\  + \ \left( N_{0} - \frac{\ \Lambda}{\mu} \right)$ \and $N = \frac{\Lambda}{\mu}\  + \ \left( N_{0} - \frac{\ \Lambda}{\mu} \right)e^{- \mu t}$ \and as $t \rightarrow \infty$ \and we obtain \and $Ş(t)\  + \ M\ (t)\  + \ N(t)\  + ₳\ (t)\  + \ ƚ(t)\  + \ Ɍ(t) \leq \ \frac{\Lambda}{\mu}$ \and $N(t) \leq \ \frac{\Lambda}{\mu}$ \and $0 \leq N(t)\  \leq \ \frac{\Lambda}{\mu}$ \and Hence \and all the solution trajectories of system (1) are bounded in the spanned output space. \and 3.2. Existence \and Uniqueness Results \and Now the right-hand side of (2) becomes \and With fuzzy initial conditions \and $\widetilde{Ş}($ \and ɤ) = \textbackslash{}left\textbackslash{}lbrack \textbackslash{}underline\{Ş\}( \and ɤ) \and \textbackslash{}underline\{Ş\}( \and ɤ) \textbackslash{}right\textbackslash{}rbrack$$ \and $\widetilde{M}($ \and ɤ) = \textbackslash{}left\textbackslash{}lbrack \textbackslash{}underline\{M\}( \and ɤ) \and \textbackslash{}underline\{M\}( \and ɤ) \textbackslash{}right\textbackslash{}rbrack$$ \and $\widetilde{N}($ \and ɤ) = \textbackslash{}left\textbackslash{}lbrack \textbackslash{}underline\{N\}( \and ɤ) \and \textbackslash{}underline\{N\}( \and ɤ) \textbackslash{}right\textbackslash{}rbrack$$ \and $\widetilde{₳}($ \and ɤ) = \textbackslash{}left\textbackslash{}lbrack \textbackslash{}underline\{₳\}( \and ɤ) \and \textbackslash{}underline\{₳\}( \and ɤ) \textbackslash{}right\textbackslash{}rbrack$$ \and $\widetilde{ƚ}($ \and ɤ) = \textbackslash{}left\textbackslash{}lbrack \textbackslash{}underline\{ƚ\}( \and ɤ) \and \textbackslash{}underline\{ƚ\}( \and ɤ) \textbackslash{}right\textbackslash{}rbrack$$ \and $\widetilde{Ɍ}\ ($ \and ɤ) = \textbackslash{}left\textbackslash{}lbrack \textbackslash{}underline\{Ɍ\}( \and ɤ) \and \textbackslash{}underline\{Ɍ\}( \and ɤ) \textbackslash{}right\textbackslash{}rbrack$$ \and Now \and using fuzzy fractional integral $I^{\vartheta}$ \and using initial conditions \and one can get \and Banach space is defined as follows based on the fuzzy norm \and $Ꞗ = Ꞗ_{1} \times Ꞗ_{2} \times Ꞗ_{3} \times Ꞗ_{4} \times Ꞗ_{5} \times Ꞗ_{6}$ \and $\| Ş(t)$ \and \textbackslash{} M(t) \and N(t)\textbackslash{} \and \textbackslash{} ₳(t)\textbackslash{} \and \textbackslash{} \textbackslash{} ƚ(t)\textbackslash{} \and \textbackslash{} Ɍ(t)\textbackslash{} \textbackslash{}| = \textbackslash{} \textbackslash{}left| Ş(t) + M(t) + N(t) + ₳(t) + \textbackslash{} \textbackslash{} ƚ(t) + Ɍ(t) \textbackslash{}right|\textbackslash{} $$ \and Thus \and the equation (5) is written as \and Where \and $\widetilde{ǥ}(t) =$ $\{ Ş(t)\ M(t)\ N(t)\ ₳(t)\ ƚ(t)\ Ɍ(t)\ $ \and In order to obtain the required results \and we consider the following assumptions \and (A1) There exists a constant $Ƥ_{ǥ} > 0$ \and $Ɋ_{ǥ} > 0\  \ni \ $ \and $\left| \Theta\left( t$ \and \textbackslash{}widetilde\{ǥ\}(t) \textbackslash{}right) \textbackslash{}right| \textbackslash{}leq Ƥ\_\{ǥ\}\textbackslash{}left| \textbackslash{}widetilde\{ǥ\}(t) \textbackslash{}right| + Ɋ\_\{ǥ\}\textbackslash{} $ (7)$ \and (A2) There exists constant $К_{ǥ} > 0$ such that for each ${\widetilde{ǥ}}_{1}$ \and \{\textbackslash{}widetilde\{ǥ\}\}\_\{2\} \textbackslash{}in Ꞗ$ we have$ \and Theorem 4. By using the assumption (A1) the prescribed system has atleast one solution. \and Proof. \and Taking the mapping $Ѵ:Ơ \rightarrow Ơ$ such that \and For any $\widetilde{ǥ}(t) \in Ơ$ \and one can obtain \and Here. Ѵ(0) ⊂ \and hence we conclude that Ѵ is bounded. \and Next \and completely continuous property of the operator Ѵ is proved. \and For any $Ѵ_{1}$ \and Ѵ\_\{2\} \textbackslash{}in \textbackslash{}lbrack \and T\textbackslash{}rbrack$ such that $Ѵ\_\{2\} \textgreater{} Ѵ\_\{1\}$ gives$ \and Proof. \and Let ${\widetilde{ǥ}}_{1}(t)$ \and \{\textbackslash{}widetilde\{ǥ\}\}\_\{2\}(t) \textbackslash{}in Ꞗ$ then$$^{4}$ \and 4. Numerical Analysis \and $Ỻ\left\lbrack 0FFCD_{t}^{\vartheta}\ Ş(t) \right\rbrack = Ỻ\left\lbrack \psi_{1}\left( t$ \and Ş(t) \textbackslash{}right) \textbackslash{}right\textbackslash{}rbrack$$ \and $Ỻ\left\lbrack 0FFCD_{t}^{\vartheta}\ M(t) \right\rbrack = Ỻ\left\lbrack \psi_{2}\left( t$ \and M(t) \textbackslash{}right) \textbackslash{}right\textbackslash{}rbrack$$ \and $Ỻ\left\lbrack 0FFCD_{t}^{\vartheta}\ N(t) \right\rbrack = Ỻ\left\lbrack \psi_{3}\left( t$ \and N(t) \textbackslash{}right) \textbackslash{}right\textbackslash{}rbrack$$ \and $Ỻ\left\lbrack 0FFCD_{t}^{\vartheta}\ ₳(t) \right\rbrack = Ỻ\left\lbrack \psi_{4}\left( t$ \and ₳(t) \textbackslash{}right) \textbackslash{}right\textbackslash{}rbrack$$ \and $Ỻ\left\lbrack 0FFCD_{t}^{\vartheta}\ ƚ(t) \right\rbrack = Ỻ\left\lbrack \psi_{5}\left( t$ \and ƚ(t) \textbackslash{}right) \textbackslash{}right\textbackslash{}rbrack$$ \and $Ỻ\left\lbrack 0FFCD_{t}^{\vartheta}\ Ɍ(t) \right\rbrack = Ỻ\left\lbrack \psi_{6}\left( t$ \and Ɍ(t) \textbackslash{}right) \textbackslash{}right\textbackslash{}rbrack$$ \and Under the zero initial condition \and one can obtain: \and which implies that: \and Based on the infinite series solution \and one can obtain: \and $Ş(t) = \sum_{n = 0}^{\infty}{}Ş_{n}(t)$ \and $M(t) = \sum_{n = 0}^{\infty}{}M_{n}(t)$ \and $N(t) = \sum_{n = 0}^{\infty}{}N_{n}(t)$ \and $₳(t) = \sum_{n = 0}^{\infty}{}₳_{n}(t)$ \and $ƚ(t) = \sum_{n = 0}^{\infty}{}ƚ_{n}(t)$ \and $Ɍ(t) = \sum_{n = 0}^{\infty}{}Ɍ_{n}(t)$ \and From (2) \and the nonlinear term can be rewritten as follows: \and $Ş(t)M(t) = \sum_{n = 0}^{\infty}{}B_{$ \and n\}$$ \and $Ş(t)N(t) = \sum_{n = 0}^{\infty}{}B_{$ \and n\}$$ \and Taking the inverse LT \and we have: \and The terms in the parametric form are compared \and we have: \and ${\underline{Ş}}_{0}(t) = \underline{Ş}($ \and r) \and \{\textbackslash{}underline\{Ş\}\}\_\{0\}(t) = \textbackslash{}underline\{Ş\}( \and r) \and $$ \and ${\underline{M}}_{0}(t) = \underline{M}($ \and r) \and \{\textbackslash{}underline\{M\}\}\_\{0\}(t) = \textbackslash{}underline\{M\}( \and r) \and $$ \and ${\underline{N}}_{0}(t) = \underline{N}($ \and r) \and \{\textbackslash{}underline\{N\}\}\_\{0\}(t) = \textbackslash{}underline\{N\}( \and r) \and $$ \and ${\underline{₳}}_{0}(t) = \underline{₳}($ \and r) \and \{\textbackslash{}underline\{₳\}\}\_\{0\}(t) = \textbackslash{}underline\{₳\}( \and r) \and $$ \and ${\underline{ƚ}}_{0}(t) = \underline{ƚ}($ \and r) \and \{\textbackslash{}underline\{ƚ\}\}\_\{0\}(t) = \textbackslash{}underline\{ƚ\}( \and r) \and $$ \and ${\underline{Ɍ}}_{0}(t) = \underline{Ɍ}($ \and r) \and \{\textbackslash{}underline\{Ɍ\}\}\_\{0\}(t) = \textbackslash{}underline\{Ɍ\}( \and r) \and $$ \and 5.Optimal control system$^{5}$ \and $0FFCD_{t}^{\vartheta}ƚ = \widetilde{Ө}Ş - \left( \widetilde{\Upsilon_{4}} + \widetilde{\mu\ } \right)ƚ + u_{2}(t)Ş$ \and The set of optimal control is \and find an optimal control $(u_{1}^{*}$ \and u\_\{2\}\textasciicircum{}\{*\} \and u\_\{3\}\textasciicircum{}\{*\}) \textbackslash{}in U$ such that$ \and $J\left( u_{1}^{*}$ \and u\_\{2\}\textasciicircum{}\{*\} \and u\_\{3\}\textasciicircum{}\{*\} \textbackslash{}right) = J\textbackslash{}left( u\_\{1\} \and u\_\{2\} \and u\_\{3\} \textbackslash{}right)\textbackslash{} \and $$ \and Subject to the fractional state system above \and initial conditions: \and $Ş(0) = Ş_{0}$ \and $M(0) = M_{0}$ \and $N(0) = N_{0}$ \and $₳(0) = ₳_{0}$ \and $ $ƚ(0) = ƚ\_\{0\}$$ \and $Ɍ(0) = Ɍ_{0}$.$^{6}$ \and Where $\psi_{i}$ \and \textbackslash{} (i = \and 6)$ are the adjoint variables.$ \and $\psi_{6}'(t) = - \frac{\partial H}{\partial Ɍ}(t) =$ $\psi_{6}\widetilde{\mu\ }$ . \and The terminal condition of adjoint equations is given by \and $\psi_{i}(t_{f}) =$ \and \textbackslash{} i = \and 7.$ (10)$ \and Minimizing H pointwise with respect to $u_{1}$ \and u\_\{2\} \and u\_\{3\}$:$ \and $\frac{\partial H}{\partial u_{1}} = C_{1}u_{1} - \psi_{2}M - \psi_{3}N + \psi_{4}(M + N) = 0$ \and $\frac{\partial H}{\partial u_{2}} = C_{2}u_{2} - \psi_{1}Ȿ + \psi_{5}Ȿ = 0$ \and $\frac{\partial H}{\partial u_{3}} = C_{3}u_{3} - \psi_{4}₳ - \psi_{6}₳ = 0$ \and applying the boundedness $0 \leq u_{i}(t) \leq 1$ \and we get the optimal controls \and Where $i =$ \and 3$. By solving the above equations$ \and the proof is completed. \and 6.Results \and Discussion \and Figure 1. Temporal dynamics of the susceptible student population $Ş(t)$for varying fractional orders $\vartheta$. \and Figure 2. Dynamics of the mathphobic student compartment $M(t)$under different fractional orders $\vartheta$. \and Figure 3. Variation over time of not interested students $N(t)$at multiple fractional orders $\vartheta$.$^{7}$ \and Figure 5. Growth \and stabilization of interested students $ƚ(t)\ $across fractional orders $\vartheta$. \and Figure 6. Cumulative recovery $Ɍ(t)$ in students as influenced by fractional order $\vartheta$. \and 7.Conclusion \and Reference}
+
+\institute{$^{1}$ Department of Mathematics, Academy of Maritime Education and Training (Deemed to be University), ECR, Kanathur, Chennai – 603 112, Tamil Nadu, India \\ $^{2}$ Department of Electronics and Communication Engineering, Saveetha School of Engineering,SIMATS, Chennai, Tamilnadu, India \\ $^{3}$ Siirt University, Art and Science Faculty, Department of Mathematics, 56100 Siirt, Türkiye \\ $^{4}$ Hence Ѵ is contraction. The Banach contraction principle guarantees that the suggested model (1) has just one solution. \\ $^{5}$ Including these controls, the fuzzy fractional differential equations become: \\ $^{6}$ According to the Pontryagin’s maximum principle, define the Hamiltonian function as follows: \\ $^{7}$ Figure 4. Trajectory of intervention-aware students $₳(t)$for distinct fractional orders $\vartheta$.}
+
+
+
+\titlerunning{A Fractional Fuzzy Dynamical Model for Math-Phobia with Optimal Learning Intervention Strategies}
+
+\authorrunning{M. Ariyanatchi et al.}
+
+
+
+
+
+\mail{aliakgul@siirt.edu.tr}
+
+
+
+\received{}
+
+\revised{}
+
+\accepted{}
+
+\published{}
+
+
+
+\abstracttext{This paper introduces a new six-compartment fuzzy fractional-order epidemic model that describes the spread and mitigation of math-phobia in student populations. The susceptible $Ş(t)$, mathphobic $M(t)$, not interested $N(t)$, intervention-aware $₳(t)$, interested $ƚ(t)$, and recovered $Ɍ(t)$ compartments capture key behavioural transitions influenced by psychological, social, and educational factors. Caputo-type fuzzy fractional differential equations are used to derive these dynamics, considering memory effects and epistemic uncertainty in the transmission and recovery rates. By applying fixed-point theory, we prove the existence and uniqueness of the solution under fuzzy initial conditions, hence guaranteeing mathematical coherence of the model.}
+
+
+
+\keywords{}
+
+
+
+\maketitle
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

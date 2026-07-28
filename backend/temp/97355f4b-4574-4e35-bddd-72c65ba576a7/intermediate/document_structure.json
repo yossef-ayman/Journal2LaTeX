@@ -1,0 +1,3450 @@
+{
+  "title": "Modification of the Authentication in the Routing Protocols in Mobile Ad Hoc Networks (MANETs)",
+  "authors": [
+    {
+      "name": "Ali Akgül",
+      "affiliation": "Department of Electronics and Communication Engineering, Saveetha School of Engineering, SIMATS, Chennai, Tamilnadu, India",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "*",
+      "affiliation": null,
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Ahmad K. Alomari",
+      "affiliation": "Faculty of Science and Information Technology, Jadara University, Irbid, Jordan",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Mohammad A. Tashtoush",
+      "affiliation": "Department of Basic Sciences, AL-Huson University College, AL-Balqa Applied University, AL-Salt 19117, Jordan",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Adel S. Hussain",
+      "affiliation": "IT Department, Amedi Technical Institutes, University of Duhok Polytechnic, Duhok, Iraq.",
+      "email": null,
+      "photo_path": null
+    },
+    {
+      "name": "Emad A. Az-Zo'bi",
+      "affiliation": "Department of Mathematics and Statistics, Mutah University, Mutah P.O.Box 7, Al Karak 61710, Jordan",
+      "email": "adel.sufyan@dpu.edu.krd",
+      "photo_path": null
+    }
+  ],
+  "abstract": "Mobile Ad Hoc Networks (MANETs) are a novel and emerging technology that has a dynamic topology and is self-configuring and self-motivated. The primary feature of an ad hoc network is that it is not dependent on any established infrastructure because it lacks a centralised arbiter or server. These features make it harder to provide security services to MANETs and cause security flaws. Wireless MANETs have several issues, including performance analysis, energy efficiency, security, and network stability. To date, a great deal of research has been conducted to create security strategies for MANETs. The current strategies that aim to build a defence against different types of attacks at different levels will be covered in this book. Researchers therefore create several routing protocols. Wireless networks cannot effectively employ the routing methods designed for conventional networks. A few novel routing methods have been developed for wireless ad hoc networks that are appropriate for the constantly evolving ad hoc wireless environment. In this study, we proposed a technique to improve the efficiency of routing protocols and boost node-to-node dependability in mobile ad hoc networks (MANETs). Our system focuses on node authentication, and we use an on-demand routing protocol, such as the Dynamic Source Routing protocol (DSR), to implement it. This technique relies on the hash function, secret value, and time stamp.",
+  "keywords": [
+    "MANETs",
+    "Routing protocols",
+    "hash function",
+    "DSR",
+    "source node",
+    "destination node."
+  ],
+  "sections": [
+    {
+      "title": "",
+      "level": 1,
+      "blocks": [],
+      "heading_format": null
+    },
+    {
+      "title": "1 Introduction",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In recent years, we have been witnessing a tremendous growth of wireless communication technologies. The wireless network infrastructure exhibits significant progress, making the availability of wireless applications increase constantly. Wireless devices, such as laptops, tablets or smartphones, can be found everywhere, and they are all getting strongerin what it concerns their capacities. The importance of these gadgets in our daily lives is growing."
+          },
+          "block_index": 1,
+          "original_page_number": null,
+          "original_order": 1,
+          "source_location": "Section: 1 Introduction, Block: 1"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Wireless technologies are now popular for several reasons. Due to the substantial decline in the cost of wireless devices, service providers are now able to drastically lower the cost of wireless services, making them considerably more accessible to end customers [1]. In emerging markets, wireless network installation is significantly less expensive than conventional network installation. Voice and data services may now be offered via these networks because of significant advancements in wireless technology. Because of the ensuing appeal, anytime, anyplace services are very desirable to end consumers."
+          },
+          "block_index": 2,
+          "original_page_number": null,
+          "original_order": 2,
+          "source_location": "Section: 1 Introduction, Block: 2"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Wireless networks come in two varieties: The first kind is an infrastructure-based network, which is a network with reconstructed infrastructure consisting of wired and fixed network nodes and gateways. Typically, these preset infrastructures are used to supply network services. The second kind is infrastructureless (ad hoc) networks, where an arbitrary collection of independent nodes collaborates to create a network on the fly [2]. There is no prior agreement on the precise function that each node should perform."
+          },
+          "block_index": 3,
+          "original_page_number": null,
+          "original_order": 3,
+          "source_location": "Section: 1 Introduction, Block: 3"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "One of the fields of study that is expanding the quickest right now is mobile ad hoc networks, or MANETs. High-degree node mobility and wireless communication are combined in this novel kind of self-organising network. Thus, even in places without an established communication infrastructure, people and cars may be operated online. These networks lack established infrastructure, such as base stations and centralised administration centres, in contrast to traditional wired networks [3]. The type of typology this association of nodes forms is arbitrary. While nodes within radio range can interact directly with one another, nodes outside of that range must employ an intermediary node or nodes to connect in a mobile ad hoc network. In these two scenarios, a wireless network is automatically formed by all of the nodes participating in the communication process. Consequently, one may refer to this kind of wireless network as a mobile ad hoc network."
+          },
+          "block_index": 4,
+          "original_page_number": null,
+          "original_order": 4,
+          "source_location": "Section: 1 Introduction, Block: 4"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "This kind of flexibility makes them attractive for many fields of application, for example, in the military field, where the network topology may change rapidly. When deployed to combat, military forces (such as infantry, tanks, or aircraft) that are outfitted with wireless communication equipment are more effectively connected. In disaster recovery activities, where the fixed or current infrastructure may not be functioning, this kind of network is also used [4]. Because of their ad hoc self-organisation, they are especially appropriate for virtual conferences, where establishing conventional network infrastructures is an expensive and time-consuming process."
+          },
+          "block_index": 5,
+          "original_page_number": null,
+          "original_order": 5,
+          "source_location": "Section: 1 Introduction, Block: 5"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Due to this increased applicability, security matters in the mobile ad hoc networks must be better looked at, as the basic functions of conventional networks (packet forwarding, routing, and network management) are carried out by dedicated nodes. In ad hoc networks, these functions are performed collaboratively by all the available nodes. In these types of networks, the communication between the nodes is done through a multi-hop system. Wireless links are used for direct communication between the nodes that are within each other’s radio range. For the nodes that are not within each other’s radio range, one or multiple intermediate nodes are used to ensure successful communication [5]. Those intermediate nodes act as routers. In mobile ad hoc networks, as their name says, the nodes are free to join, leave or move inside the network. Due to this dynamic topology, there is a constant need for the routes to be updated."
+          },
+          "block_index": 6,
+          "original_page_number": null,
+          "original_order": 6,
+          "source_location": "Section: 1 Introduction, Block: 6"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "As seen above, because ad hoc networks allow a great freedom of movement for the nodes that join them, this means that the network topology has a configuration that can change rapidly. This changing nature of the nodes is unpredictable, as it takes place at random. This type of topology, together with a lack of infrastructure and wireless connectivity that is prone to error, has a considerable effect on the network because it leads to recurrent link breakages. By adopting a completely dispersed and self-organising character, MANET protocols must lessen the unreliability of fundamental network functions [6]. Distributing network service functionality among as many nodes as feasible prevents a single point of attack from a security standpoint. Taking into consideration that MANETs have unique characteristics, the mechanisms used to secure conventional networks are more likely to be unsuitable or cannot be adapted to fit the security needs of ad hoc networks. For this purpose, MANETs need to be equipped with specialised mechanisms and protocols."
+          },
+          "block_index": 7,
+          "original_page_number": null,
+          "original_order": 7,
+          "source_location": "Section: 1 Introduction, Block: 7"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "It has been difficult to come up with a comprehensive general solution; most of the solutions proposed so far focus on some particular security vulnerabilities [4]. A view of the bigger picture is needed for MANETs to be provided with efficient general solutions, i.e. we have to first fully understand all the vulnerabilities and security risks of this type of network. As there are still many issues to be solved regarding the deployment of security for the routing protocols of MANETs, a lot of investigation still needs to be conducted for the development of appropriate solutions to these issues. At this point, the critical issue that poses the biggest challenge in this field is that of security, so the focus must be on the design of specialised solutions to keep these networks safe."
+          },
+          "block_index": 8,
+          "original_page_number": null,
+          "original_order": 8,
+          "source_location": "Section: 1 Introduction, Block: 8"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In this paper, we are attempting to improve a scheme used in different kinds of routing protocols which aim to resist different forms of attacks like eavesdropping, man-in-the-middle attack, routing attack and wormhole attack."
+          },
+          "block_index": 9,
+          "original_page_number": null,
+          "original_order": 9,
+          "source_location": "Section: 1 Introduction, Block: 9"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": 6.0,
+        "space_after_pt": 12.0,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "2 Related Work",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Many articles have been written to show how the security of the routing protocols can be amended, and most of them base their research on the On-Demand routing protocols."
+          },
+          "block_index": 10,
+          "original_page_number": null,
+          "original_order": 10,
+          "source_location": "Section: 2 Related Work, Block: 10"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Dilli Ravilla and Chandra Shekar Reddy Putta proposed Enhancing the Security of MANETs Using Hash Algorithms [7]. They implemented two secure routing techniques, keyed-Hash Message Authentication Code HMAC and Secure Hashing Algorithm 512 (SHA512). (HMAC-SHA512). It is implemented to make the network more secure by preventing Denial of Service attacks in the network in which it is used. At the price of longer processing times at both the source and the destination, they devised the HMAC-SHA512 to guarantee that data packets are received by the destination exclusively and in their original form. In addition to solutions based on cryptography, a trust-based solution is also put into place. This solution is based on the detection of malicious nodes, which are broadcast throughout the network and isolated to increase throughput and packet delivery fraction at the expense of an increased end-to-end delay. By using a unified approach to digital signatures, their suggested protocol achieves superior results in achieving security objectives, including message integrity and message authentication."
+          },
+          "block_index": 11,
+          "original_page_number": null,
+          "original_order": 11,
+          "source_location": "Section: 2 Related Work, Block: 11"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Preeti Sachan and Pabitra Mohan Khilar suggested using a cryptographic authentication approach to secure the AODV routing protocol in MANET [8]. They presented a technique for AODV protocol security. The suggested approach makes advantage of the hashed message authentication code (HMAC) feature, which offers quick message verification and authentication for both sender and intermediary nodes. It offers quick message verification, message authentication, and intermediate node authentication because it doesn't need any asymmetric key cryptography operations. They contrast the suggested approach with the SAODV procedure."
+          },
+          "block_index": 12,
+          "original_page_number": null,
+          "original_order": 12,
+          "source_location": "Section: 2 Related Work, Block: 12"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The suggested approach secures packet routing and effectively guards against impersonation, black hole, and routing information modification attacks. Additionally, they used the network simulator tool (NS2) to simulate and compare the suggested approach with the original AODV and secure AODV (SAODV) protocols. Simulation findings demonstrate that the suggested approach outperforms the original AODV protocol in the presence of hostile nodes executing black hole attacks and reduces the time delay and network routing burden associated with computing and verifying security fields during the route discovery phase."
+          },
+          "block_index": 13,
+          "original_page_number": null,
+          "original_order": 13,
+          "source_location": "Section: 2 Related Work, Block: 13"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "An analysis of an effective DNA-based cryptographic mechanism for a secure routing protocol for wireless ad hoc networks. In contrast to previous cryptographic systems, Secure Routing protocols were introduced by E. Suresh, C. Nagaraju, and MHM. Prasad to provide security solutions for specialised wireless ad hoc networks that require less memory and transmission capacity [9]. They have studied and modelled a heterogeneous attack that takes advantage of flaws in the current wireless ad hoc network's AODV routing algorithms. In particular, the suggested SRPAHA (Secure Routing Protocol against Heterogeneous Attacks) protocol uses hybrid DNA-based cryptography (HDC) to create cryptographically secure communication between the nodes. Numerous simulation scenarios that artificially create the data sets and validate using different factors, including Route Acquisition Time, Throughput (or packet delivery ratio), Routing Overhead, and Average End-to-End Delay, were used to validate the simulation findings of their work. Additionally, compared to current security systems, the outcomes of this study offer greater security, lower computing overhead, and improved network performance, as well as lower communication overhead."
+          },
+          "block_index": 14,
+          "original_page_number": null,
+          "original_order": 14,
+          "source_location": "Section: 2 Related Work, Block: 14"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Michael Weeks and Gulsah Altum proposed a new approach, which they called Efficient Secure Dynamic Source Routing (ESDSR) [10]. It is an algorithm using dynamic modification of the source routing (DSR) protocol to find selfish nodes and deal with them. Their scheme focused on wireless ad hoc networks, and they are making a distinction between selfish nodes and malicious nodes. The discovery of the selfish nodes is easy because they release all external information packs to conserve battery power. The algorithm needs a Certificate Authority, and it is based on the amended and extended DSR protocol. A shared network key is used to encrypt the information packets exchanged by any two nodes in the network. The protocol does not mention the issue of an attack from the inside. It also does not offer any solution to the exploitation of the shared key by several insiders. It is assumed that all the nodes are reliable at first, and they collapse due to selfish reasons instead of an outright attempt to destroy the network."
+          },
+          "block_index": 15,
+          "original_page_number": null,
+          "original_order": 15,
+          "source_location": "Section: 2 Related Work, Block: 15"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": 6.0,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "3 Methodology",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "This research employed a structured, multi-stage methodology to design, develop, and validate an enhanced risk assessment model tailored for project management. The primary objective was to improve the accuracy, adaptability, and practical applicability of risk measurement across diverse industries."
+          },
+          "block_index": 16,
+          "original_page_number": null,
+          "original_order": 16,
+          "source_location": "Section: 3 Methodology, Block: 16"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": 6.0,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "3 Different Attacks in MANETs",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "First of all, ad hoc networks must be defended against passive attacks, which can be done with the help of the following tools: digital signature, authentication, encryption and access control [11, 12]. Another challenge is represented by the protection against active attacks. Intrusion and the number of selfish nodes also pose a problem that needs to be taken care of. Symmetric and asymmetric cryptography constitute the basis of encryption and authentication. In the following sections, we shall examine several assault types and their behavior in the sections that follow. The experiments and the reactions of the components to some of the attacks that have been demonstrated in real life were observed."
+          },
+          "block_index": 17,
+          "original_page_number": null,
+          "original_order": 17,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 17"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Eavesdropping (passive attack)"
+          },
+          "block_index": 18,
+          "original_page_number": null,
+          "original_order": 18,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 18"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The attacker snoops on the network in order to collect data, getting access to private information regarding the topology, optimal routes and geographic locations in the network while the information is being routed. In this case, the attack is very hard to detect, and vital information such as the node’s private and public key, password, etc., can be compromised. It is much easier to conduct this type of attack in a mobile ad hoc network than in a wired network [11]."
+          },
+          "block_index": 19,
+          "original_page_number": null,
+          "original_order": 19,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 19"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Denial of Service (DoS)"
+          },
+          "block_index": 20,
+          "original_page_number": null,
+          "original_order": 20,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 20"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "This attack aims to make a specific node not available for service. The entire service could be compromised if someone uses this type of attack. Denial of Service is the outcome of tampering with network integrity, redundancy and availability. In this type of attack, an adversary wants to use the node's resources or network bandwidth by overflowing the network with insignificant information [11]."
+          },
+          "block_index": 21,
+          "original_page_number": null,
+          "original_order": 21,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 21"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Wormhole attack"
+          },
+          "block_index": 22,
+          "original_page_number": null,
+          "original_order": 22,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 22"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In MANETs, it is among the most advanced and serious assaults. The attacker can tunnel the received message, which is transmitted over a short latency, by joining two components that are located at a predetermined distance from one another. A compromised node from a different part of the network receives the message through a path located outside the network, which makes the attack very difficult to detect, because the path through which the data is transmitted does not belong to the real network."
+          },
+          "block_index": 23,
+          "original_page_number": null,
+          "original_order": 23,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 23"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Black hole attack"
+          },
+          "block_index": 24,
+          "original_page_number": null,
+          "original_order": 24,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 24"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In this case, all the traffic is rerouted and lured to a compromised node, which becomes a black hole. These malicious nodes trick all their neighbouring nodes into attracting all the routing packets to them. Malicious nodes might initiate black hole attacks by promoting themselves to other nodes as having the best path to the desired destinations, which is how they are very similar to wormhole assaults."
+          },
+          "block_index": 25,
+          "original_page_number": null,
+          "original_order": 25,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 25"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Snooping attack"
+          },
+          "block_index": 26,
+          "original_page_number": null,
+          "original_order": 26,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 26"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Duringthistypeofattackpackets ofthenodesareaccessedwithoutpermission.Because in MANETs, packets are communicated hop by hop, any malicious node can capture other packets [12]."
+          },
+          "block_index": 27,
+          "original_page_number": null,
+          "original_order": 27,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 27"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Routing attack"
+          },
+          "block_index": 28,
+          "original_page_number": null,
+          "original_order": 28,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 28"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Routing tables get deleted or modified by malicious nodes, causing packet overhead and increased processing time due to the destruction of the routing information table in ordinary nodes."
+          },
+          "block_index": 29,
+          "original_page_number": null,
+          "original_order": 29,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 29"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Man-in-the-middle attack"
+          },
+          "block_index": 30,
+          "original_page_number": null,
+          "original_order": 30,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 30"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_156.png",
+            "label": "fig:office156",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "A rogue node positions itself between the source and the destination in this attack. After that, all packets are captured and either dropped or altered. MANETs are especially susceptible to this assault since they employ hop-by-hop transmission. Cryptography and authentication are the best defences against this assault."
+          },
+          "block_index": 31,
+          "original_page_number": null,
+          "original_order": 31,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 31"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Fabrication Attack"
+          },
+          "block_index": 32,
+          "original_page_number": null,
+          "original_order": 32,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 32"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "By injecting fault information, the rogue node creates fault routing pathways and destroys the nodes' routing table [12]. Consequently, nodes squander network resources by sending their packets over flawed paths. An increase in lost packets and a decrease in packet delivery rate."
+          },
+          "block_index": 33,
+          "original_page_number": null,
+          "original_order": 33,
+          "source_location": "Section: 3 Different Attacks in MANETs, Block: 33"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": 6.0,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "4 Improving the authentication in the routing protocols of MANETs",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The major types of ad-hoc routing protocols are: Proactive routing protocols: routing tables are updated through recurrent message sending. The most important protocols of this type are: OLSR (Optimised Link State Routing protocol) and DSDV (Destination-Sequenced Distance Vector)."
+          },
+          "block_index": 34,
+          "original_page_number": null,
+          "original_order": 34,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 34"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Reactive (On-Demand) routing protocols: routes are generated only when necessary. Two of the most important protocols of this kind are: DSR (Dynamic Source Routing protocol) and AODV (Ad hoc On-Demand Distance Vector Routing protocol)."
+          },
+          "block_index": 35,
+          "original_page_number": null,
+          "original_order": 35,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 35"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image3.wmf",
+            "label": null,
+            "width_in": 4.2292,
+            "height_in": 1.9792,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 36,
+          "original_page_number": null,
+          "original_order": 36,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 36"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Figure 1: Types of ad hoc routing protocols"
+          },
+          "block_index": 37,
+          "original_page_number": null,
+          "original_order": 37,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 37"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "These protocols are differentiated by the manner in which the routing data is updated, identified, and what kind of data each routing table keeps. Various numbers of tables can be stored by every routing protocol."
+          },
+          "block_index": 38,
+          "original_page_number": null,
+          "original_order": 38,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 38"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Multiple routing protocols for ad hoc networks were created to ensure security and authentication between the nodes. In this paper, we propose security schemes which can be applied to most of the routing protocols. To apply our schemes, we use the Dynamic Source Routing protocol (DSR) due to its popularity and frequent usage [13]."
+          },
+          "block_index": 39,
+          "original_page_number": null,
+          "original_order": 39,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 39"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Our paper has been done on the verification between the nodes. Mobile ad hoc networks that use authorised nodes are becoming more and more available to general use and also a research topic with increased importance over the last few years."
+          },
+          "block_index": 40,
+          "original_page_number": null,
+          "original_order": 40,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 40"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Mobile nodes, which may function as both senders and forwarders for messages, make up the structure of a MANET. Our focus will be on a unique aspect of these protocols, which is the ability to identify routes, which helps to overcome the network's dynamic topology limitation."
+          },
+          "block_index": 41,
+          "original_page_number": null,
+          "original_order": 41,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 41"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Mobile ad hoc networks provide two security challenges. Communication between the nodes is made possible by the security of the routing protocols, which is the first issue. The protection of the data that is moving across the network along routes set by the routing protocols is the second issue. In an ad-hoc network, there are two kinds of attacks: passive attacks and active assaults."
+          },
+          "block_index": 42,
+          "original_page_number": null,
+          "original_order": 42,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 42"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Our proposed idea utilises hash functions, although digital signatures can be used as well. To acquire strong security, the scheme of SAODV (Security AODV: represents an AODV extension) includes algorithms that use digital signatures and hash chains to accomplish the security on different levels. The digital signature is attached to every node to provide integrity and authentication for the messages concerning the routing: RREQ, RREP and RRER. All the neighbour nodes that receive the packet verify the digital signature. The hash chains are used to secure the hop-count mechanism [13, 14]."
+          },
+          "block_index": 43,
+          "original_page_number": null,
+          "original_order": 43,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 43"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In this scheme, we use the random number generator, besides the one-way hash function. We use this method to improve the communication between the nodes and to perform node authentication. The steps of this scheme are explained in Figure 2."
+          },
+          "block_index": 44,
+          "original_page_number": null,
+          "original_order": 44,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 44"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In our scheme, we still use a digital signature and time to live (TTL). Where TTL lists the number of times this message can be resent, and the digital signature is attached to every node to provide integrity and authentication for the messages sent between two nodes."
+          },
+          "block_index": 45,
+          "original_page_number": null,
+          "original_order": 45,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 45"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Parameters used:"
+          },
+          "block_index": 46,
+          "original_page_number": null,
+          "original_order": 46,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 46"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_2.png",
+            "label": "fig:office2",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image4.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 47,
+          "original_page_number": null,
+          "original_order": 47,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 47"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image5.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 48,
+          "original_page_number": null,
+          "original_order": 48,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 48"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image6.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 49,
+          "original_page_number": null,
+          "original_order": 49,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 49"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image7.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 50,
+          "original_page_number": null,
+          "original_order": 50,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 50"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image8.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 51,
+          "original_page_number": null,
+          "original_order": 51,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 51"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image9.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 52,
+          "original_page_number": null,
+          "original_order": 52,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 52"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "H (x): secure one-way hash function;"
+          },
+          "block_index": 53,
+          "original_page_number": null,
+          "original_order": 53,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 53"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_8.png",
+            "label": "fig:office8",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image10.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 54,
+          "original_page_number": null,
+          "original_order": 54,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 54"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image10.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 55,
+          "original_page_number": null,
+          "original_order": 55,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 55"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Diffie-Hellman Key Exchange: The Diffie-Hellman algorithm's efficiency depends on the hardness of computing discrete logarithms."
+          },
+          "block_index": 56,
+          "original_page_number": null,
+          "original_order": 56,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 56"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Our approach is based on a practical one-way hash function. We also deliver a theoretically stronger foundation on pseudo-random function (PRF)."
+          },
+          "block_index": 57,
+          "original_page_number": null,
+          "original_order": 57,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 57"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "As stated before, in this scheme we use the random number generator, besides the one-way hash function. To improve the communication between the nodes, we use this method to perform node authentication, and we explain it as follows:"
+          },
+          "block_index": 58,
+          "original_page_number": null,
+          "original_order": 58,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 58"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_16.png",
+            "label": "fig:office16",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_15.png",
+            "label": "fig:office15",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_14.png",
+            "label": "fig:office14",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_13.png",
+            "label": "fig:office13",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_12.png",
+            "label": "fig:office12",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_11.png",
+            "label": "fig:office11",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_10.png",
+            "label": "fig:office10",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "The source nodewants to communicate with the destination node , as illustrated in Figure 2. Nodefirst produces a nonce  and encrypts that value with the public key of destination node E(). The source node sends it with the request message to the destination node.",
+              "When the destination node receives the message from the source node, directly or by intermediate nodes, if it is out of the range of the source node, the destination node decrypts the value E() using its private key to get . After that,the node generates and computes and sends it with the time stamp () and E(), where  is the public key of the source node, to the source node."
+            ],
+            "ordered": false
+          },
+          "block_index": 59,
+          "original_page_number": null,
+          "original_order": 59,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 59"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image14.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 60,
+          "original_page_number": null,
+          "original_order": 60,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 60"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Figure 2: Authentication improvement in routing protocols of MANETs"
+          },
+          "block_index": 61,
+          "original_page_number": null,
+          "original_order": 61,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 61"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "When the source node receivesE() values from the destination, it verifies the time of the message by comparing the current time of the source node with the destination node’s time. If the message is accepted, the source node will get  by decrypting E() using the private key. After that, the source node looks for the identities of the destination node  , such as the number of nodes in the MANETs, by computing  and making the following comparison . If the destination node passes the authentication of the source node, it is considered legitimate; otherwise, it is ignored. After that, the source node computes and sends this message to the destination node with the new time of the source ()."
+            ],
+            "ordered": false
+          },
+          "block_index": 62,
+          "original_page_number": null,
+          "original_order": 62,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 62"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "When the destination gets the last value from the source node, it checks. If it is valid, the node starts the authentication process by computingagain. After that, it checks if . For the last authentication process, the destination node computes and sees if . Finally, the destination node produces and sends it with the new time  to the source node.",
+              "When the source receives the last value from the destination node, it starts the last verification process by checking  and computing  to see if it matches the received value ."
+            ],
+            "ordered": false
+          },
+          "block_index": 63,
+          "original_page_number": null,
+          "original_order": 63,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 63"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The source and destination authenticate each other. Naturally, the hash value is authenticated together with the destination ID that is contained as a component of the hash value."
+          },
+          "block_index": 64,
+          "original_page_number": null,
+          "original_order": 64,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 64"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Case study (Example by using DSR)"
+          },
+          "block_index": 65,
+          "original_page_number": null,
+          "original_order": 65,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 65"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_67.png",
+            "label": "fig:office67",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_66.png",
+            "label": "fig:office66",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image51.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 66,
+          "original_page_number": null,
+          "original_order": 66,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 66"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image11.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 67,
+          "original_page_number": null,
+          "original_order": 67,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 67"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image53.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 68,
+          "original_page_number": null,
+          "original_order": 68,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 68"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image61.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 69,
+          "original_page_number": null,
+          "original_order": 69,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 69"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image53.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 70,
+          "original_page_number": null,
+          "original_order": 70,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 70"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image65.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 71,
+          "original_page_number": null,
+          "original_order": 71,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 71"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image55.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 72,
+          "original_page_number": null,
+          "original_order": 72,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 72"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Figure 3: Broadcasting routing request and routing replay"
+          },
+          "block_index": 73,
+          "original_page_number": null,
+          "original_order": 73,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 73"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image55.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 74,
+          "original_page_number": null,
+          "original_order": 74,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 74"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image71.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 75,
+          "original_page_number": null,
+          "original_order": 75,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 75"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image72.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 76,
+          "original_page_number": null,
+          "original_order": 76,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 76"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image72.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 77,
+          "original_page_number": null,
+          "original_order": 77,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 77"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image81.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 78,
+          "original_page_number": null,
+          "original_order": 78,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 78"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image83.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 79,
+          "original_page_number": null,
+          "original_order": 79,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 79"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image84.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 80,
+          "original_page_number": null,
+          "original_order": 80,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 80"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image85.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 81,
+          "original_page_number": null,
+          "original_order": 81,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 81"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image53.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 82,
+          "original_page_number": null,
+          "original_order": 82,
+          "source_location": "Section: 4 Improving the authentication in the routing protocols of MANETs, Block: 82"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": 6.0,
+        "space_after_pt": 6.0,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "5 Security Analysis",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In this section, we explain how we achieved the mutual authentication between the nodes in MANETs, and then we explain how the scheme acts with different kinds of attacks."
+          },
+          "block_index": 83,
+          "original_page_number": null,
+          "original_order": 83,
+          "source_location": "Section: 5 Security Analysis, Block: 83"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Achieve Mutual Authentication"
+          },
+          "block_index": 84,
+          "original_page_number": null,
+          "original_order": 84,
+          "source_location": "Section: 5 Security Analysis, Block: 84"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The process of mutual authentication is obtained after the secret shared value k is verified, i.e. it is the same at both ends of the communication. Also, the destination node has to certify that the last message received is from the source node. At this point, it is assumed that secure communication between the source node and the destination node has taken place. Our scheme guarantees the authentication of the source node through the secret shared value k. This prevents any compromised node from disturbing the communication process, as it will be detected when it tries to communicate with the destination node. The destination node will start the authentication process whenever it receives a challenge from the source node. It is also important for the authentication process to take place in a single session. To ensure this, timestamps are also employed in our scheme."
+          },
+          "block_index": 85,
+          "original_page_number": null,
+          "original_order": 85,
+          "source_location": "Section: 5 Security Analysis, Block: 85"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Anonymity, Untraceability and Eavesdropping"
+          },
+          "block_index": 86,
+          "original_page_number": null,
+          "original_order": 86,
+          "source_location": "Section: 5 Security Analysis, Block: 86"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Anonymity and untraceability can be obtained through the use of a nonce (random numbers). The nonce must be added to each authentication request made by either the source node or the destination node. The source is notified that the destination is authenticated through a final hashed message sent by the destination. This step is to keep the destination node anonymous and untraceable. Once again, the messages must take place in the same authentication session. To make sure of this, the use of timestamps is again needed."
+          },
+          "block_index": 87,
+          "original_page_number": null,
+          "original_order": 87,
+          "source_location": "Section: 5 Security Analysis, Block: 87"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_155.png",
+            "label": "fig:office155",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_154.png",
+            "label": "fig:office154",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_153.png",
+            "label": "fig:office153",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_152.png",
+            "label": "fig:office152",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_151.png",
+            "label": "fig:office151",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image86.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 88,
+          "original_page_number": null,
+          "original_order": 88,
+          "source_location": "Section: 5 Security Analysis, Block: 88"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Eavesdropping"
+          },
+          "block_index": 89,
+          "original_page_number": null,
+          "original_order": 89,
+          "source_location": "Section: 5 Security Analysis, Block: 89"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Because the communication between the source node and the destination node is encrypted with a public key and the shared secret value is hashed with a nonce, an eavesdropping attack is unlikely to succeed because a malicious node cannot take part in the exchange between the source and the destination."
+          },
+          "block_index": 90,
+          "original_page_number": null,
+          "original_order": 90,
+          "source_location": "Section: 5 Security Analysis, Block: 90"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Impersonation Attack Resistance"
+          },
+          "block_index": 91,
+          "original_page_number": null,
+          "original_order": 91,
+          "source_location": "Section: 5 Security Analysis, Block: 91"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "During the communication, all the values are hashed and XORed. This prevents a node impersonation attack. Our scheme also proposes the use of updated nonce, i.e. random numbers, for each communication between the source and destination nodes, making the resistance stronger. The result of our scheme shows that the nodes communicate with each other in MANETs through a secure channel."
+          },
+          "block_index": 92,
+          "original_page_number": null,
+          "original_order": 92,
+          "source_location": "Section: 5 Security Analysis, Block: 92"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Man-in-the-Middle Attack"
+          },
+          "block_index": 93,
+          "original_page_number": null,
+          "original_order": 93,
+          "source_location": "Section: 5 Security Analysis, Block: 93"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image90.wmf",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903
+          },
+          "block_index": 94,
+          "original_page_number": null,
+          "original_order": 94,
+          "source_location": "Section: 5 Security Analysis, Block: 94"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Denial of Service Attack (DoS)"
+          },
+          "block_index": 95,
+          "original_page_number": null,
+          "original_order": 95,
+          "source_location": "Section: 5 Security Analysis, Block: 95"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "DoS attacks are very tricky to detect, and oftentimes, some manage to pass undetected. The objective of the protocol is to take action against the vulnerability presented by a DoS attack, avoiding the desynchronization of the system. Because our scheme is enhanced with timestamps, an active attack on a node is impossible. This is due to the fact that the previous timestamp is always stored by the node, which will not allow any other authentication to take place until it receives a timestamp higher than the previous one. Due to this monotonically increasing timestamp, an impersonation and replay attack is not possible. In case of an attempt to use a higher fake timestamp, this protocol is also at an advantage: the node does not update its timestamp unless a successful authentication is performed. This prevents the protocol from DoS attacks."
+          },
+          "block_index": 96,
+          "original_page_number": null,
+          "original_order": 96,
+          "source_location": "Section: 5 Security Analysis, Block: 96"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": 6.0,
+        "keep_with_next": false
+      }
+    },
+    {
+      "title": "6 Conclusion",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_150.png",
+            "label": "fig:office150",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_149.png",
+            "label": "fig:office149",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_148.png",
+            "label": "fig:office148",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_147.png",
+            "label": "fig:office147",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_146.png",
+            "label": "fig:office146",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_145.png",
+            "label": "fig:office145",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_144.png",
+            "label": "fig:office144",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_143.png",
+            "label": "fig:office143",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_142.png",
+            "label": "fig:office142",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_141.png",
+            "label": "fig:office141",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_140.png",
+            "label": "fig:office140",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_139.png",
+            "label": "fig:office139",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_138.png",
+            "label": "fig:office138",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_137.png",
+            "label": "fig:office137",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_136.png",
+            "label": "fig:office136",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_135.png",
+            "label": "fig:office135",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_134.png",
+            "label": "fig:office134",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_133.png",
+            "label": "fig:office133",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_132.png",
+            "label": "fig:office132",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_131.png",
+            "label": "fig:office131",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_130.png",
+            "label": "fig:office130",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_129.png",
+            "label": "fig:office129",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_128.png",
+            "label": "fig:office128",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_127.png",
+            "label": "fig:office127",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_126.png",
+            "label": "fig:office126",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_125.png",
+            "label": "fig:office125",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_124.png",
+            "label": "fig:office124",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_123.png",
+            "label": "fig:office123",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_122.png",
+            "label": "fig:office122",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_121.png",
+            "label": "fig:office121",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_120.png",
+            "label": "fig:office120",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_119.png",
+            "label": "fig:office119",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_118.png",
+            "label": "fig:office118",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_117.png",
+            "label": "fig:office117",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_116.png",
+            "label": "fig:office116",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_115.png",
+            "label": "fig:office115",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_114.png",
+            "label": "fig:office114",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_113.png",
+            "label": "fig:office113",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_112.png",
+            "label": "fig:office112",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_111.png",
+            "label": "fig:office111",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_110.png",
+            "label": "fig:office110",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_109.png",
+            "label": "fig:office109",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_108.png",
+            "label": "fig:office108",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_107.png",
+            "label": "fig:office107",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_106.png",
+            "label": "fig:office106",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_102.png",
+            "label": "fig:office102",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_101.png",
+            "label": "fig:office101",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_100.png",
+            "label": "fig:office100",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_99.png",
+            "label": "fig:office99",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_98.png",
+            "label": "fig:office98",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_97.png",
+            "label": "fig:office97",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_96.png",
+            "label": "fig:office96",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_95.png",
+            "label": "fig:office95",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_94.png",
+            "label": "fig:office94",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_93.png",
+            "label": "fig:office93",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_92.png",
+            "label": "fig:office92",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_91.png",
+            "label": "fig:office91",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_90.png",
+            "label": "fig:office90",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_89.png",
+            "label": "fig:office89",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_88.png",
+            "label": "fig:office88",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_87.png",
+            "label": "fig:office87",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_86.png",
+            "label": "fig:office86",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_85.png",
+            "label": "fig:office85",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_84.png",
+            "label": "fig:office84",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_83.png",
+            "label": "fig:office83",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_82.png",
+            "label": "fig:office82",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_81.png",
+            "label": "fig:office81",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_80.png",
+            "label": "fig:office80",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_79.png",
+            "label": "fig:office79",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_78.png",
+            "label": "fig:office78",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_77.png",
+            "label": "fig:office77",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_76.png",
+            "label": "fig:office76",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_75.png",
+            "label": "fig:office75",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_74.png",
+            "label": "fig:office74",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_73.png",
+            "label": "fig:office73",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_72.png",
+            "label": "fig:office72",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_71.png",
+            "label": "fig:office71",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_70.png",
+            "label": "fig:office70",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_69.png",
+            "label": "fig:office69",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_68.png",
+            "label": "fig:office68",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_65.png",
+            "label": "fig:office65",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_64.png",
+            "label": "fig:office64",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_63.png",
+            "label": "fig:office63",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_62.png",
+            "label": "fig:office62",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_61.png",
+            "label": "fig:office61",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_60.png",
+            "label": "fig:office60",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_59.png",
+            "label": "fig:office59",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_58.png",
+            "label": "fig:office58",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_57.png",
+            "label": "fig:office57",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_56.png",
+            "label": "fig:office56",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_55.png",
+            "label": "fig:office55",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_54.png",
+            "label": "fig:office54",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_53.png",
+            "label": "fig:office53",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_52.png",
+            "label": "fig:office52",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_51.png",
+            "label": "fig:office51",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_50.png",
+            "label": "fig:office50",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_49.png",
+            "label": "fig:office49",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_48.png",
+            "label": "fig:office48",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_47.png",
+            "label": "fig:office47",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_46.png",
+            "label": "fig:office46",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_45.png",
+            "label": "fig:office45",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_44.png",
+            "label": "fig:office44",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_26.png",
+            "label": "fig:office26",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_25.png",
+            "label": "fig:office25",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_24.png",
+            "label": "fig:office24",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_23.png",
+            "label": "fig:office23",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_22.png",
+            "label": "fig:office22",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_21.png",
+            "label": "fig:office21",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_20.png",
+            "label": "fig:office20",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_19.png",
+            "label": "fig:office19",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_18.png",
+            "label": "fig:office18",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_17.png",
+            "label": "fig:office17",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_9.png",
+            "label": "fig:office9",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_7.png",
+            "label": "fig:office7",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_6.png",
+            "label": "fig:office6",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_5.png",
+            "label": "fig:office5",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_4.png",
+            "label": "fig:office4",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_3.png",
+            "label": "fig:office3",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_1.png",
+            "label": "fig:office1",
+            "width_pt": 498.4,
+            "height_pt": 3.1,
+            "office_object_type": "shape"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "MANET security research is still in its infancy. The current approaches are usually attack-oriented, identifying many security concerns first, then either improving the current protocol or proposing a new one to counter them."
+          },
+          "block_index": 97,
+          "original_page_number": null,
+          "original_order": 97,
+          "source_location": "Section: 6 Conclusion, Block: 97"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In this paper, we present the most important attacks on the routing protocols and how we resist these attacks in a secure way. Also, we propose a scheme to increase the security between the nodes by enhancing and improving the authentication and confidentiality between the nodes. The proposed idea uses hash functions, but digital signatures can be used. The method used the hash function and nonce (random number) with a secret value, and we explain how our scheme works in the Dynamic Source Routing protocol (DSR). Our solution expands the security scope and provides more authentication services between the nodes in MANET."
+          },
+          "block_index": 98,
+          "original_page_number": null,
+          "original_order": 98,
+          "source_location": "Section: 6 Conclusion, Block: 98"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Conflicts of Interest Statement"
+          },
+          "block_index": 99,
+          "original_page_number": null,
+          "original_order": 99,
+          "source_location": "Section: 6 Conclusion, Block: 99"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The authors certify that they have NO affiliations with or involvement in any organization or entity with any financial interest (such as honoraria; educational grants; participation in speakers’ bureaus; membership, employment, consultancies, stock ownership, or other equity interest; and expert testimony or patent-licensing arrangements), or non-financial interest (such as personal or professional relationships, affiliations, knowledge or beliefs) in the subject matter or materials discussed in this manuscript."
+          },
+          "block_index": 100,
+          "original_page_number": null,
+          "original_order": 100,
+          "source_location": "Section: 6 Conclusion, Block: 100"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": 6.0,
+        "space_after_pt": 6.0,
+        "keep_with_next": false
+      }
+    }
+  ],
+  "references": [
+    "M. Conti, Body, Personal and Local Ad Hoc Wireless Networks, in Book TheHandbook of Ad Hoc Wireless Networks (Chapter 1), CRC Press LLC, 2003.",
+    "M. S. Corson, J.P. Maker, and J.H. Cernicione, Internet-based Mobile Ad HocNetworking, IEEE Internet Computing, pages 63–70, July-August 1999.",
+    "Capkun, J. Hubaux, and L. Buttyan, “Mobility Helps Peer-to-Peer Security,” IEEE Transactions on Mobile Computing, vol. 5, no. 1, pp. 43–51, 2006.",
+    "Ming-Yang Su, “A Study of Deploying Intrusion Detection Systems in Mobile Ad Hoc Networks”, WCE 2012.",
+    "Zhaohua Long, Zheng He.\"Optimization and Implementation of DSR Route Protocol based on Ad hocnetwork\", Wireless Communications, Networking and Mobile Computing, 2007.",
+    "S. Capkun, L. Buttyan, and J.-P. Hubaux, “Self-Organized Public-Key Management for Mobile Ad Hoc Networks,” IEEE Transactions on Mobile Computing, vol. 2, no. 1, pp. 52–64, 2003.",
+    "Dilli Ravilla ,C. Shekar Reddy Putta, “Enhancing the Security of MANETs Using Hash Algorithms”, Eleventh international multi-conference on information processing, 2015.",
+    "P. Sachan, P. Mohan Khilar, “Securing AODV routing protocol in MANET based on cryptographic authentication mechanism”, International Journal of Network Security & Its App lications (IJNSA), 2011.",
+    "E.Suresh, C Nagaraju , “Analysis of Secure Routing Protocol for Wireless Ad hoc Networks using Efficient DNA based Cryptographic Mechanism”, ICECCS 2015.",
+    "Michael Weeks, and Gulsah Altun, “Efficient, Secure, Dynamic Source Routing for Ad-hoc Networks”, Journal of Network and Systems Management, Vol. 14, No. 4, December 2006 (_c 2006) DOI: 10.1007/s10922-006-9043-8.",
+    "A. Dorri , S. Reza Kamel and E. Kheyrkhah, “Security Challenge in Mobile Ad Hoc Networks: A Survey”, International Journal of Computer Science & Engineering Survey, 2015.",
+    "Praveen Joshi, “Security issues in routing protocols in MANETs at network layer”, WCIT-2010.",
+    "A. Kumar, V. K. Katiyar and K. Kumar, “Secure Routing Proposal in MANETS: A Review”, International Journal in Foundations of Computer Science & Technology (IJFCST), 2016.",
+    "Hussain, A., Oraibi, Y., Mashikhin, Z., Jameel, A., Tashtoush, M., Az-Zo’bi, E. (2025). New Software Reliability Growth Model: Piratical Swarm Optimization -Base Parameter Estimation in Environments with Uncertainty and Dependent Failures, , 13(1), 209-221."
+  ],
+  "author_biographies": [],
+  "received_date": "27Aug. 2025",
+  "revised_date": "20 Jan. 2021",
+  "accepted_date": "7 Feb. 2021.",
+  "published_date": "1 ---. 20--.",
+  "volume": "No",
+  "issue": "",
+  "year": "",
+  "doi": "",
+  "corresponding_email": "adel.sufyan@dpu.edu.krd"
+}

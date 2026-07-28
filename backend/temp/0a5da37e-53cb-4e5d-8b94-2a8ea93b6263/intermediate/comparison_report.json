@@ -1,0 +1,79 @@
+{
+  "header_match": 40.0,
+  "title_match": 100.0,
+  "author_match": 100.0,
+  "affiliation_match": 0.0,
+  "abstract_match": 100.0,
+  "keyword_match": 0.0,
+  "section_match": 100.0,
+  "figure_match": 100.0,
+  "table_match": 100.0,
+  "reference_match": 100.0,
+  "biography_match": 100.0,
+  "layout_match": 84.5,
+  "typography_match": 85.0,
+  "first_page_match": 56.7,
+  "overall_score": 76.2,
+  "mismatches": {
+    "header_match": [
+      {
+        "expected": "Journal volume details present",
+        "actual": "Missing or generic volume",
+        "reason": "Volume not detected in DOCX header",
+        "proposed_fix": "Extract volume metadata from first page header"
+      },
+      {
+        "expected": "Received/Revised/Accepted dates present",
+        "actual": "Missing dates",
+        "reason": "Dates not detected in DOCX metadata",
+        "proposed_fix": "Extract dates from header blocks"
+      },
+      {
+        "expected": "DOI identifier present",
+        "actual": "Missing DOI",
+        "reason": "DOI not detected in DOCX",
+        "proposed_fix": "Generate standard DOI prefix in templates"
+      }
+    ],
+    "affiliation_match": [
+      {
+        "expected": "Affiliations for all authors",
+        "actual": "Missing affiliations for: Corresponding Author, Subject Classification, Primary: Mathematical Biology / Epidemiological Modeling, Secondary: Immunology, Public Health, Infectious Disease Dynamics, MSC 2020: 92D30 (Epidemiology), 34A08 (Fractional differential equations), 92C60 (Public health models), MeSH Terms: COVID-, Vaccination, Immunity, Hybrid, Disease Outbreaks, Theoretical Models, Fractional Calculus, Keywords, 1. Introduction, 2. MATHEMATICAL MODEL, 2.1 Basic definitions :[54]",
+        "reason": "Affiliation paragraphs not grouped with author names",
+        "proposed_fix": "Implement proximity grouping in author analyzer"
+      }
+    ],
+    "keyword_match": [
+      {
+        "expected": "Keywords list extracted",
+        "actual": "0 keywords",
+        "reason": "Keywords paragraph not found",
+        "proposed_fix": "Verify keyword prefix detection"
+      }
+    ],
+    "layout_match": [
+      {
+        "expected": "No LaTeX layout warnings or overflows",
+        "actual": "8 layout issues detected",
+        "reason": "Hbox/Vbox overflows or bad scaling",
+        "proposed_fix": "Verify graphics scaling and table wrapping styles"
+      }
+    ],
+    "typography_match": [
+      {
+        "expected": "Zero text line overflows",
+        "actual": "5 line overflows",
+        "reason": "Long math equation or long table column widths",
+        "proposed_fix": "Implement auto-wrapping or auto-resizing styles"
+      }
+    ],
+    "first_page_match": [
+      {
+        "expected": "High fidelity first page layout",
+        "actual": "First page match score: 56.7%",
+        "reason": "Metadata fields mismatch or generic formatting",
+        "proposed_fix": "Override document class metadata macros"
+      }
+    ]
+  }
+}

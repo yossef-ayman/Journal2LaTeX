@@ -20,9 +20,8 @@ Transformations applied:
 
 2. Missing named colours -- every colour name referenced by the document *or its
    class/style files* is guarded with ``\\providecolor`` (a no-op when already
-   defined), using a dvips RGB value where known and a neutral grey otherwise,
-   so an unknown name degrades to a harmless fallback instead of raising
-   ``Undefined color``.
+   defined), so a name no palette supplies degrades to a neutral grey instead
+   of raising ``Undefined color``.
 
 3. Missing packages -- every preamble ``\\usepackage``/``\\RequirePackage`` is
    wrapped in ``\\IfFileExists`` (the in-LaTeX equivalent of ``kpsewhich``);
@@ -54,7 +53,6 @@ _PACKAGE_FALLBACKS: Dict[str, str] = {
         "  \\catcode`#1=\\active}\\makeatother"
     ),
     "multirow": "\\providecommand\\multirow[3]{#3}",
-    "array": "",
     "booktabs": (
         "\\providecommand\\toprule{\\hline}\\providecommand\\midrule{\\hline}"
         "\\providecommand\\bottomrule{\\hline}"
@@ -75,21 +73,15 @@ _PACKAGE_FALLBACKS: Dict[str, str] = {
     ),
 }
 
-# RGB fall-backs (0-255) for common dvips names, used only if a referenced
-# colour is somehow still undefined after the palette options are applied.
-# Unknown names fall back to neutral grey so the build never stops.
-_DVIPS_RGB: Dict[str, str] = {
-    "LimeGreen": "50,205,50", "PineGreen": "21,133,110",
-    "ForestGreen": "34,139,34", "WildStrawberry": "255,43,133",
-    "RoyalBlue": "65,105,225", "BrickRed": "182,50,28",
-    "Cerulean": "0,122,201", "Maroon": "175,50,53",
-    "MidnightBlue": "25,25,112", "Salmon": "250,128,114",
-    "BurntOrange": "255,127,0", "Dandelion": "253,203,71",
-    "Emerald": "80,200,120", "Periwinkle": "197,203,242",
-    "OliveGreen": "60,128,49", "RawSienna": "150,86,20",
-    "NavyBlue": "0,64,128", "SkyBlue": "97,203,220",
-    "Turquoise": "0,180,158", "Plum": "142,69,133",
-}
+# Neutral grey stand-in for a colour name nothing defines, so an unknown name
+# degrades to a harmless value instead of aborting the build.
+#
+# There is deliberately no table of per-name RGB values here.  One used to
+# exist, listing twenty dvips colours, but every name in it is already defined
+# by the dvipsnames/svgnames/x11names palettes that this module force-loads a
+# few lines above -- so \providecolor found the colour present and the
+# hardcoded value never took effect.  It was twenty hardcoded constants that
+# could only ever drift away from the real palette.
 _DEFAULT_RGB = "128,128,128"
 
 _DOCUMENTCLASS_RE = re.compile(r"\\documentclass\b[^\n]*\n")
@@ -124,8 +116,14 @@ def apply_compatibility_layer(
     ``resource_texts`` are the contents of the template's class/style files
     (``.cls``/``.sty``); they are scanned so named colours used *inside* the
     class also get a fallback, even though the class itself is never edited.
+
+    Idempotent: the pipeline may compile the same ``main.tex`` several times
+    (e.g. via the layout-optimizer loop), so a document that has already been
+    patched is returned unchanged -- guards must never nest or duplicate.
     """
     if not source or "\\documentclass" not in source:
+        return source
+    if "% >>> j2l compat: xcolor" in source:
         return source
     color_names = _referenced_colors(source, resource_texts or [])
     source = _force_xcolor_preamble(source, color_names)
@@ -171,8 +169,7 @@ def _force_xcolor_preamble(source: str, color_names: Sequence[str]) -> str:
     if color_names:
         head.append("\\makeatletter\\@ifundefined{providecolor}{}{%")
         for name in color_names:
-            rgb = _DVIPS_RGB.get(name, _DEFAULT_RGB)
-            head.append(f"  \\providecolor{{{name}}}{{RGB}}{{{rgb}}}")
+            head.append(f"  \\providecolor{{{name}}}{{RGB}}{{{_DEFAULT_RGB}}}")
         head.append("}\\makeatother")
     head.append("% <<< j2l compat")
     block = "\n".join(head) + "\n"
@@ -226,6 +223,24 @@ def _inject_body_font_scale(source: str) -> str:
         return source
     scale = f"{_BODY_SCALE:.3f}"
     pct = int(round((_BODY_SCALE - 1) * 100))
+    # Scaling the body by a non-integer factor asks for sizes such as
+    # 10.50003pt.  Computer Modern only ships a fixed set of design sizes, so
+    # without type1cm/fix-cm every such request produces a
+    # "Font shape ... in size <10.50003> not available" warning and is
+    # silently rounded.  Loading them makes the scalable Type 1 CM fonts
+    # available at arbitrary sizes: the requested size is honoured exactly and
+    # the warnings disappear.  Guarded, so a TeX tree without them still
+    # compiles.
+    preamble = (
+        "\n% >>> j2l compat: scalable Computer Modern (arbitrary font sizes)\n"
+        "\\IfFileExists{type1cm.sty}{\\usepackage{type1cm}}{}\n"
+        "\\IfFileExists{fix-cm.sty}{\\usepackage{fix-cm}}{}\n"
+        "% <<< j2l compat\n"
+    )
+    if "j2l compat: scalable Computer Modern" not in source:
+        source = source[: b.start()] + preamble + source[b.start():]
+        b = _BEGIN_DOC_RE.search(source)
+
     block = (
         f"\n% >>> j2l compat: body-text size (+{pct}%)\n"
         "\\makeatletter\n"

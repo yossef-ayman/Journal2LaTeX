@@ -1,0 +1,41 @@
+[2026-07-26 16:00:39,143] [INFO] [job_manager.py:136]: Job ee94f6ae-35ad-4e10-919e-86604d7b5d31 workspace created successfully
+[2026-07-26 16:00:39,178] [INFO] [pipeline_service.py:46]: Starting validation for job: ee94f6ae-35ad-4e10-919e-86604d7b5d31
+[2026-07-26 16:00:39,193] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-07-26 16:00:39,212] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-07-26 16:00:39,317] [INFO] [pipeline_service.py:61]: Validation successful.
+[2026-07-26 16:00:39,331] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-07-26 16:00:39,331] [INFO] [pipeline_service.py:68]: Starting document analysis for job: ee94f6ae-35ad-4e10-919e-86604d7b5d31
+[2026-07-26 16:00:39,346] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-26 16:00:39,364] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-26 16:00:39,364] [INFO] [document_analyzer.py:33]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\ee94f6ae-35ad-4e10-919e-86604d7b5d31\input\Zakaria- Optimal   control strategies. July.docx
+[2026-07-26 16:00:41,929] [INFO] [document_analyzer.py:517]: Parsed document: title='Optimal control strategies for overwhelming social media scrolling addiction by using fractional order mathematical modelling', authors=21, sections=10, references=47
+[2026-07-26 16:00:41,935] [INFO] [pipeline_service.py:96]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\ee94f6ae-35ad-4e10-919e-86604d7b5d31\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\ee94f6ae-35ad-4e10-919e-86604d7b5d31\intermediate\conversion_report.json
+[2026-07-26 16:00:41,958] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-26 16:00:41,958] [INFO] [pipeline_service.py:109]: Starting asset extraction for job: ee94f6ae-35ad-4e10-919e-86604d7b5d31
+[2026-07-26 16:00:41,975] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-26 16:00:41,990] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-26 16:00:52,969] [INFO] [pipeline_service.py:251]: Office object fig:office1 placed=True
+[2026-07-26 16:00:52,970] [INFO] [pipeline_service.py:251]: Office object fig:office2 placed=True
+[2026-07-26 16:00:52,970] [INFO] [pipeline_service.py:251]: Office object fig:office3 placed=True
+[2026-07-26 16:00:53,019] [INFO] [pipeline_service.py:142]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\ee94f6ae-35ad-4e10-919e-86604d7b5d31\intermediate\media
+[2026-07-26 16:00:53,036] [INFO] [job_manager.py:204]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-26 16:00:53,036] [INFO] [pipeline_service.py:259]: Classifying extracted assets for job: ee94f6ae-35ad-4e10-919e-86604d7b5d31
+[2026-07-26 16:00:53,037] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: ee94f6ae-35ad-4e10-919e-86604d7b5d31
+[2026-07-26 16:00:53,039] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 10
+[2026-07-26 16:00:53,055] [INFO] [job_manager.py:204]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-26 16:00:53,151] [INFO] [pipeline_service.py:275]: Loading template default for job: ee94f6ae-35ad-4e10-919e-86604d7b5d31
+[2026-07-26 16:00:53,171] [INFO] [job_manager.py:180]: Job status updated to: LOADING_TEMPLATE
+[2026-07-26 16:00:53,192] [INFO] [job_manager.py:204]: Progress updated to 70%: Loading template styles: default
+[2026-07-26 16:00:53,286] [INFO] [pipeline_service.py:297]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\ee94f6ae-35ad-4e10-919e-86604d7b5d31\rendered
+[2026-07-26 16:00:53,300] [INFO] [job_manager.py:204]: Progress updated to 80%: Template workspace initialized
+[2026-07-26 16:00:53,301] [INFO] [pipeline_service.py:322]: Starting LaTeX rendering for job: ee94f6ae-35ad-4e10-919e-86604d7b5d31
+[2026-07-26 16:00:53,316] [INFO] [job_manager.py:180]: Job status updated to: RENDERING_LATEX
+[2026-07-26 16:00:53,329] [INFO] [job_manager.py:204]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-26 16:00:53,345] [INFO] [latex_renderer.py:72]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\ee94f6ae-35ad-4e10-919e-86604d7b5d31\rendered
+[2026-07-26 16:00:53,531] [INFO] [latex_renderer.py:412]: LaTeX document main.tex rendered successfully.
+[2026-07-26 16:00:53,737] [INFO] [job_manager.py:204]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-26 16:00:53,738] [INFO] [pipeline_service.py:385]: Starting document compilation for job: ee94f6ae-35ad-4e10-919e-86604d7b5d31
+[2026-07-26 16:00:53,754] [INFO] [job_manager.py:180]: Job status updated to: COMPILING
+[2026-07-26 16:00:53,770] [INFO] [job_manager.py:204]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-26 16:01:04,118] [ERROR] [pipeline_service.py:413]: LaTeX compilation failed: LaTeX compilation failed. PDF not generated.
+[2026-07-26 16:01:04,135] [ERROR] [job_manager.py:228]: Job error added: LaTeX compilation failed: LaTeX compilation failed. PDF not generated.
