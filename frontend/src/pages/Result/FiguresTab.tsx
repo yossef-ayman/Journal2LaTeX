@@ -3,14 +3,15 @@ import { FigureCard } from "@/components/FigureCard";
 import { EmptyState } from "@/components/EmptyState";
 import { ImageIcon } from "lucide-react";
 import type { AssetReport } from "@/types";
-import { getAssetUrl } from "@/services";
+
+// NOTE: Individual asset serving (/job/{id}/assets/{path}) does not exist in
+// the backend OpenAPI schema. Figure images cannot be served; filenames are shown instead.
 
 interface FiguresTabProps {
   assets: AssetReport;
-  jobId: string;
 }
 
-export function FiguresTab({ assets, jobId }: FiguresTabProps) {
+export function FiguresTab({ assets }: FiguresTabProps) {
   const figures = assets.assets.filter((a) => a.type === "figure");
 
   if (figures.length === 0) {
@@ -42,7 +43,7 @@ export function FiguresTab({ assets, jobId }: FiguresTabProps) {
             caption={f.caption || f.nearby_captions?.[0] || ""}
             filename={f.path?.split("/").pop() || `figure-${i}`}
             sourceLocation={f.original_relationship_id || null}
-            assetPath={f.path ? getAssetUrl(jobId, f.path) : undefined}
+            assetPath={undefined}
           />
         ))}
       </div>

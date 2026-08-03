@@ -3,14 +3,16 @@ import { BiographyCard } from "@/components/BiographyCard";
 import { EmptyState } from "@/components/EmptyState";
 import { User } from "lucide-react";
 import type { DocumentStructure } from "@/types";
-import { getAssetUrl } from "@/services";
+
+// NOTE: Individual asset serving (/job/{id}/assets/{path}) does not exist in
+// the backend OpenAPI schema. Author photos cannot be displayed.
 
 interface BiographiesTabProps {
   doc: DocumentStructure;
   jobId: string;
 }
 
-export function BiographiesTab({ doc, jobId }: BiographiesTabProps) {
+export function BiographiesTab({ doc }: BiographiesTabProps) {
   if (!doc.author_biographies || doc.author_biographies.length === 0) {
     return (
       <Card>
@@ -38,7 +40,7 @@ export function BiographiesTab({ doc, jobId }: BiographiesTabProps) {
           <BiographyCard
             key={i}
             authorName={b.author_name}
-            imagePath={b.image_path ? getAssetUrl(jobId, b.image_path) : null}
+            imagePath={null}
             biographyText={b.biography_text}
           />
         ))}

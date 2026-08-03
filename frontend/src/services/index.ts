@@ -8,8 +8,6 @@ export {
   listTemplates,
   getDownloadUrl,
   getLatexUrl,
-  getLogUrl,
-  getAssetUrl,
   getFidelityReport,
   getAssetReport,
   getDocumentStructure,
@@ -18,3 +16,4 @@ export {
   deleteTemplate,
   updateTemplate,
 } from "./api";
+

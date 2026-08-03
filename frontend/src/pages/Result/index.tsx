@@ -215,7 +215,7 @@ export default function ResultPage() {
 
           <TabsContent value="figures">
             {assets.data ? (
-              <FiguresTab assets={assets.data} jobId={j.job_id} />
+              <FiguresTab assets={assets.data} />
             ) : (
               <SkeletonCard lines={3} />
             )}

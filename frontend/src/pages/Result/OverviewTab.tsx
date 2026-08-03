@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { StatusBadge } from "@/components/StatusBadge";
 import { useToast } from "@/components/Toast";
-import { getDownloadUrl, getLatexUrl, getLogUrl } from "@/services";
+import { getDownloadUrl, getLatexUrl } from "@/services";
 import {
   FileDown,
   ExternalLink,
@@ -104,7 +104,6 @@ export function OverviewTab({ job, fidelity, onNavigateToLatex }: OverviewTabPro
   const { toast } = useToast();
   const pdfDownloadUrl = getDownloadUrl(job.job_id);
   const latexUrl = getLatexUrl(job.job_id);
-  const logUrl = getLogUrl(job.job_id);
 
   const copyToClipboard = useCallback(
     async (text: string, label: string) => {
@@ -239,15 +238,18 @@ export function OverviewTab({ job, fidelity, onNavigateToLatex }: OverviewTabPro
             onCopyPath={() => copyToClipboard(latexUrl, "LaTeX Path")}
             accentColor="blue"
           />
-          <OutputFileCard
-            title="Compilation Build Log"
-            extension="LOG"
-            sizeEstimate="pdflatex execution log"
-            downloadUrl={logUrl}
-            onOpen={() => window.open(logUrl, "_blank")}
-            onCopyPath={() => copyToClipboard(logUrl, "Log Path")}
-            accentColor="amber"
-          />
+          {/* Log file card: endpoint not available on this deployment */}
+          <div className="flex flex-col justify-between rounded-2xl border border-gray-100 bg-gray-50 p-5 opacity-60 space-y-4">
+            <div className="flex items-start gap-3.5">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 text-white font-bold text-xs shadow-sm">
+                LOG
+              </div>
+              <div className="min-w-0 flex-1">
+                <h4 className="text-sm font-semibold text-gray-500 truncate">Compilation Build Log</h4>
+                <p className="text-[11px] font-mono text-gray-400 mt-0.5">Not available in this deployment</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

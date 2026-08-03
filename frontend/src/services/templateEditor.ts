@@ -1,4 +1,5 @@
 import apiClient from "@/api/client";
+import { API_BASE_URL } from "@/config";
 
 /** One entry in a template's file tree. */
 export interface TemplateFileEntry {
@@ -73,7 +74,7 @@ export async function deleteTemplateFile(
 }
 
 export function getTemplateDownloadUrl(templateId: string): string {
-  return `${apiClient.defaults.baseURL}/templates/${templateId}/download`;
+  return `${API_BASE_URL}/templates/${templateId}/download`;
 }
 
 export async function validateTemplate(

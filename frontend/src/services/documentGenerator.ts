@@ -7,6 +7,7 @@
  */
 
 import apiClient from "@/api/client";
+import { API_BASE_URL } from "@/config";
 
 export interface DocumentTypeInfo {
   key: string;
@@ -167,7 +168,7 @@ export interface BatchFormValues {
 
 /** Absolute URL for a download link the backend produced. */
 export function absoluteUrl(path: string): string {
-  const base = (apiClient.defaults.baseURL ?? "").replace(/\/$/, "");
+  const base = API_BASE_URL.replace(/\/$/, "");
   return `${base}${path}`;
 }
 

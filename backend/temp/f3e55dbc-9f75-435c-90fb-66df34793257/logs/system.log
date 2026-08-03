@@ -1,0 +1,107 @@
+[2026-08-03 14:21:37,041] [INFO] [job_manager.py:136]: Job f3e55dbc-9f75-435c-90fb-66df34793257 workspace created successfully
+[2026-08-03 14:21:37,077] [INFO] [pipeline_service.py:46]: Starting validation for job: f3e55dbc-9f75-435c-90fb-66df34793257
+[2026-08-03 14:21:37,094] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-08-03 14:21:37,112] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-08-03 14:21:41,349] [INFO] [pipeline_service.py:61]: Validation successful.
+[2026-08-03 14:21:41,366] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-08-03 14:21:41,366] [INFO] [pipeline_service.py:68]: Starting document analysis for job: f3e55dbc-9f75-435c-90fb-66df34793257
+[2026-08-03 14:21:41,384] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-08-03 14:21:41,399] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-08-03 14:21:41,400] [INFO] [document_analyzer.py:119]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\f3e55dbc-9f75-435c-90fb-66df34793257\input\Frac_Kine_revision_tracked_PathA_4.docx
+[2026-08-03 14:21:42,129] [INFO] [document_analyzer.py:777]: Parsed document: title='Fractional-Order Dynamics of Cardio-Respiratory Oxygen Transport: A Stable Regulator of Human Endurance and the Boundary of Chaos', authors=139, sections=2, references=23
+[2026-08-03 14:21:42,134] [INFO] [pipeline_service.py:96]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\f3e55dbc-9f75-435c-90fb-66df34793257\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\f3e55dbc-9f75-435c-90fb-66df34793257\intermediate\conversion_report.json
+[2026-08-03 14:21:42,154] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-08-03 14:21:42,154] [INFO] [pipeline_service.py:109]: Starting asset extraction for job: f3e55dbc-9f75-435c-90fb-66df34793257
+[2026-08-03 14:21:42,169] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-08-03 14:21:42,183] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-08-03 14:26:38,006] [INFO] [pipeline_service.py:265]: Office object fig:office1 placed=True
+[2026-08-03 14:26:38,007] [INFO] [pipeline_service.py:265]: Office object fig:office2 placed=True
+[2026-08-03 14:26:38,007] [INFO] [pipeline_service.py:265]: Office object fig:office3 placed=True
+[2026-08-03 14:26:38,007] [INFO] [pipeline_service.py:265]: Office object fig:office4 placed=True
+[2026-08-03 14:26:38,007] [INFO] [pipeline_service.py:265]: Office object fig:office5 placed=True
+[2026-08-03 14:26:38,007] [INFO] [pipeline_service.py:265]: Office object fig:office6 placed=True
+[2026-08-03 14:26:38,008] [INFO] [pipeline_service.py:265]: Office object fig:office7 placed=True
+[2026-08-03 14:26:38,008] [INFO] [pipeline_service.py:265]: Office object fig:office8 placed=True
+[2026-08-03 14:26:38,008] [INFO] [pipeline_service.py:265]: Office object fig:office9 placed=True
+[2026-08-03 14:26:38,008] [INFO] [pipeline_service.py:265]: Office object fig:office10 placed=True
+[2026-08-03 14:26:38,008] [INFO] [pipeline_service.py:265]: Office object fig:office11 placed=True
+[2026-08-03 14:26:38,008] [INFO] [pipeline_service.py:265]: Office object fig:office12 placed=True
+[2026-08-03 14:26:38,008] [INFO] [pipeline_service.py:265]: Office object fig:office13 placed=True
+[2026-08-03 14:26:38,009] [INFO] [pipeline_service.py:265]: Office object fig:office14 placed=True
+[2026-08-03 14:26:38,009] [INFO] [pipeline_service.py:265]: Office object fig:office15 placed=True
+[2026-08-03 14:26:38,009] [INFO] [pipeline_service.py:265]: Office object fig:office16 placed=True
+[2026-08-03 14:26:38,009] [INFO] [pipeline_service.py:265]: Office object fig:office17 placed=True
+[2026-08-03 14:26:38,009] [INFO] [pipeline_service.py:265]: Office object fig:office18 placed=True
+[2026-08-03 14:26:38,009] [INFO] [pipeline_service.py:265]: Office object fig:office19 placed=True
+[2026-08-03 14:26:38,010] [INFO] [pipeline_service.py:265]: Office object fig:office20 placed=True
+[2026-08-03 14:26:38,010] [INFO] [pipeline_service.py:265]: Office object fig:office21 placed=True
+[2026-08-03 14:26:38,010] [INFO] [pipeline_service.py:265]: Office object fig:office22 placed=True
+[2026-08-03 14:26:38,010] [INFO] [pipeline_service.py:265]: Office object fig:office23 placed=True
+[2026-08-03 14:26:38,010] [INFO] [pipeline_service.py:265]: Office object fig:office24 placed=True
+[2026-08-03 14:26:38,010] [INFO] [pipeline_service.py:265]: Office object fig:office25 placed=True
+[2026-08-03 14:26:38,011] [INFO] [pipeline_service.py:265]: Office object fig:office26 placed=True
+[2026-08-03 14:26:38,011] [INFO] [pipeline_service.py:265]: Office object fig:office27 placed=True
+[2026-08-03 14:26:38,011] [INFO] [pipeline_service.py:265]: Office object fig:office28 placed=True
+[2026-08-03 14:26:38,011] [INFO] [pipeline_service.py:265]: Office object fig:office29 placed=True
+[2026-08-03 14:26:38,011] [INFO] [pipeline_service.py:265]: Office object fig:office30 placed=True
+[2026-08-03 14:26:38,011] [INFO] [pipeline_service.py:265]: Office object fig:office31 placed=True
+[2026-08-03 14:26:38,011] [INFO] [pipeline_service.py:265]: Office object fig:office32 placed=True
+[2026-08-03 14:26:38,011] [INFO] [pipeline_service.py:265]: Office object fig:office33 placed=True
+[2026-08-03 14:26:38,011] [INFO] [pipeline_service.py:265]: Office object fig:office34 placed=True
+[2026-08-03 14:26:38,012] [INFO] [pipeline_service.py:265]: Office object fig:office35 placed=True
+[2026-08-03 14:26:38,012] [INFO] [pipeline_service.py:265]: Office object fig:office36 placed=True
+[2026-08-03 14:26:38,012] [INFO] [pipeline_service.py:265]: Office object fig:office37 placed=True
+[2026-08-03 14:26:38,012] [INFO] [pipeline_service.py:265]: Office object fig:office38 placed=True
+[2026-08-03 14:26:38,012] [INFO] [pipeline_service.py:265]: Office object fig:office39 placed=True
+[2026-08-03 14:26:38,012] [INFO] [pipeline_service.py:265]: Office object fig:office40 placed=True
+[2026-08-03 14:26:38,013] [INFO] [pipeline_service.py:265]: Office object fig:office41 placed=True
+[2026-08-03 14:26:38,013] [INFO] [pipeline_service.py:265]: Office object fig:office42 placed=True
+[2026-08-03 14:26:38,013] [INFO] [pipeline_service.py:265]: Office object fig:office43 placed=True
+[2026-08-03 14:26:38,013] [INFO] [pipeline_service.py:265]: Office object fig:office44 placed=True
+[2026-08-03 14:26:38,013] [INFO] [pipeline_service.py:265]: Office object fig:office45 placed=True
+[2026-08-03 14:26:38,013] [INFO] [pipeline_service.py:265]: Office object fig:office46 placed=True
+[2026-08-03 14:26:38,013] [INFO] [pipeline_service.py:265]: Office object fig:office47 placed=True
+[2026-08-03 14:26:38,013] [INFO] [pipeline_service.py:265]: Office object fig:office48 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office49 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office50 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office51 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office52 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office53 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office54 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office55 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office56 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office57 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office58 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office59 placed=True
+[2026-08-03 14:26:38,014] [INFO] [pipeline_service.py:265]: Office object fig:office60 placed=True
+[2026-08-03 14:26:38,015] [INFO] [pipeline_service.py:265]: Office object fig:office61 placed=True
+[2026-08-03 14:26:38,015] [INFO] [pipeline_service.py:265]: Office object fig:office62 placed=True
+[2026-08-03 14:26:38,015] [INFO] [pipeline_service.py:265]: Office object fig:office63 placed=True
+[2026-08-03 14:26:38,111] [WARNING] [media_convert.py:88]: 80 vector media files need conversion but LibreOffice is unavailable.
+[2026-08-03 14:26:38,114] [WARNING] [job_manager.py:250]: Job warning added: 80 vector media files could not be converted to PNG and may be missing from the output.
+[2026-08-03 14:26:38,192] [INFO] [pipeline_service.py:156]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\f3e55dbc-9f75-435c-90fb-66df34793257\intermediate\media
+[2026-08-03 14:26:38,206] [INFO] [job_manager.py:204]: Progress updated to 60%: Document assets extracted successfully
+[2026-08-03 14:26:38,206] [INFO] [pipeline_service.py:273]: Classifying extracted assets for job: f3e55dbc-9f75-435c-90fb-66df34793257
+[2026-08-03 14:26:38,206] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: f3e55dbc-9f75-435c-90fb-66df34793257
+[2026-08-03 14:26:38,223] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 149
+[2026-08-03 14:26:38,238] [INFO] [job_manager.py:204]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-08-03 14:26:38,657] [INFO] [pipeline_service.py:289]: Loading template default for job: f3e55dbc-9f75-435c-90fb-66df34793257
+[2026-08-03 14:26:38,674] [INFO] [job_manager.py:180]: Job status updated to: LOADING_TEMPLATE
+[2026-08-03 14:26:38,688] [INFO] [job_manager.py:204]: Progress updated to 70%: Loading template styles: default
+[2026-08-03 14:26:38,937] [INFO] [pipeline_service.py:311]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\f3e55dbc-9f75-435c-90fb-66df34793257\rendered
+[2026-08-03 14:26:38,962] [INFO] [job_manager.py:204]: Progress updated to 80%: Template workspace initialized
+[2026-08-03 14:26:38,965] [INFO] [pipeline_service.py:336]: Starting LaTeX rendering for job: f3e55dbc-9f75-435c-90fb-66df34793257
+[2026-08-03 14:26:38,985] [INFO] [job_manager.py:180]: Job status updated to: RENDERING_LATEX
+[2026-08-03 14:26:39,002] [INFO] [job_manager.py:204]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-08-03 14:26:39,023] [INFO] [latex_renderer.py:104]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\f3e55dbc-9f75-435c-90fb-66df34793257\rendered
+[2026-08-03 14:26:39,879] [INFO] [latex_renderer.py:507]: LaTeX document main.tex rendered successfully.
+[2026-08-03 14:26:39,935] [INFO] [job_manager.py:204]: Progress updated to 90%: LaTeX document rendering completed
+[2026-08-03 14:26:39,935] [INFO] [pipeline_service.py:399]: Starting document compilation for job: f3e55dbc-9f75-435c-90fb-66df34793257
+[2026-08-03 14:26:39,950] [INFO] [job_manager.py:180]: Job status updated to: COMPILING
+[2026-08-03 14:26:39,964] [INFO] [job_manager.py:204]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-08-03 14:26:45,409] [INFO] [pipeline_service.py:422]: Compilation completed successfully.
+[2026-08-03 14:26:45,411] [INFO] [pipeline_service.py:437]: Running E2E publication fidelity checker for job: f3e55dbc-9f75-435c-90fb-66df34793257
+[2026-08-03 14:26:45,411] [INFO] [fidelity_checker.py:70]: Generating advanced fidelity report and scores for job: f3e55dbc-9f75-435c-90fb-66df34793257
+[2026-08-03 14:26:45,432] [INFO] [fidelity_checker.py:250]: Fidelity report written to G:\work\Journal2LaTeX\backend\temp\f3e55dbc-9f75-435c-90fb-66df34793257\intermediate\fidelity_report.json. Overall Score: 100.0%, Critical missing: 0
+[2026-08-03 14:26:45,448] [INFO] [job_manager.py:180]: Job status updated to: COMPLETED
+[2026-08-03 14:26:45,463] [INFO] [job_manager.py:204]: Progress updated to 100%: Pipeline process completed successfully
