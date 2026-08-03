@@ -6,6 +6,7 @@ import {
   Upload,
   History,
   FileArchive,
+  FileSignature,
   Settings,
   Info,
   Leaf,
@@ -16,6 +17,7 @@ const navItems = [
   { label: "Upload", href: "/upload", icon: Upload },
   { label: "History", href: "/history", icon: History },
   { label: "Templates", href: "/templates", icon: FileArchive },
+  { label: "Document Generator", href: "/document-generator", icon: FileSignature },
   { label: "Settings", href: "/settings", icon: Settings },
   { label: "About", href: "/about", icon: Info },
 ];

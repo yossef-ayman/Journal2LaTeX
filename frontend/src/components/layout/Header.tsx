@@ -9,6 +9,7 @@ const PAGE_LABELS: Record<string, string> = {
   "/": "Dashboard",
   "/upload": "Upload Document",
   "/history": "Conversion History",
+  "/document-generator": "Document Generator",
   "/settings": "Settings",
   "/about": "About",
 };

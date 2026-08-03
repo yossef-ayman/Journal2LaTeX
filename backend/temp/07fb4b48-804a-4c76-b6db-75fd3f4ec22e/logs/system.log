@@ -1,0 +1,42 @@
+[2026-07-30 15:01:30,295] [INFO] [job_manager.py:136]: Job 07fb4b48-804a-4c76-b6db-75fd3f4ec22e workspace created successfully
+[2026-07-30 15:01:30,353] [INFO] [pipeline_service.py:46]: Starting validation for job: 07fb4b48-804a-4c76-b6db-75fd3f4ec22e
+[2026-07-30 15:01:30,371] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-07-30 15:01:30,388] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-07-30 15:01:30,419] [INFO] [pipeline_service.py:61]: Validation successful.
+[2026-07-30 15:01:30,437] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-07-30 15:01:30,437] [INFO] [pipeline_service.py:68]: Starting document analysis for job: 07fb4b48-804a-4c76-b6db-75fd3f4ec22e
+[2026-07-30 15:01:30,459] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-07-30 15:01:30,476] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-07-30 15:01:30,476] [INFO] [document_analyzer.py:119]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\07fb4b48-804a-4c76-b6db-75fd3f4ec22e\input\Paper 1 doc.docx
+[2026-07-30 15:01:32,727] [INFO] [document_analyzer.py:777]: Parsed document: title='Statistical analysis of the impact of integrating students with special educational needs on their regular peers within the educational environment', authors=14, sections=22, references=22
+[2026-07-30 15:01:32,755] [INFO] [pipeline_service.py:96]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\07fb4b48-804a-4c76-b6db-75fd3f4ec22e\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\07fb4b48-804a-4c76-b6db-75fd3f4ec22e\intermediate\conversion_report.json
+[2026-07-30 15:01:32,776] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-07-30 15:01:32,776] [INFO] [pipeline_service.py:109]: Starting asset extraction for job: 07fb4b48-804a-4c76-b6db-75fd3f4ec22e
+[2026-07-30 15:01:32,792] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-07-30 15:01:32,808] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-07-30 15:01:33,709] [INFO] [pipeline_service.py:156]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\07fb4b48-804a-4c76-b6db-75fd3f4ec22e\intermediate\media
+[2026-07-30 15:01:33,735] [INFO] [job_manager.py:204]: Progress updated to 60%: Document assets extracted successfully
+[2026-07-30 15:01:33,736] [INFO] [pipeline_service.py:273]: Classifying extracted assets for job: 07fb4b48-804a-4c76-b6db-75fd3f4ec22e
+[2026-07-30 15:01:33,736] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 07fb4b48-804a-4c76-b6db-75fd3f4ec22e
+[2026-07-30 15:01:33,739] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 7
+[2026-07-30 15:01:33,756] [INFO] [job_manager.py:204]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-07-30 15:01:33,916] [INFO] [pipeline_service.py:289]: Loading template The role for job: 07fb4b48-804a-4c76-b6db-75fd3f4ec22e
+[2026-07-30 15:01:33,933] [INFO] [job_manager.py:180]: Job status updated to: LOADING_TEMPLATE
+[2026-07-30 15:01:33,951] [INFO] [job_manager.py:204]: Progress updated to 70%: Loading template styles: The role
+[2026-07-30 15:01:34,078] [INFO] [pipeline_service.py:311]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\07fb4b48-804a-4c76-b6db-75fd3f4ec22e\rendered
+[2026-07-30 15:01:34,103] [INFO] [job_manager.py:204]: Progress updated to 80%: Template workspace initialized
+[2026-07-30 15:01:34,105] [INFO] [pipeline_service.py:336]: Starting LaTeX rendering for job: 07fb4b48-804a-4c76-b6db-75fd3f4ec22e
+[2026-07-30 15:01:34,124] [INFO] [job_manager.py:180]: Job status updated to: RENDERING_LATEX
+[2026-07-30 15:01:34,142] [INFO] [job_manager.py:204]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-07-30 15:01:34,166] [INFO] [latex_renderer.py:104]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\07fb4b48-804a-4c76-b6db-75fd3f4ec22e\rendered
+[2026-07-30 15:01:34,623] [INFO] [latex_renderer.py:507]: LaTeX document main.tex rendered successfully.
+[2026-07-30 15:01:34,752] [INFO] [job_manager.py:204]: Progress updated to 90%: LaTeX document rendering completed
+[2026-07-30 15:01:34,753] [INFO] [pipeline_service.py:399]: Starting document compilation for job: 07fb4b48-804a-4c76-b6db-75fd3f4ec22e
+[2026-07-30 15:01:34,766] [INFO] [job_manager.py:180]: Job status updated to: COMPILING
+[2026-07-30 15:01:34,780] [INFO] [job_manager.py:204]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-07-30 15:01:56,863] [INFO] [pipeline_service.py:422]: Compilation completed successfully.
+[2026-07-30 15:01:56,866] [INFO] [pipeline_service.py:437]: Running E2E publication fidelity checker for job: 07fb4b48-804a-4c76-b6db-75fd3f4ec22e
+[2026-07-30 15:01:56,866] [INFO] [fidelity_checker.py:70]: Generating advanced fidelity report and scores for job: 07fb4b48-804a-4c76-b6db-75fd3f4ec22e
+[2026-07-30 15:01:56,873] [INFO] [fidelity_checker.py:250]: Fidelity report written to G:\work\Journal2LaTeX\backend\temp\07fb4b48-804a-4c76-b6db-75fd3f4ec22e\intermediate\fidelity_report.json. Overall Score: 97.7%, Critical missing: 1
+[2026-07-30 15:01:56,901] [INFO] [job_manager.py:180]: Job status updated to: COMPLETED
+[2026-07-30 15:01:56,919] [INFO] [job_manager.py:204]: Progress updated to 100%: Pipeline process completed successfully

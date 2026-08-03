@@ -1,0 +1,44 @@
+[2026-08-03 10:21:57,584] [INFO] [job_manager.py:136]: Job 05e9ded2-b7b5-4c3a-9927-f87a79b0d301 workspace created successfully
+[2026-08-03 10:21:57,621] [INFO] [pipeline_service.py:46]: Starting validation for job: 05e9ded2-b7b5-4c3a-9927-f87a79b0d301
+[2026-08-03 10:21:57,640] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-08-03 10:21:57,657] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-08-03 10:21:57,675] [INFO] [pipeline_service.py:61]: Validation successful.
+[2026-08-03 10:21:57,692] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-08-03 10:21:57,692] [INFO] [pipeline_service.py:68]: Starting document analysis for job: 05e9ded2-b7b5-4c3a-9927-f87a79b0d301
+[2026-08-03 10:21:57,715] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-08-03 10:21:57,729] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-08-03 10:21:57,729] [INFO] [document_analyzer.py:119]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\05e9ded2-b7b5-4c3a-9927-f87a79b0d301\input\The role.docx
+[2026-08-03 10:21:59,047] [INFO] [document_analyzer.py:777]: Parsed document: title='The Role of Social Media in the Spread and Countering of Cyber-Extremism: An Islamic Jurisprudential and Educational Perspective', authors=3, sections=45, references=42
+[2026-08-03 10:21:59,064] [INFO] [pipeline_service.py:96]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\05e9ded2-b7b5-4c3a-9927-f87a79b0d301\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\05e9ded2-b7b5-4c3a-9927-f87a79b0d301\intermediate\conversion_report.json
+[2026-08-03 10:21:59,081] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-08-03 10:21:59,081] [INFO] [pipeline_service.py:109]: Starting asset extraction for job: 05e9ded2-b7b5-4c3a-9927-f87a79b0d301
+[2026-08-03 10:21:59,100] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-08-03 10:21:59,118] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-08-03 10:22:05,385] [INFO] [pipeline_service.py:265]: Office object fig:office1 placed=True
+[2026-08-03 10:22:05,436] [INFO] [pipeline_service.py:156]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\05e9ded2-b7b5-4c3a-9927-f87a79b0d301\intermediate\media
+[2026-08-03 10:22:05,453] [INFO] [job_manager.py:204]: Progress updated to 60%: Document assets extracted successfully
+[2026-08-03 10:22:05,454] [INFO] [pipeline_service.py:273]: Classifying extracted assets for job: 05e9ded2-b7b5-4c3a-9927-f87a79b0d301
+[2026-08-03 10:22:05,454] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 05e9ded2-b7b5-4c3a-9927-f87a79b0d301
+[2026-08-03 10:22:05,456] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 8
+[2026-08-03 10:22:05,477] [INFO] [job_manager.py:204]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-08-03 10:22:05,541] [INFO] [pipeline_service.py:289]: Loading template b17bdd4f-9624-41ab-8861-caeeeb7c5534 for job: 05e9ded2-b7b5-4c3a-9927-f87a79b0d301
+[2026-08-03 10:22:05,557] [INFO] [job_manager.py:180]: Job status updated to: LOADING_TEMPLATE
+[2026-08-03 10:22:05,572] [INFO] [job_manager.py:204]: Progress updated to 70%: Loading template styles: b17bdd4f-9624-41ab-8861-caeeeb7c5534
+[2026-08-03 10:22:05,649] [INFO] [pipeline_service.py:311]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\05e9ded2-b7b5-4c3a-9927-f87a79b0d301\rendered
+[2026-08-03 10:22:05,666] [INFO] [job_manager.py:204]: Progress updated to 80%: Template workspace initialized
+[2026-08-03 10:22:05,668] [INFO] [pipeline_service.py:336]: Starting LaTeX rendering for job: 05e9ded2-b7b5-4c3a-9927-f87a79b0d301
+[2026-08-03 10:22:05,680] [INFO] [job_manager.py:180]: Job status updated to: RENDERING_LATEX
+[2026-08-03 10:22:05,693] [INFO] [job_manager.py:204]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-08-03 10:22:05,711] [INFO] [latex_renderer.py:104]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\05e9ded2-b7b5-4c3a-9927-f87a79b0d301\rendered
+[2026-08-03 10:22:05,899] [INFO] [latex_renderer.py:507]: LaTeX document main.tex rendered successfully.
+[2026-08-03 10:22:06,046] [INFO] [header_reconstructor.py:124]: Template class draws its own header; skipping fancyhdr injection.
+[2026-08-03 10:22:06,050] [INFO] [job_manager.py:204]: Progress updated to 90%: LaTeX document rendering completed
+[2026-08-03 10:22:06,050] [INFO] [pipeline_service.py:399]: Starting document compilation for job: 05e9ded2-b7b5-4c3a-9927-f87a79b0d301
+[2026-08-03 10:22:06,067] [INFO] [job_manager.py:180]: Job status updated to: COMPILING
+[2026-08-03 10:22:06,084] [INFO] [job_manager.py:204]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-08-03 10:22:14,430] [INFO] [pipeline_service.py:422]: Compilation completed successfully.
+[2026-08-03 10:22:14,433] [INFO] [pipeline_service.py:437]: Running E2E publication fidelity checker for job: 05e9ded2-b7b5-4c3a-9927-f87a79b0d301
+[2026-08-03 10:22:14,433] [INFO] [fidelity_checker.py:70]: Generating advanced fidelity report and scores for job: 05e9ded2-b7b5-4c3a-9927-f87a79b0d301
+[2026-08-03 10:22:14,438] [INFO] [fidelity_checker.py:250]: Fidelity report written to G:\work\Journal2LaTeX\backend\temp\05e9ded2-b7b5-4c3a-9927-f87a79b0d301\intermediate\fidelity_report.json. Overall Score: 94.6%, Critical missing: 0
+[2026-08-03 10:22:14,455] [INFO] [job_manager.py:180]: Job status updated to: COMPLETED
+[2026-08-03 10:22:14,471] [INFO] [job_manager.py:204]: Progress updated to 100%: Pipeline process completed successfully

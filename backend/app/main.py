@@ -64,3 +64,30 @@ app.include_router(health_router)
 app.include_router(job_router)
 app.include_router(jobs_router)
 app.include_router(templates_router)
+
+# Optional feature module: the Document Generator (acceptance letters, invoices).
+# Mounted defensively and additively -- it is an independent feature that shares
+# nothing with the Word -> LaTeX pipeline above.  Deleting the
+# ``document_generator`` package removes the feature and leaves the converter
+# behaving exactly as it did before, which is why this import is guarded rather
+# than listed with the converter's own routers.
+try:
+    from document_generator import router as document_generator_router
+except Exception as exc:  # pragma: no cover - the converter must start regardless
+    logger.warning("Document Generator module not loaded: %s", exc)
+else:
+    app.include_router(document_generator_router)
+    logger.info("Document Generator module mounted at /document-generator")
+
+# Optional feature module: the Document Engine (understanding and editing whole
+# manuscripts).  Mounted on exactly the same terms as the generator above -- a
+# guarded, additive import -- because it is likewise an independent feature that
+# shares no state with the Word -> LaTeX pipeline, and deleting the
+# ``document_engine`` package must leave everything else behaving as it did.
+try:
+    from document_engine import router as document_engine_router
+except Exception as exc:  # pragma: no cover - the converter must start regardless
+    logger.warning("Document Engine module not loaded: %s", exc)
+else:
+    app.include_router(document_engine_router)
+    logger.info("Document Engine module mounted at /document-engine")
