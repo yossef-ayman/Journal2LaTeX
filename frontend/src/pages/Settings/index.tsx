@@ -9,18 +9,18 @@ import { useTemplates } from "@/hooks";
 import { listJobs } from "@/services";
 import { CheckCircle, XCircle, Server, Database, Activity } from "lucide-react";
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "@/config";
 
 function useHealthCheck() {
   const [status, setStatus] = useState<"loading" | "healthy" | "unhealthy">("loading");
   const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
-    const baseUrl = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
     let cancelled = false;
 
     const check = async () => {
       try {
-        const res = await fetch(`${baseUrl}/health`);
+        const res = await fetch(`${API_BASE_URL}/health`);
         if (cancelled) return;
         if (res.ok) {
           setStatus("healthy");
@@ -130,7 +130,7 @@ export default function SettingsPage() {
                 <div className="flex-1 space-y-0.5">
                   <p className="text-sm font-medium text-foreground">API Server</p>
                   <p className="text-xs text-muted-foreground">
-                    {import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000"}
+                    {API_BASE_URL}
                   </p>
                 </div>
                 {health === "loading" ? (

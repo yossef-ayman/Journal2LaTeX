@@ -17,13 +17,13 @@ import {
   Activity,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "@/config";
 
 function useHealthCheck() {
   const [healthy, setHealthy] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const baseUrl = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
-    fetch(`${baseUrl}/health`)
+    fetch(`${API_BASE_URL}/health`)
       .then((r) => setHealthy(r.ok))
       .catch(() => setHealthy(false));
   }, []);
