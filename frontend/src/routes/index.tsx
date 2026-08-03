@@ -10,6 +10,7 @@ const HistoryPage = lazy(() => import("@/pages/History"));
 const SettingsPage = lazy(() => import("@/pages/Settings"));
 const TemplatesPage = lazy(() => import("@/pages/Templates"));
 const TemplateEditorPage = lazy(() => import("@/pages/Templates/Editor"));
+const DocumentEnginePage = lazy(() => import("@/pages/DocumentEngine"));
 const DocumentGeneratorPage = lazy(() => import("@/pages/DocumentGenerator"));
 const AboutPage = lazy(() => import("@/pages/About"));
 const NotFoundPage = lazy(() => import("@/pages/NotFound"));
@@ -35,6 +36,7 @@ export const router = createBrowserRouter([
       { path: "/history", element: <Lazy><HistoryPage /></Lazy> },
       { path: "/templates", element: <Lazy><TemplatesPage /></Lazy> },
       { path: "/templates/:templateId", element: <Lazy><TemplateEditorPage /></Lazy> },
+      { path: "/document-engine", element: <Lazy><DocumentEnginePage /></Lazy> },
       { path: "/document-generator", element: <Lazy><DocumentGeneratorPage /></Lazy> },
       { path: "/settings", element: <Lazy><SettingsPage /></Lazy> },
     { path: "/about", element: <Lazy><AboutPage /></Lazy> },

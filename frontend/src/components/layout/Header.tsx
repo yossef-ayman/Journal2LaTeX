@@ -1,6 +1,6 @@
 import { useAppStore } from "@/store/useAppStore";
 import { useLocation } from "react-router-dom";
-import { Menu, Leaf } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/utils/cn";
@@ -8,6 +8,7 @@ import { cn } from "@/utils/cn";
 const PAGE_LABELS: Record<string, string> = {
   "/": "Dashboard",
   "/upload": "Upload Document",
+  "/document-engine": "Document Engine",
   "/history": "Conversion History",
   "/document-generator": "Document Generator",
   "/settings": "Settings",
@@ -39,9 +40,11 @@ export function Header() {
 
       {isMobile && (
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-sm">
-            <Leaf size={14} strokeWidth={2.5} />
-          </div>
+          <img
+            src="/image4.jpeg"
+            alt="Journal2LaTeX logo"
+            className="h-7 w-7 rounded-lg object-cover shadow-sm"
+          />
           <span className="text-sm font-bold text-gray-900 tracking-tight">J2L</span>
         </div>
       )}

@@ -1,0 +1,16 @@
+[2026-08-03 14:07:03,302] [INFO] [job_manager.py:136]: Job 5f0ce611-4d1f-413b-8706-7d8bdd2ce98d workspace created successfully
+[2026-08-03 14:07:03,352] [INFO] [pipeline_service.py:46]: Starting validation for job: 5f0ce611-4d1f-413b-8706-7d8bdd2ce98d
+[2026-08-03 14:07:03,372] [INFO] [job_manager.py:180]: Job status updated to: VALIDATING
+[2026-08-03 14:07:03,389] [INFO] [job_manager.py:204]: Progress updated to 10%: Validating input Word Document
+[2026-08-03 14:07:07,579] [INFO] [pipeline_service.py:61]: Validation successful.
+[2026-08-03 14:07:07,599] [INFO] [job_manager.py:204]: Progress updated to 20%: Input document validated successfully
+[2026-08-03 14:07:07,599] [INFO] [pipeline_service.py:68]: Starting document analysis for job: 5f0ce611-4d1f-413b-8706-7d8bdd2ce98d
+[2026-08-03 14:07:07,622] [INFO] [job_manager.py:180]: Job status updated to: ANALYZING_DOCUMENT
+[2026-08-03 14:07:07,642] [INFO] [job_manager.py:204]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-08-03 14:07:07,642] [INFO] [document_analyzer.py:119]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\5f0ce611-4d1f-413b-8706-7d8bdd2ce98d\input\Frac_Kine_revision_tracked_PathA_4.docx
+[2026-08-03 14:07:08,648] [INFO] [document_analyzer.py:777]: Parsed document: title='Fractional-Order Dynamics of Cardio-Respiratory Oxygen Transport: A Stable Regulator of Human Endurance and the Boundary of Chaos', authors=139, sections=2, references=23
+[2026-08-03 14:07:08,654] [INFO] [pipeline_service.py:96]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\5f0ce611-4d1f-413b-8706-7d8bdd2ce98d\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\5f0ce611-4d1f-413b-8706-7d8bdd2ce98d\intermediate\conversion_report.json
+[2026-08-03 14:07:08,674] [INFO] [job_manager.py:204]: Progress updated to 45%: Document structure extracted successfully
+[2026-08-03 14:07:08,674] [INFO] [pipeline_service.py:109]: Starting asset extraction for job: 5f0ce611-4d1f-413b-8706-7d8bdd2ce98d
+[2026-08-03 14:07:08,692] [INFO] [job_manager.py:180]: Job status updated to: EXTRACTING_ASSETS
+[2026-08-03 14:07:08,711] [INFO] [job_manager.py:204]: Progress updated to 50%: Extracting images and figure assets from document

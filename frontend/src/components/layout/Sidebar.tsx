@@ -7,14 +7,15 @@ import {
   History,
   FileArchive,
   FileSignature,
+  Wand2,
   Settings,
   Info,
-  Leaf,
 } from "lucide-react";
 
 const navItems = [
   { label: "Dashboard", href: "/", icon: LayoutDashboard },
   { label: "Upload", href: "/upload", icon: Upload },
+  { label: "Document Engine", href: "/document-engine", icon: Wand2 },
   { label: "History", href: "/history", icon: History },
   { label: "Templates", href: "/templates", icon: FileArchive },
   { label: "Document Generator", href: "/document-generator", icon: FileSignature },
@@ -40,9 +41,11 @@ export function Sidebar() {
           !sidebarOpen && "md:justify-center md:px-0",
         )}
       >
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-sm shadow-emerald-200">
-          <Leaf size={16} strokeWidth={2.5} />
-        </div>
+        <img
+          src="/image4.jpeg"
+          alt="Journal2LaTeX logo"
+          className="h-8 w-8 shrink-0 rounded-xl object-cover shadow-sm shadow-emerald-200"
+        />
         <div
           className={cn(
             "flex flex-col transition-opacity duration-200 min-w-0",
