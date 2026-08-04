@@ -1,0 +1,70 @@
+[2026-08-04 11:55:16,201] [INFO] [latex_compiler.py:337]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\09808bc8-789b-4d9d-9232-8782c8ad27f6\rendered\main.tex
+[2026-08-04 11:55:16,257] [INFO] [latex_compiler.py:364]: Applied template compatibility layer to main.tex
+[2026-08-04 11:55:16,260] [INFO] [latex_compiler.py:126]: Rendered working directory tree before compilation:
+  1.eps
+  2.eps
+  everyshi.sty
+  logo7pt.eps
+  main.tex
+  media/
+    image1.png
+    image2.png
+    image3.png
+    image4.png
+    image5.png
+  NSP1.cls
+  paper.aux
+  paper.dvi
+  paper.log
+  paper.out
+  paper.pdf
+  paper.ps
+  paper.tex
+  psfig.sty
+  template.json
+[2026-08-04 11:55:16,262] [INFO] [latex_compiler.py:132]: Template resource manifest (20 files):
+  1.eps                                    template resource (graphic (EPS))
+  2.eps                                    template resource (graphic (EPS))
+  everyshi.sty                             template resource (package / style)
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.tex                                 generated document / build artefact
+  media\image1.png                         renderer-generated media
+  media\image2.png                         renderer-generated media
+  media\image3.png                         renderer-generated media
+  media\image4.png                         renderer-generated media
+  media\image5.png                         renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper.aux                                generated document / build artefact
+  paper.dvi                                template resource
+  paper.log                                generated document / build artefact
+  paper.out                                generated document / build artefact
+  paper.pdf                                template resource (graphic (PDF))
+  paper.ps                                 template resource
+  paper.tex                                template resource (included source)
+  psfig.sty                                template resource (package / style)
+  template.json                            template metadata
+[2026-08-04 11:55:16,288] [INFO] [latex_compiler.py:154]: Dependency resolution (23 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphics
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      type1cm
+  [SYSTEM ] usepackage      fix-cm
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image1.png
+  [LOCAL  ] includegraphics media/image2.png
+  [LOCAL  ] includegraphics media/image3.png
+  [LOCAL  ] includegraphics media/image4.png
+  [LOCAL  ] includegraphics media/image5.png
+[2026-08-04 11:55:16,289] [INFO] [latex_compiler.py:395]: Using latexmk compiler.

@@ -55,6 +55,61 @@ _KEYWORD_SPLIT_RE = r"[,;·•·]|\s·\s"
 
 _EMAIL_RE = re.compile(r"[\w\.-]+@[\w\.-]+\.\w+")
 
+# The opening section of a research paper.  Every discipline and every
+# publisher draws from the same small vocabulary here -- this is a property of
+# how papers are written, not of how any particular journal formats them, which
+# is why it is a sound landmark when *formatting* signals are unavailable
+# (headings numbered by Word's list numbering, headings typed in the body font,
+# headings carrying superscript note markers).  Matched against the heading text
+# only after every numbering convention has been stripped, so "1. Introduction",
+# "I. INTRODUCTION", "Chapter 1 Introduction" and a bare "Introduction" are one
+# case.  Deliberately narrow: a false positive here would truncate the front
+# matter, so only openers that essentially never appear inside a title block are
+# listed, and the match must consume the whole line.
+_BODY_OPENER_RE = re.compile(
+    r"^(?:"
+    r"introduction|background(?:\s+and\s+\w+)?|motivation|"
+    r"related\s+works?|literature\s+review|state\s+of\s+the\s+art|"
+    r"preliminaries|problem\s+(?:statement|formulation|definition)|"
+    r"materials?\s+and\s+methods?|methods?|methodology|"
+    r"experimental(?:\s+(?:setup|section|procedure))?|"
+    r"theory|theoretical\s+\w+|model(?:ling|ing)?|"
+    r"general\s+introduction|overview"
+    r")\s*[:.]?\s*$",
+    re.IGNORECASE,
+)
+
+# Every numbering convention a heading may carry, tried longest-first, so that
+# the opener test above sees the title alone.  Superscript note markers that
+# Word attaches to a heading ("Introduction1") flatten to trailing digits, and a
+# trailing footnote glyph is equally common; both are stripped as well.
+_NUMBER_PREFIXES = (_WORD_HEADING_RE, _MANUAL_HEADING_RE,
+                    _ROMAN_HEADING_RE, _LETTER_HEADING_RE)
+
+# Personal-name shape: one to five capitalised or initialised tokens, optionally
+# carrying an affiliation marker.  Used to decide whether a front-matter line is
+# a name list at all, so that stray table cells and running text can never be
+# promoted to authors even if they survive every earlier filter.
+# A name token is letters, optionally joined by a hyphen or an apostrophe
+# ("Az-Zo'bi", "O'Neill", "Ben-David").  Case is checked separately, in code,
+# because it must be Unicode-aware: "Akgül" and "Ünal" are capitalised names.
+_NAME_TOKEN_RE = re.compile(r"^[^\W\d_]+(?:[-'’][^\W\d_]+)*[’']?$", re.UNICODE)
+
+# Lower-case tokens that are still part of a person's name: nobiliary and
+# patronymic particles.  Everything else in lower case is an ordinary word, and
+# an ordinary word inside a candidate name means the line is not a name.
+_NAME_PARTICLES = frozenset(
+    "da de del della der den des di do dos du el la le van von ter zu "
+    "bin binti ibn abu al mac mc".split()
+)
+
+# Hard ceiling on how much of a document may be classified as front matter.
+# No title block in any publisher's layout runs to forty paragraphs; a boundary
+# beyond this point is a detection failure, and continuing past it is what turns
+# a whole paper into an author list.  The clamp is a backstop, not a heuristic:
+# it only ever fires when every signal below has already failed.
+_MAX_FRONT_MATTER_BLOCKS = 40
+
 # Journal / submission furniture that surrounds the real front matter on a
 # reprint or a submission cover page.  Matched generically -- volume and issue
 # tags, identifiers, submission dates, licences -- rather than by naming any
@@ -92,6 +147,60 @@ def _normalise_label(text: str) -> str:
     if len(parts) > 2 and all(len(p) == 1 for p in parts):
         return "".join(parts)
     return stripped
+
+
+def _strip_heading_number(text: str) -> str:
+    """A heading's title with its numbering and note markers removed.
+
+    Comparing a heading against a vocabulary is only meaningful once the
+    numbering is gone, and the numbering may be in any of four conventions --
+    or supplied by Word's list numbering, in which case it is not in the text at
+    all.  Trailing superscript markers, which flatten to bare digits, and the
+    footnote glyphs publishers use in their place are stripped too, so a heading
+    that carries a note reads the same as one that does not.
+    """
+    body = (text or "").strip()
+    if not body:
+        return ""
+    for pattern in _NUMBER_PREFIXES:
+        stripped = re.sub(pattern, "", body, count=1, flags=re.IGNORECASE)
+        if stripped != body:
+            body = stripped.strip()
+            break
+    return re.sub(r"[\s,]*\d*\s*[*†‡§¶°∗]*$", "", body).strip()
+
+
+def _looks_like_person_name(name: str) -> bool:
+    """True when a candidate string has the shape of a person's name.
+
+    Applied as the final gate before any text becomes an author.  Every other
+    test in the extractor asks whether a line looks like something *else* -- an
+    affiliation, a sentence, journal furniture -- and a line that resembles
+    nothing in particular slips through them all.  This asks the opposite
+    question, which is the one that actually matters: a table cell, an axis
+    label, a caption fragment or a stray clause is rejected because it is not
+    one to five capitalised name tokens, whatever the front-matter boundary may
+    have decided about where it came from.
+    """
+    cleaned = (name or "").strip().strip(",;·•∗*†‡§¶")
+    if not cleaned or len(cleaned) > 80:
+        return False
+    tokens = [t for t in re.split(r"\s+", cleaned) if t]
+    if not (1 <= len(tokens) <= 5):
+        return False
+    capitalised = 0
+    for token in tokens:
+        token = token.strip(".,;()[]")
+        if not token:
+            continue
+        if not _NAME_TOKEN_RE.match(token):
+            return False
+        if token[0].isupper():
+            capitalised += 1
+        elif token.lower() not in _NAME_PARTICLES:
+            return False
+    # A name has at least one capitalised token; a run of particles does not.
+    return capitalised > 0
 
 
 class DocumentAnalyzerError(Exception):
@@ -145,25 +254,67 @@ class DocumentAnalyzer:
                 raise DocumentAnalyzerError(msg)
 
             ast_data = json.loads(result.stdout)
+
+            # Every pass below reads the raw DOCX XML to recover something
+            # pandoc does not expose.  Each is an *enrichment*: the document
+            # parses without it, only with less detail.  So each is isolated,
+            # and a pass that meets an XML shape it cannot handle costs its own
+            # enrichment and nothing else.  Warnings are accumulated here
+            # because these passes run before the counters exist, and are
+            # merged into the report by ``_parse_ast``.
+            self._stage_warnings: List[str] = []
+
+            def side_channel(stage: str, fn, fallback):
+                try:
+                    return fn()
+                except Exception as exc:  # noqa: BLE001 - degradation is the contract
+                    logger.warning("%s skipped: %s", stage, exc)
+                    self._stage_warnings.append(
+                        f"{stage} skipped after an internal error "
+                        f"({type(exc).__name__}: {exc}); the document was "
+                        "parsed without it"
+                    )
+                    return fallback
+
             # Styling pandoc does not expose (shading, borders, row heights,
             # exact column widths) is read from the raw XML; body-level w:tbl
             # order matches pandoc Table order.
-            self._table_styles = self._extract_table_styles(docx_path)
+            self._table_styles = side_channel(
+                "table styling", lambda: self._extract_table_styles(docx_path), [])
             self._table_style_idx = 0
             # Usable text-column width (inches) -- lets figure placement decide
             # whether a picture spans the full width or fits inside one column.
-            self._text_width_in = self._extract_text_width_in(docx_path)
+            self._text_width_in = side_channel(
+                "text width", lambda: self._extract_text_width_in(docx_path), 0.0)
             # Per-image Word placement (inline-in-text vs anchored/floating),
             # keyed by media path -- a signal for the placement policy.
-            self._drawing_inline = self._extract_drawing_placement(docx_path)
+            self._drawing_inline = side_channel(
+                "drawing placement",
+                lambda: self._extract_drawing_placement(docx_path), {})
+            # Original drawing geometry in EMU, straight from the DOCX, so a
+            # figure keeps the size and aspect ratio Word gave it even when
+            # pandoc reports no dimensions at all.
+            self._drawing_geometry = side_channel(
+                "drawing geometry",
+                lambda: self._extract_drawing_geometry(docx_path), {})
             # Heading formatting (bold/size/alignment/spacing/keepNext) read
             # directly from the DOCX -- keyed by whitespace-insensitive heading
             # text so it can enrich sections parsed from the Pandoc AST.
-            self._heading_formats = self._extract_heading_formats(docx_path)
+            self._heading_formats = side_channel(
+                "heading formats",
+                lambda: self._extract_heading_formats(docx_path), {})
             # Corresponding-author e-mail is commonly stored in the first-page
             # footer / a footnote / an endnote rather than the author block, and
             # pandoc does not surface those parts, so read them from the raw XML.
-            self._corresponding_email = self._extract_corresponding_email(docx_path)
+            self._corresponding_email = side_channel(
+                "corresponding e-mail",
+                lambda: self._extract_corresponding_email(docx_path), "")
+            # How many equations the source actually contains, counted in the
+            # OMML itself, so the report can say whether any were lost between
+            # the DOCX and the parsed model rather than leaving it unknown.
+            self._omml_census = side_channel(
+                "OMML census", lambda: self._count_omml_equations(docx_path),
+                {"omath": 0, "omath_para": 0, "ole_equations": 0})
             return self._parse_ast(ast_data, job_id)
 
         except Exception as e:
@@ -172,6 +323,28 @@ class DocumentAnalyzer:
                 logger.exception(msg)
                 raise DocumentAnalyzerError(msg)
             raise
+
+    @staticmethod
+    def _guard(counters: Dict[str, Any], stage: str, fn, fallback):
+        """Run an analysis stage, degrading to ``fallback`` if it fails.
+
+        Parsing a document is a chain of independent enrichments, and any one of
+        them can meet a shape no author anticipated.  The requirement is that a
+        failure costs only the enrichment that failed: the caller receives the
+        input it would have had if the stage had never run, and the loss is
+        recorded rather than swallowed.  What must never happen is a partially
+        applied transformation, which is why the fallback is the pre-stage value
+        and not whatever the stage managed to produce before raising.
+        """
+        try:
+            return fn()
+        except Exception as exc:  # noqa: BLE001 - degradation is the contract
+            counters.setdefault("warnings", []).append(
+                f"{stage} skipped after an internal error ({type(exc).__name__}: {exc}); "
+                "the document was parsed without it"
+            )
+            counters.setdefault("degraded_stages", []).append(stage)
+            return fallback
 
     def _parse_ast(self, ast: Dict[str, Any], job_id: str) -> Tuple[DocumentModel, Dict[str, Any]]:
         """Parse Pandoc AST into DocumentModel and count elements for reporting."""
@@ -192,10 +365,19 @@ class DocumentAnalyzer:
         # Headings that Word never marked as headings -- direct-formatted
         # manuscripts, IEEE and Elsevier submissions -- are recovered here so
         # the split below and the section tree both see a real hierarchy.
-        blocks = self._promote_semantic_headings(blocks)
+        #
+        # Each structural pass is fault-isolated: if one raises, the blocks it
+        # was given are kept unchanged and a warning is recorded.  A pass that
+        # fails must degrade the document to the state before that pass, never
+        # to a half-rewritten AST -- a partially promoted heading tree is worse
+        # than no promotion at all, because every later stage then reads a
+        # structure that describes no real document.
+        blocks = self._guard(counters, "heading promotion",
+                             lambda: self._promote_semantic_headings(blocks), blocks)
         # Word keeps a caption in its own paragraph with no link to the object
         # it describes; pair them up before parsing so neither is duplicated.
-        blocks = self._attach_captions(blocks)
+        blocks = self._guard(counters, "caption attachment",
+                             lambda: self._attach_captions(blocks), blocks)
 
         # Separate metadata blocks from body blocks.  The boundary is the first
         # *body* heading.  "Abstract" and "Keywords" are frequently formatted as
@@ -227,11 +409,38 @@ class DocumentAnalyzer:
         # every remaining page is lost.  The front matter has a definite end
         # whether or not a heading marks it, so when no boundary was found one
         # is located structurally and the remainder is restored as body.
-        if not found_header and blocks:
-            split_at = self._front_matter_end(blocks)
-            if split_at < len(blocks):
-                intro_metadata_blocks = blocks[:split_at]
-                body_blocks = blocks[split_at:]
+        #
+        # The heading-derived boundary is only as good as the *first* heading.
+        # A manuscript that numbers its section headings with Word's list
+        # numbering keeps them in a numbered-list paragraph, which pandoc folds
+        # into an ``OrderedList`` block; such a heading can never become a
+        # ``Header``, while an unnumbered late heading ("Conclusions") still
+        # can.  The first heading then sits near the *end* of the paper and
+        # everything before it -- the entire body -- is read as front matter and
+        # fed to the author/affiliation extractor.  So the structural boundary
+        # is computed either way, and it is allowed to *narrow* the front matter
+        # when it was derived from the abstract/keywords labels, which is the
+        # one landmark every publisher shares and therefore the only boundary
+        # trustworthy enough to override a heading.  The prose-based fallback
+        # inside it stays advisory (it may fire on the abstract itself), so it
+        # is used only when there is no heading boundary at all.
+        if blocks:
+            boundary, reason = self._guard(
+                counters, "front-matter boundary",
+                lambda: self._front_matter_boundary(
+                    blocks, len(intro_metadata_blocks), found_header),
+                (len(intro_metadata_blocks), "heading"),
+            )
+            counters["front_matter"] = {
+                "boundary": boundary, "signal": reason, "blocks": len(blocks),
+            }
+            if boundary != len(intro_metadata_blocks):
+                intro_metadata_blocks = blocks[:boundary]
+                body_blocks = blocks[boundary:]
+
+        # Warnings raised by the raw-XML side-channel passes, which run before
+        # this method and therefore have no counters to write into.
+        counters["warnings"].extend(getattr(self, "_stage_warnings", []))
 
         # Clean/Stringify the metadata blocks.  Header text is kept inline with
         # the paragraphs so that a standalone "Abstract" / "Keywords" label can
@@ -428,6 +637,21 @@ class DocumentAnalyzer:
                 # comma, and several publishers use a bullet; both are treated
                 # as list separators alongside the comma and "and".
                 names = [n.strip() for n in re.split(r",|;|·|•|·|\band\b", cleaned) if n.strip()]
+                # A superscript affiliation marker sitting *between* two names
+                # is itself a separator: publishers routinely drop the comma
+                # after a marked surname, and the marker flattens to a bare
+                # digit run glued to that surname ("... Yan5 Khin ...").  Any
+                # digit run that both follows a letter and precedes a further
+                # capitalised word can only be such a marker -- a real name
+                # never contains an interior number -- so splitting there
+                # recovers both authors instead of losing them to one
+                # unrecognisable blob.  This is a property of superscript
+                # flattening, not of any one document.
+                names = [part.strip()
+                         for name in names
+                         for part in re.split(
+                             r"(?<=[^\W\d_])\d+[*†‡§¶°∗]*\s+(?=[^\W\d_])", name)
+                         if part.strip()]
                 for name in names:
                     marker_match = re.search(r"(\d+)\s*[*†‡§¶°]*$", name)
                     marker = int(marker_match.group(1)) if marker_match else None
@@ -436,6 +660,18 @@ class DocumentAnalyzer:
                     # glyphs publishers use in place of one.
                     display = re.sub(r"[\s,]*\d*\s*[*†‡§¶°∗]*$", "", name).strip()
                     if not display or not re.search(r"[A-Za-z]", display):
+                        continue
+                    # Final gate, applied per name rather than per line: the
+                    # candidate must actually have the shape of a person's
+                    # name.  Every test above asks whether the text looks like
+                    # something else; this one asks whether it looks like a
+                    # person, which is the only question that keeps table
+                    # cells, captions, axis labels and stray body fragments out
+                    # of ``\author{}`` even if the boundary were misplaced.  It
+                    # must be per-name because an author line carries
+                    # multi-affiliation markers ("Ali Akgul 1,2,3,*") whose
+                    # comma-split fragments are not names at all.
+                    if not _looks_like_person_name(display):
                         continue
                     current_author = AuthorModel(name=display)
                     if marker is not None:
@@ -774,6 +1010,38 @@ class DocumentAnalyzer:
         doc.keywords = keywords_list
         doc.references = references_list
 
+        # Reconcile what the source contains against what was recovered.  The
+        # source count comes from the OMML; the recovered count is the sum of
+        # standalone equation blocks and equations carried on paragraphs.  A
+        # shortfall is reported rather than inferred, because an equation lost
+        # in conversion is otherwise indistinguishable from a paper that never
+        # had one -- which is exactly how a silently flattened equation used to
+        # escape notice.
+        census = getattr(self, "_omml_census", None) or {}
+        if census:
+            recovered = counters.get("equations", 0) + counters.get("equations_inline", 0)
+            counters["equation_census"] = {
+                "source_omml": census.get("omath", 0),
+                "source_display_paragraphs": census.get("omath_para", 0),
+                "source_ole_equation_objects": census.get("ole_equations", 0),
+                "recovered": recovered,
+                "recovered_as_images": counters.get("equation_images", 0),
+            }
+            missing = census.get("omath", 0) - recovered
+            if missing > 0:
+                counters["warnings"].append(
+                    f"{missing} of {census['omath']} equations in the source were "
+                    "not recovered as equation nodes; they may have been "
+                    "converted to text or images by Word"
+                )
+            if census.get("ole_equations"):
+                counters["warnings"].append(
+                    f"{census['ole_equations']} legacy Equation Editor/MathType "
+                    "object(s) are embedded as pictures rather than OMML; they "
+                    "are preserved as images with their original geometry, not "
+                    "as editable equations"
+                )
+
         logger.info(
             "Parsed document: title='%s', authors=%d, sections=%d, references=%d",
             doc.title, len(doc.authors), len(doc.sections), len(doc.references)
@@ -798,7 +1066,28 @@ class DocumentAnalyzer:
                     caption = self._stringify_inlines(item_c[1])
                     src = item_c[2][0] if len(item_c) > 2 and len(item_c[2]) > 0 else ""
                     width_in, height_in = self._image_dimensions_in(item_c)
-                    counters["figures"] += 1
+                    # Pandoc's attributes are the first source of truth because
+                    # they reflect any scaling it applied; where it reports
+                    # nothing -- routinely the case for equation images -- the
+                    # exact EMU extent read from the DOCX supplies the original
+                    # geometry rather than leaving the size unknown and letting
+                    # a downstream default invent one.
+                    geom = getattr(self, "_drawing_geometry", {}).get(src) or {}
+                    if width_in is None and geom.get("width_in"):
+                        width_in = geom["width_in"]
+                    if height_in is None and geom.get("height_in"):
+                        height_in = geom["height_in"]
+                    # The aspect ratio is always emitted: it is what lets a
+                    # consumer that must fit a figure to a column resize it
+                    # without distorting it, and it survives even when only one
+                    # of the two dimensions is known.
+                    aspect = geom.get("aspect_ratio")
+                    if aspect is None and width_in and height_in:
+                        aspect = round(float(width_in) / float(height_in), 6)
+                    if geom.get("is_equation"):
+                        counters["equation_images"] = counters.get("equation_images", 0) + 1
+                    else:
+                        counters["figures"] += 1
                     # A picture wider than half the text column cannot sit inside
                     # one column of a two-column layout, so it must span the full
                     # width; narrower ones stay inline in the column.  Unknown
@@ -822,6 +1111,24 @@ class DocumentAnalyzer:
                             # Placement signals consumed by the renderer's policy.
                             "word_inline": word_inline,
                             "text_width_in": tw_in,
+                            # Original source geometry, exact and unrounded.
+                            "emu_width": geom.get("emu_width"),
+                            "emu_height": geom.get("emu_height"),
+                            "aspect_ratio": aspect,
+                            # wp:inline vs wp:anchor as recorded in the DOCX;
+                            # distinct from ``word_inline`` only in that it is
+                            # None when the drawing was not found in the XML.
+                            "word_placement": (
+                                None if "inline" not in geom
+                                else ("inline" if geom["inline"] else "anchor")
+                            ),
+                            # True when the picture is a legacy Equation
+                            # Editor / MathType object rather than a figure.
+                            # It cannot become an Equation node -- there is no
+                            # LaTeX to recover from a rasterised equation --
+                            # but it must not be captioned, floated or
+                            # numbered as a figure either.
+                            "is_equation": bool(geom.get("is_equation")),
                         }
                     )
 
@@ -831,14 +1138,28 @@ class DocumentAnalyzer:
             if equation is not None:
                 return equation
 
-            # Standard paragraph block
+            # Standard paragraph block.  A paragraph that mixes prose with an
+            # equation stays a paragraph -- splitting it would reorder the
+            # sentence around the equation -- but the equations it contains are
+            # still carried as structured nodes beside the text, never only as
+            # flattened runs.  The text keeps its ``\(...\)`` / ``\[...\]``
+            # spans so that every existing consumer renders exactly as before;
+            # the ``equations`` list is additive, and lets any consumer that
+            # wants the equation as an object have it without re-parsing prose.
             text = self._stringify_inlines(inlines)
             if not text.strip():
                 return None
             counters["paragraphs"] += 1
+            content: Dict[str, Any] = {"text": text}
+            math_nodes = self._collect_math_nodes(inlines)
+            if math_nodes:
+                content["equations"] = math_nodes
+                content["has_display_math"] = any(m["display"] for m in math_nodes)
+                counters["equations_inline"] = \
+                    counters.get("equations_inline", 0) + len(math_nodes)
             return DocumentBlock(
                 type=BlockType.PARAGRAPH,
-                content={"text": text}
+                content=content,
             )
 
         elif t == "Table":
@@ -918,7 +1239,17 @@ class DocumentAnalyzer:
             elif t == "Code":
                 parts.append(c[1])
             elif t == "Link":
-                parts.append(self._stringify_inlines(c[2]))
+                # Pandoc's Link is [attr, label_inlines, target]: the visible
+                # text is c[1].  Reading c[2] returned the target tuple, which
+                # stringifies to nothing, so every hyperlink's text vanished --
+                # e-mail addresses and ORCIDs in the author block above all,
+                # leaving residue like "Email:  ORCID:" that was then parsed as
+                # an author.  A hyperlink with no label falls back to its URL,
+                # which is what the reader sees for a bare autolink.
+                label = self._stringify_inlines(c[1]) if len(c) > 1 else ""
+                if not label.strip() and len(c) > 2 and isinstance(c[2], list) and c[2]:
+                    label = str(c[2][0])
+                parts.append(label)
             elif t == "Cite":
                 parts.append(self._stringify_inlines(c[1]))
         return "".join(parts)
@@ -952,6 +1283,50 @@ class DocumentAnalyzer:
                 found.extend(self._collect_display_math(c[1] if isinstance(c, list) and len(c) > 1 else None))
             elif t == "Link":
                 found.extend(self._collect_display_math(c[2] if isinstance(c, list) and len(c) > 2 else None))
+        return found
+
+    def _collect_math_nodes(self, inlines: Any) -> List[Dict[str, Any]]:
+        """Every equation in an inline tree, in reading order, as structured data.
+
+        An OMML equation is not a run of text that happens to contain symbols;
+        it is a node with its own grammar, and the only faithful representation
+        of it is its LaTeX body plus whether Word set it as a display or an
+        inline equation.  Collecting them separately from the paragraph's text
+        is what makes an equation a first-class object even when it shares its
+        paragraph with prose -- the case in which the old code had no choice but
+        to flatten it into the text, because the text was the only place it had
+        to put it.
+
+        The walk mirrors ``_collect_display_math`` and for the same reason:
+        Word wraps equations in character-style runs, which pandoc emits as
+        ``Span``/``Emph``/``Strong`` wrappers around the ``Math`` node, so a
+        top-level scan sees none of the styled ones.
+        """
+        found: List[Dict[str, Any]] = []
+        if not isinstance(inlines, list):
+            return found
+        for item in inlines:
+            if not isinstance(item, dict):
+                continue
+            t = item.get("t")
+            c = item.get("c")
+            if t == "Math":
+                if isinstance(c, list) and len(c) > 1 and isinstance(c[0], dict):
+                    body = self._sanitize_math((c[1] or "").strip())
+                    if body:
+                        found.append({
+                            "latex": body,
+                            "display": c[0].get("t") == "DisplayMath",
+                        })
+            elif t in ("Emph", "Strong", "Strikeout", "Superscript", "Subscript",
+                       "SmallCaps", "Underline"):
+                found.extend(self._collect_math_nodes(c))
+            elif t in ("Span", "Quoted"):
+                found.extend(self._collect_math_nodes(
+                    c[1] if isinstance(c, list) and len(c) > 1 else None))
+            elif t == "Link":
+                found.extend(self._collect_math_nodes(
+                    c[2] if isinstance(c, list) and len(c) > 2 else None))
         return found
 
     def _display_equation_block(self, inlines: Any,
@@ -1001,7 +1376,13 @@ class DocumentAnalyzer:
         counters["equations"] += 1
         return DocumentBlock(
             type=BlockType.EQUATION,
-            content={"latex_code": latex_code, "label": None, "number": number},
+            content={
+                "latex_code": latex_code, "label": None, "number": number,
+                # The individual equations that make up this block, kept
+                # separately so a multi-line equation remains a sequence of
+                # equations rather than one opaque string.
+                "equations": [{"latex": b, "display": True} for b in bodies],
+            },
         )
 
     # Characters Word stores literally inside an equation but which have no
@@ -1320,8 +1701,8 @@ class DocumentAnalyzer:
         walk(block.get("c"))
         return texts
 
-    def _front_matter_end(self, blocks: List[Dict[str, Any]]) -> int:
-        """Index of the first body block when no heading marks the boundary.
+    def _front_matter_end(self, blocks: List[Dict[str, Any]]) -> Tuple[int, bool]:
+        """Index of the first body block, and whether a label established it.
 
         Used only as a safety net: a document whose headings carry no style, no
         outline level and no visual distinction produces no ``Header``, and
@@ -1361,13 +1742,230 @@ class DocumentAnalyzer:
                 label_standalone = not norm[m.end():].strip()
         if last_label >= 0:
             end = last_label + (2 if label_standalone else 1)
-            return min(end, len(blocks))
+            return min(end, len(blocks)), True
 
         for idx in range(1, limit):
             txt = texts[idx]
             if len(txt) >= 200 and re.search(r"[.!?]\s", txt):
-                return idx
-        return len(blocks)
+                return idx, False
+        return len(blocks), False
+
+    def _block_scan_texts(self, block: Dict[str, Any]) -> List[str]:
+        """Every text a block offers that could be a heading, in reading order.
+
+        A heading is not always a paragraph: when Word numbers it with list
+        numbering it is a list *item*, and pandoc folds a run of such headings
+        into one list block.  Scanning list items as well as paragraphs is what
+        lets the boundary detector see a heading that no formatting signal can
+        reach.
+        """
+        if not isinstance(block, dict):
+            return []
+        t = block.get("t")
+        c = block.get("c")
+        if t in ("Para", "Plain"):
+            return [self._stringify_inlines(c or []).strip()]
+        if t == "Header":
+            return [self._stringify_inlines(c[2] if isinstance(c, list) and len(c) > 2 else []).strip()]
+        if t in ("OrderedList", "BulletList"):
+            items = (c[1] if isinstance(c, list) and len(c) > 1 else []) \
+                if t == "OrderedList" else (c or [])
+            out = []
+            for item in items if isinstance(items, list) else []:
+                if isinstance(item, list) and item and isinstance(item[0], dict):
+                    out.append(self._stringify_blocks(item[:1]).strip())
+            return out
+        return []
+
+    def _body_opener_index(self, blocks: List[Dict[str, Any]],
+                           floor: int) -> Optional[int]:
+        """Index of the first block that opens the body of the paper.
+
+        Papers open their body from a small, stable vocabulary ("Introduction",
+        "Background", "Materials and Methods"), and that is a fact about
+        scientific writing rather than about any publisher's template.  It is
+        therefore the one boundary signal that survives every layout pathology
+        the formatting-based signals fail on: headings numbered by Word's list
+        numbering, headings typed in the body font, headings carrying a
+        superscript note marker.  The search is bounded and never looks before
+        the floor, so an "Introduction" mentioned inside an abstract cannot pull
+        the boundary back over the front matter.
+        """
+        limit = min(len(blocks), _MAX_FRONT_MATTER_BLOCKS)
+        for idx in range(max(0, floor), limit):
+            for text in self._block_scan_texts(blocks[idx]):
+                if not text or len(text) > 120:
+                    continue
+                title = _strip_heading_number(_normalise_label(text))
+                if title and _BODY_OPENER_RE.match(title):
+                    return idx
+        return None
+
+    def _front_matter_boundary(self, blocks: List[Dict[str, Any]],
+                               heading_boundary: int,
+                               found_header: bool) -> Tuple[int, str]:
+        """Where the front matter ends, from all available evidence.
+
+        Four independent signals are combined, and the rule between them is
+        deliberately one-directional: the boundary may only ever move *earlier*
+        than the heading-derived one.  Misplacing it late is the failure that
+        destroys a document -- every block before it is handed to the author and
+        affiliation extractor, so a late boundary turns the body of the paper
+        into a list of authors -- whereas misplacing it early merely puts a
+        line of front matter at the top of the first section, which is visible
+        and harmless.
+
+        The signals, in the order they are allowed to narrow the boundary:
+
+        * the first ``Header`` that is not an abstract/keywords label, which is
+          what the caller already computed and passes in;
+        * the abstract/keywords labels, the one landmark shared by every
+          publisher, which also establish the *floor* -- the boundary is never
+          allowed to cut into the abstract itself;
+        * the body-opener vocabulary, which needs no formatting at all and is
+          therefore the signal that works when the document has no usable
+          heading styles;
+        * a hard ceiling, because no title block in any layout runs to
+          ``_MAX_FRONT_MATTER_BLOCKS`` paragraphs and a boundary beyond it is a
+          detection failure rather than a long front matter.
+
+        Returns the boundary and the name of the signal that set it, so the
+        caller can report how the decision was made.
+        """
+        n = len(blocks)
+        if not n:
+            return 0, "empty"
+
+        structural_end, from_label = self._front_matter_end(blocks)
+        boundary = max(0, min(heading_boundary, n))
+        reason = "heading" if found_header else "document-end"
+
+        if not found_header:
+            if structural_end < n:
+                boundary = structural_end
+                reason = "label" if from_label else "prose"
+        elif from_label and structural_end < boundary:
+            boundary = structural_end
+            reason = "label"
+
+        # The abstract and its label always belong to the front matter, so no
+        # later signal may cut before them.
+        floor = min(structural_end, n) if from_label else min(1, n)
+
+        opener = self._body_opener_index(blocks, floor)
+        if opener is not None and floor <= opener < boundary:
+            boundary = opener
+            reason = "body-opener"
+        elif opener is not None and boundary < opener < min(n, _MAX_FRONT_MATTER_BLOCKS) \
+                and isinstance(blocks[opener], dict) and blocks[opener].get("t") == "Header":
+            # The one case in which the boundary may move *later*: a real
+            # ``Header`` whose title is a body opener is a positive
+            # identification of where the body starts, not an inference, so
+            # everything before it is front matter by definition.  Publishers
+            # place classification codes, JEL codes, MSC numbers and submission
+            # notes between the keywords and the first section, and without
+            # this the leading one of those becomes a stray untitled section at
+            # the top of the paper.  The move is bounded by the same ceiling as
+            # every other signal, so it cannot reintroduce the failure mode the
+            # monotonicity rule exists to prevent.
+            boundary = opener
+            reason = "body-opener-header"
+
+        ceiling = max(floor, min(n, _MAX_FRONT_MATTER_BLOCKS))
+        if boundary > ceiling:
+            boundary = ceiling
+            reason = "clamped"
+
+        return max(0, min(boundary, n)), reason
+
+    def _lift_list_headings(
+        self, block: Dict[str, Any], formats: Dict[str, Dict[str, Any]]
+    ) -> Tuple[List[Dict[str, Any]], int]:
+        """Split a list block around the items that are really headings.
+
+        Returns the replacement block sequence and how many headings were
+        lifted.  When nothing is lifted the count is zero and the caller keeps
+        the original block, so a document that numbers its headings any other
+        way is completely unaffected.  Only an item consisting of exactly one
+        short paragraph whose text the formatting pass already classified as a
+        heading is lifted; list attributes and item order are otherwise kept.
+        """
+        kind = block.get("t")
+        raw = block.get("c") or []
+        if kind == "OrderedList":
+            attrs, items = (raw[0], raw[1]) if len(raw) > 1 else (None, [])
+        else:
+            attrs, items = None, raw
+        if not isinstance(items, list) or not items:
+            return [block], 0
+
+        def rebuild(chunk: List[Any]) -> Dict[str, Any]:
+            return {"t": kind, "c": [attrs, chunk] if kind == "OrderedList" else chunk}
+
+        # First pass: describe each item without deciding anything.  ``fmt`` is
+        # the formatting pass's own verdict; ``shaped`` is whether the item even
+        # could be a heading (a single short, non-prose paragraph).
+        described: List[Tuple[Optional[List[Any]], Optional[Dict[str, Any]], bool]] = []
+        for item in items:
+            inlines = None
+            fmt = None
+            shaped = False
+            if isinstance(item, list) and len(item) == 1 and isinstance(item[0], dict) \
+                    and item[0].get("t") in ("Para", "Plain"):
+                inlines = item[0].get("c") or []
+                text = self._stringify_inlines(inlines).strip()
+                if text and len(text) <= 120:
+                    fmt = formats.get("".join(text.split()).lower())
+                    title = _strip_heading_number(_normalise_label(text))
+                    shaped = not self._looks_like_prose(text)
+                    if title and _BODY_OPENER_RE.match(title):
+                        # The body-opener vocabulary is evidence in its own
+                        # right, so a paper whose "Introduction" the formatting
+                        # pass could not see is still recovered.
+                        fmt = fmt or {"level": 1}
+            described.append((inlines, fmt, shaped))
+
+        # A numbered list that is *confirmed* to contain at least one heading,
+        # and every one of whose items has heading shape, is not a list at all:
+        # it is the run of section headings Word numbered with list numbering
+        # and pandoc folded together.  Inferring the remaining headings from
+        # their confirmed siblings needs no vocabulary and no style names, so it
+        # generalises to any document that numbers its headings this way -- and
+        # it cannot fire on a genuine enumeration, because a real list item that
+        # reads as prose fails the shape test for the whole block.
+        known = [f for _, f, _ in described if f]
+        # The inference needs a *majority* of confirmed siblings, not merely
+        # one.  A single confirmed item is equally consistent with a genuine
+        # enumeration that happens to contain one heading-like entry, and
+        # promoting the rest of that list would turn ordinary bullet points
+        # into sections.  Requiring most of the list to be independently
+        # confirmed by the formatting pass keeps the inference to its intended
+        # case -- a run of section headings Word numbered with list numbering,
+        # where the formatting pass recognises most of them and misses a few.
+        uniform = len(known) >= 2 and len(described) > 1 \
+            and len(known) * 2 >= len(described) \
+            and all(shaped and inl is not None for inl, _, shaped in described)
+        if uniform:
+            inferred_level = max(1, min(6, int(known[0].get("level") or 1)))
+            described = [(inl, f or {"level": inferred_level}, shaped)
+                         for inl, f, shaped in described]
+
+        out: List[Dict[str, Any]] = []
+        pending: List[Any] = []
+        lifted = 0
+        for item, (inlines, fmt, _shaped) in zip(items, described):
+            if fmt and inlines is not None:
+                if pending:
+                    out.append(rebuild(pending))
+                    pending = []
+                level = max(1, min(6, int(fmt.get("level") or 1)))
+                out.append({"t": "Header", "c": [level, ["", [], []], inlines]})
+                lifted += 1
+            else:
+                pending.append(item)
+        if pending:
+            out.append(rebuild(pending))
+        return (out, lifted) if lifted else ([block], 0)
 
     def _promote_semantic_headings(self, blocks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """Turn semantically-detected headings into real pandoc ``Header`` blocks.
@@ -1412,6 +2010,23 @@ class DocumentAnalyzer:
         promoted: List[Dict[str, Any]] = []
         count = 0
         for index, b in enumerate(blocks):
+            if isinstance(b, dict) and b.get("t") in ("OrderedList", "BulletList") \
+                    and index > front_end:
+                # A heading that Word numbered with its list numbering ("1.
+                # Introduction") stays a list paragraph, and pandoc folds a run
+                # of them into a single list block.  Such a heading can never
+                # reach the Para branch below, so the whole paper reads as one
+                # section -- or, when the only headings pandoc did see are the
+                # unnumbered closing ones, the front-matter boundary lands near
+                # the end of the document.  List items that the formatting pass
+                # already recognised as headings are therefore lifted out of the
+                # list; every other item is left in place, so a genuine
+                # enumeration is untouched.
+                lifted, n = self._lift_list_headings(b, formats)
+                if n:
+                    promoted.extend(lifted)
+                    count += n
+                    continue
             if not isinstance(b, dict) or b.get("t") not in ("Para", "Plain"):
                 promoted.append(b)
                 continue
@@ -2119,6 +2734,188 @@ class DocumentAnalyzer:
         except Exception:
             pass
         return placement
+
+    # An English Metric Unit is 1/914400 inch.  Word stores every drawing's
+    # size in EMU, exactly, and that is the only lossless record of how large
+    # the author meant a figure or an equation image to be: pandoc reports a
+    # rounded value in points when it reports one at all, and reports nothing
+    # for a drawing it cannot size.
+    _EMU_PER_INCH = 914400.0
+
+    def _extract_drawing_geometry(self, docx_path: Path) -> Dict[str, Dict[str, Any]]:
+        """Original geometry of every embedded drawing, keyed by media path.
+
+        Word records a drawing's size as a ``wp:extent`` in EMU and its
+        placement as either ``wp:inline`` or ``wp:anchor``.  Both are properties
+        of the source document, so reading them here means a figure keeps the
+        size, the aspect ratio and the positioning the author gave it even when
+        pandoc's own attributes are absent or rounded -- which is the usual case
+        for equation images, the drawings publishers use when an equation was
+        pasted as a picture rather than typed as OMML.
+
+        Returned per drawing: ``emu_width``/``emu_height`` (exact source
+        values), ``width_in``/``height_in`` (the same, converted),
+        ``aspect_ratio`` (width over height, so a consumer that must scale can
+        scale without distorting) and ``inline`` (``True`` for ``wp:inline``,
+        ``False`` for an anchored/floating drawing).
+        """
+        import zipfile
+        import xml.etree.ElementTree as ET
+        W = self._W_NS
+        WP = "{http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing}"
+        A = "{http://schemas.openxmlformats.org/drawingml/2006/main}"
+        R = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
+        geometry: Dict[str, Dict[str, Any]] = {}
+        with zipfile.ZipFile(docx_path) as zf:
+            rels: Dict[str, str] = {}
+            try:
+                rt = ET.fromstring(zf.read("word/_rels/document.xml.rels"))
+                for rel in rt:
+                    rels[rel.get("Id")] = rel.get("Target") or ""
+            except KeyError:
+                pass
+            root = ET.fromstring(zf.read("word/document.xml"))
+
+        for dr in root.iter(f"{W}drawing"):
+            inline_el = dr.find(f"{WP}inline")
+            anchor_el = dr.find(f"{WP}anchor")
+            container = inline_el if inline_el is not None else anchor_el
+            if container is None:
+                continue
+            extent = container.find(f"{WP}extent")
+            if extent is None:
+                continue
+            try:
+                cx = int(extent.get("cx") or 0)
+                cy = int(extent.get("cy") or 0)
+            except (TypeError, ValueError):
+                continue
+            if cx <= 0 or cy <= 0:
+                continue
+            blip = dr.find(f".//{A}blip")
+            emb = blip.get(f"{R}embed") if blip is not None else None
+            tgt = rels.get(emb) if emb else None
+            if not tgt:
+                continue
+            key = "media/" + tgt.split("/")[-1]
+            geometry.setdefault(key, {
+                "emu_width": cx,
+                "emu_height": cy,
+                "width_in": round(cx / self._EMU_PER_INCH, 4),
+                "height_in": round(cy / self._EMU_PER_INCH, 4),
+                "aspect_ratio": round(cx / float(cy), 6),
+                "inline": inline_el is not None,
+                "is_equation": False,
+            })
+
+        # Legacy embedded objects -- above all Equation Editor and MathType
+        # equations, which publishers' templates produce in very large numbers
+        # -- are not DrawingML at all.  They are VML shapes inside ``w:object``,
+        # sized by a CSS-like ``style`` attribute in points, and pandoc emits
+        # them as ordinary pictures with no dimensions whatsoever.  Reading them
+        # here is what gives an equation image its true size and, just as
+        # importantly, records that the picture *is* an equation rather than a
+        # figure.
+        V = "{urn:schemas-microsoft-com:vml}"
+        O = "{urn:schemas-microsoft-com:office:office}"
+        for obj in root.iter(f"{W}object"):
+            prog = ""
+            for ole_el in obj.iter(f"{O}OLEObject"):
+                prog = (ole_el.get("ProgID") or "").lower()
+                break
+            is_equation = "equation" in prog or "mathtype" in prog
+            for shape in obj.iter(f"{V}shape"):
+                data = shape.find(f"{V}imagedata")
+                emb = data.get(f"{R}id") if data is not None else None
+                tgt = rels.get(emb) if emb else None
+                if not tgt:
+                    continue
+                w_pt, h_pt = self._vml_style_size_pt(shape.get("style") or "")
+                if not (w_pt and h_pt):
+                    # Word also records the object's original size in twentieths
+                    # of a point on the w:object element itself; use it when the
+                    # shape carries no explicit style.
+                    try:
+                        w_pt = int(obj.get(f"{W}dxaOrig") or 0) / 20.0
+                        h_pt = int(obj.get(f"{W}dyaOrig") or 0) / 20.0
+                    except (TypeError, ValueError):
+                        w_pt = h_pt = 0.0
+                if not (w_pt and h_pt):
+                    continue
+                cx = int(round(w_pt * self._EMU_PER_INCH / 72.0))
+                cy = int(round(h_pt * self._EMU_PER_INCH / 72.0))
+                geometry.setdefault("media/" + tgt.split("/")[-1], {
+                    "emu_width": cx,
+                    "emu_height": cy,
+                    "width_in": round(w_pt / 72.0, 4),
+                    "height_in": round(h_pt / 72.0, 4),
+                    "aspect_ratio": round(w_pt / float(h_pt), 6),
+                    # A VML shape inside a run is inline by construction; a
+                    # floating one carries an absolute position in its style.
+                    "inline": "position:absolute" not in (shape.get("style") or ""),
+                    "is_equation": is_equation,
+                })
+        return geometry
+
+    @staticmethod
+    def _vml_style_size_pt(style: str) -> Tuple[float, float]:
+        """Width and height in points from a VML ``style`` attribute.
+
+        The attribute is a CSS-like declaration list ("width:20pt;height:15.8pt").
+        Only absolute units are meaningful as a source size; a percentage is
+        relative to a container this code has no view of, so it is ignored
+        rather than guessed at.
+        """
+        units = {"pt": 1.0, "in": 72.0, "cm": 72.0 / 2.54, "mm": 72.0 / 25.4,
+                 "pc": 12.0, "px": 0.75}
+        out = {"width": 0.0, "height": 0.0}
+        for decl in style.split(";"):
+            name, _, value = decl.partition(":")
+            name = name.strip().lower()
+            if name not in out:
+                continue
+            m = re.match(r"^\s*([0-9.]+)\s*([a-z]*)\s*$", value.strip().lower())
+            if not m:
+                continue
+            try:
+                magnitude = float(m.group(1))
+            except ValueError:
+                continue
+            out[name] = magnitude * units.get(m.group(2) or "pt", 0.0)
+        return out["width"], out["height"]
+
+    def _count_omml_equations(self, docx_path: Path) -> Dict[str, int]:
+        """Census of the equations the source document actually contains.
+
+        Counted in the OMML itself rather than inferred from the parsed model,
+        so that "how many equations does this paper have" and "how many did we
+        recover" are two independently measured numbers.  Without that, an
+        equation lost in conversion is indistinguishable from a paper that
+        never had one.
+
+        ``omath`` counts equations proper; ``omath_para`` counts those Word set
+        as their own display paragraph; ``ole_equations`` counts legacy
+        Equation Editor / MathType objects, which are embedded *objects*, not
+        OMML, and which pandoc surfaces as ordinary pictures -- knowing they are
+        equations is what stops them being treated as figures.
+        """
+        import zipfile
+        import xml.etree.ElementTree as ET
+        M = "{http://schemas.openxmlformats.org/officeDocument/2006/math}"
+        O = "{urn:schemas-microsoft-com:office:office}"
+        W = self._W_NS
+        with zipfile.ZipFile(docx_path) as zf:
+            root = ET.fromstring(zf.read("word/document.xml"))
+        omath_para = len(list(root.iter(f"{M}oMathPara")))
+        # An oMath inside an oMathPara is the same equation counted once.
+        omath = len(list(root.iter(f"{M}oMath")))
+        ole = 0
+        for obj in root.iter(f"{W}object"):
+            for ole_el in obj.iter(f"{O}OLEObject"):
+                prog = (ole_el.get("ProgID") or "").lower()
+                if "equation" in prog or "mathtype" in prog:
+                    ole += 1
+        return {"omath": omath, "omath_para": omath_para, "ole_equations": ole}
 
     def _extract_text_width_in(self, docx_path: Path) -> float:
         """Usable text-column width of the document in inches (0.0 if unknown)."""
