@@ -5,27 +5,45 @@ from fastapi import APIRouter, HTTPException, status
 from fastapi.responses import PlainTextResponse
 from app.services.job_manager import JobManager
 from app.models.job import JobMetadata
+from app.utils.filesystem import is_valid_job_id, is_within
 
 router = APIRouter(prefix="/job", tags=["Job"])
 jobs_router = APIRouter(prefix="/jobs", tags=["Jobs"])
 
 
-def _resolve_job_dir(job_id: str) -> Path:
-    """Return the job's directory, raising 404 if it does not exist."""
-    job_manager = JobManager()
-    metadata = job_manager.get_job(job_id)
+def _require_job(job_id: str) -> JobMetadata:
+    """Load a job by ID, rejecting malformed IDs the same way as missing ones."""
+    if not is_valid_job_id(job_id):
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Job with ID {job_id} not found",
+        )
+    metadata = JobManager().get_job(job_id)
     if not metadata:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Job with ID {job_id} not found",
         )
-    return job_manager._get_job_dir(job_id)
+    return metadata
+
+
+def _resolve_job_dir(job_id: str) -> Path:
+    """Return the job's directory, raising 404 if it does not exist."""
+    _require_job(job_id)
+    return JobManager()._get_job_dir(job_id)
 
 
 def _read_intermediate_json(job_dir: Path, filename: str):
     """Read a JSON file from the job's intermediate directory, returning 404 if missing."""
+    # *filename* is always a constant from this module, never user input; the
+    # containment check below is a guard against that ever changing.
     file_path = job_dir / "intermediate" / filename
-    if not file_path.exists():
+    if file_path.is_symlink() or not is_within(job_dir, file_path.resolve()):
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Intermediate file '{filename}' not found for this job.",
+        )
+    if not file_path.is_file():
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Intermediate file '{filename}' not found for this job. Ensure the convert stage has completed.",
@@ -42,28 +60,14 @@ def _read_intermediate_json(job_dir: Path, filename: str):
 @router.get("/{job_id}", response_model=JobMetadata)
 async def get_job_status(job_id: str) -> JobMetadata:
     """Retrieve the current metadata and status of a job."""
-    job_manager = JobManager()
-    metadata = job_manager.get_job(job_id)
-    if not metadata:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Job with ID {job_id} not found",
-        )
-    return metadata
+    return _require_job(job_id)
 
 
 @router.delete("/{job_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_job(job_id: str) -> None:
     """Clean up and delete a job's workspace directory."""
-    job_manager = JobManager()
-    metadata = job_manager.get_job(job_id)
-    if not metadata:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Job with ID {job_id} not found",
-        )
-
-    success = job_manager.cleanup(job_id)
+    _require_job(job_id)
+    success = JobManager().cleanup(job_id)
     if not success:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -97,7 +101,8 @@ async def get_job_latex(job_id: str):
     """Return the generated main.tex as plain text."""
     job_dir = _resolve_job_dir(job_id)
     tex_path = job_dir / "rendered" / "main.tex"
-    if not tex_path.exists():
+    if tex_path.is_symlink() or not is_within(job_dir, tex_path.resolve()) \
+            or not tex_path.is_file():
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="LaTeX source not found for this job. Ensure the compile stage has completed.",

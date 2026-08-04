@@ -6,7 +6,20 @@ import uuid
 import zipfile
 from pathlib import Path
 from typing import List, Optional
-from app.utils.filesystem import normalize_path, read_text_file
+from app.utils.filesystem import (
+    UnsafePathError,
+    is_safe_component,
+    is_within,
+    normalize_path,
+    read_text_file,
+    safe_join,
+)
+from app.utils.zip_utils import (
+    UnsafeArchiveError,
+    extract_zip as safe_extract_zip,
+    validate_archive_members,
+    zip_directory,
+)
 
 
 class TemplateManagerError(Exception):
@@ -68,15 +81,21 @@ class TemplateManager:
         Returns:
             The Path to the template directory.
         """
-        # First check uploaded root
-        uploaded_path = self.uploaded_root / template_id
-        if uploaded_path.exists() and uploaded_path.is_dir():
-            return uploaded_path
+        # The template ID arrives straight from the URL and from request bodies,
+        # so it is validated as a single safe component before it is ever joined
+        # to a root: "../../etc" (or its percent-encoded form) must not resolve.
+        if not is_safe_component(template_id):
+            raise TemplateManagerError(f"Template with ID '{template_id}' not found.")
 
-        # Then check built-in root
-        built_in_path = self.built_in_root / template_id
-        if built_in_path.exists() and built_in_path.is_dir():
-            return built_in_path
+        for root in (self.uploaded_root, self.built_in_root):
+            try:
+                candidate = safe_join(root, template_id)
+            except UnsafePathError:
+                continue
+            # A symlinked template directory would still point elsewhere.
+            if candidate.is_dir() and not candidate.is_symlink() \
+                    and is_within(root, candidate.resolve()):
+                return candidate
 
         raise TemplateManagerError(f"Template with ID '{template_id}' not found.")
 
@@ -177,25 +196,26 @@ class TemplateManager:
         extract_dir.mkdir(parents=True, exist_ok=True)
 
         try:
+            # 1. Structural safety: traversal, absolute paths, symlinks, special
+            #    files and size bombs are all rejected here, before extraction.
+            #    (The previous string-prefix containment test also accepted a
+            #    sibling directory whose name merely started with the target's.)
+            try:
+                validate_archive_members(zip_file_path, extract_dir)
+            except UnsafeArchiveError as exc:
+                raise TemplateManagerError(f"Security alert: {exc}")
+
+            # 2. Policy: no executable/script payloads inside a template.
             with zipfile.ZipFile(zip_file_path, "r") as zip_ref:
                 for member in zip_ref.infolist():
-                    # 1. Zip Slip / Traversal Check
-                    target_path = Path(os.path.abspath(extract_dir / member.filename))
-                    extract_dir_abs = Path(os.path.abspath(extract_dir))
-                    if not str(target_path).startswith(str(extract_dir_abs)):
-                        raise TemplateManagerError("Security alert: Zip Slip / Directory traversal attempt detected.")
+                    if Path(member.filename).suffix.lower() in self.FORBIDDEN_EXTENSIONS:
+                        raise TemplateManagerError(
+                            f"Security alert: File {member.filename} has a "
+                            "forbidden executable extension."
+                        )
 
-                    # 2. Symlink check
-                    if (member.external_attr >> 16) & 0o170000 == 0o120000:
-                        raise TemplateManagerError("Security alert: Symbolic links are not allowed in templates.")
-
-                    # 3. Dangerous files check (prevent executing scripts, etc.)
-                    bad_extensions = {".sh", ".bat", ".exe", ".py", ".pl", ".php", ".js"}
-                    if Path(member.filename).suffix.lower() in bad_extensions:
-                        raise TemplateManagerError(f"Security alert: File {member.filename} has a forbidden executable extension.")
-
-                # If all security checks pass, extract the archive
-                zip_ref.extractall(extract_dir)
+            # 3. All checks passed -- extract member by member (never extractall).
+            safe_extract_zip(zip_file_path, extract_dir)
 
             # Users routinely zip the template FOLDER rather than its contents,
             # producing a single wrapper directory ("MyTemplate/...").  Flatten
@@ -484,17 +504,15 @@ class TemplateManager:
     def export_zip(self, template_id: str, dest_dir: Path) -> Path:
         """Package a template directory (built-in or uploaded, including any
         edits) into a fresh zip for download.  Returns the zip path."""
+        # get_template_path has already validated template_id as a single safe
+        # component, so it is safe to use in the archive's own file name.
         template_dir = self.get_template_path(template_id)
         dest_dir.mkdir(parents=True, exist_ok=True)
         zip_path = dest_dir / f"{template_id}.zip"
         try:
-            with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
-                for path in sorted(template_dir.rglob("*")):
-                    rel = path.relative_to(template_dir)
-                    if any(part.startswith(".") for part in rel.parts):
-                        continue
-                    if path.is_file():
-                        zf.write(path, rel.as_posix())
+            # Uses the shared hardened packer: symlinks are skipped rather than
+            # followed, and entry count / total size are bounded.
+            zip_directory(template_dir, zip_path)
         except Exception as e:
             raise TemplateManagerError(f"Failed to package template: {e}")
         return zip_path

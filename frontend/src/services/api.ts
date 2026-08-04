@@ -98,6 +98,19 @@ export function getDownloadUrl(jobId: string): string {
 }
 
 /**
+ * Complete LaTeX project download URL (ZIP).
+ * Backend schema: GET /download/{job_id}/project (Content-Type: application/zip)
+ *
+ * The archive contains the entire compilable project — main.tex, the .bib
+ * bibliography, every figure/logo/media asset, the .cls/.sty/.clo template
+ * files and any fonts — with the folder structure preserved, so extracting it
+ * and running `latexmk -pdf main.tex` works straight away.
+ */
+export function getProjectZipUrl(jobId: string): string {
+  return `${API_BASE_URL}/download/${jobId}/project`;
+}
+
+/**
  * LaTeX source download URL.
  * Backend schema: GET /job/{job_id}/latex (Content-Type: text/plain)
  */

@@ -14,6 +14,7 @@ import {
   getDocumentStructure,
   getLatexSource,
   getDownloadUrl,
+  getProjectZipUrl,
 } from "@/services";
 import { OverviewTab } from "./OverviewTab";
 import { DocumentTab } from "./DocumentTab";
@@ -131,6 +132,7 @@ export default function ResultPage() {
   const j = job.data;
   const isCompleted = j.status === "COMPLETED";
   const pdfUrl = getDownloadUrl(j.job_id);
+  const projectZipUrl = getProjectZipUrl(j.job_id);
 
   return (
     <PageContainer>
@@ -160,12 +162,21 @@ export default function ResultPage() {
         <div className="flex items-center gap-3 shrink-0">
           <StatusBadge status={j.status} />
           {j.compile_success && (
-            <a href={pdfUrl} download target="_blank" rel="noreferrer">
-              <Button size="sm" className="gap-2 h-9">
-                <FileDown size={14} />
-                Download PDF
-              </Button>
-            </a>
+            <>
+              <a href={pdfUrl} download target="_blank" rel="noreferrer">
+                <Button size="sm" className="gap-2 h-9">
+                  <FileDown size={14} />
+                  Download PDF
+                </Button>
+              </a>
+              {/* Complete, compilable LaTeX project — never loose files. */}
+              <a href={projectZipUrl} download target="_blank" rel="noreferrer">
+                <Button size="sm" variant="outline" className="gap-2 h-9">
+                  <FileDown size={14} />
+                  Download Project (.zip)
+                </Button>
+              </a>
+            </>
           )}
         </div>
       </div>

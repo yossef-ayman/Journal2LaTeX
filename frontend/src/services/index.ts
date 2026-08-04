@@ -8,6 +8,7 @@ export {
   listTemplates,
   getDownloadUrl,
   getLatexUrl,
+  getProjectZipUrl,
   getFidelityReport,
   getAssetReport,
   getDocumentStructure,

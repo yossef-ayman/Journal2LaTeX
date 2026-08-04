@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { StatusBadge } from "@/components/StatusBadge";
 import { useToast } from "@/components/Toast";
-import { getDownloadUrl, getLatexUrl } from "@/services";
+import { getDownloadUrl, getProjectZipUrl } from "@/services";
 import {
   FileDown,
   ExternalLink,
@@ -103,7 +103,7 @@ function OutputFileCard({
 export function OverviewTab({ job, fidelity, onNavigateToLatex }: OverviewTabProps) {
   const { toast } = useToast();
   const pdfDownloadUrl = getDownloadUrl(job.job_id);
-  const latexUrl = getLatexUrl(job.job_id);
+  const projectZipUrl = getProjectZipUrl(job.job_id);
 
   const copyToClipboard = useCallback(
     async (text: string, label: string) => {
@@ -230,12 +230,12 @@ export function OverviewTab({ job, fidelity, onNavigateToLatex }: OverviewTabPro
             accentColor="emerald"
           />
           <OutputFileCard
-            title="LaTeX Source Code"
-            extension="TEX"
-            sizeEstimate="main.tex source file"
-            downloadUrl={latexUrl}
+            title="Complete LaTeX Project"
+            extension="ZIP"
+            sizeEstimate="main.tex, .bib, figures, .cls/.sty — ready for latexmk"
+            downloadUrl={projectZipUrl}
             onOpen={onNavigateToLatex}
-            onCopyPath={() => copyToClipboard(latexUrl, "LaTeX Path")}
+            onCopyPath={() => copyToClipboard(projectZipUrl, "Project ZIP Path")}
             accentColor="blue"
           />
           {/* Log file card: endpoint not available on this deployment */}

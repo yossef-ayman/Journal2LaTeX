@@ -1,3 +1,4 @@
+import re
 import shutil
 from pathlib import Path
 from typing import List
@@ -6,6 +7,11 @@ from pydantic import BaseModel
 from app.services.template_manager import TemplateManager, TemplateManagerError
 
 router = APIRouter(prefix="/templates", tags=["Templates"])
+
+#: Mirrors TemplateManager.save_template_package's own limit, but enforced
+#: while the upload streams in so a hostile client cannot fill the disk first.
+MAX_TEMPLATE_SIZE = 50 * 1024 * 1024
+CHUNK_SIZE = 1024 * 1024
 
 
 class TemplateMetadataUpdate(BaseModel):
@@ -26,19 +32,40 @@ async def list_templates() -> List[dict]:
 async def upload_template(file: UploadFile = File(...)) -> dict:
     """Upload a template package in .zip format."""
     # Check suffix
-    if not file.filename.lower().endswith(".zip"):
+    if not file.filename or not file.filename.lower().endswith(".zip"):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Unsupported template file format. Only ZIP archives are supported."
         )
 
-    # Save to a temporary location to verify
+    # Save to a private temporary directory (not a predictable name in the
+    # shared temp dir, which another local process could pre-create or swap).
     import tempfile
-    temp_zip = Path(tempfile.gettempdir()) / f"temp_template_{uuid_suffix()}.zip"
+    temp_dir = Path(tempfile.mkdtemp(prefix="j2l_template_upload_"))
+    temp_zip = temp_dir / "upload.zip"
     try:
+        # Stream with the size limit enforced during the copy rather than after
+        # the whole archive has already been written to disk.
+        written = 0
         with temp_zip.open("wb") as buffer:
-            shutil.copyfileobj(file.file, buffer)
-        
+            while True:
+                chunk = await file.read(CHUNK_SIZE)
+                if not chunk:
+                    break
+                written += len(chunk)
+                if written > MAX_TEMPLATE_SIZE:
+                    raise HTTPException(
+                        status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                        detail=f"Template package exceeds the "
+                               f"{MAX_TEMPLATE_SIZE // (1024 * 1024)} MB limit.",
+                    )
+                buffer.write(chunk)
+        if written == 0:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="The uploaded template package is empty.",
+            )
+
         manager = TemplateManager()
         metadata = manager.save_template_package(temp_zip)
         return metadata
@@ -54,8 +81,9 @@ async def upload_template(file: UploadFile = File(...)) -> dict:
             detail=f"An error occurred while uploading template: {str(e)}"
         )
     finally:
-        if temp_zip.exists():
-            temp_zip.unlink()
+        # Remove the whole private directory, not just the archive, so no
+        # empty temp folders accumulate per upload.
+        shutil.rmtree(temp_dir, ignore_errors=True)
 
 
 @router.get("/{template_id}", response_model=dict)
@@ -152,16 +180,25 @@ async def delete_template_file(template_id: str, file_path: str) -> None:
 async def download_template(template_id: str):
     """Download the template (including any edits) as a fresh ZIP archive."""
     from fastapi.responses import FileResponse
+    from starlette.background import BackgroundTask
     import tempfile
     manager = TemplateManager()
     dest = Path(tempfile.mkdtemp(prefix="j2l_template_export_"))
-    zip_path = _manager_call(manager.export_zip, template_id, dest)
-    meta = manager.get_template_metadata(template_id)
+    try:
+        zip_path = _manager_call(manager.export_zip, template_id, dest)
+        meta = manager.get_template_metadata(template_id)
+    except Exception:
+        shutil.rmtree(dest, ignore_errors=True)
+        raise
     nice_name = (meta.get("display_name") or template_id).replace(" ", "_")
+    nice_name = re.sub(r"[^\w.\- ]", "", nice_name).strip(". ") or "template"
     return FileResponse(
         path=zip_path,
         media_type="application/zip",
-        filename=f"{nice_name}.zip",
+        filename=f"{nice_name[:120]}.zip",
+        # The export directory is removed once the response has been sent,
+        # instead of leaking one mkdtemp per download.
+        background=BackgroundTask(shutil.rmtree, dest, ignore_errors=True),
     )
 
 

@@ -8,7 +8,13 @@ from pathlib import Path
 from typing import List, Optional, Union
 from app.core.config import settings
 from app.models.job import JobMetadata, JobStatus
-from app.utils.filesystem import delete_file_or_dir, normalize_path
+from app.utils.filesystem import (
+    UnsafePathError,
+    delete_file_or_dir,
+    is_valid_job_id,
+    normalize_path,
+    safe_join,
+)
 from app.utils.logger import close_job_loggers, get_job_logger
 
 
@@ -39,13 +45,24 @@ class JobManager:
     def _get_job_dir(self, job_id: str) -> Path:
         """Get the directory path for a specific job.
 
+        This is the single chokepoint where a job ID becomes a filesystem path,
+        so the ID is validated here: it must be a well-formed UUID (the only
+        shape ``create_job`` ever mints) and the join must stay inside the
+        workspace root.  Callers reach this via ``get_job``, which converts the
+        rejection into a plain "not found".
+
         Args:
             job_id: UUID of the job.
 
         Returns:
             The Path to the job directory.
+
+        Raises:
+            UnsafePathError: if *job_id* is not a valid UUID.
         """
-        return self.temp_dir / job_id
+        if not is_valid_job_id(job_id):
+            raise UnsafePathError(f"Invalid job identifier: {job_id!r}")
+        return safe_join(self.temp_dir, job_id)
 
     def list_jobs(self) -> List[JobMetadata]:
         """List all known jobs sorted by creation time descending.
@@ -146,7 +163,12 @@ class JobManager:
         Returns:
             The JobMetadata object if found, else None.
         """
-        metadata_path = self._get_metadata_path(job_id)
+        try:
+            metadata_path = self._get_metadata_path(job_id)
+        except UnsafePathError:
+            # A malformed / hostile job ID is reported exactly like a missing
+            # job, so callers return 404 and nothing leaks about the layout.
+            return None
         if not metadata_path.exists():
             return None
 
@@ -260,7 +282,10 @@ class JobManager:
         Returns:
             True if cleanup was successful or directory did not exist, else False.
         """
-        job_dir = self._get_job_dir(job_id)
+        try:
+            job_dir = self._get_job_dir(job_id)
+        except UnsafePathError:
+            return False
         if not job_dir.exists():
             return True
 
