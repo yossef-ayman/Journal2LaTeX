@@ -1,0 +1,56 @@
+[
+  {
+    "kind": "table",
+    "caption": "Table",
+    "strategy": "inline_span",
+    "reason": "wide table (table width 100% of text), short (~1.0in) -> inline spanning both columns to hold its exact reading-order position"
+  },
+  {
+    "kind": "figure",
+    "caption": "Figure 1",
+    "strategy": "float_h",
+    "reason": "wide figure (image 99% of text width) but tall/near-square (~4.1in at full width) -> pinned in place at column width ([H]) so it stays in order without overflowing the page"
+  },
+  {
+    "kind": "figure",
+    "caption": "Figure 2",
+    "strategy": "float_h",
+    "reason": "wide figure (image 95% of text width) but tall/near-square (~4.1in at full width) -> pinned in place at column width ([H]) so it stays in order without overflowing the page"
+  },
+  {
+    "kind": "table",
+    "caption": "Table",
+    "strategy": "inline_span",
+    "reason": "wide table (table width 99% of text), short (~1.0in) -> inline spanning both columns to hold its exact reading-order position"
+  },
+  {
+    "kind": "figure",
+    "caption": "Figure 3",
+    "strategy": "float_h",
+    "reason": "wide figure (image 100% of text width) but tall/near-square (~3.5in at full width) -> pinned in place at column width ([H]) so it stays in order without overflowing the page"
+  },
+  {
+    "kind": "figure",
+    "caption": "Figure 4",
+    "strategy": "float_h",
+    "reason": "wide figure (image 92% of text width) but tall/near-square (~4.1in at full width) -> pinned in place at column width ([H]) so it stays in order without overflowing the page"
+  },
+  {
+    "kind": "table",
+    "caption": "Table 3: Results of the t-test on thinking styles and manage",
+    "strategy": "inline_span",
+    "reason": "wide table (table width 100% of text), short (~0.7in) -> inline spanning both columns to hold its exact reading-order position"
+  },
+  {
+    "kind": "figure",
+    "caption": "Figure 5",
+    "strategy": "float_h",
+    "reason": "wide figure (image 100% of text width) but tall/near-square (~3.9in at full width) -> pinned in place at column width ([H]) so it stays in order without overflowing the page"
+  },
+  {
+    "kind": "figure",
+    "caption": "Figure 6",
+    "strategy": "float_h",
+    "reason": "wide figure (image 100% of text width) but tall/near-square (~4.2in at full width) -> pinned in place at column width ([H]) so it stays in order without overflowing the page"
+  }
+]

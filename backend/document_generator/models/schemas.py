@@ -185,14 +185,20 @@ class GeneratedDocumentSet(BaseModel):
     validations: List[DocumentValidation] = []
 
 
-class BatchGenerationRequest(BaseModel):
-    """Values the operator supplies once for a whole batch.
+class PaperOverride(BaseModel):
+    """User-supplied overrides for a specific paper in a batch."""
 
-    Dates are accepted as free text and used verbatim.  The module deliberately
-    does not parse or reformat them: an acceptance letter must read exactly as
-    the operator typed it ("22 July 2026"), and normalising through a date type
-    would impose a format the template's language may not want.
-    """
+    index: int
+    title: Optional[str] = None
+    authors: Optional[List[str]] = None
+    reference_number: Optional[str] = None
+    fee: Optional[str] = None
+    discount: Optional[str] = None
+    total_charge: Optional[str] = None
+
+
+class BatchGenerationRequest(BaseModel):
+    """Values the operator supplies once for a whole batch."""
 
     acceptance_date: str = ""
     deadline: str = ""
@@ -221,6 +227,10 @@ class BatchGenerationRequest(BaseModel):
     extra_placeholders: Dict[str, str] = Field(
         default_factory=dict,
         description="Ad-hoc placeholder values applied to every document in the batch.",
+    )
+    paper_overrides: List[PaperOverride] = Field(
+        default_factory=list,
+        description="Per-paper title, author, or reference number overrides.",
     )
 
 

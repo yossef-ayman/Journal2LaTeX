@@ -10,15 +10,19 @@ import {
   Wand2,
   Settings,
   Info,
+  Book,
+  FileSearch,
 } from "lucide-react";
 
 const navItems = [
   { label: "Dashboard", href: "/", icon: LayoutDashboard },
   { label: "Upload", href: "/upload", icon: Upload },
   { label: "Document Engine", href: "/document-engine", icon: Wand2 },
+  { label: "3D Books", href: "/3d-books", icon: Book },
   { label: "History", href: "/history", icon: History },
   { label: "Templates", href: "/templates", icon: FileArchive },
   { label: "Document Generator", href: "/document-generator", icon: FileSignature },
+  { label: "PDF Analyzer", href: "/pdf-analyzer", icon: FileSearch },
   { label: "Settings", href: "/settings", icon: Settings },
   { label: "About", href: "/about", icon: Info },
 ];

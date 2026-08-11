@@ -25,6 +25,10 @@ function Lazy({ children }: { children: React.ReactNode }) {
   return <Suspense fallback={<Loader />}>{children}</Suspense>;
 }
 
+const BookShowcasePage = lazy(() => import("@/pages/BookShowcase"));
+
+const PdfAnalyzerPage = lazy(() => import("@/pages/PdfAnalyzer"));
+
 export const router = createBrowserRouter([
   {
     element: <MainLayout />,
@@ -38,10 +42,12 @@ export const router = createBrowserRouter([
       { path: "/templates/:templateId", element: <Lazy><TemplateEditorPage /></Lazy> },
       { path: "/document-engine", element: <Lazy><DocumentEnginePage /></Lazy> },
       { path: "/document-generator", element: <Lazy><DocumentGeneratorPage /></Lazy> },
+      { path: "/pdf-analyzer", element: <Lazy><PdfAnalyzerPage /></Lazy> },
+      { path: "/3d-books", element: <Lazy><BookShowcasePage /></Lazy> },
       { path: "/settings", element: <Lazy><SettingsPage /></Lazy> },
-    { path: "/about", element: <Lazy><AboutPage /></Lazy> },
-    { path: "/404", element: <Lazy><NotFoundPage /></Lazy> },
-    { path: "*", element: <Navigate to="/404" replace /> },
+      { path: "/about", element: <Lazy><AboutPage /></Lazy> },
+      { path: "/404", element: <Lazy><NotFoundPage /></Lazy> },
+      { path: "*", element: <Navigate to="/404" replace /> },
     ],
   },
 ]);

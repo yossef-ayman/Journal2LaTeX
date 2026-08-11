@@ -88,9 +88,9 @@ class GeneratorService:
     # Planning
     # ------------------------------------------------------------------ #
 
-    def _resolve_document_types(self, requested: Optional[Sequence[str]]) -> List[str]:
+    def _resolve_document_types(self, requested: Optional[Sequence[str]], journal_code: Optional[str] = None) -> List[str]:
         """Which document types this batch will produce."""
-        available = self.store.available_types()
+        available = self.store.available_types(journal_code)
         if not available:
             raise GenerationError(
                 "No master templates have been uploaded yet. Upload the acceptance "
@@ -117,18 +117,11 @@ class GeneratorService:
         papers: Sequence[Tuple[str, Path]],
         request: BatchGenerationRequest,
     ) -> BatchSummary:
-        """Generate every document for ``papers``.
-
-        ``papers`` is a sequence of ``(original filename, staged path)`` pairs in
-        the order the operator uploaded them -- that order is what the ``II``
-        component of the reference number encodes, so it must be preserved.
-        """
+        """Generate every document for papers."""
         if not papers:
             raise GenerationError("No papers were uploaded.")
 
-        selected_types = self._resolve_document_types(request.document_types)
         settings = config.load_settings()
-
         suffix = (
             request.reference_suffix
             if request.reference_suffix is not None
@@ -139,6 +132,7 @@ class GeneratorService:
             if request.journal_code is not None
             else settings.get("journal_code", "")
         )
+        selected_types = self._resolve_document_types(request.document_types, journal_code)
         editor = request.editor if request.editor is not None else settings["editor_name"]
         journal = request.journal if request.journal is not None else settings["journal_name"]
         want_pdf = (
@@ -288,18 +282,44 @@ class GeneratorService:
         title, authors, meta_warnings = metadata_extractor.extract(
             staged_path, f"docgen-{batch_id}-{index:02d}"
         )
+        auto_ref = reference_numbers.build_reference_number(
+            index,
+            ref_date,
+            suffix=suffix,
+            prefix=request.reference_prefix,
+            journal_code=journal_code,
+        )
+
+        override = next(
+            (ov for ov in (request.paper_overrides or []) if ov.index == index), None
+        )
+        if override:
+            if override.title and override.title.strip():
+                title = override.title.strip()
+            if override.authors:
+                if isinstance(override.authors, list):
+                    authors = [a for a in override.authors if a.strip()]
+                elif isinstance(override.authors, str):
+                    authors = [a.strip() for a in override.authors.split(",") if a.strip()]
+            if override.reference_number and override.reference_number.strip():
+                auto_ref = override.reference_number.strip()
+
+        paper_extra = dict(request.extra_placeholders or {})
+        fee_val = (override.fee if override and override.fee else "$2100").strip()
+        discount_val = (override.discount if override and override.discount else "$0").strip()
+        total_val = (override.total_charge if override and override.total_charge else fee_val).strip()
+
+        paper_extra["FEE"] = fee_val
+        paper_extra["TOTAL_CHARGE_USD"] = fee_val
+        paper_extra["DISCOUNT"] = discount_val
+        paper_extra["TOTAL_CHARGE"] = total_val
+
         paper = PaperMetadata(
             index=index,
             source_filename=original_name,
             title=title,
             authors=authors,
-            reference_number=reference_numbers.build_reference_number(
-                index,
-                ref_date,
-                suffix=suffix,
-                prefix=request.reference_prefix,
-                journal_code=journal_code,
-            ),
+            reference_number=auto_ref,
             warnings=meta_warnings,
         )
 
@@ -307,7 +327,7 @@ class GeneratorService:
         validations: List[DocumentValidation] = []
         for type_key in selected_types:
             info = document_types.get_document_type(type_key)
-            template = self.store.template_path(type_key)
+            template = self.store.template_path(type_key, journal_code)
             docx_out = paper_folder / f"{info.output_basename}.docx"
             context = build_context(
                 paper,
@@ -317,15 +337,10 @@ class GeneratorService:
                 journal=journal,
                 document_type=info.label,
                 custom=custom,
-                extra=request.extra_placeholders,
+                extra=paper_extra,
             )
 
-            # The saved mapping is what turns the operator's ordinary Word file
-            # into a template: it says which literal text in the document stands
-            # for which value.  A template that has no mapping yet still renders
-            # -- through its {{PLACEHOLDER}} markers, if it has any -- so this
-            # feature never invalidates a template already in use.
-            mapping = self.store.load_mapping(type_key)
+            mapping = self.store.load_mapping(type_key, journal_code)
             mappings = list(mapping.mappings) if mapping else []
             try:
                 report = render_document(template, docx_out, context, mappings)
@@ -440,7 +455,6 @@ class GeneratorService:
 
     @staticmethod
     def load_summary(batch_id: str) -> Optional[BatchSummary]:
-        """The persisted summary of a batch, or ``None`` if it is unknown."""
         path = batch_dir(batch_id) / SUMMARY_FILE_NAME
         if not path.is_file():
             return None
@@ -452,11 +466,6 @@ class GeneratorService:
 
     @staticmethod
     def resolve_download(batch_id: str, relative_path: str) -> Path:
-        """Map a download request to a file inside a batch.
-
-        The resolved path is required to stay inside the batch directory, so a
-        crafted ``path`` cannot read arbitrary files from the server.
-        """
         root = batch_dir(batch_id)
         if not root.is_dir():
             raise GenerationError("Unknown batch.")

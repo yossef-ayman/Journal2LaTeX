@@ -1,0 +1,52 @@
+[2026-08-09 11:24:10,374] [INFO] [job_manager.py:153]: Job 2183158c-b494-4e06-b9c0-5b2643b58b05 workspace created successfully
+[2026-08-09 11:24:10,425] [INFO] [pipeline_service.py:46]: Starting validation for job: 2183158c-b494-4e06-b9c0-5b2643b58b05
+[2026-08-09 11:24:10,441] [INFO] [job_manager.py:202]: Job status updated to: VALIDATING
+[2026-08-09 11:24:10,460] [INFO] [job_manager.py:226]: Progress updated to 10%: Validating input Word Document
+[2026-08-09 11:24:10,801] [INFO] [pipeline_service.py:61]: Validation successful.
+[2026-08-09 11:24:10,817] [INFO] [job_manager.py:226]: Progress updated to 20%: Input document validated successfully
+[2026-08-09 11:24:10,817] [INFO] [pipeline_service.py:68]: Starting document analysis for job: 2183158c-b494-4e06-b9c0-5b2643b58b05
+[2026-08-09 11:24:10,843] [INFO] [job_manager.py:202]: Job status updated to: ANALYZING_DOCUMENT
+[2026-08-09 11:24:10,860] [INFO] [job_manager.py:226]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-08-09 11:24:10,860] [INFO] [document_analyzer.py:228]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\2183158c-b494-4e06-b9c0-5b2643b58b05\input\Final-NSP-A Hybrid BellmanFordDijkstra DB Algorithm for Efficient Shortest Path Computation 1.docx
+[2026-08-09 11:24:13,467] [INFO] [document_analyzer.py:1045]: Parsed document: title='A Hybrid Bellman–Ford–Dijkstra (DB) Algorithm for Efficient Shortest Path Computation', authors=0, sections=26, references=12
+[2026-08-09 11:24:13,476] [INFO] [pipeline_service.py:96]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\2183158c-b494-4e06-b9c0-5b2643b58b05\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\2183158c-b494-4e06-b9c0-5b2643b58b05\intermediate\conversion_report.json
+[2026-08-09 11:24:13,496] [INFO] [job_manager.py:226]: Progress updated to 45%: Document structure extracted successfully
+[2026-08-09 11:24:13,497] [INFO] [pipeline_service.py:109]: Starting asset extraction for job: 2183158c-b494-4e06-b9c0-5b2643b58b05
+[2026-08-09 11:24:13,514] [INFO] [job_manager.py:202]: Job status updated to: EXTRACTING_ASSETS
+[2026-08-09 11:24:13,532] [INFO] [job_manager.py:226]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-08-09 11:24:32,404] [INFO] [pipeline_service.py:265]: Office object fig:office1 placed=True
+[2026-08-09 11:24:32,405] [INFO] [pipeline_service.py:265]: Office object fig:office2 placed=True
+[2026-08-09 11:24:32,406] [INFO] [pipeline_service.py:265]: Office object fig:office3 placed=True
+[2026-08-09 11:24:32,408] [INFO] [pipeline_service.py:265]: Office object fig:office4 placed=True
+[2026-08-09 11:24:32,409] [INFO] [pipeline_service.py:265]: Office object fig:office5 placed=True
+[2026-08-09 11:24:32,410] [INFO] [pipeline_service.py:265]: Office object fig:office6 placed=True
+[2026-08-09 11:24:32,412] [INFO] [pipeline_service.py:265]: Office object fig:office7 placed=True
+[2026-08-09 11:24:32,507] [WARNING] [media_convert.py:88]: 3 vector media files need conversion but LibreOffice is unavailable.
+[2026-08-09 11:24:32,527] [WARNING] [job_manager.py:272]: Job warning added: 3 vector media files could not be converted to PNG and may be missing from the output.
+[2026-08-09 11:24:32,541] [INFO] [pipeline_service.py:156]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\2183158c-b494-4e06-b9c0-5b2643b58b05\intermediate\media
+[2026-08-09 11:24:32,566] [INFO] [job_manager.py:226]: Progress updated to 60%: Document assets extracted successfully
+[2026-08-09 11:24:32,566] [INFO] [pipeline_service.py:273]: Classifying extracted assets for job: 2183158c-b494-4e06-b9c0-5b2643b58b05
+[2026-08-09 11:24:32,566] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 2183158c-b494-4e06-b9c0-5b2643b58b05
+[2026-08-09 11:24:32,572] [INFO] [asset_analyzer.py:153]: Extended asset classification completed. Assets classified: 20
+[2026-08-09 11:24:32,588] [INFO] [job_manager.py:226]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-08-09 11:24:32,723] [INFO] [pipeline_service.py:289]: Loading template 42d8a4bd-6db1-4ec2-992b-39dcab936215 for job: 2183158c-b494-4e06-b9c0-5b2643b58b05
+[2026-08-09 11:24:32,743] [INFO] [job_manager.py:202]: Job status updated to: LOADING_TEMPLATE
+[2026-08-09 11:24:32,760] [INFO] [job_manager.py:226]: Progress updated to 70%: Loading template styles: 42d8a4bd-6db1-4ec2-992b-39dcab936215
+[2026-08-09 11:24:32,871] [INFO] [pipeline_service.py:311]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\2183158c-b494-4e06-b9c0-5b2643b58b05\rendered
+[2026-08-09 11:24:32,893] [INFO] [job_manager.py:226]: Progress updated to 80%: Template workspace initialized
+[2026-08-09 11:24:32,896] [INFO] [pipeline_service.py:336]: Starting LaTeX rendering for job: 2183158c-b494-4e06-b9c0-5b2643b58b05
+[2026-08-09 11:24:32,913] [INFO] [job_manager.py:202]: Job status updated to: RENDERING_LATEX
+[2026-08-09 11:24:32,932] [INFO] [job_manager.py:226]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-08-09 11:24:32,960] [INFO] [latex_renderer.py:104]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\2183158c-b494-4e06-b9c0-5b2643b58b05\rendered
+[2026-08-09 11:24:34,362] [INFO] [latex_renderer.py:507]: LaTeX document main.tex rendered successfully.
+[2026-08-09 11:24:34,519] [INFO] [header_reconstructor.py:124]: Template class draws its own header; skipping fancyhdr injection.
+[2026-08-09 11:24:34,529] [INFO] [job_manager.py:226]: Progress updated to 90%: LaTeX document rendering completed
+[2026-08-09 11:24:34,530] [INFO] [pipeline_service.py:399]: Starting document compilation for job: 2183158c-b494-4e06-b9c0-5b2643b58b05
+[2026-08-09 11:24:34,550] [INFO] [job_manager.py:202]: Job status updated to: COMPILING
+[2026-08-09 11:24:34,569] [INFO] [job_manager.py:226]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-08-09 11:24:45,545] [ERROR] [pipeline_service.py:427]: LaTeX compilation failed: Template is missing required local resource(s); aborting before pdflatex. Ensure the template package ships these files:
+  - includegraphics -> media/image5.png
+  - includegraphics -> media/image7.png
+[2026-08-09 11:24:45,563] [ERROR] [job_manager.py:250]: Job error added: LaTeX compilation failed: Template is missing required local resource(s); aborting before pdflatex. Ensure the template package ships these files:
+  - includegraphics -> media/image5.png
+  - includegraphics -> media/image7.png

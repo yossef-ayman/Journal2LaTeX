@@ -155,6 +155,16 @@ export interface GeneratorSettingsUpdate {
   generate_pdf?: boolean;
 }
 
+export interface PaperOverride {
+  index: number;
+  title?: string;
+  authors?: string[];
+  reference_number?: string;
+  fee?: string;
+  discount?: string;
+  total_charge?: string;
+}
+
 export interface BatchFormValues {
   acceptanceDate: string;
   deadline: string;
@@ -164,12 +174,39 @@ export interface BatchFormValues {
   editor?: string;
   journal?: string;
   generatePdf?: boolean;
+  paperOverrides?: PaperOverride[];
+}
+
+export interface JournalProfile {
+  code: string;
+  name: string;
+  has_acceptance: boolean;
+  has_invoice: boolean;
+  acceptance_file: string | null;
+  invoice_file: string | null;
+}
+
+export interface PaperInspectionResult {
+  filename: string;
+  title: string;
+  authors: string[];
+  formatted_authors: string;
+  reference_number: string;
+  warnings: string[];
 }
 
 /** Absolute URL for a download link the backend produced. */
 export function absoluteUrl(path: string): string {
   const base = API_BASE_URL.replace(/\/$/, "");
   return `${base}${path}`;
+}
+
+export async function listJournals(): Promise<JournalProfile[]> {
+  const { data } = await apiClient.get<JournalProfile[]>(
+    "/document-generator/journals",
+    { headers: { "Cache-Control": "no-store" } },
+  );
+  return data;
 }
 
 export async function listDocumentTypes(): Promise<DocumentTypeInfo[]> {
@@ -179,22 +216,41 @@ export async function listDocumentTypes(): Promise<DocumentTypeInfo[]> {
   return data;
 }
 
-export async function listTemplates(): Promise<TemplateInfo[]> {
+export async function listTemplates(journalCode?: string): Promise<TemplateInfo[]> {
   const { data } = await apiClient.get<TemplateInfo[]>(
     "/document-generator/templates",
-    // Templates change out of band (an upload from another tab), so this
-    // listing must never be served from a stale cache.
-    { headers: { "Cache-Control": "no-store" } },
+    {
+      params: journalCode ? { journal_code: journalCode } : undefined,
+      headers: { "Cache-Control": "no-store" },
+    },
   );
   return data;
 }
 
-/**
- * Store or replace a master template.
- *
- * `replace` selects the endpoint; both archive whatever was in the slot, so the
- * distinction is about intent, not behaviour.
- */
+export async function inspectPapers(
+  files: File[],
+  journalCode?: string,
+  acceptanceDate?: string,
+  prefix?: string,
+  suffix?: string,
+): Promise<PaperInspectionResult[]> {
+  const form = new FormData();
+  files.forEach((f) => form.append("files", f));
+  const { data } = await apiClient.post<PaperInspectionResult[]>(
+    "/document-generator/inspect-papers",
+    form,
+    {
+      params: {
+        journal_code: journalCode,
+        acceptance_date: acceptanceDate,
+        prefix,
+        suffix,
+      },
+    },
+  );
+  return data;
+}
+
 export async function uploadTemplate(
   documentType: string,
   file: File,
@@ -211,39 +267,43 @@ export async function uploadTemplate(
   return data;
 }
 
-/**
- * The stored template broken into selectable text, plus a first guess at each
- * field. This is what lets an ordinary Word file become a template without the
- * operator ever typing a `{{PLACEHOLDER}}`.
- */
 export async function inspectTemplate(
   documentType: string,
+  journalCode?: string,
 ): Promise<TemplateInspection> {
   const { data } = await apiClient.get<TemplateInspection>(
     `/document-generator/templates/${documentType}/inspect`,
-    { headers: { "Cache-Control": "no-store" } },
+    {
+      params: journalCode ? { journal_code: journalCode } : undefined,
+      headers: { "Cache-Control": "no-store" },
+    },
   );
   return data;
 }
 
 export async function getTemplateMapping(
   documentType: string,
+  journalCode?: string,
 ): Promise<TemplateMapping> {
   const { data } = await apiClient.get<TemplateMapping>(
     `/document-generator/templates/${documentType}/mapping`,
-    { headers: { "Cache-Control": "no-store" } },
+    {
+      params: journalCode ? { journal_code: journalCode } : undefined,
+      headers: { "Cache-Control": "no-store" },
+    },
   );
   return data;
 }
 
-/** Confirm the wizard's mapping. Saved permanently and reused for every batch. */
 export async function saveTemplateMapping(
   documentType: string,
   mappings: Array<{ field: string; text: string }>,
+  journalCode?: string,
 ): Promise<TemplateMapping> {
   const { data } = await apiClient.put<TemplateMapping>(
     `/document-generator/templates/${documentType}/mapping`,
     { mappings },
+    { params: journalCode ? { journal_code: journalCode } : undefined },
   );
   return data;
 }
@@ -262,6 +322,9 @@ function batchForm(files: File[], values: BatchFormValues): FormData {
   if (values.journal) form.append("journal", values.journal);
   if (values.generatePdf !== undefined) {
     form.append("generate_pdf", String(values.generatePdf));
+  }
+  if (values.paperOverrides && values.paperOverrides.length > 0) {
+    form.append("paper_overrides", JSON.stringify(values.paperOverrides));
   }
   return form;
 }

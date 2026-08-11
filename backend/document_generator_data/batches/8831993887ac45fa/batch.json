@@ -1,0 +1,134 @@
+{
+  "batch_id": "8831993887ac45fa",
+  "created_at": "2026-08-10T09:06:46+00:00",
+  "paper_count": 1,
+  "document_count": 3,
+  "documents": [
+    {
+      "paper": {
+        "index": 1,
+        "source_filename": "Psychological factors influencing- Falah Dhuwaihi Al-Swairi Al-Ajmi.docx",
+        "title": "Psychological factors influencing administrative decision-making among educational leaders: A cognitive psychology perspective",
+        "authors": [
+          "Falah Dhuwaihi Al-Swairi Al-Ajmi"
+        ],
+        "reference_number": "JSAP-451315315307222601A",
+        "warnings": []
+      },
+      "folder": "Paper 1",
+      "artifacts": [
+        {
+          "document_type": "acceptance",
+          "format": "docx",
+          "filename": "Acceptance.docx",
+          "relative_path": "Paper 1/Acceptance.docx",
+          "size_bytes": 403531,
+          "download_url": "/document-generator/download/8831993887ac45fa?path=Paper 1/Acceptance.docx"
+        },
+        {
+          "document_type": "acceptance",
+          "format": "pdf",
+          "filename": "Acceptance.pdf",
+          "relative_path": "Paper 1/Acceptance.pdf",
+          "size_bytes": 593798,
+          "download_url": "/document-generator/download/8831993887ac45fa?path=Paper 1/Acceptance.pdf"
+        },
+        {
+          "document_type": "invoice",
+          "format": "docx",
+          "filename": "Invoice.docx",
+          "relative_path": "Paper 1/Invoice.docx",
+          "size_bytes": 237554,
+          "download_url": "/document-generator/download/8831993887ac45fa?path=Paper 1/Invoice.docx"
+        }
+      ],
+      "errors": [
+        "Invoice Template: the generated document did not match its template (Not filled in correctly: ACCEPTANCE_DATE.). No PDF was produced for it."
+      ],
+      "validations": [
+        {
+          "document_type": "acceptance",
+          "document": "Acceptance.docx",
+          "valid": true,
+          "checks": {
+            "File written": true,
+            "Package integrity": true,
+            "Required parts present": true,
+            "XML consistency": true,
+            "Content types declared": true,
+            "Relationships intact": true,
+            "Package layout preserved": true,
+            "Formatting preserved": true,
+            "Paragraph count preserved": true,
+            "Tables preserved": true,
+            "Table rows preserved": true,
+            "Table cells preserved": true,
+            "Text boxes preserved": true,
+            "Run formatting preserved": true,
+            "Images and shapes preserved": true,
+            "Hyperlinks preserved": true,
+            "Headers preserved": true,
+            "Footers preserved": true,
+            "Dynamic fields replaced correctly": true
+          },
+          "errors": [],
+          "fields_replaced": [
+            "ACCEPTANCE_DATE",
+            "AUTHORS",
+            "DEADLINE",
+            "FIRST_AUTHOR",
+            "REFERENCE_NUMBER",
+            "TITLE"
+          ],
+          "fields_missing": []
+        },
+        {
+          "document_type": "invoice",
+          "document": "Invoice.docx",
+          "valid": false,
+          "checks": {
+            "File written": true,
+            "Package integrity": true,
+            "Required parts present": true,
+            "XML consistency": true,
+            "Content types declared": true,
+            "Relationships intact": true,
+            "Package layout preserved": true,
+            "Formatting preserved": true,
+            "Paragraph count preserved": true,
+            "Tables preserved": true,
+            "Table rows preserved": true,
+            "Table cells preserved": true,
+            "Text boxes preserved": true,
+            "Run formatting preserved": true,
+            "Images and shapes preserved": true,
+            "Hyperlinks preserved": true,
+            "Headers preserved": true,
+            "Footers preserved": true,
+            "Dynamic fields replaced correctly": false
+          },
+          "errors": [
+            "Not filled in correctly: ACCEPTANCE_DATE."
+          ],
+          "fields_replaced": [
+            "AUTHORS",
+            "DEADLINE",
+            "FIRST_AUTHOR",
+            "REFERENCE_NUMBER",
+            "TITLE"
+          ],
+          "fields_missing": [
+            "ACCEPTANCE_DATE"
+          ]
+        }
+      ]
+    }
+  ],
+  "zip_available": true,
+  "zip_download_url": "/document-generator/download/8831993887ac45fa?path=Output.zip",
+  "pdf_backend": "Microsoft Word",
+  "warnings": [
+    "1 generated document(s) did not match their template and were not converted to PDF. Their validation reports list what differed."
+  ],
+  "validation_failures": 1
+}

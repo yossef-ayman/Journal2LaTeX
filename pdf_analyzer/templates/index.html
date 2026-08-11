@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek PDF Analyzer & XML Parser</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-icon"></span>
+            PDF Analyzer
+        </div>
+    </header>
+
+    <main>
+        <!-- SCREEN 1: UPLOAD -->
+        <section id="upload-screen" class="screen active">
+            <div id="drop-zone" class="glass-panel upload-container">
+                <div class="upload-icon">📄</div>
+                <h2>Analyze PDF & Export XML</h2>
+                <p>Drag & drop your PDF file here, or click to browse</p>
+                <input type="file" id="file-input" accept="application/pdf" style="display: none;">
+                <button class="btn" onclick="document.getElementById('file-input').click()">Choose PDF File</button>
+            </div>
+        </section>
+
+        <!-- SCREEN 2: DASHBOARD -->
+        <section id="dashboard-screen" class="screen">
+            <div class="dashboard-actions">
+                <button class="back-btn" onclick="showUploadScreen()">← Upload New PDF</button>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Article Title & Publisher Header -->
+                <div class="glass-panel article-header">
+                    <div id="article-title" class="article-title">Loading Article Title...</div>
+                    <div id="article-journal" class="article-journal">Loading Journal Name...</div>
+                </div>
+
+                <!-- KPI Cards -->
+                <div class="kpi-container">
+                    <div class="glass-panel kpi-card">
+                        <div id="kpi-pages" class="kpi-num">-</div>
+                        <div class="kpi-label">Pages</div>
+                    </div>
+                    <div class="glass-panel kpi-card">
+                        <div id="kpi-authors" class="kpi-num">-</div>
+                        <div class="kpi-label">Authors</div>
+                    </div>
+                    <div class="glass-panel kpi-card">
+                        <div id="kpi-headings" class="kpi-num">-</div>
+                        <div class="kpi-label">Headings</div>
+                    </div>
+                    <div class="glass-panel kpi-card">
+                        <div id="kpi-references" class="kpi-num">-</div>
+                        <div class="kpi-label">References</div>
+                    </div>
+                </div>
+
+                <!-- Left Panel: Lists (Abstract, Keywords, Authors, Headings, References) -->
+                <div class="left-panel">
+                    <div id="abstract-section" class="glass-panel dashboard-section" style="display: none;">
+                        <h3 class="section-title">📝 Abstract</h3>
+                        <p id="abstract-text" class="abstract-body" style="font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);"></p>
+                    </div>
+
+                    <div id="keywords-section" class="glass-panel dashboard-section" style="display: none;">
+                        <h3 class="section-title">🏷️ Keywords</h3>
+                        <div id="keywords-container" class="keywords-list" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;"></div>
+                    </div>
+
+                    <div class="glass-panel dashboard-section">
+                        <h3 class="section-title">👥 Authors & Affiliations</h3>
+                        <div id="authors-list" class="authors-grid">
+                            <!-- Populated dynamically -->
+                        </div>
+                        <div id="affiliations-list" class="affiliations-list" style="margin-top: 0.75rem; font-size: 0.82rem; line-height: 1.4; color: var(--text-secondary);"></div>
+                    </div>
+
+                    <div class="glass-panel dashboard-section">
+                        <h3 class="section-title">📂 Document Outline (Headings)</h3>
+                        <div id="headings-outline" class="headings-list">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <div class="glass-panel dashboard-section">
+                        <h3 class="section-title">📚 References List</h3>
+                        <div id="references-list" class="headings-list">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Tabs for XML and Analysis -->
+                <div class="right-panel">
+                    <div class="glass-panel dashboard-section xml-viewer-card">
+                        <div class="tab-header">
+                            <button id="tab-xml-btn" class="tab-btn active" onclick="switchRightTab('xml')">⚙️ XML Output</button>
+                            <button id="tab-analysis-btn" class="tab-btn" onclick="switchRightTab('analysis')">🔬 Element Analysis</button>
+                        </div>
+                        
+                        <!-- XML Tab Content -->
+                        <div id="tab-xml-content" class="tab-content active">
+                            <div class="xml-actions">
+                                <button class="btn-icon" onclick="copyXml()">📋 Copy XML</button>
+                                <button class="btn-icon" onclick="downloadXml()">📥 Download XML</button>
+                            </div>
+                            <pre id="xml-code" class="code-container"><code>Loading XML representation...</code></pre>
+                        </div>
+                        
+                        <!-- Analysis Tab Content -->
+                        <div id="tab-analysis-content" class="tab-content">
+                            <div id="analysis-placeholder" class="analysis-placeholder">
+                                💡 Click on any Author or Heading on the left to see detailed metrics and structure analysis.
+                            </div>
+                            <div id="analysis-details" class="analysis-details" style="display: none;">
+                                <h4 id="analysis-type-title" class="analysis-type-title">Item Analysis</h4>
+                                <div class="analysis-card">
+                                    <div class="analysis-row">
+                                        <span class="analysis-key">Selected Text:</span>
+                                        <span id="analysis-text" class="analysis-val-text">...</span>
+                                    </div>
+                                    <div class="analysis-row">
+                                        <span class="analysis-key">Type / Category:</span>
+                                        <span id="analysis-type" class="analysis-val">...</span>
+                                    </div>
+                                    <div class="analysis-row">
+                                        <span class="analysis-key">Character Count:</span>
+                                        <span id="analysis-chars" class="analysis-val">...</span>
+                                    </div>
+                                    <div class="analysis-row">
+                                        <span class="analysis-key">Word Count:</span>
+                                        <span id="analysis-words" class="analysis-val">...</span>
+                                    </div>
+                                    <div id="analysis-page-row" class="analysis-row">
+                                        <span class="analysis-key">Found on Page:</span>
+                                        <span id="analysis-page" class="analysis-val">...</span>
+                                    </div>
+                                    <div id="analysis-extra-row" class="analysis-row">
+                                        <span class="analysis-key">Structural Analysis:</span>
+                                        <span id="analysis-notes" class="analysis-val-notes">...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- LOADING OVERLAY -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text">PARSING PDF DOCUMENT...</div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

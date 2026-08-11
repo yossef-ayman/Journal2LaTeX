@@ -90,4 +90,17 @@ except Exception as exc:  # pragma: no cover - the converter must start regardle
     logger.warning("Document Engine module not loaded: %s", exc)
 else:
     app.include_router(document_engine_router)
-    logger.info("Document Engine module mounted at /document-engine")
+# Optional feature module: PDF Analyzer (PyMuPDF standalone analyzer).
+try:
+    import sys
+    from pathlib import Path
+    pdf_analyzer_path = Path(__file__).resolve().parents[2] / "pdf_analyzer"
+    if str(pdf_analyzer_path) not in sys.path:
+        sys.path.insert(0, str(pdf_analyzer_path))
+    from main import app as pdf_analyzer_app
+except Exception as exc:
+    logger.warning("PDF Analyzer module not loaded: %s", exc)
+else:
+    app.mount("/pdf-analyzer-standalone", pdf_analyzer_app)
+    logger.info("PDF Analyzer module mounted at /pdf-analyzer-standalone")
+

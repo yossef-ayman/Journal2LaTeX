@@ -1,0 +1,87 @@
+[2026-08-09 11:28:01,230] [INFO] [latex_compiler.py:337]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\2f6dc7a1-a573-44e0-95ca-d8063bd5383f\rendered\main.tex
+[2026-08-09 11:28:01,284] [INFO] [latex_compiler.py:364]: Applied template compatibility layer to main.tex
+[2026-08-09 11:28:01,287] [INFO] [latex_compiler.py:126]: Rendered working directory tree before compilation:
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.aux
+  main.log
+  main.out
+  main.pdf
+  main.synctex.gz
+  main.tex
+  media/
+    image1.jpeg
+    image10.png
+    image11.png
+    image2.jpeg
+    image2.png
+    image3.png
+    image4.png
+    image5.jpeg
+    image6.png
+    image7.png
+    image8.png
+    image9.png
+  NSP1.cls
+  psfig.sty
+  template.json
+[2026-08-09 11:28:01,290] [INFO] [latex_compiler.py:132]: Template resource manifest (24 files):
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.aux                                 generated document / build artefact
+  main.log                                 generated document / build artefact
+  main.out                                 generated document / build artefact
+  main.pdf                                 generated document / build artefact
+  main.synctex.gz                          generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image10.png                        renderer-generated media
+  media\image11.png                        renderer-generated media
+  media\image2.jpeg                        renderer-generated media
+  media\image2.png                         renderer-generated media
+  media\image3.png                         renderer-generated media
+  media\image4.png                         renderer-generated media
+  media\image5.jpeg                        renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.png                         renderer-generated media
+  media\image9.png                         renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  psfig.sty                                template resource (package / style)
+  template.json                            template metadata
+[2026-08-09 11:28:01,805] [INFO] [latex_compiler.py:154]: Dependency resolution (31 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphics
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      longtable
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      calc
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      cuted
+  [SYSTEM ] usepackage      newunicodechar
+  [SYSTEM ] usepackage      type1cm
+  [SYSTEM ] usepackage      fix-cm
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+  [LOCAL  ] includegraphics media/image8.png
+  [LOCAL  ] includegraphics media/image9.png
+  [LOCAL  ] includegraphics media/image10.png
+  [LOCAL  ] includegraphics media/image11.png
+[2026-08-09 11:28:04,402] [INFO] [latex_compiler.py:395]: Using latexmk compiler.
+[2026-08-09 11:28:09,501] [ERROR] [latex_compiler.py:450]: LaTeX compilation failed. PDF not generated. Check raw logs for details.

@@ -1,0 +1,116 @@
+{
+  "batch_id": "21e76ff09bf24443",
+  "created_at": "2026-08-11T06:29:34+00:00",
+  "paper_count": 1,
+  "document_count": 2,
+  "documents": [
+    {
+      "paper": {
+        "index": 1,
+        "source_filename": "normal_paper.docx",
+        "title": "MY CUSTOM TITLE FOR JSAPL",
+        "authors": [
+          "User Author 1",
+          "User Author 2"
+        ],
+        "reference_number": "JSAPL08112601A_CUSTOM",
+        "warnings": []
+      },
+      "folder": "Paper 1",
+      "artifacts": [
+        {
+          "document_type": "acceptance",
+          "format": "docx",
+          "filename": "Acceptance.docx",
+          "relative_path": "Paper 1/Acceptance.docx",
+          "size_bytes": 86795,
+          "download_url": "/document-generator/download/21e76ff09bf24443?path=Paper 1/Acceptance.docx"
+        },
+        {
+          "document_type": "invoice",
+          "format": "docx",
+          "filename": "Invoice.docx",
+          "relative_path": "Paper 1/Invoice.docx",
+          "size_bytes": 60194,
+          "download_url": "/document-generator/download/21e76ff09bf24443?path=Paper 1/Invoice.docx"
+        }
+      ],
+      "errors": [],
+      "validations": [
+        {
+          "document_type": "acceptance",
+          "document": "Acceptance.docx",
+          "valid": true,
+          "checks": {
+            "File written": true,
+            "Package integrity": true,
+            "Required parts present": true,
+            "XML consistency": true,
+            "Content types declared": true,
+            "Relationships intact": true,
+            "Package layout preserved": true,
+            "Formatting preserved": true,
+            "Paragraph count preserved": true,
+            "Tables preserved": true,
+            "Table rows preserved": true,
+            "Table cells preserved": true,
+            "Text boxes preserved": true,
+            "Run formatting preserved": true,
+            "Images and shapes preserved": true,
+            "Hyperlinks preserved": true,
+            "Headers preserved": true,
+            "Footers preserved": true,
+            "Dynamic fields replaced correctly": true
+          },
+          "errors": [],
+          "fields_replaced": [
+            "ACCEPTANCE_DATE",
+            "AUTHORS",
+            "REFERENCE_NUMBER",
+            "TITLE"
+          ],
+          "fields_missing": []
+        },
+        {
+          "document_type": "invoice",
+          "document": "Invoice.docx",
+          "valid": true,
+          "checks": {
+            "File written": true,
+            "Package integrity": true,
+            "Required parts present": true,
+            "XML consistency": true,
+            "Content types declared": true,
+            "Relationships intact": true,
+            "Package layout preserved": true,
+            "Formatting preserved": true,
+            "Paragraph count preserved": true,
+            "Tables preserved": true,
+            "Table rows preserved": true,
+            "Table cells preserved": true,
+            "Text boxes preserved": true,
+            "Run formatting preserved": true,
+            "Images and shapes preserved": true,
+            "Hyperlinks preserved": true,
+            "Headers preserved": true,
+            "Footers preserved": true,
+            "Dynamic fields replaced correctly": true
+          },
+          "errors": [],
+          "fields_replaced": [
+            "AUTHORS",
+            "DEADLINE",
+            "REFERENCE_NUMBER",
+            "TITLE"
+          ],
+          "fields_missing": []
+        }
+      ]
+    }
+  ],
+  "zip_available": true,
+  "zip_download_url": "/document-generator/download/21e76ff09bf24443?path=Output.zip",
+  "pdf_backend": null,
+  "warnings": [],
+  "validation_failures": 0
+}

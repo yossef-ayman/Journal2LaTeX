@@ -55,70 +55,114 @@ class TemplateStore:
     # Paths
     # ------------------------------------------------------------------ #
 
-    def template_path(self, key: str) -> Path:
-        """Active slot path for a document type."""
+    def template_path(self, key: str, journal_code: Optional[str] = None) -> Path:
+        """Active slot path for a document type, optionally for a specific journal."""
         if not document_types.is_known(key):
             raise TemplateStoreError(f"Unknown document type: {key}")
-        return self.templates_dir / f"{key}.docx"
 
-    def _metadata_path(self, key: str) -> Path:
+        if journal_code:
+            journal_dir = self.templates_dir / journal_code
+            if journal_dir.is_dir():
+                target_prefix = "acceptance" if key == "acceptance" else "invoice"
+                for f in journal_dir.glob("*.docx"):
+                    if not f.name.startswith("~$") and target_prefix in f.name.lower():
+                        return f
+
+        default_path = self.templates_dir / f"{key}.docx"
+        if not default_path.is_file() and journal_code:
+            journal_dir = self.templates_dir / journal_code
+            if journal_dir.is_dir():
+                target_prefix = "acceptance" if key == "acceptance" else "invoice"
+                for f in journal_dir.glob("*.docx"):
+                    if not f.name.startswith("~$") and target_prefix in f.name.lower():
+                        return f
+        return default_path
+
+    def _metadata_path(self, key: str, journal_code: Optional[str] = None) -> Path:
+        if journal_code and (self.templates_dir / journal_code).is_dir():
+            return self.templates_dir / journal_code / f"{key}.json"
         return self.templates_dir / f"{key}.json"
 
-    def mapping_path(self, key: str) -> Path:
-        """Where the saved field mapping for a slot lives.
-
-        Stored beside the template rather than inside it: the mapping is the
-        operator's work, and it must survive both a code deployment and a
-        template replacement, so it is never written into the .docx itself.
-        """
+    def mapping_path(self, key: str, journal_code: Optional[str] = None) -> Path:
+        """Where the saved field mapping for a slot lives."""
         if not document_types.is_known(key):
             raise TemplateStoreError(f"Unknown document type: {key}")
+        if journal_code and (self.templates_dir / journal_code).is_dir():
+            return self.templates_dir / journal_code / f"{key}.mapping.json"
         return self.templates_dir / f"{key}.mapping.json"
 
-    def has_template(self, key: str) -> bool:
-        return self.template_path(key).is_file()
+    def has_template(self, key: str, journal_code: Optional[str] = None) -> bool:
+        return self.template_path(key, journal_code).is_file()
 
     # ------------------------------------------------------------------ #
     # Reading
     # ------------------------------------------------------------------ #
 
-    def describe(self, key: str) -> TemplateInfo:
+    def list_journals(self) -> List[Dict[str, Any]]:
+        """Discover all journal folders in storage."""
+        journals: List[Dict[str, Any]] = []
+        if not self.templates_dir.exists():
+            return journals
+
+        for child in sorted(self.templates_dir.iterdir()):
+            if child.is_dir() and not child.name.startswith((".", "_")):
+                acc_path = self.template_path("acceptance", child.name)
+                inv_path = self.template_path("invoice", child.name)
+                
+                # Derive human-readable name from filename if available
+                name = child.name
+                if acc_path.is_file():
+                    stem = acc_path.stem
+                    if stem.startswith("Acceptance_"):
+                        name = stem[len("Acceptance_"):].replace("_", " ").strip()
+                elif inv_path.is_file():
+                    stem = inv_path.stem
+                    if stem.startswith("Invoice_"):
+                        name = stem[len("Invoice_"):].replace("_", " ").strip()
+
+                journals.append({
+                    "code": child.name,
+                    "name": name or child.name,
+                    "has_acceptance": acc_path.is_file(),
+                    "has_invoice": inv_path.is_file(),
+                    "acceptance_file": acc_path.name if acc_path.is_file() else None,
+                    "invoice_file": inv_path.name if inv_path.is_file() else None,
+                })
+        return journals
+
+    def describe(self, key: str, journal_code: Optional[str] = None) -> TemplateInfo:
         """Current state of one slot, including the placeholders it uses."""
         info = document_types.get_document_type(key)
-        path = self.template_path(key)
+        path = self.template_path(key, journal_code)
         described = TemplateInfo(key=key, label=info.label, uploaded=path.is_file())
         if not described.uploaded:
             return described
 
         described.size_bytes = path.stat().st_size
-        meta = self._read_metadata(key)
-        described.original_filename = meta.get("original_filename")
+        meta = self._read_metadata(key, journal_code)
+        described.original_filename = meta.get("original_filename", path.name)
         described.uploaded_at = meta.get("uploaded_at")
         described.archived_versions = len(list(self.archive_dir.glob(f"{key}__*.docx")))
         try:
             described.placeholders = discover_placeholders(path)
         except Exception as exc:
-            # Never let placeholder introspection break the listing: the
-            # template is still usable, the UI just cannot preview its fields.
             logger.warning("Could not read placeholders from %s: %s", path, exc)
 
-        mapping = self.load_mapping(key)
+        mapping = self.load_mapping(key, journal_code)
         if mapping is not None:
             described.mapped = bool(mapping.mappings)
             described.mapped_fields = [m.field for m in mapping.mappings]
             described.stale_fields = list(mapping.stale_fields)
-        # A document with neither a mapping nor a placeholder would be copied out
-        # unchanged for every paper, so the UI prompts for the wizard instead.
         described.needs_mapping = not described.mapped and not described.placeholders
         return described
 
-    def describe_all(self) -> List[TemplateInfo]:
-        return [self.describe(t.key) for t in document_types.list_document_types()]
+    def describe_all(self, journal_code: Optional[str] = None) -> List[TemplateInfo]:
+        return [self.describe(t.key, journal_code) for t in document_types.list_document_types()]
 
-    def available_types(self) -> List[str]:
+    def available_types(self, journal_code: Optional[str] = None) -> List[str]:
         """Document types that currently have a usable template."""
         return [
-            t.key for t in document_types.list_document_types() if self.has_template(t.key)
+            t.key for t in document_types.list_document_types() if self.has_template(t.key, journal_code)
         ]
 
     def _read_metadata(self, key: str) -> Dict[str, str]:
@@ -215,35 +259,64 @@ class TemplateStore:
     # Field mappings
     # ------------------------------------------------------------------ #
 
-    def load_mapping(self, key: str) -> Optional[TemplateMapping]:
-        """The saved mapping for a slot, or ``None`` if it has never been mapped.
+    def load_mapping(self, key: str, journal_code: Optional[str] = None) -> Optional[TemplateMapping]:
+        """The saved mapping for a slot, or an auto-detected one if unmapped."""
+        path = self.mapping_path(key, journal_code)
+        if path.is_file():
+            try:
+                return TemplateMapping.model_validate_json(path.read_text(encoding="utf-8"))
+            except (OSError, ValueError) as exc:
+                logger.warning("Could not read the saved mapping for '%s': %s", key, exc)
+        return self._auto_detect_mapping(key, journal_code)
 
-        A corrupt mapping file is reported and ignored rather than raised: the
-        operator can re-run the wizard, and a batch that would otherwise have
-        produced nothing still produces documents.
-        """
-        path = self.mapping_path(key)
-        if not path.is_file():
+    def _auto_detect_mapping(self, key: str, journal_code: Optional[str] = None) -> Optional[TemplateMapping]:
+        """Auto-detect field mappings for templates using ## placeholders."""
+        tmpl_path = self.template_path(key, journal_code)
+        if not tmpl_path.is_file():
             return None
         try:
-            return TemplateMapping.model_validate_json(path.read_text(encoding="utf-8"))
-        except (OSError, ValueError) as exc:
-            logger.warning("Could not read the saved mapping for '%s': %s", key, exc)
-            return None
+            from document_generator.services import document_inspector
+            insp = document_inspector.inspect(tmpl_path, key)
+            mappings: List[FieldMapping] = []
+            seen_fields: set[str] = set()
+            for seg in insp.segments:
+                txt = seg.text
+                if "##" in txt:
+                    lower = txt.lower()
+                    field = None
+                    if "title" in lower:
+                        field = "TITLE"
+                    elif "author" in lower:
+                        field = "AUTHORS"
+                    elif "ref" in lower or "invoice no" in lower:
+                        field = "REFERENCE_NUMBER"
+                    elif "accepted" in lower or "date" in lower:
+                        field = "ACCEPTANCE_DATE"
+                    elif "deadline" in lower:
+                        field = "DEADLINE"
+                    elif "discount" in lower:
+                        field = "DISCOUNT"
+                    elif "total charge" in lower or "fees" in lower:
+                        field = "TOTAL_CHARGE"
 
-    def save_mapping(self, key: str, mappings: List[FieldMapping]) -> TemplateMapping:
-        """Store the wizard's confirmed mapping permanently.
+                    if field and field not in seen_fields:
+                        seen_fields.add(field)
+                        mappings.append(FieldMapping(field=field, text=txt, occurrences=1))
+            if mappings:
+                return TemplateMapping(document_type=key, mappings=mappings)
+        except Exception as exc:
+            logger.warning("Could not auto-detect mappings for %s: %s", key, exc)
+        return None
 
-        Each literal is counted against the stored template as it is saved, so a
-        mapping that points at text the template does not contain is caught here
-        -- at confirmation time, where it can be corrected -- rather than in the
-        middle of a batch.
-        """
-        if not self.has_template(key):
+    def save_mapping(
+        self, key: str, mappings: List[FieldMapping], journal_code: Optional[str] = None
+    ) -> TemplateMapping:
+        """Store the wizard's confirmed mapping permanently."""
+        if not self.has_template(key, journal_code):
             raise TemplateStoreError(
                 "Upload the template before mapping its fields."
             )
-        template = self.template_path(key)
+        template = self.template_path(key, journal_code)
 
         cleaned: List[FieldMapping] = []
         stale: List[str] = []
@@ -279,7 +352,7 @@ class TemplateStore:
             mappings=cleaned,
             updated_at=datetime.now(timezone.utc).isoformat(timespec="seconds"),
         )
-        self._write_mapping(key, mapping_record)
+        self._write_mapping(key, mapping_record, journal_code)
         logger.info(
             "Saved field mapping for '%s': %s",
             key,
@@ -287,8 +360,8 @@ class TemplateStore:
         )
         return mapping_record
 
-    def _write_mapping(self, key: str, mapping: TemplateMapping) -> None:
-        path = self.mapping_path(key)
+    def _write_mapping(self, key: str, mapping: TemplateMapping, journal_code: Optional[str] = None) -> None:
+        path = self.mapping_path(key, journal_code)
         tmp = path.with_suffix(".json.tmp")
         try:
             tmp.write_text(mapping.model_dump_json(indent=2), encoding="utf-8")
@@ -297,19 +370,12 @@ class TemplateStore:
             tmp.unlink(missing_ok=True)
             raise TemplateStoreError(f"Could not store the mapping: {exc}") from exc
 
-    def revalidate_mapping(self, key: str) -> Optional[TemplateMapping]:
-        """Re-check a saved mapping against the template currently in the slot.
-
-        Called after a replacement upload.  A newer version of the same letter
-        usually still contains the same title and reference text, so the mapping
-        keeps working and the operator is not asked to redo the wizard.  Where a
-        literal has genuinely gone, the field is marked stale so the UI can ask
-        for just that one to be re-mapped.
-        """
-        mapping = self.load_mapping(key)
+    def revalidate_mapping(self, key: str, journal_code: Optional[str] = None) -> Optional[TemplateMapping]:
+        """Re-check a saved mapping against the template currently in the slot."""
+        mapping = self.load_mapping(key, journal_code)
         if mapping is None:
             return None
-        template = self.template_path(key)
+        template = self.template_path(key, journal_code)
         stale: List[str] = []
         for entry in mapping.mappings:
             entry.occurrences = count_occurrences(template, entry.text)
@@ -317,7 +383,7 @@ class TemplateStore:
                 stale.append(entry.field)
         mapping.stale_fields = stale
         try:
-            self._write_mapping(key, mapping)
+            self._write_mapping(key, mapping, journal_code)
         except TemplateStoreError as exc:
             logger.warning("Could not update the mapping for '%s': %s", key, exc)
         if stale:

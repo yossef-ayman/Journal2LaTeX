@@ -59,6 +59,10 @@ PAPERS = ["normal_paper", "the_role", "with_author_photo", "with_charts"]
 
 def _arguments(func, paper_name: str, tmp: Path):
     kwargs = {}
+    if paper_name:
+        path = TESTS / f"{paper_name}.docx"
+        if not path.exists():
+            raise _Skip(f"Paper {paper_name}.docx is not present")
     for name in func.__code__.co_varnames[: func.__code__.co_argcount]:
         if name == "paper":
             kwargs[name] = TESTS / f"{paper_name}.docx"

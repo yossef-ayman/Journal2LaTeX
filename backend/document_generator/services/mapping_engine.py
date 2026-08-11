@@ -81,7 +81,12 @@ def _prepared(
         if field not in folded:
             logger.warning("Mapped field '%s' has no value; leaving the template text.", field)
             continue
-        prepared.append((literal, folded[field] or ""))
+        val = folded[field] or ""
+        if "##" in literal:
+            replacement = literal.replace("##", val)
+        else:
+            replacement = val
+        prepared.append((literal, replacement))
     prepared.sort(key=lambda pair: len(pair[0]), reverse=True)
     return prepared
 

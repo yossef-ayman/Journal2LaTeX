@@ -4,11 +4,9 @@
  * A self-contained feature alongside the converter: master templates are stored
  * once, then a batch of papers is turned into an acceptance letter and an invoice
  * each, in DOCX and PDF, with no manual editing.
- *
- * Nothing here touches the converter's pages, hooks or services.
  */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { PageContainer } from "@/components/PageContainer";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -25,6 +23,7 @@ import {
   getSettings,
   inspectTemplate,
   listDocumentTypes,
+  listJournals,
   listTemplates,
   saveTemplateMapping,
   updateSettings,
@@ -54,10 +53,22 @@ export default function DocumentGeneratorPage() {
   // Which template the mapping wizard is open for, if any.
   const [mappingType, setMappingType] = useState<string | null>(null);
   const [mappingError, setMappingError] = useState<string | null>(null);
+  const [selectedJournal, setSelectedJournal] = useState<string>("AMISL");
+
+  const journals = useQuery({
+    queryKey: ["document-generator", "journals"],
+    queryFn: listJournals,
+  });
+
+  useEffect(() => {
+    if (journals.data && journals.data.length > 0 && !selectedJournal) {
+      setSelectedJournal(journals.data[0].code);
+    }
+  }, [journals.data, selectedJournal]);
 
   const templates = useQuery({
-    queryKey: ["document-generator", "templates"],
-    queryFn: listTemplates,
+    queryKey: ["document-generator", "templates", selectedJournal],
+    queryFn: () => listTemplates(selectedJournal),
   });
   const documentTypes = useQuery({
     queryKey: ["document-generator", "document-types"],
@@ -89,9 +100,6 @@ export default function DocumentGeneratorPage() {
       queryClient.invalidateQueries({
         queryKey: ["document-generator", "inspect", stored.key],
       });
-      // A first upload is an ordinary Word file with real values in it, so the
-      // wizard opens straight away: mapping is the step that turns it into a
-      // template, and doing it now means it is never asked for again.
       if (stored.needs_mapping || stored.stale_fields.length > 0) {
         setMappingError(null);
         setMappingType(stored.key);
@@ -130,8 +138,8 @@ export default function DocumentGeneratorPage() {
   });
 
   const inspection = useQuery({
-    queryKey: ["document-generator", "inspect", mappingType],
-    queryFn: () => inspectTemplate(mappingType as string),
+    queryKey: ["document-generator", "inspect", mappingType, selectedJournal],
+    queryFn: () => inspectTemplate(mappingType as string, selectedJournal),
     enabled: mappingType !== null,
     staleTime: 0,
   });
@@ -143,7 +151,7 @@ export default function DocumentGeneratorPage() {
     }: {
       documentType: string;
       mappings: Array<{ field: string; text: string }>;
-    }) => saveTemplateMapping(documentType, mappings),
+    }) => saveTemplateMapping(documentType, mappings, selectedJournal),
     onSuccess: (saved) => {
       setMappingError(null);
       setMappingType(null);
@@ -156,8 +164,6 @@ export default function DocumentGeneratorPage() {
       });
       queryClient.invalidateQueries({ queryKey: ["document-generator", "templates"] });
     },
-    // Shown inside the wizard rather than as a toast: the operator has to change
-    // a selection to fix it, and the dialog is where the selections are.
     onError: (error) =>
       setMappingError(errorMessage(error, "The mapping could not be saved.")),
   });
@@ -183,8 +189,6 @@ export default function DocumentGeneratorPage() {
   const readyCount = templateList.filter((t) => t.uploaded).length;
   const noTemplates = templates.isSuccess && readyCount === 0;
 
-  // The module is optional on the backend: if it is not mounted, say so plainly
-  // rather than leaving a page of broken panels.
   const moduleMissing =
     axios.isAxiosError(templates.error) && templates.error.response?.status === 404;
 
@@ -203,15 +207,39 @@ export default function DocumentGeneratorPage() {
         />
       ) : (
         <div className="space-y-8">
-          {/* Templates */}
+          {/* Batch generation */}
           <section className="space-y-3">
             <div className="space-y-1">
               <h2 className="text-lg font-semibold tracking-tight text-gray-900">
-                Templates
+                Batch Generation & Journal Selection
               </h2>
               <p className="text-sm text-gray-500">
-                Uploaded once and stored permanently. Replace a template only when
-                you have a newer version — the previous file is kept.
+                Choose one of your 20 journal profiles. Titles, authors, and reference numbers are derived automatically per paper.
+              </p>
+            </div>
+
+            <BatchForm
+              disabled={generateMutation.isPending}
+              running={generateMutation.isPending}
+              journals={journals.data ?? []}
+              selectedJournal={selectedJournal}
+              onSelectJournal={(code) => setSelectedJournal(code)}
+              defaultSuffix={settings.data?.reference_suffix ?? "A"}
+              pdfAvailable={settings.data?.pdf_backend_available ?? true}
+              onGenerate={(files, values) =>
+                generateMutation.mutate({ files, values })
+              }
+            />
+          </section>
+
+          {/* Active Journal Templates */}
+          <section className="space-y-3">
+            <div className="space-y-1">
+              <h2 className="text-lg font-semibold tracking-tight text-gray-900">
+                Templates for Journal: <span className="font-mono text-emerald-700">{selectedJournal}</span>
+              </h2>
+              <p className="text-sm text-gray-500">
+                Master templates active for the selected journal.
               </p>
             </div>
 
@@ -220,6 +248,12 @@ export default function DocumentGeneratorPage() {
                 <SkeletonCard />
                 <SkeletonCard />
               </div>
+            ) : noTemplates ? (
+              <EmptyState
+                icon={<FileSignature size={28} strokeWidth={1.5} />}
+                title="No templates found for this journal"
+                description={`Store an acceptance letter and invoice template in backend/document_generator_data/templates/${selectedJournal}/.`}
+              />
             ) : (
               <div className="grid gap-4 md:grid-cols-2">
                 {templateList.map((template) => (
@@ -242,38 +276,6 @@ export default function DocumentGeneratorPage() {
                   />
                 ))}
               </div>
-            )}
-          </section>
-
-          {/* Batch generation */}
-          <section className="space-y-3">
-            <div className="space-y-1">
-              <h2 className="text-lg font-semibold tracking-tight text-gray-900">
-                Batch Generation
-              </h2>
-              <p className="text-sm text-gray-500">
-                Titles and authors are read from each paper automatically. Reference
-                numbers follow the acceptance date and the upload order.
-              </p>
-            </div>
-
-            {noTemplates ? (
-              <EmptyState
-                icon={<FileSignature size={28} strokeWidth={1.5} />}
-                title="Upload your templates first"
-                description="Store an acceptance letter and an invoice template above, then upload the papers to generate from."
-              />
-            ) : (
-              <BatchForm
-                disabled={generateMutation.isPending}
-                running={generateMutation.isPending}
-                defaultSuffix={settings.data?.reference_suffix ?? "A"}
-                defaultJournalCode={settings.data?.journal_code ?? ""}
-                pdfAvailable={settings.data?.pdf_backend_available ?? true}
-                onGenerate={(files, values) =>
-                  generateMutation.mutate({ files, values })
-                }
-              />
             )}
           </section>
 

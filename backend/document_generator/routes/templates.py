@@ -9,9 +9,8 @@ intent explicit in logs and in the UI.
 from __future__ import annotations
 
 import logging
-from typing import List
-
-from fastapi import APIRouter, File, HTTPException, UploadFile, status
+from typing import Any, Dict, List, Optional
+from fastapi import APIRouter, File, HTTPException, Query, UploadFile, status
 
 from document_generator.models.schemas import (
     DocumentTypeInfo,
@@ -21,7 +20,7 @@ from document_generator.models.schemas import (
     TemplateMappingUpdate,
 )
 from document_generator.routes.uploads import require_docx, staged_uploads
-from document_generator.services import document_inspector, document_types
+from document_generator.services import document_inspector, document_types, metadata_extractor, reference_numbers
 from document_generator.services.document_inspector import DocumentInspectorError
 from document_generator.services.template_store import TemplateStore, TemplateStoreError
 
@@ -34,6 +33,12 @@ def _store() -> TemplateStore:
     return TemplateStore()
 
 
+@router.get("/journals")
+async def list_journals() -> List[Dict[str, Any]]:
+    """List all available journal template profiles."""
+    return _store().list_journals()
+
+
 @router.get("/document-types", response_model=List[DocumentTypeInfo])
 async def list_document_types() -> List[DocumentTypeInfo]:
     """Every document type the module can produce."""
@@ -41,9 +46,41 @@ async def list_document_types() -> List[DocumentTypeInfo]:
 
 
 @router.get("/templates", response_model=List[TemplateInfo])
-async def list_templates() -> List[TemplateInfo]:
+async def list_templates(journal_code: Optional[str] = Query(None)) -> List[TemplateInfo]:
     """State of each master-template slot, including its placeholders."""
-    return _store().describe_all()
+    return _store().describe_all(journal_code=journal_code)
+
+
+@router.post("/inspect-papers")
+async def inspect_papers(
+    files: List[UploadFile] = File(...),
+    journal_code: Optional[str] = Query(None),
+    acceptance_date: Optional[str] = Query(None),
+    prefix: Optional[str] = Query(None),
+    suffix: Optional[str] = Query("A"),
+) -> List[Dict[str, Any]]:
+    """Extract Title, Authors, and suggest Reference Numbers for uploaded papers."""
+    results: List[Dict[str, Any]] = []
+    with staged_uploads(files) as staged:
+        for idx, (filename, path) in enumerate(staged, start=1):
+            title, authors, warnings = metadata_extractor.extract(path, f"inspect-{idx}")
+            code = journal_code or "JSAP"
+            ref_num = reference_numbers.build_reference_number(
+                index=idx,
+                reference_date=reference_numbers.parse_reference_date(acceptance_date or ""),
+                suffix=suffix or "A",
+                prefix=prefix or "",
+                journal_code=code,
+            )
+            results.append({
+                "filename": filename,
+                "title": title,
+                "authors": authors,
+                "formatted_authors": metadata_extractor.format_authors(authors),
+                "reference_number": ref_num,
+                "warnings": warnings,
+            })
+    return results
 
 
 async def _store_template(document_type: str, file: UploadFile) -> TemplateInfo:
@@ -64,29 +101,25 @@ async def _store_template(document_type: str, file: UploadFile) -> TemplateInfo:
 
 
 @router.get("/templates/{document_type}/inspect", response_model=TemplateInspection)
-async def inspect_template(document_type: str) -> TemplateInspection:
-    """The document broken into selectable text, for the mapping wizard.
-
-    This is what makes an ordinary Word file usable as a template: the operator
-    uploads the real letter, sees its actual lines here, and points at the ones
-    that change per paper.  Nothing has to be edited in Word.
-    """
+async def inspect_template(
+    document_type: str, journal_code: Optional[str] = Query(None)
+) -> TemplateInspection:
     if not document_types.is_known(document_type):
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Unknown document type: {document_type}",
         )
     store = _store()
-    if not store.has_template(document_type):
+    if not store.has_template(document_type, journal_code):
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Upload the template before mapping its fields.",
         )
     try:
         return document_inspector.inspect(
-            store.template_path(document_type),
+            store.template_path(document_type, journal_code),
             document_type,
-            store.load_mapping(document_type),
+            store.load_mapping(document_type, journal_code),
         )
     except DocumentInspectorError as exc:
         raise HTTPException(
@@ -95,33 +128,31 @@ async def inspect_template(document_type: str) -> TemplateInspection:
 
 
 @router.get("/templates/{document_type}/mapping", response_model=TemplateMapping)
-async def get_mapping(document_type: str) -> TemplateMapping:
+async def get_mapping(
+    document_type: str, journal_code: Optional[str] = Query(None)
+) -> TemplateMapping:
     """The saved mapping for a template, or an empty one if it has none."""
     if not document_types.is_known(document_type):
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Unknown document type: {document_type}",
         )
-    mapping = _store().load_mapping(document_type)
+    mapping = _store().load_mapping(document_type, journal_code)
     return mapping or TemplateMapping(document_type=document_type)
 
 
 @router.put("/templates/{document_type}/mapping", response_model=TemplateMapping)
 async def put_mapping(
-    document_type: str, update: TemplateMappingUpdate
+    document_type: str, update: TemplateMappingUpdate, journal_code: Optional[str] = Query(None)
 ) -> TemplateMapping:
-    """Confirm the wizard's mapping and store it permanently.
-
-    Saved once; every later generation reuses it, so the operator is never asked
-    to map the same template again.
-    """
+    """Confirm the wizard's mapping and store it permanently."""
     if not document_types.is_known(document_type):
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Unknown document type: {document_type}",
         )
     try:
-        mapping = _store().save_mapping(document_type, list(update.mappings))
+        mapping = _store().save_mapping(document_type, list(update.mappings), journal_code)
     except TemplateStoreError as exc:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc)

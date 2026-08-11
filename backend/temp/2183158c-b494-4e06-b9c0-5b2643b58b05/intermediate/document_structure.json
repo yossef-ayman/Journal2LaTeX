@@ -1,0 +1,6340 @@
+{
+  "title": "A Hybrid Bellman–Ford–Dijkstra (DB) Algorithm for Efficient Shortest Path Computation",
+  "authors": [],
+  "abstract": "In graph theory, detecting the shortest path between two active nodes remains a significant challenge in the research community. Finding the minimum-cost path between two nodes remains an important research problem with numerous practical applications. Although Dijkstra's algorithm provides efficient shortest-path computation for graphs with non-negative edge weights and Bellman-Ford handles negative edge weights, neither algorithm simultaneously offers efficient computation, reduced search space, and low computational overhead. This limitation motivates the development of a hybrid algorithm that combines the strengths of both approaches while overcoming their individual weaknesses. In this paper, we propose a novel hybrid DB Algorithm that integrates the Bellman–Ford and Dijkstra algorithms to efficiently compute shortest paths in weighted graphs containing negative edge weights while reducing computational time and search-space complexity. The proposed DB Algorithm addresses the limitations of existing shortest-path algorithms by reducing computational overhead while efficiently handling negative edge weights and minimizing time and space complexity. The proposed algorithm is evaluated using two key performance metrics: Time to Search Shortest Distance (TSSD) and computational space complexity. Experimental results demonstrate that the proposed DB Algorithm significantly reduces computational overhead while accurately identifying shortest paths in weighted graphs. Simulation results validate the effectiveness and computational efficiency of the proposed DB Algorithm. In the future, the proposed DB Algorithm has potential applications to wireless communication systems, network routing, multidirectional communication protocols, and quantum computing applications.",
+  "keywords": [
+    "Hybrid",
+    "DB-Algorithm",
+    "Active Nodes",
+    "Shortest Distance (SD)",
+    "Time to Search Shortest Distance"
+  ],
+  "sections": [
+    {
+      "title": "1 Introduction",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The well-studied research topic in graph theory is the shortest-path. It is indeed a major issue and a serious challenge in the research community. The study of shortest path problems between the vertices (nodes) and edges (lines) in a graph is an active research topic for research community. Therefore, a great deal of attention has been paid in graph theory to optimizing shortest-path, with the minimum length criteria between two nodes. Therefore, numerous algorithms have been redesigned and implemented for finding a shortest path between two nodes. Due to its wide range of applications which include network routing protocols, route planning, traffic control, path finding in social networks, computer games, and transportation systems, forging us an exclusive state of shortest path issue in the graphs. The purpose to find the shortest path with all variants between two nodes in a graph is a complex act that needed to be resolved with the special techniques in mathematics. Several numbers of techniques suggested by the research scholars include Greedy algorithm, M. Fredman, Floyd Warshall algorithm [1,2], Dijkstra’s shortest path algorithm [3,4] Bellman Ford-algorithm [5,6] and Genetic algorithm for optimizing the route between the two nodes in a graph. These algorithms are designed to determine the shortest path in a graph. Shortest path algorithms constitute a family of algorithms used to solve shortest path problems."
+          },
+          "block_index": 1,
+          "original_page_number": null,
+          "original_order": 1,
+          "source_location": "Section: 1 Introduction, Block: 1"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Several research solutions have been implemented to overcome the short path problems in a graph. However, they fail to address all the variant vulnerabilities of space and time that are associated with the shortest paths [7,8]. Our aim is to present a new hybrid algorithm model which handles all inherited limitations and vulnerabilities that occur in previous algorithms. The new hybrid model has been proposed to sort out the time and space complexity issues for graph in this paper. It has an ability to find the shortest path between two vertices or nodes in graph theory"
+          },
+          "block_index": 2,
+          "original_page_number": null,
+          "original_order": 2,
+          "source_location": "Section: 1 Introduction, Block: 2"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": 6.0,
+        "space_after_pt": 12.0,
+        "keep_with_next": false,
+        "semantic": false,
+        "numbered": true
+      }
+    },
+    {
+      "title": "2 The Proposed DB-Algorithm",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The proposed DB-algorithm is the Hybridization of integration of two or more meta-heuristic optimization algorithms for searching for the most suitable and optimal solution in a specific search space [9,10]. The proposed DB-algorithm works on both positive and negative edge weights through parallel operations. Therefore, parallel operations of the proposed algorithm hold good properties which make it capable of working on different methods and resolving the problems efficiently. For example, searching is efficient when the problems can be solved with many solutions."
+          },
+          "block_index": 3,
+          "original_page_number": null,
+          "original_order": 3,
+          "source_location": "Section: 2 The Proposed DB-Algorithm, Block: 3"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Prime objective of Hybridization is as:"
+          },
+          "block_index": 4,
+          "original_page_number": null,
+          "original_order": 4,
+          "source_location": "Section: 2 The Proposed DB-Algorithm, Block: 4"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "To address vulnerability of specific meta-heuristic optimization algorithm.",
+              "To address limitations of specific meta-heuristic optimization algorithm.",
+              "To counter disadvantages of specific meta-heuristic optimization algorithm.",
+              "To integrate the advantages of specific meta-heuristic optimization algorithm."
+            ],
+            "ordered": true
+          },
+          "block_index": 5,
+          "original_page_number": null,
+          "original_order": 5,
+          "source_location": "Section: 2 The Proposed DB-Algorithm, Block: 5"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "In the proposed DB Algorithm, Phase One (P1) represents a search-space pruning stage in which the Bellman–Ford algorithm is used to identify feasible shortest-path candidates while handling negative edge weights. This stage generates a reduced search space by eliminating infeasible or non-promising paths. Phase Two (P2) applies Dijkstra's algorithm to the reduced search space generated in Phase One, thereby improving computational efficiency. Therefore, the term \"phase\" refers to two sequential computational stages rather than graph clustering, and no partitioning of vertices into mathematical clusters is performed. Figure 1 depicts the concept of hybridization of two meta-heuristic optimization algorithms which addresses the limitations and vulnerabilities by integrating the advantages of other meta-heuristic optimization algorithm and facilitates commitment for convergence with fewer time parameters and space complexity."
+          },
+          "block_index": 6,
+          "original_page_number": null,
+          "original_order": 6,
+          "source_location": "Section: 2 The Proposed DB-Algorithm, Block: 6"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Hybridization of Two Optimization Algorithm",
+            "path": "media/office_obj_1.png",
+            "label": "fig:office1",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Figure 1: Hybridization of Two Optimization Algorithm",
+            "path": "media/image5.wmf",
+            "label": null,
+            "width_in": 5.1562,
+            "height_in": 2.2188,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903,
+            "emu_width": 4714875,
+            "emu_height": 2028825,
+            "aspect_ratio": 2.323944,
+            "word_placement": "inline",
+            "is_equation": false
+          },
+          "block_index": 7,
+          "original_page_number": null,
+          "original_order": 7,
+          "source_location": "Section: 2 The Proposed DB-Algorithm, Block: 7"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Hence, the proposed DB-Algorithm is a possible method for solving the negative weights in the search space. It can overcome the limitations which are constituted by the previous designs. The proposed algorithm can perform parallel search of various nodes in space which has the ability to consume less time in space to achieve target. This ability will become a benchmark to be the fastest algorithm. Dijkstra's shortest-path algorithm has a blind search. It calculates the entire path from source to destination, which makes algorithm inefficient because it wastes more time to reach to the necessary-resources. In addition, if the space search of an algorithm increases, the time required for the optimal path also increases exponentially. In addition, it works with non-negative weights for the edges with slight modifications but fails for negative weight in the space graph, which swings the system and hangs the final results. However, nested loops taken by Dijkstra’s algorithm leads to increase the search time in space [11,12]. Due to some limitations of Dijkstra’s algorithm like using nested loops, which increase the search time, it becomes necessary work for research community to implement a new algorithm which can span less time in space, using limited loops. In this regard a new DB-Algorithm algorithm has been proposed,"
+          },
+          "block_index": 8,
+          "original_page_number": null,
+          "original_order": 8,
+          "source_location": "Section: 2 The Proposed DB-Algorithm, Block: 8"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The proposed DB-algorithm provides a more accurate and realistic approach in nature in the context of real-world problems The DB-algorithm works with both positive and negative edge weights. It overcomes the limitations of Dijkstra's Algorithm. Initially Bellman-Ford-algorithm is initiated with parameter subjected to target search space; the output of this search will be input for Dijkstra's Algorithm and is search space for the second algorithm. However, the proposed algorithm is shown in Figure 2, which is free of negative edges and is smaller in size than previous designs."
+          },
+          "block_index": 9,
+          "original_page_number": null,
+          "original_order": 9,
+          "source_location": "Section: 2 The Proposed DB-Algorithm, Block: 9"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "The proposed DB-Algorithm",
+            "path": "media/office_obj_2.png",
+            "label": "fig:office2",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "3 The Java Code Segment using for the proposed DB-Algorithm",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Optimal Shortest Path selection process for the proposed DB-algorithm has been checked in the java cod as:"
+          },
+          "block_index": 11,
+          "original_page_number": null,
+          "original_order": 11,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 11"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Declare Int N_D Number_of_Node, N_C Number_of_Cluster, D_N Distance Between Nodes"
+          },
+          "block_index": 12,
+          "original_page_number": null,
+          "original_order": 12,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 12"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Int NL Loop_1_Cout, NL2 Loop_2_Count"
+          },
+          "block_index": 13,
+          "original_page_number": null,
+          "original_order": 13,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 13"
+        },
+        {
+          "type": "table",
+          "content": {
+            "caption": "Table",
+            "label": null,
+            "colspecs": [
+              {
+                "align": null,
+                "width": 0.009675468655513001
+              }
+            ],
+            "header_rows": [
+              [
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": false
+                }
+              ]
+            ],
+            "body_rows": [],
+            "has_grid": false,
+            "shading_rows": [
+              [
+                null
+              ]
+            ],
+            "row_heights": [
+              null
+            ],
+            "width_frac": 0.0097,
+            "num_rows": 1,
+            "text_width_in": 6.8903,
+            "headers": [
+              ""
+            ],
+            "rows": []
+          },
+          "block_index": 14,
+          "original_page_number": null,
+          "original_order": 14,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 14"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Start phase one - Level 1"
+          },
+          "block_index": 15,
+          "original_page_number": null,
+          "original_order": 15,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 15"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Start phase one - Level 1"
+          },
+          "block_index": 16,
+          "original_page_number": null,
+          "original_order": 16,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 16"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Start phase one - Level 1"
+          },
+          "block_index": 17,
+          "original_page_number": null,
+          "original_order": 17,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 17"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "End Phase_One - Level_2"
+          },
+          "block_index": 18,
+          "original_page_number": null,
+          "original_order": 18,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 18"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "End Phase_One Level - 1"
+          },
+          "block_index": 19,
+          "original_page_number": null,
+          "original_order": 19,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 19"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Second Level Clustering Start with new non negative search space, shortened search space"
+          },
+          "block_index": 20,
+          "original_page_number": null,
+          "original_order": 20,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 20"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Start Phase Two Level_1"
+          },
+          "block_index": 21,
+          "original_page_number": null,
+          "original_order": 21,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 21"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Start Phase Two Level_2"
+          },
+          "block_index": 22,
+          "original_page_number": null,
+          "original_order": 22,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 22"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "End Phase_Two Level_2"
+          },
+          "block_index": 23,
+          "original_page_number": null,
+          "original_order": 23,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 23"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "End Phase_Two Level_1"
+          },
+          "block_index": 24,
+          "original_page_number": null,
+          "original_order": 24,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 24"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Optimal Shortest Path Selection Process End: Print Result."
+          },
+          "block_index": 25,
+          "original_page_number": null,
+          "original_order": 25,
+          "source_location": "Section: 3 The Java Code Segment using for the proposed DB-Algorithm, Block: 25"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "4. Flow Chart",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The Figure 3 describes the flow chart of the proposed algorithm."
+          },
+          "block_index": 26,
+          "original_page_number": null,
+          "original_order": 26,
+          "source_location": "Section: 4. Flow Chart, Block: 26"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "The Proposed DB-Algorithm Flow Chart",
+            "path": "media/office_obj_3.png",
+            "label": "fig:office3",
+            "width_pt": null,
+            "height_pt": null,
+            "office_object_type": "ole"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Figure 3: The Proposed DB-Algorithm Flow Chart",
+            "path": "media/image7.wmf",
+            "label": null,
+            "width_in": 6.0208,
+            "height_in": 7.7917,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903,
+            "emu_width": 5505450,
+            "emu_height": 7124700,
+            "aspect_ratio": 0.772727,
+            "word_placement": "inline",
+            "is_equation": false
+          },
+          "block_index": 27,
+          "original_page_number": null,
+          "original_order": 27,
+          "source_location": "Section: 4. Flow Chart, Block: 27"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "5. Result",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "5.1 System Configuration",
+      "level": 2,
+      "blocks": [],
+      "heading_format": {
+        "level": 2,
+        "bold": false,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "Machine: Dell Latitude 3440",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Processor: 13th Gen Intel® Core™ i7-1355U, 1.70 GHz",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "RAM: 16.0 GB (15.7 GB usable)",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Operating System: Windows 11 Education, Version 23H2 (OS Build 22631.4391)",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "System Type: 64-bit operating system, x64-based processor",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Device ID: C7C2F718-4A80-4576-94C2-E6A7EEF45FCA",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "Windows Feature Experience Pack: 1000.22700.1047.0",
+      "level": 1,
+      "blocks": [],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "5.2 Graphs with 3 vertices",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "We tested the algorithms with graphs containing 0,1 And 2 vertices, using different paths. The execution time of the DB algorithm was calculated and compared with that of Dijkstra’s algorithm. All the test results are provided below (see Figure 4 for a graphical representation and Table 1 for detailed numerical values).\"and the result is clearly mentioned in the Table 2."
+          },
+          "block_index": 28,
+          "original_page_number": null,
+          "original_order": 28,
+          "source_location": "Section: 5.2 Graphs with 3 vertices, Block: 28"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Graph with Shortest path",
+            "path": "media/office_obj_4.png",
+            "label": "fig:office4",
+            "width_pt": 153.45,
+            "height_pt": 146.15,
+            "office_object_type": "group"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "table",
+          "content": {
+            "caption": "Adjacency Matrix of 3 vertices",
+            "label": null,
+            "colspecs": [
+              {
+                "align": "c",
+                "width": 0.11665992721391023
+              },
+              {
+                "align": "c",
+                "width": 0.11665992721391023
+              },
+              {
+                "align": "c",
+                "width": 0.11665992721391023
+              },
+              {
+                "align": "c",
+                "width": 0.11665992721391023
+              }
+            ],
+            "header_rows": [
+              [
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ]
+            ],
+            "body_rows": [
+              [
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ]
+            ],
+            "has_grid": true,
+            "shading_rows": [
+              [
+                null,
+                "FFFF00",
+                "FFFF00",
+                "FFFF00"
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null
+              ]
+            ],
+            "row_heights": [
+              35.1,
+              35.1,
+              35.1,
+              35.1
+            ],
+            "width_frac": 0.4652,
+            "num_rows": 4,
+            "text_width_in": 6.8903,
+            "headers": [
+              "",
+              "0",
+              "1",
+              "2"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "7",
+                "3"
+              ],
+              [
+                "1",
+                "7",
+                "0",
+                "2"
+              ],
+              [
+                "2",
+                "3",
+                "2",
+                "0"
+              ]
+            ]
+          },
+          "block_index": 29,
+          "original_page_number": null,
+          "original_order": 29,
+          "source_location": "Section: 5.2 Graphs with 3 vertices, Block: 29"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Figure 4: Graph with Shortest path",
+            "path": "media/image10.png",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903,
+            "emu_width": null,
+            "emu_height": null,
+            "aspect_ratio": null,
+            "word_placement": null,
+            "is_equation": false
+          },
+          "block_index": 30,
+          "original_page_number": null,
+          "original_order": 30,
+          "source_location": "Section: 5.2 Graphs with 3 vertices, Block: 30"
+        },
+        {
+          "type": "table",
+          "content": {
+            "caption": "Shortest path and execution time table",
+            "label": null,
+            "colspecs": [
+              {
+                "align": "c",
+                "width": 0.054819508448540714
+              },
+              {
+                "align": "c",
+                "width": 0.09082181259600615
+              },
+              {
+                "align": "c",
+                "width": 0.13719278033794166
+              },
+              {
+                "align": "c",
+                "width": 0.13258448540706608
+              },
+              {
+                "align": "c",
+                "width": 0.10858294930875577
+              },
+              {
+                "align": "c",
+                "width": 0.17482718894009217
+              },
+              {
+                "align": "c",
+                "width": 0.13680875576036866
+              },
+              {
+                "align": "c",
+                "width": 0.1643625192012289
+              }
+            ],
+            "header_rows": [
+              [
+                {
+                  "text": "Sr. No.",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Vertex",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Target\n\n(Source -to-Destination)",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Possible Best Shortest Path",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Total Distance",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Dijkstra Algorithms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "DB Algorithms",
+                  "rowspan": 1,
+                  "colspan": 2,
+                  "align": "c",
+                  "bold": true
+                }
+              ],
+              [
+                {
+                  "text": "Execution Time Complexity",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Execution Time Complexity",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Convert in to (Nano Second)",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                }
+              ]
+            ],
+            "body_rows": [
+              [
+                {
+                  "text": "01",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "03",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0-1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0-2-1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "19779800 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.1005 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "100,500ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "02",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "03",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1-0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1-2-0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "18160900 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.083 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "83,000ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "03",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "03",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "19289700 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.0873 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "87,300 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "04",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "03",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "19910900 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.0924 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "92,400 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": null,
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": null,
+                  "bold": false
+                },
+                {
+                  "text": "Average Execution Time",
+                  "rowspan": 1,
+                  "colspan": 3,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "19285325 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "363200 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                }
+              ]
+            ],
+            "has_grid": true,
+            "shading_rows": [
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "00B050"
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "00B050"
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "00B050"
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "00B050"
+              ],
+              [
+                null,
+                null,
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00"
+              ]
+            ],
+            "row_heights": [
+              39.5,
+              59.0,
+              24.8,
+              24.8,
+              24.8,
+              24.8,
+              25.6
+            ],
+            "width_frac": 1.0,
+            "num_rows": 7,
+            "text_width_in": 6.8903,
+            "headers": [
+              "Execution Time Complexity",
+              "Execution Time Complexity",
+              "Convert in to (Nano Second)"
+            ],
+            "rows": [
+              [
+                "01",
+                "03",
+                "0-1",
+                "0-2-1",
+                "5",
+                "19779800 ns",
+                "0.1005 ms",
+                "100,500ns"
+              ],
+              [
+                "02",
+                "03",
+                "1-0",
+                "1-2-0",
+                "5",
+                "18160900 ns",
+                "0.083 ms",
+                "83,000ns"
+              ],
+              [
+                "03",
+                "03",
+                "2-1",
+                "2-1",
+                "2",
+                "19289700 ns",
+                "0.0873 ms",
+                "87,300 ns"
+              ],
+              [
+                "04",
+                "03",
+                "2-0",
+                "2-0",
+                "3",
+                "19910900 ns",
+                "0.0924 ms",
+                "92,400 ns"
+              ],
+              [
+                "",
+                "",
+                "Average Execution Time",
+                "19285325 ns",
+                "",
+                "363200 ns"
+              ]
+            ]
+          },
+          "block_index": 31,
+          "original_page_number": null,
+          "original_order": 31,
+          "source_location": "Section: 5.2 Graphs with 3 vertices, Block: 31"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Execution time calculated based on different shortest paths."
+          },
+          "block_index": 32,
+          "original_page_number": null,
+          "original_order": 32,
+          "source_location": "Section: 5.2 Graphs with 3 vertices, Block: 32"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "Percentage\\ Faster = \\frac{Dijkstra\\ Algorithms\\ Average - DB\\ Algorithms\\ Average\\ \\ }{\\ \\ Dijkstra\\ Algorithms\\ Average} \\times 100",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "Percentage\\ Faster = \\frac{Dijkstra\\ Algorithms\\ Average - DB\\ Algorithms\\ Average\\ \\ }{\\ \\ Dijkstra\\ Algorithms\\ Average} \\times 100",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 33,
+          "original_page_number": null,
+          "original_order": 33,
+          "source_location": "Section: 5.2 Graphs with 3 vertices, Block: 33"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "= \\frac{19285325 - 363200\\ \\ \\ }{\\ \\ \\ 19285325} \\times 100",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "= \\frac{19285325 - 363200\\ \\ \\ }{\\ \\ \\ 19285325} \\times 100",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 34,
+          "original_page_number": null,
+          "original_order": 34,
+          "source_location": "Section: 5.2 Graphs with 3 vertices, Block: 34"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "= \\ \\frac{19285325 - \\ 363200}{\\ 19285325} \\times 100\\",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "= \\ \\frac{19285325 - \\ 363200}{\\ 19285325} \\times 100\\",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 35,
+          "original_page_number": null,
+          "original_order": 35,
+          "source_location": "Section: 5.2 Graphs with 3 vertices, Block: 35"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "= \\frac{18922125\\ \\ \\ }{\\ \\ 19285325} \\times 100",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "= \\frac{18922125\\ \\ \\ }{\\ \\ 19285325} \\times 100",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 36,
+          "original_page_number": null,
+          "original_order": 36,
+          "source_location": "Section: 5.2 Graphs with 3 vertices, Block: 36"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(= 98.12\\%\\)",
+            "equations": [
+              {
+                "latex": "= 98.12\\%",
+                "display": false
+              }
+            ],
+            "has_display_math": false
+          },
+          "block_index": 37,
+          "original_page_number": null,
+          "original_order": 37,
+          "source_location": "Section: 5.2 Graphs with 3 vertices, Block: 37"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Figure 4 and Table 2 demonstrate the performance of the proposed DB Algorithm on a small graph containing three vertices. The algorithm correctly identifies the shortest paths while reducing the search space before applying Dijkstra's algorithm. The experimental results show that the hybrid approach significantly decreases execution time without affecting the correctness of the computed shortest paths."
+          },
+          "block_index": 38,
+          "original_page_number": null,
+          "original_order": 38,
+          "source_location": "Section: 5.2 Graphs with 3 vertices, Block: 38"
+        }
+      ],
+      "heading_format": {
+        "level": 2,
+        "bold": false,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "5.3 Graph with vertex -4",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "We tested the algorithms with graphs containing 4 vertices shown in Figure 5 using different paths. The execution time of the DB algorithm was calculated and compared with that of Dijkstra’s algorithm. All the test results are provided and mentioned in the Table 3 and the Table 4 determines the shortest path and execution time which clearly shows that DB algorithm result is 99.50% better than Dijkstra’s algorithm."
+          },
+          "block_index": 39,
+          "original_page_number": null,
+          "original_order": 39,
+          "source_location": "Section: 5.3 Graph with vertex -4, Block: 39"
+        },
+        {
+          "type": "table",
+          "content": {
+            "caption": "Table 3: Adjacency Matrix of 4 vertices",
+            "label": null,
+            "colspecs": [
+              {
+                "align": "c",
+                "width": 0.09016393442622951
+              },
+              {
+                "align": "c",
+                "width": 0.09016393442622951
+              },
+              {
+                "align": "c",
+                "width": 0.09016393442622951
+              },
+              {
+                "align": "c",
+                "width": 0.09016393442622951
+              },
+              {
+                "align": "c",
+                "width": 0.09016393442622951
+              }
+            ],
+            "header_rows": [
+              [
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ]
+            ],
+            "body_rows": [
+              [
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ]
+            ],
+            "has_grid": true,
+            "shading_rows": [
+              [
+                null,
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00"
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "row_heights": [
+              31.6,
+              31.6,
+              31.6,
+              31.6,
+              33.1
+            ],
+            "width_frac": 0.449,
+            "num_rows": 5,
+            "text_width_in": 6.8903,
+            "headers": [
+              "",
+              "0",
+              "1",
+              "2",
+              "3"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "3",
+                "4",
+                "5"
+              ],
+              [
+                "1",
+                "3",
+                "0",
+                "5",
+                "2"
+              ],
+              [
+                "2",
+                "4",
+                "5",
+                "0",
+                "6"
+              ],
+              [
+                "3",
+                "5",
+                "2",
+                "6",
+                "0"
+              ]
+            ]
+          },
+          "block_index": 40,
+          "original_page_number": null,
+          "original_order": 40,
+          "source_location": "Section: 5.3 Graph with vertex -4, Block: 40"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Graph with shortest path",
+            "path": "media/office_obj_5.png",
+            "label": "fig:office5",
+            "width_pt": 177.7,
+            "height_pt": 141.25,
+            "office_object_type": "group"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "table",
+          "content": {
+            "caption": "Table 4: Shortest path and execution time table",
+            "label": null,
+            "colspecs": [
+              {
+                "align": "c",
+                "width": 0.06426553672316385
+              },
+              {
+                "align": "c",
+                "width": 0.09715496368038742
+              },
+              {
+                "align": "c",
+                "width": 0.16343825665859565
+              },
+              {
+                "align": "c",
+                "width": 0.11743341404358354
+              },
+              {
+                "align": "c",
+                "width": 0.12177158999192898
+              },
+              {
+                "align": null,
+                "width": 0.15415657788539147
+              },
+              {
+                "align": "c",
+                "width": 0.15415657788539147
+              },
+              {
+                "align": "c",
+                "width": 0.1276230831315577
+              }
+            ],
+            "header_rows": [
+              [
+                {
+                  "text": "Sr. No.",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "l",
+                  "bold": true
+                },
+                {
+                  "text": "Vertex",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Target\n\n(Source -to-Destination)",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Possible Best Shortest Path",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Total Distance",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Dijkstra Algorithms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "DB Algorithms",
+                  "rowspan": 1,
+                  "colspan": 2,
+                  "align": "c",
+                  "bold": true
+                }
+              ],
+              [
+                {
+                  "text": "Execution Time Complexity",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Execution Time Complexity",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Convert in to (Nano Second)",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                }
+              ]
+            ],
+            "body_rows": [
+              [
+                {
+                  "text": "01",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1-2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1-2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "27752100 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": null,
+                  "bold": false
+                },
+                {
+                  "text": "0.0889 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "88900 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "02",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0-3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0-1-3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "21884000 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.122 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "122000 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "03",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3-0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3-0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "20483600 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.125 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "125000 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "04",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "23297200 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.098 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "98000 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "05",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "17697000 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.1159 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "115900 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": null,
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": null,
+                  "bold": false
+                },
+                {
+                  "text": "Average Execution Time",
+                  "rowspan": 1,
+                  "colspan": 3,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "22222780 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "109960 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                }
+              ]
+            ],
+            "has_grid": true,
+            "shading_rows": [
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00"
+              ]
+            ],
+            "row_heights": [
+              19.3,
+              19.3,
+              19.3,
+              19.3,
+              19.3,
+              19.3,
+              19.3,
+              19.3
+            ],
+            "width_frac": 0.999,
+            "num_rows": 8,
+            "text_width_in": 6.8903,
+            "headers": [
+              "Execution Time Complexity",
+              "Execution Time Complexity",
+              "Convert in to (Nano Second)"
+            ],
+            "rows": [
+              [
+                "01",
+                "4",
+                "1-2",
+                "1-2",
+                "5",
+                "27752100 ns",
+                "0.0889 ms",
+                "88900 ns"
+              ],
+              [
+                "02",
+                "4",
+                "0-3",
+                "0-1-3",
+                "5",
+                "21884000 ns",
+                "0.122 ms",
+                "122000 ns"
+              ],
+              [
+                "03",
+                "4",
+                "3-0",
+                "3-0",
+                "5",
+                "20483600 ns",
+                "0.125 ms",
+                "125000 ns"
+              ],
+              [
+                "04",
+                "4",
+                "2-3",
+                "2-3",
+                "6",
+                "23297200 ns",
+                "0.098 ms",
+                "98000 ns"
+              ],
+              [
+                "05",
+                "4",
+                "2-0",
+                "2-0",
+                "4",
+                "17697000 ns",
+                "0.1159 ms",
+                "115900 ns"
+              ],
+              [
+                "",
+                "",
+                "Average Execution Time",
+                "22222780 ns",
+                "",
+                "109960 ns"
+              ]
+            ]
+          },
+          "block_index": 42,
+          "original_page_number": null,
+          "original_order": 42,
+          "source_location": "Section: 5.3 Graph with vertex -4, Block: 42"
+        }
+      ],
+      "heading_format": {
+        "level": 2,
+        "bold": false,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "Execution Time Calculated based on different shortest paths",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "Percentage\\ Faster = \\frac{Dijkstra’s\\ Algorithms\\ Average - DB\\ Algorithms\\ Average\\ }{Dijkstra’s\\ Algorithms\\ Average} \\times 100",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "Percentage\\ Faster = \\frac{Dijkstra’s\\ Algorithms\\ Average - DB\\ Algorithms\\ Average\\ }{Dijkstra’s\\ Algorithms\\ Average} \\times 100",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 43,
+          "original_page_number": null,
+          "original_order": 43,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 43"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "= \\frac{22222780 - 109960}{22222780} \\times 100",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "= \\frac{22222780 - 109960}{22222780} \\times 100",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 44,
+          "original_page_number": null,
+          "original_order": 44,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 44"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "= \\frac{22112820}{22222780} \\times 100",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "= \\frac{22112820}{22222780} \\times 100",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 45,
+          "original_page_number": null,
+          "original_order": 45,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 45"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\cong 99.50\\%\\)",
+            "equations": [
+              {
+                "latex": "\\cong 99.50\\%",
+                "display": false
+              }
+            ],
+            "has_display_math": false
+          },
+          "block_index": 46,
+          "original_page_number": null,
+          "original_order": 46,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 46"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Figure 5 and Table 4 evaluate the proposed algorithm on a graph with four vertices. As the graph size increases, the DB Algorithm maintains accurate shortest-path computation while efficiently handling the reduced search space generated during Phase One. The results indicate that the computational advantage is preserved as graph complexity increases."
+          },
+          "block_index": 47,
+          "original_page_number": null,
+          "original_order": 47,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 47"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "5.4 Graph with vertex -6",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The third test was on the 6 vertices with so many shortest paths between source to destination as shown in Figure 6 and also in Table 5 determines the weight and paths the execution time mentioned in the Table 6 was calculated and compared with Dijkstra's algorithm and which 96.23% better than the available algorithm."
+          },
+          "block_index": 48,
+          "original_page_number": null,
+          "original_order": 48,
+          "source_location": "Section: 5.4 Graph with vertex -6, Block: 48"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/office_obj_6.png",
+            "label": "fig:office6",
+            "width_pt": 187.4,
+            "height_pt": 187.4,
+            "office_object_type": "group"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image10.png",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903,
+            "emu_width": null,
+            "emu_height": null,
+            "aspect_ratio": null,
+            "word_placement": null,
+            "is_equation": false
+          },
+          "block_index": 49,
+          "original_page_number": null,
+          "original_order": 49,
+          "source_location": "Section: 5.4 Graph with vertex -6, Block: 49"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Table 5: Adjacency Matrix of 6 vertices"
+          },
+          "block_index": 50,
+          "original_page_number": null,
+          "original_order": 50,
+          "source_location": "Section: 5.4 Graph with vertex -6, Block: 50"
+        },
+        {
+          "type": "table",
+          "content": {
+            "caption": "Table 6: Shortest path and execution timetable",
+            "label": null,
+            "colspecs": [
+              {
+                "align": "c",
+                "width": 0.23991121872477802
+              },
+              {
+                "align": "c",
+                "width": 0.11481033091202582
+              },
+              {
+                "align": "c",
+                "width": 0.09695318805488297
+              },
+              {
+                "align": "c",
+                "width": 0.1292372881355932
+              },
+              {
+                "align": "c",
+                "width": 0.13317191283292978
+              },
+              {
+                "align": "c",
+                "width": 0.14295803066989507
+              },
+              {
+                "align": "c",
+                "width": 0.14295803066989507
+              }
+            ],
+            "header_rows": [
+              [
+                {
+                  "text": "Vertex",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ]
+            ],
+            "body_rows": [
+              [
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "8",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "9",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "8",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "9",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ]
+            ],
+            "has_grid": true,
+            "shading_rows": [
+              [
+                null,
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00"
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "row_heights": [
+              24.4,
+              24.4,
+              24.4,
+              23.5,
+              24.4,
+              24.4,
+              24.4
+            ],
+            "width_frac": 0.999,
+            "num_rows": 7,
+            "text_width_in": 6.8903,
+            "headers": [
+              "Vertex",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "4",
+                "8",
+                "6",
+                "5",
+                "0"
+              ],
+              [
+                "1",
+                "4",
+                "0",
+                "0",
+                "0",
+                "3",
+                "9"
+              ],
+              [
+                "2",
+                "8",
+                "0",
+                "0",
+                "0",
+                "5",
+                "6"
+              ],
+              [
+                "3",
+                "6",
+                "0",
+                "0",
+                "0",
+                "2",
+                "4"
+              ],
+              [
+                "4",
+                "5",
+                "3",
+                "5",
+                "2",
+                "0",
+                "7"
+              ],
+              [
+                "5",
+                "0",
+                "9",
+                "6",
+                "4",
+                "7",
+                "0"
+              ]
+            ]
+          },
+          "block_index": 51,
+          "original_page_number": null,
+          "original_order": 51,
+          "source_location": "Section: 5.4 Graph with vertex -6, Block: 51"
+        },
+        {
+          "type": "table",
+          "content": {
+            "caption": "Table",
+            "label": null,
+            "colspecs": [
+              {
+                "align": "c",
+                "width": 0.05599273607748183
+              },
+              {
+                "align": "c",
+                "width": 0.08202179176755446
+              },
+              {
+                "align": "c",
+                "width": 0.14063761097659402
+              },
+              {
+                "align": "c",
+                "width": 0.13397901533494752
+              },
+              {
+                "align": "c",
+                "width": 0.10875706214689264
+              },
+              {
+                "align": "c",
+                "width": 0.17604923325262306
+              },
+              {
+                "align": "c",
+                "width": 0.13781275221953185
+              },
+              {
+                "align": "c",
+                "width": 0.16474979822437447
+              }
+            ],
+            "header_rows": [
+              [
+                {
+                  "text": "Sr. No.",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Vertex",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Target\n\n(Source -to-Destination)",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Possible Best Shortest Path",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Total Distance",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Dijkstra Algorithms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "DB Algorithms",
+                  "rowspan": 1,
+                  "colspan": 2,
+                  "align": "c",
+                  "bold": true
+                }
+              ],
+              [
+                {
+                  "text": "Execution Time Complexity",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Execution Time Complexity",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Convert in to (Nano Second)",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                }
+              ]
+            ],
+            "body_rows": [
+              [
+                {
+                  "text": "01",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0-5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0-3-5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "10",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "15983400 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.1304 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "130400 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "02",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3-2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3-4-2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "16126100 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.1332 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "133200 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "03",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1-3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1-4-3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "15518600 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.1343 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "134300 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "04",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-4-1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "8",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "15083500 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.1246 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "124600 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "05",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4-0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4-0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "21313100 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.1094 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "109400 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": null,
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": null,
+                  "bold": false
+                },
+                {
+                  "text": "Average Execution Time",
+                  "rowspan": 1,
+                  "colspan": 3,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "16804940 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "631900 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                }
+              ]
+            ],
+            "has_grid": true,
+            "shading_rows": [
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00"
+              ]
+            ],
+            "row_heights": [
+              24.9,
+              37.2,
+              20.3,
+              20.3,
+              20.3,
+              20.3,
+              20.3,
+              20.8
+            ],
+            "width_frac": 0.999,
+            "num_rows": 8,
+            "text_width_in": 6.8903,
+            "headers": [
+              "Execution Time Complexity",
+              "Execution Time Complexity",
+              "Convert in to (Nano Second)"
+            ],
+            "rows": [
+              [
+                "01",
+                "6",
+                "0-5",
+                "0-3-5",
+                "10",
+                "15983400 ns",
+                "0.1304 ms",
+                "130400 ns"
+              ],
+              [
+                "02",
+                "6",
+                "3-2",
+                "3-4-2",
+                "7",
+                "16126100 ns",
+                "0.1332 ms",
+                "133200 ns"
+              ],
+              [
+                "03",
+                "6",
+                "1-3",
+                "1-4-3",
+                "5",
+                "15518600 ns",
+                "0.1343 ms",
+                "134300 ns"
+              ],
+              [
+                "04",
+                "6",
+                "2-1",
+                "2-4-1",
+                "8",
+                "15083500 ns",
+                "0.1246 ms",
+                "124600 ns"
+              ],
+              [
+                "05",
+                "6",
+                "4-0",
+                "4-0",
+                "5",
+                "21313100 ns",
+                "0.1094 ms",
+                "109400 ns"
+              ],
+              [
+                "",
+                "",
+                "Average Execution Time",
+                "16804940 ns",
+                "",
+                "631900 ns"
+              ]
+            ]
+          },
+          "block_index": 52,
+          "original_page_number": null,
+          "original_order": 52,
+          "source_location": "Section: 5.4 Graph with vertex -6, Block: 52"
+        }
+      ],
+      "heading_format": {
+        "level": 2,
+        "bold": false,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "Execution Time Calculated based on different shortest paths",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "Percentage\\ Faster = \\ \\frac{Dijkstra\\ Algorithms\\ Average - \\ DB\\ Algorithms\\ Average\\ }{Dijkstra\\ Algorithms\\ Average} \\times 100",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "Percentage\\ Faster = \\ \\frac{Dijkstra\\ Algorithms\\ Average - \\ DB\\ Algorithms\\ Average\\ }{Dijkstra\\ Algorithms\\ Average} \\times 100",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 53,
+          "original_page_number": null,
+          "original_order": 53,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 53"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "= \\frac{16804940\\ - \\ 631900\\ }{\\ \\ 16804940} \\times 100",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "= \\frac{16804940\\ - \\ 631900\\ }{\\ \\ 16804940} \\times 100",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 54,
+          "original_page_number": null,
+          "original_order": 54,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 54"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "= \\frac{16173040}{\\ 16804940} \\times 100",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "= \\frac{16173040}{\\ 16804940} \\times 100",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 55,
+          "original_page_number": null,
+          "original_order": 55,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 55"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "= 96.23\\%",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "= 96.23\\%",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 56,
+          "original_page_number": null,
+          "original_order": 56,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 56"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Figure 6 and Table 6 illustrate the behavior of the proposed algorithm on a denser graph with six vertices and multiple candidate paths. The reduced search space enables the algorithm to avoid unnecessary computations, resulting in consistent execution-time improvements while maintaining optimal path selection."
+          },
+          "block_index": 57,
+          "original_page_number": null,
+          "original_order": 57,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 57"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "5.5 Graph with vertex -10",
+      "level": 2,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Finally, the testing was done on the 10 vertices shown in Figure 7 and so many shortest paths were available from source to destination mentioned in the Table 7 and the execution time for the determination of shortest path was calculated which shows 98.91% better result than the Dijkstra’s algorithm which is mentioned in Table 8."
+          },
+          "block_index": 58,
+          "original_page_number": null,
+          "original_order": 58,
+          "source_location": "Section: 5.5 Graph with vertex -10, Block: 58"
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "Graph with Shortest path",
+            "path": "media/office_obj_7.png",
+            "label": "fig:office7",
+            "width_pt": 244.1,
+            "height_pt": 215.75,
+            "office_object_type": "group"
+          },
+          "block_index": 0,
+          "original_page_number": null,
+          "original_order": 0,
+          "source_location": null
+        },
+        {
+          "type": "figure",
+          "content": {
+            "caption": "",
+            "path": "media/image10.png",
+            "label": null,
+            "width_in": null,
+            "height_in": null,
+            "full_width": true,
+            "word_inline": true,
+            "text_width_in": 6.8903,
+            "emu_width": null,
+            "emu_height": null,
+            "aspect_ratio": null,
+            "word_placement": null,
+            "is_equation": false
+          },
+          "block_index": 59,
+          "original_page_number": null,
+          "original_order": 59,
+          "source_location": "Section: 5.5 Graph with vertex -10, Block: 59"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Table 7: Adjacency Matrix of 10 vertices"
+          },
+          "block_index": 60,
+          "original_page_number": null,
+          "original_order": 60,
+          "source_location": "Section: 5.5 Graph with vertex -10, Block: 60"
+        },
+        {
+          "type": "table",
+          "content": {
+            "caption": "Table 8: Shortest path and execution timetable",
+            "label": null,
+            "colspecs": [
+              {
+                "align": "c",
+                "width": 0.09180790960451977
+              },
+              {
+                "align": "c",
+                "width": 0.09079903147699758
+              },
+              {
+                "align": "c",
+                "width": 0.09079903147699758
+              },
+              {
+                "align": "c",
+                "width": 0.09100080710250202
+              },
+              {
+                "align": "c",
+                "width": 0.09079903147699758
+              },
+              {
+                "align": "c",
+                "width": 0.09079903147699758
+              },
+              {
+                "align": "c",
+                "width": 0.09100080710250202
+              },
+              {
+                "align": "c",
+                "width": 0.09079903147699758
+              },
+              {
+                "align": "c",
+                "width": 0.09079903147699758
+              },
+              {
+                "align": "c",
+                "width": 0.09079903147699758
+              },
+              {
+                "align": "c",
+                "width": 0.09059725585149314
+              }
+            ],
+            "header_rows": [
+              [
+                {
+                  "text": "Vertex",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "8",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "9",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ]
+            ],
+            "body_rows": [
+              [
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "8",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "11",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "11",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "8",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "9",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "8",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ]
+            ],
+            "has_grid": true,
+            "shading_rows": [
+              [
+                null,
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00"
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                "FFFF00",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ]
+            ],
+            "row_heights": [
+              15.4,
+              15.4,
+              15.4,
+              15.4,
+              15.4,
+              14.7,
+              15.4,
+              15.4,
+              15.4,
+              15.4,
+              15.4
+            ],
+            "width_frac": 0.999,
+            "num_rows": 11,
+            "text_width_in": 6.8903,
+            "headers": [
+              "Vertex",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "rows": [
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "7",
+                "0",
+                "0",
+                "0",
+                "0",
+                "8"
+              ],
+              [
+                "1",
+                "0",
+                "0",
+                "3",
+                "0",
+                "0",
+                "4",
+                "0",
+                "7",
+                "0",
+                "0"
+              ],
+              [
+                "2",
+                "0",
+                "3",
+                "0",
+                "2",
+                "0",
+                "11",
+                "6",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "3",
+                "0",
+                "0",
+                "2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "5",
+                "3"
+              ],
+              [
+                "4",
+                "7",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "2",
+                "0",
+                "7"
+              ],
+              [
+                "5",
+                "0",
+                "4",
+                "11",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "6",
+                "0",
+                "0",
+                "6",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "6"
+              ],
+              [
+                "7",
+                "0",
+                "4",
+                "0",
+                "0",
+                "2",
+                "0",
+                "0",
+                "0",
+                "6",
+                "0"
+              ],
+              [
+                "8",
+                "0",
+                "0",
+                "0",
+                "5",
+                "0",
+                "1",
+                "0",
+                "6",
+                "0",
+                "0"
+              ],
+              [
+                "9",
+                "8",
+                "0",
+                "0",
+                "3",
+                "7",
+                "0",
+                "6",
+                "0",
+                "0",
+                "0"
+              ]
+            ]
+          },
+          "block_index": 61,
+          "original_page_number": null,
+          "original_order": 61,
+          "source_location": "Section: 5.5 Graph with vertex -10, Block: 61"
+        },
+        {
+          "type": "table",
+          "content": {
+            "caption": "Table",
+            "label": null,
+            "colspecs": [
+              {
+                "align": "c",
+                "width": 0.05609362389023406
+              },
+              {
+                "align": "c",
+                "width": 0.09957627118644068
+              },
+              {
+                "align": "c",
+                "width": 0.14679176755447945
+              },
+              {
+                "align": "c",
+                "width": 0.11016949152542373
+              },
+              {
+                "align": "c",
+                "width": 0.10875706214689267
+              },
+              {
+                "align": "c",
+                "width": 0.17584745762711865
+              },
+              {
+                "align": "c",
+                "width": 0.13761097659402743
+              },
+              {
+                "align": "c",
+                "width": 0.16515334947538338
+              }
+            ],
+            "header_rows": [
+              [
+                {
+                  "text": "Sr. No.",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Vertex",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Target\n\n(Source -to-Destination)",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Possible Best Shortest Path",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Total Distance",
+                  "rowspan": 2,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Dijkstra Algorithms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "DB Algorithms",
+                  "rowspan": 1,
+                  "colspan": 2,
+                  "align": "c",
+                  "bold": true
+                }
+              ],
+              [
+                {
+                  "text": "Execution Time Complexity",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Execution Time Complexity",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "Convert in to (Nano Second)",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                }
+              ]
+            ],
+            "body_rows": [
+              [
+                {
+                  "text": "01",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "10",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0-8",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0-4-7-8",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "15",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "16122500 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.2489 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "248900 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "02",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "10",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "2-1-7",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "10",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "17276000 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.1233 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "123300 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "03",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "10",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3-5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "3-8-5",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "17898500 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.153 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "153000 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "04",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "10",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1-9",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "1-2-3-9",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "8",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "16636500 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.1364 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "136400 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "05",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "10",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4-6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "4-9-6",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "13",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "15989900 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "0.2502 ms",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "250200 ns",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                }
+              ],
+              [
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": null,
+                  "bold": false
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": null,
+                  "bold": false
+                },
+                {
+                  "text": "Average Execution Time",
+                  "rowspan": 1,
+                  "colspan": 3,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "16784680",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                },
+                {
+                  "text": "",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": false
+                },
+                {
+                  "text": "182360",
+                  "rowspan": 1,
+                  "colspan": 1,
+                  "align": "c",
+                  "bold": true
+                }
+              ]
+            ],
+            "has_grid": true,
+            "shading_rows": [
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              [
+                null,
+                null,
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00",
+                "FFFF00"
+              ]
+            ],
+            "row_heights": [
+              20.4,
+              20.4,
+              20.4,
+              20.4,
+              20.4,
+              20.4,
+              20.4,
+              20.4
+            ],
+            "width_frac": 0.999,
+            "num_rows": 8,
+            "text_width_in": 6.8903,
+            "headers": [
+              "Execution Time Complexity",
+              "Execution Time Complexity",
+              "Convert in to (Nano Second)"
+            ],
+            "rows": [
+              [
+                "01",
+                "10",
+                "0-8",
+                "0-4-7-8",
+                "15",
+                "16122500 ns",
+                "0.2489 ms",
+                "248900 ns"
+              ],
+              [
+                "02",
+                "10",
+                "2-7",
+                "2-1-7",
+                "10",
+                "17276000 ns",
+                "0.1233 ms",
+                "123300 ns"
+              ],
+              [
+                "03",
+                "10",
+                "3-5",
+                "3-8-5",
+                "6",
+                "17898500 ns",
+                "0.153 ms",
+                "153000 ns"
+              ],
+              [
+                "04",
+                "10",
+                "1-9",
+                "1-2-3-9",
+                "8",
+                "16636500 ns",
+                "0.1364 ms",
+                "136400 ns"
+              ],
+              [
+                "05",
+                "10",
+                "4-6",
+                "4-9-6",
+                "13",
+                "15989900 ns",
+                "0.2502 ms",
+                "250200 ns"
+              ],
+              [
+                "",
+                "",
+                "Average Execution Time",
+                "16784680",
+                "",
+                "182360"
+              ]
+            ]
+          },
+          "block_index": 62,
+          "original_page_number": null,
+          "original_order": 62,
+          "source_location": "Section: 5.5 Graph with vertex -10, Block: 62"
+        }
+      ],
+      "heading_format": {
+        "level": 2,
+        "bold": false,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "Execution Time Calculated based on different shortest paths",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "Percentage\\ Faster = \\frac{Dijkstra\\ Algorithms\\ Average - DB\\ Algorithms\\ Average}{Dijkstra\\ Algorithms\\ Average} \\times 100",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "Percentage\\ Faster = \\frac{Dijkstra\\ Algorithms\\ Average - DB\\ Algorithms\\ Average}{Dijkstra\\ Algorithms\\ Average} \\times 100",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 63,
+          "original_page_number": null,
+          "original_order": 63,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 63"
+        },
+        {
+          "type": "equation",
+          "content": {
+            "latex_code": "= \\frac{16784680\\ - \\ 182360\\ }{16784680} \\times 100",
+            "label": null,
+            "number": null,
+            "equations": [
+              {
+                "latex": "= \\frac{16784680\\ - \\ 182360\\ }{16784680} \\times 100",
+                "display": true
+              }
+            ]
+          },
+          "block_index": 64,
+          "original_page_number": null,
+          "original_order": 64,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 64"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(= \\ \\frac{\\ 16602320\\ }{\\ 16784680} \\times 100\\)",
+            "equations": [
+              {
+                "latex": "= \\ \\frac{\\ 16602320\\ }{\\ 16784680} \\times 100",
+                "display": false
+              }
+            ],
+            "has_display_math": false
+          },
+          "block_index": 65,
+          "original_page_number": null,
+          "original_order": 65,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 65"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "\\(\\cong 98.91\\%\\)",
+            "equations": [
+              {
+                "latex": "\\cong 98.91\\%",
+                "display": false
+              }
+            ],
+            "has_display_math": false
+          },
+          "block_index": 66,
+          "original_page_number": null,
+          "original_order": 66,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 66"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Figure 7 and Table 8 demonstrate the scalability of the proposed DB Algorithm on a larger graph consisting of ten vertices. Despite the increased number of possible routes, the hybrid approach continues to identify optimal shortest paths efficiently. These results indicate that the proposed method scales well with increasing graph size while maintaining computational efficiency."
+          },
+          "block_index": 67,
+          "original_page_number": null,
+          "original_order": 67,
+          "source_location": "Section: Execution Time Calculated based on different shortest paths, Block: 67"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "6 The DB -Algorithm facilitates various advantages like",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "a) Negative weight or edge present in the search space is a major issue in Dijkstra's algorithms which has been countered in initial stage in DB-Algorithm such that new search space is suggested for optimal result."
+          },
+          "block_index": 68,
+          "original_page_number": null,
+          "original_order": 68,
+          "source_location": "Section: 6 The DB -Algorithm facilitates various advantages like, Block: 68"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "b) Dijkstra's algorithm implements recursive search technique which calls another function for optimization, this recursive calling results increases search time However, in the proposed DB-Algorithm already shortened the search space, now Dijkstra's algorithm required confining the search in smaller space, this technique saves time and resources."
+          },
+          "block_index": 69,
+          "original_page_number": null,
+          "original_order": 69,
+          "source_location": "Section: 6 The DB -Algorithm facilitates various advantages like, Block: 69"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "c) The proposed DB Algorithm significantly reduces the possibility of entering infinite loops, thereby ensuring convergence during the search process."
+          },
+          "block_index": 70,
+          "original_page_number": null,
+          "original_order": 70,
+          "source_location": "Section: 6 The DB -Algorithm facilitates various advantages like, Block: 70"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "7 Discussion",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "The proposed DB Algorithm effectively overcomes one of the major limitations of Dijkstra's algorithm by handling negative edge weights during the Bellman–Ford preprocessing stage. This generates a reduced search space before Dijkstra's algorithm is executed, thereby improving computational efficiency."
+            ],
+            "ordered": false
+          },
+          "block_index": 71,
+          "original_page_number": null,
+          "original_order": 71,
+          "source_location": "Section: 7 Discussion, Block: 71"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "Furthermore, by reducing the search space before applying Dijkstra's algorithm implements recursive search technique which calls another function for optimization, this recursive calling results increases search time. However, in the proposed DB -Algorithm already shortened the search space. Consequently, Dijkstra's algorithm searches only within the reduced search space, which decreases computational time and improves routing efficiency.the search in smaller space; this technique saves time and resources.",
+              "In addition, the proposed DB Algorithm reduces the possibility of entering infinite loops The proposed DB Algorithm significantly reduces the possibility of entering infinite loops, thereby ensuring con",
+              "vergence during the search process. for infinite loop which Confirms convergence within search space."
+            ],
+            "ordered": false
+          },
+          "block_index": 72,
+          "original_page_number": null,
+          "original_order": 72,
+          "source_location": "Section: 7 Discussion, Block: 72"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "The experimental evaluation conducted on graphs containing 3, 4, 6, and 10 vertices demonstrates the effectiveness and scalability of the proposed DB Algorithm. The results consistently show that the hybrid Bellman–Ford–Dijkstra approach computes the correct shortest paths while reducing computational overhead across graphs of different sizes. Across all experimental cases, the proposed algorithm achieved an execution-time improvement ranging from approximately 96% to 99% compared with the conventional Dijkstra algorithm. The consistent performance improvement indicates that the search-space reduction achieved during Phase One enables faster execution without compromising shortest-path accuracy. These findings validate the robustness, scalability, and practical applicability of the proposed algorithm for large-scale shortest-path computation problems."
+          },
+          "block_index": 73,
+          "original_page_number": null,
+          "original_order": 73,
+          "source_location": "Section: 7 Discussion, Block: 73"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "8 Future Scope",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "This research field has a great potential in the future. This research filed can be applied in different areas such as;"
+          },
+          "block_index": 74,
+          "original_page_number": null,
+          "original_order": 74,
+          "source_location": "Section: 8 Future Scope, Block: 74"
+        },
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "Wireless communication networks",
+              "Internet routing",
+              "Cloud computing",
+              "Intelligent transportation systems",
+              "IoT networks"
+            ],
+            "ordered": true
+          },
+          "block_index": 75,
+          "original_page_number": null,
+          "original_order": 75,
+          "source_location": "Section: 8 Future Scope, Block: 75"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "SDN",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "list",
+          "content": {
+            "items": [
+              "Autonomous vehicles",
+              "Missile Defence Application",
+              "Rocket Trajectory Application",
+              "Agriculture and Environment Assisting Applications"
+            ],
+            "ordered": true
+          },
+          "block_index": 76,
+          "original_page_number": null,
+          "original_order": 76,
+          "source_location": "Section: SDN, Block: 76"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": false,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": false
+      }
+    },
+    {
+      "title": "9 Conclusion",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "This study presents the DB-algorithm, which addresses time and space complexity issues in previous algorithms. The results obtained using the proposed method show suitable performance and efficiency in both time and space problems in the shortest paths. Comprehensive analysis and testing confirm its effectiveness and efficient solution, addressing significant challenges in computational performance. The results emphasize the proposed DB-algorithm have the potential to establish a new standard in algorithm development. The innovative design and optimization techniques open opportunities for widespread application in numerous areas where efficiency is paramount. Future studies aim to enhance its adaptability further and explore its integration into specialized cases. Hence, the DB-algorithm marks a significant step forward in computational science, providing a reliable solution to persistent challenges and inspiring further advancements in the research field."
+          },
+          "block_index": 77,
+          "original_page_number": null,
+          "original_order": 77,
+          "source_location": "Section: 9 Conclusion, Block: 77"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "left",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    },
+    {
+      "title": "10 Declarations",
+      "level": 1,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Ethical Approval: No ethical approval is required.\nData Availability: No datasets were analyzed during the current study.\nConflict of Interest: There is no conflict of interest among all the authors."
+          },
+          "block_index": 78,
+          "original_page_number": null,
+          "original_order": 78,
+          "source_location": "Section: 10 Declarations, Block: 78"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Author’s Contribution: All the authors have equally contributed."
+          },
+          "block_index": 79,
+          "original_page_number": null,
+          "original_order": 79,
+          "source_location": "Section: 10 Declarations, Block: 79"
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Acknowledgment: This work was supported by the Deanship of Scientific Research, Vice Presidency for Graduate Studies and Scientific Research, King Faisal University, Saudi Arabia [KFU263839]."
+          },
+          "block_index": 80,
+          "original_page_number": null,
+          "original_order": 80,
+          "source_location": "Section: 10 Declarations, Block: 80"
+        }
+      ],
+      "heading_format": {
+        "level": 1,
+        "bold": true,
+        "size_pt": 12.0,
+        "body_size_pt": 11.0,
+        "size_ratio": 1.091,
+        "alignment": "both",
+        "space_before_pt": null,
+        "space_after_pt": null,
+        "keep_with_next": false,
+        "semantic": true,
+        "numbered": true
+      }
+    }
+  ],
+  "references": [
+    "Bellman, R. I. C. H. A. R. D. (1957). Dynamic programming, princeton univ. Press Princeton, New Jersey, 39.",
+    "Bellman, R. (1958). On a routing problem. Quarterly of applied mathematics, 16(1), 87-90.",
+    "Fredman, M. L. (1976). New bounds on the complexity of the shortest path problem. SIAM Journal on Computing, 5(1), 83-89.",
+    "Floyd, R. W. (1962). Algorithm 97: shortest path. Communications of the ACM, 5(6), 345-345.",
+    "Warshall, S. (1962). A theorem on boolean matrices. Journal of the ACM (JACM), 9(1), 11-12.",
+    "Kim, G., Kim, S., & Jang, I. G. (2022). Loopwise route representation-based topology optimization for the shortest path problems. IEEE Access, 10, 128835–128846. https://doi.org/10.1109/ACCESS.2022.3227388",
+    "Coy, S., Czumaj, A., Scheideler, C., Schneider, P., & Werthmann, J. (2022). Routing schemes for hybrid communication networks. Proceedings of the ACM Symposium on Principles of Distributed Computing (PODC 2022).",
+    "Gajjar, K., Jha, A. V., Kumar, M., & Lahiri, A. (2024). Reconfiguring shortest paths in graphs. Algorithmica, 86, 3309–3338. https://doi.org/10.1007/s00453-024-01263-y",
+    "Kim, G., Kim, C., Park, S., Kim, J., & Jang, I. G. (2025). Linear programming of the loopwise route representation for the shortest path problems by introducing the reference link flow. IEEE Access, 13, 38856–38864. https://doi.org/10.1109/ACCESS.2025.3546320",
+    "Andreoletti, D., Rottondi, C., Giordano, S., & Bianco, A. (2025). Scalable and privacy-preserving inter-AS routing through machine-learning-based graph pruning. IEEE Access, 13, 21891–21905. https://doi.org/10.1109/ACCESS.2025.3536545",
+    "Hlupic, N., Basch, D., Ivanjko, E., & Prister, J. (2025). An optimized route assignment for preventing traffic jams. IEEE Access, 13, 61207–61224. https://doi.org/10.1109/ACCESS.2025.3553492",
+    "Dory, M., & Matar, S. (2025). Massively parallel algorithms for approximate shortest paths. Distributed Computing, 38, 131–162. https://doi.org/10.1007/s00446-025-00482-y"
+  ],
+  "author_biographies": [
+    {
+      "author_name": "Dr. Aijaz",
+      "image_path": "media/image14.jpeg",
+      "biography_text": "Dr. Aijaz Ahmad Magray is an Assistant Professor in the Department of Mathematics at JB Institute of Engineering and Technology (JBIET), Hyderabad, India. He received his Ph.D. in Mathematics from Devi Ahilya Vishwavidyalaya, Indore, India. His research interests include mathematical modeling, linear algebra, numerical analysis, optimization, and artificial intelligence applications in mathematics."
+    },
+    {
+      "author_name": "D. Raju",
+      "image_path": "media/image15.png",
+      "biography_text": "D. Raju is an Assistant Professor in the Department of Mathematics, Jawaharlal Nehru Technological University, Hyderabad, India. His research focuses on applied mathematics, operations research, optimization, and mathematical modelling."
+    },
+    {
+      "author_name": "Dr. Aafaq",
+      "image_path": "media/image16.png",
+      "biography_text": "Dr. Aafaq A. Rather is an Assistant Professor at the Symbiosis Statistical Institute, Symbiosis International (Deemed University), Pune, India. His research interests include probability distributions, statistical quality control, sampling theory, reliability analysis, and machine learning. He has published over 130 research papers in reputed international journals."
+    },
+    {
+      "author_name": "Dr. Ikram",
+      "image_path": "media/image17.png",
+      "biography_text": "Dr. Ikram Ali is an Assistant Professor in the Department of Computer Science and Engineering at Apex Institute of Technology, Chandigarh University, Punjab, India. His research interests include artificial intelligence, machine learning, data analytics, and computational intelligence."
+    },
+    {
+      "author_name": "Dr. Vidya",
+      "image_path": "media/image18.jpeg",
+      "biography_text": "Dr. Vidya Yerneni is associated with the Symbiosis Statistical Institute, Symbiosis International (Deemed University), Pune, India. Her research interests include applied statistics, statistical modelling, data science, and multivariate analysis."
+    },
+    {
+      "author_name": "Dr. Ahmed",
+      "image_path": "media/image19.jpeg",
+      "biography_text": "Dr. Ahmed A. F. Osman is affiliated with the Applied College, King Faisal University, Al-Ahsa, Saudi Arabia. His research interests include applied mathematics, optimization, numerical analysis, and interdisciplinary mathematical applications."
+    },
+    {
+      "author_name": "Dr. Mohammed",
+      "image_path": "media/image19.jpeg",
+      "biography_text": "Dr. Mohammed Ataelfadiel is with the Applied College, King Faisal University, Al-Ahsa, Saudi Arabia. His research focuses on applied mathematics, mathematical modelling, optimization, and computational methods."
+    },
+    {
+      "author_name": "Dr. Ala",
+      "image_path": "media/image19.jpeg",
+      "biography_text": "Dr. Ala Abdullah is a faculty member at the Applied College, King Faisal University, Al-Ahsa, Saudi Arabia. Her research interests include applied mathematics, statistics, mathematical modelling, and data analysis."
+    },
+    {
+      "author_name": "Dr. Maryam",
+      "image_path": "media/image18.jpeg",
+      "biography_text": "Dr. Maryam Nasser Almusallam is affiliated with the Applied College, King Faisal University, Al-Ahsa, Saudi Arabia. Her research interests include applied mathematics, statistical analysis, educational research, and computational methods."
+    },
+    {
+      "author_name": "Dr. Osman",
+      "image_path": "media/image19.jpeg",
+      "biography_text": "Dr. Osman Elwasila Elshiekh is a faculty member in the Department of Management Information Systems, College of Business Administration, King Faisal University, Saudi Arabia. His research interests include management information systems, data analytics, artificial intelligence, and business intelligence."
+    },
+    {
+      "author_name": "Dr. Ali",
+      "image_path": "media/image19.jpeg",
+      "biography_text": "Dr. Ali Salem Bin Sama is affiliated with the Department of Management Information Systems, College of Business Administration, King Faisal University, Saudi Arabia. His research interests include information systems, digital transformation, data analytics, and decision support systems."
+    },
+    {
+      "author_name": "Dr. P.",
+      "image_path": "media/image20.png",
+      "biography_text": "Dr. P. Srinivasa Rao is a Professor in the Department of Computer Science and Engineering at JB Institute of Engineering and Technology (JBIET), Hyderabad. He received his Ph.D. from Jawaharlal Nehru Technological University Hyderabad (JNTUH). His research interests include cloud computing, distributed systems, data science, and database management systems."
+    }
+  ],
+  "received_date": "25 Nov. 2022",
+  "revised_date": "4 Jan. 2023",
+  "accepted_date": "15 Jan. 2023.",
+  "published_date": "1 ---. 20--.",
+  "volume": "No",
+  "issue": "",
+  "year": "",
+  "doi": "",
+  "corresponding_email": "aafaq7741@gmail.com3"
+}

@@ -68,6 +68,21 @@ async def _run(
             ) from exc
 
 
+from document_generator.models.schemas import BatchGenerationRequest, BatchSummary, PaperOverride
+
+
+def _parse_overrides(raw: Optional[str]) -> List[PaperOverride]:
+    if not raw or not raw.strip():
+        return []
+    try:
+        data = json.loads(raw)
+        if isinstance(data, list):
+            return [PaperOverride.model_validate(item) for item in data if isinstance(item, dict)]
+    except Exception as exc:
+        logger.warning("Could not parse paper_overrides: %s", exc)
+    return []
+
+
 @router.post("/generate-batch", response_model=BatchSummary)
 async def generate_batch(
     files: List[UploadFile] = File(..., description="The paper files (.docx)."),
@@ -81,12 +96,9 @@ async def generate_batch(
     document_types: Optional[str] = Form(None),
     generate_pdf: Optional[bool] = Form(None),
     extra_placeholders: Optional[str] = Form(None),
+    paper_overrides: Optional[str] = Form(None),
 ) -> BatchSummary:
-    """Generate every document type for every uploaded paper.
-
-    Upload twenty papers and the response describes twenty acceptance letters and
-    twenty invoices, each in DOCX and PDF, with no manual editing in between.
-    """
+    """Generate every document type for every uploaded paper."""
     request = BatchGenerationRequest(
         acceptance_date=acceptance_date,
         deadline=deadline,
@@ -98,6 +110,7 @@ async def generate_batch(
         document_types=_parse_types(document_types),
         generate_pdf=generate_pdf,
         extra_placeholders=_parse_extra(extra_placeholders),
+        paper_overrides=_parse_overrides(paper_overrides),
     )
     logger.info("Batch generation requested for %d paper(s)", len(files))
     return await _run(files, request)

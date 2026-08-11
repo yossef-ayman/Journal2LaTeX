@@ -1,0 +1,806 @@
+\PassOptionsToPackage{dvipsnames}{color}
+\PassOptionsToPackage{dvipsnames}{xcolor}
+% >>> j2l compat: xcolor / named-colour compatibility
+\PassOptionsToPackage{dvipsnames}{color}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
+\RequirePackage{xcolor}
+\makeatletter\@namedef{ver@color.sty}{2021/01/01}\makeatother
+\makeatletter\@ifundefined{providecolor}{}{%
+  \providecolor{Bittersweet}{RGB}{128,128,128}
+  \providecolor{Dandelion}{RGB}{128,128,128}
+  \providecolor{abstractcolor}{RGB}{128,128,128}
+  \providecolor{rulecolor}{RGB}{128,128,128}
+}\makeatother
+% <<< j2l compat
+\documentclass[10pt]{NSP1}
+\IfFileExists{url.sty}{\usepackage{url}}{}
+\IfFileExists{floatflt.sty}{\usepackage{floatflt}}{}
+\IfFileExists{helvet.sty}{\usepackage{helvet}}{}
+\IfFileExists{times.sty}{\usepackage{times}}{}
+\IfFileExists{psfig.sty}{\usepackage{psfig}}{}
+\IfFileExists{graphics.sty}{\usepackage{graphics}}{}
+\IfFileExists{mathptmx.sty}{\usepackage{mathptmx}}{}
+\IfFileExists{amsmath.sty}{\usepackage{amsmath}}{}
+\IfFileExists{amssymb.sty}{\usepackage{amssymb}}{}
+\IfFileExists{bm.sty}{\usepackage{bm}}{}
+\IfFileExists{float.sty}{\usepackage{float}}{}
+\IfFileExists{caption.sty}{\usepackage[bf,hypcap]{caption}}{}
+%% --- additional packages required by the tables and figures of this paper ---
+\IfFileExists{graphicx.sty}{\usepackage{graphicx}}{}
+\IfFileExists{longtable.sty}{\usepackage{longtable}}{}
+\IfFileExists{booktabs.sty}{\usepackage{booktabs}}{\providecommand\toprule{\hline}\providecommand\midrule{\hline}\providecommand\bottomrule{\hline}}
+\IfFileExists{array.sty}{\usepackage{array}}{}
+\IfFileExists{calc.sty}{\usepackage{calc}}{}
+\IfFileExists{multirow.sty}{\usepackage{multirow}}{\providecommand\multirow[3]{#3}}
+
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\real}[1]{#1}
+\providecommand{\ul}[1]{\underline{#1}}
+\providecommand{\hl}[1]{#1}
+\providecommand{\RL}[1]{#1}
+\providecommand{\textquotesingle}{'}
+\DeclareUnicodeCharacter{03B1}{$\alpha$}
+\DeclareUnicodeCharacter{03B2}{$\beta$}
+\DeclareUnicodeCharacter{03C7}{$\chi$}
+\DeclareUnicodeCharacter{03C1}{$\rho$}
+\DeclareUnicodeCharacter{03BC}{$\mu$}
+\DeclareUnicodeCharacter{03C3}{$\sigma$}
+\DeclareUnicodeCharacter{2264}{$\leq$}
+\DeclareUnicodeCharacter{2265}{$\geq$}
+\DeclareUnicodeCharacter{2260}{$\neq$}
+\DeclareUnicodeCharacter{00D7}{$\times$}
+\DeclareUnicodeCharacter{00B1}{$\pm$}
+\DeclareUnicodeCharacter{2248}{$\approx$}
+\DeclareUnicodeCharacter{221A}{$\sqrt{\ }$}
+\DeclareUnicodeCharacter{2192}{$\rightarrow$}
+\DeclareUnicodeCharacter{2022}{$\bullet$}
+\DeclareUnicodeCharacter{00B7}{$\cdot$}
+\DeclareUnicodeCharacter{2032}{$'$}
+\DeclareUnicodeCharacter{0393}{$\Gamma$}
+\DeclareUnicodeCharacter{03B7}{$\eta$}
+\DeclareUnicodeCharacter{03B8}{$\theta$}
+\DeclareUnicodeCharacter{03BB}{$\lambda$}
+\DeclareUnicodeCharacter{03A3}{$\Sigma$}
+\DeclareUnicodeCharacter{03B4}{$\delta$}
+\DeclareUnicodeCharacter{03B3}{$\gamma$}
+\DeclareUnicodeCharacter{2026}{\ldots}
+\DeclareUnicodeCharacter{FEFF}{}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\topmargin=0.00cm
+
+\def\sm{\smallskip}
+\def\no{\noindent}
+
+\def\firstpage{1}
+\setcounter{page}{\firstpage}
+\def\thevol{No}
+\def\thenumber{}
+\def\theyear{}
+
+\IfFileExists{graphicx.sty}{\usepackage{graphicx}}{}
+\makeatletter
+\def\biographyps#1#2{%
+  \par\addvspace{21dd}\small\noindent
+  \if!#1!\else
+    \noindent\includegraphics[width=1in,height=1.25in,keepaspectratio]{#1}\par\smallskip
+  \fi
+  {\bfseries#2\unskip\ }\ignorespaces}
+\def\endbiographyps{\par\addvspace{12pt}}
+\makeatother
+\IfFileExists{xcolor.sty}{\usepackage[table]{xcolor}}{}
+\IfFileExists{array.sty}{\usepackage{array}}{}
+\IfFileExists{cuted.sty}{\usepackage{cuted}}{\newenvironment{strip}{\par\medskip\noindent\begin{minipage}{\linewidth}}{\end{minipage}\par\medskip}}
+\makeatletter
+\newcommand\jltx@wideopen{\par\addvspace{\medskipamount}\noindent}
+\newcommand\jltx@wideclose{\par\addvspace{\medskipamount}}
+\newenvironment{jltxspan}
+  {\if@twocolumn\let\jltx@spannext\strip\else\let\jltx@spannext\jltx@wideopen\fi\jltx@spannext}
+  {\if@twocolumn\let\jltx@spanend\endstrip\else\let\jltx@spanend\jltx@wideclose\fi\jltx@spanend}
+\makeatother
+\newcommand\JLTXaboveplacement{\par\addvspace{6pt plus 2pt minus 2pt}\noindent}
+\newcommand\JLTXbelowplacement{\par\addvspace{6pt plus 2pt minus 2pt}}
+\widowpenalty=10000
+\clubpenalty=10000
+
+% >>> j2l compat: scalable Computer Modern (arbitrary font sizes)
+\IfFileExists{type1cm.sty}{\usepackage{type1cm}}{}
+\IfFileExists{fix-cm.sty}{\usepackage{fix-cm}}{}
+% <<< j2l compat
+\begin{document}
+% >>> j2l compat: body-text size (+5%)
+\makeatletter
+\edef\JLTXbasesize{\f@size}
+\@tempdimb=1.2\dimexpr\f@size pt\relax\edef\JLTXbaseskip{\strip@pt\@tempdimb}
+\def\JLTXbodyscale{1.050}
+\let\JLTX@normalsize\normalsize
+\renewcommand\normalsize{%
+  \JLTX@normalsize
+  \@tempdima=\JLTXbodyscale\dimexpr\f@size pt\relax
+  \@tempdimb=1.2\@tempdima
+  \fontsize{\strip@pt\@tempdima}{\strip@pt\@tempdimb}\selectfont}%
+\@ifundefined{@makecaption}{}{%
+  \let\JLTX@makecaption\@makecaption
+  \long\def\@makecaption#1#2{%
+    \begingroup\fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont
+    \let\normalsize\JLTX@normalsize
+    \JLTX@makecaption{#1}{#2}\endgroup}}%
+\@ifundefined{thebibliography}{}{%
+  \let\JLTX@thebibliography\thebibliography
+  \def\thebibliography{%
+    \fontsize{\JLTXbasesize}{\JLTXbaseskip}\selectfont\JLTX@thebibliography}}%
+\makeatother
+\normalsize
+% <<< j2l compat
+
+% >>> j2l: keep the journal banner with the title block
+\makeatletter
+\let\JLTXorig@newpage\newpage
+\let\JLTXorig@clearpage\clearpage
+\let\JLTXorig@cleardoublepage\cleardoublepage
+\let\newpage\relax\let\clearpage\relax\let\cleardoublepage\relax
+\makeatother
+% <<< j2l
+
+
+\titlefigurecaption{{\large \bf \rm Journal of Statistics Applications \& Probability }\\ {\it\small An International Journal}}
+
+\title{A Hybrid Bellman–Ford–Dijkstra (DB) Algorithm for Efficient Shortest Path Computation}
+
+\author{Author name unspecified}
+\institute{}
+
+\titlerunning{A Hybrid Bellman–Ford–Dijkstra (DB) Algorithm for Efficient Shortest Path Computation}
+\authorrunning{S. Eyadat et al.}
+
+%corresponding author email
+\mail{aafaq7741@gmail.com3}
+
+\received{25 Nov. 2022}
+\revised{4 Jan. 2023}
+\accepted{15 Jan. 2023.}
+\published{1 ---. 20--.}
+
+\abstracttext{In graph theory, detecting the shortest path between two active nodes remains a significant challenge in the research community. Finding the minimum-cost path between two nodes remains an important research problem with numerous practical applications. Although Dijkstra's algorithm provides efficient shortest-path computation for graphs with non-negative edge weights and Bellman-Ford handles negative edge weights, neither algorithm simultaneously offers efficient computation, reduced search space, and low computational overhead. This limitation motivates the development of a hybrid algorithm that combines the strengths of both approaches while overcoming their individual weaknesses. In this paper, we propose a novel hybrid DB Algorithm that integrates the Bellman–Ford and Dijkstra algorithms to efficiently compute shortest paths in weighted graphs containing negative edge weights while reducing computational time and search-space complexity. The proposed DB Algorithm addresses the limitations of existing shortest-path algorithms by reducing computational overhead while efficiently handling negative edge weights and minimizing time and space complexity. The proposed algorithm is evaluated using two key performance metrics: Time to Search Shortest Distance (TSSD) and computational space complexity. Experimental results demonstrate that the proposed DB Algorithm significantly reduces computational overhead while accurately identifying shortest paths in weighted graphs. Simulation results validate the effectiveness and computational efficiency of the proposed DB Algorithm. In the future, the proposed DB Algorithm has potential applications to wireless communication systems, network routing, multidirectional communication protocols, and quantum computing applications.}
+
+\keywords{Hybrid, DB-Algorithm, Active Nodes, Shortest Distance (SD), Time to Search Shortest Distance}
+
+\maketitle
+% >>> j2l: page breaking restored after the title block
+\makeatletter
+\let\newpage\JLTXorig@newpage
+\let\clearpage\JLTXorig@clearpage
+\let\cleardoublepage\JLTXorig@cleardoublepage
+\makeatother
+% <<< j2l
+
+
+\raggedbottom
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+
+
+\par\vspace{6.0pt}\noindent {\large\bfseries 1 Introduction\par}\vspace{12.0pt}
+
+The well-studied research topic in graph theory is the shortest-path. It is indeed a major issue and a serious challenge in the research community. The study of shortest path problems between the vertices (nodes) and edges (lines) in a graph is an active research topic for research community. Therefore, a great deal of attention has been paid in graph theory to optimizing shortest-path, with the minimum length criteria between two nodes. Therefore, numerous algorithms have been redesigned and implemented for finding a shortest path between two nodes. Due to its wide range of applications which include network routing protocols, route planning, traffic control, path finding in social networks, computer games, and transportation systems, forging us an exclusive state of shortest path issue in the graphs. The purpose to find the shortest path with all variants between two nodes in a graph is a complex act that needed to be resolved with the special techniques in mathematics. Several numbers of techniques suggested by the research scholars include Greedy algorithm, M. Fredman, Floyd Warshall algorithm \cite{ref1, ref2}, Dijkstra’s shortest path algorithm \cite{ref3, ref4} Bellman Ford-algorithm \cite{ref5, ref6} and Genetic algorithm for optimizing the route between the two nodes in a graph. These algorithms are designed to determine the shortest path in a graph. Shortest path algorithms constitute a family of algorithms used to solve shortest path problems.
+
+Several research solutions have been implemented to overcome the short path problems in a graph. However, they fail to address all the variant vulnerabilities of space and time that are associated with the shortest paths \cite{ref7, ref8}. Our aim is to present a new hybrid algorithm model which handles all inherited limitations and vulnerabilities that occur in previous algorithms. The new hybrid model has been proposed to sort out the time and space complexity issues for graph in this paper. It has an ability to find the shortest path between two vertices or nodes in graph theory
+
+\par\medskip\noindent {\large\bfseries 2 The Proposed DB-Algorithm\par}\smallskip
+
+The proposed DB-algorithm is the Hybridization of integration of two or more meta-heuristic optimization algorithms for searching for the most suitable and optimal solution in a specific search space \cite{ref9, ref10}. The proposed DB-algorithm works on both positive and negative edge weights through parallel operations. Therefore, parallel operations of the proposed algorithm hold good properties which make it capable of working on different methods and resolving the problems efficiently. For example, searching is efficient when the problems can be solved with many solutions.
+
+Prime objective of Hybridization is as:
+
+\begin{enumerate}
+  \item To address vulnerability of specific meta-heuristic optimization algorithm.
+  \item To address limitations of specific meta-heuristic optimization algorithm.
+  \item To counter disadvantages of specific meta-heuristic optimization algorithm.
+  \item To integrate the advantages of specific meta-heuristic optimization algorithm.
+\end{enumerate}
+
+In the proposed DB Algorithm, Phase One (P1) represents a search-space pruning stage in which the Bellman–Ford algorithm is used to identify feasible shortest-path candidates while handling negative edge weights. This stage generates a reduced search space by eliminating infeasible or non-promising paths. Phase Two (P2) applies Dijkstra's algorithm to the reduced search space generated in Phase One, thereby improving computational efficiency. Therefore, the term "phase" refers to two sequential computational stages rather than graph clustering, and no partitioning of vertices into mathematical clusters is performed. Figure 1 depicts the concept of hybridization of two meta-heuristic optimization algorithms which addresses the limitations and vulnerabilities by integrating the advantages of other meta-heuristic optimization algorithm and facilitates commitment for convergence with fewer time parameters and space complexity.
+
+\JLTXaboveplacement \begin{jltxspan}%
+\noindent\begin{minipage}{\linewidth}%
+\centering
+\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{media/office_obj_1.png}
+\captionof{figure}{Hybridization of Two Optimization Algorithm}
+\label{fig:office1}%
+\end{minipage}%
+\end{jltxspan}\JLTXbelowplacement 
+
+\JLTXaboveplacement \begin{jltxspan}%
+\noindent\begin{minipage}{\linewidth}%
+\centering
+\ifdim 5.1562in>\linewidth
+  \includegraphics[width=\linewidth,keepaspectratio]{media/image5.png}
+\else
+  \includegraphics[width=5.1562in,height=2.2188in]{media/image5.png}
+\fi
+\captionof{figure}{Figure 1: Hybridization of Two Optimization Algorithm}%
+\end{minipage}%
+\end{jltxspan}\JLTXbelowplacement 
+
+Hence, the proposed DB-Algorithm is a possible method for solving the negative weights in the search space. It can overcome the limitations which are constituted by the previous designs. The proposed algorithm can perform parallel search of various nodes in space which has the ability to consume less time in space to achieve target. This ability will become a benchmark to be the fastest algorithm. Dijkstra's shortest-path algorithm has a blind search. It calculates the entire path from source to destination, which makes algorithm inefficient because it wastes more time to reach to the necessary-resources. In addition, if the space search of an algorithm increases, the time required for the optimal path also increases exponentially. In addition, it works with non-negative weights for the edges with slight modifications but fails for negative weight in the space graph, which swings the system and hangs the final results. However, nested loops taken by Dijkstra’s algorithm leads to increase the search time in space \cite{ref11, ref12}. Due to some limitations of Dijkstra’s algorithm like using nested loops, which increase the search time, it becomes necessary work for research community to implement a new algorithm which can span less time in space, using limited loops. In this regard a new DB-Algorithm algorithm has been proposed,
+
+The proposed DB-algorithm provides a more accurate and realistic approach in nature in the context of real-world problems The DB-algorithm works with both positive and negative edge weights. It overcomes the limitations of Dijkstra's Algorithm. Initially Bellman-Ford-algorithm is initiated with parameter subjected to target search space; the output of this search will be input for Dijkstra's Algorithm and is search space for the second algorithm. However, the proposed algorithm is shown in Figure 2, which is free of negative edges and is smaller in size than previous designs.
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{media/office_obj_2.png}
+\caption{The proposed DB-Algorithm}
+\label{fig:office2}
+\end{figure}\JLTXbelowplacement 
+
+\par\medskip\noindent {\large\bfseries 3 The Java Code Segment using for the proposed DB-Algorithm\par}\smallskip
+
+Optimal Shortest Path selection process for the proposed DB-algorithm has been checked in the java cod as:
+
+Declare Int N\_D Number\_of\_Node, N\_C Number\_of\_Cluster, D\_N Distance Between Nodes
+
+Int NL Loop\_1\_Cout, NL2 Loop\_2\_Count
+
+\JLTXaboveplacement \begin{table}[H]
+\centering
+{\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{\dimexpr 0.0097\linewidth-2\tabcolsep\relax}}
+ \\
+\hline
+\end{tabular}}
+\caption{Table}
+\end{table}\JLTXbelowplacement 
+
+Start phase one - Level 1
+
+Start phase one - Level 1
+
+Start phase one - Level 1
+
+End Phase\_One - Level\_2
+
+End Phase\_One Level - 1
+
+Second Level Clustering Start with new non negative search space, shortened search space
+
+Start Phase Two Level\_1
+
+Start Phase Two Level\_2
+
+End Phase\_Two Level\_2
+
+End Phase\_Two Level\_1
+
+Optimal Shortest Path Selection Process End: Print Result.
+
+\par\medskip\noindent {\large\bfseries 4. Flow Chart\par}\smallskip
+
+The Figure 3 describes the flow chart of the proposed algorithm.
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{media/office_obj_3.png}
+\caption{The Proposed DB-Algorithm Flow Chart}
+\label{fig:office3}
+\end{figure}\JLTXbelowplacement 
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\ifdim 6.0208in>\linewidth
+  \includegraphics[width=\linewidth,keepaspectratio]{media/image7.png}
+\else
+  \includegraphics[width=6.0208in,height=7.7917in]{media/image7.png}
+\fi
+\caption{Figure 3: The Proposed DB-Algorithm Flow Chart}
+\end{figure}\JLTXbelowplacement 
+
+\par\medskip\noindent {\large\bfseries 5. Result\par}\smallskip
+
+\par\medskip\noindent {\large 5.1 System Configuration\par}\smallskip
+
+\par\medskip\noindent {\large\bfseries Machine: Dell Latitude 3440\par}\smallskip
+
+\par\medskip\noindent {\large\bfseries Processor: 13th Gen Intel® Core™ i7-1355U, 1.70 GHz\par}\smallskip
+
+\par\medskip\noindent {\large\bfseries RAM: 16.0 GB (15.7 GB usable)\par}\smallskip
+
+\par\medskip\noindent {\large\bfseries Operating System: Windows 11 Education, Version 23H2 (OS Build 22631.4391)\par}\smallskip
+
+\par\medskip\noindent {\large\bfseries System Type: 64-bit operating system, x64-based processor\par}\smallskip
+
+\par\medskip\noindent {\large\bfseries Device ID: C7C2F718-4A80-4576-94C2-E6A7EEF45FCA\par}\smallskip
+
+\par\medskip\noindent {\large\bfseries Windows Feature Experience Pack: 1000.22700.1047.0\par}\smallskip
+
+\par\medskip\noindent {\large 5.2 Graphs with 3 vertices\par}\smallskip
+
+We tested the algorithms with graphs containing 0,1 And 2 vertices, using different paths. The execution time of the DB algorithm was calculated and compared with that of Dijkstra’s algorithm. All the test results are provided below (see Figure 4 for a graphical representation and Table 1 for detailed numerical values)."and the result is clearly mentioned in the Table 2.
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{media/office_obj_4.png}
+\caption{Graph with Shortest path}
+\label{fig:office4}
+\end{figure}\JLTXbelowplacement 
+
+\JLTXaboveplacement \begin{table}[H]
+\centering
+{\renewcommand{\arraystretch}{2.00}\small
+\begin{tabular}{|>{\centering\arraybackslash}p{\dimexpr 0.1163\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1163\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1163\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1163\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\hline
+ & \cellcolor[HTML]{FFFF00}\textbf{0} & \cellcolor[HTML]{FFFF00}\textbf{1} & \cellcolor[HTML]{FFFF00}\textbf{2} \\
+\hline
+\cellcolor[HTML]{FFFF00}0 & 0 & 7 & 3 \\
+\hline
+\cellcolor[HTML]{FFFF00}1 & 7 & 0 & 2 \\
+\hline
+\cellcolor[HTML]{FFFF00}2 & 3 & 2 & 0 \\
+\hline
+\end{tabular}}
+\caption{Adjacency Matrix of 3 vertices}
+\end{table}\JLTXbelowplacement 
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{media/image10.png}
+\caption{Figure 4: Graph with Shortest path}
+\end{figure}\JLTXbelowplacement 
+
+\JLTXaboveplacement \begin{jltxspan}%
+\noindent\begin{minipage}{\linewidth}%
+\centering
+{\renewcommand{\arraystretch}{2.00}\small
+\begin{tabular}{|>{\centering\arraybackslash}p{\dimexpr 0.0546\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0905\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1366\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1321\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1081\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1741\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1363\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1637\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\hline
+\multirow{2}{*}{\textbf{Sr. No.}} & \multirow{2}{*}{\textbf{Vertex}} & \multirow{2}{*}{\textbf{Target
+
+(Source -to-Destination)}} & \multirow{2}{*}{\textbf{Possible Best Shortest Path}} & \multirow{2}{*}{\textbf{Total Distance}} & \textbf{Dijkstra Algorithms} & \multicolumn{2}{c|}{\textbf{DB Algorithms}} \\
+\cline{6-8}
+ &  &  &  &  & \textbf{Execution Time Complexity} & \textbf{Execution Time Complexity} & \textbf{Convert in to (Nano Second)} \\
+\hline
+01 & 03 & 0-1 & 0-2-1 & 5 & 19779800 ns & 0.1005 ms & \cellcolor[HTML]{00B050}100,500ns \\
+\hline
+02 & 03 & 1-0 & 1-2-0 & 5 & 18160900 ns & 0.083 ms & \cellcolor[HTML]{00B050}83,000ns \\
+\hline
+03 & 03 & 2-1 & 2-1 & 2 & 19289700 ns & 0.0873 ms & \cellcolor[HTML]{00B050}87,300 ns \\
+\hline
+04 & 03 & 2-0 & 2-0 & 3 & 19910900 ns & 0.0924 ms & \cellcolor[HTML]{00B050}92,400 ns \\
+\hline
+ &  & \multicolumn{3}{c|}{\cellcolor[HTML]{FFFF00}\textbf{Average Execution Time}} & \cellcolor[HTML]{FFFF00}\textbf{19285325 ns} & \cellcolor[HTML]{FFFF00} & \cellcolor[HTML]{FFFF00}\textbf{363200 ns} \\
+\hline
+\end{tabular}}
+\captionof{table}{Shortest path and execution time table}%
+\end{minipage}%
+\end{jltxspan}\JLTXbelowplacement 
+
+Execution time calculated based on different shortest paths.
+
+\[
+Percentage\ Faster = \frac{Dijkstra\ Algorithms\ Average - DB\ Algorithms\ Average\ \ }{\ \ Dijkstra\ Algorithms\ Average} \times 100
+\]
+
+\[
+= \frac{19285325 - 363200\ \ \ }{\ \ \ 19285325} \times 100
+\]
+
+\[
+= \ \frac{19285325 - \ 363200}{\ 19285325} \times 100\
+\]
+
+\[
+= \frac{18922125\ \ \ }{\ \ 19285325} \times 100
+\]
+
+\(= 98.12\%\)
+
+Figure 4 and Table 2 demonstrate the performance of the proposed DB Algorithm on a small graph containing three vertices. The algorithm correctly identifies the shortest paths while reducing the search space before applying Dijkstra's algorithm. The experimental results show that the hybrid approach significantly decreases execution time without affecting the correctness of the computed shortest paths.
+
+\par\medskip\noindent {\large 5.3 Graph with vertex -4\par}\smallskip
+
+We tested the algorithms with graphs containing 4 vertices shown in Figure 5 using different paths. The execution time of the DB algorithm was calculated and compared with that of Dijkstra’s algorithm. All the test results are provided and mentioned in the Table 3 and the Table 4 determines the shortest path and execution time which clearly shows that DB algorithm result is 99.50\% better than Dijkstra’s algorithm.
+
+\JLTXaboveplacement \begin{table}[H]
+\centering
+{\renewcommand{\arraystretch}{2.00}\small
+\begin{tabular}{|>{\centering\arraybackslash}p{\dimexpr 0.0898\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0898\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0898\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0898\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0898\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\hline
+ & \cellcolor[HTML]{FFFF00}\textbf{0} & \cellcolor[HTML]{FFFF00}\textbf{1} & \cellcolor[HTML]{FFFF00}\textbf{2} & \cellcolor[HTML]{FFFF00}\textbf{3} \\
+\hline
+\cellcolor[HTML]{FFFF00}0 & 0 & 3 & 4 & 5 \\
+\hline
+\cellcolor[HTML]{FFFF00}1 & 3 & 0 & 5 & 2 \\
+\hline
+\cellcolor[HTML]{FFFF00}2 & 4 & 5 & 0 & 6 \\
+\hline
+\cellcolor[HTML]{FFFF00}3 & 5 & 2 & 6 & 0 \\
+\hline
+\end{tabular}}
+\caption{Table 3: Adjacency Matrix of 4 vertices}
+\end{table}\JLTXbelowplacement 
+
+\JLTXaboveplacement \begin{jltxspan}%
+\noindent\begin{minipage}{\linewidth}%
+\centering
+\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{media/office_obj_5.png}
+\captionof{figure}{Graph with shortest path}
+\label{fig:office5}%
+\end{minipage}%
+\end{jltxspan}\JLTXbelowplacement 
+
+\JLTXaboveplacement \begin{jltxspan}%
+\noindent\begin{minipage}{\linewidth}%
+\centering
+{\renewcommand{\arraystretch}{1.38}\small
+\begin{tabular}{|>{\centering\arraybackslash}p{\dimexpr 0.0640\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0968\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1628\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1170\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1213\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.1535\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1535\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1271\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\hline
+\multirow{2}{*}{\textbf{Sr. No.}} & \multirow{2}{*}{\textbf{Vertex}} & \multirow{2}{*}{\textbf{Target
+
+(Source -to-Destination)}} & \multirow{2}{*}{\textbf{Possible Best Shortest Path}} & \multirow{2}{*}{\textbf{Total Distance}} & \textbf{Dijkstra Algorithms} & \multicolumn{2}{c|}{\textbf{DB Algorithms}} \\
+\cline{6-8}
+ &  &  &  &  & \textbf{Execution Time Complexity} & \textbf{Execution Time Complexity} & \textbf{Convert in to (Nano Second)} \\
+\hline
+01 & 4 & 1-2 & 1-2 & 5 & 27752100 ns & 0.0889 ms & 88900 ns \\
+\hline
+02 & 4 & 0-3 & 0-1-3 & 5 & 21884000 ns & 0.122 ms & 122000 ns \\
+\hline
+03 & 4 & 3-0 & 3-0 & 5 & 20483600 ns & 0.125 ms & 125000 ns \\
+\hline
+04 & 4 & 2-3 & 2-3 & 6 & 23297200 ns & 0.098 ms & 98000 ns \\
+\hline
+05 & 4 & 2-0 & 2-0 & 4 & 17697000 ns & 0.1159 ms & 115900 ns \\
+\hline
+ &  & \multicolumn{3}{c|}{\cellcolor[HTML]{FFFF00}\textbf{Average Execution Time}} & \cellcolor[HTML]{FFFF00}\textbf{22222780 ns} & \cellcolor[HTML]{FFFF00} & \cellcolor[HTML]{FFFF00}\textbf{109960 ns} \\
+\hline
+\end{tabular}}
+\captionof{table}{Table 4: Shortest path and execution time table}%
+\end{minipage}%
+\end{jltxspan}\JLTXbelowplacement 
+
+\par\medskip\noindent {\large\bfseries Execution Time Calculated based on different shortest paths\par}\smallskip
+
+\[
+Percentage\ Faster = \frac{Dijkstra’s\ Algorithms\ Average - DB\ Algorithms\ Average\ }{Dijkstra’s\ Algorithms\ Average} \times 100
+\]
+
+\[
+= \frac{22222780 - 109960}{22222780} \times 100
+\]
+
+\[
+= \frac{22112820}{22222780} \times 100
+\]
+
+\(\cong 99.50\%\)
+
+Figure 5 and Table 4 evaluate the proposed algorithm on a graph with four vertices. As the graph size increases, the DB Algorithm maintains accurate shortest-path computation while efficiently handling the reduced search space generated during Phase One. The results indicate that the computational advantage is preserved as graph complexity increases.
+
+\par\medskip\noindent {\large 5.4 Graph with vertex -6\par}\smallskip
+
+The third test was on the 6 vertices with so many shortest paths between source to destination as shown in Figure 6 and also in Table 5 determines the weight and paths the execution time mentioned in the Table 6 was calculated and compared with Dijkstra's algorithm and which 96.23\% better than the available algorithm.
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{media/office_obj_6.png}
+\label{fig:office6}
+\end{figure}\JLTXbelowplacement 
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{media/image10.png}
+\end{figure}\JLTXbelowplacement 
+
+Table 5: Adjacency Matrix of 6 vertices
+
+\JLTXaboveplacement \begin{jltxspan}%
+\noindent\begin{minipage}{\linewidth}%
+\centering
+{\renewcommand{\arraystretch}{1.73}\small
+\begin{tabular}{|>{\centering\arraybackslash}p{\dimexpr 0.2390\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1144\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0966\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1287\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1326\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1424\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1424\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\hline
+\textbf{Vertex} & \cellcolor[HTML]{FFFF00}\textbf{0} & \cellcolor[HTML]{FFFF00}\textbf{1} & \cellcolor[HTML]{FFFF00}\textbf{2} & \cellcolor[HTML]{FFFF00}\textbf{3} & \cellcolor[HTML]{FFFF00}\textbf{4} & \cellcolor[HTML]{FFFF00}\textbf{5} \\
+\hline
+\cellcolor[HTML]{FFFF00}0 & 0 & 4 & 8 & 6 & 5 & 0 \\
+\hline
+\cellcolor[HTML]{FFFF00}1 & 4 & 0 & 0 & 0 & 3 & 9 \\
+\hline
+\cellcolor[HTML]{FFFF00}2 & 8 & 0 & 0 & 0 & 5 & 6 \\
+\hline
+\cellcolor[HTML]{FFFF00}3 & 6 & 0 & 0 & 0 & 2 & 4 \\
+\hline
+\cellcolor[HTML]{FFFF00}4 & 5 & 3 & 5 & 2 & 0 & 7 \\
+\hline
+\cellcolor[HTML]{FFFF00}5 & 0 & 9 & 6 & 4 & 7 & 0 \\
+\hline
+\end{tabular}}
+\captionof{table}{Table 6: Shortest path and execution timetable}%
+\end{minipage}%
+\end{jltxspan}\JLTXbelowplacement 
+
+\JLTXaboveplacement \begin{jltxspan}%
+\noindent\begin{minipage}{\linewidth}%
+\centering
+{\renewcommand{\arraystretch}{1.65}\small
+\begin{tabular}{|>{\centering\arraybackslash}p{\dimexpr 0.0558\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0817\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1401\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1334\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1083\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1753\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1373\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1641\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\hline
+\multirow{2}{*}{\textbf{Sr. No.}} & \multirow{2}{*}{\textbf{Vertex}} & \multirow{2}{*}{\textbf{Target
+
+(Source -to-Destination)}} & \multirow{2}{*}{\textbf{Possible Best Shortest Path}} & \multirow{2}{*}{\textbf{Total Distance}} & \textbf{Dijkstra Algorithms} & \multicolumn{2}{c|}{\textbf{DB Algorithms}} \\
+\cline{6-8}
+ &  &  &  &  & \textbf{Execution Time Complexity} & \textbf{Execution Time Complexity} & \textbf{Convert in to (Nano Second)} \\
+\hline
+01 & 6 & 0-5 & 0-3-5 & 10 & 15983400 ns & 0.1304 ms & 130400 ns \\
+\hline
+02 & 6 & 3-2 & 3-4-2 & 7 & 16126100 ns & 0.1332 ms & 133200 ns \\
+\hline
+03 & 6 & 1-3 & 1-4-3 & 5 & 15518600 ns & 0.1343 ms & 134300 ns \\
+\hline
+04 & 6 & 2-1 & 2-4-1 & 8 & 15083500 ns & 0.1246 ms & 124600 ns \\
+\hline
+05 & 6 & 4-0 & 4-0 & 5 & 21313100 ns & 0.1094 ms & 109400 ns \\
+\hline
+ &  & \multicolumn{3}{c|}{\cellcolor[HTML]{FFFF00}\textbf{Average Execution Time}} & \cellcolor[HTML]{FFFF00}\textbf{16804940 ns} & \cellcolor[HTML]{FFFF00} & \cellcolor[HTML]{FFFF00}\textbf{631900 ns} \\
+\hline
+\end{tabular}}
+\captionof{table}{Table}%
+\end{minipage}%
+\end{jltxspan}\JLTXbelowplacement 
+
+\par\medskip\noindent {\large\bfseries Execution Time Calculated based on different shortest paths\par}\smallskip
+
+\[
+Percentage\ Faster = \ \frac{Dijkstra\ Algorithms\ Average - \ DB\ Algorithms\ Average\ }{Dijkstra\ Algorithms\ Average} \times 100
+\]
+
+\[
+= \frac{16804940\ - \ 631900\ }{\ \ 16804940} \times 100
+\]
+
+\[
+= \frac{16173040}{\ 16804940} \times 100
+\]
+
+\[
+= 96.23\%
+\]
+
+Figure 6 and Table 6 illustrate the behavior of the proposed algorithm on a denser graph with six vertices and multiple candidate paths. The reduced search space enables the algorithm to avoid unnecessary computations, resulting in consistent execution-time improvements while maintaining optimal path selection.
+
+\par\medskip\noindent {\large 5.5 Graph with vertex -10\par}\smallskip
+
+Finally, the testing was done on the 10 vertices shown in Figure 7 and so many shortest paths were available from source to destination mentioned in the Table 7 and the execution time for the determination of shortest path was calculated which shows 98.91\% better result than the Dijkstra’s algorithm which is mentioned in Table 8.
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{media/office_obj_7.png}
+\caption{Graph with Shortest path}
+\label{fig:office7}
+\end{figure}\JLTXbelowplacement 
+
+\JLTXaboveplacement \begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{media/image10.png}
+\end{figure}\JLTXbelowplacement 
+
+Table 7: Adjacency Matrix of 10 vertices
+
+\JLTXaboveplacement \begin{jltxspan}%
+\noindent\begin{minipage}{\linewidth}%
+\centering
+{\renewcommand{\arraystretch}{1.10}\small
+\begin{tabular}{|>{\centering\arraybackslash}p{\dimexpr 0.0914\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0904\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0904\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0906\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0904\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0904\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0906\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0904\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0904\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0904\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0902\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\hline
+\textbf{Vertex} & \cellcolor[HTML]{FFFF00}\textbf{0} & \cellcolor[HTML]{FFFF00}\textbf{1} & \cellcolor[HTML]{FFFF00}\textbf{2} & \cellcolor[HTML]{FFFF00}\textbf{3} & \cellcolor[HTML]{FFFF00}\textbf{4} & \cellcolor[HTML]{FFFF00}\textbf{5} & \cellcolor[HTML]{FFFF00}\textbf{6} & \cellcolor[HTML]{FFFF00}\textbf{7} & \cellcolor[HTML]{FFFF00}\textbf{8} & \cellcolor[HTML]{FFFF00}\textbf{9} \\
+\hline
+\cellcolor[HTML]{FFFF00}0 & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & 8 \\
+\hline
+\cellcolor[HTML]{FFFF00}1 & 0 & 0 & 3 & 0 & 0 & 4 & 0 & 7 & 0 & 0 \\
+\hline
+\cellcolor[HTML]{FFFF00}2 & 0 & 3 & 0 & 2 & 0 & 11 & 6 & 0 & 0 & 0 \\
+\hline
+\cellcolor[HTML]{FFFF00}3 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 5 & 3 \\
+\hline
+\cellcolor[HTML]{FFFF00}4 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 7 \\
+\hline
+\cellcolor[HTML]{FFFF00}5 & 0 & 4 & 11 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+\hline
+\cellcolor[HTML]{FFFF00}6 & 0 & 0 & 6 & 0 & 0 & 0 & 0 & 0 & 0 & 6 \\
+\hline
+\cellcolor[HTML]{FFFF00}7 & 0 & 4 & 0 & 0 & 2 & 0 & 0 & 0 & 6 & 0 \\
+\hline
+\cellcolor[HTML]{FFFF00}8 & 0 & 0 & 0 & 5 & 0 & 1 & 0 & 6 & 0 & 0 \\
+\hline
+\cellcolor[HTML]{FFFF00}9 & 8 & 0 & 0 & 3 & 7 & 0 & 6 & 0 & 0 & 0 \\
+\hline
+\end{tabular}}
+\captionof{table}{Table 8: Shortest path and execution timetable}%
+\end{minipage}%
+\end{jltxspan}\JLTXbelowplacement 
+
+\JLTXaboveplacement \begin{jltxspan}%
+\noindent\begin{minipage}{\linewidth}%
+\centering
+{\renewcommand{\arraystretch}{1.46}\small
+\begin{tabular}{|>{\centering\arraybackslash}p{\dimexpr 0.0559\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.0992\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1462\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1097\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1083\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1751\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1371\linewidth-2\tabcolsep-\arrayrulewidth\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1645\linewidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\hline
+\multirow{2}{*}{\textbf{Sr. No.}} & \multirow{2}{*}{\textbf{Vertex}} & \multirow{2}{*}{\textbf{Target
+
+(Source -to-Destination)}} & \multirow{2}{*}{\textbf{Possible Best Shortest Path}} & \multirow{2}{*}{\textbf{Total Distance}} & \textbf{Dijkstra Algorithms} & \multicolumn{2}{c|}{\textbf{DB Algorithms}} \\
+\cline{6-8}
+ &  &  &  &  & \textbf{Execution Time Complexity} & \textbf{Execution Time Complexity} & \textbf{Convert in to (Nano Second)} \\
+\hline
+01 & 10 & 0-8 & 0-4-7-8 & 15 & 16122500 ns & 0.2489 ms & 248900 ns \\
+\hline
+02 & 10 & 2-7 & 2-1-7 & 10 & 17276000 ns & 0.1233 ms & 123300 ns \\
+\hline
+03 & 10 & 3-5 & 3-8-5 & 6 & 17898500 ns & 0.153 ms & 153000 ns \\
+\hline
+04 & 10 & 1-9 & 1-2-3-9 & 8 & 16636500 ns & 0.1364 ms & 136400 ns \\
+\hline
+05 & 10 & 4-6 & 4-9-6 & 13 & 15989900 ns & 0.2502 ms & 250200 ns \\
+\hline
+ &  & \multicolumn{3}{c|}{\cellcolor[HTML]{FFFF00}\textbf{Average Execution Time}} & \cellcolor[HTML]{FFFF00}\textbf{16784680} & \cellcolor[HTML]{FFFF00} & \cellcolor[HTML]{FFFF00}\textbf{182360} \\
+\hline
+\end{tabular}}
+\captionof{table}{Table}%
+\end{minipage}%
+\end{jltxspan}\JLTXbelowplacement 
+
+\par\medskip\noindent {\large\bfseries Execution Time Calculated based on different shortest paths\par}\smallskip
+
+\[
+Percentage\ Faster = \frac{Dijkstra\ Algorithms\ Average - DB\ Algorithms\ Average}{Dijkstra\ Algorithms\ Average} \times 100
+\]
+
+\[
+= \frac{16784680\ - \ 182360\ }{16784680} \times 100
+\]
+
+\(= \ \frac{\ 16602320\ }{\ 16784680} \times 100\)
+
+\(\cong 98.91\%\)
+
+Figure 7 and Table 8 demonstrate the scalability of the proposed DB Algorithm on a larger graph consisting of ten vertices. Despite the increased number of possible routes, the hybrid approach continues to identify optimal shortest paths efficiently. These results indicate that the proposed method scales well with increasing graph size while maintaining computational efficiency.
+
+\par\medskip\noindent {\large\bfseries 6 The DB -Algorithm facilitates various advantages like\par}\smallskip
+
+a) Negative weight or edge present in the search space is a major issue in Dijkstra's algorithms which has been countered in initial stage in DB-Algorithm such that new search space is suggested for optimal result.
+
+b) Dijkstra's algorithm implements recursive search technique which calls another function for optimization, this recursive calling results increases search time However, in the proposed DB-Algorithm already shortened the search space, now Dijkstra's algorithm required confining the search in smaller space, this technique saves time and resources.
+
+c) The proposed DB Algorithm significantly reduces the possibility of entering infinite loops, thereby ensuring convergence during the search process.
+
+\par\medskip\noindent {\large\bfseries 7 Discussion\par}\smallskip
+
+\begin{itemize}
+  \item The proposed DB Algorithm effectively overcomes one of the major limitations of Dijkstra's algorithm by handling negative edge weights during the Bellman–Ford preprocessing stage. This generates a reduced search space before Dijkstra's algorithm is executed, thereby improving computational efficiency.
+\end{itemize}
+
+\begin{itemize}
+  \item Furthermore, by reducing the search space before applying Dijkstra's algorithm implements recursive search technique which calls another function for optimization, this recursive calling results increases search time. However, in the proposed DB -Algorithm already shortened the search space. Consequently, Dijkstra's algorithm searches only within the reduced search space, which decreases computational time and improves routing efficiency.the search in smaller space; this technique saves time and resources.
+  \item In addition, the proposed DB Algorithm reduces the possibility of entering infinite loops The proposed DB Algorithm significantly reduces the possibility of entering infinite loops, thereby ensuring con
+  \item vergence during the search process. for infinite loop which Confirms convergence within search space.
+\end{itemize}
+
+The experimental evaluation conducted on graphs containing 3, 4, 6, and 10 vertices demonstrates the effectiveness and scalability of the proposed DB Algorithm. The results consistently show that the hybrid Bellman–Ford–Dijkstra approach computes the correct shortest paths while reducing computational overhead across graphs of different sizes. Across all experimental cases, the proposed algorithm achieved an execution-time improvement ranging from approximately 96\% to 99\% compared with the conventional Dijkstra algorithm. The consistent performance improvement indicates that the search-space reduction achieved during Phase One enables faster execution without compromising shortest-path accuracy. These findings validate the robustness, scalability, and practical applicability of the proposed algorithm for large-scale shortest-path computation problems.
+
+\par\medskip\noindent {\large\bfseries 8 Future Scope\par}\smallskip
+
+This research field has a great potential in the future. This research filed can be applied in different areas such as;
+
+\begin{enumerate}
+  \item Wireless communication networks
+  \item Internet routing
+  \item Cloud computing
+  \item Intelligent transportation systems
+  \item IoT networks
+\end{enumerate}
+
+\par\medskip\noindent {\large SDN\par}\smallskip
+
+\begin{enumerate}
+  \item Autonomous vehicles
+  \item Missile Defence Application
+  \item Rocket Trajectory Application
+  \item Agriculture and Environment Assisting Applications
+\end{enumerate}
+
+\par\medskip\noindent {\large\bfseries 9 Conclusion\par}\smallskip
+
+This study presents the DB-algorithm, which addresses time and space complexity issues in previous algorithms. The results obtained using the proposed method show suitable performance and efficiency in both time and space problems in the shortest paths. Comprehensive analysis and testing confirm its effectiveness and efficient solution, addressing significant challenges in computational performance. The results emphasize the proposed DB-algorithm have the potential to establish a new standard in algorithm development. The innovative design and optimization techniques open opportunities for widespread application in numerous areas where efficiency is paramount. Future studies aim to enhance its adaptability further and explore its integration into specialized cases. Hence, the DB-algorithm marks a significant step forward in computational science, providing a reliable solution to persistent challenges and inspiring further advancements in the research field.
+
+\par\medskip\noindent {\large\bfseries 10 Declarations\par}\smallskip
+
+Ethical Approval: No ethical approval is required.
+Data Availability: No datasets were analyzed during the current study.
+Conflict of Interest: There is no conflict of interest among all the authors.
+
+Author’s Contribution: All the authors have equally contributed.
+
+Acknowledgment: This work was supported by the Deanship of Scientific Research, Vice Presidency for Graduate Studies and Scientific Research, King Faisal University, Saudi Arabia [KFU263839].
+
+\begin{thebibliography}{99}
+\bibitem{ref1}
+Bellman, R. I. C. H. A. R. D. (1957). Dynamic programming, princeton univ. Press Princeton, New Jersey, 39.
+
+\bibitem{ref2}
+Bellman, R. (1958). On a routing problem. Quarterly of applied mathematics, 16(1), 87-90.
+
+\bibitem{ref3}
+Fredman, M. L. (1976). New bounds on the complexity of the shortest path problem. SIAM Journal on Computing, 5(1), 83-89.
+
+\bibitem{ref4}
+Floyd, R. W. (1962). Algorithm 97: shortest path. Communications of the ACM, 5(6), 345-345.
+
+\bibitem{ref5}
+Warshall, S. (1962). A theorem on boolean matrices. Journal of the ACM (JACM), 9(1), 11-12.
+
+\bibitem{ref6}
+Kim, G., Kim, S., \& Jang, I. G. (2022). Loopwise route representation-based topology optimization for the shortest path problems. IEEE Access, 10, 128835–128846. https://doi.org/10.1109/ACCESS.2022.3227388
+
+\bibitem{ref7}
+Coy, S., Czumaj, A., Scheideler, C., Schneider, P., \& Werthmann, J. (2022). Routing schemes for hybrid communication networks. Proceedings of the ACM Symposium on Principles of Distributed Computing (PODC 2022).
+
+\bibitem{ref8}
+Gajjar, K., Jha, A. V., Kumar, M., \& Lahiri, A. (2024). Reconfiguring shortest paths in graphs. Algorithmica, 86, 3309–3338. https://doi.org/10.1007/s00453-024-01263-y
+
+\bibitem{ref9}
+Kim, G., Kim, C., Park, S., Kim, J., \& Jang, I. G. (2025). Linear programming of the loopwise route representation for the shortest path problems by introducing the reference link flow. IEEE Access, 13, 38856–38864. https://doi.org/10.1109/ACCESS.2025.3546320
+
+\bibitem{ref10}
+Andreoletti, D., Rottondi, C., Giordano, S., \& Bianco, A. (2025). Scalable and privacy-preserving inter-AS routing through machine-learning-based graph pruning. IEEE Access, 13, 21891–21905. https://doi.org/10.1109/ACCESS.2025.3536545
+
+\bibitem{ref11}
+Hlupic, N., Basch, D., Ivanjko, E., \& Prister, J. (2025). An optimized route assignment for preventing traffic jams. IEEE Access, 13, 61207–61224. https://doi.org/10.1109/ACCESS.2025.3553492
+
+\bibitem{ref12}
+Dory, M., \& Matar, S. (2025). Massively parallel algorithms for approximate shortest paths. Distributed Computing, 38, 131–162. https://doi.org/10.1007/s00446-025-00482-y
+
+\end{thebibliography}
+
+
+
+
+\begin{biographyps}{media/image14.jpeg}{Dr. Aijaz}
+Dr. Aijaz Ahmad Magray is an Assistant Professor in the Department of Mathematics at JB Institute of Engineering and Technology (JBIET), Hyderabad, India. He received his Ph.D. in Mathematics from Devi Ahilya Vishwavidyalaya, Indore, India. His research interests include mathematical modeling, linear algebra, numerical analysis, optimization, and artificial intelligence applications in mathematics.\end{biographyps}
+
+\begin{biographyps}{media/image15.png}{D. Raju}
+D. Raju is an Assistant Professor in the Department of Mathematics, Jawaharlal Nehru Technological University, Hyderabad, India. His research focuses on applied mathematics, operations research, optimization, and mathematical modelling.\end{biographyps}
+
+\begin{biographyps}{media/image16.png}{Dr. Aafaq}
+Dr. Aafaq A. Rather is an Assistant Professor at the Symbiosis Statistical Institute, Symbiosis International (Deemed University), Pune, India. His research interests include probability distributions, statistical quality control, sampling theory, reliability analysis, and machine learning. He has published over 130 research papers in reputed international journals.\end{biographyps}
+
+\begin{biographyps}{media/image17.png}{Dr. Ikram}
+Dr. Ikram Ali is an Assistant Professor in the Department of Computer Science and Engineering at Apex Institute of Technology, Chandigarh University, Punjab, India. His research interests include artificial intelligence, machine learning, data analytics, and computational intelligence.\end{biographyps}
+
+\begin{biographyps}{media/image18.jpeg}{Dr. Vidya}
+Dr. Vidya Yerneni is associated with the Symbiosis Statistical Institute, Symbiosis International (Deemed University), Pune, India. Her research interests include applied statistics, statistical modelling, data science, and multivariate analysis.\end{biographyps}
+
+\begin{biographyps}{media/image19.jpeg}{Dr. Ahmed}
+Dr. Ahmed A. F. Osman is affiliated with the Applied College, King Faisal University, Al-Ahsa, Saudi Arabia. His research interests include applied mathematics, optimization, numerical analysis, and interdisciplinary mathematical applications.\end{biographyps}
+
+\begin{biographyps}{media/image19.jpeg}{Dr. Mohammed}
+Dr. Mohammed Ataelfadiel is with the Applied College, King Faisal University, Al-Ahsa, Saudi Arabia. His research focuses on applied mathematics, mathematical modelling, optimization, and computational methods.\end{biographyps}
+
+\begin{biographyps}{media/image19.jpeg}{Dr. Ala}
+Dr. Ala Abdullah is a faculty member at the Applied College, King Faisal University, Al-Ahsa, Saudi Arabia. Her research interests include applied mathematics, statistics, mathematical modelling, and data analysis.\end{biographyps}
+
+\begin{biographyps}{media/image18.jpeg}{Dr. Maryam}
+Dr. Maryam Nasser Almusallam is affiliated with the Applied College, King Faisal University, Al-Ahsa, Saudi Arabia. Her research interests include applied mathematics, statistical analysis, educational research, and computational methods.\end{biographyps}
+
+\begin{biographyps}{media/image19.jpeg}{Dr. Osman}
+Dr. Osman Elwasila Elshiekh is a faculty member in the Department of Management Information Systems, College of Business Administration, King Faisal University, Saudi Arabia. His research interests include management information systems, data analytics, artificial intelligence, and business intelligence.\end{biographyps}
+
+\begin{biographyps}{media/image19.jpeg}{Dr. Ali}
+Dr. Ali Salem Bin Sama is affiliated with the Department of Management Information Systems, College of Business Administration, King Faisal University, Saudi Arabia. His research interests include information systems, digital transformation, data analytics, and decision support systems.\end{biographyps}
+
+\begin{biographyps}{media/image20.png}{Dr. P.}
+Dr. P. Srinivasa Rao is a Professor in the Department of Computer Science and Engineering at JB Institute of Engineering and Technology (JBIET), Hyderabad. He received his Ph.D. from Jawaharlal Nehru Technological University Hyderabad (JNTUH). His research interests include cloud computing, distributed systems, data science, and database management systems.\end{biographyps}
+
+
+
+\end{document}

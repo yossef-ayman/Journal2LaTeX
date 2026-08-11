@@ -1,0 +1,96 @@
+[2026-08-09 15:54:56,526] [INFO] [latex_compiler.py:337]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\3b2e0f6b-5b0b-406b-86f4-f90463aa21dd\rendered\main.tex
+[2026-08-09 15:54:56,618] [INFO] [latex_compiler.py:364]: Applied template compatibility layer to main.tex
+[2026-08-09 15:54:56,622] [INFO] [latex_compiler.py:126]: Rendered working directory tree before compilation:
+  1.docx
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.tex
+  media/
+    fig1.png
+    fig2.png
+    fig3.png
+    fig4.png
+    fig5.png
+    fig6.png
+    fig7.png
+    image1.png
+    image2.png
+    image3.png
+    image4.png
+    image5.png
+    image6.png
+    image7.png
+    image8.png
+    image9.png
+  NSP1.cls
+  paper1.aux
+  paper1.log
+  paper1.out
+  paper1.pdf
+  paper1.synctex.gz
+  paper1.tex
+  psfig.sty
+  template.json
+[2026-08-09 15:54:56,627] [INFO] [latex_compiler.py:132]: Template resource manifest (30 files):
+  1.docx                                   template resource
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.tex                                 generated document / build artefact
+  media\fig1.png                           renderer-generated media
+  media\fig2.png                           renderer-generated media
+  media\fig3.png                           renderer-generated media
+  media\fig4.png                           renderer-generated media
+  media\fig5.png                           renderer-generated media
+  media\fig6.png                           renderer-generated media
+  media\fig7.png                           renderer-generated media
+  media\image1.png                         renderer-generated media
+  media\image2.png                         renderer-generated media
+  media\image3.png                         renderer-generated media
+  media\image4.png                         renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  media\image8.png                         renderer-generated media
+  media\image9.png                         renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  paper1.aux                               generated document / build artefact
+  paper1.log                               generated document / build artefact
+  paper1.out                               generated document / build artefact
+  paper1.pdf                               template resource (graphic (PDF))
+  paper1.synctex.gz                        generated document / build artefact
+  paper1.tex                               template resource (included source)
+  psfig.sty                                template resource (package / style)
+  template.json                            template metadata
+[2026-08-09 15:55:08,043] [INFO] [latex_compiler.py:154]: Dependency resolution (28 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphics
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      cuted
+  [SYSTEM ] usepackage      newunicodechar
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      type1cm
+  [SYSTEM ] usepackage      fix-cm
+  [DYNAMIC] includegraphics #1
+  [LOCAL  ] includegraphics media/image1.png
+  [LOCAL  ] includegraphics media/image2.png
+  [LOCAL  ] includegraphics media/image3.png
+  [LOCAL  ] includegraphics media/image4.png
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-08-09 15:55:11,389] [INFO] [latex_compiler.py:395]: Using latexmk compiler.
+[2026-08-09 15:55:16,308] [ERROR] [latex_compiler.py:450]: LaTeX compilation failed. PDF not generated. Check raw logs for details.
