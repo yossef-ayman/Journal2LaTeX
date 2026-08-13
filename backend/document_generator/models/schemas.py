@@ -195,6 +195,8 @@ class PaperOverride(BaseModel):
     fee: Optional[str] = None
     discount: Optional[str] = None
     total_charge: Optional[str] = None
+    acceptance_date: Optional[str] = None
+    deadline: Optional[str] = None
 
 
 class BatchGenerationRequest(BaseModel):

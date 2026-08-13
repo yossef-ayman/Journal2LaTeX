@@ -314,7 +314,17 @@ class GeneratorService:
         currency_val = (request.currency or settings.get("default_currency") or "$").strip()
         bank_val = (request.bank_details or settings.get("bank_details") or "").strip()
         inv_num_val = (request.invoice_number or f"INV-{auto_ref}").strip()
-        inv_date_val = (request.invoice_date or request.acceptance_date or "").strip()
+        paper_acceptance_date = (
+            override.acceptance_date.strip()
+            if (override and override.acceptance_date and override.acceptance_date.strip())
+            else request.acceptance_date
+        )
+        paper_deadline = (
+            override.deadline.strip()
+            if (override and override.deadline and override.deadline.strip())
+            else request.deadline
+        )
+        inv_date_val = (request.invoice_date or paper_acceptance_date or "").strip()
 
         discount_val = (override.discount if override and override.discount else "$0").strip()
         total_val = (override.total_charge if override and override.total_charge else fee_val).strip()
@@ -341,8 +351,8 @@ class GeneratorService:
             docx_out = paper_folder / f"{info.output_basename}.docx"
             context = build_context(
                 paper,
-                acceptance_date=request.acceptance_date,
-                deadline=request.deadline,
+                acceptance_date=paper_acceptance_date,
+                deadline=paper_deadline,
                 editor=editor,
                 journal=journal,
                 document_type=info.label,

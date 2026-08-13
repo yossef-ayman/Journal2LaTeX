@@ -163,6 +163,8 @@ export interface PaperOverride {
   fee?: string;
   discount?: string;
   total_charge?: string;
+  acceptance_date?: string;
+  deadline?: string;
 }
 
 export interface BatchFormValues {

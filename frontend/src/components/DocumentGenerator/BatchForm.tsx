@@ -48,6 +48,8 @@ interface LocalOverride {
   fee: string;
   hasDiscount: boolean;
   discount: string;
+  acceptanceDate: string;
+  deadline: string;
 }
 
 export function BatchForm({
@@ -116,6 +118,8 @@ export function BatchForm({
                 fee: "2100$",
                 hasDiscount: false,
                 discount: "0$",
+                acceptanceDate: acceptanceDate,
+                deadline: deadline,
               };
             }
           });
@@ -147,6 +151,8 @@ export function BatchForm({
         fee: prev[paperIndex]?.fee ?? "2100$",
         hasDiscount: prev[paperIndex]?.hasDiscount ?? false,
         discount: prev[paperIndex]?.discount ?? "0$",
+        acceptanceDate: prev[paperIndex]?.acceptanceDate ?? acceptanceDate,
+        deadline: prev[paperIndex]?.deadline ?? deadline,
         [field]: value,
       },
     }));
@@ -194,6 +200,8 @@ export function BatchForm({
         fee: `${numFee}$`,
         discount: `${numDiscount}$`,
         total_charge: `${numTotal}$`,
+        acceptance_date: ov?.acceptanceDate ? formatDateDisplay(ov.acceptanceDate) : undefined,
+        deadline: ov?.deadline ? formatDateDisplay(ov.deadline) : undefined,
       };
     });
 
@@ -452,6 +460,32 @@ export function BatchForm({
                           <span className="text-base font-extrabold font-mono text-emerald-700 block">
                             ${numTotal}
                           </span>
+                        </div>
+                      </div>
+
+                      {/* Line 3: Per-Paper Acceptance Date & Deadline */}
+                      <div className="grid gap-3 sm:grid-cols-2 pt-2 border-t border-gray-100">
+                        <div className="space-y-1">
+                          <label className="text-[11px] font-semibold text-gray-600 flex items-center gap-1">
+                            <Calendar size={11} className="text-emerald-600" /> Acceptance Date / تاريخ القبول لهذا المقال
+                          </label>
+                          <Input
+                            type="date"
+                            value={currentOv.acceptanceDate || acceptanceDate}
+                            className="h-8 text-xs font-medium bg-white"
+                            onChange={(e) => updateOverride(paperIndex, "acceptanceDate", e.target.value)}
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <label className="text-[11px] font-semibold text-gray-600 flex items-center gap-1">
+                            <Calendar size={11} className="text-emerald-600" /> Payment Deadline / الديدلاين لهذا المقال
+                          </label>
+                          <Input
+                            type="date"
+                            value={currentOv.deadline || deadline}
+                            className="h-8 text-xs font-medium bg-white"
+                            onChange={(e) => updateOverride(paperIndex, "deadline", e.target.value)}
+                          />
                         </div>
                       </div>
                     </div>
