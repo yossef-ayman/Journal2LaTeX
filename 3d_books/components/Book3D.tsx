@@ -31,6 +31,22 @@ export const Book3D: React.FC<Book3DProps> = ({
 
   const { frontUrl, spineUrl, backUrl, paperTextureUrl } = processedRegions;
 
+  // Every face is centered on the box's own center point BEFORE any
+  // rotate/translateZ is applied. That way each face's default
+  // transform-origin (its own center, 50% 50%) sits exactly on the box's
+  // true hinge point, so rotating it swings it onto the correct surface
+  // instead of flying off to a corner. Faces that share the box's full
+  // width/height (front/back) don't strictly need this, but it's applied
+  // uniformly for consistency and to survive future size tweaks.
+  const centered = (w: number, h: number): React.CSSProperties => ({
+    width: `${w}px`,
+    height: `${h}px`,
+    left: '50%',
+    top: '50%',
+    marginLeft: `-${w / 2}px`,
+    marginTop: `-${h / 2}px`,
+  });
+
   return (
     <div
       className="book-3d-box"
@@ -56,8 +72,7 @@ export const Book3D: React.FC<Book3DProps> = ({
       <div
         className="book-face book-face-front"
         style={{
-          width: `${bookWidth}px`,
-          height: `${bookHeight}px`,
+          ...centered(bookWidth, bookHeight),
           backgroundImage: `url(${frontUrl})`,
           transform: `translateZ(${halfT}px)`,
         }}
@@ -70,8 +85,7 @@ export const Book3D: React.FC<Book3DProps> = ({
       <div
         className="book-face book-face-back"
         style={{
-          width: `${bookWidth}px`,
-          height: `${bookHeight}px`,
+          ...centered(bookWidth, bookHeight),
           backgroundImage: `url(${backUrl})`,
           transform: `rotateY(180deg) translateZ(${halfT}px)`,
         }}
@@ -84,8 +98,7 @@ export const Book3D: React.FC<Book3DProps> = ({
       <div
         className="book-face book-face-spine"
         style={{
-          width: `${bookThickness}px`,
-          height: `${bookHeight}px`,
+          ...centered(bookThickness, bookHeight),
           backgroundImage: `url(${spineUrl})`,
           transform: isRtl
             ? `rotateY(90deg) translateZ(${halfW}px)` // Right spine for Arabic
@@ -99,9 +112,7 @@ export const Book3D: React.FC<Book3DProps> = ({
       <div
         className="book-face book-face-paper-side"
         style={{
-          width: `${bookThickness - 3}px`,
-          height: `${bookHeight - 6}px`,
-          top: '3px',
+          ...centered(bookThickness - 3, bookHeight - 6),
           backgroundImage: `url(${paperTextureUrl})`,
           transform: isRtl
             ? `rotateY(-90deg) translateZ(${halfW - 2}px)` // Paper pages on Left for Arabic
@@ -113,9 +124,7 @@ export const Book3D: React.FC<Book3DProps> = ({
       <div
         className="book-face book-face-paper-top"
         style={{
-          width: `${bookWidth - 4}px`,
-          height: `${bookThickness - 3}px`,
-          left: '2px',
+          ...centered(bookWidth - 4, bookThickness - 3),
           backgroundImage: `url(${paperTextureUrl})`,
           transform: `rotateX(90deg) translateZ(${halfH - 2}px)`,
         }}
@@ -125,9 +134,7 @@ export const Book3D: React.FC<Book3DProps> = ({
       <div
         className="book-face book-face-paper-bottom"
         style={{
-          width: `${bookWidth - 4}px`,
-          height: `${bookThickness - 3}px`,
-          left: '2px',
+          ...centered(bookWidth - 4, bookThickness - 3),
           backgroundImage: `url(${paperTextureUrl})`,
           transform: `rotateX(-90deg) translateZ(${halfH - 2}px)`,
         }}

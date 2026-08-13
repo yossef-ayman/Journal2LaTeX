@@ -1,0 +1,39 @@
+[2026-08-11 22:22:46,990] [INFO] [job_manager.py:153]: Job 1506b362-5efd-4d5a-8597-2228c038e32d workspace created successfully
+[2026-08-11 22:22:47,042] [INFO] [pipeline_service.py:47]: Starting validation for job: 1506b362-5efd-4d5a-8597-2228c038e32d
+[2026-08-11 22:22:47,067] [INFO] [job_manager.py:202]: Job status updated to: VALIDATING
+[2026-08-11 22:22:47,090] [INFO] [job_manager.py:226]: Progress updated to 10%: Validating input Word Document
+[2026-08-11 22:22:47,120] [INFO] [pipeline_service.py:62]: Validation successful.
+[2026-08-11 22:22:47,143] [INFO] [job_manager.py:226]: Progress updated to 20%: Input document validated successfully
+[2026-08-11 22:22:47,143] [INFO] [pipeline_service.py:69]: Starting document analysis for job: 1506b362-5efd-4d5a-8597-2228c038e32d
+[2026-08-11 22:22:47,161] [INFO] [job_manager.py:202]: Job status updated to: ANALYZING_DOCUMENT
+[2026-08-11 22:22:47,177] [INFO] [job_manager.py:226]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-08-11 22:22:47,178] [INFO] [document_analyzer.py:228]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\1506b362-5efd-4d5a-8597-2228c038e32d\input\Psychological factors influencing- Falah Dhuwaihi Al-Swairi Al-Ajmi.docx
+[2026-08-11 22:22:47,905] [INFO] [document_analyzer.py:1134]: Parsed document: title='Psychological factors influencing administrative decision-making among educational leaders: A cognitive psychology perspective', authors=1, sections=21, references=0
+[2026-08-11 22:22:47,912] [INFO] [pipeline_service.py:97]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\1506b362-5efd-4d5a-8597-2228c038e32d\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\1506b362-5efd-4d5a-8597-2228c038e32d\intermediate\conversion_report.json
+[2026-08-11 22:22:47,926] [INFO] [job_manager.py:226]: Progress updated to 45%: Document structure extracted successfully
+[2026-08-11 22:22:47,926] [INFO] [pipeline_service.py:110]: Starting asset extraction for job: 1506b362-5efd-4d5a-8597-2228c038e32d
+[2026-08-11 22:22:47,942] [INFO] [job_manager.py:202]: Job status updated to: EXTRACTING_ASSETS
+[2026-08-11 22:22:47,956] [INFO] [job_manager.py:226]: Progress updated to 50%: Extracting images and figure assets from document
+[2026-08-11 22:22:48,601] [INFO] [pipeline_service.py:157]: Assets extracted to: G:\work\Journal2LaTeX\backend\temp\1506b362-5efd-4d5a-8597-2228c038e32d\intermediate\media
+[2026-08-11 22:22:48,618] [INFO] [job_manager.py:226]: Progress updated to 60%: Document assets extracted successfully
+[2026-08-11 22:22:48,618] [INFO] [pipeline_service.py:274]: Classifying extracted assets for job: 1506b362-5efd-4d5a-8597-2228c038e32d
+[2026-08-11 22:22:48,618] [INFO] [asset_analyzer.py:23]: Starting extended asset analysis for job: 1506b362-5efd-4d5a-8597-2228c038e32d
+[2026-08-11 22:22:48,628] [INFO] [asset_analyzer.py:182]: Extended asset classification completed. Assets classified: 8
+[2026-08-11 22:22:48,644] [INFO] [job_manager.py:226]: Progress updated to 65%: Extracted assets analyzed and mapped successfully
+[2026-08-11 22:22:48,788] [INFO] [pipeline_service.py:290]: Loading template 61675c34-b003-495f-a4d0-bddff6de2854 for job: 1506b362-5efd-4d5a-8597-2228c038e32d
+[2026-08-11 22:22:48,802] [INFO] [job_manager.py:202]: Job status updated to: LOADING_TEMPLATE
+[2026-08-11 22:22:48,821] [INFO] [job_manager.py:226]: Progress updated to 70%: Loading template styles: 61675c34-b003-495f-a4d0-bddff6de2854
+[2026-08-11 22:22:48,897] [INFO] [pipeline_service.py:312]: Template loaded and workspace prepared at: G:\work\Journal2LaTeX\backend\temp\1506b362-5efd-4d5a-8597-2228c038e32d\rendered
+[2026-08-11 22:22:48,911] [INFO] [job_manager.py:226]: Progress updated to 80%: Template workspace initialized
+[2026-08-11 22:22:48,914] [INFO] [pipeline_service.py:337]: Starting LaTeX rendering for job: 1506b362-5efd-4d5a-8597-2228c038e32d
+[2026-08-11 22:22:48,929] [INFO] [job_manager.py:202]: Job status updated to: RENDERING_LATEX
+[2026-08-11 22:22:48,945] [INFO] [job_manager.py:226]: Progress updated to 85%: Rendering document content to LaTeX
+[2026-08-11 22:22:48,973] [INFO] [latex_renderer.py:104]: Starting LaTeX rendering inside workspace: G:\work\Journal2LaTeX\backend\temp\1506b362-5efd-4d5a-8597-2228c038e32d\rendered
+[2026-08-11 22:22:49,515] [INFO] [latex_renderer.py:586]: LaTeX document main.tex rendered successfully.
+[2026-08-11 22:22:49,581] [INFO] [header_reconstructor.py:124]: Template class draws its own header; skipping fancyhdr injection.
+[2026-08-11 22:22:49,584] [INFO] [job_manager.py:226]: Progress updated to 90%: LaTeX document rendering completed
+[2026-08-11 22:22:49,584] [INFO] [pipeline_service.py:400]: Starting document compilation for job: 1506b362-5efd-4d5a-8597-2228c038e32d
+[2026-08-11 22:22:49,600] [INFO] [job_manager.py:202]: Job status updated to: COMPILING
+[2026-08-11 22:22:49,613] [INFO] [job_manager.py:226]: Progress updated to 92%: Compiling LaTeX source to PDF
+[2026-08-11 22:23:10,964] [ERROR] [pipeline_service.py:428]: LaTeX compilation failed: LaTeX compilation failed. PDF not generated.
+[2026-08-11 22:23:10,982] [ERROR] [job_manager.py:250]: Job error added: LaTeX compilation failed: LaTeX compilation failed. PDF not generated.

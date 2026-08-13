@@ -60,6 +60,11 @@ DEFAULT_SETTINGS: Dict[str, Any] = {
     "custom_placeholders": {},
     # Produce a PDF alongside every DOCX.
     "generate_pdf": True,
+    # Default invoice settings
+    "default_fee": "",
+    "default_currency": "$",
+    "bank_details": "",
+    "invoice_prefix": "INV-",
 }
 
 _settings_lock = threading.Lock()

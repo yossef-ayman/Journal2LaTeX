@@ -266,6 +266,7 @@ class GeneratorService:
         custom: Dict[str, str],
     ) -> GeneratedDocumentSet:
         """Produce every selected document for one paper."""
+        settings = config.load_settings()
         folder_name = f"Paper {index}"
         paper_folder = output_root / folder_name
         paper_folder.mkdir(parents=True, exist_ok=True)
@@ -305,7 +306,16 @@ class GeneratorService:
                 auto_ref = override.reference_number.strip()
 
         paper_extra = dict(request.extra_placeholders or {})
-        fee_val = (override.fee if override and override.fee else "$2100").strip()
+        fee_val = (
+            override.fee.strip()
+            if (override and override.fee)
+            else (request.fee or settings.get("default_fee") or "$2100").strip()
+        )
+        currency_val = (request.currency or settings.get("default_currency") or "$").strip()
+        bank_val = (request.bank_details or settings.get("bank_details") or "").strip()
+        inv_num_val = (request.invoice_number or f"INV-{auto_ref}").strip()
+        inv_date_val = (request.invoice_date or request.acceptance_date or "").strip()
+
         discount_val = (override.discount if override and override.discount else "$0").strip()
         total_val = (override.total_charge if override and override.total_charge else fee_val).strip()
 
@@ -336,6 +346,11 @@ class GeneratorService:
                 editor=editor,
                 journal=journal,
                 document_type=info.label,
+                fee=fee_val,
+                currency=currency_val,
+                bank_details=bank_val,
+                invoice_number=inv_num_val,
+                invoice_date=inv_date_val,
                 custom=custom,
                 extra=paper_extra,
             )

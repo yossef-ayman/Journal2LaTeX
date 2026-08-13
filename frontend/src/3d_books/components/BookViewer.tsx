@@ -11,12 +11,14 @@ interface BookViewerProps {
   book: BookData;
   heightPx?: number;
   autoRotateDefault?: boolean;
+  onOpenBook?: () => void;
 }
 
 export const BookViewer: React.FC<BookViewerProps> = ({
   book,
   heightPx = 290,
   autoRotateDefault = false,
+  onOpenBook,
 }) => {
   const [processedRegions, setProcessedRegions] = useState<ProcessedCoverRegions | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -145,6 +147,7 @@ export const BookViewer: React.FC<BookViewerProps> = ({
     toggleAutoRotate: () => setIsAutoRotating((prev) => !prev),
     isAutoRotating,
     zoomLevel: zoom,
+    openBook: onOpenBook,
   };
 
   if (error) {

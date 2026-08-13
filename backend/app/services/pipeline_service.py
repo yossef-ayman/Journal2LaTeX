@@ -20,6 +20,7 @@ from app.models.job import JobMetadata, JobStatus
 from app.models.document import DocumentModel
 from app.utils.logger import get_job_logger
 from app.utils.media_convert import convert_unsupported_media
+from app.engines.validation import DeliveryValidator, write_report
 
 
 class PipelineService:
@@ -462,6 +463,50 @@ class PipelineService:
             self.job_manager.add_error(job_id, error_msg)
             return False
 
+    def validate_output(self, job_id: str,
+                        doc_model: Optional[DocumentModel] = None) -> Optional[dict]:
+        """Run the full pre-delivery validation and persist its report.
+
+        Never raises and never changes the job's outcome: validation is an
+        observation about a project that already exists, and a fault in the
+        observer must not destroy the thing observed.
+        """
+        if not getattr(settings, "VALIDATION_ENABLED", True):
+            return None
+        logger = get_job_logger(job_id, "system")
+        try:
+            job_dir = self.job_manager._get_job_dir(job_id)
+            rendered_dir = job_dir / "rendered"
+            # Reuse the rules the renderer resolved for this same workspace.
+            # Falls back to letting the validator resolve them when rendering
+            # did not run, so a partial job is still validated.
+            rules = getattr(self.latex_renderer, "_journal_rules", None)
+            if getattr(self.latex_renderer, "_journal_rules_workspace", None) \
+                    != str(rendered_dir):
+                rules = None
+            report = DeliveryValidator().validate(
+                rules=rules,
+                rendered_dir=rendered_dir,
+                doc_model=doc_model,
+                log_path=job_dir / "output" / "main.log",
+                pdf_path=job_dir / "output" / "paper.pdf",
+            )
+            destination = write_report(
+                report, job_dir / "intermediate" / "validation_report.json")
+            logger.info("Validation verdict: %s (%d findings) -> %s",
+                        report.verdict, len(report.findings), destination.name)
+            metadata = self.job_manager.get_job(job_id)
+            if metadata is not None and hasattr(metadata, "warnings"):
+                for finding in report.findings:
+                    if finding.severity == "error":
+                        metadata.warnings.append(
+                            f"validation: {finding.message}")
+                self.job_manager._save_metadata(metadata)
+            return report.to_dict()
+        except Exception as exc:  # noqa: BLE001 - observation must not break delivery
+            logger.warning("Validation could not be completed: %s", exc)
+            return None
+
     def run_full_pipeline(self, job_id: str, docx_filename: str, template_id: str = "default") -> JobMetadata:
         """Run the full end-to-end conversion, rendering, and compilation pipeline.
 
@@ -500,6 +545,15 @@ class PipelineService:
 
             if not timed("compile", self.compile, job_id):
                 return self.job_manager.get_job(job_id)
+
+            # Validation runs on the built artefacts, before the job is
+            # reported complete.  It only ever reads: a stage that repaired
+            # what it found could not be trusted to report accurately, and the
+            # findings would then describe a document nobody had seen.  Its
+            # verdict therefore never fails the job -- it is delivered
+            # alongside the project so the person downloading it knows what
+            # they have.
+            timed("validate_output", self.validate_output, job_id, doc_model)
 
             timed("fidelity_and_optimization", self.check_fidelity, job_id, doc_model)
             return self.job_manager.get_job(job_id)

@@ -106,6 +106,22 @@ class LatexRenderer:
         # Resolve entry file dynamically
         template_metadata = self._load_template_metadata(workspace_dir)
 
+        # The journal's rules, resolved once for the whole render.  Everything
+        # below that could differ between journals asks these rather than
+        # testing the template's name -- and, critically, the citation mapper
+        # and the bibliography below are handed the *same* object, so the key
+        # they each write cannot drift apart.
+        from app.engines.journal_rules import JournalRulesResolver
+        journal_rules = JournalRulesResolver().resolve(template_metadata,
+                                                       workspace_dir)
+        # Published so later stages in the same job can use the rules that were
+        # actually rendered against, instead of resolving them a second time --
+        # which re-reads template.json and re-probes every .cls and .sty file in
+        # the workspace.  It is the resolved *result* that is shared, never the
+        # resolution: the precedence and the inputs are untouched.
+        self._journal_rules = journal_rules
+        self._journal_rules_workspace = str(workspace_dir)
+
         entry_file = template_metadata.get("entry_file") or "template.tex"
         template_tex_path = workspace_dir / entry_file
 
@@ -134,7 +150,8 @@ class LatexRenderer:
             from app.services.citation_mapper import CitationMapper
             content_tex = "\n\n".join(rendered_blocks)
             intermediate_dir = workspace_dir.parent / "intermediate"
-            content_tex, citation_report = CitationMapper().map_citations(doc, content_tex, intermediate_dir)
+            content_tex, citation_report = CitationMapper().map_citations(
+                doc, content_tex, intermediate_dir, journal_rules)
 
             # 2. Format Authors and Institutes
             author_strings = []
@@ -161,21 +178,64 @@ class LatexRenderer:
             # 4. Format Bibliography
             bib_tex = ""
             if doc.references:
-                bib_tex = "\\begin{thebibliography}{99}\n"
+                bib_tex = ("\\begin{thebibliography}{"
+                           + journal_rules.bibliography.widest_label + "}\n")
                 for idx, ref in enumerate(doc.references):
                     # \bibitem numbers entries itself; strip any literal
                     # enumeration carried over from Word ("[25] ...", "25. ...")
                     # so entries do not render as "[25] [25] ...".
                     cleaned_ref = re.sub(r"^\s*(?:\[\d+\]|\d+[\.\)])\s*", "", ref.strip())
                     ref_text = self._escape_text(cleaned_ref or ref.strip())
-                    bib_tex += f"\\bibitem{{ref{idx+1}}}\n{ref_text}\n\n"
+                    # The key comes from the same function the citation
+                    # engine used when it rewrote the body, so a \cite and its
+                    # \bibitem can never disagree.  Position, not the number
+                    # Word printed: \bibitem numbers entries itself, in order.
+                    key = journal_rules.bibliography.key_for(idx + 1)
+                    bib_tex += f"\\bibitem{{{key}}}\n{ref_text}\n\n"
                 bib_tex += "\\end{thebibliography}\n"
+
+            # 5a. Author photographs.
+            #
+            # An author photograph is not a manuscript figure: it illustrates a
+            # person rather than a result, carries no caption, and must take no
+            # figure number -- numbering one would shift every real figure in
+            # the paper and put a portrait in the List of Figures.  It is
+            # therefore rendered here, from the author model, and never passes
+            # through _render_block.
+            #
+            # Only authors who have no biography entry are rendered here; a
+            # biography already sets its own photograph, and emitting both
+            # would print the same person twice.
+            author_photo_tex = ""
+            photo_rules = journal_rules.author_photo
+            if photo_rules.mode != "none":
+                bio_names = {(b.author_name or "").strip().lower()
+                             for b in (doc.author_biographies or [])}
+                for author in doc.authors:
+                    path = getattr(author, "photo_path", None)
+                    if not path:
+                        continue
+                    if (author.name or "").strip().lower() in bio_names:
+                        continue
+                    safe = latex_safe_image_name(path)
+                    if not safe.startswith("media/"):
+                        safe = f"media/{safe.split('/')[-1]}"
+                    author_photo_tex += photo_rules.render(safe)
 
             # 5. Format Biographies
             biography_tex = ""
             if doc.author_biographies and template_metadata.get("supported_features", {}).get("author_biographies", True):
-                class_file = template_metadata.get("class_file", "")
-                is_nsp = "NSP" in class_file or "JSAP" in template_metadata.get("name", "")
+                # Which biography layout to use is a journal's decision, and
+                # it is answered by the resolved rules -- which learned the
+                # environment names by reading what the template's own class
+                # file defines, not by testing its name for a substring.
+                bio_rules = journal_rules.biography
+                use_journal_env = (
+                    "journal_env" in bio_rules.layouts
+                    and bool(bio_rules.environment or bio_rules.photo_environment)
+                )
+                photo_env = bio_rules.photo_environment or bio_rules.environment
+                plain_env = bio_rules.environment or bio_rules.photo_environment
                 
                 biography_tex = "\n\n"
                 for bio in doc.author_biographies:
@@ -186,22 +246,24 @@ class LatexRenderer:
                         img_name = latex_safe_image_name(bio.image_path)
                         relative_path = f"media/{img_name}"
                         
-                        if is_nsp:
+                        if use_journal_env and photo_env:
                             biography_tex += (
-                                f"\\begin{{biographyps}}{{{relative_path}}}{{{b_name}}}\n"
-                                f"{b_text}\\end{{biographyps}}\n\n"
+                                f"\\begin{{{photo_env}}}{{{relative_path}}}{{{b_name}}}\n"
+                                f"{b_text}\\end{{{photo_env}}}\n\n"
                             )
                         else:
                             biography_tex += (
                                 f"\\noindent\\textbf{{{b_name}}}\\\\\n"
-                                f"\\includegraphics[width=1in,height=1.25in,keepaspectratio]{{{relative_path}}}\\\\\n"
+                                f"\\includegraphics[width={journal_rules.biography.photo_width_in}in,"
+                                f"height={journal_rules.biography.photo_height_in}in,"
+                                f"keepaspectratio]{{{relative_path}}}\\\\\n"
                                 f"{b_text}\\par\\bigskip\n\n"
                             )
                     else:
-                        if is_nsp:
+                        if use_journal_env and plain_env:
                             biography_tex += (
-                                f"\\begin{{biography}}{{{b_name}}}\n"
-                                f"{b_text}\\end{{biography}}\n\n"
+                                f"\\begin{{{plain_env}}}{{{b_name}}}\n"
+                                f"{b_text}\\end{{{plain_env}}}\n\n"
                             )
                         else:
                             biography_tex += (
@@ -209,6 +271,8 @@ class LatexRenderer:
                                 f"{b_text}\\par\\bigskip\n\n"
                             )
 
+            if author_photo_tex:
+                content_tex += "\n\n" + author_photo_tex
             if bib_tex:
                 content_tex += "\n\n" + bib_tex
             if biography_tex:
@@ -376,27 +440,42 @@ class LatexRenderer:
                 rendered_content = rendered_content.replace("__CORRESPONDING__", "")
                 rendered_content = self._keep_banner_with_title(rendered_content)
 
-            # If NSP template, inject graphicx package and redefine biographyps to avoid psfig crash
-            is_nsp = "NSP" in template_metadata.get("class_file", "") or "JSAP" in template_metadata.get("name", "")
-            if is_nsp:
+            # A class whose photo biography environment is built on psfig
+            # cannot typeset under pdfLaTeX, so it is redefined in terms of
+            # graphicx.  The condition is "this document uses the class's own
+            # photo biography environment", which the rules answer; the repair
+            # is written against the environment's name, whatever it is.
+            repair_env = journal_rules.biography.photo_environment
+            if repair_env and "journal_env" in journal_rules.biography.layouts \
+                    and f"\\begin{{{repair_env}}}" in rendered_content:
                 begin_doc = rendered_content.find("\\begin{document}")
                 if begin_doc != -1:
                     redef = (
                         "\\usepackage{graphicx}\n"
                         "\\makeatletter\n"
-                        "\\def\\biographyps#1#2{%\n"
+                        "\\def\\" + repair_env + "#1#2{%\n"
                         "  \\par\\addvspace{21dd}\\small\\noindent\n"
                         "  \\if!#1!\\else\n"
                         "    \\noindent\\includegraphics[width=1in,height=1.25in,keepaspectratio]{#1}\\par\\smallskip\n"
                         "  \\fi\n"
                         "  {\\bfseries#2\\unskip\\ }\\ignorespaces}\n"
-                        "\\def\\endbiographyps{\\par\\addvspace{12pt}}\n"
+                        "\\def\\end" + repair_env + "{\\par\\addvspace{12pt}}\n"
                         "\\makeatother\n"
                     )
                     rendered_content = rendered_content[:begin_doc] + redef + rendered_content[begin_doc:]
 
             # Structured tables need multirow and cell-colour support.
             needed_pkgs = []
+            # The author-photo mechanism's package, loaded only when the
+            # resolved mode was actually used.  A document with no author
+            # photograph never loads it, so a TeX installation lacking the
+            # package is unaffected unless a template asks for that mode.
+            photo_pkg = journal_rules.author_photo.package()
+            photo_env = journal_rules.author_photo.resolved_environment()
+            if photo_pkg and f"\\begin{{{photo_env}}}" in rendered_content \
+                    and f"usepackage{{{photo_pkg}}}" not in rendered_content:
+                needed_pkgs.append(f"\\usepackage{{{photo_pkg}}}")
+
             if "\\multirow" in rendered_content and "usepackage{multirow}" not in rendered_content:
                 needed_pkgs.append("\\usepackage{multirow}")
             if "\\cellcolor" in rendered_content and "usepackage[table]{xcolor}" not in rendered_content:
@@ -550,6 +629,40 @@ class LatexRenderer:
         "Ḥ": "\\d{H}", "ḥ": "\\d{h}", "Ṣ": "\\d{S}",
         "ṣ": "\\d{s}", "Ṭ": "\\d{T}", "ṭ": "\\d{t}",
         "Ẓ": "\\d{Z}", "ẓ": "\\d{z}",
+        # Set-theoretic operators and subscript letters, which reach
+        # running prose when an equation has been flattened into text.
+        # Found by scanning the whole regression corpus for characters
+        # pdfLaTeX has no glyph for, not by patching a single manuscript.
+        "∈": "\\ensuremath{\\in}", "∉": "\\ensuremath{\\notin}",
+        "⊂": "\\ensuremath{\\subset}", "⊆": "\\ensuremath{\\subseteq}",
+        "∪": "\\ensuremath{\\cup}", "∩": "\\ensuremath{\\cap}",
+        "ᵣ": "\\ensuremath{_{r}}", "ᵢ": "\\ensuremath{_{i}}",
+        "ⱼ": "\\ensuremath{_{j}}", "ₙ": "\\ensuremath{_{n}}",
+        # The complete subscript and superscript digit ranges.  Word
+        # produces these whenever an author typed a subscript in running
+        # prose rather than in an equation, and pdfLaTeX has a glyph for
+        # none of them.  Enumerating the whole range closes the family
+        # instead of chasing one character per manuscript.
+        "₀": "\\ensuremath{_{0}}",
+        "₁": "\\ensuremath{_{1}}",
+        "₂": "\\ensuremath{_{2}}",
+        "₃": "\\ensuremath{_{3}}",
+        "₄": "\\ensuremath{_{4}}",
+        "₅": "\\ensuremath{_{5}}",
+        "₆": "\\ensuremath{_{6}}",
+        "₇": "\\ensuremath{_{7}}",
+        "₈": "\\ensuremath{_{8}}",
+        "₉": "\\ensuremath{_{9}}",
+        "¹": "\\ensuremath{^{1}}",
+        "²": "\\ensuremath{^{2}}",
+        "³": "\\ensuremath{^{3}}",
+        "⁰": "\\ensuremath{^{0}}",
+        "⁴": "\\ensuremath{^{4}}",
+        "⁵": "\\ensuremath{^{5}}",
+        "⁶": "\\ensuremath{^{6}}",
+        "⁷": "\\ensuremath{^{7}}",
+        "⁸": "\\ensuremath{^{8}}",
+        "⁹": "\\ensuremath{^{9}}",
     }
 
     def _inject_unicode_support(self, rendered_content: str) -> str:
@@ -980,6 +1093,15 @@ class LatexRenderer:
             # policy estimates the real rendered height.
             content = dict(content)
             content["native_aspect"] = self._native_aspect(relative_path)
+            # An equation pasted into Word as a picture is an equation, not a
+            # figure.  It gets no caption, no \label and no figure number:
+            # numbering it would shift every real figure in the paper by one
+            # and put a formula in the List of Figures.  It is set as a
+            # centred display, which is where an equation belongs, and its
+            # original geometry is preserved by the include built above.
+            if content.get("is_equation"):
+                return ("\\begin{center}\n" + include + "\n\\end{center}")
+
             # Hybrid placement policy chooses inline / [H] / normal float /
             # spanning float per figure from its DOCX signals (Word inline vs
             # floating, size, height, caption length, two-column fit).

@@ -62,6 +62,51 @@ _FIELDS: Dict[str, TemplateFieldInfo] = {
         label="Corresponding author",
         description="The first author of the paper, for salutations and billing.",
     ),
+    "FEE": TemplateFieldInfo(
+        key="FEE",
+        label="Publication Fee",
+        description="Publication charge/fee amount for the paper.",
+    ),
+    "CURRENCY": TemplateFieldInfo(
+        key="CURRENCY",
+        label="Currency",
+        description="Currency symbol or code (e.g., $, USD, EUR).",
+    ),
+    "TOTAL_AMOUNT": TemplateFieldInfo(
+        key="TOTAL_AMOUNT",
+        label="Total Amount",
+        description="Total calculated amount including currency or fees.",
+    ),
+    "INVOICE_NUMBER": TemplateFieldInfo(
+        key="INVOICE_NUMBER",
+        label="Invoice Number",
+        description="Unique invoice reference number.",
+    ),
+    "INVOICE_DATE": TemplateFieldInfo(
+        key="INVOICE_DATE",
+        label="Invoice Date",
+        description="Date of invoice issuance.",
+    ),
+    "DUE_DATE": TemplateFieldInfo(
+        key="DUE_DATE",
+        label="Payment Due Date",
+        description="Deadline for publication fee payment.",
+    ),
+    "BANK_DETAILS": TemplateFieldInfo(
+        key="BANK_DETAILS",
+        label="Bank Details",
+        description="Bank account, IBAN, SWIFT, and payment instructions.",
+    ),
+    "CUSTOMER_NAME": TemplateFieldInfo(
+        key="CUSTOMER_NAME",
+        label="Bill To / Customer Name",
+        description="Name of the person or entity being billed.",
+    ),
+    "AUTHOR_ADDRESS": TemplateFieldInfo(
+        key="AUTHOR_ADDRESS",
+        label="Author Address / Affiliation",
+        description="Address or institution of the author/payee.",
+    ),
 }
 
 

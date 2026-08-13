@@ -1,0 +1,16 @@
+[2026-08-11 22:03:07,864] [INFO] [job_manager.py:153]: Job 3abd4578-4f8d-4e39-bb7f-8b48b86e874d workspace created successfully
+[2026-08-11 22:03:07,896] [INFO] [pipeline_service.py:47]: Starting validation for job: 3abd4578-4f8d-4e39-bb7f-8b48b86e874d
+[2026-08-11 22:03:07,912] [INFO] [job_manager.py:202]: Job status updated to: VALIDATING
+[2026-08-11 22:03:07,930] [INFO] [job_manager.py:226]: Progress updated to 10%: Validating input Word Document
+[2026-08-11 22:03:07,949] [INFO] [pipeline_service.py:62]: Validation successful.
+[2026-08-11 22:03:07,964] [INFO] [job_manager.py:226]: Progress updated to 20%: Input document validated successfully
+[2026-08-11 22:03:07,964] [INFO] [pipeline_service.py:69]: Starting document analysis for job: 3abd4578-4f8d-4e39-bb7f-8b48b86e874d
+[2026-08-11 22:03:07,982] [INFO] [job_manager.py:202]: Job status updated to: ANALYZING_DOCUMENT
+[2026-08-11 22:03:07,995] [INFO] [job_manager.py:226]: Progress updated to 30%: Analyzing document structure and content blocks
+[2026-08-11 22:03:07,996] [INFO] [document_analyzer.py:228]: Starting improved document analysis for: G:\work\Journal2LaTeX\backend\temp\3abd4578-4f8d-4e39-bb7f-8b48b86e874d\input\Sawsan Kara-Statistical analysis of the impact of integrating students.docx
+[2026-08-11 22:03:09,001] [INFO] [document_analyzer.py:1134]: Parsed document: title='Statistical analysis of the impact of integrating students with special educational needs on their regular peers within the educational environment', authors=4, sections=22, references=30
+[2026-08-11 22:03:09,013] [INFO] [pipeline_service.py:97]: Document analysis completed. Saved structure to: G:\work\Journal2LaTeX\backend\temp\3abd4578-4f8d-4e39-bb7f-8b48b86e874d\intermediate\document_structure.json, report to: G:\work\Journal2LaTeX\backend\temp\3abd4578-4f8d-4e39-bb7f-8b48b86e874d\intermediate\conversion_report.json
+[2026-08-11 22:03:09,028] [INFO] [job_manager.py:226]: Progress updated to 45%: Document structure extracted successfully
+[2026-08-11 22:03:09,028] [INFO] [pipeline_service.py:110]: Starting asset extraction for job: 3abd4578-4f8d-4e39-bb7f-8b48b86e874d
+[2026-08-11 22:03:09,053] [INFO] [job_manager.py:202]: Job status updated to: EXTRACTING_ASSETS
+[2026-08-11 22:03:09,074] [INFO] [job_manager.py:226]: Progress updated to 50%: Extracting images and figure assets from document

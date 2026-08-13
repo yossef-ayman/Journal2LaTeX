@@ -44,6 +44,16 @@ _DEFAULTS = {
     "OPTIMIZER_MAX_ITERATIONS": 12,
     "OPTIMIZER_TARGET_SIMILARITY": 0.95,
     "OPTIMIZER_PATIENCE": 3,
+    # Pre-delivery validation.  Reporting-only stages default to on because
+    # they cannot change the document: the validator reads the built project
+    # and writes a report beside it.  Stages that would *rewrite* LaTeX are
+    # opted into separately, so the first release of an engine can be compared
+    # against current output on real papers before it changes any.
+    "VALIDATION_ENABLED": True,
+    # When on, the Citation Engine rewrites the citations it resolves into the
+    # commands the journal's rules name.  Off by default: it changes rendered
+    # output, and the existing citation mapping already works.
+    "CITATION_REWRITE_ENABLED": False,
     # Rasterization DPI for visual comparison
     "COMPARISON_DPI": 150,
 }
@@ -88,6 +98,8 @@ if _HAS_PYDANTIC_SETTINGS:
         OPTIMIZER_MAX_ITERATIONS: int = _DEFAULTS["OPTIMIZER_MAX_ITERATIONS"]
         OPTIMIZER_TARGET_SIMILARITY: float = _DEFAULTS["OPTIMIZER_TARGET_SIMILARITY"]
         OPTIMIZER_PATIENCE: int = _DEFAULTS["OPTIMIZER_PATIENCE"]
+        VALIDATION_ENABLED: bool = _DEFAULTS["VALIDATION_ENABLED"]
+        CITATION_REWRITE_ENABLED: bool = _DEFAULTS["CITATION_REWRITE_ENABLED"]
         COMPARISON_DPI: int = _DEFAULTS["COMPARISON_DPI"]
 
         model_config = SettingsConfigDict(

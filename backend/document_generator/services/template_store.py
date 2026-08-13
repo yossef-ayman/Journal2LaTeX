@@ -278,29 +278,32 @@ class TemplateStore:
             from document_generator.services import document_inspector
             insp = document_inspector.inspect(tmpl_path, key)
             mappings: List[FieldMapping] = []
-            seen_fields: set[str] = set()
-            for seg in insp.segments:
+            for idx, seg in enumerate(insp.segments):
                 txt = seg.text
                 if "##" in txt:
-                    lower = txt.lower()
+                    prev_txt = insp.segments[idx - 1].text if idx > 0 else ""
+                    combined = f"{prev_txt} {txt}".lower()
                     field = None
-                    if "title" in lower:
-                        field = "TITLE"
-                    elif "author" in lower:
-                        field = "AUTHORS"
-                    elif "ref" in lower or "invoice no" in lower:
+                    if "invoice no" in combined or "invoice number" in combined:
+                        field = "INVOICE_NUMBER"
+                    elif "ref" in combined:
                         field = "REFERENCE_NUMBER"
-                    elif "accepted" in lower or "date" in lower:
+                    elif "title" in combined:
+                        field = "TITLE"
+                    elif "author" in combined:
+                        field = "AUTHORS"
+                    elif "accepted" in combined or "date" in combined:
                         field = "ACCEPTANCE_DATE"
-                    elif "deadline" in lower:
+                    elif "deadline" in combined:
                         field = "DEADLINE"
-                    elif "discount" in lower:
+                    elif "discount" in combined:
                         field = "DISCOUNT"
-                    elif "total charge" in lower or "fees" in lower:
+                    elif "total charge in us dollars" in combined or "total charge in dollars" in combined:
+                        field = "TOTAL_CHARGE_USD"
+                    elif "total charge" in combined or "fees" in combined or "fee" in combined:
                         field = "TOTAL_CHARGE"
 
-                    if field and field not in seen_fields:
-                        seen_fields.add(field)
+                    if field:
                         mappings.append(FieldMapping(field=field, text=txt, occurrences=1))
             if mappings:
                 return TemplateMapping(document_type=key, mappings=mappings)

@@ -21,6 +21,8 @@ export interface BookData {
   coverLayout?: CoverLayout;
   /** Right-to-Left book orientation for Arabic/Hebrew books (Spine on the right side) */
   isRtl?: boolean;
+  /** Optional attached PDF manuscript file or URL */
+  pdfUrl?: string;
 }
 
 export interface ThicknessConfig {
@@ -39,4 +41,5 @@ export interface ViewerControls {
   toggleAutoRotate: () => void;
   isAutoRotating: boolean;
   zoomLevel: number;
+  openBook?: () => void;
 }

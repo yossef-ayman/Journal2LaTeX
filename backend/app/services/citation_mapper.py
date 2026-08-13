@@ -1,12 +1,55 @@
-import re
+"""In-text citation mapping.
+
+This service keeps the interface it has always had -- the renderer calls
+``map_citations`` and receives rewritten LaTeX and a report -- but the work is
+now done by :class:`app.engines.citation_engine.CitationEngine`.
+
+The reason for the change is not tidiness.  This module and the engine had each
+grown their own answer to the same three questions: which shapes in the text are
+citations, which reference each one names, and what LaTeX to write for it.  Two
+answers to one question is one answer too many -- the two disagreed about
+ranges, about bare years, about superscripts, and most seriously about how a
+citation key is spelled, which is the one thing that has to match the
+bibliography exactly.  So the logic lives in the engine, and this module is the
+adapter that keeps every existing caller working unchanged.
+
+What the engine adds over what was here: superscript and hyperlinked citations,
+citations already rendered as commands, the guards that stop a page range or a
+bare year becoming a citation, validation of the reference numbering itself, and
+citation commands chosen by the journal's rules instead of hard-coded.
+"""
+
 import json
 from pathlib import Path
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, Optional, Tuple
+
+from app.engines.citation_engine import CitationEngine
+from app.engines.journal_rules import JournalRules, JournalRulesResolver
+
 
 class CitationMapper:
     """Service to automatically map, match, and translate in-text citations to bibliography items."""
 
-    def map_citations(self, doc_model: Any, content_tex: str, report_dir: Path) -> Tuple[str, Dict[str, Any]]:
+    #: Style names kept in the shape the previous implementation reported them,
+    #: so anything reading ``citation_report.json`` -- the frontend, a saved
+    #: report from an earlier run -- still recognises the value.
+    _STYLE_NAMES = {
+        "numeric": "Numbered (IEEE/Vancouver)",
+        "superscript": "Numbered (Superscript)",
+        "author_year": "Author-Date (APA/Harvard)",
+        "mixed": "Mixed",
+        "rendered": "Numbered (Already rendered)",
+        "none": "Numbered (Default fallback)",
+    }
+
+    def __init__(self, engine: Optional[CitationEngine] = None,
+                 rules_resolver: Optional[JournalRulesResolver] = None) -> None:
+        self._engine = engine or CitationEngine()
+        self._rules_resolver = rules_resolver or JournalRulesResolver()
+
+    def map_citations(self, doc_model: Any, content_tex: str, report_dir: Path,
+                      rules: Optional[JournalRules] = None
+                      ) -> Tuple[str, Dict[str, Any]]:
         """Map in-text citations to bibliography keys.
 
         Args:
@@ -14,140 +57,60 @@ class CitationMapper:
             content_tex: Rendered body LaTeX.
             report_dir: Directory where citation_report.json is written
                 (the job's intermediate directory).
+            rules: Resolved journal rules.  Optional so the three-argument
+                calls that exist today keep working; when the caller has
+                already resolved the rules it passes them, which is what
+                guarantees that the keys written here are the same keys the
+                renderer writes into ``\\bibitem``.
         """
-        report = {
-            "total_citations": 0,
-            "mapped_citations": 0,
-            "broken_citations": 0,
-            "unused_bibliography": [],
-            "duplicated_bibliography": [],
-            "missing_bibliography": [],
-            "citation_style_detected": "Unknown"
-        }
+        if rules is None:
+            rules = self._rules_resolver.resolve({})
 
-        # 1. Extract Bibliography Entries and key mappings
-        # Mapped keys: e.g. ref1 -> bibliography text, or parsed author-year to ref key
-        bib_keys = {}
-        author_year_map = {}
-        duplicates = []
-        seen_refs = set()
+        references = list(getattr(doc_model, "references", None) or [])
+        analysis = self._engine.analyse(references, content_tex, rules)
+        content_tex = self._engine.render(content_tex, analysis, rules)
 
-        for idx, ref in enumerate(doc_model.references):
-            ref_cleaned = ref.strip()
-            key = f"ref{idx+1}"
-            
-            # Check duplicates
-            if ref_cleaned in seen_refs:
-                duplicates.append(ref_cleaned)
-            seen_refs.add(ref_cleaned)
-            
-            bib_keys[key] = ref_cleaned
-            
-            # Try parsing Author and Year for APA style
-            # e.g., "Almahaireh, A. (2023)."
-            author_match = re.match(r'^([A-Z][a-zA-Z\s\-\u00c0-\u017f]+),\s*[A-Z]\.', ref_cleaned)
-            year_match = re.search(r'\((19\d{2}|20\d{2})\)', ref_cleaned)
-            
-            if author_match and year_match:
-                author_name = author_match.group(1).split()[-1].lower() # Last name
-                year = year_match.group(1)
-                author_year_map[(author_name, year)] = key
+        report = self._build_report(analysis)
 
-        report["duplicated_bibliography"] = duplicates
-
-        # Detect citation style from content
-        has_numbered = re.search(r'\[[0-9]+', content_tex) is not None
-        has_author_year = re.search(r'\([A-Z][a-z]+,\s*(?:19|20)\d{2}\)', content_tex) is not None
-        
-        if has_numbered and has_author_year:
-            report["citation_style_detected"] = "Mixed"
-        elif has_numbered:
-            report["citation_style_detected"] = "Numbered (IEEE/Vancouver)"
-        elif has_author_year:
-            report["citation_style_detected"] = "Author-Date (APA/Harvard)"
-        else:
-            report["citation_style_detected"] = "Numbered (Default fallback)"
-
-        # 2. Map and replace Numbered citations: [1], [1, 2], [1-5], [1–5]
-        def replace_numbered(match):
-            citation_str = match.group(1)
-            parts = re.split(r'[,\s]+', citation_str)
-            keys = []
-            
-            for part in parts:
-                part = part.strip()
-                if not part:
-                    continue
-                # Handle range like 1-5 or 1–5
-                range_match = re.match(r'(\d+)[\-\u2013\u2014](\d+)', part)
-                if range_match:
-                    start = int(range_match.group(1))
-                    end = int(range_match.group(2))
-                    for i in range(start, end + 1):
-                        keys.append(f"ref{i}")
-                elif part.isdigit():
-                    keys.append(f"ref{part}")
-                    
-            valid_keys = [k for k in keys if k in bib_keys]
-            if valid_keys:
-                report["total_citations"] += 1
-                report["mapped_citations"] += 1
-                return "\\cite{" + ", ".join(valid_keys) + "}"
-            else:
-                report["total_citations"] += 1
-                report["broken_citations"] += 1
-                return match.group(0) # Keep original if unresolved
-
-        # Replace numbered brackets
-        content_tex = re.sub(r'\[([0-9\s,\-\u2013\u2014]+)\]', replace_numbered, content_tex)
-
-        # 3. Map and replace Author-Date citations: (Author, 2020)
-        def replace_author_date(match):
-            citation_str = match.group(1)
-            # Parse components e.g. "Almahaireh, 2023"
-            parts = [p.strip() for p in citation_str.split(",")]
-            if len(parts) >= 2:
-                author = parts[0].lower()
-                year = parts[-1]
-                if year.isdigit() and len(year) == 4:
-                    key = author_year_map.get((author, year))
-                    if key:
-                        report["total_citations"] += 1
-                        report["mapped_citations"] += 1
-                        return "\\citep{" + key + "}"
-                    
-            report["total_citations"] += 1
-            report["broken_citations"] += 1
-            return match.group(0) # Keep original if unresolved
-
-        content_tex = re.sub(r'\(([^)]+,\s*(?:19|20)\d{2})\)', replace_author_date, content_tex)
-
-        # 4. Map and replace Inline Author-Date citations: Author (2020)
-        def replace_inline_author_date(match):
-            author = match.group(1).lower()
-            year = match.group(2)
-            key = author_year_map.get((author, year))
-            if key:
-                report["total_citations"] += 1
-                report["mapped_citations"] += 1
-                return "\\citet{" + key + "}"
-            return match.group(0)
-
-        content_tex = re.sub(r'([A-Z][a-zA-Z\u00c0-\u017f]+)\s*\(((?:19|20)\d{2})\)', replace_inline_author_date, content_tex)
-
-        # Find uncited bib items
-        used_keys = set(re.findall(r'\\cite[a-z]*\{([^}]+)\}', content_tex))
-        flat_used_keys = set()
-        for k in used_keys:
-            for single_key in k.split(','):
-                flat_used_keys.add(single_key.strip())
-                
-        report["unused_bibliography"] = [k for k in bib_keys if k not in flat_used_keys]
-        report["missing_bibliography"] = list(flat_used_keys - set(bib_keys.keys()))
-
-        # Save report
         report_path = report_dir / "citation_report.json"
         report_path.parent.mkdir(parents=True, exist_ok=True)
         report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
 
         return content_tex, report
+
+    def _build_report(self, analysis) -> Dict[str, Any]:
+        """The report, in the shape callers already expect.
+
+        Every key the previous implementation produced is still produced, with
+        the same meaning, so no consumer needs changing.  The engine's richer
+        findings are added alongside rather than replacing them -- a caller that
+        wants the detail can read ``issues``, and one that only wants the
+        counts is unaffected.
+        """
+        resolved = [c for c in analysis.citations if c.resolved]
+        broken = [c for c in analysis.citations if not c.resolved]
+        cited_keys = {k for c in analysis.citations for k in c.keys}
+
+        duplicated = [i.detail.get("number") for i in analysis.issues
+                      if i.kind == "duplicate_numbering"]
+        missing = sorted({u for c in analysis.citations for u in c.unresolved})
+
+        return {
+            "total_citations": len(analysis.citations),
+            "mapped_citations": len(resolved),
+            "broken_citations": len(broken),
+            "unused_bibliography": [e.key for e in analysis.entries
+                                    if e.key not in cited_keys],
+            "duplicated_bibliography": duplicated,
+            "missing_bibliography": missing,
+            "citation_style_detected": self._STYLE_NAMES.get(
+                analysis.detected_style, "Unknown"),
+            # Added by the engine; no existing consumer depends on these, and
+            # they are what make a citation problem diagnosable rather than
+            # merely countable.
+            "issues": [i.to_dict() for i in analysis.issues],
+            "bibliography_keys": [
+                {"key": e.key, "source_number": e.number,
+                 "text": e.raw[:160]} for e in analysis.entries
+            ],
+        }

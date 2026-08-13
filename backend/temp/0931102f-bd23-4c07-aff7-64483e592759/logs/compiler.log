@@ -1,0 +1,83 @@
+[2026-08-11 22:33:27,132] [INFO] [latex_compiler.py:337]: Starting LaTeX compilation for: G:\work\Journal2LaTeX\backend\temp\0931102f-bd23-4c07-aff7-64483e592759\rendered\main.tex
+[2026-08-11 22:33:27,150] [INFO] [latex_compiler.py:364]: Applied template compatibility layer to main.tex
+[2026-08-11 22:33:27,153] [INFO] [latex_compiler.py:126]: Rendered working directory tree before compilation:
+  everyshi.sty
+  logo7pt-eps-converted-to.pdf
+  logo7pt.eps
+  main.aux
+  main.log
+  main.out
+  main.pdf
+  main.synctex.gz
+  main.tex
+  media/
+    image1.jpeg
+    image1.png
+    image2.jpeg
+    image2.png
+    image3.png
+    image4.png
+    image5.png
+    image6.png
+    image7.png
+  NSP1.cls
+  psfig.sty
+  Ref. JSAP07292605A- Suad Eyadat.doc
+  template.json
+[2026-08-11 22:33:27,162] [INFO] [latex_compiler.py:132]: Template resource manifest (22 files):
+  everyshi.sty                             template resource (package / style)
+  logo7pt-eps-converted-to.pdf             template resource (graphic (PDF))
+  logo7pt.eps                              template resource (graphic (EPS))
+  main.aux                                 generated document / build artefact
+  main.log                                 generated document / build artefact
+  main.out                                 generated document / build artefact
+  main.pdf                                 generated document / build artefact
+  main.synctex.gz                          generated document / build artefact
+  main.tex                                 generated document / build artefact
+  media\image1.jpeg                        renderer-generated media
+  media\image1.png                         renderer-generated media
+  media\image2.jpeg                        renderer-generated media
+  media\image2.png                         renderer-generated media
+  media\image3.png                         renderer-generated media
+  media\image4.png                         renderer-generated media
+  media\image5.png                         renderer-generated media
+  media\image6.png                         renderer-generated media
+  media\image7.png                         renderer-generated media
+  NSP1.cls                                 template resource (document class)
+  psfig.sty                                template resource (package / style)
+  Ref. JSAP07292605A- Suad Eyadat.doc      template resource
+  template.json                            template metadata
+[2026-08-11 22:33:30,380] [INFO] [latex_compiler.py:154]: Dependency resolution (31 references):
+  [LOCAL  ] documentclass   NSP1
+  [SYSTEM ] usepackage      xcolor
+  [SYSTEM ] usepackage      url
+  [SYSTEM ] usepackage      floatflt
+  [SYSTEM ] usepackage      helvet
+  [SYSTEM ] usepackage      times
+  [LOCAL  ] usepackage      psfig
+  [SYSTEM ] usepackage      graphics
+  [SYSTEM ] usepackage      mathptmx
+  [SYSTEM ] usepackage      amsmath
+  [SYSTEM ] usepackage      amssymb
+  [SYSTEM ] usepackage      bm
+  [SYSTEM ] usepackage      float
+  [SYSTEM ] usepackage      caption
+  [SYSTEM ] usepackage      graphicx
+  [SYSTEM ] usepackage      longtable
+  [SYSTEM ] usepackage      booktabs
+  [SYSTEM ] usepackage      array
+  [SYSTEM ] usepackage      calc
+  [SYSTEM ] usepackage      multirow
+  [SYSTEM ] usepackage      cuted
+  [SYSTEM ] usepackage      newunicodechar
+  [SYSTEM ] usepackage      type1cm
+  [SYSTEM ] usepackage      fix-cm
+  [LOCAL  ] includegraphics media/image1.png
+  [LOCAL  ] includegraphics media/image2.png
+  [LOCAL  ] includegraphics media/image3.png
+  [LOCAL  ] includegraphics media/image4.png
+  [LOCAL  ] includegraphics media/image5.png
+  [LOCAL  ] includegraphics media/image6.png
+  [LOCAL  ] includegraphics media/image7.png
+[2026-08-11 22:33:30,381] [INFO] [latex_compiler.py:395]: Using latexmk compiler.
+[2026-08-11 22:33:37,340] [INFO] [latex_compiler.py:462]: Compilation completed successfully. PDF generated at: G:\work\Journal2LaTeX\backend\temp\0931102f-bd23-4c07-aff7-64483e592759\output\paper.pdf

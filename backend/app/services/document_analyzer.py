@@ -255,6 +255,10 @@ class DocumentAnalyzer:
 
             ast_data = json.loads(result.stdout)
 
+            # Read and parse the DOCX parts once for this call.  Every pass
+            # below used to unzip and re-parse word/document.xml for itself.
+            self._open_parts(docx_path)
+
             # Every pass below reads the raw DOCX XML to recover something
             # pandoc does not expose.  Each is an *enrichment*: the document
             # parses without it, only with less detail.  So each is isolated,
@@ -315,7 +319,12 @@ class DocumentAnalyzer:
             self._omml_census = side_channel(
                 "OMML census", lambda: self._count_omml_equations(docx_path),
                 {"omath": 0, "omath_para": 0, "ole_equations": 0})
-            return self._parse_ast(ast_data, job_id)
+            try:
+                return self._parse_ast(ast_data, job_id)
+            finally:
+                # The cache belongs to this call only: nothing is retained
+                # between documents or between requests.
+                self._close_parts()
 
         except Exception as e:
             if not isinstance(e, DocumentAnalyzerError):
@@ -323,6 +332,86 @@ class DocumentAnalyzer:
                 logger.exception(msg)
                 raise DocumentAnalyzerError(msg)
             raise
+
+    # ------------------------------------------------------------------ #
+    # Per-call DOCX part access
+    # ------------------------------------------------------------------ #
+    #
+    # A DOCX is a zip archive, and ``word/document.xml`` is by far its largest
+    # member.  Each enrichment pass below used to open the archive and parse
+    # that member again for itself -- seven passes, seven unzips, seven full
+    # XML parses of the same bytes, per conversion.
+    #
+    # The parts are therefore read and parsed once at the start of
+    # ``analyze_document`` and handed to the passes.  Two properties keep this
+    # honest: the cache lives on the instance for the duration of one call and
+    # is discarded in that call's ``finally``, so nothing is shared between
+    # documents or between requests; and every accessor falls back to opening
+    # the archive itself when the cache is absent, so each pass still works
+    # standalone and the tests that call them directly are unaffected.
+
+    def _open_parts(self, docx_path: Path) -> None:
+        """Read and parse the DOCX members the analysis passes need, once."""
+        import zipfile
+        import xml.etree.ElementTree as ET
+        parts: Dict[str, Any] = {"path": str(docx_path), "xml": {}, "tree": {}}
+        try:
+            with zipfile.ZipFile(docx_path) as zf:
+                names = set(zf.namelist())
+                for member in ("word/document.xml", "word/styles.xml",
+                               "word/_rels/document.xml.rels"):
+                    if member in names:
+                        parts["xml"][member] = zf.read(member)
+                parts["names"] = names
+        except Exception:
+            # A malformed archive is the callers' problem to report, not this
+            # helper's: leaving the cache empty makes every pass fall back to
+            # its own open, which raises exactly where it did before.
+            return
+        for member, raw in parts["xml"].items():
+            try:
+                parts["tree"][member] = ET.fromstring(raw)
+            except Exception:
+                pass
+        self._docx_parts = parts
+
+    def _close_parts(self) -> None:
+        self._docx_parts = None
+
+    def _part_tree(self, docx_path: Path, member: str):
+        """Parsed XML for a DOCX member, from this call's cache when possible.
+
+        Returns ``None`` when the member does not exist, which is a normal
+        answer: a document with no styles or no relationships simply has none.
+        """
+        import zipfile
+        import xml.etree.ElementTree as ET
+        parts = getattr(self, "_docx_parts", None)
+        if parts and parts.get("path") == str(docx_path):
+            if member in parts["tree"]:
+                return parts["tree"][member]
+            if "names" in parts and member not in parts["names"]:
+                return None
+        with zipfile.ZipFile(docx_path) as zf:
+            try:
+                return ET.fromstring(zf.read(member))
+            except KeyError:
+                return None
+
+    def _part_bytes(self, docx_path: Path, member: str):
+        """Raw bytes for a DOCX member, from this call's cache when possible."""
+        import zipfile
+        parts = getattr(self, "_docx_parts", None)
+        if parts and parts.get("path") == str(docx_path):
+            if member in parts["xml"]:
+                return parts["xml"][member]
+            if "names" in parts and member not in parts["names"]:
+                return None
+        with zipfile.ZipFile(docx_path) as zf:
+            try:
+                return zf.read(member)
+            except KeyError:
+                return None
 
     @staticmethod
     def _guard(counters: Dict[str, Any], stage: str, fn, fallback):
@@ -2162,11 +2251,10 @@ class DocumentAnalyzer:
         W = self._W_NS
         formats: Dict[str, Dict[str, Any]] = {}
         try:
-            with zipfile.ZipFile(docx_path) as zf:
-                doc_root = ET.fromstring(zf.read("word/document.xml"))
-                styles_root = None
-                if "word/styles.xml" in zf.namelist():
-                    styles_root = ET.fromstring(zf.read("word/styles.xml"))
+            doc_root = self._part_tree(docx_path, "word/document.xml")
+            styles_root = self._part_tree(docx_path, "word/styles.xml")
+            if doc_root is None:
+                return formats
         except Exception:
             return formats
 
@@ -2644,8 +2732,13 @@ class DocumentAnalyzer:
         W = self._W_NS
         styles: List[Dict[str, Any]] = []
         try:
+            root = self._part_tree(docx_path, "word/document.xml")
+            if root is None:
+                return styles
+            # This pass needs the archive itself as well: _grid_style_ids
+            # reads styles.xml through the open handle.  Only document.xml --
+            # the large member -- comes from the per-call cache.
             with zipfile.ZipFile(docx_path) as zf:
-                root = ET.fromstring(zf.read("word/document.xml"))
                 grid_style_ids = self._grid_style_ids(zf)
             body = root.find(f"{W}body")
             if body is None:
@@ -2715,15 +2808,14 @@ class DocumentAnalyzer:
         R = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
         placement: Dict[str, bool] = {}
         try:
-            with zipfile.ZipFile(docx_path) as zf:
-                rels: Dict[str, str] = {}
-                try:
-                    rt = ET.fromstring(zf.read("word/_rels/document.xml.rels"))
-                    for rel in rt:
-                        rels[rel.get("Id")] = rel.get("Target") or ""
-                except Exception:
-                    pass
-                root = ET.fromstring(zf.read("word/document.xml"))
+            rels: Dict[str, str] = {}
+            rt = self._part_tree(docx_path, "word/_rels/document.xml.rels")
+            if rt is not None:
+                for rel in rt:
+                    rels[rel.get("Id")] = rel.get("Target") or ""
+            root = self._part_tree(docx_path, "word/document.xml")
+            if root is None:
+                return placement
             for dr in root.iter(f"{W}drawing"):
                 is_inline = dr.find(f"{WP}inline") is not None
                 blip = dr.find(f".//{A}blip")
@@ -2766,15 +2858,14 @@ class DocumentAnalyzer:
         A = "{http://schemas.openxmlformats.org/drawingml/2006/main}"
         R = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
         geometry: Dict[str, Dict[str, Any]] = {}
-        with zipfile.ZipFile(docx_path) as zf:
-            rels: Dict[str, str] = {}
-            try:
-                rt = ET.fromstring(zf.read("word/_rels/document.xml.rels"))
-                for rel in rt:
-                    rels[rel.get("Id")] = rel.get("Target") or ""
-            except KeyError:
-                pass
-            root = ET.fromstring(zf.read("word/document.xml"))
+        rels: Dict[str, str] = {}
+        rt = self._part_tree(docx_path, "word/_rels/document.xml.rels")
+        if rt is not None:
+            for rel in rt:
+                rels[rel.get("Id")] = rel.get("Target") or ""
+        root = self._part_tree(docx_path, "word/document.xml")
+        if root is None:
+            return geometry
 
         for dr in root.iter(f"{W}drawing"):
             inline_el = dr.find(f"{WP}inline")
@@ -2904,8 +2995,9 @@ class DocumentAnalyzer:
         M = "{http://schemas.openxmlformats.org/officeDocument/2006/math}"
         O = "{urn:schemas-microsoft-com:office:office}"
         W = self._W_NS
-        with zipfile.ZipFile(docx_path) as zf:
-            root = ET.fromstring(zf.read("word/document.xml"))
+        root = self._part_tree(docx_path, "word/document.xml")
+        if root is None:
+            raise KeyError("word/document.xml")
         omath_para = len(list(root.iter(f"{M}oMathPara")))
         # An oMath inside an oMathPara is the same equation counted once.
         omath = len(list(root.iter(f"{M}oMath")))
@@ -2923,8 +3015,9 @@ class DocumentAnalyzer:
         import xml.etree.ElementTree as ET
         W = self._W_NS
         try:
-            with zipfile.ZipFile(docx_path) as zf:
-                root = ET.fromstring(zf.read("word/document.xml"))
+            root = self._part_tree(docx_path, "word/document.xml")
+            if root is None:
+                raise KeyError("word/document.xml")
             body = root.find(f"{W}body")
             if body is None:
                 return 0.0

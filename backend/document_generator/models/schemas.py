@@ -202,6 +202,11 @@ class BatchGenerationRequest(BaseModel):
 
     acceptance_date: str = ""
     deadline: str = ""
+    fee: Optional[str] = Field(default=None, description="Publication fee for invoices.")
+    currency: Optional[str] = Field(default=None, description="Currency symbol or code (e.g., $, USD, EUR).")
+    bank_details: Optional[str] = Field(default=None, description="Bank details / payment instructions.")
+    invoice_number: Optional[str] = Field(default=None, description="Specific invoice number override.")
+    invoice_date: Optional[str] = Field(default=None, description="Date of invoice issuance.")
     reference_prefix: Optional[str] = Field(
         default=None,
         description="Optional literal prefix placed before the generated reference number.",
@@ -260,6 +265,10 @@ class GeneratorSettings(BaseModel):
     journal_name: str = ""
     custom_placeholders: Dict[str, str] = {}
     generate_pdf: bool = True
+    default_fee: str = ""
+    default_currency: str = "$"
+    bank_details: str = ""
+    invoice_prefix: str = "INV-"
     # Reported, not stored: whether a PDF converter is actually available here.
     pdf_backend_available: bool = False
     pdf_backend: Optional[str] = None
@@ -274,3 +283,7 @@ class GeneratorSettingsUpdate(BaseModel):
     journal_name: Optional[str] = None
     custom_placeholders: Optional[Dict[str, Any]] = None
     generate_pdf: Optional[bool] = None
+    default_fee: Optional[str] = None
+    default_currency: Optional[str] = None
+    bank_details: Optional[str] = None
+    invoice_prefix: Optional[str] = None

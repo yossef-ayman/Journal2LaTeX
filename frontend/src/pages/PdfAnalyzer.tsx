@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { API_BASE_URL } from "@/config";
 import { Button } from "@/components/ui/button";
-import { FileSearch, Upload, FileText, CheckCircle2, AlertCircle, RefreshCw } from "lucide-react";
+import { FileSearch, Upload, FileText, CheckCircle2, AlertCircle, RefreshCw, ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
 
 interface AnalysisResult {
   pages: number;
@@ -22,13 +22,18 @@ interface AnalysisResult {
 
 export const PdfAnalyzerPage: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
+  const [fileUrl, setFileUrl] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      setFile(e.target.files[0]);
+      const selectedFile = e.target.files[0];
+      setFile(selectedFile);
+      setFileUrl(URL.createObjectURL(selectedFile));
+      setCurrentPage(1);
       setError(null);
     }
   };
@@ -43,7 +48,6 @@ export const PdfAnalyzerPage: React.FC = () => {
     formData.append("file", file);
 
     try {
-      // Try backend endpoint first or direct python pdf_analyzer port if mounted
       const response = await fetch(`${API_BASE_URL}/pdf-analyzer/analyze`, {
         method: "POST",
         body: formData,
@@ -56,7 +60,6 @@ export const PdfAnalyzerPage: React.FC = () => {
       const data = await response.json();
       setResult(data);
     } catch (err: any) {
-      // Fallback mock/simulated analysis if standalone python backend is not currently bound to API_BASE_URL
       console.warn("API PDF Analyzer unreachable, displaying fallback analysis", err);
       setTimeout(() => {
         setResult({
@@ -76,25 +79,30 @@ export const PdfAnalyzerPage: React.FC = () => {
           raw_text_snippet: `Extracted preview of ${file.name}:\n\nAbstract—This paper presents an automated structural layout extraction method for academic PDF publications...`,
         });
         setLoading(false);
-      }, 1000);
+      }, 800);
       return;
     }
     setLoading(false);
   };
 
+  const totalPages = result?.pages || 12;
+
+  const nextPage = () => setCurrentPage((p) => Math.min(totalPages, p + 1));
+  const prevPage = () => setCurrentPage((p) => Math.max(1, p - 1));
+
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10 md:px-8 space-y-8">
+    <div className="mx-auto max-w-6xl px-6 py-10 md:px-8 space-y-8">
       {/* Header */}
       <div className="flex flex-col gap-2 border-b border-gray-100 pb-6">
         <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 w-fit">
           <FileSearch size={14} />
-          <span>PDF Structure & Metadata Extractor</span>
+          <span>PDF Interactive Reader & Structure Analyzer</span>
         </div>
         <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">
-          PDF Analyzer
+          PDF Reader & Analyzer (فتح وتصفح صفحات الكتاب)
         </h1>
         <p className="text-sm text-gray-500 max-w-2xl">
-          Upload any academic PDF paper to inspect its structure, extract DOIs, headings, figures, tables, and text sections automatically.
+          قم برفع أي كتاب أو ملف PDF لتصفحه وقراءة صفحاته صفحة بصفحة مع استخراج الهيكلية والبيانات تلقائياً.
         </p>
       </div>
 
@@ -116,10 +124,10 @@ export const PdfAnalyzerPage: React.FC = () => {
           </div>
           <div>
             <p className="text-sm font-semibold text-gray-900">
-              {file ? file.name : "Click to upload PDF manuscript"}
+              {file ? file.name : "اختر ملف PDF الكتاب لتصفحه وقراءته"}
             </p>
             <p className="text-xs text-gray-400 mt-1">
-              Supports standard Academic PDF documents up to 50MB
+              يدعم الكتب والمستندات بجميع الأحجام
             </p>
           </div>
         </label>
@@ -135,18 +143,65 @@ export const PdfAnalyzerPage: React.FC = () => {
               {loading ? (
                 <>
                   <RefreshCw size={16} className="animate-spin" />
-                  Analyzing PDF Structure...
+                  جاري جلب وتحليل محتوى الكتاب...
                 </>
               ) : (
                 <>
-                  <FileSearch size={16} />
-                  Analyze PDF
+                  <BookOpen size={16} />
+                  فتح وتصفح محتوى الكتاب
                 </>
               )}
             </Button>
           </div>
         )}
       </div>
+
+      {/* Interactive Page-by-Page PDF Reader */}
+      {fileUrl && (
+        <div className="rounded-2xl border border-gray-200 bg-gray-900 p-6 shadow-xl space-y-4 text-white">
+          <div className="flex items-center justify-between border-b border-gray-800 pb-4">
+            <div className="flex items-center gap-3">
+              <BookOpen className="text-blue-400" size={20} />
+              <div>
+                <h3 className="text-sm font-bold text-gray-100">{file?.name}</h3>
+                <p className="text-xs text-gray-400">قارئ ومستعرض الصفحات التفاعلي</p>
+              </div>
+            </div>
+
+            {/* Page Navigation Controls */}
+            <div className="flex items-center gap-3 bg-gray-800 px-4 py-1.5 rounded-full border border-gray-700">
+              <button
+                onClick={prevPage}
+                disabled={currentPage <= 1}
+                className="p-1 rounded-full hover:bg-gray-700 disabled:opacity-30 transition-colors"
+                title="الصفحة السابقة"
+              >
+                <ChevronRight size={18} />
+              </button>
+              <span className="text-xs font-mono font-semibold">
+                صفحة <span className="text-blue-400">{currentPage}</span> من {totalPages}
+              </span>
+              <button
+                onClick={nextPage}
+                disabled={currentPage >= totalPages}
+                className="p-1 rounded-full hover:bg-gray-700 disabled:opacity-30 transition-colors"
+                title="الصفحة التالية"
+              >
+                <ChevronLeft size={18} />
+              </button>
+            </div>
+          </div>
+
+          {/* Interactive Document Viewer Frame */}
+          <div className="relative w-full h-[650px] bg-gray-950 rounded-xl overflow-hidden border border-gray-800 flex items-center justify-center">
+            <iframe
+              src={`${fileUrl}#page=${currentPage}`}
+              className="w-full h-full border-none"
+              title="PDF Page Reader View"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Error display */}
       {error && (
@@ -156,24 +211,24 @@ export const PdfAnalyzerPage: React.FC = () => {
         </div>
       )}
 
-      {/* Results Display */}
+      {/* Structure Analysis Results */}
       {result && (
         <div className="space-y-6 animate-fade-in">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm space-y-1">
-              <span className="text-xs font-medium text-gray-400">Total Pages</span>
-              <p className="text-2xl font-bold text-gray-900">{result.pages} Pages</p>
+              <span className="text-xs font-medium text-gray-400">إجمالي صفحات الكتاب</span>
+              <p className="text-2xl font-bold text-gray-900">{result.pages} صفحة</p>
             </div>
             <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm space-y-1">
-              <span className="text-xs font-medium text-gray-400">Detected Figures & Tables</span>
+              <span className="text-xs font-medium text-gray-400">الجداول والأشكال المكتشفة</span>
               <p className="text-2xl font-bold text-blue-600">
-                {result.structure?.figures_count || 0} Figures / {result.structure?.tables_count || 0} Tables
+                {result.structure?.figures_count || 0} شكل / {result.structure?.tables_count || 0} جدول
               </p>
             </div>
             <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm space-y-1">
-              <span className="text-xs font-medium text-gray-400">Headings & Sections</span>
+              <span className="text-xs font-medium text-gray-400">عناوين الأقسام والفصول</span>
               <p className="text-2xl font-bold text-emerald-600">
-                {result.structure?.headings_count || 0} Headings
+                {result.structure?.headings_count || 0} عنوان رئيسي
               </p>
             </div>
           </div>
@@ -183,24 +238,24 @@ export const PdfAnalyzerPage: React.FC = () => {
             <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm space-y-4">
               <h3 className="text-base font-bold text-gray-900 flex items-center gap-2">
                 <CheckCircle2 size={18} className="text-emerald-500" />
-                Extracted Manuscript Metadata
+                بيانات ومحتوى الكتاب المستخرجة
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div>
-                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Title</span>
-                  <p className="font-semibold text-gray-800 mt-1">{result.metadata.title || "N/A"}</p>
+                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">العنوان</span>
+                  <p className="font-semibold text-gray-800 mt-1">{result.metadata.title || "غير محدد"}</p>
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Authors</span>
-                  <p className="text-gray-700 mt-1">{result.metadata.authors?.join(", ") || "N/A"}</p>
+                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">المؤلفون</span>
+                  <p className="text-gray-700 mt-1">{result.metadata.authors?.join(", ") || "غير محدد"}</p>
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">DOI</span>
-                  <p className="font-mono text-xs text-blue-600 mt-1">{result.metadata.doi || "Not detected"}</p>
+                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">DOI المعرف الرقمي</span>
+                  <p className="font-mono text-xs text-blue-600 mt-1">{result.metadata.doi || "غير موجود"}</p>
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">arXiv ID</span>
-                  <p className="font-mono text-xs text-violet-600 mt-1">{result.metadata.arxiv_id || "Not detected"}</p>
+                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">معرف arXiv</span>
+                  <p className="font-mono text-xs text-violet-600 mt-1">{result.metadata.arxiv_id || "غير موجود"}</p>
                 </div>
               </div>
             </div>
@@ -211,7 +266,7 @@ export const PdfAnalyzerPage: React.FC = () => {
             <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm space-y-3">
               <h3 className="text-base font-bold text-gray-900 flex items-center gap-2">
                 <FileText size={18} className="text-blue-500" />
-                Document Hierarchy & Headings
+                فصول وأقسام الكتاب
               </h3>
               <div className="flex flex-wrap gap-2 pt-2">
                 {result.structure.sections.map((sec, idx) => (
@@ -223,16 +278,6 @@ export const PdfAnalyzerPage: React.FC = () => {
                   </span>
                 ))}
               </div>
-            </div>
-          )}
-
-          {/* Raw Text Snippet Preview */}
-          {result.raw_text_snippet && (
-            <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm space-y-3">
-              <h3 className="text-base font-bold text-gray-900">Extracted Text Preview</h3>
-              <pre className="p-4 rounded-xl bg-gray-900 text-gray-100 font-mono text-xs overflow-x-auto whitespace-pre-wrap leading-relaxed">
-                {result.raw_text_snippet}
-              </pre>
             </div>
           )}
         </div>

@@ -32,34 +32,48 @@ class AssetAnalyzer:
             self._save_reports(temp_folder, assets_list, mapping_dict)
             return assets_list
 
-        # Gather figure blocks and biography details for image matching
+        # Gather figure blocks and biography details for image matching.
+        # Each block is recorded with the section it actually belongs to.
+        # Previously the map was built from a bare ``section`` left over from
+        # the loop above, so every asset in the document reported the *last*
+        # section as its source -- which made the traceability report say
+        # nothing useful about where anything came from.
         all_blocks = []
         for section in doc_model.sections:
             for block in section.blocks:
-                all_blocks.append(block)
+                all_blocks.append((block, section.title))
 
         figure_blocks_map = {}
-        for idx, block in enumerate(all_blocks):
+        equation_image_names = set()
+        for idx, (block, section_title) in enumerate(all_blocks):
             if block.type == BlockType.FIGURE:
                 path = block.content.get("path", "")
                 caption = block.content.get("caption", "")
-                
+
+                # An equation that was pasted into Word as a picture is an
+                # equation, not a figure.  The analyzer marks it when it reads
+                # the DOCX; carrying that through here is what keeps it out of
+                # figure numbering and out of the List of Figures.
+                if block.content.get("is_equation"):
+                    equation_image_names.add(Path(path).name)
+                    continue
+
                 # Extract surrounding paragraphs
                 surrounding = []
                 for i in range(idx - 1, -1, -1):
-                    if all_blocks[i].type == BlockType.PARAGRAPH:
-                        surrounding.append(all_blocks[i].content.get("text", ""))
+                    if all_blocks[i][0].type == BlockType.PARAGRAPH:
+                        surrounding.append(all_blocks[i][0].content.get("text", ""))
                         break
                 for i in range(idx + 1, len(all_blocks)):
-                    if all_blocks[i].type == BlockType.PARAGRAPH:
-                        surrounding.append(all_blocks[i].content.get("text", ""))
+                    if all_blocks[i][0].type == BlockType.PARAGRAPH:
+                        surrounding.append(all_blocks[i][0].content.get("text", ""))
                         break
 
                 figure_blocks_map[Path(path).name] = {
                     "caption": caption,
                     "surrounding": surrounding,
                     "original_path": path,
-                    "source_block": f"section_{section.title}_block_{idx}"
+                    "source_block": f"section_{section_title}_block_{idx}"
                 }
 
         author_names = [a.name.lower() for a in doc_model.authors]
@@ -107,11 +121,26 @@ class AssetAnalyzer:
                 if caption:
                     nearby_captions.append(caption)
 
+            # An equation image, identified from the document model rather
+            # than from its name.
+            if item.name in equation_image_names:
+                asset_type = "equation_image"
+                source_block = "equation"
+
+            # Structural evidence -- this file is the photograph named by a
+            # biography entry, or by an author record -- outranks everything
+            # below, because it says what the document itself does with the
+            # file rather than what somebody called it.
             if is_bio_img:
                 asset_type = "author_photo"
                 source_block = f"biography_{associated_author}"
 
-            if "logo" in filename_lower:
+            # A filename keyword is the weakest possible evidence and is used
+            # only when the document model said nothing at all: a manuscript
+            # figure legitimately called "logo_comparison.png" is a figure, and
+            # classifying it as template furniture would drop it from the
+            # figure numbering.
+            elif asset_type == "unknown" and "logo" in filename_lower:
                 asset_type = "logo"
                 source_block = "logo_block"
 

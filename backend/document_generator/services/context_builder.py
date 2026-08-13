@@ -27,6 +27,11 @@ def build_context(
     editor: str = "",
     journal: str = "",
     document_type: str = "",
+    fee: str = "",
+    currency: str = "",
+    bank_details: str = "",
+    invoice_number: str = "",
+    invoice_date: str = "",
     custom: Mapping[str, str] | None = None,
     extra: Mapping[str, str] | None = None,
 ) -> Dict[str, str]:
@@ -40,6 +45,12 @@ def build_context(
     # Surname heuristic for salutations: templates commonly want "Dear Dr Smith".
     surname = first_author.split()[-1] if first_author else ""
 
+    curr = currency or "$"
+    inv_num = invoice_number or (f"INV-{paper.reference_number}" if paper.reference_number else "")
+    inv_date = invoice_date or acceptance_date or date.today().strftime("%d %B %Y")
+    due_date = deadline or ""
+    total_val = f"{curr} {fee}".strip() if fee else ""
+
     context: Dict[str, str] = {
         "TITLE": paper.title or "",
         "PAPER_TITLE": paper.title or "",
@@ -49,16 +60,19 @@ def build_context(
         "FIRST_AUTHOR": first_author,
         "CORRESPONDING_AUTHOR": first_author,
         "AUTHOR_SURNAME": surname,
+        "CUSTOMER_NAME": first_author,
+        "BILL_TO": first_author,
+        "PAYEE": first_author,
         "REFERENCE_NUMBER": paper.reference_number or "",
         "REFERENCE_NO": paper.reference_number or "",
         "REF_NUMBER": paper.reference_number or "",
         "MANUSCRIPT_ID": paper.reference_number or "",
         "ACCEPT_DATE": acceptance_date,
         "ACCEPTANCE_DATE": acceptance_date,
-        "DATE": acceptance_date,
-        "DEADLINE": deadline,
-        "PAYMENT_DEADLINE": deadline,
-        "DUE_DATE": deadline,
+        "DATE": acceptance_date or inv_date,
+        "DEADLINE": due_date,
+        "PAYMENT_DEADLINE": due_date,
+        "DUE_DATE": due_date,
         "EDITOR": editor,
         "EDITOR_NAME": editor,
         "JOURNAL": journal,
@@ -67,6 +81,27 @@ def build_context(
         "PAPER_INDEX": str(paper.index),
         "SOURCE_FILENAME": paper.source_filename or "",
         "DOCUMENT_TYPE": document_type,
+        # Invoice specific placeholders
+        "FEE": fee,
+        "PUBLICATION_FEE": fee,
+        "AMOUNT": fee,
+        "PRICE": fee,
+        "CURRENCY": curr,
+        "TOTAL_CHARGE_USD": fee,
+        "TOTAL_CHARGE": total_val or fee,
+        "TOTAL_AMOUNT": total_val or fee,
+        "TOTAL_FEE": total_val or fee,
+        "TOTAL": total_val or fee,
+        "DISCOUNT": (extra or {}).get("DISCOUNT", "$0"),
+        "INVOICE_NUMBER": inv_num,
+        "INVOICE_NO": inv_num,
+        "INV_NO": inv_num,
+        "INV_NUM": inv_num,
+        "INVOICE_DATE": inv_date,
+        "INV_DATE": inv_date,
+        "BANK_DETAILS": bank_details,
+        "BANK_INFO": bank_details,
+        "PAYMENT_INFO": bank_details,
         # Generation date, distinct from the operator-supplied acceptance date.
         "TODAY": date.today().strftime("%d %B %Y"),
         "YEAR": str(date.today().year),

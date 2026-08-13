@@ -82,8 +82,9 @@ def _prepared(
             logger.warning("Mapped field '%s' has no value; leaving the template text.", field)
             continue
         val = folded[field] or ""
-        if "##" in literal:
-            replacement = literal.replace("##", val)
+        if "#" in literal:
+            import re
+            replacement = re.sub(r"#+", val, literal)
         else:
             replacement = val
         prepared.append((literal, replacement))
@@ -115,6 +116,7 @@ def _substitute_paragraph(
     prepared: Sequence[Tuple[str, str]],
     values: Mapping[str, str],
     missing: List[str],
+    prev_text: str = "",
 ) -> int:
     """Apply mapped literals and placeholders to one paragraph."""
     text = paragraph.text()
@@ -133,6 +135,25 @@ def _substitute_paragraph(
         if all(end <= s or start >= e for s, e in placeholder_ranges):
             spans.append((start, end, replacement))
 
+    if "##" in text and not spans:
+        combined = f"{prev_text} {text}".lower()
+        target_val = None
+        if "total charge in us dollars" in combined or "total charge in dollars" in combined:
+            target_val = values.get("TOTAL_CHARGE_USD") or values.get("FEE") or values.get("TOTAL_CHARGE")
+        elif "total charge" in combined or "fees" in combined or "total amount" in combined:
+            target_val = values.get("TOTAL_CHARGE") or values.get("TOTAL") or values.get("FEE")
+        elif "discount" in combined:
+            target_val = values.get("DISCOUNT") or "$0"
+        elif "ref" in combined:
+            target_val = values.get("REFERENCE_NUMBER") or values.get("REF_NUMBER")
+        elif "invoice no" in combined or "invoice number" in combined:
+            target_val = values.get("INVOICE_NUMBER") or values.get("REFERENCE_NUMBER")
+
+        if target_val:
+            import re
+            replacement_text = re.sub(r"#+", target_val, text)
+            spans.append((0, len(text), replacement_text))
+
     if not spans:
         return 0
     return rewrite_spans(paragraph, spans)
@@ -146,8 +167,10 @@ def _substitute_part(
 ) -> Tuple[bytes, int]:
     part = parse_part(xml_bytes)
     count = 0
-    for paragraph in part.paragraphs:
-        count += _substitute_paragraph(paragraph, prepared, values, missing)
+    for idx, paragraph in enumerate(part.paragraphs):
+        prev_p = part.paragraphs[idx - 1] if idx > 0 else None
+        prev_text = prev_p.text() if prev_p else ""
+        count += _substitute_paragraph(paragraph, prepared, values, missing, prev_text=prev_text)
     # `serialize` returns the original bytes when nothing changed, and otherwise
     # splices only the byte ranges of the replaced text: the XML declaration,
     # namespace declarations, attribute order and every unrelated element keep

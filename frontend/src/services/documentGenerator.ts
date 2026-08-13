@@ -168,6 +168,11 @@ export interface PaperOverride {
 export interface BatchFormValues {
   acceptanceDate: string;
   deadline: string;
+  fee?: string;
+  currency?: string;
+  bankDetails?: string;
+  invoiceNumber?: string;
+  invoiceDate?: string;
   referencePrefix?: string;
   referenceSuffix?: string;
   journalCode?: string;
@@ -315,6 +320,11 @@ function batchForm(files: File[], values: BatchFormValues): FormData {
   files.forEach((file) => form.append("files", file));
   form.append("acceptance_date", values.acceptanceDate ?? "");
   form.append("deadline", values.deadline ?? "");
+  if (values.fee) form.append("fee", values.fee);
+  if (values.currency) form.append("currency", values.currency);
+  if (values.bankDetails) form.append("bank_details", values.bankDetails);
+  if (values.invoiceNumber) form.append("invoice_number", values.invoiceNumber);
+  if (values.invoiceDate) form.append("invoice_date", values.invoiceDate);
   if (values.referencePrefix) form.append("reference_prefix", values.referencePrefix);
   if (values.referenceSuffix) form.append("reference_suffix", values.referenceSuffix);
   if (values.journalCode) form.append("journal_code", values.journalCode);
