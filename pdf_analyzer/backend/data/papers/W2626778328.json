@@ -1,4 +1,165 @@
 {
+  "paper_id": "https://openalex.org/W2626778328",
   "title": "Attention Is All You Need",
-  "doi": "10.48550/arXiv.1706.03762"
+  "year": 2025,
+  "reference_type": "preprint",
+  "venue": null,
+  "publisher": null,
+  "volume": null,
+  "issue": null,
+  "pages": null,
+  "doi": "10.1201/9781003561460-19",
+  "isbn": null,
+  "arxiv_id": null,
+  "openalex_id": "https://openalex.org/W2626778328",
+  "citations": {
+    "canonical_value": 7070,
+    "google_scholar": null,
+    "openalex": 7070,
+    "crossref": 21
+  },
+  "authors": [
+    {
+      "name": "Ashish Vaswani",
+      "display_name": "Ashish Vaswani",
+      "given": "Ashish",
+      "family": "Vaswani",
+      "author_id": "https://openalex.org/A5103024730",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5103024730",
+        "orcid": "https://orcid.org/0000-0002-7794-2085",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Google (United States)"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Noam Shazeer",
+      "display_name": "Noam Shazeer",
+      "given": "Noam",
+      "family": "Shazeer",
+      "author_id": "https://openalex.org/A5021878400",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5021878400",
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Google (United States)"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Niki Parmar",
+      "display_name": "Niki Parmar",
+      "given": "Niki",
+      "family": "Parmar",
+      "author_id": "https://openalex.org/A5005777963",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5005777963",
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "University of Southern California",
+        "Google (United States)"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Jakob Uszkoreit",
+      "display_name": "Jakob Uszkoreit",
+      "given": "Jakob",
+      "family": "Uszkoreit",
+      "author_id": "https://openalex.org/A5022416424",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5022416424",
+        "orcid": "https://orcid.org/0000-0001-5066-7530",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Google (United States)"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Llion Jones",
+      "display_name": "Llion Jones",
+      "given": "Llion",
+      "family": "Jones",
+      "author_id": "https://openalex.org/A5023448834",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5023448834",
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Google (United States)"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Aidan N. Gomez",
+      "display_name": "Aidan N. Gomez",
+      "given": "Aidan N.",
+      "family": "Gomez",
+      "author_id": "https://openalex.org/A5079288315",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5079288315",
+        "orcid": "https://orcid.org/0000-0001-5601-5437",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Google (United States)",
+        "University of Toronto"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Łukasz Kaiser",
+      "display_name": "Łukasz Kaiser",
+      "given": "Łukasz",
+      "family": "Kaiser",
+      "author_id": "https://openalex.org/A5031789995",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5031789995",
+        "orcid": "https://orcid.org/0000-0003-1092-6010",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Google (United States)"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Illia Polosukhin",
+      "display_name": "Illia Polosukhin",
+      "given": "Illia",
+      "family": "Polosukhin",
+      "author_id": "https://openalex.org/A5045719436",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5045719436",
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Google (United States)"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    }
+  ],
+  "abstract": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.",
+  "url": "https://doi.org/10.65215/2q58a426",
+  "pdf_url": "https://langtaosha.org.cn/index.php/lts/preprint/download/10/108",
+  "reference_id": "ref_975f7d42d3a4"
 }

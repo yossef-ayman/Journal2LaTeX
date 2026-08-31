@@ -15,7 +15,7 @@ from backend.main import app
 
 if __name__ == "__main__":
     import uvicorn
-    print("🚀 Starting PDF Analyzer Server...")
-    print("👉 Frontend: http://127.0.0.1:8080")
-    print("👉 API Docs: http://127.0.0.1:8080/docs")
+    print("[PDF Analyzer] Starting Server...")
+    print("Frontend: http://127.0.0.1:8080")
+    print("API Docs: http://127.0.0.1:8080/docs")
     uvicorn.run("backend.main:app", host="127.0.0.1", port=8080, reload=True)

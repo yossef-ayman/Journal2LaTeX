@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_7460bc5abab3",
-  "project_id": "project_20260831_071737_bb902af0",
-  "created_at": "2026-08-31T07:18:37.962373+00:00",
+  "project_id": "project_20260831_081840_857bd2f2",
+  "created_at": "2026-08-31T08:20:09.837937+00:00",
   "input": {
     "original_text": "Bentout S, Age-structured modeling of COVID-19 epidemic in the USA, UAE and Algeria. 60(1) (2021) 401–411.",
     "parsed": {
@@ -80,13 +80,13 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.11,
+        "confidence": 0.0,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -185,28 +185,28 @@
   ],
   "sources": {
     "openalex": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.11,
+      "confidence": 0.0,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": "data/raw/openalex/f564fcc6afeb1688.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
     "crossref": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.36,
+      "confidence": 0.0,
       "citation_count": null,
       "doi": null,
       "url": null,
-      "raw_file": "data/raw/crossref/cef2083d89016fb7.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -261,153 +261,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1080/01419870.1978.9993241",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1107/s0108767307043930",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1107/s0907444902003712",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0021-9258(18)91019-7",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1080/00224545.1943.9918794",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1007/bf00280883",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/j.dam.2006.03.015",
-        "reason": "Metadata mismatch (title_sim=0.14, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/2845758",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/1885259",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/j.actbio.2018.11.036",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.7312/mard21254-046",
-        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1097/00006199-196807000-00096",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1097/01.ccm.0000474239.34149.d2",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1097/01.ccm.0000439555.40610.08",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/j.healun.2005.11.426",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2307/2973082",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9783112326701-012",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1097/01.ccm.0000424629.46145.5e",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00256621",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9781315637785-71",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -415,148 +274,7 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1080/01419870.1978.9993241",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1107/s0108767307043930",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1107/s0907444902003712",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0021-9258(18)91019-7",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1080/00224545.1943.9918794",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1007/bf00280883",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/j.dam.2006.03.015",
-        "reason": "Metadata mismatch (title_sim=0.14, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/2845758",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/1885259",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/j.actbio.2018.11.036",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.7312/mard21254-046",
-        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1097/00006199-196807000-00096",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1097/01.ccm.0000474239.34149.d2",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1097/01.ccm.0000439555.40610.08",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/j.healun.2005.11.426",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2307/2973082",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9783112326701-012",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1097/01.ccm.0000424629.46145.5e",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00256621",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9781315637785-71",
-        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -565,14 +283,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.58,
-      "crossref": 25115.32,
-      "openalex": 26943.46
+      "google_scholar": 9.7,
+      "crossref": 32787.0,
+      "openalex": 46757.76
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 10,
-      "openalex": 10
+      "crossref": 0,
+      "openalex": 0
     },
     "errors": {}
   }

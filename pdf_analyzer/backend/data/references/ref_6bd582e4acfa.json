@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_6bd582e4acfa",
-  "project_id": "project_20260831_071737_bb902af0",
-  "created_at": "2026-08-31T07:18:35.704274+00:00",
+  "project_id": "project_20260831_081840_857bd2f2",
+  "created_at": "2026-08-31T08:20:01.660205+00:00",
   "input": {
     "original_text": "Om P. Agrawal, Ozlem Defterli, Dumitru Baleanu, Fractional Optimal Control Problems with Several State and Control Variables. Journal of Vibration and Control. 16(13) (2010).",
     "parsed": {
@@ -80,13 +80,13 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.2,
+        "confidence": 0.0,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -185,16 +185,16 @@
   ],
   "sources": {
     "openalex": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.2,
+      "confidence": 0.0,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": "data/raw/openalex/77b20c2c4d38206e.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -226,20 +226,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.21203/rs.3.rs-590901/v1",
-        "reason": "Metadata mismatch (title_sim=0.50, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -247,15 +239,7 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.21203/rs.3.rs-590901/v1",
-        "reason": "Metadata mismatch (title_sim=0.50, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -264,14 +248,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "crossref": 607.67,
-      "google_scholar": 9.51,
-      "openalex": 14921.61
+      "crossref": 637.34,
+      "google_scholar": 8.98,
+      "openalex": 27119.44
     },
     "candidate_counts": {
       "crossref": 0,
       "google_scholar": 1,
-      "openalex": 1
+      "openalex": 0
     },
     "errors": {}
   }

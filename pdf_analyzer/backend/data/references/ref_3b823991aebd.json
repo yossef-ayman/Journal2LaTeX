@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_3b823991aebd",
-  "project_id": "project_20260831_071737_bb902af0",
-  "created_at": "2026-08-31T07:18:37.900569+00:00",
+  "project_id": "project_20260831_081840_857bd2f2",
+  "created_at": "2026-08-31T08:20:04.520636+00:00",
   "input": {
     "original_text": "Khan, M. A., Atangana A., Modeling the dynamics of novel coronavirus (2019-nCov) with fractional derivative. Alexandria. 59",
     "parsed": {
@@ -81,7 +81,7 @@
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.35,
+        "confidence": 0.25,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -168,13 +168,13 @@
       "available": true,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.35,
+      "confidence": 0.25,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": "data/raw/openalex/6199ad364d045dcc.json",
+      "raw_file": "data/raw/openalex/c38060946e018950.json",
       "normalized_file": null,
       "data": {}
     },
@@ -242,55 +242,6 @@
     "confidence": 0.2,
     "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
     "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/4350701",
-        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1525/california/9780520244214.001.0001",
-        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1525/9780520910386",
-        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1163/9789004320666",
-        "reason": "Metadata mismatch (title_sim=0.37, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/284172",
-        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.5860/choice.34-6414",
-        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1163/9789004312906",
-        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
-        "status": "conflict"
-      },
       {
         "field": "doi",
         "provider": "openalex",
@@ -373,55 +324,6 @@
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.2307/4350701",
-        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1525/california/9780520244214.001.0001",
-        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1525/9780520910386",
-        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1163/9789004320666",
-        "reason": "Metadata mismatch (title_sim=0.37, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/284172",
-        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.5860/choice.34-6414",
-        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1163/9789004312906",
-        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
         "rejected_value": "10.1111/j.2044-8325.1990.tb00506.x",
         "reason": "Metadata mismatch (title_sim=0.14, author_sim=0.00)",
         "status": "conflict"
@@ -498,14 +400,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.6,
-      "crossref": 40772.44,
-      "openalex": 42738.78
+      "google_scholar": 10.15,
+      "crossref": 52189.26,
+      "openalex": 59275.56
     },
     "candidate_counts": {
       "google_scholar": 1,
       "crossref": 0,
-      "openalex": 20
+      "openalex": 10
     },
     "errors": {}
   }

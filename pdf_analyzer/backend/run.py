@@ -6,5 +6,5 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 if __name__ == "__main__":
-    print("🚀 Starting PDF Analyzer Backend on http://127.0.0.1:8080 ...")
+    print("[PDF Analyzer Backend] Starting on http://127.0.0.1:8080 ...")
     uvicorn.run("main:app", host="127.0.0.1", port=8080, reload=True)

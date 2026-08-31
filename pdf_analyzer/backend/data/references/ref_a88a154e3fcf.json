@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_a88a154e3fcf",
-  "project_id": "project_20260831_071737_bb902af0",
-  "created_at": "2026-08-31T07:18:37.795822+00:00",
+  "project_id": "project_20260831_081840_857bd2f2",
+  "created_at": "2026-08-31T08:20:02.824885+00:00",
   "input": {
     "original_text": "Xiao-Hong Zhang, Aatif Ali, Muhammad Altaf Khan, Mohammad Y. Alshahrani, Taseer Muhammad and Saeed Islam, Mathematical Analysis of the TB Model with Treatment via Caputo-Type Fractional Derivative. Hindawi 2021(2021) 9512371-86.",
     "parsed": {
@@ -234,7 +234,7 @@
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": "data/raw/openalex/ce75ae9d07b98090.json",
+      "raw_file": "data/raw/openalex/79dd922cb5273659.json",
       "normalized_file": null,
       "data": {}
     },
@@ -327,22 +327,8 @@
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.1007/978-3-642-05169-2",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
         "rejected_value": "10.3934/math.20241565",
         "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1007/978-3-642-05169-2_1",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
         "status": "conflict"
       }
     ],
@@ -364,22 +350,8 @@
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.1007/978-3-642-05169-2",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
         "rejected_value": "10.3934/math.20241565",
         "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1007/978-3-642-05169-2_1",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
         "status": "conflict"
       }
     ]
@@ -387,18 +359,18 @@
   "telemetry": {
     "providers_queried": [
       "google_scholar",
-      "openalex",
-      "crossref"
+      "crossref",
+      "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.7,
-      "openalex": 48200.4,
-      "crossref": 50673.78
+      "google_scholar": 3.39,
+      "crossref": 56295.52,
+      "openalex": 65677.44
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "openalex": 5,
-      "crossref": 0
+      "crossref": 0,
+      "openalex": 3
     },
     "errors": {}
   }

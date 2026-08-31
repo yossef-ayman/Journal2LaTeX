@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_630706cbf3de",
-  "project_id": "project_20260831_073941_3756a33d",
-  "created_at": "2026-08-31T07:40:18.305289+00:00",
+  "project_id": "project_20260831_082256_e63dea74",
+  "created_at": "2026-08-31T08:23:27.072005+00:00",
   "input": {
     "original_text": "Rehman, H.U., Said, G.S., Amer, A., Elazab, N.S., Osman, M.S. Unraveling the (4+1)-dimensional Davey-Stewartson-KadomtsevPetviashvili equation: Exploring soliton solutions via multiple techniques, Alexandria Engineering Journal, 2024, 90, pp. 17–23 DOI: http://dx.doi.org/10.1016/j.aej.2024.01.058",
     "parsed": {
@@ -123,7 +123,7 @@
       "canonical_value": 54,
       "google_scholar": null,
       "openalex": 54,
-      "crossref": 54
+      "crossref": null
     }
   },
   "canonical_authors": [
@@ -404,8 +404,8 @@
             ],
             "countries": [
               "BH",
-              "EG",
-              "TW"
+              "TW",
+              "EG"
             ]
           },
           {
@@ -487,92 +487,16 @@
       }
     },
     "crossref": {
-      "available": true,
-      "matched": true,
-      "status": "matched",
-      "confidence": 1.0,
-      "citation_count": 54,
-      "doi": "10.1016/j.aej.2024.01.058",
-      "url": "https://doi.org/10.1016/j.aej.2024.01.058",
-      "raw_file": "data/raw/crossref/c88bd3ea05b9d95c.json",
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.0,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": null,
       "normalized_file": null,
-      "data": {
-        "title": "Unraveling the (4+1)-dimensional Davey-Stewartson-Kadomtsev-Petviashvili equation: Exploring soliton solutions via multiple techniques",
-        "authors": [
-          {
-            "name": "Hamood Ur Rehman",
-            "given": "Hamood Ur",
-            "family": "Rehman",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          },
-          {
-            "name": "Ghada S. Said",
-            "given": "Ghada S.",
-            "family": "Said",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          },
-          {
-            "name": "Aamna Amer",
-            "given": "Aamna",
-            "family": "Amer",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          },
-          {
-            "name": "Hameed Ashraf",
-            "given": "Hameed",
-            "family": "Ashraf",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          },
-          {
-            "name": "M.M. Tharwat",
-            "given": "M.M.",
-            "family": "Tharwat",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          },
-          {
-            "name": "Mahmoud Abdel-Aty",
-            "given": "Mahmoud",
-            "family": "Abdel-Aty",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          },
-          {
-            "name": "Nasser S. Elazab",
-            "given": "Nasser S.",
-            "family": "Elazab",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          },
-          {
-            "name": "M.S. Osman",
-            "given": "M.S.",
-            "family": "Osman",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          }
-        ],
-        "year": 2024,
-        "journal": "Alexandria Engineering Journal",
-        "doi": "10.1016/j.aej.2024.01.058",
-        "url": "https://doi.org/10.1016/j.aej.2024.01.058",
-        "openalex_id": "",
-        "citation_count": 54,
-        "source": "crossref",
-        "raw_file": "data/raw/crossref/c88bd3ea05b9d95c.json"
-      }
+      "data": {}
     },
     "google_scholar": {
       "available": false,
@@ -642,13 +566,6 @@
         "rejected_value": "10.1016/j.aej.2024.01.058",
         "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.93)",
         "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/j.aej.2024.01.058",
-        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.93)",
-        "status": "conflict"
       }
     ],
     "unverified_dois": []
@@ -665,31 +582,24 @@
         "rejected_value": "10.1016/j.aej.2024.01.058",
         "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.93)",
         "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/j.aej.2024.01.058",
-        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.93)",
-        "status": "conflict"
       }
     ]
   },
   "telemetry": {
     "providers_queried": [
       "google_scholar",
-      "openalex",
-      "crossref"
+      "crossref",
+      "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.86,
-      "openalex": 31822.54,
-      "crossref": 33571.85
+      "google_scholar": 12.0,
+      "crossref": 6788.39,
+      "openalex": 8030.97
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "openalex": 1,
-      "crossref": 1
+      "crossref": 0,
+      "openalex": 1
     },
     "errors": {}
   }

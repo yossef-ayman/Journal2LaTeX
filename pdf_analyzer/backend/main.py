@@ -1,8 +1,13 @@
 import os
+import sys
 import re
 from typing import Dict, List, Any, Optional
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
 
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
@@ -13,13 +18,14 @@ import fitz  # PyMuPDF
 
 app = FastAPI(title="Academic Reference Explorer & PDF Analyzer API")
 
-# Enable CORS for standalone frontend development
+# Enable CORS for standalone frontend development across any port and file origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origin_regex=r".*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))

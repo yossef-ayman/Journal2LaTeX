@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_a8010e50044a",
-  "project_id": "project_20260831_071737_bb902af0",
-  "created_at": "2026-08-31T07:18:37.742732+00:00",
+  "project_id": "project_20260831_081840_857bd2f2",
+  "created_at": "2026-08-31T08:20:01.868346+00:00",
   "input": {
     "original_text": "2379-2389.",
     "parsed": {
@@ -59,13 +59,13 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.14,
+        "confidence": 0.0,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -103,16 +103,16 @@
   "canonical_authors": [],
   "sources": {
     "openalex": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.14,
+      "confidence": 0.0,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": "data/raw/openalex/5c89af805cc3100a.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -158,155 +158,20 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/aic.16092",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/stem.2716",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/pola.22572",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/bit.26345",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1093/eurheartj/ehaa409",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/pro.3942",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1093/nar/21.5.1193",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1093/embo-reports/kve176",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1038/s41467-023-35795-8",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.50)",
-        "status": "conflict"
-      }
-    ],
-    "unverified_dois": [
-      {
-        "value": "10.1002/(sici)1099-0518(19990715)37:14<2379::aid-pola12>3.0.co;2-o",
-        "source": "openalex",
-        "reason": "Invalid DOI syntax",
-        "status": "unverified"
-      }
-    ]
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
+    "unverified_dois": []
   },
   "quality_and_conflicts": {
     "overall_confidence": 0.98,
     "metadata_completeness": 0.17,
     "doi_verified": false,
     "author_verified": false,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/aic.16092",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/stem.2716",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/pola.22572",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/bit.26345",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1093/eurheartj/ehaa409",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/pro.3942",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1093/nar/21.5.1193",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1093/embo-reports/kve176",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.50)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1038/s41467-023-35795-8",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.50)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -315,14 +180,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.44,
-      "crossref": 39677.09,
-      "openalex": 41750.82
+      "google_scholar": 9.84,
+      "crossref": 44464.37,
+      "openalex": 55548.35
     },
     "candidate_counts": {
       "google_scholar": 1,
       "crossref": 0,
-      "openalex": 10
+      "openalex": 0
     },
     "errors": {}
   }

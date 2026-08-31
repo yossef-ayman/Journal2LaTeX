@@ -119,40 +119,35 @@ function showToast(message, type = 'info', duration = 3200) {
 function initializeUploadFlow() {
     if (!dropZone || !fileInput) return;
 
-    dropZone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        dropZone.style.borderColor = 'var(--primary-color)';
-        dropZone.style.boxShadow = '0 0 25px var(--primary-glow)';
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropZone.style.borderColor = 'var(--primary-color)';
+            dropZone.style.boxShadow = '0 0 25px var(--primary-glow)';
+        });
     });
 
-    dropZone.addEventListener('dragleave', () => {
-        dropZone.style.borderColor = 'var(--panel-border)';
-        dropZone.style.boxShadow = 'none';
+    ['dragleave', 'dragend', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropZone.style.borderColor = 'var(--panel-border)';
+            dropZone.style.boxShadow = 'none';
+        });
     });
 
     dropZone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        dropZone.style.borderColor = 'var(--panel-border)';
-        dropZone.style.boxShadow = 'none';
-
         if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
             handleFile(e.dataTransfer.files[0]);
         }
     });
 
     dropZone.addEventListener('click', (e) => {
-        if (e.target === dropZone || e.target.closest('#drop-zone')) {
+        if (e.target !== fileInput) {
             fileInput.click();
         }
     });
-
-    if (browseBtn) {
-        browseBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            fileInput.click();
-        });
-    }
 
     fileInput.addEventListener('click', (e) => e.stopPropagation());
     fileInput.addEventListener('change', (e) => {
@@ -176,6 +171,7 @@ function handleFile(file) {
         return;
     }
     
+    console.log('[PDF Analyzer] Uploading file:', file.name, `(${file.size} bytes)`);
     const formData = new FormData();
     formData.append('file', file);
     
@@ -185,17 +181,19 @@ function handleFile(file) {
         method: 'POST',
         body: formData
     })
-    .then(response => {
+    .then(async (response) => {
         if (!response.ok) {
-            return response.json().then(errData => {
-                throw new Error(errData.detail || 'Analysis failed.');
-            }).catch(() => {
-                throw new Error(`Server returned HTTP ${response.status}`);
-            });
+            let errorMsg = `Server returned HTTP ${response.status}`;
+            try {
+                const errData = await response.json();
+                if (errData && errData.detail) errorMsg = errData.detail;
+            } catch (_) {}
+            throw new Error(errorMsg);
         }
         return response.json();
     })
     .then(data => {
+        console.log('[PDF Analyzer] Analysis successful:', data);
         currentProjectData = data;
         currentProjectId = data.project_id || '';
         populateDashboard(data);
@@ -208,8 +206,12 @@ function handleFile(file) {
         }
     })
     .catch(error => {
-        console.error("PDF Upload Error:", error);
-        showToast(`An error occurred while analyzing the PDF: ${error.message}`, 'error', 5000);
+        console.error("[PDF Analyzer] Upload Error:", error);
+        let msg = error.message;
+        if (msg === 'Failed to fetch' || msg.includes('NetworkError') || msg.includes('Failed to fetch')) {
+            msg = `تعذر الاتصال بالسيرفر! يرجى تشغيل السيرفر أولاً (اضغط دبل كليك على ملف start_server.bat أو اكتب python run.py في الترمينال).`;
+        }
+        showToast(msg, 'error', 8000);
         showLoading(false);
     })
     .finally(() => {

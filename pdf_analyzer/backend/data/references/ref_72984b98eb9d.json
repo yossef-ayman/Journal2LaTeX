@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_72984b98eb9d",
-  "project_id": "project_20260831_073941_3756a33d",
-  "created_at": "2026-08-31T07:40:18.324866+00:00",
+  "project_id": "project_20260831_082256_e63dea74",
+  "created_at": "2026-08-31T08:23:26.776766+00:00",
   "input": {
     "original_text": "Abdel-Aty, M., Abdel-Khalek, S., Obada, A.-S.F. Pancharatnam phase of two-mode optical fields with Kerr nonlinearity, Optical Review, 2000, 7(6), pp. 499–504 DOI: http://dx.doi.org/10.1007/s10043-000-0499-6",
     "parsed": {
@@ -113,7 +113,7 @@
       "canonical_value": 37,
       "google_scholar": null,
       "openalex": 37,
-      "crossref": 36
+      "crossref": null
     }
   },
   "canonical_authors": [
@@ -283,52 +283,16 @@
       }
     },
     "crossref": {
-      "available": true,
-      "matched": true,
-      "status": "matched",
-      "confidence": 1.0,
-      "citation_count": 36,
-      "doi": "10.1007/s10043-000-0499-6",
-      "url": "https://doi.org/10.1007/s10043-000-0499-6",
-      "raw_file": "data/raw/crossref/eca4da38088c2710.json",
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.0,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": null,
       "normalized_file": null,
-      "data": {
-        "title": "Pancharatnam Phase of Two-Mode Optical Fields with Kerr Nonlinearity",
-        "authors": [
-          {
-            "name": "M. ABDEL-Aty",
-            "given": "M.",
-            "family": "ABDEL-Aty",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          },
-          {
-            "name": "S. Abdel-Khalek",
-            "given": "S.",
-            "family": "Abdel-Khalek",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          },
-          {
-            "name": "A.-S. F. Obada",
-            "given": "A.-S. F.",
-            "family": "Obada",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          }
-        ],
-        "year": 2000,
-        "journal": "Optical Review",
-        "doi": "10.1007/s10043-000-0499-6",
-        "url": "https://doi.org/10.1007/s10043-000-0499-6",
-        "openalex_id": "",
-        "citation_count": 36,
-        "source": "crossref",
-        "raw_file": "data/raw/crossref/eca4da38088c2710.json"
-      }
+      "data": {}
     },
     "google_scholar": {
       "available": false,
@@ -388,13 +352,6 @@
         "rejected_value": "10.1007/s10043-000-0499-6",
         "reason": "Metadata mismatch (title_sim=0.13, author_sim=1.00)",
         "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/s10043-000-0499-6",
-        "reason": "Metadata mismatch (title_sim=0.13, author_sim=1.00)",
-        "status": "conflict"
       }
     ],
     "unverified_dois": []
@@ -411,31 +368,24 @@
         "rejected_value": "10.1007/s10043-000-0499-6",
         "reason": "Metadata mismatch (title_sim=0.13, author_sim=1.00)",
         "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/s10043-000-0499-6",
-        "reason": "Metadata mismatch (title_sim=0.13, author_sim=1.00)",
-        "status": "conflict"
       }
     ]
   },
   "telemetry": {
     "providers_queried": [
       "google_scholar",
-      "openalex",
-      "crossref"
+      "crossref",
+      "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 8.77,
-      "openalex": 32803.05,
-      "crossref": 34339.65
+      "google_scholar": 10.17,
+      "crossref": 7824.45,
+      "openalex": 8783.85
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "openalex": 1,
-      "crossref": 1
+      "crossref": 0,
+      "openalex": 1
     },
     "errors": {}
   }

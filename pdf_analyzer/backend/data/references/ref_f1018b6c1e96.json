@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_f1018b6c1e96",
-  "project_id": "project_20260831_073941_3756a33d",
-  "created_at": "2026-08-31T07:40:18.346214+00:00",
+  "project_id": "project_20260831_082256_e63dea74",
+  "created_at": "2026-08-31T08:23:26.734826+00:00",
   "input": {
     "original_text": "Abdel-Aty, M., Sebawe Abdalla, M., Obada, A.-S.F. Entropy squeezing of a two-mode multiphoton Jaynes-Cummings model in the presence of a nonlinear medium, Journal of Optics B Quantum and Semiclassical Optics, 2002, 4(2), pp. 134–142 DOI: http://dx.doi.org/10.1088/1464-4266/4/2/309",
     "parsed": {
@@ -123,7 +123,7 @@
       "canonical_value": 43,
       "google_scholar": null,
       "openalex": 43,
-      "crossref": 41
+      "crossref": null
     }
   },
   "canonical_authors": [
@@ -293,52 +293,16 @@
       }
     },
     "crossref": {
-      "available": true,
-      "matched": true,
-      "status": "matched",
-      "confidence": 1.0,
-      "citation_count": 41,
-      "doi": "10.1088/1464-4266/4/2/309",
-      "url": "https://doi.org/10.1088/1464-4266/4/2/309",
-      "raw_file": "data/raw/crossref/e562e6f8315ecb60.json",
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.0,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": null,
       "normalized_file": null,
-      "data": {
-        "title": "Entropy squeezing of a two-mode multiphoton Jaynes-Cummings model in the presence of a nonlinear medium",
-        "authors": [
-          {
-            "name": "Mahmoud Abdel-Aty",
-            "given": "Mahmoud",
-            "family": "Abdel-Aty",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          },
-          {
-            "name": "M Sebawe Abdalla",
-            "given": "M Sebawe",
-            "family": "Abdalla",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          },
-          {
-            "name": "A-S F Obada",
-            "given": "A-S F",
-            "family": "Obada",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          }
-        ],
-        "year": 2002,
-        "journal": "Journal of Optics B: Quantum and Semiclassical Optics",
-        "doi": "10.1088/1464-4266/4/2/309",
-        "url": "https://doi.org/10.1088/1464-4266/4/2/309",
-        "openalex_id": "",
-        "citation_count": 41,
-        "source": "crossref",
-        "raw_file": "data/raw/crossref/e562e6f8315ecb60.json"
-      }
+      "data": {}
     },
     "google_scholar": {
       "available": false,
@@ -408,13 +372,6 @@
         "rejected_value": "10.1088/1464-4266/4/2/309",
         "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.92)",
         "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1088/1464-4266/4/2/309",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.92)",
-        "status": "conflict"
       }
     ],
     "unverified_dois": []
@@ -431,31 +388,24 @@
         "rejected_value": "10.1088/1464-4266/4/2/309",
         "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.92)",
         "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1088/1464-4266/4/2/309",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.92)",
-        "status": "conflict"
       }
     ]
   },
   "telemetry": {
     "providers_queried": [
       "google_scholar",
-      "openalex",
-      "crossref"
+      "crossref",
+      "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.7,
-      "openalex": 25651.08,
-      "crossref": 27213.64
+      "google_scholar": 9.85,
+      "crossref": 2530.11,
+      "openalex": 3322.33
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "openalex": 1,
-      "crossref": 1
+      "crossref": 0,
+      "openalex": 1
     },
     "errors": {}
   }

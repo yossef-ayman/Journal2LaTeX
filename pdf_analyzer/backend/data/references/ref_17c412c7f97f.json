@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_17c412c7f97f",
-  "project_id": "project_20260831_071737_bb902af0",
-  "created_at": "2026-08-31T07:18:39.800933+00:00",
+  "project_id": "project_20260831_081840_857bd2f2",
+  "created_at": "2026-08-31T08:20:15.190878+00:00",
   "input": {
     "original_text": "Ling Zhang, Xuewen Tan, Jia Li and Fan Yang, Dynamic analysis and optimal control of leptospirosis based on Caputo fractional derivative. Network and Heterogeneous Media. 19(3) (2024) 1262–1285.",
     "parsed": {
@@ -96,7 +96,7 @@
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.15,
+        "confidence": 0.0,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -225,28 +225,28 @@
   ],
   "sources": {
     "openalex": {
-      "available": true,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.15,
-      "citation_count": null,
-      "openalex_id": null,
-      "doi": null,
-      "url": null,
-      "pdf_url": null,
-      "raw_file": "data/raw/openalex/9d596e667cf4d1fc.json",
-      "normalized_file": null,
-      "data": {}
-    },
-    "crossref": {
       "available": false,
       "matched": false,
       "status": "not_found",
       "confidence": 0.0,
       "citation_count": null,
+      "openalex_id": null,
       "doi": null,
       "url": null,
+      "pdf_url": null,
       "raw_file": null,
+      "normalized_file": null,
+      "data": {}
+    },
+    "crossref": {
+      "available": true,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.37,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": "data/raw/crossref/459e095a54527955.json",
       "normalized_file": null,
       "data": {}
     },
@@ -319,128 +319,72 @@
     "conflicts": [
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1007/s11165-016-9602-2",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/14651858.cd000255",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/14651858.cd000255.pub2",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1093/nar/15.9.3653",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/1288031",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0895-4356(01)00349-3",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
+        "provider": "crossref",
         "rejected_value": "10.1093/oseo/instance.00021944",
         "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s2214-109x(17)30393-5",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000440494.38465.9c",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1161/01.cir.0000087480.94275.97",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000475093.38672.7d",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0140-6736(17)32366-8",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000425473.00798.06",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0009-2541(99)00081-9",
-        "reason": "Metadata mismatch (title_sim=0.12, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1249/01.mss.0000385674.23051.b1",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/adfm.202010609",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000458729.10540.ea",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.5607/en.2013.22.1.11",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.ultrasmedbio.2006.02.271",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1101/gad.176826.111",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1136/bmj.2.3535.s149",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.3322/canjclin.52.4.195",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000458752.26680.d5",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/tcr.202000153",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1186/1743-8977-10-15",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1161/circulationaha.104.482570",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000440517.46089.3f",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       }
     ],
@@ -454,128 +398,72 @@
     "conflicts": [
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1007/s11165-016-9602-2",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/14651858.cd000255",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/14651858.cd000255.pub2",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1093/nar/15.9.3653",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/1288031",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0895-4356(01)00349-3",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
+        "provider": "crossref",
         "rejected_value": "10.1093/oseo/instance.00021944",
         "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s2214-109x(17)30393-5",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000440494.38465.9c",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1161/01.cir.0000087480.94275.97",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000475093.38672.7d",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0140-6736(17)32366-8",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000425473.00798.06",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0009-2541(99)00081-9",
-        "reason": "Metadata mismatch (title_sim=0.12, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1249/01.mss.0000385674.23051.b1",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/adfm.202010609",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000458729.10540.ea",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.5607/en.2013.22.1.11",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.ultrasmedbio.2006.02.271",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1101/gad.176826.111",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1136/bmj.2.3535.s149",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.3322/canjclin.52.4.195",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000458752.26680.d5",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/tcr.202000153",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1186/1743-8977-10-15",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1161/circulationaha.104.482570",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1097/01.ccm.0000440517.46089.3f",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
         "status": "conflict"
       }
     ]
@@ -587,14 +475,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.61,
-      "crossref": 25954.12,
-      "openalex": 29542.06
+      "google_scholar": 9.76,
+      "crossref": 33818.79,
+      "openalex": 53189.24
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
-      "openalex": 19
+      "crossref": 10,
+      "openalex": 0
     },
     "errors": {}
   }

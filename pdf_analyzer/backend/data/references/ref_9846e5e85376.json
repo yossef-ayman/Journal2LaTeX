@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_9846e5e85376",
-  "project_id": "project_20260831_071737_bb902af0",
-  "created_at": "2026-08-31T07:18:37.872072+00:00",
+  "project_id": "project_20260831_081840_857bd2f2",
+  "created_at": "2026-08-31T08:20:07.268229+00:00",
   "input": {
     "original_text": "Rajeshwari S., S. Meenakshi, The age of doom scrolling Social media’s attractive addiction. Journal of Education and Health",
     "parsed": {
@@ -32,16 +32,16 @@
   },
   "canonical": {
     "title": {
-      "value": "Journal of Health Education",
-      "source": "openalex",
-      "confidence": 0.54,
-      "verification_status": "unverified"
+      "value": "Journal of Education and Health",
+      "source": "google_scholar",
+      "confidence": 1.0,
+      "verification_status": "verified"
     },
     "year": {
-      "value": 1994,
-      "source": "openalex",
-      "confidence": 0.54,
-      "verification_status": "verified"
+      "value": null,
+      "source": "parsed",
+      "confidence": 0.0,
+      "verification_status": "unverified"
     },
     "venue": {
       "value": null,
@@ -65,7 +65,7 @@
     "issue": null,
     "pages": null,
     "abstract": null,
-    "url": "https://doi.org/10.1080/10556699.1994.10603001",
+    "url": "https://scholar.google.com/scholar?q=Journal%20of%20Education%20and%20Health%20S",
     "identifiers": {
       "doi": {
         "value": null,
@@ -74,9 +74,9 @@
         "verification_status": "conflict"
       },
       "openalex_id": {
-        "value": "https://openalex.org/W4214702054",
+        "value": null,
         "source": "openalex",
-        "confidence": 0.54,
+        "confidence": 0.25,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -105,9 +105,9 @@
       }
     },
     "citation_counts": {
-      "canonical_value": 193,
+      "canonical_value": null,
       "google_scholar": null,
-      "openalex": 193,
+      "openalex": null,
       "crossref": null
     }
   },
@@ -147,51 +147,16 @@
     "openalex": {
       "available": true,
       "matched": false,
-      "status": "low_confidence",
-      "confidence": 0.54,
-      "citation_count": 193,
-      "openalex_id": "https://openalex.org/W4214702054",
-      "doi": "10.1080/10556699.1994.10603001",
-      "url": "https://doi.org/10.1080/10556699.1994.10603001",
+      "status": "not_found",
+      "confidence": 0.25,
+      "citation_count": null,
+      "openalex_id": null,
+      "doi": null,
+      "url": null,
       "pdf_url": null,
-      "raw_file": "data/raw/openalex/896764ca21f89aa5.json",
+      "raw_file": "data/raw/openalex/b851fab146a45c3b.json",
       "normalized_file": null,
-      "data": {
-        "title": "Journal of Health Education",
-        "display_name": "Journal of Health Education",
-        "authors": [],
-        "year": 1994,
-        "publication_date": "1994-02-01",
-        "journal": "Health Education",
-        "venue": "Health Education",
-        "publisher": "Taylor & Francis",
-        "reference_type": "journal-article",
-        "volume": "25",
-        "issue": "1",
-        "pages": "57-60",
-        "doi": "10.1080/10556699.1994.10603001",
-        "url": "https://doi.org/10.1080/10556699.1994.10603001",
-        "pdf_url": null,
-        "openalex_id": "https://openalex.org/W4214702054",
-        "citation_count": 193,
-        "cited_by_count": 193,
-        "is_oa": false,
-        "oa_status": "closed",
-        "abstract": null,
-        "topics": [
-          "School Health and Nursing Education"
-        ],
-        "referenced_works_count": 0,
-        "related_works": [
-          "https://openalex.org/W2899084033",
-          "https://openalex.org/W2748952813",
-          "https://openalex.org/W2351321960",
-          "https://openalex.org/W2354393958",
-          "https://openalex.org/W2379630800"
-        ],
-        "source": "openalex",
-        "raw_file": "data/raw/openalex/896764ca21f89aa5.json"
-      }
+      "data": {}
     },
     "crossref": {
       "available": false,
@@ -255,71 +220,36 @@
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.3390/ijerph",
-        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
+        "rejected_value": "10.4103/jehp.jehp_1045_23",
+        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.1007/s10900-004-1959-x",
-        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
+        "rejected_value": "10.61113/ijiap.v2i12.630",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.1016/s0140-6736(12)60240-2",
-        "reason": "Metadata mismatch (title_sim=0.28, author_sim=0.00)",
+        "rejected_value": "10.62225/2583049x.2024.4.3.2796",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.1080/10556699.1994.10603001",
-        "reason": "Metadata mismatch (title_sim=0.69, author_sim=0.00)",
+        "rejected_value": "10.30872/psikostudia.v13i3.15920",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.1002/(issn)1554-558x",
-        "reason": "Metadata mismatch (title_sim=0.66, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.22271/kheljournal",
-        "reason": "Metadata mismatch (title_sim=0.67, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1088/issn.1742-6596",
-        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1001/jama.2011.1234",
-        "reason": "Metadata mismatch (title_sim=0.38, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1038/1811109e0",
-        "reason": "Metadata mismatch (title_sim=0.56, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2105/ajph.89.9.1322",
-        "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
+        "rejected_value": "10.2147/prbm.s420771",
+        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
         "status": "conflict"
       }
     ],
@@ -327,78 +257,43 @@
   },
   "quality_and_conflicts": {
     "overall_confidence": 1.0,
-    "metadata_completeness": 0.67,
+    "metadata_completeness": 0.33,
     "doi_verified": false,
     "author_verified": true,
     "conflicts": [
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.3390/ijerph",
-        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
+        "rejected_value": "10.4103/jehp.jehp_1045_23",
+        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.1007/s10900-004-1959-x",
-        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
+        "rejected_value": "10.61113/ijiap.v2i12.630",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.1016/s0140-6736(12)60240-2",
-        "reason": "Metadata mismatch (title_sim=0.28, author_sim=0.00)",
+        "rejected_value": "10.62225/2583049x.2024.4.3.2796",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.1080/10556699.1994.10603001",
-        "reason": "Metadata mismatch (title_sim=0.69, author_sim=0.00)",
+        "rejected_value": "10.30872/psikostudia.v13i3.15920",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
         "provider": "openalex",
-        "rejected_value": "10.1002/(issn)1554-558x",
-        "reason": "Metadata mismatch (title_sim=0.66, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.22271/kheljournal",
-        "reason": "Metadata mismatch (title_sim=0.67, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1088/issn.1742-6596",
-        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1001/jama.2011.1234",
-        "reason": "Metadata mismatch (title_sim=0.38, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1038/1811109e0",
-        "reason": "Metadata mismatch (title_sim=0.56, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2105/ajph.89.9.1322",
-        "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
+        "rejected_value": "10.2147/prbm.s420771",
+        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
         "status": "conflict"
       }
     ]
@@ -410,14 +305,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 10.37,
-      "crossref": 52852.53,
-      "openalex": 53424.72
+      "google_scholar": 9.83,
+      "crossref": 60846.71,
+      "openalex": 72198.84
     },
     "candidate_counts": {
       "google_scholar": 1,
       "crossref": 0,
-      "openalex": 10
+      "openalex": 5
     },
     "errors": {}
   }

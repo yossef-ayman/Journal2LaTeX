@@ -37,26 +37,29 @@ def calculate_string_similarity(str1: str, str2: str) -> float:
         return 1.0
     return SequenceMatcher(None, norm1, norm2).ratio()
 
-def parse_author_name(raw_name: str) -> Dict[str, str]:
-    """
-    Parse a raw author name string into given, family, and display name.
-    Handles 'Family, Given', 'Given Family', 'G. Family', etc.
-    """
-    if not raw_name:
+def parse_author_name(name_str: str) -> Dict[str, str]:
+    if not name_str:
         return {"name": "", "given": "", "family": ""}
-    
-    clean_name = re.sub(r"\s+", " ", raw_name).strip()
-    # Remove honorifics/numbers
+        
+    clean_name = re.sub(r"^(?:Dr\.|Prof\.|Eng\.|Mr\.|Ms\.|Mrs\.|Ph\.D\.)\s*", "", name_str.strip(), flags=re.IGNORECASE).strip()
     clean_name = re.sub(r"^[\d\*\†\‡\§\^,#\-]+|[\d\*\†\‡\§\^,#\-\.]+$", "", clean_name).strip()
+    
+    if not clean_name:
+        fallback = name_str.strip()
+        return {"name": fallback, "given": "", "family": fallback}
     
     if "," in clean_name:
         parts = [p.strip() for p in clean_name.split(",", 1)]
-        family = parts[0]
+        family = parts[0] if parts else clean_name
         given = parts[1] if len(parts) > 1 else ""
         display_name = f"{given} {family}".strip() if given else family
     else:
         parts = clean_name.split()
-        if len(parts) == 1:
+        if not parts:
+            family = clean_name
+            given = ""
+            display_name = clean_name
+        elif len(parts) == 1:
             family = parts[0]
             given = ""
             display_name = family
