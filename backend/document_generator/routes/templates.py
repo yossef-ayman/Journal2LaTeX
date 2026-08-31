@@ -89,8 +89,8 @@ async def _store_template(document_type: str, file: UploadFile) -> TemplateInfo:
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Unknown document type: {document_type}",
         )
-    require_docx(file.filename or "")
-    with staged_uploads([file]) as staged:
+    require_paper_or_docx(file.filename or "", allow_pdf=False, allow_doc=False)
+    with staged_uploads([file], allow_pdf=False, allow_doc=False) as staged:
         original, path = staged[0]
         try:
             return _store().save_template(document_type, path, original)

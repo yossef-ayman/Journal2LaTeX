@@ -7,9 +7,12 @@ from app.services.job_manager import JobManager
 from app.models.job import JobMetadata
 from app.utils.filesystem import UnsafePathError, safe_join
 
+import tempfile
+from app.utils.doc_converter import convert_doc_to_docx
+
 router = APIRouter(prefix="/upload", tags=["Upload"])
 
-ALLOWED_EXTENSIONS = {".docx"}
+ALLOWED_EXTENSIONS = {".docx", ".doc"}
 MAX_FILE_SIZE = 50 * 1024 * 1024  # 50 MB
 CHUNK_SIZE = 1024 * 1024  # 1 MB
 
@@ -27,7 +30,9 @@ def _sanitize_filename(filename: str) -> str:
     name = name.strip(". ")  # no leading/trailing dots or spaces
     if not name or set(name) <= {"."}:
         return "paper.docx"
-    if not name.lower().endswith(".docx"):
+    if name.lower().endswith(".doc"):
+        name = name[:-4] + ".docx"
+    elif not name.lower().endswith(".docx"):
         name = f"{name}.docx"
     return name[:120]
 
@@ -97,7 +102,7 @@ def _validate_docx_bytes(content: bytes) -> None:
 async def upload_document(
     file: UploadFile = File(...),
 ) -> JobMetadata:
-    """Upload a document and initialize a job workspace.
+    """Upload a document (.docx or .doc) and initialize a job workspace.
 
     The file is validated by extension, by size (enforced while streaming) and
     by content (it must be a real OOXML package) before anything is written to
@@ -110,7 +115,7 @@ async def upload_document(
     if ext not in ALLOWED_EXTENSIONS:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Unsupported file type '{ext}'. Only .docx files are allowed.",
+            detail=f"Unsupported file type '{ext}'. Only .docx and .doc files are allowed.",
         )
 
     # Read content with the size limit enforced during the read, not after it
@@ -120,6 +125,20 @@ async def upload_document(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="The uploaded file is empty.",
         )
+
+    # If legacy .doc format, convert to .docx in a temp workspace
+    if ext == ".doc":
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_path = Path(tmpdir) / "upload.doc"
+            tmp_path.write_bytes(content)
+            converted_path = convert_doc_to_docx(tmp_path)
+            if converted_path.suffix.lower() == ".docx" and converted_path.is_file():
+                content = converted_path.read_bytes()
+            else:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Could not convert the uploaded .doc file to .docx format. Please save it as .docx and re-upload.",
+                )
 
     # Confirm the bytes match the claimed type before storing them
     _validate_docx_bytes(content)

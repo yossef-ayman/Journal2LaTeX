@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { API_BASE_URL } from "@/config";
 import { Button } from "@/components/ui/button";
 import { FileSearch, Upload, FileText, CheckCircle2, AlertCircle, RefreshCw, ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
+import AuthorProfileModal from "@/components/AuthorProfileModal";
 
 interface AnalysisResult {
   pages: number;
   metadata?: {
     title?: string;
-    authors?: string[];
+    authors?: (string | { name?: string; display_name?: string; author_id?: string })[];
     doi?: string;
     arxiv_id?: string;
   };
@@ -27,6 +28,11 @@ export const PdfAnalyzerPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  // Author modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedAuthorId, setSelectedAuthorId] = useState("");
+  const [selectedAuthorName, setSelectedAuthorName] = useState("");
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -158,33 +164,35 @@ export const PdfAnalyzerPage: React.FC = () => {
 
       {/* Interactive Page-by-Page PDF Reader */}
       {fileUrl && (
-        <div className="rounded-2xl border border-gray-200 bg-gray-900 p-6 shadow-xl space-y-4 text-white">
-          <div className="flex items-center justify-between border-b border-gray-800 pb-4">
+        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm space-y-4">
+          <div className="flex items-center justify-between border-b border-gray-100 pb-4">
             <div className="flex items-center gap-3">
-              <BookOpen className="text-blue-400" size={20} />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                <BookOpen size={20} />
+              </div>
               <div>
-                <h3 className="text-sm font-bold text-gray-100">{file?.name}</h3>
-                <p className="text-xs text-gray-400">قارئ ومستعرض الصفحات التفاعلي</p>
+                <h3 className="text-sm font-bold text-gray-900">{file?.name}</h3>
+                <p className="text-xs text-gray-500">قارئ ومستعرض الصفحات التفاعلي</p>
               </div>
             </div>
 
             {/* Page Navigation Controls */}
-            <div className="flex items-center gap-3 bg-gray-800 px-4 py-1.5 rounded-full border border-gray-700">
+            <div className="flex items-center gap-3 bg-gray-50 px-4 py-1.5 rounded-full border border-gray-200">
               <button
                 onClick={prevPage}
                 disabled={currentPage <= 1}
-                className="p-1 rounded-full hover:bg-gray-700 disabled:opacity-30 transition-colors"
+                className="p-1 rounded-full text-gray-600 hover:bg-gray-200 disabled:opacity-30 transition-colors"
                 title="الصفحة السابقة"
               >
                 <ChevronRight size={18} />
               </button>
-              <span className="text-xs font-mono font-semibold">
-                صفحة <span className="text-blue-400">{currentPage}</span> من {totalPages}
+              <span className="text-xs font-mono font-semibold text-gray-700">
+                صفحة <span className="text-blue-600 font-bold">{currentPage}</span> من {totalPages}
               </span>
               <button
                 onClick={nextPage}
                 disabled={currentPage >= totalPages}
-                className="p-1 rounded-full hover:bg-gray-700 disabled:opacity-30 transition-colors"
+                className="p-1 rounded-full text-gray-600 hover:bg-gray-200 disabled:opacity-30 transition-colors"
                 title="الصفحة التالية"
               >
                 <ChevronLeft size={18} />
@@ -193,10 +201,10 @@ export const PdfAnalyzerPage: React.FC = () => {
           </div>
 
           {/* Interactive Document Viewer Frame */}
-          <div className="relative w-full h-[650px] bg-gray-950 rounded-xl overflow-hidden border border-gray-800 flex items-center justify-center">
+          <div className="relative w-full h-[650px] bg-gray-50 rounded-xl overflow-hidden border border-gray-200 flex items-center justify-center">
             <iframe
               src={`${fileUrl}#page=${currentPage}`}
-              className="w-full h-full border-none"
+              className="w-full h-full border-none bg-white"
               title="PDF Page Reader View"
             />
           </div>
@@ -233,7 +241,7 @@ export const PdfAnalyzerPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Metadata Card */}
+          {/* Metadata Card with Clickable Authors */}
           {result.metadata && (
             <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm space-y-4">
               <h3 className="text-base font-bold text-gray-900 flex items-center gap-2">
@@ -246,8 +254,30 @@ export const PdfAnalyzerPage: React.FC = () => {
                   <p className="font-semibold text-gray-800 mt-1">{result.metadata.title || "غير محدد"}</p>
                 </div>
                 <div>
-                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">المؤلفون</span>
-                  <p className="text-gray-700 mt-1">{result.metadata.authors?.join(", ") || "غير محدد"}</p>
+                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider block mb-1">المؤلفون (انقر لاستعراض Google Scholar / OpenAlex)</span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {result.metadata.authors && result.metadata.authors.length > 0 ? (
+                      result.metadata.authors.map((auth, idx) => {
+                        const nameStr = typeof auth === "object" ? ((auth as any).name || (auth as any).display_name || "Author") : String(auth);
+                        const authId = typeof auth === "object" ? ((auth as any).author_id || "") : nameStr;
+                        return (
+                          <button
+                            key={idx}
+                            onClick={() => {
+                              setSelectedAuthorId(authId);
+                              setSelectedAuthorName(nameStr);
+                              setIsModalOpen(true);
+                            }}
+                            className="inline-flex items-center gap-1 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 hover:bg-blue-100 hover:border-blue-300 transition-colors shadow-sm cursor-pointer"
+                          >
+                            👤 {nameStr}
+                          </button>
+                        );
+                      })
+                    ) : (
+                      <span className="text-gray-500">غير محدد</span>
+                    )}
+                  </div>
                 </div>
                 <div>
                   <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">DOI المعرف الرقمي</span>
@@ -282,6 +312,14 @@ export const PdfAnalyzerPage: React.FC = () => {
           )}
         </div>
       )}
+
+      {/* Author Profile Modal */}
+      <AuthorProfileModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        authorId={selectedAuthorId}
+        authorName={selectedAuthorName}
+      />
     </div>
   );
 };

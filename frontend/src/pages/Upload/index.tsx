@@ -19,7 +19,7 @@ import { cn } from "@/utils/cn";
 import { useTemplates, useUploadMutation, useConvertMutation, useUploadTemplateMutation } from "@/hooks";
 
 const MAX_FILE_SIZE = 50 * 1024 * 1024;
-const ALLOWED_EXT = ".docx";
+const ALLOWED_EXT = ".docx,.doc";
 
 interface ValidationError {
   type: "extension" | "size";
@@ -27,8 +27,9 @@ interface ValidationError {
 }
 
 function validateFile(file: File): ValidationError | null {
-  if (!file.name.toLowerCase().endsWith(ALLOWED_EXT)) {
-    return { type: "extension", message: "Only .docx files are supported." };
+  const lower = file.name.toLowerCase();
+  if (!lower.endsWith(".docx") && !lower.endsWith(".doc")) {
+    return { type: "extension", message: "Only .docx and .doc files are supported." };
   }
   if (file.size > MAX_FILE_SIZE) {
     return { type: "size", message: `File size exceeds ${MAX_FILE_SIZE / 1024 / 1024}MB limit.` };

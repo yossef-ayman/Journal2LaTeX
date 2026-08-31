@@ -1,0 +1,530 @@
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\RequirePackage{xcolor}
+\makeatletter\@namedef{ver@color.sty}{2021/01/01}\makeatother
+\makeatletter\@ifundefined{providecolor}{}{%
+	\providecolor{Bittersweet}{RGB}{195,50,30}
+	\providecolor{Dandelion}{RGB}{253,181,21}
+}\makeatother
+
+\documentclass[10pt]{NSP1}
+\usepackage{url,floatflt}
+\usepackage{helvet,times}
+\usepackage{graphics}
+\usepackage{mathptmx,amsmath,amssymb,bm}
+\usepackage{float}
+\usepackage[bf,hypcap]{caption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\raggedbottom
+
+\topmargin=0.00cm
+
+\def\sm{\smallskip}
+\def\no{\noindent}
+
+\def\firstpage{1}
+\setcounter{page}{\firstpage}
+\def\thevol{No}
+\def\thenumber{}
+\def\theyear{2026}
+
+\begin{document}
+
+	\titlefigurecaption{{\large \bf \rm Journal of Statistics Applications \& Probability }\\ {\it\small An International Journal}}
+
+	\title{Statistical analysis of the impact of integrating students with special educational needs on their regular peers within the educational environment}
+
+	\author{Sawsan Kara \and Nadia Ghalia$^{1}$ \and HIYAM ABU REYA \and Darawsheh Ahlam$^{2}$}
+	\institute{$^1$The Academic Arab College for Education in Haifa\\
+		$^2$Department of Education and Arabic Language Lecturer, Kay College, Beer Sheva, Israel}
+
+	\titlerunning{Integrating students with special educational needs on their regular peers}
+	\authorrunning{Sawsan Kara et al.}
+
+	\mail{Sharemoon68@gmail.com}
+
+	\received{7 Jun. 2026}
+	\revised{22 Jun. 2026}
+	\accepted{30 Jul. 2026}
+	\published{1 Aug. 2026}
+
+	\abstracttext{Despite global efforts to implement inclusive education strategies, children with special educational needs still encounter challenges such as years of education, regular school attendance, and academic achievement. This raises concerns about the impact of integrating these children into regular schools on the academic, social and emotional aspects of children without special educational needs, since these children are also involved in the inclusive education system. Therefore, this study examined the impact of inclusion on the social, academic and emotional aspects of students without special educational needs. For data collection, a survey analytical descriptive design was employed. The results showed that the inclusion of students with SEN had a significant high level of impact on the social, academic and emotional aspects. Furthermore, there were no statistically significant gender differences in the impact of inclusion on the social, academic and emotional aspects of students without special educational needs. Based on the results, some recommendations were suggested.}
+
+	\keywords{Inclusion, Students without Special Educational Needs, Social Aspect, Academic Aspect, Emotional Aspect}
+
+	\maketitle
+
+	\section{Introduction}
+
+	Inclusive education has become an integral part of teaching methods, providing every student, with or without disabilities, with equal educational opportunities in public schools. Inclusive classrooms help such students to get regular curricula together with their peers, making the student with a disability feel that they belong with them, and this enhances their motivation and self-efficacy \cite{ref1}.
+
+	In the same vein, inclusive education is also useful to the students without special educational needs since they develop compassion; decrease their negative attitudes towards students with disabilities; and develop communication and collaboration skills. Through their interaction, they gain respect for one another and adopt positive social attitudes, which in turn leads to harmony in the classroom and overall success \cite{ref2}.
+
+	Inclusive education holds significant role for students with disabilities. It reshapes the educational process by ensuring that individuals with disabilities are not marginalized but are provided with opportunities to learn alongside their peers. This promotes educational outcomes for these students and fosters empathy, understanding, and cooperation among all students \cite{ref3}.
+
+	According to Leblebici and T\"{u}rkan \cite{ref4}, inclusive education is an approach that focuses on transforming the education system to accommodate student diversity. This, in turn, enables teachers and students to feel comfortable with diversity and consider it as a development in the educational process, not a problem \cite{ref5}. Inclusive education focuses on treating students with disabilities and students without special educational needs equally, by providing them with equal opportunities \cite{ref6}. In addition, the curriculum in inclusive education is designed to be accessible, allowing each student to access learning materials according to their individual abilities and needs. Furthermore, inclusive education involves an important collaboration between teachers, parents, and the community to create a supportive educational environment \cite{ref7}.
+
+	Inclusive education refers to educating students with disabilities in general education classrooms alongside their peers without disabilities. Researchers emphasize that stakeholders' attitudes, especially teachers' perceptions, play a central role in determining the success or failure of inclusive education practices. Positive attitudes contribute to effective implementation and improved participation, whereas negative perceptions create barriers to inclusion \cite{ref8}.
+
+	Teachers' attitudes toward inclusive education are generally moderate to positive, although variability exists across contexts and educational systems. A literature review analyzing multiple studies found that most teachers support inclusive education but also express concerns related to preparations and classroom challenges \cite{ref9}.
+
+	Moreover, there are several factors influencing attitudes towards inclusion, such as teacher training and professional preparation, which are consistently identified as strong predictors of positive attitudes \cite{ref10}; teaching experience and contact with disabilities, which indicates that previous interaction with individuals that have disabilities contributes to more supportive attitudes \cite{ref11}; institutional support and classroom environment, meaning that school-level factors such as administrative support, class size, availability of support staff, and access to resources significantly influence educators' attitudes \cite{ref12}; demographic and professional variables, indicating that studies have identified differences based on age, gender, teaching specialization, and educational level \cite{ref11}; and type of disabilities, showing that attitudes also vary depending on the nature and severity of the disability \cite{ref13}.
+
+	However, several barriers influence negative or neutral attitudes toward the inclusion of students with disabilities, including lack of adequate training and professional preparation; large classroom sizes and limited resources; concerns about academic performance and classroom management; and insufficient administrative and institutional support. These challenges often lead educators to feel unprepared or overwhelmed, which may reduce their willingness to implement inclusive strategies effectively \cite{ref14}.
+
+	The implementation of inclusion focuses on the disability type rather than the individual needs. Students with learning, physical, and behavioral disabilities are educated in mainstream classrooms, engaging in the standard curriculum with assistance from special education teachers. Special education services can help personalize education by providing practical alternatives to teaching materials, methods, assessments, and learning environments \cite{ref15}.
+
+	As for the different effects of inclusion on students without special educational needs, there is still a paucity in special education literature focusing on the outcomes of inclusion, as a special education practice, on students without special educational needs; this highlights the importance of examining such an important domain of inclusion. For example, Okoye and Maryqueen \cite{ref3} pointed out that inclusive education promotes social aspects by ensuring that students with disabilities receive the support they need to succeed. Inclusive education enhances educational outcomes and builds a more just and equitable society where all individuals, regardless of their abilities, have the opportunity to participate fully in economic, social and civic life.
+
+	Inclusive education fosters social collaboration among peers, teachers, and administrators. Resources such as training, expert support, and classroom support contribute to positive teacher attitudes toward inclusive education. For example, peer support has been shown to be a significant factor in establishing positive teacher attitudes toward inclusive education policies \cite{ref16}. In addition, teachers have an important role in promoting social skills development among all students, including those with disabilities. Inclusive education policies recognize the interconnectedness between academic achievement and social-emotional well-being, highlighting the importance of addressing the holistic needs of students in order to support their overall development and success. This involves providing opportunities for meaningful interactions, offering guidance on social norms and expectations, and supporting students in facing social challenges \cite{ref17}.
+
+	Moreover, certain students with special needs may face instances of rejection from students without special educational needs. This may have negative effects on their social behavior and self-perception \cite{ref18}. This may lead to decreased self-confidence and possibly limit their social development, making it difficult for them to build strong relationships with students without special educational needs \cite{ref19}.
+
+	Socio-emotional aspects such as peer acceptance, self-esteem, and social inclusion have been regarded as significant sources of academic performance of students in inclusion classrooms. Inclusive education can provide students with a sense of inclusion and support, which can lead to an increase in motivation, participation, and eventual success \cite{ref20}.
+
+	According to Huang et al. \cite{ref21}, inclusive education may contribute to improving the social and emotional skills of students without special educational needs. By interacting with students with disabilities, students without special educational needs can better understand and accept personal differences, thereby reducing prejudice and fostering camaraderie with their peers. As a result, their interpersonal skills, friendships, and acceptance of their peers can gradually develop through daily interaction \cite{ref30}.
+
+	In the same line, student interactions with their peers provide crucial opportunities for both students with disabilities and students without special educational needs to enhance their social and cognitive development \cite{ref14}. These interactions help students with disabilities feel less isolated in their communities, positively impacting their mental health and fostering a greater sense of social inclusion \cite{ref23}.
+
+	As highlighted by Szumski et al. \cite{ref24}, inclusive education can enhance the learning outcomes of all students by employing effective strategies such as having a second teacher in inclusive classrooms, providing individualized elements of instruction, adapting materials and teaching methods to each student's individual needs, and using appropriate methods to track progress.
+
+	However, there are three reasons why inclusive education may not increase educational outcomes: relations between classroom teachers and special education teachers are not always based on collaboration, with special teachers sometimes treated as assistants instead of instructional partners; special education teachers often lack the necessary subject knowledge to teach alongside classroom teachers; and classroom teachers and special education teachers lack sufficient time to plan lessons together.
+
+	The positive impact of teaching students without special educational needs in inclusive classrooms may be decreased by inappropriate behaviors exhibited by students with disabilities. Students with disabilities, especially those with emotional and behavioral disorders, may exhibit disruptive behaviors that upset their peers. Special education teachers in inclusive classrooms are often responsible for taking action with those students, such as asking them to be quiet or leaving the classroom with the student to talk to them \cite{ref25}.
+
+	\subsection{Previous Studies}
+
+	This section presents previous studies examining the effect of inclusion on students without special educational needs in inclusive classrooms across different psychological and behavioral variables. In one study, Kart and Kart \cite{ref26} examined academic and social effects of inclusion on students without disabilities. The researchers employed a qualitative descriptive method by reviewing 26 previous studies. The results showed that inclusive education has positive or neutral effects on the academic achievement of students without disabilities in the lower grades, whereas neutral or negative influence is indicated for later grades.
+
+	Using a sample of 1552 students without disabilities, selected from three educational settings (general without students with disabilities, and inclusive with co-teaching), Szumski et al. \cite{ref24} conducted a study to examine the academic achievement of students without special educational needs in inclusive education. To achieve the objectives of the study, the latent growth curve model was adopted. The results showed that changes in academic achievement over time were similar across all three educational settings; therefore, there were no differences between inclusive education (of the two types) and general education classrooms.
+
+	In addition, Pirker et al. \cite{ref28} investigated the self-perception of social, emotional, and academic inclusion of students with and without special educational needs. The sample consisted of 6 students with special educational needs and 3 students without special educational needs. The study employed a qualitative approach using semi-structured interviews. The results showed that the inclusion of students with special educational needs has a positive impact on the social and emotional perceptions of students without special educational needs. As for the academic aspect, it was found that inclusion did not have a significant impact on the academic skills of students without special educational needs.
+
+	Garc\'{i}a and Renter\'{i}a \cite{ref13} examined the impact of inclusive education on the educational outcomes of students without special educational needs in Peru. The study sample included 55,637 students participating in a reading achievement test and 55,614 students participating in a mathematics achievement test in the age group 6--8 years, in addition to 47,491 and 47,480 students respectively in the age group 13--14 years. The results showed that SEN students do not have a significant impact on the academic achievement of students without special educational needs in either reading or mathematics tests.
+
+	Furthermore, Nam and Tan \cite{ref23} investigated the impact of inclusive education on social integration and academic achievement among students with learning disabilities and students without special educational needs in Southern Vietnam. The study sample consisted of 132 students with learning disabilities and 355 students without special educational needs. A mixed-methods research design was employed. The findings showed that inclusive practices significantly enhance social integration, empathy, and understanding among students. For students with learning disabilities, inclusive education has a positive impact on academic outcomes, particularly in the early education stages, while students without special educational needs showed neutral effects on academic achievement. Additionally, the findings showed that inclusive education has a positive impact on social interaction and faster integration into communication networks among both groups.
+
+	Huang et al. \cite{ref21} examined the role of inclusive education in the academic and social--emotional development of students without special educational needs. The study sample consisted of 1155 Chinese students without special educational needs, selected from the Survey on Social and Emotional Skills database of the OECD. The results found that inclusive education showed no significant effect on academic achievement, and had slight positive correlations with optimism, tolerance and sociability. The study also found that inclusion had a stronger effect on optimism among less optimistic students (last 25\%--50\%).
+
+	\subsection{Problem of the Study}
+
+	The problem of this study stems from the fact that the impact of the inclusion of SEN students in public schools on the different aspects of students without SEN has been a topic that has not attracted sufficient attention from special education researchers, despite its importance to this group of students and their families. Previous literature has mainly focused on the advantages and disadvantages related to inclusion as a special education practice for students with SEN, while their peers without SEN have not received the same research focus. As the researchers are special education educators working in inclusive environments, they noticed that students without SEN gain many experiences while interacting with students with SEN, and that they are affected at the academic, social and emotional levels -- an issue needing more examination, especially among Arab students, as the researchers did not find any study that investigated how the inclusion of students with SEN affects their counterparts without SEN. This is the main focus of the present study.
+
+	\subsection{Questions of the Study}
+
+	\begin{enumerate}
+		\item What is the impact of inclusion on the social, academic and emotional aspects of students without special educational needs?
+		\item Are there statistically significant differences due to gender in the impact of inclusion on the social, academic and emotional aspects of students without special educational needs?
+	\end{enumerate}
+
+	\subsection{Significance of the Study}
+
+	The significance of this study arises from its attempt to shed light on the impact of including students with SEN in inclusive schools and how students without SEN are affected. This opens new avenues for interested special education researchers to examine, in the future, the impact of including students with SEN on aspects that have not been addressed in the current study. Furthermore, it is hoped that the results of this study can direct future researchers to address other effects of the inclusion of students with SEN on other stakeholders, such as teachers and principals working in inclusive public schools. Finally, this study provides an instrument covering the social, academic, and emotional aspects that can be influenced by the inclusion of students with SEN.
+
+	\subsection{Objectives of the Study}
+
+	\begin{enumerate}
+		\item To examine the impact of inclusion on the social, academic and emotional aspects of students without special educational needs.
+		\item To identify whether there are statistically significant differences due to gender in the impact of inclusion on the social, academic and emotional aspects of students without special educational needs.
+	\end{enumerate}
+
+	\subsection{Limitations of the Study}
+
+	The limitations of this study can be presented as follows:
+
+	\begin{itemize}
+		\item The sample of the study was confined to students without special educational needs in inclusive public schools, which means that the results cannot be generalized to other student groups.
+		\item The study was conducted in Upper Galilee inclusive schools, which means that the results cannot be generalized to other geographic regions.
+		\item The study was conducted in the first semester of the 2025/2026 school year, which limits the generalization of the results to other periods.
+	\end{itemize}
+
+	\section{Method}
+
+	The study employed a survey analytical descriptive design. This research design is one of the scientific research paradigms aiming to describe the phenomenon under investigation by using a survey tool such as a scale, a questionnaire or any other research instrument. It can save time and cost for researchers, and the results obtained can be generalized to a large-scale group of the population from which the sample of the study is drawn.
+
+	\subsection{Study Sample}
+
+	The sample of the study consisted of 365 students without special educational needs enrolled in inclusive public schools in the Upper Galilee District.
+
+	\subsection{Validity and Reliability of the Study Variables}
+
+	To ensure the accuracy and appropriateness of the study instrument, the Social, Academic, and Emotional Aspects were subjected to validity and reliability testing. Construct validity was verified by calculating the correlation coefficients between each statement and its corresponding domain, as well as with the overall scale, using a pilot sample of 30 respondents who were later excluded from the main study. The results showed that all statements had statistically significant and acceptable correlations, ranging from 0.621 to 0.721, while correlations between each domain and the total scale ranged from 0.701 to 0.93, confirming the instrument's suitability for measuring the impact of inclusion on the social, academic and emotional aspects of students without special educational needs.
+
+	Reliability was assessed using both Cronbach's alpha for internal consistency and the test--retest method. The Social Aspect showed internal consistency of 0.889 and test--retest reliability of 0.861, the Academic Aspect had values of 0.858 and 0.891, and the Emotional Aspect showed 0.871 and 0.871, respectively. The overall reliability of the instrument across the three aspects was 0.914 for internal consistency and 0.911 for test--retest, indicating that the instrument is highly reliable and accurately measures the intended constructs, as shown in Table \ref{tab:reliability} and Figure \ref{fig:reliability}.
+
+	\begin{table}[H]
+		\centering
+		\caption{Reliability of Social, Academic, and Emotional Aspects}
+		\label{tab:reliability}
+		\begin{tabular}{lcc}
+			\toprule
+			\textbf{Aspect} & \textbf{Internal Consistency ($\alpha$)} & \textbf{Test--Retest Reliability} \\
+			\midrule
+			Social Aspect     & 0.889 & 0.861 \\
+			Academic Aspect   & 0.858 & 0.891 \\
+			Emotional Aspect  & 0.871 & 0.871 \\
+			Overall Scale     & 0.914 & 0.911 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth,keepaspectratio]{media/office_obj_1}
+		\caption{Reliability Coefficients}
+		\label{fig:reliability}
+	\end{figure}
+
+	\subsection{Tool Scoring}
+
+	To interpret the arithmetic means of the study instrument and its items, a five-point Likert scale was employed. The classification of responses was based on the intervals shown in Table \ref{tab:scoring}.
+
+	\begin{table}[H]
+		\centering
+		\caption{Classification of Mean Scores}
+		\label{tab:scoring}
+		\begin{tabular}{lc}
+			\toprule
+			\textbf{Mean Score Range} & \textbf{Interpretation} \\
+			\midrule
+			1.00 -- $<$ 1.80 & Very Low \\
+			1.80 -- $<$ 2.60 & Low \\
+			2.60 -- $<$ 3.40 & Moderate \\
+			3.40 -- $<$ 4.20 & High \\
+			4.20 -- 5.00     & Very High \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	\section{Results}
+
+	\subsection*{What is the impact of inclusion on the Social, Academic and Emotional Aspects of students without special educational needs?}
+
+	To answer the first research question, which aimed to examine the impact of inclusion on the social, academic and emotional aspects of students without special educational needs, descriptive statistics were calculated for all study variables. This analysis provides an overview of students' perceptions regarding the influence of inclusion on their social interactions, academic progress, and emotional development. Additionally, Pearson correlation coefficients were computed to explore the relationships among the main variables, followed by multiple regression analysis to determine the predictive role of the social and academic aspects on the emotional aspect. The results are presented in the following tables and figures.
+
+	\begin{table}[H]
+		\centering
+		\caption{Descriptive Statistics of Social, Academic, and Emotional Aspects}
+		\label{tab:desc-overall}
+		\begin{tabular}{lccc}
+			\toprule
+			\textbf{Aspect} & \textbf{Mean} & \textbf{Std. Deviation} & \textbf{Level} \\
+			\midrule
+			Social Aspect    & 3.662 & 0.541 & High \\
+			Academic Aspect  & 3.551 & 0.619 & High \\
+			Emotional Aspect & 3.663 & 0.549 & High \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	Table \ref{tab:desc-overall} presents the descriptive statistics for the social, academic, and emotional aspects associated with the inclusion of students with special educational needs in regular classrooms. The results indicate that all three dimensions were perceived positively by students without special educational needs, with mean scores ranging from 3.551 to 3.663, reflecting a high level according to the adopted criterion. Among the three dimensions, the Emotional Aspect obtained the highest mean score (M = 3.663, SD = 0.549), followed very closely by the Social Aspect (M = 3.662, SD = 0.541). This finding suggests that inclusion may contribute positively to students' emotional development by fostering feelings of empathy, acceptance, respect for diversity, and emotional understanding of others. Similarly, the high score of the Social Aspect indicates that inclusion provides opportunities for social interaction, cooperation, communication, and the development of positive relationships among students from diverse backgrounds.
+
+	The Academic Aspect also received a high rating (M = 3.551, SD = 0.619), although it recorded the lowest mean among the three dimensions. This result may indicate that while students perceive inclusion as beneficial for academic growth, its influence on academic outcomes is somewhat less pronounced than its impact on social and emotional development. Nevertheless, the high mean score reflects a generally positive perception of the academic benefits associated with inclusive educational environments. Furthermore, the relatively low standard deviations across all dimensions (ranging from 0.541 to 0.619) suggest a considerable degree of agreement among participants regarding the positive effects of inclusion. The small differences between the mean scores also indicate that the impact of inclusion is multidimensional, affecting social, academic, and emotional aspects in a balanced manner rather than benefiting only one particular area.
+
+	Overall, the findings demonstrate that students without special educational needs perceive inclusion as having a broadly positive influence on their development, particularly in enhancing emotional awareness and social relationships, while also supporting academic progress. These results highlight the value of inclusive education in promoting holistic student development and creating supportive learning environments for all learners, as shown in Figure \ref{fig:means}.
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth,keepaspectratio]{media/office_obj_2}
+		\caption{Means of the Dimensions}
+		\label{fig:means}
+	\end{figure}
+
+	\begin{table}[H]
+		\centering
+		\caption{Descriptive Statistics of Social Aspect Items}
+		\label{tab:social-items}
+		\begin{tabular}{clcccc}
+			\toprule
+			\textbf{No} & \textbf{Statement} & \textbf{Mean} & \textbf{SD} & \textbf{Rank} & \textbf{Level} \\
+			\midrule
+			4 & Improves communication skills & 3.80 & 0.648 & 1 & High \\
+			1 & Improves interaction with students without SEN & 3.75 & 0.638 & 2 & High \\
+			2 & Improves life skills among students without SEN & 3.66 & 0.695 & 3 & High \\
+			5 & Gives opportunities to make friends & 3.64 & 0.726 & 4 & High \\
+			3 & Enhances positive social values & 3.59 & 0.688 & 5 & High \\
+			6 & Facilitates ability to share experiences & 3.53 & 0.739 & 6 & High \\
+			\midrule
+			& \textbf{Social Aspect} & \textbf{3.662} & \textbf{0.541} & & \textbf{High} \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	The results in the previous table showed that among the social aspect items, ``Improves communication skills'' ranked first with a mean of 3.80 and a standard deviation of 0.648, followed by ``Improves interaction with students without special educational needs'' with a mean of 3.75 and a standard deviation of 0.638. ``Improves life skills among students without special educational needs'' came third with a mean of 3.66 and a standard deviation of 0.695, ``Gives opportunities to make friends'' ranked fourth with a mean of 3.64 and a standard deviation of 0.726, ``Enhances positive social values'' was fifth with a mean of 3.59 and a standard deviation of 0.688, and ``Facilitates ability to share experiences'' ranked sixth with a mean of 3.53 and a standard deviation of 0.739. Overall, the Social Aspect had a mean of 3.662 with a standard deviation of 0.541, and was at a high level, as shown in Figure \ref{fig:social}.
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth,keepaspectratio]{media/office_obj_3}
+		\caption{Distribution of Social Aspect Items}
+		\label{fig:social}
+	\end{figure}
+
+	\begin{table}[H]
+		\centering
+		\caption{Descriptive Statistics of Academic Aspect Items}
+		\label{tab:academic-items}
+		\begin{tabular}{clcccc}
+			\toprule
+			\textbf{No} & \textbf{Statement} & \textbf{Mean} & \textbf{SD} & \textbf{Rank} & \textbf{Level} \\
+			\midrule
+			5 & Improves quality of learning experiences & 3.66 & 0.744 & 1 & High \\
+			4 & Improves self-trust & 3.61 & 0.706 & 2 & High \\
+			6 & Improves ability to adapt to different learning environments & 3.61 & 0.782 & 3 & High \\
+			3 & Provides new opportunities of learning & 3.58 & 0.772 & 4 & High \\
+			1 & Positive effects on academic progress & 3.50 & 0.847 & 5 & High \\
+			2 & Provides new challenges & 3.35 & 0.912 & 6 & High \\
+			\midrule
+			& \textbf{Academic Aspect} & \textbf{3.551} & \textbf{0.619} & & \textbf{High} \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	The results in the previous table showed that among the academic aspect items, ``Improves quality of learning experiences'' ranked first with a mean of 3.66 and a standard deviation of 0.744, followed by ``Improves self-trust'' with a mean of 3.61 and a standard deviation of 0.706, and ``Improves ability to adapt to different learning environments'' also with a mean of 3.61 but a standard deviation of 0.782, ranking third. ``Provides new opportunities of learning'' came fourth with a mean of 3.58 and a standard deviation of 0.772, ``Positive effects on academic progress'' ranked fifth with a mean of 3.50 and a standard deviation of 0.847, and ``Provides new challenges'' was sixth with a mean of 3.35 and a standard deviation of 0.912. Overall, the Academic Aspect had a mean of 3.551 with a standard deviation of 0.619, and was at a high level, as shown in Figure \ref{fig:academic}.
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth,keepaspectratio]{media/office_obj_4}
+		\caption{Distribution of Academic Aspect Items}
+		\label{fig:academic}
+	\end{figure}
+
+	\begin{table}[H]
+		\centering
+		\caption{Descriptive Statistics of Emotional Aspect Items}
+		\label{tab:emotional-items}
+		\begin{tabular}{clcccc}
+			\toprule
+			\textbf{No} & \textbf{Statement} & \textbf{Mean} & \textbf{SD} & \textbf{Rank} & \textbf{Level} \\
+			\midrule
+			2 & Enhances attitudes towards acceptance & 3.77 & 0.618 & 1 & High \\
+			1 & Increases acceptance of this group & 3.73 & 0.691 & 2 & High \\
+			5 & Makes them accept feeling of inferiority & 3.68 & 0.678 & 3 & High \\
+			4 & Decreases bullying & 3.66 & 0.718 & 4 & High \\
+			6 & Makes them more open to new experiences & 3.61 & 0.693 & 5 & High \\
+			3 & Improves feelings of empathy & 3.53 & 0.709 & 6 & High \\
+			\midrule
+			& \textbf{Emotional Aspect} & \textbf{3.663} & \textbf{0.549} & & \textbf{High} \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	The results in the previous table showed that among the emotional aspect items, ``Enhances attitudes towards acceptance'' ranked first with a mean of 3.77 and a standard deviation of 0.618, followed by ``Increases acceptance of this group'' with a mean of 3.73 and a standard deviation of 0.691, and ``Makes them accept feeling of inferiority'' ranked third with a mean of 3.68 and a standard deviation of 0.678. ``Decreases bullying'' came fourth with a mean of 3.66 and a standard deviation of 0.718, ``Makes them more open to new experiences'' ranked fifth with a mean of 3.61 and a standard deviation of 0.693, and ``Improves feelings of empathy'' was sixth with a mean of 3.53 and a standard deviation of 0.709. Overall, the Emotional Aspect had a mean of 3.663 with a standard deviation of 0.549, and was at a high level, as shown in Figure \ref{fig:emotional}.
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth,keepaspectratio]{media/office_obj_5}
+		\caption{Distribution of Emotional Aspect Items}
+		\label{fig:emotional}
+	\end{figure}
+
+	To answer the first research question, Pearson correlation coefficients were calculated between the main study variables, as shown in Table \ref{tab:pearson}.
+
+	\begin{table}[H]
+		\centering
+		\caption{Pearson Correlation Coefficients among Social, Academic, and Emotional Aspects}
+		\label{tab:pearson}
+		\begin{tabular}{llccc}
+			\toprule
+			\textbf{Aspect} & & \textbf{Social} & \textbf{Academic} & \textbf{Emotional} \\
+			\midrule
+			\multirow{3}{*}{Social Aspect} & Pearson Correlation & 1 & .844** & .845** \\
+			& Sig. (2-tailed) &  & .000 & .000 \\
+			& N & 365 & 365 & 365 \\
+			\midrule
+			\multirow{3}{*}{Academic Aspect} & Pearson Correlation & .844** & 1 & .849** \\
+			& Sig. (2-tailed) & .000 &  & .000 \\
+			& N & 365 & 365 & 365 \\
+			\midrule
+			\multirow{3}{*}{Emotional Aspect} & Pearson Correlation & .845** & .849** & 1 \\
+			& Sig. (2-tailed) & .000 & .000 & \\
+			& N & 365 & 365 & 365 \\
+			\bottomrule
+		\end{tabular}
+
+		\smallskip
+		\footnotesize ** Correlation is significant at the 0.01 level (2-tailed).
+	\end{table}
+
+	The results in Table \ref{tab:pearson} showed that the Social Aspect was positively correlated with the Academic Aspect (r = 0.844, p $<$ 0.01) and with the Emotional Aspect (r = 0.845, p $<$ 0.01). Additionally, the Academic Aspect was positively correlated with the Emotional Aspect (r = 0.849, p $<$ 0.01). These correlations are statistically significant at the 0.01 level, indicating strong positive relationships among all three aspects.
+
+	After confirming the existence of strong correlations between the study variables, multiple regression analysis was conducted to examine the predictive relationships among the main variables and to determine the extent to which the Social and Academic Aspects predict the Emotional Aspect, as shown in Table \ref{tab:regression}.
+
+	\begin{table}[H]
+		\centering
+		\caption{Multiple Regression Analysis Predicting Emotional Aspect from Social and Academic Aspects}
+		\label{tab:regression}
+		\begin{tabular}{lccccc}
+			\toprule
+			\textbf{Model} & \textbf{B} & \textbf{Std. Error} & \textbf{Beta} & \textbf{t} & \textbf{Sig.} \\
+			\midrule
+			Constant         & 0.519 & 0.093 &       & 5.592  & 0.000 \\
+			Social Aspect    & 0.452 & 0.047 & 0.446 & 9.657  & 0.000 \\
+			Academic Aspect  & 0.419 & 0.041 & 0.473 & 10.246 & 0.000 \\
+			\bottomrule
+		\end{tabular}
+
+		\smallskip
+		\footnotesize R = 0.882 \quad R\textsuperscript{2} = 0.778 \quad F = 635.253 \quad Sig. = 0.000
+	\end{table}
+
+	The results of the multiple regression analysis showed that both the Social and Academic Aspects significantly predicted the Emotional Aspect. The Social Aspect had a standardized Beta coefficient of 0.446 (t = 9.657, p = 0.000), and the Academic Aspect had a standardized Beta coefficient of 0.473 (t = 10.246, p = 0.000), indicating that both variables contributed positively to predicting emotional outcomes. The regression model was statistically significant (F = 635.253, p = 0.000) with a high correlation coefficient (R = 0.882) and a determination coefficient (R\textsuperscript{2} = 0.778), suggesting that approximately 77.8\% of the variance in the Emotional Aspect is explained by the Social and Academic Aspects, as shown in Figure \ref{fig:regression}.
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth,keepaspectratio]{media/image5}
+		\caption{Multiple Regression Analysis Results}
+		\label{fig:regression}
+	\end{figure}
+
+	\subsection*{Are there statistically significant differences due to gender in the impact of inclusion on the Social, Academic and Emotional Aspects of students without special educational needs?}
+
+	To answer the second research question, which aimed to examine whether there are statistically significant differences due to gender in the impact of learning disability students' integration in public schools on students without special educational needs' social, academic, and emotional aspects, group statistics and independent samples t-tests were conducted. The results for male and female students are presented in Table \ref{tab:gender}, showing the means, standard deviations, t-values, and significance levels for each aspect.
+
+	\begin{table}[H]
+		\centering
+		\caption{Group Statistics for Gender Differences in Social, Academic, and Emotional Aspects}
+		\label{tab:gender}
+		\begin{tabular}{llcccccc}
+			\toprule
+			\textbf{Aspect} & \textbf{Gender} & \textbf{N} & \textbf{Mean} & \textbf{SD} & \textbf{t} & \textbf{Sig. (2-tailed)} \\
+			\midrule
+			\multirow{2}{*}{Social Aspect}    & Male   & 140 & 3.607 & 0.345 & \multirow{2}{*}{-1.521} & \multirow{2}{*}{0.129} \\
+			& Female & 225 & 3.696 & 0.632 & & \\
+			\midrule
+			\multirow{2}{*}{Academic Aspect}  & Male   & 140 & 3.531 & 0.377 & \multirow{2}{*}{-0.480} & \multirow{2}{*}{0.631} \\
+			& Female & 225 & 3.563 & 0.730 & & \\
+			\midrule
+			\multirow{2}{*}{Emotional Aspect} & Male   & 140 & 3.629 & 0.348 & \multirow{2}{*}{-0.946} & \multirow{2}{*}{0.345} \\
+			& Female & 225 & 3.684 & 0.643 & & \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	To answer the second research question regarding gender differences, the results showed that there were no statistically significant differences between male and female students in the impact of learning disability students' integration on the Social, Academic, and Emotional Aspects. The Social Aspect had means of 3.607 for males and 3.696 for females (t = -1.521, p = 0.129), the Academic Aspect had means of 3.531 for males and 3.563 for females (t = -0.480, p = 0.631), and the Emotional Aspect had means of 3.629 for males and 3.684 for females (t = -0.946, p = 0.345). These results indicate that the impact of inclusion is consistent across both genders, as shown in Figure \ref{fig:gender}.
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth,keepaspectratio]{media/office_obj_6}
+		\caption{Mean Comparison by Gender}
+		\label{fig:gender}
+	\end{figure}
+
+	\section{Discussion}
+
+	The results of the study indicated that the inclusion of SEN students with their peers without SEN had a positive impact on the social, academic and emotional domains. Beginning with the social domain, this result may be due to the fact that the inclusion of SEN students with their peers without SEN, although challenging for both groups of students, can be considered a rich, informing opportunity for development. In this sense, these two groups of students can interact with each other on a daily basis. This provides a safe environment for communication and sharing ideas, meaning that SEN students and their peers without SEN can express their ideas without being intimidated by the judgments of others. By default, this has a positive impact on these students' social skills, as they become more willing to be active participants in the social interactions occurring in the inclusive classroom.
+
+	Furthermore, the inclusion of SEN students with their peers without SEN may act as a buffer against the negative attitudes that students without special educational needs may have when placed in an inclusive classroom. As is known, attitudes towards SEN students play a vital role in creating a positive class environment where every student can feel accepted and respected. In turn, this increases the magnitude of social interactions between SEN students and their peers without SEN, a finding that is supported by the results of this study. Emphasizing this, Aldosari \cite{ref10} stresses that the attitudes of both students and teachers steer the direction of social interaction in the inclusive classroom, and calls for more positive attitudes among teachers and average students towards students with special educational needs in inclusive classrooms.
+
+	This result is consistent with the results reported by Kart and Kart \cite{ref26}, indicating that working on altering the attitudes of teachers and students in the inclusive school is very significant for the development of both groups. Specifically, students without SEN can engage in natural interaction with SEN students without the need to refer to previous judgments that SEN students lack the social skills needed to contribute valuable insights to the different ideas emerging in the social context.
+
+	As for the emotional domain, interaction between SEN students and their peers without SEN can nurture positive emotional states that may arise during interaction between these two groups of students. For example, it was found in this study that both students can hold their temper and be better at controlling their negative emotions, and these skills learned in the inclusive classroom can be employed in future social interactions requiring high levels of emotional intelligence \cite{ref27}. In other words, being able to participate in interactions requiring several emotional abilities can become an integral part of the personality of students without SEN. As is known, students in this age group are still searching for their identity, as they are in the middle of their identity formation, a process that begins from late childhood to late adolescence. This implies that students without SEN face challenging situations when in the inclusive classroom, as they spend their school day with their SEN peers, which requires various emotional skills. In their study, Kart and Kart \cite{ref26} recommended the need for interaction between SEN students and their peers without SEN, as they found that students without SEN can benefit from invaluable opportunities to interact with students different from them.
+
+	As for the academic domain, which recorded the lowest positive impact of SEN students' inclusion among the three factors examined for students without SEN, it can be argued that the inclusion of SEN students may somewhat hinder the academic development of students without SEN, since inclusive teachers must make individualized plans for SEN students, which can affect the pace of the educational process for students without SEN. This, in turn, makes it more difficult for inclusive teachers to dedicate sufficient time to students without SEN.
+
+	As for the second question of the study, there were no statistically significant differences due to gender in the impact of the inclusion of SEN students on the social, emotional and academic domains of students without SEN. This result is logical, since students from both genders do not differ substantially at the personal and academic levels, particularly given that this study was conducted in a context where co-educational learning is the mainstream practice, meaning that students of both genders share the same experiences and belong to the same age group.
+
+	\section{Recommendations}
+
+	Based on the results, the following recommendations can be suggested:
+
+	\begin{itemize}
+		\item Teachers in inclusive schools can dedicate more effort to the academic domain of students without SEN.
+		\item Regular survey studies targeting students without SEN should be a common practice in inclusive schools, to identify their perceptions about inclusion as an educational practice.
+		\item Future research should focus more on other variables not included in this study, such as psychological ones.
+	\end{itemize}
+
+	\begin{thebibliography}{99}
+
+		\bibitem{ref1}
+		Liu, X., \& Potmesil, M. (2025). A review of research on the development of inclusive education in children with special educational needs over the past 10 years: A visual analysis based on Cite Space. \textit{Frontiers in Education}, 9, 1--13.
+
+		\bibitem{ref2}
+		Bashir, T., Fatima, N., Abbas, S., \& Bano, B. (2026). Evaluating the effectiveness of inclusion models for students with learning disabilities. \textit{Social Science Review Archives}, 4(1), 501--512.
+
+		\bibitem{ref3}
+		Okoye, U., \& Maryqueen, O. (2025). Educational laws and their impact on inclusive education for students with disabilities in Anambra state: implications for sustainable development. \textit{Unizik Journal of Educational Laws and Leadership Studies}, 1, 144--155.
+
+		\bibitem{ref4}
+		Leblebici, H., \& T\"{u}rkan, A. (2021). Opinions of teacher candidates on inclusive education: A parallel mixed method study. \textit{International Journal of Education and Literacy Studies}, 9(4), 32--44.
+
+		\bibitem{ref5}
+		Darawsheh, N., Alrashdan, H., Al-Khataybeh, M., Al Ajmi, H., Almheiri, A., Shaglof, A., Aldarmaki, I., BaniYounes, Z., \& Aidi, R. (2026). The degree of impact of organizational intelligence obstacles in the digital age. \textit{Journal of Statistics Applications \& Probability}, 14(6), 985--995.
+
+		\bibitem{ref6}
+		Alrashdan, H., Darawsheh, N., Aabed, S., Bsoul, M., Ganayem, S., \& Mhameed, M. (2023). Analyzing university administration's impact on faculty digital self-learning. \textit{Journal of Statistics Applications and Probability}, 12, 1591--1601.
+
+		\bibitem{ref7}
+		Yusuf, F., \& Fajari, L. (2025). Empowering inclusive education: Management practices in pilot elementary schools for inclusion. \textit{Educational Process: International Journal}, 15, 1--22.
+
+		\bibitem{ref8}
+		Supriyanto, D. (2019). Teachers' attitudes toward inclusive education: A literature review. \textit{Indonesian Journal of Disability Studies}, 6(1), 29--37.
+
+		\bibitem{ref9}
+		Darawsheh, N., Alrashdan, H., Alzawaideh, M., Ajouly, T., Almheiri, A., \& Aldarmaki, I. (2024). Administrative empowerment among academic leaders and its relationship to the quality of work life of faculty members. \textit{Journal of Ecohumanism}, 3(7), 5172--5184.
+
+		\bibitem{ref10}
+		Aldosari, M. (2022). Factors affecting middle school teachers' attitudes toward inclusion of students with disabilities. \textit{Frontiers in Psychology}, 13, 1--8.
+
+		\bibitem{ref11}
+		Junaidi, A. R. (2019). Teachers' attitudes toward inclusive education in East Java. \textit{Journal of ICSAR}, 4(1), 1--4.
+
+		\bibitem{ref12}
+		Wahsheh, N. (2024). The inclusion of students with disabilities: Teachers' attitudes. \textit{Multidisciplinary Science Journal}, 6(12), 1--9.
+
+		\bibitem{ref13}
+		Garc\'{i}a, P. S., \& Resino, D. A. (2022). Teaching attitudes toward students with disabilities. \textit{Esp\'{i}ral Cuadernos del Profesorado}, 15(30), 83--83.
+
+		\bibitem{ref14}
+		Darawsheh, N., Al-Khataybeh, M., Alrashdan, H., Drawsheh, S., Abu Grarh, A., \& Abu Dogush, M. (2024). Coexistence skills among mothers of children with multiple disabilities in the northern region of Jordan (Irbid). \textit{Journal of Statistics Applications \& Probability}, 13(2), 665--680.
+
+		\bibitem{ref15}
+		Almalky, H., \& Alwahbi, A. (2023). Teachers' perceptions of their experience with inclusive education practices in Saudi Arabia. \textit{Research in Developmental Disabilities}, 140, 1--12.
+
+		\bibitem{ref16}
+		Desombre, C., Delaval, M., \& Jury, M. (2021). Influence of social support on teachers' attitudes toward inclusive education. \textit{Frontiers in Psychology}, 12, 1--7.
+
+		\bibitem{ref17}
+		Obah, A. (2024). The effectiveness of inclusive education policies for students with disabilities. \textit{International Journal of Humanity and Social Sciences}, 2(5), 50--63.
+
+		\bibitem{ref18}
+		Alkharman, J., Drawsheh, S., Al-Khataybeh, M., BaniYounes, Z., Darawsheh, N., \& Alrashdan, H. (2024). Cyber attacks and its implication to national security: The need for international law enforcement. \textit{Pakistan Journal of Criminology}, 16(3), 851--864.
+
+		\bibitem{ref19}
+		Chen, S., Huang, Q., Liu, Z., \& Wang, H. (2022). Inclusion of young children with special needs in early childhood education in the United States: Advantages and disadvantages. \textit{International Conference on Social Development and Media Communication}, 631, 195--202.
+
+		\bibitem{ref20}
+		Avramidis, E., Toulia, A., Tsihouridis, C., \& Strogilos, V. (2019). Teachers' attitudes towards inclusion and their self-efficacy for inclusive practices as predictors of willingness to implement peer tutoring. \textit{Journal of Research in Special Educational Needs}, 19(3), 152--165.
+
+		\bibitem{ref21}
+		Huang, H., Zhang, Y., Huang, Y., Sun, Y., \& Wang, C. (2025). The role of inclusive education in the learning and social--emotional skills of students without special educational needs. \textit{European Journal of Education}, 60(2), 1--13.
+
+		\bibitem{ref23}
+		Nam, N., \& Tan, H. (2024). Inclusive education: Enhancing social integration and academic achievement for students with and without learning disabilities aged 5 to 14. \textit{Journal of Science: Education Research}, 41(1), 94--104.
+
+		\bibitem{ref24}
+		Szumski, G., Smogorzewska, J., \& Grygiel, P. (2022). Academic achievement of students without special educational needs and disabilities in inclusive education: Does the type of inclusion matter? \textit{PLoS ONE}, 17(7), 1--19.
+
+		\bibitem{ref25}
+		Buchner, T., \& Proyer, M. (2020). From special to inclusive education policies in Austria -- developments and implications for schools and teacher education. \textit{European Journal of Teacher Education}, 43, 83--94.
+
+		\bibitem{ref26}
+		Kart, A., \& Kart, M. (2021). Academic and social effects of inclusion on students without disabilities: A review of the literature. \textit{Education Sciences}, 11(16), 1--13.
+
+		\bibitem{ref27}
+		Hatamala, H., \& Darawsheh, N. (2019). The challenges of the application of the productive university's philosophy in Jordanian universities and ways of developing them from the perspective of academic leaders. \textit{Journal of Institutional Research South East Asia}, 17(1), 93--117.
+
+		\bibitem{ref28}
+		Pirker, A., Hafenscher, J., \& Lindner, K. (2023). Investigating the self-perception of social, emotional, and academic inclusion of students with and without special educational needs through photovoice. \textit{Education Sciences}, 13(423), 1--18.
+
+		\bibitem{ref30}
+		Hascher, T., \& Hagenauer, G. (2020). Swiss adolescents' well-being in school. \textit{Swiss Journal of Educational Research}, 42, 367--390.
+
+	\end{thebibliography}
+
+\end{document}

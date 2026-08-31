@@ -79,9 +79,10 @@ export function BatchForm({
 
   const addFiles = (incoming: FileList | null) => {
     if (!incoming) return;
-    const accepted = Array.from(incoming).filter((f) =>
-      f.name.toLowerCase().endsWith(".docx"),
-    );
+    const accepted = Array.from(incoming).filter((f) => {
+      const lower = f.name.toLowerCase();
+      return lower.endsWith(".docx") || lower.endsWith(".doc") || lower.endsWith(".pdf");
+    });
     setFiles((current) => [...current, ...accepted]);
     if (inputRef.current) inputRef.current.value = "";
   };
@@ -268,7 +269,7 @@ export function BatchForm({
             <input
               ref={inputRef}
               type="file"
-              accept=".docx"
+              accept=".docx,.doc,.pdf"
               multiple
               className="hidden"
               onChange={(e) => addFiles(e.target.files)}
@@ -279,7 +280,7 @@ export function BatchForm({
               </div>
               <div className="space-y-1">
                 <p className="text-sm font-medium text-gray-700">
-                  Drop the paper Word (.docx) files here, or click to browse
+                  Drop Word (.docx, .doc) or PDF (.pdf) paper files here, or click to browse
                 </p>
                 <p className="text-xs text-gray-400">
                   Select as many papers as you want in this batch

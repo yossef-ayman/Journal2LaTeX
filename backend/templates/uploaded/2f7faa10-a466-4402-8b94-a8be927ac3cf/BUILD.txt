@@ -1,0 +1,34 @@
+This archive is a complete, self-contained LaTeX project.
+
+To build it:
+
+    latexmk -pdf main.tex
+
+The entry point is main.tex. Every class, style, bibliography,
+font and image file the document references is included, with the
+original folder structure preserved. LaTeX build artefacts have
+been removed so the first build starts clean.
+
+The following are standard packages supplied by your TeX distribution rather than bundled here:
+
+  - usepackage -> amsmath
+  - usepackage -> amssymb
+  - usepackage -> array
+  - usepackage -> bm
+  - usepackage -> booktabs
+  - usepackage -> calc
+  - usepackage -> caption
+  - usepackage -> cuted
+  - usepackage -> fix-cm
+  - usepackage -> float
+  - usepackage -> floatflt
+  - usepackage -> graphics
+  - usepackage -> graphicx
+  - usepackage -> helvet
+  - usepackage -> longtable
+  - usepackage -> mathptmx
+  - usepackage -> multirow
+  - usepackage -> times
+  - usepackage -> type1cm
+  - usepackage -> url
+  - usepackage -> xcolor
