@@ -3,26 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sleek PDF Analyzer & XML Parser</title>
+    <title>Academic Reference Explorer & Multi-Source Intelligence</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast-container" class="toast-container"></div>
+
     <header>
         <div class="logo">
             <span class="logo-icon"></span>
-            PDF Analyzer
+            <div class="logo-text">
+                <span class="logo-title">Academic Reference Explorer</span>
+                <span class="logo-subtitle">Journal2LaTeX Multi-Source Aggregator</span>
+            </div>
+        </div>
+
+        <div class="scholar-header-search">
+            <div class="search-input-wrapper">
+                <input type="text" id="scholar-search-input" placeholder="🔍 Search Google Scholar papers, authors, or topics..." onkeydown="if(event.key==='Enter') executeScholarSearch()">
+                <button id="scholar-search-btn" class="btn-search-header" onclick="executeScholarSearch()">Search</button>
+            </div>
+        </div>
+
+        <div class="header-controls">
+            <button id="theme-toggle-btn" class="btn-theme-toggle" onclick="toggleTheme()" title="Switch Light/Dark Theme">
+                <span id="theme-icon">☀️</span>
+                <span id="theme-text">Light</span>
+            </button>
         </div>
     </header>
 
     <main>
         <!-- SCREEN 1: UPLOAD -->
         <section id="upload-screen" class="screen active">
-            <div id="drop-zone" class="glass-panel upload-container">
+            <div id="drop-zone" class="glass-panel upload-container" style="cursor: pointer;">
                 <div class="upload-icon">📄</div>
-                <h2>Analyze PDF & Export XML</h2>
-                <p>Drag & drop your PDF file here, or click to browse</p>
+                <h2>Analyze Academic PDF & Enrich References</h2>
+                <p>Drag & drop your research paper or bibliography here, or click to browse</p>
                 <input type="file" id="file-input" accept="application/pdf" style="display: none;">
-                <button class="btn" onclick="document.getElementById('file-input').click()">Choose PDF File</button>
+                <button id="browse-btn" class="btn" type="button">Choose PDF File</button>
             </div>
         </section>
 
@@ -30,6 +50,31 @@
         <section id="dashboard-screen" class="screen">
             <div class="dashboard-actions">
                 <button class="back-btn" onclick="showUploadScreen()">← Upload New PDF</button>
+                
+                <div class="export-group glass-panel">
+                    <span class="export-label">📦 Export Project:</span>
+                    <button class="btn-export" onclick="exportCurrentProject('json')">📥 JSON Bundle</button>
+                    <button class="btn-export" onclick="exportCurrentProject('bibtex')">📥 BibTeX</button>
+                    <button class="btn-export" onclick="exportCurrentProject('xml')">📥 XML</button>
+                    <button class="btn-export" onclick="copyProjectBibtex()">📋 Copy BibTeX</button>
+                </div>
+            </div>
+
+            <!-- IN-SITE GOOGLE SCHOLAR SEARCH RESULTS SECTION -->
+            <div id="scholar-results-section" class="glass-panel scholar-results-card" style="display: none; margin-bottom: 1.5rem;">
+                <div class="scholar-section-header">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.3rem;">🎓</span>
+                        <h3 id="scholar-results-title" style="margin: 0; font-size: 1.15rem; color: var(--text-main);">Google Scholar Results</h3>
+                    </div>
+                    <button class="modal-close-btn" style="font-size: 0.9rem;" onclick="closeScholarSearchResults()">✕</button>
+                </div>
+                <div id="scholar-results-loading" style="display: none; padding: 1.5rem; text-align: center; color: var(--text-secondary);">
+                    <div class="spinner-small"></div> Searching Google Scholar via SerpApi...
+                </div>
+                <div id="scholar-results-list" class="scholar-cards-container">
+                    <!-- Populated dynamically -->
+                </div>
             </div>
             
             <div class="dashboard-grid">
@@ -72,7 +117,7 @@
                     </div>
 
                     <div class="glass-panel dashboard-section">
-                        <h3 class="section-title">👥 Authors & Affiliations</h3>
+                        <h3 class="section-title">👥 Manuscript Authors & Affiliations</h3>
                         <div id="authors-list" class="authors-grid">
                             <!-- Populated dynamically -->
                         </div>
@@ -87,9 +132,14 @@
                     </div>
 
                     <div class="glass-panel dashboard-section">
-                        <h3 class="section-title">📚 References List</h3>
-                        <div id="references-list" class="headings-list">
-                            <!-- Populated dynamically -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <div>
+                                <h3 class="section-title" style="margin-bottom: 0.15rem;">📚 Academic References & Multi-Source Intelligence</h3>
+                                <div style="font-size: 0.82rem; color: var(--text-secondary);">Every reference is an interactive academic entity enriched across OpenAlex, Crossref & Google Scholar</div>
+                            </div>
+                        </div>
+                        <div id="references-list" class="references-container">
+                            <!-- Populated dynamically with rich academic cards -->
                         </div>
                     </div>
                 </div>
@@ -114,7 +164,7 @@
                         <!-- Analysis Tab Content -->
                         <div id="tab-analysis-content" class="tab-content">
                             <div id="analysis-placeholder" class="analysis-placeholder">
-                                💡 Click on any Author or Heading on the left to see detailed metrics and structure analysis.
+                                💡 Click on any Author, Heading, or Reference to see detailed multi-source metrics and structure analysis.
                             </div>
                             <div id="analysis-details" class="analysis-details" style="display: none;">
                                 <h4 id="analysis-type-title" class="analysis-type-title">Item Analysis</h4>
@@ -152,8 +202,270 @@
         </section>
     </main>
 
+    <!-- PAPER PROFILE MODAL (ACADEMIC RESEARCH DASHBOARD) -->
+    <div id="paper-modal" class="modal-overlay" style="display: none;">
+        <div class="glass-panel modal-container paper-modal-container">
+            <div class="modal-header">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                        <span id="paper-modal-badge-type" class="badge-ref-type">ARTICLE</span>
+                        <h2 id="paper-modal-title" class="paper-modal-title">Paper Title</h2>
+                    </div>
+                    <div id="paper-modal-subtitle" class="text-muted" style="font-size: 0.88rem; margin-top: 0.35rem;"></div>
+                    
+                    <!-- Quick Header Action Buttons -->
+                    <div class="paper-modal-header-actions" style="margin-top: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                        <button id="modal-header-btn-cites" class="btn-action-primary" onclick="switchPaperTab('citations')">📊 Citations</button>
+                        <a id="modal-header-link-scholar" href="#" target="_blank" class="btn-scholar-ref">🎓 Google Scholar</a>
+                        <a id="modal-header-link-pdf" href="#" target="_blank" class="btn-pdf-link" style="display: none;">📄 Open PDF</a>
+                        <button class="btn-action-secondary" onclick="switchPaperTab('authors')">👥 Authors</button>
+                        <button class="btn-action-secondary" onclick="copyCurrentPaperBibtex()">📋 BibTeX</button>
+                    </div>
+                </div>
+                <button class="modal-close-btn" onclick="closePaperModal()">✕</button>
+            </div>
+            
+            <div class="tab-header paper-tab-header">
+                <button id="tab-paper-overview-btn" class="tab-btn active" onclick="switchPaperTab('overview')">📋 Overview</button>
+                <button id="tab-paper-authors-btn" class="tab-btn" onclick="switchPaperTab('authors')">👥 Authors</button>
+                <button id="tab-paper-citations-btn" class="tab-btn" onclick="switchPaperTab('citations')">📊 Citations</button>
+                <button id="tab-paper-scholar-btn" class="tab-btn" onclick="switchPaperTab('scholar')">🎓 Google Scholar</button>
+                <button id="tab-paper-openalex-btn" class="tab-btn" onclick="switchPaperTab('openalex')">🌐 OpenAlex</button>
+                <button id="tab-paper-crossref-btn" class="tab-btn" onclick="switchPaperTab('crossref')">🔗 Crossref</button>
+                <button id="tab-paper-raw-btn" class="tab-btn" onclick="switchPaperTab('raw')">⚙️ Master JSON</button>
+            </div>
+
+            <div class="modal-body paper-modal-body">
+                <!-- TAB 1: OVERVIEW -->
+                <div id="paper-tab-overview" class="paper-tab-content active">
+                    
+                    <!-- 1. Academic Summary Details -->
+                    <div class="paper-details-card glass-panel" style="padding: 1.1rem; margin-bottom: 1rem;">
+                        <h4 style="margin-bottom: 0.75rem; color: var(--text-main); font-size: 0.95rem;">📖 Academic Publication Summary</h4>
+                        <div class="summary-meta-grid">
+                            <div class="meta-item"><span class="meta-k">Publication Type:</span> <span id="paper-detail-type" class="badge-ref-type">-</span></div>
+                            <div class="meta-item"><span class="meta-k">Publication Year:</span> <span id="paper-detail-year" class="meta-v">—</span></div>
+                            <div class="meta-item" style="grid-column: 1 / -1;"><span class="meta-k" id="paper-detail-venue-label">Venue / Container:</span> <span id="paper-detail-venue" class="meta-v">—</span></div>
+                            <div id="paper-detail-publisher-item" class="meta-item" style="display: none;"><span class="meta-k">Publisher:</span> <span id="paper-detail-publisher" class="meta-v">—</span></div>
+                            <div id="paper-detail-vip-item" class="meta-item" style="display: none;"><span class="meta-k">Vol / Issue / Pages:</span> <span id="paper-detail-vip" class="meta-v">—</span></div>
+                            <div id="paper-detail-isbn-item" class="meta-item" style="display: none;"><span class="meta-k">ISBN:</span> <span id="paper-detail-isbn" class="meta-v">—</span></div>
+                            <div class="meta-item" style="grid-column: 1 / -1;"><span class="meta-k">Original Citation:</span> <span id="paper-detail-original" class="meta-v text-muted" style="font-style: italic;">—</span></div>
+                        </div>
+                        <div id="paper-detail-abstract-box" style="margin-top: 0.75rem; display: none;">
+                            <span class="meta-k">Abstract:</span>
+                            <div id="paper-detail-abstract" class="text-muted" style="font-size: 0.85rem; line-height: 1.5; margin-top: 0.25rem;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Authors Section -->
+                    <div class="glass-panel" style="padding: 1rem; margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                            <h4 style="margin: 0; color: var(--text-main); font-size: 0.95rem;">👥 Authors Directory</h4>
+                            <button class="btn-action-secondary" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;" onclick="switchPaperTab('authors')">View All Author Profiles →</button>
+                        </div>
+                        <div id="overview-authors-summary-chips" class="ref-authors-container">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- 3. Multi-Source Citation Metrics Comparison Section -->
+                    <div class="source-comparison-box" style="margin-bottom: 1rem;">
+                        <h4 style="margin-bottom: 0.75rem; color: var(--text-main); font-size: 0.95rem;">📊 Multi-Source Citation Metrics</h4>
+                        <div class="citation-metrics-grid">
+                            <div class="metric-card glass-panel">
+                                <div class="metric-source">🎓 Google Scholar</div>
+                                <div id="paper-cite-scholar" class="metric-val">Not available</div>
+                                <div id="paper-status-scholar" class="metric-badge">-</div>
+                            </div>
+                            <div class="metric-card glass-panel">
+                                <div class="metric-source">🌐 OpenAlex</div>
+                                <div id="paper-cite-openalex" class="metric-val">Not available</div>
+                                <div id="paper-status-openalex" class="metric-badge">-</div>
+                            </div>
+                            <div class="metric-card glass-panel">
+                                <div class="metric-source">🔗 Crossref</div>
+                                <div id="paper-cite-crossref" class="metric-val">Not available</div>
+                                <div id="paper-status-crossref" class="metric-badge">-</div>
+                            </div>
+                            <div class="metric-card glass-panel highlight-metric">
+                                <div class="metric-source">📈 Canonical Citations</div>
+                                <div id="paper-cite-canonical" class="metric-val">Not available</div>
+                                <div class="metric-badge">Reconciled</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Identifiers Grid Section -->
+                    <div class="identifiers-box glass-panel" style="margin-bottom: 1rem; padding: 1rem;">
+                        <h4 style="margin-bottom: 0.75rem; color: var(--text-main); font-size: 0.95rem;">🆔 Academic Identifiers</h4>
+                        <div id="paper-identifiers-grid" class="identifiers-grid">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- 5. Source Comparison Status Table -->
+                    <div class="sources-table-box glass-panel" style="margin-bottom: 1rem; padding: 1rem;">
+                        <h4 style="margin-bottom: 0.75rem; color: var(--text-main); font-size: 0.95rem;">🔍 Academic Provider Data Sources</h4>
+                        <table class="sources-table">
+                            <thead>
+                                <tr>
+                                    <th>PROVIDER</th>
+                                    <th>STATUS</th>
+                                    <th>MATCHED TITLE</th>
+                                    <th>AUTHORS</th>
+                                    <th>CITATIONS</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sources-table-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 6. DOI & Conflict Verification Box -->
+                    <div id="paper-doi-section" class="doi-verification-box" style="margin-bottom: 1rem;">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+
+                <!-- TAB 2: AUTHORS (FIRST-CLASS INTERACTIVE DIRECTORY) -->
+                <div id="paper-tab-authors" class="paper-tab-content">
+                    <div style="margin-bottom: 0.75rem; color: var(--text-secondary); font-size: 0.88rem;">
+                        Click on any author to view their unified academic profile, citation metrics, research topics, and publications.
+                    </div>
+                    <div id="paper-authors-list" class="authors-cards-grid">
+                        <!-- Populated dynamically with rich author cards and ID badges -->
+                    </div>
+                </div>
+
+                <!-- TAB 3: CITATIONS (CITED-BY EXPLORATION) -->
+                <div id="paper-tab-citations" class="paper-tab-content">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <h4 id="citations-tab-title" style="margin: 0; color: var(--text-main); font-size: 1.05rem;">📈 Cited By (Google Scholar Citations)</h4>
+                        <span id="paper-citations-count-info" class="text-muted" style="font-size: 0.85rem;"></span>
+                    </div>
+                    <div id="paper-citations-loading" style="display: none; text-align: center; padding: 2rem; color: var(--text-secondary);">
+                        <div class="spinner-small"></div> Querying citing publications via SerpApi...
+                    </div>
+                    <div id="paper-citations-list" class="scholar-cards-container">
+                        <!-- Populated dynamically -->
+                    </div>
+                    <div id="paper-citations-pagination" style="display: none; justify-content: space-between; align-items: center; margin-top: 1.25rem;">
+                        <button id="paper-cite-prev-btn" class="btn-icon" onclick="changePaperCitationsPage(-1)">← Previous</button>
+                        <span id="paper-cite-page-info" style="font-size: 0.88rem; color: var(--text-secondary); font-weight: 600;">Page 1</span>
+                        <button id="paper-cite-next-btn" class="btn-icon" onclick="changePaperCitationsPage(1)">Next →</button>
+                    </div>
+                </div>
+
+                <!-- TAB 4: GOOGLE SCHOLAR -->
+                <div id="paper-tab-scholar" class="paper-tab-content">
+                    <div id="paper-scholar-content">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- TAB 5: OPENALEX -->
+                <div id="paper-tab-openalex" class="paper-tab-content">
+                    <div id="paper-openalex-content">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- TAB 6: CROSSREF -->
+                <div id="paper-tab-crossref" class="paper-tab-content">
+                    <div id="paper-crossref-content">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- TAB 7: RAW JSON -->
+                <div id="paper-tab-raw" class="paper-tab-content">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);">Master Reference JSON Record (Source of Truth):</span>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="btn-icon" onclick="copyPaperJson()">📋 Copy JSON</button>
+                            <button class="btn-icon" onclick="downloadPaperJson()">📥 Download JSON</button>
+                        </div>
+                    </div>
+                    <pre id="paper-raw-json-code" class="code-container" style="max-height: 420px; overflow-y: auto;"><code>Loading JSON...</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUTHOR PROFILE MODAL -->
+    <div id="author-modal" class="modal-overlay" style="display: none;">
+        <div class="glass-panel modal-container">
+            <div class="modal-header">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                        <h2 id="author-profile-name">Author Name</h2>
+                        <div id="author-profile-badges" style="display: flex; gap: 0.4rem; align-items: center;">
+                            <a id="author-scholar-link" href="#" target="_blank" class="btn-scholar-ref" style="display: none; font-size: 0.78rem; padding: 0.2rem 0.6rem;">🎓 Google Scholar Profile</a>
+                            <a id="author-openalex-link" href="#" target="_blank" class="badge-source-link" style="display: none; font-size: 0.78rem; padding: 0.2rem 0.6rem;">🌐 OpenAlex Profile</a>
+                            <a id="author-orcid-link" href="#" target="_blank" class="badge-orcid-link" style="display: none; font-size: 0.78rem; padding: 0.2rem 0.6rem;">🆔 ORCID</a>
+                        </div>
+                    </div>
+                    <div id="author-profile-affil" class="text-muted" style="font-size: 0.9rem; margin-top: 0.25rem;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div class="tab-header" style="margin: 0; padding: 0.15rem; border-radius: 8px;">
+                        <button id="prov-openalex-btn" class="tab-btn active" style="padding: 0.25rem 0.65rem; font-size: 0.8rem;" onclick="switchAuthorProvider('openalex')">OpenAlex</button>
+                        <button id="prov-scholar-btn" class="tab-btn" style="padding: 0.25rem 0.65rem; font-size: 0.8rem;" onclick="switchAuthorProvider('google_scholar')">🎓 Google Scholar</button>
+                    </div>
+                    <button class="modal-close-btn" onclick="closeAuthorProfile()">✕</button>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <!-- KPI Stats Bar -->
+                <div class="kpi-container" style="margin-bottom: 1.5rem;">
+                    <div class="glass-panel kpi-card">
+                        <div id="author-kpi-works" class="kpi-num">-</div>
+                        <div class="kpi-label">Publications</div>
+                    </div>
+                    <div class="glass-panel kpi-card">
+                        <div id="author-kpi-citations" class="kpi-num">-</div>
+                        <div class="kpi-label">Citations</div>
+                    </div>
+                    <div class="glass-panel kpi-card">
+                        <div id="author-kpi-hindex" class="kpi-num">-</div>
+                        <div class="kpi-label">h-index</div>
+                    </div>
+                    <div class="glass-panel kpi-card">
+                        <div id="author-kpi-i10index" class="kpi-num">-</div>
+                        <div class="kpi-label">i10-index</div>
+                    </div>
+                </div>
+
+                <!-- Research Topics -->
+                <div id="author-topics-section" style="margin-bottom: 1.5rem; display: none;">
+                    <h4 style="margin-bottom: 0.5rem; color: var(--text-secondary);">🏷️ Key Research Topics</h4>
+                    <div id="author-topics-container" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+                </div>
+
+                <!-- Works List -->
+                <div class="author-works-section">
+                    <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--panel-border); padding-bottom: 0.5rem;">📚 Publications</h3>
+                    <div id="author-works-loading" style="display: none; text-align: center; padding: 1.5rem; color: var(--text-secondary);">
+                        <div class="spinner-small"></div> Loading publications...
+                    </div>
+                    <div id="author-works-list" class="works-list" style="display: flex; flex-direction: column; gap: 0.75rem;"></div>
+                    
+                    <!-- Pagination Controls -->
+                    <div id="author-works-pagination" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem;">
+                        <button id="author-prev-btn" class="btn-icon" onclick="changeAuthorWorksPage(-1)">← Previous</button>
+                        <span id="author-page-info" style="font-size: 0.88rem; color: var(--text-secondary); font-weight: 600;">Page 1</span>
+                        <button id="author-next-btn" class="btn-icon" onclick="changeAuthorWorksPage(1)">Next →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- LOADING OVERLAY -->
-    <div id="loading-overlay" class="loading-overlay">
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
         <div class="spinner"></div>
         <div class="loading-text">PARSING PDF DOCUMENT...</div>
     </div>

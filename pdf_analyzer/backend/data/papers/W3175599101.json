@@ -1,0 +1,114 @@
+{
+  "paper_id": "https://openalex.org/W3175599101",
+  "title": "MultiDTI: drug–target interaction prediction based on multi-modal representation learning to bridge the gap between new chemical entities and known heterogeneous network",
+  "year": 2021,
+  "reference_type": "journal-article",
+  "venue": "Bioinformatics, –4492",
+  "publisher": "Oxford University Press",
+  "volume": "37",
+  "issue": "23",
+  "pages": "4485–4492",
+  "doi": "10.1093/bioinformatics/btab473",
+  "isbn": null,
+  "arxiv_id": null,
+  "openalex_id": "https://openalex.org/W3175599101",
+  "citations": {
+    "canonical_value": 99,
+    "google_scholar": null,
+    "openalex": 99,
+    "crossref": 95
+  },
+  "authors": [
+    {
+      "name": "Deshan Zhou",
+      "display_name": "Deshan Zhou",
+      "given": "Deshan",
+      "family": "Zhou",
+      "author_id": "https://openalex.org/A5074343752",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5074343752",
+        "orcid": "https://orcid.org/0000-0002-6725-9303",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Hunan University"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Zhijian Xu",
+      "display_name": "Zhijian Xu",
+      "given": "Zhijian",
+      "family": "Xu",
+      "author_id": "https://openalex.org/A5083748084",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5083748084",
+        "orcid": "https://orcid.org/0000-0002-3063-8473",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Chinese Academy of Sciences",
+        "Shanghai Institute of Materia Medica"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Wentao Li",
+      "display_name": "Wentao Li",
+      "given": "Wentao",
+      "family": "Li",
+      "author_id": "https://openalex.org/A5100451412",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5100451412",
+        "orcid": "https://orcid.org/0000-0002-7777-0818",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "National University of Defense Technology"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Xiaolan Xie",
+      "display_name": "Xiaolan Xie",
+      "given": "Xiaolan",
+      "family": "Xie",
+      "author_id": "https://openalex.org/A5101699482",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5101699482",
+        "orcid": "https://orcid.org/0000-0001-9546-5115",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Guilin University of Technology"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Shaoliang Peng",
+      "display_name": "Shaoliang Peng",
+      "given": "Shaoliang",
+      "family": "Peng",
+      "author_id": "https://openalex.org/A5108008219",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5108008219",
+        "orcid": "https://orcid.org/0000-0002-4647-2615",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Hunan University",
+        "National University of Defense Technology"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    }
+  ],
+  "abstract": "MOTIVATION: Predicting new drug-target interactions is an important step in new drug development, understanding of its side effects and drug repositioning. Heterogeneous data sources can provide comprehensive information and different perspectives for drug-target interaction prediction. Thus, there have been many calculation methods relying on heterogeneous networks. Most of them use graph-related algorithms to characterize nodes in heterogeneous networks for predicting new drug-target interactions (DTI). However, these methods can only make predictions in known heterogeneous network datasets, and cannot support the prediction of new chemical entities outside the heterogeneous network, which hinder further drug discovery and development. RESULTS: To solve this problem, we proposed a multi-modal DTI prediction model named 'MultiDTI' which uses our proposed joint learning framework based on heterogeneous networks. It combines the interaction or association information of the heterogeneous network and the drug/target sequence information, and maps the drugs, targets, side effects and disease nodes in the heterogeneous network into a common space. In this way, 'MultiDTI' can map the new chemical entity to this learned common space based on the chemical structure of the new entity. That is, bridging the gap between new chemical entities and known heterogeneous network. Our model has strong predictive performance, and the area under the receiver operating characteristic curve of the model is 0.961 and the area under the precision recall curve is 0.947 with 10-fold cross validation. In addition, some predicted new DTIs have been confirmed by ChEMBL database. Our results indicate that 'MultiDTI' is a powerful and practical tool for predicting new DTI, which can promote the development of drug discovery or drug repositioning. AVAILABILITY AND IMPLEMENTATION: Python codes and dataset are available at https://github.com/Deshan-Zhou/MultiDTI/. SUPPLEMENTARY INFORMATION: Supplementary data are available at Bioinformatics online.",
+  "url": "https://doi.org/10.1093/bioinformatics/btab473",
+  "pdf_url": null,
+  "reference_id": "ref_002a339afbc0"
+}

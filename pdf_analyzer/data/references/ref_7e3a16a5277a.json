@@ -1,0 +1,643 @@
+{
+  "reference_id": "ref_7e3a16a5277a",
+  "project_id": "project_20260831_071545_c5883250",
+  "created_at": "2026-08-31T07:16:26.580019+00:00",
+  "input": {
+    "original_text": "Gouranga Charan, Tawfik Osman, Andrew Hredzak, Ngwe Thawdar, and Ahmed Alkhateeb. Vision-position multimodal beam prediction using real millimeter wave datasets. In 2022 IEEE Wireless Communications and Networking Conference (WCNC), pages 2727–2731. IEEE, 2022.",
+    "parsed": {
+      "title": "Vision-position multimodal beam prediction using real millimeter wave datasets",
+      "authors": [
+        {
+          "name": "Tawfik Osman Gouranga Charan",
+          "given": "Tawfik Osman",
+          "family": "Gouranga Charan"
+        },
+        {
+          "name": "Ngwe Thawdar Andrew Hredzak",
+          "given": "Ngwe Thawdar",
+          "family": "Andrew Hredzak"
+        },
+        {
+          "name": "Ahmed Alkhateeb",
+          "given": "Ahmed",
+          "family": "Alkhateeb"
+        }
+      ],
+      "year": 2022,
+      "reference_type": "proceedings-article",
+      "journal": "In 2022 IEEE Wireless Communications and Networking Conference (WCNC), pages 2727–2731 IEEE, 2022",
+      "publisher": "IEEE",
+      "volume": null,
+      "issue": null,
+      "pages": "2727–2731",
+      "doi": null,
+      "isbn": null,
+      "arxiv_id": null
+    }
+  },
+  "canonical": {
+    "title": {
+      "value": "Vision-Assisted Beam Prediction for Real World 6G Drone Communication",
+      "source": "openalex",
+      "confidence": 0.51,
+      "verification_status": "unverified"
+    },
+    "year": {
+      "value": 2022,
+      "source": "parsed",
+      "confidence": 0.9,
+      "verification_status": "verified"
+    },
+    "venue": {
+      "value": "In 2022 IEEE Wireless Communications and Networking Conference (WCNC), pages 2727–2731 IEEE, 2022",
+      "source": "parsed",
+      "confidence": 0.85,
+      "verification_status": "verified"
+    },
+    "reference_type": {
+      "value": "proceedings-article",
+      "source": "classifier",
+      "confidence": 0.75,
+      "verification_status": "unverified"
+    },
+    "publisher": {
+      "value": "IEEE",
+      "source": "parsed",
+      "confidence": 0.0,
+      "verification_status": "unverified"
+    },
+    "volume": null,
+    "issue": null,
+    "pages": "2727–2731",
+    "abstract": "The rapid evolution of drone communication systems necessitates the development of novel approaches for optimal beam management in millimetre wave (mmWave) 6G networks. Beamforming is used to improve signal quality and enhance the signal-to-noise ratio (SNR); however, the existing beam management performs an exhaustive search over the pre-defined codebook, resulting in higher latency due to training overhead that makes it impractical for high-mobility applications. Therefore, this paper introduces an innovative technique for mmWave beam prediction, considering practical visual and communication scenarios. The approach proposed in this study utilizes computer vision (CV) and ensemble learning via stacking, combining multi-modal vision sensing and positional data to achieve accurate estimations of drone positions and orientations. The developed framework first fine-tunes \"you look only once\" version 5 (YOLO-v5), a CV model to obtain the bounding box (location) of the drone from RGB images. This filtered vision sensing information and position data are used to train two different sets of neural networks, and the output of each model is stacked to train a meta-learner, used for the prediction of K-beams from a pre-defined codebook. The proposed method outperforms with the top-1 accuracy of approximately 90% compared to 86% and 60% for vision and position models, respectively. Furthermore, top-3 and top-5 accuracies are approximately 100%, resulting in a significant receive signal strength.",
+    "url": "https://doi.org/10.1109/pimrc56721.2023.10294031",
+    "identifiers": {
+      "doi": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.2,
+        "verification_status": "conflict"
+      },
+      "openalex_id": {
+        "value": "https://openalex.org/W4388079771",
+        "source": "openalex",
+        "confidence": 0.51,
+        "verification_status": "unverified"
+      },
+      "arxiv_id": {
+        "value": null,
+        "source": "arxiv_resolver",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "isbn": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_cluster_id": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_url": {
+        "value": "https://scholar.google.com/scholar?q=Vision-position%20multimodal%20beam%20prediction%20using%20real%20millimeter%20wave%20datasets%20Gouranga%20Charan",
+        "source": "google_scholar",
+        "confidence": 1.0,
+        "verification_status": "verified"
+      }
+    },
+    "citation_counts": {
+      "canonical_value": 13,
+      "google_scholar": null,
+      "openalex": 13,
+      "crossref": null
+    }
+  },
+  "canonical_authors": [
+    {
+      "name": "Tawfik Osman Gouranga Charan",
+      "display_name": "Tawfik Osman Gouranga Charan",
+      "given": "Tawfik Osman",
+      "family": "Gouranga Charan",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "matched",
+      "confidence": 0.75
+    },
+    {
+      "name": "Ngwe Thawdar Andrew Hredzak",
+      "display_name": "Ngwe Thawdar Andrew Hredzak",
+      "given": "Ngwe Thawdar",
+      "family": "Andrew Hredzak",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "matched",
+      "confidence": 0.75
+    },
+    {
+      "name": "Ahmed Alkhateeb",
+      "display_name": "Ahmed Alkhateeb",
+      "given": "Ahmed",
+      "family": "Alkhateeb",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "matched",
+      "confidence": 0.75
+    }
+  ],
+  "sources": {
+    "openalex": {
+      "available": true,
+      "matched": false,
+      "status": "low_confidence",
+      "confidence": 0.51,
+      "citation_count": 13,
+      "openalex_id": "https://openalex.org/W4388079771",
+      "doi": "10.1109/pimrc56721.2023.10294031",
+      "url": "https://doi.org/10.1109/pimrc56721.2023.10294031",
+      "pdf_url": "https://eprints.gla.ac.uk/300925/2/300925.pdf",
+      "raw_file": "data/raw/openalex/e740335d0b84cecf.json",
+      "normalized_file": null,
+      "data": {
+        "title": "Vision-Assisted Beam Prediction for Real World 6G Drone Communication",
+        "display_name": "Vision-Assisted Beam Prediction for Real World 6G Drone Communication",
+        "authors": [
+          {
+            "name": "Iftikhar Ahmad",
+            "given": "Iftikhar",
+            "family": "Ahmad",
+            "author_id": "https://openalex.org/A5052116574",
+            "display_name": "Iftikhar Ahmad",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5052116574",
+              "orcid": "https://orcid.org/0000-0003-3719-2387",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "University of Glasgow"
+            ],
+            "countries": [
+              "GB"
+            ]
+          },
+          {
+            "name": "Ahsan Raza Khan",
+            "given": "Ahsan Raza",
+            "family": "Khan",
+            "author_id": "https://openalex.org/A5083822582",
+            "display_name": "Ahsan Raza Khan",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5083822582",
+              "orcid": "https://orcid.org/0000-0002-4741-4126",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "University of Glasgow"
+            ],
+            "countries": [
+              "GB"
+            ]
+          },
+          {
+            "name": "Rao Naveed Bin Rais",
+            "given": "Rao Naveed Bin",
+            "family": "Rais",
+            "author_id": "https://openalex.org/A5032208396",
+            "display_name": "Rao Naveed Bin Rais",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5032208396",
+              "orcid": "https://orcid.org/0000-0003-0855-9864",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Ajman University",
+              "City University Ajman"
+            ],
+            "countries": [
+              "AE"
+            ]
+          },
+          {
+            "name": "Ahmed Zoha",
+            "given": "Ahmed",
+            "family": "Zoha",
+            "author_id": "https://openalex.org/A5089174765",
+            "display_name": "Ahmed Zoha",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5089174765",
+              "orcid": "https://orcid.org/0000-0001-7497-9336",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "University of Glasgow"
+            ],
+            "countries": [
+              "GB"
+            ]
+          },
+          {
+            "name": "Muhammad Ali Imran",
+            "given": "Muhammad Ali",
+            "family": "Imran",
+            "author_id": "https://openalex.org/A5100331811",
+            "display_name": "Muhammad Ali Imran",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5100331811",
+              "orcid": "https://orcid.org/0000-0003-4743-9136",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "University of Glasgow"
+            ],
+            "countries": [
+              "GB"
+            ]
+          },
+          {
+            "name": "Sajjad Hussain",
+            "given": "Sajjad",
+            "family": "Hussain",
+            "author_id": "https://openalex.org/A5025757700",
+            "display_name": "Sajjad Hussain",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5025757700",
+              "orcid": "https://orcid.org/0000-0003-1802-9728",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "University of Glasgow"
+            ],
+            "countries": [
+              "GB"
+            ]
+          }
+        ],
+        "year": 2023,
+        "publication_date": "2023-09-05",
+        "journal": "",
+        "venue": "",
+        "publisher": "",
+        "reference_type": "journal-article",
+        "volume": "",
+        "issue": "",
+        "pages": "1-7",
+        "doi": "10.1109/pimrc56721.2023.10294031",
+        "url": "https://doi.org/10.1109/pimrc56721.2023.10294031",
+        "pdf_url": "https://eprints.gla.ac.uk/300925/2/300925.pdf",
+        "openalex_id": "https://openalex.org/W4388079771",
+        "citation_count": 13,
+        "cited_by_count": 13,
+        "is_oa": true,
+        "oa_status": "green",
+        "abstract": "The rapid evolution of drone communication systems necessitates the development of novel approaches for optimal beam management in millimetre wave (mmWave) 6G networks. Beamforming is used to improve signal quality and enhance the signal-to-noise ratio (SNR); however, the existing beam management performs an exhaustive search over the pre-defined codebook, resulting in higher latency due to training overhead that makes it impractical for high-mobility applications. Therefore, this paper introduces an innovative technique for mmWave beam prediction, considering practical visual and communication scenarios. The approach proposed in this study utilizes computer vision (CV) and ensemble learning via stacking, combining multi-modal vision sensing and positional data to achieve accurate estimations of drone positions and orientations. The developed framework first fine-tunes \"you look only once\" version 5 (YOLO-v5), a CV model to obtain the bounding box (location) of the drone from RGB images. This filtered vision sensing information and position data are used to train two different sets of neural networks, and the output of each model is stacked to train a meta-learner, used for the prediction of K-beams from a pre-defined codebook. The proposed method outperforms with the top-1 accuracy of approximately 90% compared to 86% and 60% for vision and position models, respectively. Furthermore, top-3 and top-5 accuracies are approximately 100%, resulting in a significant receive signal strength.",
+        "topics": [
+          "UAV Applications and Optimization",
+          "Millimeter-Wave Propagation and Modeling",
+          "Advanced Wireless Communication Technologies"
+        ],
+        "referenced_works_count": 23,
+        "related_works": [
+          "https://openalex.org/W3207918248",
+          "https://openalex.org/W2130785056",
+          "https://openalex.org/W2506626932",
+          "https://openalex.org/W2037755532",
+          "https://openalex.org/W2620095399"
+        ],
+        "source": "openalex",
+        "raw_file": "data/raw/openalex/e740335d0b84cecf.json"
+      }
+    },
+    "crossref": {
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.0,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {}
+    },
+    "google_scholar": {
+      "available": false,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "url": "https://scholar.google.com/scholar?q=Vision-position%20multimodal%20beam%20prediction%20using%20real%20millimeter%20wave%20datasets%20Gouranga%20Charan",
+      "cluster_id": null,
+      "cited_by_url": null,
+      "citation_count": null,
+      "versions_count": null,
+      "raw_file": null,
+      "normalized_file": "data/normalized/google_scholar/eb0a4b79ab819861.json",
+      "data": {
+        "title": "Vision-position multimodal beam prediction using real millimeter wave datasets",
+        "authors": [
+          {
+            "name": "Tawfik Osman Gouranga Charan",
+            "given": "Tawfik Osman",
+            "family": "Gouranga Charan"
+          },
+          {
+            "name": "Ngwe Thawdar Andrew Hredzak",
+            "given": "Ngwe Thawdar",
+            "family": "Andrew Hredzak"
+          },
+          {
+            "name": "Ahmed Alkhateeb",
+            "given": "Ahmed",
+            "family": "Alkhateeb"
+          }
+        ],
+        "year": 2022,
+        "journal": "In 2022 IEEE Wireless Communications and Networking Conference (WCNC), pages 2727–2731 IEEE, 2022",
+        "doi": "",
+        "url": "https://scholar.google.com/scholar?q=Vision-position%20multimodal%20beam%20prediction%20using%20real%20millimeter%20wave%20datasets%20Gouranga%20Charan",
+        "citation_count": null,
+        "source": "google_scholar",
+        "scholar_url": "https://scholar.google.com/scholar?q=Vision-position%20multimodal%20beam%20prediction%20using%20real%20millimeter%20wave%20datasets%20Gouranga%20Charan",
+        "available": false,
+        "reason": "SERPAPI_KEY_NOT_CONFIGURED",
+        "raw_file": null,
+        "normalized_file": "data/normalized/google_scholar/eb0a4b79ab819861.json"
+      }
+    }
+  },
+  "doi_verification": {
+    "status": "conflict",
+    "canonical_doi": null,
+    "reconciled_with_arxiv": false,
+    "confidence": 0.2,
+    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3390/app11010279",
+        "reason": "Metadata mismatch (title_sim=0.44, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1145/3432221",
+        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/comst.2024.3361991",
+        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.52953/jwra8095",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/jiot.2024.3420455",
+        "reason": "Metadata mismatch (title_sim=0.52, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/ojcoms.2022.3162591",
+        "reason": "Metadata mismatch (title_sim=0.36, author_sim=0.32)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/pimrc56721.2023.10294031",
+        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3390/s21062140",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/jproc.2022.3173031",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/tmlcn.2023.3319286",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/ojcoms.2023.3342089",
+        "reason": "Metadata mismatch (title_sim=0.18, author_sim=0.47)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1145/3579450",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.2309.11811",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.33166/aetic.2025.05.001",
+        "reason": "Metadata mismatch (title_sim=0.37, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.2608.20486",
+        "reason": "Metadata mismatch (title_sim=0.39, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
+    "unverified_dois": []
+  },
+  "quality_and_conflicts": {
+    "overall_confidence": 1.0,
+    "metadata_completeness": 0.83,
+    "doi_verified": false,
+    "author_verified": true,
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3390/app11010279",
+        "reason": "Metadata mismatch (title_sim=0.44, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1145/3432221",
+        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/comst.2024.3361991",
+        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.52953/jwra8095",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/jiot.2024.3420455",
+        "reason": "Metadata mismatch (title_sim=0.52, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/ojcoms.2022.3162591",
+        "reason": "Metadata mismatch (title_sim=0.36, author_sim=0.32)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/pimrc56721.2023.10294031",
+        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3390/s21062140",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/jproc.2022.3173031",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/tmlcn.2023.3319286",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/ojcoms.2023.3342089",
+        "reason": "Metadata mismatch (title_sim=0.18, author_sim=0.47)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1145/3579450",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.2309.11811",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.33166/aetic.2025.05.001",
+        "reason": "Metadata mismatch (title_sim=0.37, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.2608.20486",
+        "reason": "Metadata mismatch (title_sim=0.39, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
+  },
+  "telemetry": {
+    "providers_queried": [
+      "google_scholar",
+      "crossref",
+      "openalex"
+    ],
+    "latency_ms": {
+      "google_scholar": 9.23,
+      "crossref": 34758.38,
+      "openalex": 38244.86
+    },
+    "candidate_counts": {
+      "google_scholar": 1,
+      "crossref": 0,
+      "openalex": 15
+    },
+    "errors": {}
+  }
+}

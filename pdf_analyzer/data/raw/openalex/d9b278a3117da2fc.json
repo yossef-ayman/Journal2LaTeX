@@ -1,0 +1,5117 @@
+{
+  "provider": "openalex",
+  "query_key": "title:Multimodal machine learning framework integrated with nanoinformatics for early prediction of rheumatoid arthritis",
+  "query_hash": "d9b278a3117da2fc",
+  "saved_at": "2026-08-31T07:16:25.264159+00:00",
+  "status_code": 200,
+  "candidate_count": 4,
+  "raw_response": {
+    "meta": {
+      "count": 4,
+      "db_response_time_ms": 633,
+      "page": 1,
+      "per_page": 10,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (Multimodal machine learning framework integrated with nanoinformatics for early prediction of rheumatoid arthritis)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Multimodal machine learning framework integrated with nanoinformatics for early prediction of rheumatoid arthritis",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Multimodal machine learning framework integrated with nanoinformatics for early prediction of rheumatoid arthritis&per_page=10"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4410545880",
+        "doi": "https://doi.org/10.1007/s12668-025-01980-w",
+        "title": "Artificial Intelligence-Assisted Design of Nanomedicines for Breast Cancer Diagnosis and Therapy: Advances, Challenges, and Future Directions",
+        "display_name": "Artificial Intelligence-Assisted Design of Nanomedicines for Breast Cancer Diagnosis and Therapy: Advances, Challenges, and Future Directions",
+        "relevance_score": 48.673145,
+        "publication_year": 2025,
+        "publication_date": "2025-05-21",
+        "ids": {
+          "openalex": "https://openalex.org/W4410545880",
+          "doi": "https://doi.org/10.1007/s12668-025-01980-w"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1007/s12668-025-01980-w",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1007/s12668-025-01980-w",
+          "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12668-025-01980-w.pdf",
+          "source": {
+            "id": "https://openalex.org/S4210168380",
+            "display_name": "BioNanoScience",
+            "issn_l": "2191-1630",
+            "issn": [
+              "2191-1630",
+              "2191-1649"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319900",
+            "host_organization_name": "Springer Science+Business Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319900",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Science+Business Media",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "BioNanoScience",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://link.springer.com/content/pdf/10.1007/s12668-025-01980-w.pdf",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5082865782",
+              "display_name": "Moein Shirzad",
+              "orcid": "https://orcid.org/0000-0002-9725-3551"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I165560825",
+                "display_name": "Mashhad University of Medical Sciences",
+                "ror": "https://ror.org/04sfka033",
+                "country_code": "IR",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I165560825"
+                ]
+              }
+            ],
+            "countries": [
+              "IR"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Maryam Shirzad",
+            "raw_affiliation_strings": [
+              "Pharmaceutical Technology Institute, Nanotechnology Research Center, Mashhad University of Medical Sciences, Mashhad, Iran"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Pharmaceutical Technology Institute, Nanotechnology Research Center, Mashhad University of Medical Sciences, Mashhad, Iran",
+                "institution_ids": [
+                  "https://openalex.org/I165560825"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5019155001",
+              "display_name": "Mina Shaban",
+              "orcid": "https://orcid.org/0000-0003-3643-3687"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I165560825",
+                "display_name": "Mashhad University of Medical Sciences",
+                "ror": "https://ror.org/04sfka033",
+                "country_code": "IR",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I165560825"
+                ]
+              }
+            ],
+            "countries": [
+              "IR"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Mina Shaban",
+            "raw_affiliation_strings": [
+              "Pharmaceutical Technology Institute, Nanotechnology Research Center, Mashhad University of Medical Sciences, Mashhad, Iran"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Pharmaceutical Technology Institute, Nanotechnology Research Center, Mashhad University of Medical Sciences, Mashhad, Iran",
+                "institution_ids": [
+                  "https://openalex.org/I165560825"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5088556342",
+              "display_name": "Vahideh Mohammadzadeh",
+              "orcid": "https://orcid.org/0000-0002-3684-7276"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I165560825",
+                "display_name": "Mashhad University of Medical Sciences",
+                "ror": "https://ror.org/04sfka033",
+                "country_code": "IR",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I165560825"
+                ]
+              }
+            ],
+            "countries": [
+              "IR"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Vahideh Mohammadzadeh",
+            "raw_affiliation_strings": [
+              "Pharmaceutical Technology Institute, Nanotechnology Research Center, Mashhad University of Medical Sciences, Mashhad, Iran"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Pharmaceutical Technology Institute, Nanotechnology Research Center, Mashhad University of Medical Sciences, Mashhad, Iran",
+                "institution_ids": [
+                  "https://openalex.org/I165560825"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5044699104",
+              "display_name": "Abbas Rahdar",
+              "orcid": "https://orcid.org/0000-0003-4766-9214"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I112450260",
+                "display_name": "Zabol University",
+                "ror": "https://ror.org/03d9mz263",
+                "country_code": "IR",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I112450260"
+                ]
+              }
+            ],
+            "countries": [
+              "IR"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Abbas Rahdar",
+            "raw_affiliation_strings": [
+              "Department of Physics, University of Zabol, Zabol, Iran"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Physics, University of Zabol, Zabol, Iran",
+                "institution_ids": [
+                  "https://openalex.org/I112450260"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5088886136",
+              "display_name": "Sonia Fathi‐karkan",
+              "orcid": "https://orcid.org/0000-0002-1712-9367"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210159363",
+                "display_name": "North Khorasan University of Medical Sciences",
+                "ror": "https://ror.org/0536t7y80",
+                "country_code": "IR",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210159363"
+                ]
+              }
+            ],
+            "countries": [
+              "IR"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Sonia Fathi-karkan",
+            "raw_affiliation_strings": [
+              "Department of Medical Nanotechnology, School of Medicine, North Khorasan University of Medical Science, Bojnurd, Iran",
+              "Natural Products and Medicinal Plants Research Center, North Khorasan University of Medical Sciences, Bojnurd, Iran"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Medical Nanotechnology, School of Medicine, North Khorasan University of Medical Science, Bojnurd, Iran",
+                "institution_ids": [
+                  "https://openalex.org/I4210159363"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Natural Products and Medicinal Plants Research Center, North Khorasan University of Medical Sciences, Bojnurd, Iran",
+                "institution_ids": [
+                  "https://openalex.org/I4210159363"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5112693796",
+              "display_name": "Zakieh Sadat Hoseini",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I70640408",
+                "display_name": "Tehran University of Medical Sciences",
+                "ror": "https://ror.org/01c4pz451",
+                "country_code": "IR",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I70640408"
+                ]
+              }
+            ],
+            "countries": [
+              "IR"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Zakieh Sadat Hoseini",
+            "raw_affiliation_strings": [
+              "Department of Medical Nanotechnology, School of Advanced Technologies in Medicine, Tehran University of Medical Sciences, Tehran, Iran"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Medical Nanotechnology, School of Advanced Technologies in Medicine, Tehran University of Medical Sciences, Tehran, Iran",
+                "institution_ids": [
+                  "https://openalex.org/I70640408"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5020441432",
+              "display_name": "Mehrdad Najafi",
+              "orcid": "https://orcid.org/0000-0001-6205-4838"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I133529467",
+                "display_name": "Sharif University of Technology",
+                "ror": "https://ror.org/024c2fq17",
+                "country_code": "IR",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I133529467"
+                ]
+              }
+            ],
+            "countries": [
+              "IR"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Mehrdad Najafi",
+            "raw_affiliation_strings": [
+              "Department of Chemical Engineering, Sharif University of Technology, Tehran, Iran"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Chemical Engineering, Sharif University of Technology, Tehran, Iran",
+                "institution_ids": [
+                  "https://openalex.org/I133529467"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5081995751",
+              "display_name": "Zelal Kharaba",
+              "orcid": "https://orcid.org/0000-0001-8012-684X"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I29891158",
+                "display_name": "University of Sharjah",
+                "ror": "https://ror.org/00engpz63",
+                "country_code": "AE",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I29891158"
+                ]
+              }
+            ],
+            "countries": [
+              "AE"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Zelal Kharaba",
+            "raw_affiliation_strings": [
+              "Department of Pharmacy Practice and Pharmacotherapeutics, College of Pharmacy, University of Sharjah, Sharjah, United Arab Emirates"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Pharmacy Practice and Pharmacotherapeutics, College of Pharmacy, University of Sharjah, Sharjah, United Arab Emirates",
+                "institution_ids": [
+                  "https://openalex.org/I29891158"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5011128203",
+              "display_name": "M. Ali Aboudzadeh",
+              "orcid": "https://orcid.org/0000-0001-8829-8072"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210098496",
+                "display_name": "Polymat",
+                "ror": "https://ror.org/00yz2sm97",
+                "country_code": "ES",
+                "type": "facility",
+                "lineage": [
+                  "https://openalex.org/I4210098496"
+                ]
+              }
+            ],
+            "countries": [
+              "ES"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "M. Ali Aboudzadeh",
+            "raw_affiliation_strings": [
+              "POLYMAT and Department of Applied Chemistry, Faculty of Chemistry, University of the Basque Country UPV/EHU, Donostia-San Sebastián, Spain"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "POLYMAT and Department of Applied Chemistry, Faculty of Chemistry, University of the Basque Country UPV/EHU, Donostia-San Sebastián, Spain",
+                "institution_ids": [
+                  "https://openalex.org/I4210098496"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 3,
+        "institutions_distinct_count": 7,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5011128203",
+          "https://openalex.org/A5019155001",
+          "https://openalex.org/A5020441432",
+          "https://openalex.org/A5044699104",
+          "https://openalex.org/A5081995751",
+          "https://openalex.org/A5082865782",
+          "https://openalex.org/A5088556342",
+          "https://openalex.org/A5088886136",
+          "https://openalex.org/A5112693796"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I112450260",
+          "https://openalex.org/I133529467",
+          "https://openalex.org/I165560825",
+          "https://openalex.org/I29891158",
+          "https://openalex.org/I4210098496",
+          "https://openalex.org/I4210159363",
+          "https://openalex.org/I70640408"
+        ],
+        "apc_list": {
+          "value": 3390,
+          "currency": "USD",
+          "value_usd": 3390
+        },
+        "apc_paid": {
+          "value": 3390,
+          "currency": "USD",
+          "value_usd": 3390
+        },
+        "fwci": 25.2029,
+        "has_fulltext": true,
+        "cited_by_count": 85,
+        "citation_normalized_percentile": {
+          "value": 0.99923164,
+          "is_in_top_1_percent": true,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 99,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "15",
+          "issue": "3",
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T12627",
+          "display_name": "Graphene and Nanomaterials Applications",
+          "score": 0.9890999794006348,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T12627",
+            "display_name": "Graphene and Nanomaterials Applications",
+            "score": 0.9890999794006348,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2204",
+              "display_name": "Biomedical Engineering"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11190",
+            "display_name": "3D Printing in Biomedical Research",
+            "score": 0.9789000153541565,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2204",
+              "display_name": "Biomedical Engineering"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10782",
+            "display_name": "Nanoplatforms for cancer theranostics",
+            "score": 0.9645000100135803,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2204",
+              "display_name": "Biomedical Engineering"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/breast-cancer",
+            "display_name": "Breast cancer",
+            "score": 0.624197781085968
+          },
+          {
+            "id": "https://openalex.org/keywords/cancer-therapy",
+            "display_name": "Cancer therapy",
+            "score": 0.48291847109794617
+          },
+          {
+            "id": "https://openalex.org/keywords/medicine",
+            "display_name": "Medicine",
+            "score": 0.4439782500267029
+          },
+          {
+            "id": "https://openalex.org/keywords/medical-physics",
+            "display_name": "Medical physics",
+            "score": 0.37795785069465637
+          },
+          {
+            "id": "https://openalex.org/keywords/cancer",
+            "display_name": "Cancer",
+            "score": 0.3689093589782715
+          },
+          {
+            "id": "https://openalex.org/keywords/internal-medicine",
+            "display_name": "Internal medicine",
+            "score": 0.11141970753669739
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C530470458",
+            "wikidata": "https://www.wikidata.org/wiki/Q128581",
+            "display_name": "Breast cancer",
+            "level": 3,
+            "score": 0.624197781085968
+          },
+          {
+            "id": "https://openalex.org/C2983331546",
+            "wikidata": "https://www.wikidata.org/wiki/Q12078",
+            "display_name": "Cancer therapy",
+            "level": 3,
+            "score": 0.48291847109794617
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.4439782500267029
+          },
+          {
+            "id": "https://openalex.org/C19527891",
+            "wikidata": "https://www.wikidata.org/wiki/Q1120908",
+            "display_name": "Medical physics",
+            "level": 1,
+            "score": 0.37795785069465637
+          },
+          {
+            "id": "https://openalex.org/C121608353",
+            "wikidata": "https://www.wikidata.org/wiki/Q12078",
+            "display_name": "Cancer",
+            "level": 2,
+            "score": 0.3689093589782715
+          },
+          {
+            "id": "https://openalex.org/C126322002",
+            "wikidata": "https://www.wikidata.org/wiki/Q11180",
+            "display_name": "Internal medicine",
+            "level": 1,
+            "score": 0.11141970753669739
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.1007/s12668-025-01980-w",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1007/s12668-025-01980-w",
+            "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12668-025-01980-w.pdf",
+            "source": {
+              "id": "https://openalex.org/S4210168380",
+              "display_name": "BioNanoScience",
+              "issn_l": "2191-1630",
+              "issn": [
+                "2191-1630",
+                "2191-1649"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310319900",
+              "host_organization_name": "Springer Science+Business Media",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310319900",
+                "https://openalex.org/P4310319965"
+              ],
+              "host_organization_lineage_names": [
+                "Springer Science+Business Media",
+                "Springer Nature"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "BioNanoScience",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1007/s12668-025-01980-w",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1007/s12668-025-01980-w",
+          "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12668-025-01980-w.pdf",
+          "source": {
+            "id": "https://openalex.org/S4210168380",
+            "display_name": "BioNanoScience",
+            "issn_l": "2191-1630",
+            "issn": [
+              "2191-1630",
+              "2191-1649"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319900",
+            "host_organization_name": "Springer Science+Business Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319900",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Science+Business Media",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "BioNanoScience",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320321919",
+            "display_name": "Euskal Herriko Unibertsitatea",
+            "ror": "https://ror.org/000xsnr85"
+          }
+        ],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4410545880.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4410545880.grobid-xml"
+        },
+        "referenced_works_count": 246,
+        "referenced_works": [
+          "https://openalex.org/W185134482",
+          "https://openalex.org/W1527313350",
+          "https://openalex.org/W1843302206",
+          "https://openalex.org/W1901853767",
+          "https://openalex.org/W1936102867",
+          "https://openalex.org/W1970838453",
+          "https://openalex.org/W2011974319",
+          "https://openalex.org/W2022275279",
+          "https://openalex.org/W2039274509",
+          "https://openalex.org/W2051925512",
+          "https://openalex.org/W2058317705",
+          "https://openalex.org/W2071231393",
+          "https://openalex.org/W2074920600",
+          "https://openalex.org/W2079433440",
+          "https://openalex.org/W2097105120",
+          "https://openalex.org/W2103976232",
+          "https://openalex.org/W2104549725",
+          "https://openalex.org/W2126972117",
+          "https://openalex.org/W2135260416",
+          "https://openalex.org/W2183755808",
+          "https://openalex.org/W2187976253",
+          "https://openalex.org/W2205971355",
+          "https://openalex.org/W2318077306",
+          "https://openalex.org/W2394081065",
+          "https://openalex.org/W2411047071",
+          "https://openalex.org/W2418148086",
+          "https://openalex.org/W2460584341",
+          "https://openalex.org/W2469134118",
+          "https://openalex.org/W2512628626",
+          "https://openalex.org/W2546948247",
+          "https://openalex.org/W2564567560",
+          "https://openalex.org/W2567360788",
+          "https://openalex.org/W2580010037",
+          "https://openalex.org/W2745482862",
+          "https://openalex.org/W2746384296",
+          "https://openalex.org/W2751055467",
+          "https://openalex.org/W2752197859",
+          "https://openalex.org/W2757533756",
+          "https://openalex.org/W2764317695",
+          "https://openalex.org/W2791206668",
+          "https://openalex.org/W2793302935",
+          "https://openalex.org/W2803214400",
+          "https://openalex.org/W2804846127",
+          "https://openalex.org/W2809184459",
+          "https://openalex.org/W2883045336",
+          "https://openalex.org/W2884350249",
+          "https://openalex.org/W2888051851",
+          "https://openalex.org/W2892256234",
+          "https://openalex.org/W2899467073",
+          "https://openalex.org/W2902922537",
+          "https://openalex.org/W2914206423",
+          "https://openalex.org/W2929514848",
+          "https://openalex.org/W2937418703",
+          "https://openalex.org/W2941467331",
+          "https://openalex.org/W2944812497",
+          "https://openalex.org/W2946370795",
+          "https://openalex.org/W2957366757",
+          "https://openalex.org/W2963716858",
+          "https://openalex.org/W2982406227",
+          "https://openalex.org/W2983564135",
+          "https://openalex.org/W2991428436",
+          "https://openalex.org/W2995683363",
+          "https://openalex.org/W2998175747",
+          "https://openalex.org/W2998969143",
+          "https://openalex.org/W3011742849",
+          "https://openalex.org/W3014578460",
+          "https://openalex.org/W3020128160",
+          "https://openalex.org/W3023402959",
+          "https://openalex.org/W3036246133",
+          "https://openalex.org/W3039289988",
+          "https://openalex.org/W3041676458",
+          "https://openalex.org/W3045656459",
+          "https://openalex.org/W3046594701",
+          "https://openalex.org/W3051909630",
+          "https://openalex.org/W3082547974",
+          "https://openalex.org/W3083505070",
+          "https://openalex.org/W3083698728",
+          "https://openalex.org/W3088203978",
+          "https://openalex.org/W3090124822",
+          "https://openalex.org/W3092478145",
+          "https://openalex.org/W3093593152",
+          "https://openalex.org/W3095351985",
+          "https://openalex.org/W3095392829",
+          "https://openalex.org/W3097208033",
+          "https://openalex.org/W3097231471",
+          "https://openalex.org/W3105357530",
+          "https://openalex.org/W3112418383",
+          "https://openalex.org/W3113435490",
+          "https://openalex.org/W3113698248",
+          "https://openalex.org/W3119441468",
+          "https://openalex.org/W3120532656",
+          "https://openalex.org/W3123130443",
+          "https://openalex.org/W3127347132",
+          "https://openalex.org/W3135028703",
+          "https://openalex.org/W3153418506",
+          "https://openalex.org/W3157530217",
+          "https://openalex.org/W3157853087",
+          "https://openalex.org/W3159357811",
+          "https://openalex.org/W3163566284",
+          "https://openalex.org/W3170169067",
+          "https://openalex.org/W3192087497",
+          "https://openalex.org/W3197346711",
+          "https://openalex.org/W3203390765",
+          "https://openalex.org/W3213866750",
+          "https://openalex.org/W3215119648",
+          "https://openalex.org/W4200184670",
+          "https://openalex.org/W4205299273",
+          "https://openalex.org/W4205454992",
+          "https://openalex.org/W4205685992",
+          "https://openalex.org/W4210638841",
+          "https://openalex.org/W4213036946",
+          "https://openalex.org/W4213070443",
+          "https://openalex.org/W4213190919",
+          "https://openalex.org/W4214684184",
+          "https://openalex.org/W4220999455",
+          "https://openalex.org/W4221040180",
+          "https://openalex.org/W4224214472",
+          "https://openalex.org/W4226158530",
+          "https://openalex.org/W4226480458",
+          "https://openalex.org/W4229024544",
+          "https://openalex.org/W4232206703",
+          "https://openalex.org/W4233129233",
+          "https://openalex.org/W4233394865",
+          "https://openalex.org/W4239612542",
+          "https://openalex.org/W4245992848",
+          "https://openalex.org/W4251852185",
+          "https://openalex.org/W4280518197",
+          "https://openalex.org/W4280638182",
+          "https://openalex.org/W4281478980",
+          "https://openalex.org/W4281715285",
+          "https://openalex.org/W4282917020",
+          "https://openalex.org/W4283453956",
+          "https://openalex.org/W4283528505",
+          "https://openalex.org/W4288432579",
+          "https://openalex.org/W4289317700",
+          "https://openalex.org/W4294132958",
+          "https://openalex.org/W4296268709",
+          "https://openalex.org/W4306850130",
+          "https://openalex.org/W4307475977",
+          "https://openalex.org/W4310037094",
+          "https://openalex.org/W4310671305",
+          "https://openalex.org/W4312074709",
+          "https://openalex.org/W4312204175",
+          "https://openalex.org/W4313166440",
+          "https://openalex.org/W4313559142",
+          "https://openalex.org/W4315632125",
+          "https://openalex.org/W4315647946",
+          "https://openalex.org/W4322768409",
+          "https://openalex.org/W4324128576",
+          "https://openalex.org/W4360982639",
+          "https://openalex.org/W4360994352",
+          "https://openalex.org/W4361268141",
+          "https://openalex.org/W4366218675",
+          "https://openalex.org/W4366289286",
+          "https://openalex.org/W4366774702",
+          "https://openalex.org/W4376131005",
+          "https://openalex.org/W4377097543",
+          "https://openalex.org/W4378639340",
+          "https://openalex.org/W4378782844",
+          "https://openalex.org/W4379193293",
+          "https://openalex.org/W4379881785",
+          "https://openalex.org/W4381885398",
+          "https://openalex.org/W4382996772",
+          "https://openalex.org/W4383912288",
+          "https://openalex.org/W4385354937",
+          "https://openalex.org/W4385357540",
+          "https://openalex.org/W4385446771",
+          "https://openalex.org/W4385514649",
+          "https://openalex.org/W4386141407",
+          "https://openalex.org/W4386291745",
+          "https://openalex.org/W4386958277",
+          "https://openalex.org/W4386996078",
+          "https://openalex.org/W4387676126",
+          "https://openalex.org/W4387763818",
+          "https://openalex.org/W4387856013",
+          "https://openalex.org/W4387877629",
+          "https://openalex.org/W4388275106",
+          "https://openalex.org/W4388428653",
+          "https://openalex.org/W4389668492",
+          "https://openalex.org/W4389679039",
+          "https://openalex.org/W4389722405",
+          "https://openalex.org/W4390141677",
+          "https://openalex.org/W4390234380",
+          "https://openalex.org/W4390278105",
+          "https://openalex.org/W4390588045",
+          "https://openalex.org/W4390617904",
+          "https://openalex.org/W4390619179",
+          "https://openalex.org/W4390976827",
+          "https://openalex.org/W4392107819",
+          "https://openalex.org/W4392293571",
+          "https://openalex.org/W4392452060",
+          "https://openalex.org/W4392710726",
+          "https://openalex.org/W4393098261",
+          "https://openalex.org/W4393153657",
+          "https://openalex.org/W4393608435",
+          "https://openalex.org/W4394583517",
+          "https://openalex.org/W4394824917",
+          "https://openalex.org/W4394913052",
+          "https://openalex.org/W4394941837",
+          "https://openalex.org/W4394978625",
+          "https://openalex.org/W4395958054",
+          "https://openalex.org/W4396859644",
+          "https://openalex.org/W4398183330",
+          "https://openalex.org/W4398783768",
+          "https://openalex.org/W4399092002",
+          "https://openalex.org/W4399246618",
+          "https://openalex.org/W4399423146",
+          "https://openalex.org/W4399543586",
+          "https://openalex.org/W4399677534",
+          "https://openalex.org/W4399761864",
+          "https://openalex.org/W4399849757",
+          "https://openalex.org/W4400128189",
+          "https://openalex.org/W4400235193",
+          "https://openalex.org/W4400270303",
+          "https://openalex.org/W4400449316",
+          "https://openalex.org/W4400576545",
+          "https://openalex.org/W4400823983",
+          "https://openalex.org/W4400916221",
+          "https://openalex.org/W4401119658",
+          "https://openalex.org/W4401543967",
+          "https://openalex.org/W4401616798",
+          "https://openalex.org/W4401682173",
+          "https://openalex.org/W4401733362",
+          "https://openalex.org/W4402368116",
+          "https://openalex.org/W4402388228",
+          "https://openalex.org/W4402418072",
+          "https://openalex.org/W4402664711",
+          "https://openalex.org/W4402693007",
+          "https://openalex.org/W4402760533",
+          "https://openalex.org/W4402809321",
+          "https://openalex.org/W4402948375",
+          "https://openalex.org/W4403008105",
+          "https://openalex.org/W4403051813",
+          "https://openalex.org/W4403104495",
+          "https://openalex.org/W4403266782",
+          "https://openalex.org/W4403308044",
+          "https://openalex.org/W4404422779",
+          "https://openalex.org/W4405320651",
+          "https://openalex.org/W4407242374",
+          "https://openalex.org/W4408348581",
+          "https://openalex.org/W4408884844",
+          "https://openalex.org/W6713773409",
+          "https://openalex.org/W6733593308",
+          "https://openalex.org/W6754589026",
+          "https://openalex.org/W6848256029",
+          "https://openalex.org/W6872490639"
+        ],
+        "related_works": [
+          "https://openalex.org/W2899084033",
+          "https://openalex.org/W2748952813",
+          "https://openalex.org/W4391375266",
+          "https://openalex.org/W3031052312",
+          "https://openalex.org/W4389568370",
+          "https://openalex.org/W3032375762",
+          "https://openalex.org/W1995515455",
+          "https://openalex.org/W2080531066",
+          "https://openalex.org/W3108674512",
+          "https://openalex.org/W4285386966"
+        ],
+        "abstract_inverted_index": {
+          "This": [
+            0
+          ],
+          "paper": [
+            1
+          ],
+          "explores": [
+            2
+          ],
+          "the": [
+            3,
+            20,
+            38,
+            123,
+            126
+          ],
+          "revolutionary": [
+            4
+          ],
+          "collaboration": [
+            5,
+            130
+          ],
+          "between": [
+            6
+          ],
+          "artificial": [
+            7
+          ],
+          "intelligence": [
+            8
+          ],
+          "(AI)": [
+            9
+          ],
+          "and": [
+            10,
+            14,
+            35,
+            40,
+            52,
+            60,
+            79,
+            98,
+            112,
+            119,
+            135,
+            147
+          ],
+          "nanotechnology": [
+            11,
+            66
+          ],
+          "in": [
+            12,
+            47,
+            95
+          ],
+          "detecting": [
+            13
+          ],
+          "treating": [
+            15
+          ],
+          "breast": [
+            16,
+            140
+          ],
+          "cancer.": [
+            17
+          ],
+          "It": [
+            18
+          ],
+          "highlights": [
+            19
+          ],
+          "synergistic": [
+            21
+          ],
+          "potential": [
+            22
+          ],
+          "of": [
+            23,
+            30,
+            42
+          ],
+          "both": [
+            24
+          ],
+          "fields": [
+            25
+          ],
+          "to": [
+            26,
+            68,
+            116,
+            131,
+            138
+          ],
+          "overcome": [
+            27
+          ],
+          "significant": [
+            28
+          ],
+          "limitations": [
+            29
+          ],
+          "modern": [
+            31
+          ],
+          "approaches.": [
+            32
+          ],
+          "Clinical": [
+            33
+          ],
+          "applications": [
+            34
+          ],
+          "research": [
+            36
+          ],
+          "demonstrate": [
+            37
+          ],
+          "diversity": [
+            39
+          ],
+          "depth": [
+            41
+          ],
+          "AI-based": [
+            43
+          ],
+          "deep": [
+            44
+          ],
+          "learning": [
+            45
+          ],
+          "models": [
+            46
+          ],
+          "diagnostics,": [
+            48
+          ],
+          "improving": [
+            49
+          ],
+          "diagnostic": [
+            50
+          ],
+          "accuracy": [
+            51
+          ],
+          "enabling": [
+            53,
+            72
+          ],
+          "precise,": [
+            54
+          ],
+          "individualized": [
+            55,
+            148
+          ],
+          "therapy": [
+            56
+          ],
+          "through": [
+            57
+          ],
+          "advanced": [
+            58
+          ],
+          "imaging": [
+            59
+          ],
+          "biomarker": [
+            61
+          ],
+          "discovery.": [
+            62
+          ],
+          "Through": [
+            63
+          ],
+          "intelligent": [
+            64
+          ],
+          "nanocarriers,": [
+            65
+          ],
+          "contributes": [
+            67
+          ],
+          "these": [
+            69
+          ],
+          "advancements": [
+            70,
+            137
+          ],
+          "by": [
+            71
+          ],
+          "targeted": [
+            73
+          ],
+          "drug": [
+            74
+          ],
+          "delivery,": [
+            75
+          ],
+          "minimizing": [
+            76
+          ],
+          "systemic": [
+            77
+          ],
+          "toxicity,": [
+            78
+          ],
+          "providing": [
+            80
+          ],
+          "theranostic": [
+            81
+          ],
+          "capabilities": [
+            82
+          ],
+          "for": [
+            83,
+            128
+          ],
+          "real-time": [
+            84
+          ],
+          "monitoring.": [
+            85
+          ],
+          "However,": [
+            86
+          ],
+          "challenges": [
+            87
+          ],
+          "remain,": [
+            88
+          ],
+          "including": [
+            89
+          ],
+          "data": [
+            90
+          ],
+          "accessibility,": [
+            91
+          ],
+          "model": [
+            92
+          ],
+          "interpretability,": [
+            93
+          ],
+          "scalability": [
+            94
+          ],
+          "nanocarrier": [
+            96
+          ],
+          "manufacturing,": [
+            97
+          ],
+          "tumor": [
+            99
+          ],
+          "diversity.": [
+            100
+          ],
+          "Future": [
+            101
+          ],
+          "improvements": [
+            102
+          ],
+          "should": [
+            103
+          ],
+          "focus": [
+            104
+          ],
+          "on": [
+            105
+          ],
+          "developing": [
+            106
+          ],
+          "multifunctional": [
+            107
+          ],
+          "nanoparticles,": [
+            108
+          ],
+          "flexible": [
+            109
+          ],
+          "AI": [
+            110
+          ],
+          "algorithms,": [
+            111
+          ],
+          "scalable,": [
+            113
+          ],
+          "cost-effective": [
+            114
+          ],
+          "solutions": [
+            115
+          ],
+          "enhance": [
+            117
+          ],
+          "accessibility": [
+            118
+          ],
+          "clinical": [
+            120
+          ],
+          "integration.": [
+            121
+          ],
+          "Hence,": [
+            122
+          ],
+          "study": [
+            124
+          ],
+          "emphasizes": [
+            125
+          ],
+          "need": [
+            127
+          ],
+          "multidisciplinary": [
+            129
+          ],
+          "eliminate": [
+            132
+          ],
+          "existing": [
+            133
+          ],
+          "barriers": [
+            134
+          ],
+          "generate": [
+            136
+          ],
+          "transform": [
+            139
+          ],
+          "cancer": [
+            141
+          ],
+          "therapies": [
+            142
+          ],
+          "into": [
+            143
+          ],
+          "more": [
+            144
+          ],
+          "effective,": [
+            145
+          ],
+          "safer,": [
+            146
+          ],
+          "methods.": [
+            149
+          ],
+          "Graphical": [
+            150
+          ],
+          "Abstract": [
+            151
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 63
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 22
+          }
+        ],
+        "updated_date": "2026-08-29T07:29:34.045763",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W7141848150",
+        "doi": "https://doi.org/10.1021/cbe.5c00188",
+        "title": "New Frontiers in AI-Nano Converged Platforms for Intelligent Diagnostics, Therapeutics, and Safety Evaluation",
+        "display_name": "New Frontiers in AI-Nano Converged Platforms for Intelligent Diagnostics, Therapeutics, and Safety Evaluation",
+        "relevance_score": 17.99349,
+        "publication_year": 2026,
+        "publication_date": "2026-03-28",
+        "ids": {
+          "openalex": "https://openalex.org/W7141848150",
+          "doi": "https://doi.org/10.1021/cbe.5c00188",
+          "pmid": "https://pubmed.ncbi.nlm.nih.gov/42376261"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1021/cbe.5c00188",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1021/cbe.5c00188",
+          "pdf_url": "https://pubs.acs.org/doi/pdf/10.1021/cbe.5c00188?ref=article_openPDF",
+          "source": {
+            "id": "https://openalex.org/S4390648409",
+            "display_name": "Chem & Bio Engineering",
+            "issn_l": "2836-967X",
+            "issn": [
+              "2836-967X"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320006",
+            "host_organization_name": "American Chemical Society",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320006"
+            ],
+            "host_organization_lineage_names": [
+              "American Chemical Society"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Chem &amp; Bio Engineering",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj",
+          "pubmed"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://pubs.acs.org/doi/pdf/10.1021/cbe.5c00188?ref=article_openPDF",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5135766278",
+              "display_name": "Huijie Zhou",
+              "orcid": "https://orcid.org/0009-0000-3016-6915"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I78978612",
+                "display_name": "Yangzhou University",
+                "ror": "https://ror.org/03tqb8s11",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Huijie Zhou",
+            "raw_affiliation_strings": [
+              "Institute of Technology for Carbon Neutralization",
+              "School of Chemistry and Chemical Engineering",
+              "Yangzhou University"
+            ],
+            "raw_orcid": "https://orcid.org/0009-0000-3016-6915",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institute of Technology for Carbon Neutralization",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "School of Chemistry and Chemical Engineering",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "Yangzhou University",
+                "institution_ids": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5101150109",
+              "display_name": "Jiming Xu",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I78978612",
+                "display_name": "Yangzhou University",
+                "ror": "https://ror.org/03tqb8s11",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Jiming Xu",
+            "raw_affiliation_strings": [
+              "Institute of Technology for Carbon Neutralization",
+              "Yangzhou University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institute of Technology for Carbon Neutralization",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "Yangzhou University",
+                "institution_ids": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5121277027",
+              "display_name": "Xinyu Qin",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I78978612",
+                "display_name": "Yangzhou University",
+                "ror": "https://ror.org/03tqb8s11",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Xinyu Qin",
+            "raw_affiliation_strings": [
+              "School of Chemistry and Chemical Engineering",
+              "Yangzhou University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "School of Chemistry and Chemical Engineering",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "Yangzhou University",
+                "institution_ids": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5101603527",
+              "display_name": "Jing Zhang",
+              "orcid": "https://orcid.org/0000-0003-3064-7625"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I78978612",
+                "display_name": "Yangzhou University",
+                "ror": "https://ror.org/03tqb8s11",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Jing Zhang",
+            "raw_affiliation_strings": [
+              "Institute of Technology for Carbon Neutralization",
+              "Yangzhou University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institute of Technology for Carbon Neutralization",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "Yangzhou University",
+                "institution_ids": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5110471653",
+              "display_name": "Wenjiang Zou",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I78978612",
+                "display_name": "Yangzhou University",
+                "ror": "https://ror.org/03tqb8s11",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Wenjiang Zou",
+            "raw_affiliation_strings": [
+              "Institute of Technology for Carbon Neutralization",
+              "Yangzhou University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institute of Technology for Carbon Neutralization",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "Yangzhou University",
+                "institution_ids": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5087437525",
+              "display_name": "Mohsen Shakouri",
+              "orcid": "https://orcid.org/0000-0002-8449-9763"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I32625721",
+                "display_name": "University of Saskatchewan",
+                "ror": "https://ror.org/010x8gc63",
+                "country_code": "CA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I32625721"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I83308685",
+                "display_name": "Canadian Light Source (Canada)",
+                "ror": "https://ror.org/001bvc968",
+                "country_code": "CA",
+                "type": "company",
+                "lineage": [
+                  "https://openalex.org/I32625721",
+                  "https://openalex.org/I83308685"
+                ]
+              }
+            ],
+            "countries": [
+              "CA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Mohsen Shakouri",
+            "raw_affiliation_strings": [
+              "Canadian Light Source",
+              "University of Saskatchewan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Canadian Light Source",
+                "institution_ids": [
+                  "https://openalex.org/I83308685"
+                ]
+              },
+              {
+                "raw_affiliation_string": "University of Saskatchewan",
+                "institution_ids": [
+                  "https://openalex.org/I32625721"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5005094013",
+              "display_name": "Jun Wu",
+              "orcid": "https://orcid.org/0000-0002-1891-368X"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210137355",
+                "display_name": "Northern Jiangsu People's Hospital",
+                "ror": "https://ror.org/04gz17b59",
+                "country_code": "CN",
+                "type": "healthcare",
+                "lineage": [
+                  "https://openalex.org/I4210137355"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Jun Wu",
+            "raw_affiliation_strings": [
+              "Department of Thoracic Surgery",
+              "Northern Jiangsu People’s Hospital"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Thoracic Surgery",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "Northern Jiangsu People’s Hospital",
+                "institution_ids": [
+                  "https://openalex.org/I4210137355"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5111226739",
+              "display_name": "LvZhou Li",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I78978612",
+                "display_name": "Yangzhou University",
+                "ror": "https://ror.org/03tqb8s11",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Lvzhou Li",
+            "raw_affiliation_strings": [
+              "Institute of Technology for Carbon Neutralization",
+              "Yangzhou University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institute of Technology for Carbon Neutralization",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "Yangzhou University",
+                "institution_ids": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5128687045",
+              "display_name": "Yuping Li",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210137355",
+                "display_name": "Northern Jiangsu People's Hospital",
+                "ror": "https://ror.org/04gz17b59",
+                "country_code": "CN",
+                "type": "healthcare",
+                "lineage": [
+                  "https://openalex.org/I4210137355"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Yuping Li",
+            "raw_affiliation_strings": [
+              "Department of Neurosurgery",
+              "Northern Jiangsu People’s Hospital Affiliated to Yangzhou University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Neurosurgery",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "Northern Jiangsu People’s Hospital Affiliated to Yangzhou University",
+                "institution_ids": [
+                  "https://openalex.org/I4210137355"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5130820096",
+              "display_name": "Jianning Ding",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I78978612",
+                "display_name": "Yangzhou University",
+                "ror": "https://ror.org/03tqb8s11",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Jianning Ding",
+            "raw_affiliation_strings": [
+              "Institute of Technology for Carbon Neutralization",
+              "Yangzhou University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institute of Technology for Carbon Neutralization",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "Yangzhou University",
+                "institution_ids": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5130869054",
+              "display_name": "Huan Pang",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I78978612",
+                "display_name": "Yangzhou University",
+                "ror": "https://ror.org/03tqb8s11",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Huan Pang",
+            "raw_affiliation_strings": [
+              "Institute of Technology for Carbon Neutralization",
+              "School of Chemistry and Chemical Engineering",
+              "Yangzhou University"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-5319-0480",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institute of Technology for Carbon Neutralization",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "School of Chemistry and Chemical Engineering",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "Yangzhou University",
+                "institution_ids": [
+                  "https://openalex.org/I78978612"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 4,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5121277027",
+          "https://openalex.org/A5128687045",
+          "https://openalex.org/A5130869054"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I4210137355",
+          "https://openalex.org/I78978612"
+        ],
+        "apc_list": {
+          "value": 0,
+          "currency": "USD",
+          "value_usd": 0
+        },
+        "apc_paid": null,
+        "fwci": 6.4672,
+        "has_fulltext": true,
+        "cited_by_count": 2,
+        "citation_normalized_percentile": {
+          "value": 0.96154396,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 97,
+          "max": 98
+        },
+        "biblio": {
+          "volume": "3",
+          "issue": "6",
+          "first_page": "555",
+          "last_page": "584"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11636",
+          "display_name": "Artificial Intelligence in Healthcare and Education",
+          "score": 0.1264999955892563,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2718",
+            "display_name": "Health Informatics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11636",
+            "display_name": "Artificial Intelligence in Healthcare and Education",
+            "score": 0.1264999955892563,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2718",
+              "display_name": "Health Informatics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/27",
+              "display_name": "Medicine"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/4",
+              "display_name": "Health Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10211",
+            "display_name": "Computational Drug Discovery Methods",
+            "score": 0.055399999022483826,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1703",
+              "display_name": "Computational Theory and Mathematics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/17",
+              "display_name": "Computer Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11948",
+            "display_name": "Machine Learning in Materials Science",
+            "score": 0.04910000041127205,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2505",
+              "display_name": "Materials Chemistry"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/25",
+              "display_name": "Materials Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/key",
+            "display_name": "Key (lock)",
+            "score": 0.5824999809265137
+          },
+          {
+            "id": "https://openalex.org/keywords/sensor-fusion",
+            "display_name": "Sensor fusion",
+            "score": 0.34290000796318054
+          },
+          {
+            "id": "https://openalex.org/keywords/intelligent-decision-support-system",
+            "display_name": "Intelligent decision support system",
+            "score": 0.31610000133514404
+          },
+          {
+            "id": "https://openalex.org/keywords/nanosensor",
+            "display_name": "Nanosensor",
+            "score": 0.31040000915527344
+          },
+          {
+            "id": "https://openalex.org/keywords/risk-assessment",
+            "display_name": "Risk assessment",
+            "score": 0.30790001153945923
+          },
+          {
+            "id": "https://openalex.org/keywords/precision-medicine",
+            "display_name": "Precision medicine",
+            "score": 0.30239999294281006
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C26517878",
+            "wikidata": "https://www.wikidata.org/wiki/Q228039",
+            "display_name": "Key (lock)",
+            "level": 2,
+            "score": 0.5824999809265137
+          },
+          {
+            "id": "https://openalex.org/C112930515",
+            "wikidata": "https://www.wikidata.org/wiki/Q4389547",
+            "display_name": "Risk analysis (engineering)",
+            "level": 1,
+            "score": 0.5181999802589417
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.4934999942779541
+          },
+          {
+            "id": "https://openalex.org/C154945302",
+            "wikidata": "https://www.wikidata.org/wiki/Q11660",
+            "display_name": "Artificial intelligence",
+            "level": 1,
+            "score": 0.40709999203681946
+          },
+          {
+            "id": "https://openalex.org/C127413603",
+            "wikidata": "https://www.wikidata.org/wiki/Q11023",
+            "display_name": "Engineering",
+            "level": 0,
+            "score": 0.37439998984336853
+          },
+          {
+            "id": "https://openalex.org/C201995342",
+            "wikidata": "https://www.wikidata.org/wiki/Q682496",
+            "display_name": "Systems engineering",
+            "level": 1,
+            "score": 0.3474999964237213
+          },
+          {
+            "id": "https://openalex.org/C33954974",
+            "wikidata": "https://www.wikidata.org/wiki/Q486494",
+            "display_name": "Sensor fusion",
+            "level": 2,
+            "score": 0.34290000796318054
+          },
+          {
+            "id": "https://openalex.org/C56397880",
+            "wikidata": "https://www.wikidata.org/wiki/Q6044094",
+            "display_name": "Intelligent decision support system",
+            "level": 2,
+            "score": 0.31610000133514404
+          },
+          {
+            "id": "https://openalex.org/C41858301",
+            "wikidata": "https://www.wikidata.org/wiki/Q2327870",
+            "display_name": "Nanosensor",
+            "level": 2,
+            "score": 0.31040000915527344
+          },
+          {
+            "id": "https://openalex.org/C12174686",
+            "wikidata": "https://www.wikidata.org/wiki/Q1058438",
+            "display_name": "Risk assessment",
+            "level": 2,
+            "score": 0.30790001153945923
+          },
+          {
+            "id": "https://openalex.org/C163763905",
+            "wikidata": "https://www.wikidata.org/wiki/Q17075943",
+            "display_name": "Precision medicine",
+            "level": 2,
+            "score": 0.30239999294281006
+          },
+          {
+            "id": "https://openalex.org/C119857082",
+            "wikidata": "https://www.wikidata.org/wiki/Q2539",
+            "display_name": "Machine learning",
+            "level": 1,
+            "score": 0.29829999804496765
+          },
+          {
+            "id": "https://openalex.org/C157170001",
+            "wikidata": "https://www.wikidata.org/wiki/Q4781507",
+            "display_name": "Applications of artificial intelligence",
+            "level": 2,
+            "score": 0.2759999930858612
+          },
+          {
+            "id": "https://openalex.org/C58328972",
+            "wikidata": "https://www.wikidata.org/wiki/Q184609",
+            "display_name": "Expert system",
+            "level": 2,
+            "score": 0.2702000141143799
+          },
+          {
+            "id": "https://openalex.org/C15083742",
+            "wikidata": "https://www.wikidata.org/wiki/Q261659",
+            "display_name": "Nanomedicine",
+            "level": 3,
+            "score": 0.2639000117778778
+          },
+          {
+            "id": "https://openalex.org/C2164484",
+            "wikidata": "https://www.wikidata.org/wiki/Q5170150",
+            "display_name": "Core (optical fiber)",
+            "level": 2,
+            "score": 0.26330000162124634
+          }
+        ],
+        "mesh": [],
+        "locations_count": 4,
+        "locations": [
+          {
+            "id": "doi:10.1021/cbe.5c00188",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1021/cbe.5c00188",
+            "pdf_url": "https://pubs.acs.org/doi/pdf/10.1021/cbe.5c00188?ref=article_openPDF",
+            "source": {
+              "id": "https://openalex.org/S4390648409",
+              "display_name": "Chem & Bio Engineering",
+              "issn_l": "2836-967X",
+              "issn": [
+                "2836-967X"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320006",
+              "host_organization_name": "American Chemical Society",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320006"
+              ],
+              "host_organization_lineage_names": [
+                "American Chemical Society"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by-nc-nd",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Chem &amp; Bio Engineering",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmid:42376261",
+            "is_oa": false,
+            "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/42376261",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306525036",
+              "display_name": "PubMed",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1299303238",
+              "host_organization_name": "National Institutes of Health",
+              "host_organization_lineage": [
+                "https://openalex.org/I1299303238"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Chem & bio engineering",
+            "raw_type": "Journal Article"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:472b01e7582545dd963c11ae7acbdbe3",
+            "is_oa": false,
+            "landing_page_url": "https://doaj.org/article/472b01e7582545dd963c11ae7acbdbe3",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Chem & Bio Engineering, Vol 3, Iss 6, Pp 555-584 (2026)",
+            "raw_type": "article"
+          },
+          {
+            "id": "pmh:oai:pubmedcentral.nih.gov:13312061",
+            "is_oa": true,
+            "landing_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13312061/",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S2764455111",
+              "display_name": "PubMed Central",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1299303238",
+              "host_organization_name": "National Institutes of Health",
+              "host_organization_lineage": [
+                "https://openalex.org/I1299303238"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Chem Bio Eng",
+            "raw_type": "Text"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1021/cbe.5c00188",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1021/cbe.5c00188",
+          "pdf_url": "https://pubs.acs.org/doi/pdf/10.1021/cbe.5c00188?ref=article_openPDF",
+          "source": {
+            "id": "https://openalex.org/S4390648409",
+            "display_name": "Chem & Bio Engineering",
+            "issn_l": "2836-967X",
+            "issn": [
+              "2836-967X"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320006",
+            "host_organization_name": "American Chemical Society",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320006"
+            ],
+            "host_organization_lineage_names": [
+              "American Chemical Society"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Chem &amp; Bio Engineering",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.575316309928894,
+            "id": "https://metadata.un.org/sdg/9",
+            "display_name": "Industry, innovation and infrastructure"
+          }
+        ],
+        "awards": [
+          {
+            "id": "https://openalex.org/G1596414669",
+            "display_name": null,
+            "funder_award_id": "2025M770225",
+            "funder_id": "https://openalex.org/F4320321543",
+            "funder_display_name": "China Postdoctoral Science Foundation"
+          },
+          {
+            "id": "https://openalex.org/G2549499928",
+            "display_name": null,
+            "funder_award_id": "NSFC‐22509178",
+            "funder_id": "https://openalex.org/F4320321001",
+            "funder_display_name": "National Natural Science Foundation of China"
+          },
+          {
+            "id": "https://openalex.org/G3891913282",
+            "display_name": null,
+            "funder_award_id": "52371240",
+            "funder_id": "https://openalex.org/F4320321001",
+            "funder_display_name": "National Natural Science Foundation of China"
+          },
+          {
+            "id": "https://openalex.org/G6789307622",
+            "display_name": null,
+            "funder_award_id": "22509178",
+            "funder_id": "https://openalex.org/F4320321001",
+            "funder_display_name": "National Natural Science Foundation of China"
+          }
+        ],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320321001",
+            "display_name": "National Natural Science Foundation of China",
+            "ror": "https://ror.org/01h0zpd94"
+          },
+          {
+            "id": "https://openalex.org/F4320321543",
+            "display_name": "China Postdoctoral Science Foundation",
+            "ror": "https://ror.org/0426zh255"
+          }
+        ],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W7141848150.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W7141848150.grobid-xml"
+        },
+        "referenced_works_count": 155,
+        "referenced_works": [
+          "https://openalex.org/W1993130981",
+          "https://openalex.org/W2030838470",
+          "https://openalex.org/W2135850176",
+          "https://openalex.org/W2463318071",
+          "https://openalex.org/W2753122095",
+          "https://openalex.org/W2790524622",
+          "https://openalex.org/W2792318242",
+          "https://openalex.org/W2808106608",
+          "https://openalex.org/W2914778895",
+          "https://openalex.org/W2936718977",
+          "https://openalex.org/W2937182854",
+          "https://openalex.org/W2946069302",
+          "https://openalex.org/W2953089157",
+          "https://openalex.org/W3004838941",
+          "https://openalex.org/W3008119180",
+          "https://openalex.org/W3026511954",
+          "https://openalex.org/W3031157367",
+          "https://openalex.org/W3031399045",
+          "https://openalex.org/W3040932193",
+          "https://openalex.org/W3081208038",
+          "https://openalex.org/W3092854853",
+          "https://openalex.org/W3093607369",
+          "https://openalex.org/W3113654743",
+          "https://openalex.org/W3129790909",
+          "https://openalex.org/W3133080977",
+          "https://openalex.org/W3134787895",
+          "https://openalex.org/W3137156818",
+          "https://openalex.org/W3153023572",
+          "https://openalex.org/W3157943370",
+          "https://openalex.org/W3175985794",
+          "https://openalex.org/W3184630870",
+          "https://openalex.org/W3200670909",
+          "https://openalex.org/W3201083033",
+          "https://openalex.org/W3201878750",
+          "https://openalex.org/W3204392606",
+          "https://openalex.org/W3211564096",
+          "https://openalex.org/W3212655382",
+          "https://openalex.org/W3214739262",
+          "https://openalex.org/W4205299273",
+          "https://openalex.org/W4205423748",
+          "https://openalex.org/W4205651044",
+          "https://openalex.org/W4206089857",
+          "https://openalex.org/W4206348602",
+          "https://openalex.org/W4206805396",
+          "https://openalex.org/W4207081458",
+          "https://openalex.org/W4210412723",
+          "https://openalex.org/W4210850606",
+          "https://openalex.org/W4223605173",
+          "https://openalex.org/W4225152683",
+          "https://openalex.org/W4280651148",
+          "https://openalex.org/W4282928810",
+          "https://openalex.org/W4285090715",
+          "https://openalex.org/W4289317700",
+          "https://openalex.org/W4291281105",
+          "https://openalex.org/W4292415834",
+          "https://openalex.org/W4292438755",
+          "https://openalex.org/W4293111877",
+          "https://openalex.org/W4295845778",
+          "https://openalex.org/W4296773150",
+          "https://openalex.org/W4298394312",
+          "https://openalex.org/W4306965359",
+          "https://openalex.org/W4308294052",
+          "https://openalex.org/W4308732151",
+          "https://openalex.org/W4312119165",
+          "https://openalex.org/W4312142181",
+          "https://openalex.org/W4312848293",
+          "https://openalex.org/W4315629895",
+          "https://openalex.org/W4315796020",
+          "https://openalex.org/W4319030127",
+          "https://openalex.org/W4319870954",
+          "https://openalex.org/W4324195571",
+          "https://openalex.org/W4362601466",
+          "https://openalex.org/W4365814816",
+          "https://openalex.org/W4376481380",
+          "https://openalex.org/W4377011788",
+          "https://openalex.org/W4378228614",
+          "https://openalex.org/W4379209888",
+          "https://openalex.org/W4380201238",
+          "https://openalex.org/W4380627711",
+          "https://openalex.org/W4381251281",
+          "https://openalex.org/W4385483526",
+          "https://openalex.org/W4385638978",
+          "https://openalex.org/W4385858187",
+          "https://openalex.org/W4386170068",
+          "https://openalex.org/W4386192223",
+          "https://openalex.org/W4386780843",
+          "https://openalex.org/W4387692649",
+          "https://openalex.org/W4388295946",
+          "https://openalex.org/W4388522052",
+          "https://openalex.org/W4388924137",
+          "https://openalex.org/W4389306578",
+          "https://openalex.org/W4390700345",
+          "https://openalex.org/W4390745648",
+          "https://openalex.org/W4391014981",
+          "https://openalex.org/W4391218304",
+          "https://openalex.org/W4392004159",
+          "https://openalex.org/W4392367648",
+          "https://openalex.org/W4392642643",
+          "https://openalex.org/W4392918078",
+          "https://openalex.org/W4392946437",
+          "https://openalex.org/W4393567398",
+          "https://openalex.org/W4394584761",
+          "https://openalex.org/W4394720050",
+          "https://openalex.org/W4394824052",
+          "https://openalex.org/W4396918898",
+          "https://openalex.org/W4398185857",
+          "https://openalex.org/W4399631771",
+          "https://openalex.org/W4400497302",
+          "https://openalex.org/W4400722033",
+          "https://openalex.org/W4400849515",
+          "https://openalex.org/W4401330272",
+          "https://openalex.org/W4401435771",
+          "https://openalex.org/W4401457725",
+          "https://openalex.org/W4401647145",
+          "https://openalex.org/W4401802404",
+          "https://openalex.org/W4402034829",
+          "https://openalex.org/W4402192989",
+          "https://openalex.org/W4402271940",
+          "https://openalex.org/W4402415064",
+          "https://openalex.org/W4402713319",
+          "https://openalex.org/W4402844802",
+          "https://openalex.org/W4403196953",
+          "https://openalex.org/W4403456476",
+          "https://openalex.org/W4403566437",
+          "https://openalex.org/W4403771444",
+          "https://openalex.org/W4404027143",
+          "https://openalex.org/W4404211379",
+          "https://openalex.org/W4404754781",
+          "https://openalex.org/W4404764664",
+          "https://openalex.org/W4405197637",
+          "https://openalex.org/W4405229878",
+          "https://openalex.org/W4405372998",
+          "https://openalex.org/W4405634726",
+          "https://openalex.org/W4406274405",
+          "https://openalex.org/W4406382386",
+          "https://openalex.org/W4406536582",
+          "https://openalex.org/W4406849272",
+          "https://openalex.org/W4406986159",
+          "https://openalex.org/W4407389042",
+          "https://openalex.org/W4407454636",
+          "https://openalex.org/W4408599176",
+          "https://openalex.org/W4408660290",
+          "https://openalex.org/W4408743983",
+          "https://openalex.org/W4409201164",
+          "https://openalex.org/W4409323406",
+          "https://openalex.org/W4409370791",
+          "https://openalex.org/W4409407254",
+          "https://openalex.org/W4409449909",
+          "https://openalex.org/W4409525943",
+          "https://openalex.org/W4409897202",
+          "https://openalex.org/W4410657266",
+          "https://openalex.org/W4411224376",
+          "https://openalex.org/W4414417336",
+          "https://openalex.org/W4414677704",
+          "https://openalex.org/W4415265954"
+        ],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "The": [
+            0,
+            107
+          ],
+          "complexity": [
+            1
+          ],
+          "of": [
+            2,
+            45,
+            50,
+            78,
+            87,
+            92,
+            113,
+            148,
+            162,
+            166
+          ],
+          "nanomedicine": [
+            3
+          ],
+          "poses": [
+            4
+          ],
+          "a": [
+            5,
+            140
+          ],
+          "significant": [
+            6
+          ],
+          "challenge": [
+            7
+          ],
+          "to": [
+            8,
+            18,
+            102,
+            123,
+            143
+          ],
+          "traditional": [
+            9
+          ],
+          "empirical": [
+            10
+          ],
+          "methods.": [
+            11
+          ],
+          "Machine": [
+            12
+          ],
+          "learning": [
+            13
+          ],
+          "(ML),": [
+            14
+          ],
+          "with": [
+            15
+          ],
+          "its": [
+            16
+          ],
+          "ability": [
+            17
+          ],
+          "parse": [
+            19
+          ],
+          "high-dimensional": [
+            20
+          ],
+          "data": [
+            21
+          ],
+          "and": [
+            22,
+            36,
+            75,
+            89,
+            94,
+            105,
+            132,
+            151,
+            168,
+            172
+          ],
+          "predict": [
+            23
+          ],
+          "nonlinear": [
+            24
+          ],
+          "interactions,": [
+            25
+          ],
+          "is": [
+            26,
+            154
+          ],
+          "empowering": [
+            27
+          ],
+          "AI": [
+            28,
+            85
+          ],
+          "nano": [
+            29
+          ],
+          "fusion": [
+            30
+          ],
+          "platforms,": [
+            31
+          ],
+          "driving": [
+            32
+          ],
+          "innovation": [
+            33
+          ],
+          "in": [
+            34,
+            47
+          ],
+          "diagnostic": [
+            35
+          ],
+          "therapeutic": [
+            37
+          ],
+          "evaluation": [
+            38
+          ],
+          "paradigms.": [
+            39
+          ],
+          "This": [
+            40
+          ],
+          "review": [
+            41
+          ],
+          "explores": [
+            42
+          ],
+          "breakthrough": [
+            43
+          ],
+          "applications": [
+            44
+          ],
+          "ML": [
+            46,
+            57
+          ],
+          "core": [
+            48
+          ],
+          "areas": [
+            49
+          ],
+          "nanomedicine,": [
+            51
+          ],
+          "including": [
+            52
+          ],
+          "intelligent": [
+            53,
+            146,
+            170
+          ],
+          "diagnosis": [
+            54,
+            150
+          ],
+          "(such": [
+            55,
+            68,
+            82
+          ],
+          "as": [
+            56,
+            69,
+            83,
+            127
+          ],
+          "enhanced": [
+            58
+          ],
+          "nanosensors": [
+            59
+          ],
+          "for": [
+            60,
+            159
+          ],
+          "high-precision": [
+            61
+          ],
+          "noninvasive": [
+            62
+          ],
+          "cancer": [
+            63
+          ],
+          "early": [
+            64
+          ],
+          "screening),": [
+            65
+          ],
+          "precision": [
+            66
+          ],
+          "therapy": [
+            67
+          ],
+          "closed-loop": [
+            70,
+            147
+          ],
+          "system": [
+            71
+          ],
+          "driven": [
+            72
+          ],
+          "rational": [
+            73
+          ],
+          "design": [
+            74
+          ],
+          "delivery": [
+            76
+          ],
+          "optimization": [
+            77
+          ],
+          "nanomedicine),": [
+            79
+          ],
+          "safety": [
+            80
+          ],
+          "assessment": [
+            81
+          ],
+          "interpretable": [
+            84
+          ],
+          "prediction": [
+            86
+          ],
+          "biological": [
+            88
+          ],
+          "environmental": [
+            90
+          ],
+          "toxicity": [
+            91
+          ],
+          "nanomaterials),": [
+            93
+          ],
+          "clinical": [
+            95,
+            124
+          ],
+          "translation": [
+            96
+          ],
+          "(to": [
+            97
+          ],
+          "address": [
+            98
+          ],
+          "scientific": [
+            99
+          ],
+          "challenges": [
+            100
+          ],
+          "related": [
+            101
+          ],
+          "standardization,": [
+            103
+          ],
+          "reproducibility,": [
+            104
+          ],
+          "regulatory).": [
+            106
+          ],
+          "paper": [
+            108
+          ],
+          "provides": [
+            109
+          ],
+          "an": [
+            110,
+            145
+          ],
+          "in-depth": [
+            111
+          ],
+          "analysis": [
+            112
+          ],
+          "the": [
+            114,
+            119,
+            160,
+            163
+          ],
+          "key": [
+            115,
+            157
+          ],
+          "bottlenecks": [
+            116
+          ],
+          "currently": [
+            117
+          ],
+          "facing": [
+            118
+          ],
+          "transition": [
+            120
+          ],
+          "from": [
+            121
+          ],
+          "laboratory": [
+            122
+          ],
+          "application,": [
+            125
+          ],
+          "such": [
+            126
+          ],
+          "batch": [
+            128
+          ],
+          "differences,": [
+            129
+          ],
+          "dynamic": [
+            130
+          ],
+          "interference,": [
+            131
+          ],
+          "regulatory": [
+            133
+          ],
+          "lag.": [
+            134
+          ],
+          "Based": [
+            135
+          ],
+          "on": [
+            136
+          ],
+          "recent": [
+            137
+          ],
+          "research": [
+            138
+          ],
+          "progress,": [
+            139
+          ],
+          "future": [
+            141
+          ],
+          "path": [
+            142
+          ],
+          "achieve": [
+            144
+          ],
+          "\"design": [
+            149
+          ],
+          "treatment": [
+            152,
+            173
+          ],
+          "evaluation\"": [
+            153
+          ],
+          "proposed,": [
+            155
+          ],
+          "providing": [
+            156
+          ],
+          "insights": [
+            158
+          ],
+          "development": [
+            161
+          ],
+          "next": [
+            164
+          ],
+          "generation": [
+            165
+          ],
+          "safe": [
+            167
+          ],
+          "efficient": [
+            169
+          ],
+          "nanodiagnosis": [
+            171
+          ],
+          "platforms.": [
+            174
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ],
+        "updated_date": "2026-08-27T14:10:00.468798",
+        "created_date": "2026-03-29T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4410717571",
+        "doi": "https://doi.org/10.1007/s12672-025-02714-w",
+        "title": "Golden insights for exploring cancer: delivery, from genes to the human body using bimetallic Au/Ag nanostructures",
+        "display_name": "Golden insights for exploring cancer: delivery, from genes to the human body using bimetallic Au/Ag nanostructures",
+        "relevance_score": 14.412447,
+        "publication_year": 2025,
+        "publication_date": "2025-05-25",
+        "ids": {
+          "openalex": "https://openalex.org/W4410717571",
+          "doi": "https://doi.org/10.1007/s12672-025-02714-w",
+          "pmid": "https://pubmed.ncbi.nlm.nih.gov/40413680"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1007/s12672-025-02714-w",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1007/s12672-025-02714-w",
+          "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12672-025-02714-w.pdf",
+          "source": {
+            "id": "https://openalex.org/S4210213696",
+            "display_name": "Discover Oncology",
+            "issn_l": "2730-6011",
+            "issn": [
+              "2730-6011"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319965",
+            "host_organization_name": "Springer Nature",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Discover Oncology",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj",
+          "pubmed"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://link.springer.com/content/pdf/10.1007/s12672-025-02714-w.pdf",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5077637785",
+              "display_name": "Misbah Ullah Khan",
+              "orcid": "https://orcid.org/0000-0003-2960-103X"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3130814776",
+                "display_name": "University of Okara",
+                "ror": "https://ror.org/02fmg6q11",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Misbah Ullah Khan",
+            "raw_affiliation_strings": [
+              "Centre for Nanosciences, University of Okara, Okara, 56130, Pakistan. Misbahullahkhan143@uo.edu.pk"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Centre for Nanosciences, University of Okara, Okara, 56130, Pakistan. Misbahullahkhan143@uo.edu.pk",
+                "institution_ids": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5108836598",
+              "display_name": "Humaira Aslam",
+              "orcid": "https://orcid.org/0009-0000-4701-0503"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3130814776",
+                "display_name": "University of Okara",
+                "ror": "https://ror.org/02fmg6q11",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Humaira Aslam",
+            "raw_affiliation_strings": [
+              "Centre for Nanosciences, University of Okara, Okara, 56130, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Centre for Nanosciences, University of Okara, Okara, 56130, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5092598614",
+              "display_name": "Muhammad Jehanzeb Sohail",
+              "orcid": "https://orcid.org/0000-0002-5166-3328"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3130814776",
+                "display_name": "University of Okara",
+                "ror": "https://ror.org/02fmg6q11",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Jehanzeb Sohail",
+            "raw_affiliation_strings": [
+              "Centre for Nanosciences, University of Okara, Okara, 56130, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Centre for Nanosciences, University of Okara, Okara, 56130, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5052198699",
+              "display_name": "Ali Umar",
+              "orcid": "https://orcid.org/0000-0003-2974-4823"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3130814776",
+                "display_name": "University of Okara",
+                "ror": "https://ror.org/02fmg6q11",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Ali Umar",
+            "raw_affiliation_strings": [
+              "Department of Zoology, Faculty of Life Sciences, University of Okara, Okara, 56130, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Zoology, Faculty of Life Sciences, University of Okara, Okara, 56130, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5104060717",
+              "display_name": "Aman Ullah",
+              "orcid": "https://orcid.org/0009-0002-0586-9066"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3130814776",
+                "display_name": "University of Okara",
+                "ror": "https://ror.org/02fmg6q11",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Aman Ullah",
+            "raw_affiliation_strings": [
+              "Department of Zoology, Faculty of Life Sciences, University of Okara, Okara, 56130, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Zoology, Faculty of Life Sciences, University of Okara, Okara, 56130, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5047089632",
+              "display_name": "Hayat Ullah",
+              "orcid": "https://orcid.org/0000-0003-3833-1457"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3130814776",
+                "display_name": "University of Okara",
+                "ror": "https://ror.org/02fmg6q11",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Hayat Ullah",
+            "raw_affiliation_strings": [
+              "Department of Chemistry, University of Okara, Okara, 56130, Pakistan. hayatullah@uo.edu.pk"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Chemistry, University of Okara, Okara, 56130, Pakistan. hayatullah@uo.edu.pk",
+                "institution_ids": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5047089632",
+          "https://openalex.org/A5077637785"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I3130814776"
+        ],
+        "apc_list": {
+          "value": 1690,
+          "currency": "USD",
+          "value_usd": 1690
+        },
+        "apc_paid": {
+          "value": 1690,
+          "currency": "USD",
+          "value_usd": 1690
+        },
+        "fwci": 3.4795,
+        "has_fulltext": true,
+        "cited_by_count": 9,
+        "citation_normalized_percentile": {
+          "value": 0.93033078,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 98,
+          "max": 99
+        },
+        "biblio": {
+          "volume": "16",
+          "issue": "1",
+          "first_page": "918",
+          "last_page": "918"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10207",
+          "display_name": "Advanced biosensing and bioanalysis techniques",
+          "score": 0.9922999739646912,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1312",
+            "display_name": "Molecular Biology"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/13",
+            "display_name": "Biochemistry, Genetics and Molecular Biology"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/1",
+            "display_name": "Life Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10207",
+            "display_name": "Advanced biosensing and bioanalysis techniques",
+            "score": 0.9922999739646912,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1312",
+              "display_name": "Molecular Biology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/13",
+              "display_name": "Biochemistry, Genetics and Molecular Biology"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/1",
+              "display_name": "Life Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10131",
+            "display_name": "Gold and Silver Nanoparticles Synthesis and Applications",
+            "score": 0.9861999750137329,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2504",
+              "display_name": "Electronic, Optical and Magnetic Materials"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/25",
+              "display_name": "Materials Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10063",
+            "display_name": "Nanoparticle-Based Drug Delivery",
+            "score": 0.9812999963760376,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2502",
+              "display_name": "Biomaterials"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/25",
+              "display_name": "Materials Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/bimetallic-strip",
+            "display_name": "Bimetallic strip",
+            "score": 0.8255693912506104
+          },
+          {
+            "id": "https://openalex.org/keywords/nanostructure",
+            "display_name": "Nanostructure",
+            "score": 0.6244216561317444
+          },
+          {
+            "id": "https://openalex.org/keywords/cancer",
+            "display_name": "Cancer",
+            "score": 0.5349999666213989
+          },
+          {
+            "id": "https://openalex.org/keywords/nanotechnology",
+            "display_name": "Nanotechnology",
+            "score": 0.5235673785209656
+          },
+          {
+            "id": "https://openalex.org/keywords/gene",
+            "display_name": "Gene",
+            "score": 0.4406145215034485
+          },
+          {
+            "id": "https://openalex.org/keywords/materials-science",
+            "display_name": "Materials science",
+            "score": 0.4141068458557129
+          },
+          {
+            "id": "https://openalex.org/keywords/computational-biology",
+            "display_name": "Computational biology",
+            "score": 0.36131876707077026
+          },
+          {
+            "id": "https://openalex.org/keywords/biology",
+            "display_name": "Biology",
+            "score": 0.31482601165771484
+          },
+          {
+            "id": "https://openalex.org/keywords/genetics",
+            "display_name": "Genetics",
+            "score": 0.2068713903427124
+          },
+          {
+            "id": "https://openalex.org/keywords/metallurgy",
+            "display_name": "Metallurgy",
+            "score": 0.13286948204040527
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C43411465",
+            "wikidata": "https://www.wikidata.org/wiki/Q2997621",
+            "display_name": "Bimetallic strip",
+            "level": 3,
+            "score": 0.8255693912506104
+          },
+          {
+            "id": "https://openalex.org/C186187911",
+            "wikidata": "https://www.wikidata.org/wiki/Q1093894",
+            "display_name": "Nanostructure",
+            "level": 2,
+            "score": 0.6244216561317444
+          },
+          {
+            "id": "https://openalex.org/C121608353",
+            "wikidata": "https://www.wikidata.org/wiki/Q12078",
+            "display_name": "Cancer",
+            "level": 2,
+            "score": 0.5349999666213989
+          },
+          {
+            "id": "https://openalex.org/C171250308",
+            "wikidata": "https://www.wikidata.org/wiki/Q11468",
+            "display_name": "Nanotechnology",
+            "level": 1,
+            "score": 0.5235673785209656
+          },
+          {
+            "id": "https://openalex.org/C104317684",
+            "wikidata": "https://www.wikidata.org/wiki/Q7187",
+            "display_name": "Gene",
+            "level": 2,
+            "score": 0.4406145215034485
+          },
+          {
+            "id": "https://openalex.org/C192562407",
+            "wikidata": "https://www.wikidata.org/wiki/Q228736",
+            "display_name": "Materials science",
+            "level": 0,
+            "score": 0.4141068458557129
+          },
+          {
+            "id": "https://openalex.org/C70721500",
+            "wikidata": "https://www.wikidata.org/wiki/Q177005",
+            "display_name": "Computational biology",
+            "level": 1,
+            "score": 0.36131876707077026
+          },
+          {
+            "id": "https://openalex.org/C86803240",
+            "wikidata": "https://www.wikidata.org/wiki/Q420",
+            "display_name": "Biology",
+            "level": 0,
+            "score": 0.31482601165771484
+          },
+          {
+            "id": "https://openalex.org/C54355233",
+            "wikidata": "https://www.wikidata.org/wiki/Q7162",
+            "display_name": "Genetics",
+            "level": 1,
+            "score": 0.2068713903427124
+          },
+          {
+            "id": "https://openalex.org/C191897082",
+            "wikidata": "https://www.wikidata.org/wiki/Q11467",
+            "display_name": "Metallurgy",
+            "level": 1,
+            "score": 0.13286948204040527
+          },
+          {
+            "id": "https://openalex.org/C544153396",
+            "wikidata": "https://www.wikidata.org/wiki/Q11426",
+            "display_name": "Metal",
+            "level": 2,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 4,
+        "locations": [
+          {
+            "id": "doi:10.1007/s12672-025-02714-w",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1007/s12672-025-02714-w",
+            "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12672-025-02714-w.pdf",
+            "source": {
+              "id": "https://openalex.org/S4210213696",
+              "display_name": "Discover Oncology",
+              "issn_l": "2730-6011",
+              "issn": [
+                "2730-6011"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310319965",
+              "host_organization_name": "Springer Nature",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310319965"
+              ],
+              "host_organization_lineage_names": [
+                "Springer Nature"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by-nc-nd",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Discover Oncology",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmid:40413680",
+            "is_oa": false,
+            "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/40413680",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306525036",
+              "display_name": "PubMed",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1299303238",
+              "host_organization_name": "National Institutes of Health",
+              "host_organization_lineage": [
+                "https://openalex.org/I1299303238"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Discover oncology",
+            "raw_type": "Journal Article"
+          },
+          {
+            "id": "pmh:oai:europepmc.org:10913490",
+            "is_oa": true,
+            "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/12104135",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306400806",
+              "display_name": "Europe PMC (PubMed Central)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1303153112",
+              "host_organization_name": "European Bioinformatics Institute",
+              "host_organization_lineage": [
+                "https://openalex.org/I1303153112"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "other-oa",
+            "license_id": "https://openalex.org/licenses/other-oa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "Text"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:c22dc96829b1410e8c0de2aa1f5ef832",
+            "is_oa": true,
+            "landing_page_url": "https://doaj.org/article/c22dc96829b1410e8c0de2aa1f5ef832",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Discover Oncology, Vol 16, Iss 1, Pp 1-33 (2025)",
+            "raw_type": "article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1007/s12672-025-02714-w",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1007/s12672-025-02714-w",
+          "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12672-025-02714-w.pdf",
+          "source": {
+            "id": "https://openalex.org/S4210213696",
+            "display_name": "Discover Oncology",
+            "issn_l": "2730-6011",
+            "issn": [
+              "2730-6011"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319965",
+            "host_organization_name": "Springer Nature",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Discover Oncology",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4410717571.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4410717571.grobid-xml"
+        },
+        "referenced_works_count": 214,
+        "referenced_works": [
+          "https://openalex.org/W228989326",
+          "https://openalex.org/W834347180",
+          "https://openalex.org/W1483399004",
+          "https://openalex.org/W1999364829",
+          "https://openalex.org/W2072856841",
+          "https://openalex.org/W2082185331",
+          "https://openalex.org/W2090399125",
+          "https://openalex.org/W2149745501",
+          "https://openalex.org/W2204201188",
+          "https://openalex.org/W2293981708",
+          "https://openalex.org/W2340194153",
+          "https://openalex.org/W2423276331",
+          "https://openalex.org/W2462351745",
+          "https://openalex.org/W2491089898",
+          "https://openalex.org/W2491364693",
+          "https://openalex.org/W2525095728",
+          "https://openalex.org/W2586957805",
+          "https://openalex.org/W2605822395",
+          "https://openalex.org/W2758199728",
+          "https://openalex.org/W2774542529",
+          "https://openalex.org/W2792927819",
+          "https://openalex.org/W2850142515",
+          "https://openalex.org/W2883772554",
+          "https://openalex.org/W2948277783",
+          "https://openalex.org/W2961635554",
+          "https://openalex.org/W2972859682",
+          "https://openalex.org/W3010163051",
+          "https://openalex.org/W3039337614",
+          "https://openalex.org/W3042110335",
+          "https://openalex.org/W3095378795",
+          "https://openalex.org/W3116557801",
+          "https://openalex.org/W3123119800",
+          "https://openalex.org/W3132818665",
+          "https://openalex.org/W3135080878",
+          "https://openalex.org/W3135303268",
+          "https://openalex.org/W3155477321",
+          "https://openalex.org/W3164801480",
+          "https://openalex.org/W3171626169",
+          "https://openalex.org/W3174349052",
+          "https://openalex.org/W3176695533",
+          "https://openalex.org/W3188442028",
+          "https://openalex.org/W3193999063",
+          "https://openalex.org/W3194099064",
+          "https://openalex.org/W3195970609",
+          "https://openalex.org/W3199781413",
+          "https://openalex.org/W3204227478",
+          "https://openalex.org/W3207972312",
+          "https://openalex.org/W3212863275",
+          "https://openalex.org/W3213266376",
+          "https://openalex.org/W4200535399",
+          "https://openalex.org/W4205910310",
+          "https://openalex.org/W4206131942",
+          "https://openalex.org/W4214855265",
+          "https://openalex.org/W4214937607",
+          "https://openalex.org/W4225000334",
+          "https://openalex.org/W4225273019",
+          "https://openalex.org/W4225698308",
+          "https://openalex.org/W4281932059",
+          "https://openalex.org/W4283311106",
+          "https://openalex.org/W4285081816",
+          "https://openalex.org/W4291536073",
+          "https://openalex.org/W4292509029",
+          "https://openalex.org/W4292615948",
+          "https://openalex.org/W4297223527",
+          "https://openalex.org/W4302028488",
+          "https://openalex.org/W4303022541",
+          "https://openalex.org/W4306153492",
+          "https://openalex.org/W4306843406",
+          "https://openalex.org/W4308291765",
+          "https://openalex.org/W4308697136",
+          "https://openalex.org/W4312187187",
+          "https://openalex.org/W4313453547",
+          "https://openalex.org/W4313472340",
+          "https://openalex.org/W4313680335",
+          "https://openalex.org/W4313830632",
+          "https://openalex.org/W4318561812",
+          "https://openalex.org/W4319768374",
+          "https://openalex.org/W4320148769",
+          "https://openalex.org/W4322012354",
+          "https://openalex.org/W4323663799",
+          "https://openalex.org/W4360984874",
+          "https://openalex.org/W4361013197",
+          "https://openalex.org/W4365811088",
+          "https://openalex.org/W4367056212",
+          "https://openalex.org/W4375866601",
+          "https://openalex.org/W4377097543",
+          "https://openalex.org/W4379528666",
+          "https://openalex.org/W4379598696",
+          "https://openalex.org/W4382941155",
+          "https://openalex.org/W4385337381",
+          "https://openalex.org/W4385585344",
+          "https://openalex.org/W4386054598",
+          "https://openalex.org/W4387107883",
+          "https://openalex.org/W4387566272",
+          "https://openalex.org/W4387840899",
+          "https://openalex.org/W4388040978",
+          "https://openalex.org/W4388578145",
+          "https://openalex.org/W4388593454",
+          "https://openalex.org/W4388896325",
+          "https://openalex.org/W4389063446",
+          "https://openalex.org/W4389100139",
+          "https://openalex.org/W4389524099",
+          "https://openalex.org/W4389684079",
+          "https://openalex.org/W4389722363",
+          "https://openalex.org/W4390465595",
+          "https://openalex.org/W4390465701",
+          "https://openalex.org/W4390747091",
+          "https://openalex.org/W4391035804",
+          "https://openalex.org/W4391506735",
+          "https://openalex.org/W4391607863",
+          "https://openalex.org/W4391676162",
+          "https://openalex.org/W4391898690",
+          "https://openalex.org/W4392013492",
+          "https://openalex.org/W4392133707",
+          "https://openalex.org/W4392155469",
+          "https://openalex.org/W4392245673",
+          "https://openalex.org/W4392245693",
+          "https://openalex.org/W4392906325",
+          "https://openalex.org/W4392946812",
+          "https://openalex.org/W4394817951",
+          "https://openalex.org/W4394858721",
+          "https://openalex.org/W4394925460",
+          "https://openalex.org/W4395692787",
+          "https://openalex.org/W4396610820",
+          "https://openalex.org/W4396828376",
+          "https://openalex.org/W4396909385",
+          "https://openalex.org/W4397007724",
+          "https://openalex.org/W4397292878",
+          "https://openalex.org/W4398146241",
+          "https://openalex.org/W4398222809",
+          "https://openalex.org/W4399137875",
+          "https://openalex.org/W4399145141",
+          "https://openalex.org/W4399495342",
+          "https://openalex.org/W4399661414",
+          "https://openalex.org/W4399703674",
+          "https://openalex.org/W4399786779",
+          "https://openalex.org/W4399985863",
+          "https://openalex.org/W4400029556",
+          "https://openalex.org/W4400054713",
+          "https://openalex.org/W4400149096",
+          "https://openalex.org/W4400194929",
+          "https://openalex.org/W4400293796",
+          "https://openalex.org/W4400401910",
+          "https://openalex.org/W4400449316",
+          "https://openalex.org/W4400606153",
+          "https://openalex.org/W4400617566",
+          "https://openalex.org/W4400676827",
+          "https://openalex.org/W4400747683",
+          "https://openalex.org/W4400748356",
+          "https://openalex.org/W4400951459",
+          "https://openalex.org/W4400957892",
+          "https://openalex.org/W4401192501",
+          "https://openalex.org/W4401283743",
+          "https://openalex.org/W4401333824",
+          "https://openalex.org/W4401335483",
+          "https://openalex.org/W4401457725",
+          "https://openalex.org/W4401484528",
+          "https://openalex.org/W4401524278",
+          "https://openalex.org/W4401528666",
+          "https://openalex.org/W4401558264",
+          "https://openalex.org/W4401580547",
+          "https://openalex.org/W4401740489",
+          "https://openalex.org/W4401899042",
+          "https://openalex.org/W4402013189",
+          "https://openalex.org/W4402061865",
+          "https://openalex.org/W4402316253",
+          "https://openalex.org/W4402468561",
+          "https://openalex.org/W4402487016",
+          "https://openalex.org/W4402488011",
+          "https://openalex.org/W4402509826",
+          "https://openalex.org/W4402542210",
+          "https://openalex.org/W4402546671",
+          "https://openalex.org/W4402564741",
+          "https://openalex.org/W4402991417",
+          "https://openalex.org/W4402997057",
+          "https://openalex.org/W4403013053",
+          "https://openalex.org/W4403044690",
+          "https://openalex.org/W4403104998",
+          "https://openalex.org/W4403138614",
+          "https://openalex.org/W4403163174",
+          "https://openalex.org/W4403204665",
+          "https://openalex.org/W4403289121",
+          "https://openalex.org/W4403301066",
+          "https://openalex.org/W4403452632",
+          "https://openalex.org/W4403482213",
+          "https://openalex.org/W4403501192",
+          "https://openalex.org/W4403670096",
+          "https://openalex.org/W4403674322",
+          "https://openalex.org/W4403980746",
+          "https://openalex.org/W4404114993",
+          "https://openalex.org/W4404128364",
+          "https://openalex.org/W4404195771",
+          "https://openalex.org/W4404228416",
+          "https://openalex.org/W4404368866",
+          "https://openalex.org/W4404459763",
+          "https://openalex.org/W4404533250",
+          "https://openalex.org/W4404579813",
+          "https://openalex.org/W4404803468",
+          "https://openalex.org/W4404924069",
+          "https://openalex.org/W4405102314",
+          "https://openalex.org/W4405202685",
+          "https://openalex.org/W4405231008",
+          "https://openalex.org/W4405240126",
+          "https://openalex.org/W4405289619",
+          "https://openalex.org/W4405378920",
+          "https://openalex.org/W4405384385",
+          "https://openalex.org/W4405417449",
+          "https://openalex.org/W4405518950",
+          "https://openalex.org/W4405566473",
+          "https://openalex.org/W4405945497",
+          "https://openalex.org/W4407854001",
+          "https://openalex.org/W4408020452",
+          "https://openalex.org/W4408244955",
+          "https://openalex.org/W4409800683"
+        ],
+        "related_works": [
+          "https://openalex.org/W4361001398",
+          "https://openalex.org/W4375951439",
+          "https://openalex.org/W2112842299",
+          "https://openalex.org/W2316719495",
+          "https://openalex.org/W2268765215",
+          "https://openalex.org/W2883395230",
+          "https://openalex.org/W2061536903",
+          "https://openalex.org/W2949741386",
+          "https://openalex.org/W4396776787",
+          "https://openalex.org/W2935645063"
+        ],
+        "abstract_inverted_index": {
+          "Sweeping": [
+            0
+          ],
+          "contact": [
+            1
+          ],
+          "with": [
+            2,
+            75,
+            149
+          ],
+          "cancer": [
+            3,
+            24,
+            53,
+            90,
+            241
+          ],
+          "continues": [
+            4
+          ],
+          "to": [
+            5,
+            11,
+            22,
+            171,
+            198,
+            208,
+            212,
+            232
+          ],
+          "rise": [
+            6
+          ],
+          "globally,": [
+            7
+          ],
+          "which": [
+            8
+          ],
+          "has": [
+            9,
+            19,
+            156
+          ],
+          "led": [
+            10
+          ],
+          "advanced": [
+            12
+          ],
+          "research": [
+            13,
+            242
+          ],
+          "on": [
+            14,
+            97
+          ],
+          "new": [
+            15
+          ],
+          "treatment": [
+            16,
+            147
+          ],
+          "approaches;": [
+            17
+          ],
+          "nanotechnology": [
+            18
+          ],
+          "become": [
+            20
+          ],
+          "crucial": [
+            21
+          ],
+          "targeted": [
+            23,
+            146
+          ],
+          "therapy.": [
+            25,
+            54,
+            244
+          ],
+          "Within": [
+            26
+          ],
+          "the": [
+            27,
+            81,
+            93,
+            98,
+            109,
+            116,
+            133,
+            161,
+            199,
+            220,
+            227,
+            234
+          ],
+          "intimate": [
+            28
+          ],
+          "of": [
+            29,
+            39,
+            69,
+            86,
+            95,
+            105,
+            115,
+            119,
+            163,
+            190,
+            237
+          ],
+          "nanomaterials,": [
+            30
+          ],
+          "Au/Ag": [
+            31,
+            87,
+            238
+          ],
+          "nanostructures": [
+            32,
+            56,
+            88,
+            96,
+            239
+          ],
+          "have": [
+            33,
+            160
+          ],
+          "emerged": [
+            34
+          ],
+          "as": [
+            35,
+            50,
+            52,
+            122,
+            130,
+            132,
+            177
+          ],
+          "highly": [
+            36
+          ],
+          "attractive": [
+            37
+          ],
+          "because": [
+            38
+          ],
+          "their": [
+            40,
+            45,
+            103,
+            215
+          ],
+          "distinctive": [
+            41
+          ],
+          "desirable": [
+            42
+          ],
+          "characteristics": [
+            43
+          ],
+          "and": [
+            44,
+            64,
+            71,
+            83,
+            102,
+            126,
+            166,
+            169,
+            195,
+            226,
+            243
+          ],
+          "prospective": [
+            46
+          ],
+          "roles": [
+            47
+          ],
+          "in": [
+            48,
+            73,
+            89,
+            108,
+            240
+          ],
+          "diagnosis": [
+            49
+          ],
+          "well": [
+            51,
+            131
+          ],
+          "The": [
+            55,
+            153
+          ],
+          "developed": [
+            57
+          ],
+          "revealed": [
+            58
+          ],
+          "remarkable": [
+            59
+          ],
+          "biocompatibility,": [
+            60
+          ],
+          "optically": [
+            61
+          ],
+          "recursive": [
+            62
+          ],
+          "alteration,": [
+            63
+          ],
+          "magnificently": [
+            65
+          ],
+          "improved": [
+            66
+          ],
+          "therapeutic": [
+            67
+          ],
+          "effects": [
+            68
+          ],
+          "gold": [
+            70
+          ],
+          "silver": [
+            72
+          ],
+          "conjunction": [
+            74
+          ],
+          "each": [
+            76
+          ],
+          "other.": [
+            77
+          ],
+          "This": [
+            78
+          ],
+          "review": [
+            79
+          ],
+          "addresses": [
+            80
+          ],
+          "molecular": [
+            82,
+            99
+          ],
+          "systemic": [
+            84,
+            106
+          ],
+          "aspects": [
+            85
+          ],
+          "research,": [
+            91
+          ],
+          "including": [
+            92
+          ],
+          "impact": [
+            94
+          ],
+          "genetic": [
+            100
+          ],
+          "pathways": [
+            101
+          ],
+          "use": [
+            104
+          ],
+          "administration": [
+            107
+          ],
+          "human": [
+            110
+          ],
+          "organism.": [
+            111
+          ],
+          "We": [
+            112
+          ],
+          "explain": [
+            113
+          ],
+          "some": [
+            114,
+            187
+          ],
+          "related": [
+            117
+          ],
+          "mechanisms": [
+            118
+          ],
+          "action,": [
+            120
+          ],
+          "such": [
+            121
+          ],
+          "photothermal": [
+            123
+          ],
+          "therapy": [
+            124,
+            128
+          ],
+          "(PTT),": [
+            125
+          ],
+          "photodynamic": [
+            127
+          ],
+          "(PDT),": [
+            129
+          ],
+          "drug": [
+            134
+          ],
+          "delivery": [
+            135
+          ],
+          "systems": [
+            136
+          ],
+          "where": [
+            137
+          ],
+          "they": [
+            138,
+            159,
+            173
+          ],
+          "display": [
+            139
+          ],
+          "potential": [
+            140
+          ],
+          "benefits": [
+            141
+          ],
+          "towards": [
+            142
+          ],
+          "offering": [
+            143
+          ],
+          "a": [
+            144,
+            178,
+            218
+          ],
+          "more": [
+            145
+          ],
+          "approach": [
+            148
+          ],
+          "fewer": [
+            150
+          ],
+          "side": [
+            151
+          ],
+          "effects.": [
+            152
+          ],
+          "latest": [
+            154
+          ],
+          "development": [
+            155,
+            228
+          ],
+          "shown": [
+            157
+          ],
+          "that": [
+            158
+          ],
+          "prospect": [
+            162
+          ],
+          "real-time": [
+            164
+          ],
+          "imaging": [
+            165
+          ],
+          "biomarker": [
+            167
+          ],
+          "identification,": [
+            168
+          ],
+          "owing": [
+            170
+          ],
+          "this": [
+            172
+          ],
+          "are": [
+            174,
+            185,
+            223,
+            230
+          ],
+          "being": [
+            175
+          ],
+          "viewed": [
+            176
+          ],
+          "tool": [
+            179
+          ],
+          "for": [
+            180,
+            214
+          ],
+          "individualized": [
+            181
+          ],
+          "treatment.": [
+            182
+          ],
+          "However,": [
+            183
+          ],
+          "there": [
+            184
+          ],
+          "still": [
+            186
+          ],
+          "limitations:": [
+            188
+          ],
+          "challenges": [
+            189
+          ],
+          "scaling": [
+            191
+          ],
+          "up,": [
+            192
+          ],
+          "biological": [
+            193
+          ],
+          "safety,": [
+            194
+          ],
+          "bringing": [
+            196
+          ],
+          "it": [
+            197
+          ],
+          "clinic.": [
+            200
+          ],
+          "It": [
+            201
+          ],
+          "is": [
+            202
+          ],
+          "therefore": [
+            203
+          ],
+          "incumbent": [
+            204
+          ],
+          "upon": [
+            205
+          ],
+          "these": [
+            206,
+            210
+          ],
+          "managements": [
+            207
+          ],
+          "overcome": [
+            209
+          ],
+          "hurdles": [
+            211
+          ],
+          "optimize": [
+            213
+          ],
+          "impact.": [
+            216
+          ],
+          "As": [
+            217
+          ],
+          "result,": [
+            219
+          ],
+          "current": [
+            221
+          ],
+          "findings": [
+            222
+          ],
+          "briefly": [
+            224
+          ],
+          "reviewed,": [
+            225
+          ],
+          "directions": [
+            229
+          ],
+          "discussed": [
+            231
+          ],
+          "support": [
+            233
+          ],
+          "revolutionary": [
+            235
+          ],
+          "role": [
+            236
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          }
+        ],
+        "updated_date": "2026-08-21T09:56:20.448147",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W7137702547",
+        "doi": null,
+        "title": "Statusbericht 2025/26 - Nanotechnologie Environment, Health & Safety-Projekte",
+        "display_name": "Statusbericht 2025/26 - Nanotechnologie Environment, Health & Safety-Projekte",
+        "relevance_score": 1.9126692,
+        "publication_year": 2026,
+        "publication_date": "2026-01-29",
+        "ids": {
+          "openalex": "https://openalex.org/W7137702547"
+        },
+        "language": "de",
+        "primary_location": {
+          "id": "pmh:oai:epub.oeaw.ac.at:0x00413182",
+          "is_oa": true,
+          "landing_page_url": "http://epub.oeaw.ac.at/?arp=ita/ita-projektberichte/ITA-2025-07.pdf",
+          "pdf_url": "http://epub.oeaw.ac.at/?arp=ita/ita-projektberichte/ITA-2025-07.pdf",
+          "source": {
+            "id": "https://openalex.org/S4306402293",
+            "display_name": "Oesterreichisches Musiklexikon online (Institut für kunst- und musikhistorische Forschungen der  Österreichischen Akademie der Wissenschaften)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I4210118987",
+            "host_organization_name": "Institut für Wissenschaft und Kunst",
+            "host_organization_lineage": [
+              "https://openalex.org/I4210118987"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "other-oa",
+          "license_id": "https://openalex.org/licenses/other-oa",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "http://hw.oeaw.ac.at/ita-projektbericht",
+          "raw_type": null
+        },
+        "type": "article",
+        "indexed_in": [],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "http://epub.oeaw.ac.at/?arp=ita/ita-projektberichte/ITA-2025-07.pdf",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5129553449",
+              "display_name": "ITA (Hrsg.)",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": true,
+            "raw_author_name": "ITA (Hrsg.)",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5129553449"
+        ],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.0,
+        "has_fulltext": true,
+        "cited_by_count": 0,
+        "citation_normalized_percentile": {
+          "value": 0.16786663,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10079",
+          "display_name": "Nanoparticles: synthesis and applications",
+          "score": 0.17219999432563782,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2505",
+            "display_name": "Materials Chemistry"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/25",
+            "display_name": "Materials Science"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10079",
+            "display_name": "Nanoparticles: synthesis and applications",
+            "score": 0.17219999432563782,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2505",
+              "display_name": "Materials Chemistry"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/25",
+              "display_name": "Materials Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T12078",
+            "display_name": "Environmental remediation with nanomaterials",
+            "score": 0.0333000011742115,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2204",
+              "display_name": "Biomedical Engineering"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T12930",
+            "display_name": "Biomedical and Chemical Research",
+            "score": 0.0333000011742115,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2746",
+              "display_name": "Surgery"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/27",
+              "display_name": "Medicine"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/4",
+              "display_name": "Health Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/public-health",
+            "display_name": "Public health",
+            "score": 0.37880000472068787
+          },
+          {
+            "id": "https://openalex.org/keywords/health-protection",
+            "display_name": "Health protection",
+            "score": 0.24310000240802765
+          },
+          {
+            "id": "https://openalex.org/keywords/health-policy",
+            "display_name": "Health policy",
+            "score": 0.21369999647140503
+          },
+          {
+            "id": "https://openalex.org/keywords/health-care",
+            "display_name": "Health care",
+            "score": 0.21060000360012054
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C17744445",
+            "wikidata": "https://www.wikidata.org/wiki/Q36442",
+            "display_name": "Political science",
+            "level": 0,
+            "score": 0.5141000151634216
+          },
+          {
+            "id": "https://openalex.org/C138816342",
+            "wikidata": "https://www.wikidata.org/wiki/Q189603",
+            "display_name": "Public health",
+            "level": 2,
+            "score": 0.37880000472068787
+          },
+          {
+            "id": "https://openalex.org/C15708023",
+            "wikidata": "https://www.wikidata.org/wiki/Q80083",
+            "display_name": "Humanities",
+            "level": 1,
+            "score": 0.3474000096321106
+          },
+          {
+            "id": "https://openalex.org/C29456083",
+            "wikidata": "https://www.wikidata.org/wiki/Q1221899",
+            "display_name": "Gynecology",
+            "level": 1,
+            "score": 0.2493000030517578
+          },
+          {
+            "id": "https://openalex.org/C2994410616",
+            "wikidata": "https://www.wikidata.org/wiki/Q189603",
+            "display_name": "Health protection",
+            "level": 2,
+            "score": 0.24310000240802765
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.21979999542236328
+          },
+          {
+            "id": "https://openalex.org/C47344431",
+            "wikidata": "https://www.wikidata.org/wiki/Q1519812",
+            "display_name": "Health policy",
+            "level": 3,
+            "score": 0.21369999647140503
+          },
+          {
+            "id": "https://openalex.org/C160735492",
+            "wikidata": "https://www.wikidata.org/wiki/Q31207",
+            "display_name": "Health care",
+            "level": 2,
+            "score": 0.21060000360012054
+          },
+          {
+            "id": "https://openalex.org/C159176650",
+            "wikidata": "https://www.wikidata.org/wiki/Q43261",
+            "display_name": "Horizon",
+            "level": 2,
+            "score": 0.2078000009059906
+          },
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.1941000074148178
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "pmh:oai:epub.oeaw.ac.at:0x00413182",
+            "is_oa": true,
+            "landing_page_url": "http://epub.oeaw.ac.at/?arp=ita/ita-projektberichte/ITA-2025-07.pdf",
+            "pdf_url": "http://epub.oeaw.ac.at/?arp=ita/ita-projektberichte/ITA-2025-07.pdf",
+            "source": {
+              "id": "https://openalex.org/S4306402293",
+              "display_name": "Oesterreichisches Musiklexikon online (Institut für kunst- und musikhistorische Forschungen der  Österreichischen Akademie der Wissenschaften)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I4210118987",
+              "host_organization_name": "Institut für Wissenschaft und Kunst",
+              "host_organization_lineage": [
+                "https://openalex.org/I4210118987"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "other-oa",
+            "license_id": "https://openalex.org/licenses/other-oa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "http://hw.oeaw.ac.at/ita-projektbericht",
+            "raw_type": null
+          },
+          {
+            "id": "pmh:oai:hw.oeaw.ac.at:0x00413182",
+            "is_oa": true,
+            "landing_page_url": "http://hw.oeaw.ac.at/?arp=ita/ita-projektberichte/ITA-2025-07.pdf",
+            "pdf_url": "https://epub.oeaw.ac.at/0xc1aa5572_0x00413182.pdf",
+            "source": {
+              "id": "https://openalex.org/S4306400824",
+              "display_name": "Austrian Biographical Dictionary (Austrian Academy of Sciences)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I138211613",
+              "host_organization_name": "Austrian Academy of Sciences",
+              "host_organization_lineage": [
+                "https://openalex.org/I138211613"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "other-oa",
+            "license_id": "https://openalex.org/licenses/other-oa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "http://hw.oeaw.ac.at/ita-projektbericht",
+            "raw_type": null
+          }
+        ],
+        "best_oa_location": {
+          "id": "pmh:oai:epub.oeaw.ac.at:0x00413182",
+          "is_oa": true,
+          "landing_page_url": "http://epub.oeaw.ac.at/?arp=ita/ita-projektberichte/ITA-2025-07.pdf",
+          "pdf_url": "http://epub.oeaw.ac.at/?arp=ita/ita-projektberichte/ITA-2025-07.pdf",
+          "source": {
+            "id": "https://openalex.org/S4306402293",
+            "display_name": "Oesterreichisches Musiklexikon online (Institut für kunst- und musikhistorische Forschungen der  Österreichischen Akademie der Wissenschaften)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I4210118987",
+            "host_organization_name": "Institut für Wissenschaft und Kunst",
+            "host_organization_lineage": [
+              "https://openalex.org/I4210118987"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "other-oa",
+          "license_id": "https://openalex.org/licenses/other-oa",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "http://hw.oeaw.ac.at/ita-projektbericht",
+          "raw_type": null
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": false,
+          "pdf": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "Der": [
+            0
+          ],
+          "folgende": [
+            1
+          ],
+          "Statusbericht": [
+            2,
+            18
+          ],
+          "stellt": [
+            3
+          ],
+          "eine": [
+            4
+          ],
+          "Überarbeitung": [
+            5
+          ],
+          "und": [
+            6,
+            23,
+            40,
+            43,
+            51
+          ],
+          "Aktualisierung": [
+            7
+          ],
+          "des": [
+            8,
+            65
+          ],
+          "Vorjahresberichts": [
+            9
+          ],
+          "zu": [
+            10
+          ],
+          "Nanotechnologie": [
+            11,
+            39
+          ],
+          "Environment,": [
+            12,
+            31
+          ],
+          "Health": [
+            13,
+            32
+          ],
+          "&": [
+            14
+          ],
+          "Safety-Projekte": [
+            15
+          ],
+          "dar.": [
+            16
+          ],
+          "Dieser": [
+            17
+          ],
+          "fasst": [
+            19
+          ],
+          "derzeit": [
+            20
+          ],
+          "laufende": [
+            21
+          ],
+          "EU-geförderte": [
+            22
+          ],
+          "im": [
+            24,
+            90
+          ],
+          "deutschen": [
+            25
+          ],
+          "Sprachraum": [
+            26
+          ],
+          "verankerte": [
+            27
+          ],
+          "Projekte": [
+            28,
+            89
+          ],
+          "zum": [
+            29,
+            37
+          ],
+          "Thema": [
+            30,
+            38
+          ],
+          "and": [
+            33
+          ],
+          "Safety": [
+            34
+          ],
+          "mit": [
+            35,
+            69
+          ],
+          "Bezug": [
+            36
+          ],
+          "Nanomaterialien": [
+            41
+          ],
+          "zusammen": [
+            42
+          ],
+          "soll": [
+            44
+          ],
+          "einen": [
+            45
+          ],
+          "Überblick": [
+            46
+          ],
+          "über": [
+            47
+          ],
+          "die": [
+            48,
+            77
+          ],
+          "aktuelle": [
+            49
+          ],
+          "Forschung": [
+            50
+          ],
+          "ihre": [
+            52
+          ],
+          "Prioritäten": [
+            53
+          ],
+          "geben.": [
+            54
+          ],
+          "Das": [
+            55
+          ],
+          "von": [
+            56,
+            72,
+            79
+          ],
+          "der": [
+            57,
+            85
+          ],
+          "Europäischen": [
+            58
+          ],
+          "Kommission": [
+            59
+          ],
+          "vorgegebene": [
+            60
+          ],
+          "Rahmenprogramm": [
+            61
+          ],
+          "Horizon": [
+            62,
+            66
+          ],
+          "Europe,": [
+            63
+          ],
+          "Nachfolger": [
+            64
+          ],
+          "2020": [
+            67
+          ],
+          "Programms,": [
+            68
+          ],
+          "einem": [
+            70
+          ],
+          "Budget": [
+            71
+          ],
+          "€": [
+            73
+          ],
+          "95.5": [
+            74
+          ],
+          "Mrd.": [
+            75
+          ],
+          "für": [
+            76,
+            88
+          ],
+          "Jahre": [
+            78
+          ],
+          "2021": [
+            80
+          ],
+          "bis": [
+            81
+          ],
+          "2027": [
+            82
+          ],
+          "ist": [
+            83
+          ],
+          "hierbei": [
+            84
+          ],
+          "größte": [
+            86
+          ],
+          "Förderer": [
+            87
+          ],
+          "Bereich": [
+            91
+          ],
+          "Nano-EHS.": [
+            92
+          ]
+        },
+        "counts_by_year": [],
+        "updated_date": "2026-08-25T07:29:55.448023",
+        "created_date": "2026-08-07T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}

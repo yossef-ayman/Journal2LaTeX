@@ -1,0 +1,31 @@
+{
+  "provider": "openalex",
+  "query_key": "title:Test Work Title",
+  "query_hash": "f09e3dfc659c746d",
+  "saved_at": "2026-08-19T12:15:12.148533+00:00",
+  "status_code": 200,
+  "candidate_count": 1,
+  "raw_response": {
+    "results": [
+      {
+        "id": "https://openalex.org/W12345",
+        "doi": "https://doi.org/10.1000/182",
+        "display_name": "Test Work Title",
+        "publication_year": 2021,
+        "cited_by_count": 42,
+        "authorships": [
+          {
+            "author": {
+              "display_name": "Alice Smith"
+            }
+          }
+        ],
+        "primary_location": {
+          "source": {
+            "display_name": "Journal of Testing"
+          }
+        }
+      }
+    ]
+  }
+}

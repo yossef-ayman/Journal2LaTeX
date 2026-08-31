@@ -1,0 +1,146 @@
+{
+  "paper_id": "https://openalex.org/W4221022534",
+  "title": "Multi-Modal Graph Learning for Disease Prediction",
+  "year": 2022,
+  "reference_type": "journal-article",
+  "venue": "IEEE Transactions on Medical Imaging, –2216, 2022",
+  "publisher": "Institute of Electrical and Electronics Engineers",
+  "volume": "41",
+  "issue": "9",
+  "pages": "2207–2216",
+  "doi": "10.1109/tmi.2022.3159264",
+  "isbn": null,
+  "arxiv_id": null,
+  "openalex_id": "https://openalex.org/W4221022534",
+  "citations": {
+    "canonical_value": 189,
+    "google_scholar": null,
+    "openalex": 189,
+    "crossref": 185
+  },
+  "authors": [
+    {
+      "name": "Shuai Zheng",
+      "display_name": "Shuai Zheng",
+      "given": "Shuai",
+      "family": "Zheng",
+      "author_id": "https://openalex.org/A5042419001",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5042419001",
+        "orcid": "https://orcid.org/0000-0001-8560-8135",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Beijing Jiaotong University"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Zhenfeng Zhu",
+      "display_name": "Zhenfeng Zhu",
+      "given": "Zhenfeng",
+      "family": "Zhu",
+      "author_id": "https://openalex.org/A5101867605",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5101867605",
+        "orcid": "https://orcid.org/0000-0001-7315-3276",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Beijing Jiaotong University"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Zhizhe Liu",
+      "display_name": "Zhizhe Liu",
+      "given": "Zhizhe",
+      "family": "Liu",
+      "author_id": "https://openalex.org/A5078959651",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5078959651",
+        "orcid": "https://orcid.org/0000-0001-7571-4161",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Beijing Jiaotong University"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Zhenyu Guo",
+      "display_name": "Zhenyu Guo",
+      "given": "Zhenyu",
+      "family": "Guo",
+      "author_id": "https://openalex.org/A5101634327",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5101634327",
+        "orcid": "https://orcid.org/0000-0002-2869-429X",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Beijing Jiaotong University"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Yang Liu",
+      "display_name": "Yang Liu",
+      "given": "Yang",
+      "family": "Liu",
+      "author_id": "https://openalex.org/A5065115690",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5065115690",
+        "orcid": "https://orcid.org/0000-0002-5922-2156",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Beijing Jiaotong University"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Yuchen Yang",
+      "display_name": "Yuchen Yang",
+      "given": "Yuchen",
+      "family": "Yang",
+      "author_id": "https://openalex.org/A5101607263",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5101607263",
+        "orcid": "https://orcid.org/0000-0001-9004-8638",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Johns Hopkins University"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Yao Zhao",
+      "display_name": "Yao Zhao",
+      "given": "Yao",
+      "family": "Zhao",
+      "author_id": "https://openalex.org/A5100362745",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5100362745",
+        "orcid": "https://orcid.org/0000-0002-8581-9554",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Beijing Jiaotong University"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    }
+  ],
+  "abstract": "Benefiting from the powerful expressive capability of graphs, graph-based approaches have been popularly applied to handle multi-modal medical data and achieved impressive performance in various biomedical applications. For disease prediction tasks, most existing graph-based methods tend to define the graph manually based on specified modality (e.g., demographic information), and then integrated other modalities to obtain the patient representation by Graph Representation Learning (GRL). However, constructing an appropriate graph in advance is not a simple matter for these methods. Meanwhile, the complex correlation between modalities is ignored. These factors inevitably yield the inadequacy of providing sufficient information about the patient's condition for a reliable diagnosis. To this end, we propose an end-to-end Multi-modal Graph Learning framework (MMGL) for disease prediction with multi-modality. To effectively exploit the rich information across multi-modality associated with the disease, modality-aware representation learning is proposed to aggregate the features of each modality by leveraging the correlation and complementarity between the modalities. Furthermore, instead of defining the graph manually, the latent graph structure is captured through an effective way of adaptive graph learning. It could be jointly optimized with the prediction model, thus revealing the intrinsic connections among samples. Our model is also applicable to the scenario of inductive learning for those unseen data. An extensive group of experiments on two disease prediction tasks demonstrates that the proposed MMGL achieves more favorable performance. The code of MMGL is available at https://github.com/SsGood/MMGL.",
+  "url": "https://doi.org/10.1109/tmi.2022.3159264",
+  "pdf_url": null,
+  "reference_id": "ref_fcf317b9e8ce"
+}

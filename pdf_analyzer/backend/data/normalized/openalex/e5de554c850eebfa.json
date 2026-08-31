@@ -1,0 +1,383 @@
+{
+  "provider": "openalex",
+  "entity_key": "title_author:Multidti: drug–target interaction prediction based on multi-modal representation learning to bridge the gap between new chemical entities and known heterogeneous network Deshan Zhou",
+  "normalized_at": "2026-08-31T07:16:27.041999+00:00",
+  "data": [
+    {
+      "title": "MultiDTI: drug–target interaction prediction based on multi-modal representation learning to bridge the gap between new chemical entities and known heterogeneous network",
+      "display_name": "MultiDTI: drug–target interaction prediction based on multi-modal representation learning to bridge the gap between new chemical entities and known heterogeneous network",
+      "authors": [
+        {
+          "name": "Deshan Zhou",
+          "given": "Deshan",
+          "family": "Zhou",
+          "author_id": "https://openalex.org/A5074343752",
+          "display_name": "Deshan Zhou",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5074343752",
+            "orcid": "https://orcid.org/0000-0002-6725-9303",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Hunan University"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Zhijian Xu",
+          "given": "Zhijian",
+          "family": "Xu",
+          "author_id": "https://openalex.org/A5083748084",
+          "display_name": "Zhijian Xu",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5083748084",
+            "orcid": "https://orcid.org/0000-0002-3063-8473",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Chinese Academy of Sciences",
+            "Shanghai Institute of Materia Medica"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Wentao Li",
+          "given": "Wentao",
+          "family": "Li",
+          "author_id": "https://openalex.org/A5100451412",
+          "display_name": "Wentao Li",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5100451412",
+            "orcid": "https://orcid.org/0000-0002-7777-0818",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "National University of Defense Technology"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Xiaolan Xie",
+          "given": "Xiaolan",
+          "family": "Xie",
+          "author_id": "https://openalex.org/A5101699482",
+          "display_name": "Xiaolan Xie",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5101699482",
+            "orcid": "https://orcid.org/0000-0001-9546-5115",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Guilin University of Technology"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Shaoliang Peng",
+          "given": "Shaoliang",
+          "family": "Peng",
+          "author_id": "https://openalex.org/A5108008219",
+          "display_name": "Shaoliang Peng",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5108008219",
+            "orcid": "https://orcid.org/0000-0002-4647-2615",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Hunan University",
+            "National University of Defense Technology"
+          ],
+          "countries": [
+            "CN"
+          ]
+        }
+      ],
+      "year": 2021,
+      "publication_date": "2021-06-27",
+      "journal": "Bioinformatics",
+      "venue": "Bioinformatics",
+      "publisher": "Oxford University Press",
+      "reference_type": "journal-article",
+      "volume": "37",
+      "issue": "23",
+      "pages": "4485-4492",
+      "doi": "10.1093/bioinformatics/btab473",
+      "url": "https://doi.org/10.1093/bioinformatics/btab473",
+      "pdf_url": null,
+      "openalex_id": "https://openalex.org/W3175599101",
+      "citation_count": 99,
+      "cited_by_count": 99,
+      "is_oa": false,
+      "oa_status": "closed",
+      "abstract": "MOTIVATION: Predicting new drug-target interactions is an important step in new drug development, understanding of its side effects and drug repositioning. Heterogeneous data sources can provide comprehensive information and different perspectives for drug-target interaction prediction. Thus, there have been many calculation methods relying on heterogeneous networks. Most of them use graph-related algorithms to characterize nodes in heterogeneous networks for predicting new drug-target interactions (DTI). However, these methods can only make predictions in known heterogeneous network datasets, and cannot support the prediction of new chemical entities outside the heterogeneous network, which hinder further drug discovery and development. RESULTS: To solve this problem, we proposed a multi-modal DTI prediction model named 'MultiDTI' which uses our proposed joint learning framework based on heterogeneous networks. It combines the interaction or association information of the heterogeneous network and the drug/target sequence information, and maps the drugs, targets, side effects and disease nodes in the heterogeneous network into a common space. In this way, 'MultiDTI' can map the new chemical entity to this learned common space based on the chemical structure of the new entity. That is, bridging the gap between new chemical entities and known heterogeneous network. Our model has strong predictive performance, and the area under the receiver operating characteristic curve of the model is 0.961 and the area under the precision recall curve is 0.947 with 10-fold cross validation. In addition, some predicted new DTIs have been confirmed by ChEMBL database. Our results indicate that 'MultiDTI' is a powerful and practical tool for predicting new DTI, which can promote the development of drug discovery or drug repositioning. AVAILABILITY AND IMPLEMENTATION: Python codes and dataset are available at https://github.com/Deshan-Zhou/MultiDTI/. SUPPLEMENTARY INFORMATION: Supplementary data are available at Bioinformatics online.",
+      "topics": [
+        "Computational Drug Discovery Methods",
+        "Machine Learning in Bioinformatics",
+        "Advanced Graph Neural Networks"
+      ],
+      "referenced_works_count": 32,
+      "related_works": [
+        "https://openalex.org/W3005441379",
+        "https://openalex.org/W4207063555",
+        "https://openalex.org/W2604173773",
+        "https://openalex.org/W2997728144",
+        "https://openalex.org/W4210747027"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e5de554c850eebfa.json"
+    },
+    {
+      "title": "Image-based molecular representation learning for drug development: a survey",
+      "display_name": "Image-based molecular representation learning for drug development: a survey",
+      "authors": [
+        {
+          "name": "Yue Li",
+          "given": "Yue",
+          "family": "Li",
+          "author_id": "https://openalex.org/A5100863858",
+          "display_name": "Yue Li",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5100863858",
+            "orcid": "https://orcid.org/0009-0006-5923-6044",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Dongzhimen Hospital Affiliated to Beijing University of Chinese Medicine"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Bingyan Liu",
+          "given": "Bingyan",
+          "family": "Liu",
+          "author_id": "https://openalex.org/A5101497182",
+          "display_name": "Bingyan Liu",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5101497182",
+            "orcid": "https://orcid.org/0000-0003-2613-9863",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Beijing University of Posts and Telecommunications"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Jinyan Deng",
+          "given": "Jinyan",
+          "family": "Deng",
+          "author_id": "https://openalex.org/A5101386799",
+          "display_name": "Jinyan Deng",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5101386799",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Dongzhimen Hospital Affiliated to Beijing University of Chinese Medicine"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Yi Guo",
+          "given": "Yi",
+          "family": "Guo",
+          "author_id": "https://openalex.org/A5100847300",
+          "display_name": "Yi Guo",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5100847300",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Dongzhimen Hospital Affiliated to Beijing University of Chinese Medicine"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Hongbo Du",
+          "given": "Hongbo",
+          "family": "Du",
+          "author_id": "https://openalex.org/A5117137797",
+          "display_name": "Hongbo Du",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5117137797",
+            "orcid": "https://orcid.org/0000-0002-5797-1399",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Beijing University of Chinese Medicine",
+            "Dongzhimen Hospital Affiliated to Beijing University of Chinese Medicine"
+          ],
+          "countries": [
+            "CN"
+          ]
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-05-23",
+      "journal": "Briefings in Bioinformatics",
+      "venue": "Briefings in Bioinformatics",
+      "publisher": "Oxford University Press",
+      "reference_type": "journal-article",
+      "volume": "25",
+      "issue": "4",
+      "pages": "",
+      "doi": "10.1093/bib/bbae294",
+      "url": "https://doi.org/10.1093/bib/bbae294",
+      "pdf_url": null,
+      "openalex_id": "https://openalex.org/W4400046624",
+      "citation_count": 20,
+      "cited_by_count": 20,
+      "is_oa": true,
+      "oa_status": "gold",
+      "abstract": "Artificial intelligence (AI) powered drug development has received remarkable attention in recent years. It addresses the limitations of traditional experimental methods that are costly and time-consuming. While there have been many surveys attempting to summarize related research, they only focus on general AI or specific aspects such as natural language processing and graph neural network. Considering the rapid advance on computer vision, using the molecular image to enable AI appears to be a more intuitive and effective approach since each chemical substance has a unique visual representation. In this paper, we provide the first survey on image-based molecular representation for drug development. The survey proposes a taxonomy based on the learning paradigms in computer vision and reviews a large number of corresponding papers, highlighting the contributions of molecular visual representation in drug development. Besides, we discuss the applications, limitations and future directions in the field. We hope this survey could offer valuable insight into the use of image-based molecular representation learning in the context of drug development.",
+      "topics": [
+        "Computational Drug Discovery Methods",
+        "Machine Learning in Materials Science",
+        "Cell Image Analysis Techniques"
+      ],
+      "referenced_works_count": 127,
+      "related_works": [
+        "https://openalex.org/W4375867731",
+        "https://openalex.org/W2611989081",
+        "https://openalex.org/W4230611425",
+        "https://openalex.org/W2731899572",
+        "https://openalex.org/W2062195135"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e5de554c850eebfa.json"
+    },
+    {
+      "title": "Characterization of Transfer Using Multi-task Learning Curves",
+      "display_name": "Characterization of Transfer Using Multi-task Learning Curves",
+      "authors": [
+        {
+          "name": "András Millinghoffer",
+          "given": "András",
+          "family": "Millinghoffer",
+          "author_id": "https://openalex.org/A5121791440",
+          "display_name": "András Millinghoffer",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5121791440",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Artificial Intelligence in Medicine (Canada)"
+          ],
+          "countries": [
+            "CA"
+          ]
+        },
+        {
+          "name": "Bence Bolgár",
+          "given": "Bence",
+          "family": "Bolgár",
+          "author_id": "https://openalex.org/A5073373710",
+          "display_name": "Bence Bolgár",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5073373710",
+            "orcid": "https://orcid.org/0000-0002-9561-1095",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Artificial Intelligence in Medicine (Canada)"
+          ],
+          "countries": [
+            "CA"
+          ]
+        },
+        {
+          "name": "Péter Antal",
+          "given": "Péter",
+          "family": "Antal",
+          "author_id": "https://openalex.org/A5121756717",
+          "display_name": "Péter Antal",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5121756717",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Budapest University of Technology and Economics",
+            "Artificial Intelligence in Medicine (Canada)"
+          ],
+          "countries": [
+            "CA",
+            "HU"
+          ]
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-12-31",
+      "journal": "arXiv (Cornell University)",
+      "venue": "arXiv (Cornell University)",
+      "publisher": "Cornell University",
+      "reference_type": "preprint",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "http://arxiv.org/abs/2512.24866",
+      "pdf_url": "https://arxiv.org/pdf/2512.24866",
+      "openalex_id": "https://openalex.org/W7118051464",
+      "citation_count": 0,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "Transfer effects manifest themselves both during training using a fixed data set and in inductive inference using accumulating data. We hypothesize that perturbing the data set by including more samples, instead of perturbing the model by gradient updates, provides a complementary and more fundamental characterization of transfer effects. To capture this phenomenon, we quantitatively model transfer effects using multi-task learning curves approximating the inductive performance over varying sample sizes. We describe an efficient method to approximate multi-task learning curves analogous to the Task Affinity Grouping method applied during training. We compare the statistical and computational approaches to transfer, which indicates considerably higher compute costs for the previous but better power and broader applicability. Evaluations are performed using a benchmark drug-target interaction data set. Our results show that learning curves can better capture the effects of multi-task learning and their multi-task extensions can delineate pairwise and contextual transfer effects in foundation models.",
+      "topics": [
+        "Domain Adaptation and Few-Shot Learning",
+        "Gaussian Processes and Bayesian Inference",
+        "Stochastic Gradient Optimization Techniques"
+      ],
+      "referenced_works_count": 0,
+      "related_works": [],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e5de554c850eebfa.json"
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "reference_id": "ref_34288aba2788",
+  "project_id": "",
+  "created_at": "2026-08-31T07:48:48.858851+00:00",
+  "input": {
+    "original_text": "Vaswani, A., Shazeer, N., Parmar, N. (2017). Attention is all you need.",
+    "parsed": {
+      "title": "Attention is all you need",
+      "authors": [
+        {
+          "name": "Ashish Vaswani",
+          "given": "Ashish",
+          "family": "Vaswani"
+        }
+      ],
+      "year": 2017,
+      "reference_type": "journal-article",
+      "journal": null,
+      "publisher": null,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "doi": null,
+      "isbn": null,
+      "arxiv_id": null
+    }
+  },
+  "canonical": {
+    "title": {
+      "value": "Attention Is All You Need",
+      "source": "openalex",
+      "confidence": 1.0,
+      "verification_status": "verified"
+    },
+    "year": {
+      "value": 2025,
+      "source": "openalex",
+      "confidence": 1.0,
+      "verification_status": "verified"
+    },
+    "venue": {
+      "value": null,
+      "source": "none",
+      "confidence": 0.0,
+      "verification_status": "unverified"
+    },
+    "reference_type": {
+      "value": "journal-article",
+      "source": "openalex",
+      "confidence": 0.9,
+      "verification_status": "verified"
+    },
+    "publisher": {
+      "value": null,
+      "source": "none",
+      "confidence": 0.9,
+      "verification_status": "unverified"
+    },
+    "volume": null,
+    "issue": null,
+    "pages": null,
+    "abstract": null,
+    "url": null,
+    "identifiers": {
+      "doi": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.2,
+        "verification_status": "conflict"
+      },
+      "openalex_id": {
+        "value": "https://openalex.org/W2626778328",
+        "source": "openalex",
+        "confidence": 1.0,
+        "verification_status": "verified"
+      },
+      "arxiv_id": {
+        "value": null,
+        "source": "arxiv_resolver",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "isbn": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_cluster_id": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_url": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      }
+    },
+    "citation_counts": {
+      "canonical_value": 6591,
+      "google_scholar": null,
+      "openalex": 6591,
+      "crossref": null
+    }
+  },
+  "canonical_authors": [
+    {
+      "name": "Ashish Vaswani",
+      "display_name": "Ashish Vaswani",
+      "given": "Ashish",
+      "family": "Vaswani",
+      "author_id": "https://openalex.org/A5103024730",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5103024730",
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "matched",
+      "confidence": 0.95
+    }
+  ],
+  "sources": {
+    "openalex": {
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "citation_count": 6591,
+      "openalex_id": "https://openalex.org/W2626778328",
+      "doi": "10.65215/2q58a426",
+      "url": null,
+      "pdf_url": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {
+        "title": "Attention Is All You Need",
+        "authors": [
+          {
+            "name": "Ashish Vaswani",
+            "given": "Ashish",
+            "family": "Vaswani",
+            "author_id": "https://openalex.org/A5103024730",
+            "source": "openalex"
+          }
+        ],
+        "year": 2025,
+        "journal": "Shenzhen Medical Academy of Research and Translation",
+        "doi": "10.65215/2q58a426",
+        "openalex_id": "https://openalex.org/W2626778328",
+        "citation_count": 6591,
+        "source": "openalex"
+      }
+    },
+    "crossref": {
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.0,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {}
+    },
+    "google_scholar": {
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.0,
+      "url": null,
+      "cluster_id": null,
+      "cited_by_url": null,
+      "citation_count": null,
+      "versions_count": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {}
+    }
+  },
+  "doi_verification": {
+    "status": "conflict",
+    "canonical_doi": null,
+    "reconciled_with_arxiv": false,
+    "confidence": 0.2,
+    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.65215/2q58a426",
+        "reason": "DOI prefix '10.65215' belongs to Third-party reprint repository (e.g. Shenzhen Medical Academy re-index). Incompatible with original source.",
+        "status": "conflict"
+      }
+    ],
+    "unverified_dois": []
+  },
+  "quality_and_conflicts": {
+    "overall_confidence": 1.0,
+    "metadata_completeness": 0.67,
+    "doi_verified": false,
+    "author_verified": true,
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.65215/2q58a426",
+        "reason": "DOI prefix '10.65215' belongs to Third-party reprint repository (e.g. Shenzhen Medical Academy re-index). Incompatible with original source.",
+        "status": "conflict"
+      }
+    ]
+  },
+  "telemetry": {
+    "providers_queried": [
+      "openalex",
+      "crossref",
+      "google_scholar"
+    ],
+    "latency_ms": {},
+    "candidate_counts": {}
+  }
+}

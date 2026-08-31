@@ -1,0 +1,97 @@
+{
+  "paper_id": "https://openalex.org/W4309138810",
+  "title": "Machine learning based multi-modal prediction of future decline toward Alzheimer’s disease: An empirical study",
+  "year": 2022,
+  "reference_type": "journal-article",
+  "venue": "PLoS One, 17(11):e0277322, 2022",
+  "publisher": "Public Library of Science",
+  "volume": "17",
+  "issue": "11",
+  "pages": "e0277322",
+  "doi": "10.1371/journal.pone.0277322",
+  "isbn": null,
+  "arxiv_id": null,
+  "openalex_id": "https://openalex.org/W4309138810",
+  "citations": {
+    "canonical_value": 33,
+    "google_scholar": null,
+    "openalex": 33,
+    "crossref": 30
+  },
+  "authors": [
+    {
+      "name": "Batuhan K. Karaman",
+      "display_name": "Batuhan K. Karaman",
+      "given": "Batuhan K.",
+      "family": "Karaman",
+      "author_id": "https://openalex.org/A5049493284",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5049493284",
+        "orcid": "https://orcid.org/0000-0002-5108-5417",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Cornell University",
+        "Weill Cornell Medicine",
+        "Cornell Tech"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Elizabeth C. Mormino",
+      "display_name": "Elizabeth C. Mormino",
+      "given": "Elizabeth C.",
+      "family": "Mormino",
+      "author_id": "https://openalex.org/A5078734759",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5078734759",
+        "orcid": "https://orcid.org/0000-0002-4542-6537",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Stanford University"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Mert R. Sabuncu",
+      "display_name": "Mert R. Sabuncu",
+      "given": "Mert R.",
+      "family": "Sabuncu",
+      "author_id": "https://openalex.org/A5025877936",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5025877936",
+        "orcid": "https://orcid.org/0000-0002-7068-719X",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Cornell University",
+        "Weill Cornell Medicine",
+        "Cornell Tech"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "for the Alzheimer’s Disease Neuroimaging Initiative",
+      "display_name": "for the Alzheimer’s Disease Neuroimaging Initiative",
+      "given": "for the Alzheimer’s Disease Neuroimaging",
+      "family": "Initiative",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "ambiguous",
+      "confidence": 0.75
+    }
+  ],
+  "abstract": "Alzheimer's disease (AD) is a neurodegenerative condition that progresses over decades. Early detection of individuals at high risk of future progression toward AD is likely to be of critical significance for the successful treatment and/or prevention of this devastating disease. In this paper, we present an empirical study to characterize how predictable an individual subjects' future AD trajectory is, several years in advance, based on rich multi-modal data, and using modern deep learning methods. Crucially, the machine learning strategy we propose can handle different future time horizons and can be trained with heterogeneous data that exhibit missingness and non-uniform follow-up visit times. Our experiments demonstrate that our strategy yields predictions that are more accurate than a model trained on a single time horizon (e.g. 3 years), which is common practice in prior literature. We also provide a comparison between linear and nonlinear models, verifying the well-established insight that the latter can offer a boost in performance. Our results also confirm that predicting future decline for cognitively normal (CN) individuals is more challenging than for individuals with mild cognitive impairment (MCI). Intriguingly, however, we discover that prediction accuracy decreases with increasing time horizon for CN subjects, but the trend is in the opposite direction for MCI subjects. Additionally, we quantify the contribution of different data types in prediction, which yields novel insights into the utility of different biomarkers. We find that molecular biomarkers are not as helpful for CN individuals as they are for MCI individuals, whereas magnetic resonance imaging biomarkers (hippocampus volume, specifically) offer a significant boost in prediction accuracy for CN individuals. Finally, we show how our model's prediction reveals the evolution of individual-level progression risk over a five-year time horizon. Our code is available at https://github.com/batuhankmkaraman/mlbasedad.",
+  "url": "https://doi.org/10.1371/journal.pone.0277322",
+  "pdf_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0277322&type=printable",
+  "reference_id": "ref_af708d89cee9"
+}

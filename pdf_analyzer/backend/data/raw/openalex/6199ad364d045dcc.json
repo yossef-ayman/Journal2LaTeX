@@ -1,0 +1,5101 @@
+{
+  "provider": "openalex",
+  "query_key": "title:Alexandria",
+  "query_hash": "6199ad364d045dcc",
+  "saved_at": "2026-08-31T07:18:33.636895+00:00",
+  "status_code": 200,
+  "candidate_count": 10,
+  "raw_response": {
+    "meta": {
+      "count": 308669,
+      "db_response_time_ms": 106,
+      "page": 1,
+      "per_page": 10,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (Alexandria)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Alexandria",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Alexandria&per_page=10"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2802619401",
+        "doi": "https://doi.org/10.2307/4350701",
+        "title": "Herophilus: The Art of Medicine in Early Alexandria",
+        "display_name": "Herophilus: The Art of Medicine in Early Alexandria",
+        "relevance_score": 1768.0527,
+        "publication_year": 1990,
+        "publication_date": "1990-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W2802619401",
+          "doi": "https://doi.org/10.2307/4350701",
+          "mag": "2802619401"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.2307/4350701",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.2307/4350701",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S998751717",
+            "display_name": "The Classical World",
+            "issn_l": "0009-8418",
+            "issn": [
+              "0009-8418",
+              "1558-9234",
+              "1940-641X",
+              "2329-1176"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/P4310315678",
+            "host_organization_name": "Johns Hopkins University Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315678",
+              "https://openalex.org/P4310316510"
+            ],
+            "host_organization_lineage_names": [
+              "Johns Hopkins University Press",
+              "Johns Hopkins University"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "The Classical World",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5109385187",
+              "display_name": "David Sider",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "David Sider",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5096733874",
+              "display_name": "Herophilus",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "Herophilus",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5035821749",
+              "display_name": "Heinrich von Staden",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "Heinrich von Staden",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 27.7494,
+        "has_fulltext": false,
+        "cited_by_count": 605,
+        "citation_normalized_percentile": {
+          "value": 0.99449116,
+          "is_in_top_1_percent": true,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 97,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "83",
+          "issue": "6",
+          "first_page": "540",
+          "last_page": "540"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T13198",
+          "display_name": "Historical, Religious, and Philosophical Studies",
+          "score": 0.9740999937057495,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1204",
+            "display_name": "Archeology"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/12",
+            "display_name": "Arts and Humanities"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T13198",
+            "display_name": "Historical, Religious, and Philosophical Studies",
+            "score": 0.9740999937057495,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1204",
+              "display_name": "Archeology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T12324",
+            "display_name": "History of Medicine Studies",
+            "score": 0.972000002861023,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1202",
+              "display_name": "History"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/art",
+            "display_name": "Art",
+            "score": 0.4016144871711731
+          },
+          {
+            "id": "https://openalex.org/keywords/history",
+            "display_name": "History",
+            "score": 0.38021427392959595
+          },
+          {
+            "id": "https://openalex.org/keywords/ancient-history",
+            "display_name": "Ancient history",
+            "score": 0.35999318957328796
+          },
+          {
+            "id": "https://openalex.org/keywords/classics",
+            "display_name": "Classics",
+            "score": 0.3587590456008911
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C142362112",
+            "wikidata": "https://www.wikidata.org/wiki/Q735",
+            "display_name": "Art",
+            "level": 0,
+            "score": 0.4016144871711731
+          },
+          {
+            "id": "https://openalex.org/C95457728",
+            "wikidata": "https://www.wikidata.org/wiki/Q309",
+            "display_name": "History",
+            "level": 0,
+            "score": 0.38021427392959595
+          },
+          {
+            "id": "https://openalex.org/C195244886",
+            "wikidata": "https://www.wikidata.org/wiki/Q41493",
+            "display_name": "Ancient history",
+            "level": 1,
+            "score": 0.35999318957328796
+          },
+          {
+            "id": "https://openalex.org/C74916050",
+            "wikidata": "https://www.wikidata.org/wiki/Q841090",
+            "display_name": "Classics",
+            "level": 1,
+            "score": 0.3587590456008911
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.2307/4350701",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.2307/4350701",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S998751717",
+              "display_name": "The Classical World",
+              "issn_l": "0009-8418",
+              "issn": [
+                "0009-8418",
+                "1558-9234",
+                "1940-641X",
+                "2329-1176"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/P4310315678",
+              "host_organization_name": "Johns Hopkins University Press",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310315678",
+                "https://openalex.org/P4310316510"
+              ],
+              "host_organization_lineage_names": [
+                "Johns Hopkins University Press",
+                "Johns Hopkins University"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "The Classical World",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": false,
+          "pdf": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W4387497383",
+          "https://openalex.org/W3183948672",
+          "https://openalex.org/W3173606202",
+          "https://openalex.org/W3110381201",
+          "https://openalex.org/W2948807893",
+          "https://openalex.org/W2899084033",
+          "https://openalex.org/W2778153218",
+          "https://openalex.org/W2758277628",
+          "https://openalex.org/W2748952813",
+          "https://openalex.org/W1531601525"
+        ],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 37
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 37
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 52
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 100
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 70
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 8
+          }
+        ],
+        "updated_date": "2026-08-27T14:10:00.468798",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W1547104317",
+        "doi": "https://doi.org/10.1525/california/9780520244214.001.0001",
+        "title": "City and School in Late Antique Athens and Alexandria",
+        "display_name": "City and School in Late Antique Athens and Alexandria",
+        "relevance_score": 1511.4517,
+        "publication_year": 2006,
+        "publication_date": "2006-07-03",
+        "ids": {
+          "openalex": "https://openalex.org/W1547104317",
+          "doi": "https://doi.org/10.1525/california/9780520244214.001.0001",
+          "mag": "1547104317"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1525/california/9780520244214.001.0001",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1525/california/9780520244214.001.0001",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": null,
+          "raw_type": "monograph"
+        },
+        "type": "book",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5113641473",
+              "display_name": "Edward Watts",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": true,
+            "raw_author_name": "Edward Watts",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5113641473"
+        ],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 7.4748,
+        "has_fulltext": false,
+        "cited_by_count": 357,
+        "citation_normalized_percentile": {
+          "value": 0.97249035,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 94,
+          "max": 100
+        },
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10165",
+          "display_name": "Classical Antiquity Studies",
+          "score": 0.9973000288009644,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3314",
+            "display_name": "Anthropology"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/33",
+            "display_name": "Social Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10165",
+            "display_name": "Classical Antiquity Studies",
+            "score": 0.9973000288009644,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3314",
+              "display_name": "Anthropology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10362",
+            "display_name": "Biblical Studies and Interpretation",
+            "score": 0.9765999913215637,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1212",
+              "display_name": "Religious studies"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T13198",
+            "display_name": "Historical, Religious, and Philosophical Studies",
+            "score": 0.9571999907493591,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1204",
+              "display_name": "Archeology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/antique",
+            "display_name": "Antique",
+            "score": 0.9120500683784485
+          },
+          {
+            "id": "https://openalex.org/keywords/christianity",
+            "display_name": "Christianity",
+            "score": 0.560646653175354
+          },
+          {
+            "id": "https://openalex.org/keywords/sixth-century",
+            "display_name": "Sixth century",
+            "score": 0.5552291870117188
+          },
+          {
+            "id": "https://openalex.org/keywords/scholarship",
+            "display_name": "Scholarship",
+            "score": 0.5472906231880188
+          },
+          {
+            "id": "https://openalex.org/keywords/empire",
+            "display_name": "Empire",
+            "score": 0.47269725799560547
+          },
+          {
+            "id": "https://openalex.org/keywords/emperor",
+            "display_name": "Emperor",
+            "score": 0.4644508361816406
+          },
+          {
+            "id": "https://openalex.org/keywords/late-antiquity",
+            "display_name": "Late Antiquity",
+            "score": 0.437676340341568
+          },
+          {
+            "id": "https://openalex.org/keywords/classics",
+            "display_name": "Classics",
+            "score": 0.42855966091156006
+          },
+          {
+            "id": "https://openalex.org/keywords/ancient-history",
+            "display_name": "Ancient history",
+            "score": 0.4260757863521576
+          },
+          {
+            "id": "https://openalex.org/keywords/art",
+            "display_name": "Art",
+            "score": 0.4019654095172882
+          },
+          {
+            "id": "https://openalex.org/keywords/history",
+            "display_name": "History",
+            "score": 0.3716963827610016
+          },
+          {
+            "id": "https://openalex.org/keywords/archaeology",
+            "display_name": "Archaeology",
+            "score": 0.2564575672149658
+          },
+          {
+            "id": "https://openalex.org/keywords/political-science",
+            "display_name": "Political science",
+            "score": 0.12841728329658508
+          },
+          {
+            "id": "https://openalex.org/keywords/law",
+            "display_name": "Law",
+            "score": 0.0796349048614502
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2780376419",
+            "wikidata": "https://www.wikidata.org/wiki/Q472760",
+            "display_name": "Antique",
+            "level": 2,
+            "score": 0.9120500683784485
+          },
+          {
+            "id": "https://openalex.org/C551968917",
+            "wikidata": "https://www.wikidata.org/wiki/Q5043",
+            "display_name": "Christianity",
+            "level": 2,
+            "score": 0.560646653175354
+          },
+          {
+            "id": "https://openalex.org/C2993403040",
+            "wikidata": "https://www.wikidata.org/wiki/Q8090",
+            "display_name": "Sixth century",
+            "level": 2,
+            "score": 0.5552291870117188
+          },
+          {
+            "id": "https://openalex.org/C2778061430",
+            "wikidata": "https://www.wikidata.org/wiki/Q188823",
+            "display_name": "Scholarship",
+            "level": 2,
+            "score": 0.5472906231880188
+          },
+          {
+            "id": "https://openalex.org/C2778495208",
+            "wikidata": "https://www.wikidata.org/wiki/Q48349",
+            "display_name": "Empire",
+            "level": 2,
+            "score": 0.47269725799560547
+          },
+          {
+            "id": "https://openalex.org/C2776501734",
+            "wikidata": "https://www.wikidata.org/wiki/Q527496",
+            "display_name": "Emperor",
+            "level": 2,
+            "score": 0.4644508361816406
+          },
+          {
+            "id": "https://openalex.org/C11294208",
+            "wikidata": "https://www.wikidata.org/wiki/Q217050",
+            "display_name": "Late Antiquity",
+            "level": 2,
+            "score": 0.437676340341568
+          },
+          {
+            "id": "https://openalex.org/C74916050",
+            "wikidata": "https://www.wikidata.org/wiki/Q841090",
+            "display_name": "Classics",
+            "level": 1,
+            "score": 0.42855966091156006
+          },
+          {
+            "id": "https://openalex.org/C195244886",
+            "wikidata": "https://www.wikidata.org/wiki/Q41493",
+            "display_name": "Ancient history",
+            "level": 1,
+            "score": 0.4260757863521576
+          },
+          {
+            "id": "https://openalex.org/C142362112",
+            "wikidata": "https://www.wikidata.org/wiki/Q735",
+            "display_name": "Art",
+            "level": 0,
+            "score": 0.4019654095172882
+          },
+          {
+            "id": "https://openalex.org/C95457728",
+            "wikidata": "https://www.wikidata.org/wiki/Q309",
+            "display_name": "History",
+            "level": 0,
+            "score": 0.3716963827610016
+          },
+          {
+            "id": "https://openalex.org/C166957645",
+            "wikidata": "https://www.wikidata.org/wiki/Q23498",
+            "display_name": "Archaeology",
+            "level": 1,
+            "score": 0.2564575672149658
+          },
+          {
+            "id": "https://openalex.org/C17744445",
+            "wikidata": "https://www.wikidata.org/wiki/Q36442",
+            "display_name": "Political science",
+            "level": 0,
+            "score": 0.12841728329658508
+          },
+          {
+            "id": "https://openalex.org/C199539241",
+            "wikidata": "https://www.wikidata.org/wiki/Q7748",
+            "display_name": "Law",
+            "level": 1,
+            "score": 0.0796349048614502
+          }
+        ],
+        "mesh": [],
+        "locations_count": 4,
+        "locations": [
+          {
+            "id": "doi:10.1525/california/9780520244214.001.0001",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.1525/california/9780520244214.001.0001",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": null,
+            "raw_type": "monograph"
+          },
+          {
+            "id": "pmh:oai:aleph.bib-bvb.de:BVB01-014718449",
+            "is_oa": false,
+            "landing_page_url": "https://bvbr.bib-bvb.de:443/F?func=service&doc_library=BVB01&local_base=BVB01&doc_number=014718449&sequence=000008&line_number=0001&func_code=DB_RECORDS&service_type=MEDIA",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "Hochschulschrift"
+          },
+          {
+            "id": "pmh:oai:aleph.bib-bvb.de:BVB01-017347965",
+            "is_oa": false,
+            "landing_page_url": null,
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "Hochschulschrift"
+          },
+          {
+            "id": "pmh:oai:aleph.bib-bvb.de:BVB01-022182071",
+            "is_oa": false,
+            "landing_page_url": "http://bvbr.bib-bvb.de:8991/F?func=service&doc_library=BVB01&doc_number=014718449&line_number=0001&func_code=DB_RECORDS&service_type=MEDIA",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "Hochschulschrift"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [
+          {
+            "score": 0.6600000262260437,
+            "display_name": "Sustainable cities and communities",
+            "id": "https://metadata.un.org/sdg/11"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": false,
+          "pdf": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W2752033912",
+          "https://openalex.org/W2737133701",
+          "https://openalex.org/W2148919138",
+          "https://openalex.org/W892049898",
+          "https://openalex.org/W4282980995",
+          "https://openalex.org/W4239680495",
+          "https://openalex.org/W1676054642",
+          "https://openalex.org/W2478706534",
+          "https://openalex.org/W4385763764",
+          "https://openalex.org/W3034351576"
+        ],
+        "abstract_inverted_index": {
+          "\"City": [
+            0
+          ],
+          "and": [
+            1,
+            7
+          ],
+          "School": [
+            2
+          ],
+          "in": [
+            3
+          ],
+          "Late": [
+            4
+          ],
+          "Antique": [
+            5
+          ],
+          "Athens": [
+            6
+          ],
+          "Alexandria\"": [
+            8
+          ],
+          "published": [
+            9
+          ],
+          "on": [
+            10
+          ],
+          "by": [
+            11
+          ],
+          "University": [
+            12
+          ],
+          "of": [
+            13
+          ],
+          "California": [
+            14
+          ],
+          "Press.": [
+            15
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 42
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 53
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 49
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 35
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 4
+          }
+        ],
+        "updated_date": "2026-08-27T14:10:00.468798",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4301443871",
+        "doi": "https://doi.org/10.1525/9780520910386",
+        "title": "Allegorical Readers and Cultural Revision in Ancient Alexandria",
+        "display_name": "Allegorical Readers and Cultural Revision in Ancient Alexandria",
+        "relevance_score": 1495.7683,
+        "publication_year": 1992,
+        "publication_date": "1992-12-31",
+        "ids": {
+          "openalex": "https://openalex.org/W4301443871",
+          "doi": "https://doi.org/10.1525/9780520910386"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1525/9780520910386",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1525/9780520910386",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": null,
+          "raw_type": "edited-book"
+        },
+        "type": "book",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5102125651",
+              "display_name": "David Dawson",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": true,
+            "raw_author_name": "David Dawson",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5102125651"
+        ],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 3.8512,
+        "has_fulltext": false,
+        "cited_by_count": 472,
+        "citation_normalized_percentile": {
+          "value": 0.9504749,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 89,
+          "max": 100
+        },
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10165",
+          "display_name": "Classical Antiquity Studies",
+          "score": 0.9879999756813049,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3314",
+            "display_name": "Anthropology"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/33",
+            "display_name": "Social Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10165",
+            "display_name": "Classical Antiquity Studies",
+            "score": 0.9879999756813049,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3314",
+              "display_name": "Anthropology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T13198",
+            "display_name": "Historical, Religious, and Philosophical Studies",
+            "score": 0.9739000201225281,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1204",
+              "display_name": "Archeology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T12555",
+            "display_name": "Ancient Egypt and Archaeology",
+            "score": 0.9661999940872192,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1204",
+              "display_name": "Archeology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/literature",
+            "display_name": "Literature",
+            "score": 0.4667646586894989
+          },
+          {
+            "id": "https://openalex.org/keywords/art",
+            "display_name": "Art",
+            "score": 0.44303110241889954
+          },
+          {
+            "id": "https://openalex.org/keywords/ancient-history",
+            "display_name": "Ancient history",
+            "score": 0.4033285975456238
+          },
+          {
+            "id": "https://openalex.org/keywords/history",
+            "display_name": "History",
+            "score": 0.3958747386932373
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C124952713",
+            "wikidata": "https://www.wikidata.org/wiki/Q8242",
+            "display_name": "Literature",
+            "level": 1,
+            "score": 0.4667646586894989
+          },
+          {
+            "id": "https://openalex.org/C142362112",
+            "wikidata": "https://www.wikidata.org/wiki/Q735",
+            "display_name": "Art",
+            "level": 0,
+            "score": 0.44303110241889954
+          },
+          {
+            "id": "https://openalex.org/C195244886",
+            "wikidata": "https://www.wikidata.org/wiki/Q41493",
+            "display_name": "Ancient history",
+            "level": 1,
+            "score": 0.4033285975456238
+          },
+          {
+            "id": "https://openalex.org/C95457728",
+            "wikidata": "https://www.wikidata.org/wiki/Q309",
+            "display_name": "History",
+            "level": 0,
+            "score": 0.3958747386932373
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.1525/9780520910386",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.1525/9780520910386",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": null,
+            "raw_type": "edited-book"
+          },
+          {
+            "id": "pmh:oai:aleph.bib-bvb.de:BVB01-003497090",
+            "is_oa": false,
+            "landing_page_url": "https://bvbr.bib-bvb.de:443/F?func=service&doc_library=BVB01&local_base=BVB01&doc_number=003497090&sequence=000002&line_number=0001&func_code=DB_RECORDS&service_type=MEDIA",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "Hochschulschrift"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": false,
+          "pdf": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W4387497383",
+          "https://openalex.org/W3183948672",
+          "https://openalex.org/W3173606202",
+          "https://openalex.org/W3110381201",
+          "https://openalex.org/W2948807893",
+          "https://openalex.org/W2935909890",
+          "https://openalex.org/W2778153218",
+          "https://openalex.org/W2758277628",
+          "https://openalex.org/W2748952813",
+          "https://openalex.org/W1531601525"
+        ],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 63
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 35
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 40
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 4
+          }
+        ],
+        "updated_date": "2026-08-27T14:10:00.468798",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W2123723601",
+        "doi": "https://doi.org/10.1163/9789004320666",
+        "title": "Philo of Alexandria and the Timaeus of Plato",
+        "display_name": "Philo of Alexandria and the Timaeus of Plato",
+        "relevance_score": 1383.4109,
+        "publication_year": 1986,
+        "publication_date": "1986-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W2123723601",
+          "doi": "https://doi.org/10.1163/9789004320666",
+          "mag": "2123723601"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1163/9789004320666",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1163/9789004320666",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": null,
+          "raw_type": "monograph"
+        },
+        "type": "book",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5112350821",
+              "display_name": "Douwe Runia",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": true,
+            "raw_author_name": "Douwe (David) Runia",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5112350821"
+        ],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.0,
+        "has_fulltext": false,
+        "cited_by_count": 322,
+        "citation_normalized_percentile": {
+          "value": 0.47793505,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 90,
+          "max": 100
+        },
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11463",
+          "display_name": "Classical Philosophy and Thought",
+          "score": 0.9977999925613403,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1211",
+            "display_name": "Philosophy"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/12",
+            "display_name": "Arts and Humanities"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11463",
+            "display_name": "Classical Philosophy and Thought",
+            "score": 0.9977999925613403,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1211",
+              "display_name": "Philosophy"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T13198",
+            "display_name": "Historical, Religious, and Philosophical Studies",
+            "score": 0.9577999711036682,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1204",
+              "display_name": "Archeology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T12511",
+            "display_name": "Medieval and Classical Philosophy",
+            "score": 0.9426000118255615,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1211",
+              "display_name": "Philosophy"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/jewish-studies",
+            "display_name": "Jewish studies",
+            "score": 0.739679217338562
+          },
+          {
+            "id": "https://openalex.org/keywords/biblical-studies",
+            "display_name": "Biblical studies",
+            "score": 0.7127010822296143
+          },
+          {
+            "id": "https://openalex.org/keywords/philosophy",
+            "display_name": "Philosophy",
+            "score": 0.6657382845878601
+          },
+          {
+            "id": "https://openalex.org/keywords/hebrew-bible",
+            "display_name": "Hebrew Bible",
+            "score": 0.5892167091369629
+          },
+          {
+            "id": "https://openalex.org/keywords/theology",
+            "display_name": "Theology",
+            "score": 0.3859162926673889
+          },
+          {
+            "id": "https://openalex.org/keywords/art",
+            "display_name": "Art",
+            "score": 0.3231253921985626
+          },
+          {
+            "id": "https://openalex.org/keywords/judaism",
+            "display_name": "Judaism",
+            "score": 0.11577406525611877
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C74481535",
+            "wikidata": "https://www.wikidata.org/wiki/Q42002",
+            "display_name": "Jewish studies",
+            "level": 3,
+            "score": 0.739679217338562
+          },
+          {
+            "id": "https://openalex.org/C194105502",
+            "wikidata": "https://www.wikidata.org/wiki/Q794605",
+            "display_name": "Biblical studies",
+            "level": 2,
+            "score": 0.7127010822296143
+          },
+          {
+            "id": "https://openalex.org/C138885662",
+            "wikidata": "https://www.wikidata.org/wiki/Q5891",
+            "display_name": "Philosophy",
+            "level": 0,
+            "score": 0.6657382845878601
+          },
+          {
+            "id": "https://openalex.org/C65264089",
+            "wikidata": "https://www.wikidata.org/wiki/Q732870",
+            "display_name": "Hebrew Bible",
+            "level": 3,
+            "score": 0.5892167091369629
+          },
+          {
+            "id": "https://openalex.org/C27206212",
+            "wikidata": "https://www.wikidata.org/wiki/Q34178",
+            "display_name": "Theology",
+            "level": 1,
+            "score": 0.3859162926673889
+          },
+          {
+            "id": "https://openalex.org/C142362112",
+            "wikidata": "https://www.wikidata.org/wiki/Q735",
+            "display_name": "Art",
+            "level": 0,
+            "score": 0.3231253921985626
+          },
+          {
+            "id": "https://openalex.org/C150152722",
+            "wikidata": "https://www.wikidata.org/wiki/Q9268",
+            "display_name": "Judaism",
+            "level": 2,
+            "score": 0.11577406525611877
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.1163/9789004320666",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.1163/9789004320666",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": null,
+            "raw_type": "monograph"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": false,
+          "pdf": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W1970857956",
+          "https://openalex.org/W2089561770",
+          "https://openalex.org/W1989252373",
+          "https://openalex.org/W2008976487",
+          "https://openalex.org/W1976695680",
+          "https://openalex.org/W2800426426",
+          "https://openalex.org/W2044787220",
+          "https://openalex.org/W4248836191",
+          "https://openalex.org/W1966392830",
+          "https://openalex.org/W1972896127"
+        ],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 26
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 10
+          }
+        ],
+        "updated_date": "2026-08-21T09:56:20.448147",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W47224787",
+        "doi": null,
+        "title": "Alexandria: Library of Dreams",
+        "display_name": "Alexandria: Library of Dreams",
+        "relevance_score": 1355.0281,
+        "publication_year": 2002,
+        "publication_date": "2002-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W47224787",
+          "mag": "47224787"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "pmh:http://hdl.handle.net/2451/28263",
+          "is_oa": true,
+          "landing_page_url": "http://archive.nyu.edu/handle/2451/28263",
+          "pdf_url": "http://archive.nyu.edu/handle/2451/28263",
+          "source": {
+            "id": "https://openalex.org/S4377196662",
+            "display_name": "Faculty Digital Archive (New York University Florence)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I4210123063",
+            "host_organization_name": "New York University Florence",
+            "host_organization_lineage": [
+              "https://openalex.org/I4210123063"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "Article"
+        },
+        "type": "article",
+        "indexed_in": [],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "http://archive.nyu.edu/handle/2451/28263",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5020989535",
+              "display_name": "Roger S. Bagnall",
+              "orcid": "https://orcid.org/0000-0002-9817-3326"
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": true,
+            "raw_author_name": "Roger S. Bagnall",
+            "raw_affiliation_strings": [],
+            "raw_orcid": "https://orcid.org/0000-0002-9817-3326",
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5020989535"
+        ],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.0,
+        "has_fulltext": true,
+        "cited_by_count": 258,
+        "citation_normalized_percentile": {
+          "value": 0.01637782,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 88,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "146",
+          "issue": "4",
+          "first_page": "348",
+          "last_page": "362"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10165",
+          "display_name": "Classical Antiquity Studies",
+          "score": 0.9487000107765198,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3314",
+            "display_name": "Anthropology"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/33",
+            "display_name": "Social Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10165",
+            "display_name": "Classical Antiquity Studies",
+            "score": 0.9487000107765198,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3314",
+              "display_name": "Anthropology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/ignorance",
+            "display_name": "Ignorance",
+            "score": 0.8961309194564819
+          },
+          {
+            "id": "https://openalex.org/keywords/aside",
+            "display_name": "Aside",
+            "score": 0.7748565673828125
+          },
+          {
+            "id": "https://openalex.org/keywords/wishful-thinking",
+            "display_name": "Wishful thinking",
+            "score": 0.6641198396682739
+          },
+          {
+            "id": "https://openalex.org/keywords/blame",
+            "display_name": "Blame",
+            "score": 0.6393778920173645
+          },
+          {
+            "id": "https://openalex.org/keywords/character",
+            "display_name": "Character (mathematics)",
+            "score": 0.5222383737564087
+          },
+          {
+            "id": "https://openalex.org/keywords/order",
+            "display_name": "Order (exchange)",
+            "score": 0.49830126762390137
+          },
+          {
+            "id": "https://openalex.org/keywords/desert",
+            "display_name": "Desert (philosophy)",
+            "score": 0.4875754714012146
+          },
+          {
+            "id": "https://openalex.org/keywords/philosophy",
+            "display_name": "Philosophy",
+            "score": 0.4385848939418793
+          },
+          {
+            "id": "https://openalex.org/keywords/phenomenon",
+            "display_name": "Phenomenon",
+            "score": 0.4236822724342346
+          },
+          {
+            "id": "https://openalex.org/keywords/history",
+            "display_name": "History",
+            "score": 0.4173380434513092
+          },
+          {
+            "id": "https://openalex.org/keywords/literature",
+            "display_name": "Literature",
+            "score": 0.40531426668167114
+          },
+          {
+            "id": "https://openalex.org/keywords/epistemology",
+            "display_name": "Epistemology",
+            "score": 0.3050878047943115
+          },
+          {
+            "id": "https://openalex.org/keywords/art",
+            "display_name": "Art",
+            "score": 0.28512895107269287
+          },
+          {
+            "id": "https://openalex.org/keywords/psychology",
+            "display_name": "Psychology",
+            "score": 0.22376558184623718
+          },
+          {
+            "id": "https://openalex.org/keywords/social-psychology",
+            "display_name": "Social psychology",
+            "score": 0.0764322280883789
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2778732403",
+            "wikidata": "https://www.wikidata.org/wiki/Q815577",
+            "display_name": "Ignorance",
+            "level": 2,
+            "score": 0.8961309194564819
+          },
+          {
+            "id": "https://openalex.org/C2778120072",
+            "wikidata": "https://www.wikidata.org/wiki/Q2858150",
+            "display_name": "Aside",
+            "level": 2,
+            "score": 0.7748565673828125
+          },
+          {
+            "id": "https://openalex.org/C2780400661",
+            "wikidata": "https://www.wikidata.org/wiki/Q8154361",
+            "display_name": "Wishful thinking",
+            "level": 2,
+            "score": 0.6641198396682739
+          },
+          {
+            "id": "https://openalex.org/C2781466463",
+            "wikidata": "https://www.wikidata.org/wiki/Q621695",
+            "display_name": "Blame",
+            "level": 2,
+            "score": 0.6393778920173645
+          },
+          {
+            "id": "https://openalex.org/C2780861071",
+            "wikidata": "https://www.wikidata.org/wiki/Q1062934",
+            "display_name": "Character (mathematics)",
+            "level": 2,
+            "score": 0.5222383737564087
+          },
+          {
+            "id": "https://openalex.org/C182306322",
+            "wikidata": "https://www.wikidata.org/wiki/Q1779371",
+            "display_name": "Order (exchange)",
+            "level": 2,
+            "score": 0.49830126762390137
+          },
+          {
+            "id": "https://openalex.org/C2776130869",
+            "wikidata": "https://www.wikidata.org/wiki/Q1361649",
+            "display_name": "Desert (philosophy)",
+            "level": 2,
+            "score": 0.4875754714012146
+          },
+          {
+            "id": "https://openalex.org/C138885662",
+            "wikidata": "https://www.wikidata.org/wiki/Q5891",
+            "display_name": "Philosophy",
+            "level": 0,
+            "score": 0.4385848939418793
+          },
+          {
+            "id": "https://openalex.org/C50335755",
+            "wikidata": "https://www.wikidata.org/wiki/Q483247",
+            "display_name": "Phenomenon",
+            "level": 2,
+            "score": 0.4236822724342346
+          },
+          {
+            "id": "https://openalex.org/C95457728",
+            "wikidata": "https://www.wikidata.org/wiki/Q309",
+            "display_name": "History",
+            "level": 0,
+            "score": 0.4173380434513092
+          },
+          {
+            "id": "https://openalex.org/C124952713",
+            "wikidata": "https://www.wikidata.org/wiki/Q8242",
+            "display_name": "Literature",
+            "level": 1,
+            "score": 0.40531426668167114
+          },
+          {
+            "id": "https://openalex.org/C111472728",
+            "wikidata": "https://www.wikidata.org/wiki/Q9471",
+            "display_name": "Epistemology",
+            "level": 1,
+            "score": 0.3050878047943115
+          },
+          {
+            "id": "https://openalex.org/C142362112",
+            "wikidata": "https://www.wikidata.org/wiki/Q735",
+            "display_name": "Art",
+            "level": 0,
+            "score": 0.28512895107269287
+          },
+          {
+            "id": "https://openalex.org/C15744967",
+            "wikidata": "https://www.wikidata.org/wiki/Q9418",
+            "display_name": "Psychology",
+            "level": 0,
+            "score": 0.22376558184623718
+          },
+          {
+            "id": "https://openalex.org/C77805123",
+            "wikidata": "https://www.wikidata.org/wiki/Q161272",
+            "display_name": "Social psychology",
+            "level": 1,
+            "score": 0.0764322280883789
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C10138342",
+            "wikidata": "https://www.wikidata.org/wiki/Q43015",
+            "display_name": "Finance",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C2524010",
+            "wikidata": "https://www.wikidata.org/wiki/Q8087",
+            "display_name": "Geometry",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C162324750",
+            "wikidata": "https://www.wikidata.org/wiki/Q8134",
+            "display_name": "Economics",
+            "level": 0,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 3,
+        "locations": [
+          {
+            "id": "pmh:http://hdl.handle.net/2451/28263",
+            "is_oa": true,
+            "landing_page_url": "http://archive.nyu.edu/handle/2451/28263",
+            "pdf_url": "http://archive.nyu.edu/handle/2451/28263",
+            "source": {
+              "id": "https://openalex.org/S4377196662",
+              "display_name": "Faculty Digital Archive (New York University Florence)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I4210123063",
+              "host_organization_name": "New York University Florence",
+              "host_organization_lineage": [
+                "https://openalex.org/I4210123063"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "Article"
+          },
+          {
+            "id": "pmh:oai:CiteSeerX.psu:10.1.1.694.8417",
+            "is_oa": false,
+            "landing_page_url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.694.8417",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "http://archive.nyu.edu/bitstream/2451/28263/2/D172-Alexandria+Library+of+Dreams.pdf",
+            "raw_type": "text"
+          },
+          {
+            "id": "mag:47224787",
+            "is_oa": false,
+            "landing_page_url": "https://archive.nyu.edu/bitstream/2451/28263/2/D172-Alexandria%20Library%20of%20Dreams.pdf",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306523957",
+              "display_name": "Proceedings of the American Philosophical Society: Held at Philadelphia for Promoting Useful Knowledge",
+              "issn_l": "0003-049X",
+              "issn": [
+                "0003-049X",
+                "2326-9243"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": null,
+            "is_accepted": false,
+            "is_published": null,
+            "raw_source_name": "Proceedings of the American Philosophical Society: Held at Philadelphia for Promoting Useful Knowledge",
+            "raw_type": null
+          }
+        ],
+        "best_oa_location": {
+          "id": "pmh:http://hdl.handle.net/2451/28263",
+          "is_oa": true,
+          "landing_page_url": "http://archive.nyu.edu/handle/2451/28263",
+          "pdf_url": "http://archive.nyu.edu/handle/2451/28263",
+          "source": {
+            "id": "https://openalex.org/S4377196662",
+            "display_name": "Faculty Digital Archive (New York University Florence)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I4210123063",
+            "host_organization_name": "New York University Florence",
+            "host_organization_lineage": [
+              "https://openalex.org/I4210123063"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "Article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.7099999785423279,
+            "display_name": "Peace, Justice and strong institutions",
+            "id": "https://metadata.un.org/sdg/16"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W47224787.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W47224787.grobid-xml"
+        },
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "Y": [
+            0
+          ],
+          "TITLE": [
+            1
+          ],
+          "does": [
+            2,
+            16
+          ],
+          "not": [
+            3,
+            12
+          ],
+          "intend": [
+            4
+          ],
+          "to": [
+            5,
+            18,
+            83,
+            127,
+            130,
+            197,
+            226
+          ],
+          "suggest": [
+            6
+          ],
+          "that": [
+            7,
+            28,
+            92,
+            121,
+            154
+          ],
+          "the": [
+            8,
+            23,
+            37,
+            40,
+            63,
+            113,
+            118,
+            136,
+            143,
+            163,
+            166,
+            172,
+            180,
+            204,
+            207,
+            219
+          ],
+          "Alexandrian": [
+            9
+          ],
+          "Library": [
+            10
+          ],
+          "did": [
+            11
+          ],
+          "exist,": [
+            13
+          ],
+          "but": [
+            14
+          ],
+          "it": [
+            15,
+            227
+          ],
+          "point": [
+            17
+          ],
+          "what": [
+            19,
+            231
+          ],
+          "I": [
+            20,
+            111,
+            146,
+            195,
+            224
+          ],
+          "regard": [
+            21
+          ],
+          "as": [
+            22,
+            192,
+            194
+          ],
+          "unreal": [
+            24
+          ],
+          "character": [
+            25
+          ],
+          "of": [
+            26,
+            44,
+            76,
+            87,
+            102,
+            139,
+            142,
+            152,
+            165,
+            182,
+            203,
+            206
+          ],
+          "much": [
+            27
+          ],
+          "has": [
+            29,
+            71,
+            80,
+            105
+          ],
+          "been": [
+            30,
+            72,
+            81
+          ],
+          "said": [
+            31
+          ],
+          "about": [
+            32,
+            69,
+            89,
+            149,
+            162,
+            170,
+            179
+          ],
+          "it.The": [
+            33
+          ],
+          "disparity": [
+            34
+          ],
+          "between,": [
+            35
+          ],
+          "on": [
+            36,
+            62,
+            218
+          ],
+          "one": [
+            38
+          ],
+          "hand,": [
+            39
+          ],
+          "grandeur": [
+            41
+          ],
+          "and": [
+            42,
+            53,
+            59,
+            159,
+            177
+          ],
+          "importance": [
+            43
+          ],
+          "this": [
+            45
+          ],
+          "library,": [
+            46
+          ],
+          "both": [
+            47,
+            57
+          ],
+          "in": [
+            48,
+            51,
+            54,
+            108,
+            125,
+            230
+          ],
+          "its": [
+            49,
+            55,
+            175,
+            183
+          ],
+          "reality": [
+            50
+          ],
+          "antiquity": [
+            52
+          ],
+          "image": [
+            56
+          ],
+          "ancient": [
+            58,
+            158,
+            201
+          ],
+          "modern,": [
+            60
+          ],
+          "and,": [
+            61
+          ],
+          "other,": [
+            64
+          ],
+          "our": [
+            65,
+            85,
+            140
+          ],
+          "nearly": [
+            66
+          ],
+          "total": [
+            67
+          ],
+          "ignorance": [
+            68,
+            141
+          ],
+          "it,": [
+            70
+          ],
+          "unbearable.No": [
+            73
+          ],
+          "one,": [
+            74
+          ],
+          "least": [
+            75
+          ],
+          "all": [
+            77
+          ],
+          "modern": [
+            78
+          ],
+          "scholars,": [
+            79
+          ],
+          "able": [
+            82,
+            129
+          ],
+          "accept": [
+            84
+          ],
+          "lack": [
+            86
+          ],
+          "knowledge": [
+            88
+          ],
+          "a": [
+            90,
+            99
+          ],
+          "phenomenon": [
+            91
+          ],
+          "embodies": [
+            93
+          ],
+          "so": [
+            94
+          ],
+          "many": [
+            95
+          ],
+          "human": [
+            96
+          ],
+          "aspirations.In": [
+            97
+          ],
+          "consequence,": [
+            98
+          ],
+          "whole": [
+            100
+          ],
+          "literature": [
+            101
+          ],
+          "wishful": [
+            103
+          ],
+          "thinking": [
+            104
+          ],
+          "grown": [
+            106
+          ],
+          "up,": [
+            107
+          ],
+          "which": [
+            109
+          ],
+          "scholars-even,": [
+            110
+          ],
+          "fear,": [
+            112
+          ],
+          "most": [
+            114
+          ],
+          "rigorous-have": [
+            115
+          ],
+          "cast": [
+            116
+          ],
+          "aside": [
+            117
+          ],
+          "time-tested": [
+            119
+          ],
+          "methods": [
+            120
+          ],
+          "normally": [
+            122
+          ],
+          "constrain": [
+            123
+          ],
+          "credulity,": [
+            124
+          ],
+          "order": [
+            126
+          ],
+          "be": [
+            128
+          ],
+          "avoid": [
+            131
+          ],
+          "confessing": [
+            132
+          ],
+          "defeat.After": [
+            133
+          ],
+          "sketching": [
+            134
+          ],
+          "briefly": [
+            135
+          ],
+          "main": [
+            137
+          ],
+          "lines": [
+            138
+          ],
+          "Library's": [
+            144
+          ],
+          "history,": [
+            145
+          ],
+          "shall": [
+            147
+          ],
+          "talk": [
+            148
+          ],
+          "three": [
+            150
+          ],
+          "types": [
+            151
+          ],
+          "dreams": [
+            153,
+            161,
+            169,
+            178
+          ],
+          "have": [
+            155
+          ],
+          "beguiled": [
+            156
+          ],
+          "commentators": [
+            157
+          ],
+          "modern:": [
+            160
+          ],
+          "size": [
+            164
+          ],
+          "Bibliotheca": [
+            167,
+            220
+          ],
+          "Alexandrina;": [
+            168
+          ],
+          "placing": [
+            171
+          ],
+          "blame": [
+            173
+          ],
+          "for": [
+            174
+          ],
+          "destruction;": [
+            176
+          ],
+          "consequences": [
+            181
+          ],
+          "loss.": [
+            184
+          ],
+          "2": [
+            185,
+            215
+          ],
+          "But": [
+            186
+          ],
+          "there": [
+            187
+          ],
+          "are": [
+            188
+          ],
+          "some": [
+            189
+          ],
+          "positive": [
+            190
+          ],
+          "lessons": [
+            191
+          ],
+          "well,": [
+            193
+          ],
+          "hope": [
+            196
+          ],
+          "show.There": [
+            198
+          ],
+          "is": [
+            199,
+            222
+          ],
+          "no": [
+            200
+          ],
+          "account": [
+            202
+          ],
+          "foundation": [
+            205
+          ],
+          "Library.": [
+            208
+          ],
+          "3We": [
+            209
+          ],
+          "1": [
+            210
+          ],
+          "Read": [
+            211
+          ],
+          "10": [
+            212
+          ],
+          "November": [
+            213
+          ],
+          "2000.": [
+            214
+          ],
+          "The": [
+            216
+          ],
+          "bibliography": [
+            217
+          ],
+          "Alexandrina": [
+            221
+          ],
+          "enormous;": [
+            223
+          ],
+          "refer": [
+            225
+          ],
+          "very": [
+            228
+          ],
+          "selectively": [
+            229
+          ],
+          "follows.": [
+            232
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 77
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 45
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 5
+          }
+        ],
+        "updated_date": "2026-08-27T14:10:00.468798",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W2404163518",
+        "doi": "https://doi.org/10.2307/284172",
+        "title": "The Population of Roman Alexandria",
+        "display_name": "The Population of Roman Alexandria",
+        "relevance_score": 1321.5547,
+        "publication_year": 1988,
+        "publication_date": "1988-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W2404163518",
+          "doi": "https://doi.org/10.2307/284172",
+          "mag": "2404163518"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.2307/284172",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.2307/284172",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S152198285",
+            "display_name": "Transactions of the American Philological Association (1974-)",
+            "issn_l": "0360-5949",
+            "issn": [
+              "0360-5949",
+              "1533-0699"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/P4310315678",
+            "host_organization_name": "Johns Hopkins University Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315678",
+              "https://openalex.org/P4310316510"
+            ],
+            "host_organization_lineage_names": [
+              "Johns Hopkins University Press",
+              "Johns Hopkins University"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Transactions of the American Philological Association (1974-)",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5011479223",
+              "display_name": "Diana Delia",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": true,
+            "raw_author_name": "Diana Delia",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5011479223"
+        ],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 1.1827,
+        "has_fulltext": false,
+        "cited_by_count": 186,
+        "citation_normalized_percentile": {
+          "value": 0.89124794,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 89,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "118",
+          "issue": null,
+          "first_page": "275",
+          "last_page": "275"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11365",
+          "display_name": "Islamic Finance and Banking Studies",
+          "score": 0.9244999885559082,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1402",
+            "display_name": "Accounting"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/14",
+            "display_name": "Business, Management and Accounting"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11365",
+            "display_name": "Islamic Finance and Banking Studies",
+            "score": 0.9244999885559082,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1402",
+              "display_name": "Accounting"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/14",
+              "display_name": "Business, Management and Accounting"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T13372",
+            "display_name": "Archaeology and Historical Studies",
+            "score": 0.9243000149726868,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1204",
+              "display_name": "Archeology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/population",
+            "display_name": "Population",
+            "score": 0.47152289748191833
+          },
+          {
+            "id": "https://openalex.org/keywords/history",
+            "display_name": "History",
+            "score": 0.46032774448394775
+          },
+          {
+            "id": "https://openalex.org/keywords/ancient-history",
+            "display_name": "Ancient history",
+            "score": 0.4100949168205261
+          },
+          {
+            "id": "https://openalex.org/keywords/genealogy",
+            "display_name": "Genealogy",
+            "score": 0.4074365496635437
+          },
+          {
+            "id": "https://openalex.org/keywords/geography",
+            "display_name": "Geography",
+            "score": 0.35046154260635376
+          },
+          {
+            "id": "https://openalex.org/keywords/demography",
+            "display_name": "Demography",
+            "score": 0.2562650442123413
+          },
+          {
+            "id": "https://openalex.org/keywords/sociology",
+            "display_name": "Sociology",
+            "score": 0.1334938406944275
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2908647359",
+            "wikidata": "https://www.wikidata.org/wiki/Q2625603",
+            "display_name": "Population",
+            "level": 2,
+            "score": 0.47152289748191833
+          },
+          {
+            "id": "https://openalex.org/C95457728",
+            "wikidata": "https://www.wikidata.org/wiki/Q309",
+            "display_name": "History",
+            "level": 0,
+            "score": 0.46032774448394775
+          },
+          {
+            "id": "https://openalex.org/C195244886",
+            "wikidata": "https://www.wikidata.org/wiki/Q41493",
+            "display_name": "Ancient history",
+            "level": 1,
+            "score": 0.4100949168205261
+          },
+          {
+            "id": "https://openalex.org/C53553401",
+            "wikidata": "https://www.wikidata.org/wiki/Q47307",
+            "display_name": "Genealogy",
+            "level": 1,
+            "score": 0.4074365496635437
+          },
+          {
+            "id": "https://openalex.org/C205649164",
+            "wikidata": "https://www.wikidata.org/wiki/Q1071",
+            "display_name": "Geography",
+            "level": 0,
+            "score": 0.35046154260635376
+          },
+          {
+            "id": "https://openalex.org/C149923435",
+            "wikidata": "https://www.wikidata.org/wiki/Q37732",
+            "display_name": "Demography",
+            "level": 1,
+            "score": 0.2562650442123413
+          },
+          {
+            "id": "https://openalex.org/C144024400",
+            "wikidata": "https://www.wikidata.org/wiki/Q21201",
+            "display_name": "Sociology",
+            "level": 0,
+            "score": 0.1334938406944275
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.2307/284172",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.2307/284172",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S152198285",
+              "display_name": "Transactions of the American Philological Association (1974-)",
+              "issn_l": "0360-5949",
+              "issn": [
+                "0360-5949",
+                "1533-0699"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/P4310315678",
+              "host_organization_name": "Johns Hopkins University Press",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310315678",
+                "https://openalex.org/P4310316510"
+              ],
+              "host_organization_lineage_names": [
+                "Johns Hopkins University Press",
+                "Johns Hopkins University"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Transactions of the American Philological Association (1974-)",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:aleph.bib-bvb.de:BVB01-031076447",
+            "is_oa": false,
+            "landing_page_url": "https://www.jstor.org/stable/284172",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "",
+            "raw_type": "text"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [
+          {
+            "score": 0.6700000166893005,
+            "display_name": "Sustainable cities and communities",
+            "id": "https://metadata.un.org/sdg/11"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": false,
+          "pdf": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 1,
+        "referenced_works": [
+          "https://openalex.org/W79630902"
+        ],
+        "related_works": [
+          "https://openalex.org/W2899084033",
+          "https://openalex.org/W3199071977",
+          "https://openalex.org/W1488457491",
+          "https://openalex.org/W2324018445",
+          "https://openalex.org/W4361197453",
+          "https://openalex.org/W2292471726",
+          "https://openalex.org/W2261047018",
+          "https://openalex.org/W2994325242",
+          "https://openalex.org/W1966972167",
+          "https://openalex.org/W2349682206"
+        ],
+        "abstract_inverted_index": {
+          "The": [
+            0
+          ],
+          "eminent": [
+            1
+          ],
+          "Arab": [
+            2
+          ],
+          "historian,": [
+            3
+          ],
+          "'Abd": [
+            4
+          ],
+          "ar-Rahman": [
+            5
+          ],
+          "Abu": [
+            6
+          ],
+          "Zayd": [
+            7
+          ],
+          "ibn": [
+            8
+          ],
+          "Khald'un,": [
+            9
+          ],
+          "once": [
+            10
+          ],
+          "observed": [
+            11
+          ],
+          "that": [
+            12,
+            65
+          ],
+          "a": [
+            13,
+            22,
+            46,
+            51,
+            100
+          ],
+          "highly": [
+            14
+          ],
+          "positive": [
+            15
+          ],
+          "correlation": [
+            16
+          ],
+          "exists": [
+            17
+          ],
+          "between": [
+            18
+          ],
+          "the": [
+            19,
+            26,
+            39,
+            54,
+            73,
+            82,
+            103,
+            117,
+            125,
+            137
+          ],
+          "size": [
+            20
+          ],
+          "of": [
+            21,
+            28,
+            53,
+            84,
+            106
+          ],
+          "city's": [
+            23
+          ],
+          "population": [
+            24,
+            67,
+            90,
+            110
+          ],
+          "and": [
+            25,
+            30,
+            78,
+            124
+          ],
+          "degree": [
+            27
+          ],
+          "civilization": [
+            29
+          ],
+          "prosperity": [
+            31
+          ],
+          "which": [
+            32,
+            120,
+            128
+          ],
+          "it": [
+            33
+          ],
+          "enjoys.'": [
+            34
+          ],
+          "Accordingly,": [
+            35
+          ],
+          "one": [
+            36
+          ],
+          "would": [
+            37
+          ],
+          "expect": [
+            38
+          ],
+          "ancient": [
+            40,
+            107,
+            138
+          ],
+          "testimonia": [
+            41
+          ],
+          "on": [
+            42,
+            81,
+            119
+          ],
+          "Alexandria": [
+            43,
+            141
+          ],
+          "ad": [
+            44
+          ],
+          "Aegyptum,": [
+            45
+          ],
+          "city": [
+            47
+          ],
+          "often": [
+            48
+          ],
+          "eulogized": [
+            49
+          ],
+          "as": [
+            50,
+            114,
+            116,
+            142,
+            144
+          ],
+          "crossroads": [
+            52
+          ],
+          "civilized": [
+            55
+          ],
+          "world,": [
+            56
+          ],
+          "in": [
+            57,
+            70
+          ],
+          "greatness": [
+            58
+          ],
+          "second": [
+            59
+          ],
+          "only": [
+            60,
+            113
+          ],
+          "to": [
+            61,
+            63,
+            102,
+            135
+          ],
+          "Rome,": [
+            62
+          ],
+          "reveal": [
+            64
+          ],
+          "its": [
+            66
+          ],
+          "was": [
+            68
+          ],
+          "considerable": [
+            69
+          ],
+          "size.": [
+            71
+          ],
+          "Regrettably,": [
+            72
+          ],
+          "sources": [
+            74,
+            118
+          ],
+          "are": [
+            75,
+            99,
+            112,
+            122,
+            130
+          ],
+          "both": [
+            76
+          ],
+          "few": [
+            77
+          ],
+          "controversial.": [
+            79
+          ],
+          "Nevertheless,": [
+            80
+          ],
+          "basis": [
+            83
+          ],
+          "these": [
+            85
+          ],
+          "some": [
+            86
+          ],
+          "scholars": [
+            87
+          ],
+          "have": [
+            88
+          ],
+          "postulated": [
+            89
+          ],
+          "estimates": [
+            91,
+            111
+          ],
+          "for": [
+            92,
+            140
+          ],
+          "Alexandria.2": [
+            93
+          ],
+          "To": [
+            94
+          ],
+          "be": [
+            95
+          ],
+          "sure,": [
+            96
+          ],
+          "such": [
+            97
+          ],
+          "endeavors": [
+            98
+          ],
+          "credit": [
+            101
+          ],
+          "dedicated": [
+            104
+          ],
+          "perseverance": [
+            105
+          ],
+          "historians;": [
+            108
+          ],
+          "yet": [
+            109
+          ],
+          "valid": [
+            115
+          ],
+          "they": [
+            121,
+            129
+          ],
+          "based": [
+            123
+          ],
+          "methodology": [
+            126
+          ],
+          "by": [
+            127
+          ],
+          "derived.": [
+            131
+          ],
+          "This": [
+            132
+          ],
+          "study": [
+            133
+          ],
+          "proposes": [
+            134
+          ],
+          "reassess": [
+            136
+          ],
+          "evidence": [
+            139
+          ],
+          "well": [
+            143
+          ],
+          "modem": [
+            145
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 24
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 3
+          }
+        ],
+        "updated_date": "2026-08-26T07:47:46.906454",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W2080388154",
+        "doi": "https://doi.org/10.5860/choice.34-6414",
+        "title": "Alexandria in late antiquity: topography and social conflict",
+        "display_name": "Alexandria in late antiquity: topography and social conflict",
+        "relevance_score": 1272.3513,
+        "publication_year": 1997,
+        "publication_date": "1997-07-01",
+        "ids": {
+          "openalex": "https://openalex.org/W2080388154",
+          "doi": "https://doi.org/10.5860/choice.34-6414",
+          "mag": "2080388154"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.5860/choice.34-6414",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.5860/choice.34-6414",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2764375719",
+            "display_name": "Choice Reviews Online",
+            "issn_l": "0009-4978",
+            "issn": [
+              "0009-4978",
+              "1523-8253",
+              "1943-5975"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310316146",
+            "host_organization_name": "Association of College and Research Libraries",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310316146",
+              "https://openalex.org/P4310315903"
+            ],
+            "host_organization_lineage_names": [
+              "Association of College and Research Libraries",
+              "American Library Association"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Choice Reviews Online",
+          "raw_type": "journal-article"
+        },
+        "type": "book-review",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": null,
+        "has_fulltext": false,
+        "cited_by_count": 244,
+        "citation_normalized_percentile": null,
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": "34",
+          "issue": "11",
+          "first_page": "34",
+          "last_page": "6414"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T13372",
+          "display_name": "Archaeology and Historical Studies",
+          "score": 0.75,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1204",
+            "display_name": "Archeology"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/12",
+            "display_name": "Arts and Humanities"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T13372",
+            "display_name": "Archaeology and Historical Studies",
+            "score": 0.75,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1204",
+              "display_name": "Archeology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/late-antiquity",
+            "display_name": "Late Antiquity",
+            "score": 0.7260394096374512
+          },
+          {
+            "id": "https://openalex.org/keywords/history",
+            "display_name": "History",
+            "score": 0.45595765113830566
+          },
+          {
+            "id": "https://openalex.org/keywords/ancient-history",
+            "display_name": "Ancient history",
+            "score": 0.44342249631881714
+          },
+          {
+            "id": "https://openalex.org/keywords/geography",
+            "display_name": "Geography",
+            "score": 0.433838814496994
+          },
+          {
+            "id": "https://openalex.org/keywords/archaeology",
+            "display_name": "Archaeology",
+            "score": 0.4027708172798157
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C11294208",
+            "wikidata": "https://www.wikidata.org/wiki/Q217050",
+            "display_name": "Late Antiquity",
+            "level": 2,
+            "score": 0.7260394096374512
+          },
+          {
+            "id": "https://openalex.org/C95457728",
+            "wikidata": "https://www.wikidata.org/wiki/Q309",
+            "display_name": "History",
+            "level": 0,
+            "score": 0.45595765113830566
+          },
+          {
+            "id": "https://openalex.org/C195244886",
+            "wikidata": "https://www.wikidata.org/wiki/Q41493",
+            "display_name": "Ancient history",
+            "level": 1,
+            "score": 0.44342249631881714
+          },
+          {
+            "id": "https://openalex.org/C205649164",
+            "wikidata": "https://www.wikidata.org/wiki/Q1071",
+            "display_name": "Geography",
+            "level": 0,
+            "score": 0.433838814496994
+          },
+          {
+            "id": "https://openalex.org/C166957645",
+            "wikidata": "https://www.wikidata.org/wiki/Q23498",
+            "display_name": "Archaeology",
+            "level": 1,
+            "score": 0.4027708172798157
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.5860/choice.34-6414",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.5860/choice.34-6414",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S2764375719",
+              "display_name": "Choice Reviews Online",
+              "issn_l": "0009-4978",
+              "issn": [
+                "0009-4978",
+                "1523-8253",
+                "1943-5975"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310316146",
+              "host_organization_name": "Association of College and Research Libraries",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310316146",
+                "https://openalex.org/P4310315903"
+              ],
+              "host_organization_lineage_names": [
+                "Association of College and Research Libraries",
+                "American Library Association"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Choice Reviews Online",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [
+          {
+            "score": 0.6399999856948853,
+            "display_name": "Sustainable cities and communities",
+            "id": "https://metadata.un.org/sdg/11"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": false,
+          "pdf": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W2899084033",
+          "https://openalex.org/W1838488482",
+          "https://openalex.org/W596980507",
+          "https://openalex.org/W1910853999",
+          "https://openalex.org/W2912993777",
+          "https://openalex.org/W1583500635",
+          "https://openalex.org/W2301921252",
+          "https://openalex.org/W3165996476",
+          "https://openalex.org/W2485528520",
+          "https://openalex.org/W2045895329"
+        ],
+        "abstract_inverted_index": {
+          "Second": [
+            0
+          ],
+          "only": [
+            1
+          ],
+          "to": [
+            2,
+            11,
+            44,
+            76,
+            137
+          ],
+          "Rome": [
+            3
+          ],
+          "in": [
+            4,
+            33,
+            35,
+            169,
+            200
+          ],
+          "the": [
+            5,
+            41,
+            49,
+            69,
+            78,
+            88,
+            117,
+            127,
+            157,
+            184,
+            201,
+            208,
+            214
+          ],
+          "ancient": [
+            6,
+            83
+          ],
+          "world,": [
+            7
+          ],
+          "Alexandria": [
+            8,
+            34,
+            67,
+            142
+          ],
+          "was": [
+            9
+          ],
+          "home": [
+            10
+          ],
+          "many": [
+            12
+          ],
+          "of": [
+            13,
+            54,
+            60,
+            64,
+            81,
+            94,
+            103,
+            131,
+            203
+          ],
+          "late": [
+            14
+          ],
+          "antiquity's": [
+            15
+          ],
+          "most": [
+            16
+          ],
+          "brilliant": [
+            17
+          ],
+          "writers,": [
+            18
+          ],
+          "philosophers,": [
+            19
+          ],
+          "and": [
+            20,
+            29,
+            51,
+            91,
+            99,
+            101,
+            110,
+            120,
+            124,
+            164,
+            171,
+            195,
+            213
+          ],
+          "theologians-among": [
+            21
+          ],
+          "them": [
+            22
+          ],
+          "Philo,": [
+            23
+          ],
+          "Origen,": [
+            24
+          ],
+          "Arius,": [
+            25
+          ],
+          "Athanasius,": [
+            26
+          ],
+          "Hypatia,": [
+            27
+          ],
+          "Cyril,": [
+            28
+          ],
+          "John": [
+            30
+          ],
+          "Philoponus.": [
+            31
+          ],
+          "Now,": [
+            32
+          ],
+          "Late": [
+            36
+          ],
+          "Antiquity,": [
+            37
+          ],
+          "Christopher": [
+            38
+          ],
+          "Haas": [
+            39,
+            86,
+            154,
+            187
+          ],
+          "offers": [
+            40
+          ],
+          "first": [
+            42
+          ],
+          "book": [
+            43
+          ],
+          "place": [
+            45
+          ],
+          "these": [
+            46
+          ],
+          "figures": [
+            47
+          ],
+          "within": [
+            48,
+            149
+          ],
+          "physical": [
+            50
+          ],
+          "social": [
+            52,
+            109,
+            133,
+            162
+          ],
+          "context": [
+            53
+          ],
+          "Alexandria's": [
+            55,
+            95
+          ],
+          "bustling": [
+            56
+          ],
+          "urban": [
+            57,
+            84
+          ],
+          "milieu.": [
+            58
+          ],
+          "Because": [
+            59
+          ],
+          "its": [
+            61,
+            97
+          ],
+          "clear": [
+            62
+          ],
+          "demarcation": [
+            63
+          ],
+          "communal": [
+            65
+          ],
+          "boundaries,": [
+            66
+          ],
+          "provides": [
+            68
+          ],
+          "modern": [
+            70
+          ],
+          "historian": [
+            71
+          ],
+          "with": [
+            72
+          ],
+          "an": [
+            73,
+            82
+          ],
+          "ideal": [
+            74
+          ],
+          "opportunity": [
+            75
+          ],
+          "probe": [
+            77
+          ],
+          "multicultural": [
+            79
+          ],
+          "makeup": [
+            80
+          ],
+          "unit.": [
+            85
+          ],
+          "explores": [
+            87
+          ],
+          "broad": [
+            89
+          ],
+          "avenues": [
+            90
+          ],
+          "back": [
+            92
+          ],
+          "alleys": [
+            93
+          ],
+          "neighborhoods,": [
+            96
+          ],
+          "suburbs": [
+            98
+          ],
+          "waterfront,": [
+            100
+          ],
+          "aspects": [
+            102
+          ],
+          "material": [
+            104
+          ],
+          "culture": [
+            105
+          ],
+          "that": [
+            106,
+            156,
+            198
+          ],
+          "underlay": [
+            107
+          ],
+          "Alexandrian": [
+            108,
+            132,
+            189,
+            204
+          ],
+          "intellectual": [
+            111
+          ],
+          "life.": [
+            112
+          ],
+          "Organizing": [
+            113
+          ],
+          "his": [
+            114
+          ],
+          "discussion": [
+            115
+          ],
+          "around": [
+            116
+          ],
+          "city's": [
+            118
+          ],
+          "religious": [
+            119
+          ],
+          "ethnic": [
+            121
+          ],
+          "blocs-Jews,": [
+            122
+          ],
+          "pagans,": [
+            123
+          ],
+          "Christians-he": [
+            125
+          ],
+          "details": [
+            126
+          ],
+          "fiercely": [
+            128
+          ],
+          "competitive": [
+            129
+          ],
+          "nature": [
+            130
+          ],
+          "dynamics.": [
+            134
+          ],
+          "In": [
+            135
+          ],
+          "contrast": [
+            136
+          ],
+          "recent": [
+            138
+          ],
+          "scholarship,": [
+            139
+          ],
+          "which": [
+            140
+          ],
+          "cites": [
+            141
+          ],
+          "as": [
+            143
+          ],
+          "a": [
+            144,
+            150,
+            192
+          ],
+          "model": [
+            145
+          ],
+          "for": [
+            146,
+            161
+          ],
+          "peaceful": [
+            147
+          ],
+          "coexistence": [
+            148
+          ],
+          "culturally": [
+            151
+          ],
+          "diverse": [
+            152,
+            158
+          ],
+          "community,": [
+            153
+          ],
+          "finds": [
+            155
+          ],
+          "groups'": [
+            159
+          ],
+          "struggles": [
+            160
+          ],
+          "dominance": [
+            163
+          ],
+          "cultural": [
+            165
+          ],
+          "hegemony": [
+            166
+          ],
+          "often": [
+            167
+          ],
+          "resulted": [
+            168,
+            199
+          ],
+          "violence": [
+            170
+          ],
+          "bloodshed-a": [
+            172
+          ],
+          "volatile": [
+            173
+          ],
+          "situation": [
+            174
+          ],
+          "frequently": [
+            175
+          ],
+          "exacerbated": [
+            176
+          ],
+          "by": [
+            177
+          ],
+          "imperial": [
+            178
+          ],
+          "intervention": [
+            179
+          ],
+          "on": [
+            180
+          ],
+          "one": [
+            181
+          ],
+          "side": [
+            182
+          ],
+          "or": [
+            183
+          ],
+          "other.": [
+            185
+          ],
+          "Eventually,": [
+            186
+          ],
+          "concludes,": [
+            188
+          ],
+          "society": [
+            190
+          ],
+          "achieved": [
+            191
+          ],
+          "certain": [
+            193
+          ],
+          "stability": [
+            194
+          ],
+          "reintegration-a": [
+            196
+          ],
+          "process": [
+            197
+          ],
+          "transformation": [
+            202
+          ],
+          "civic": [
+            205
+          ],
+          "identity": [
+            206
+          ],
+          "during": [
+            207
+          ],
+          "crucial": [
+            209
+          ],
+          "centuries": [
+            210
+          ],
+          "between": [
+            211
+          ],
+          "antiquity": [
+            212
+          ],
+          "Middle": [
+            215
+          ],
+          "Ages.": [
+            216
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 5
+          }
+        ],
+        "updated_date": "2026-07-14T23:27:15.235271",
+        "created_date": "2016-06-24T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W1567672937",
+        "doi": null,
+        "title": "Alexandria, a history and a guide",
+        "display_name": "Alexandria, a history and a guide",
+        "relevance_score": 1218.9552,
+        "publication_year": 1938,
+        "publication_date": "1938-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W1567672937",
+          "mag": "1567672937"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "pmh:oai:aleph.bib-bvb.de:BVB01-035611894",
+          "is_oa": false,
+          "landing_page_url": "http://www.gbv.de/dms/weimar/toc/1902451686_toc.pdf",
+          "pdf_url": "http://www.gbv.de/dms/weimar/toc/1902451686_toc.pdf",
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "type": "article",
+        "indexed_in": [],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5086985374",
+              "display_name": "Eckart Förster",
+              "orcid": "https://orcid.org/0000-0002-2478-5610"
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": true,
+            "raw_author_name": "Eckart Förster",
+            "raw_affiliation_strings": [],
+            "raw_orcid": "https://orcid.org/0000-0002-2478-5610",
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5086985374"
+        ],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.0,
+        "has_fulltext": false,
+        "cited_by_count": 216,
+        "citation_normalized_percentile": {
+          "value": 0.03798804,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 89,
+          "max": 99
+        },
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T13372",
+          "display_name": "Archaeology and Historical Studies",
+          "score": 0.9538000226020813,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1204",
+            "display_name": "Archeology"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/12",
+            "display_name": "Arts and Humanities"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T13372",
+            "display_name": "Archaeology and Historical Studies",
+            "score": 0.9538000226020813,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1204",
+              "display_name": "Archeology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/history",
+            "display_name": "History",
+            "score": 0.4418072998523712
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C95457728",
+            "wikidata": "https://www.wikidata.org/wiki/Q309",
+            "display_name": "History",
+            "level": 0,
+            "score": 0.4418072998523712
+          }
+        ],
+        "mesh": [],
+        "locations_count": 5,
+        "locations": [
+          {
+            "id": "pmh:oai:aleph.bib-bvb.de:BVB01-035611894",
+            "is_oa": false,
+            "landing_page_url": "http://www.gbv.de/dms/weimar/toc/1902451686_toc.pdf",
+            "pdf_url": "http://www.gbv.de/dms/weimar/toc/1902451686_toc.pdf",
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "text"
+          },
+          {
+            "id": "pmh:oai:aleph.bib-bvb.de:BVB01-000401467",
+            "is_oa": false,
+            "landing_page_url": null,
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "Führer"
+          },
+          {
+            "id": "pmh:oai:otago.ourheritage.ac.nz:9950",
+            "is_oa": false,
+            "landing_page_url": "http://otago.ourheritage.ac.nz/items/show/9950",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "",
+            "raw_type": "Maps"
+          },
+          {
+            "id": "pmh:oai:otago.ourheritage.ac.nz:9952",
+            "is_oa": false,
+            "landing_page_url": "http://otago.ourheritage.ac.nz/items/show/9952",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "",
+            "raw_type": "Books"
+          },
+          {
+            "id": "mag:1567672937",
+            "is_oa": false,
+            "landing_page_url": "https://ci.nii.ac.jp/ncid/BA90476089",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4210197683",
+              "display_name": "Medical Entomology and Zoology",
+              "issn_l": "0424-7086",
+              "issn": [
+                "0424-7086",
+                "2185-5609"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310319750",
+              "host_organization_name": "Japan Society of Medical Entomology and Zoology",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310319750"
+              ],
+              "host_organization_lineage_names": [
+                "Japan Society of Medical Entomology and Zoology"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": null,
+            "is_accepted": false,
+            "is_published": null,
+            "raw_source_name": null,
+            "raw_type": null
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": false,
+          "pdf": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W2905033834",
+          "https://openalex.org/W1972483184",
+          "https://openalex.org/W2345582892",
+          "https://openalex.org/W1588375765",
+          "https://openalex.org/W2514188183",
+          "https://openalex.org/W2481352461",
+          "https://openalex.org/W1547150457",
+          "https://openalex.org/W1966831314",
+          "https://openalex.org/W1484092993",
+          "https://openalex.org/W3170023153",
+          "https://openalex.org/W2030304446",
+          "https://openalex.org/W1528674535",
+          "https://openalex.org/W2736792357",
+          "https://openalex.org/W2141503901",
+          "https://openalex.org/W2918039391",
+          "https://openalex.org/W2910333774"
+        ],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 1
+          }
+        ],
+        "updated_date": "2026-08-26T07:47:46.906454",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4238218517",
+        "doi": "https://doi.org/10.1163/9789004312906",
+        "title": "St. Cyril of Alexandria: The Christological Controversy",
+        "display_name": "St. Cyril of Alexandria: The Christological Controversy",
+        "relevance_score": 1148.8652,
+        "publication_year": 1994,
+        "publication_date": "1994-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W4238218517",
+          "doi": "https://doi.org/10.1163/9789004312906"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1163/9789004312906",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1163/9789004312906",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": null,
+          "raw_type": "monograph"
+        },
+        "type": "book",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5086509575",
+              "display_name": "John A. McGuckin",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": true,
+            "raw_author_name": "John A. McGuckin",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5086509575"
+        ],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.0,
+        "has_fulltext": false,
+        "cited_by_count": 245,
+        "citation_normalized_percentile": {
+          "value": 0.69565217,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 90,
+          "max": 100
+        },
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T12266",
+          "display_name": "Byzantine Studies and History",
+          "score": 0.9794999957084656,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1205",
+            "display_name": "Classics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/12",
+            "display_name": "Arts and Humanities"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T12266",
+            "display_name": "Byzantine Studies and History",
+            "score": 0.9794999957084656,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1205",
+              "display_name": "Classics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T14210",
+            "display_name": "Historical and Linguistic Studies",
+            "score": 0.9713000059127808,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3312",
+              "display_name": "Sociology and Political Science"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10362",
+            "display_name": "Biblical Studies and Interpretation",
+            "score": 0.9708999991416931,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1212",
+              "display_name": "Religious studies"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/philosophy",
+            "display_name": "Philosophy",
+            "score": 0.5243989825248718
+          },
+          {
+            "id": "https://openalex.org/keywords/classics",
+            "display_name": "Classics",
+            "score": 0.40423548221588135
+          },
+          {
+            "id": "https://openalex.org/keywords/theology",
+            "display_name": "Theology",
+            "score": 0.3663327097892761
+          },
+          {
+            "id": "https://openalex.org/keywords/history",
+            "display_name": "History",
+            "score": 0.32164186239242554
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C138885662",
+            "wikidata": "https://www.wikidata.org/wiki/Q5891",
+            "display_name": "Philosophy",
+            "level": 0,
+            "score": 0.5243989825248718
+          },
+          {
+            "id": "https://openalex.org/C74916050",
+            "wikidata": "https://www.wikidata.org/wiki/Q841090",
+            "display_name": "Classics",
+            "level": 1,
+            "score": 0.40423548221588135
+          },
+          {
+            "id": "https://openalex.org/C27206212",
+            "wikidata": "https://www.wikidata.org/wiki/Q34178",
+            "display_name": "Theology",
+            "level": 1,
+            "score": 0.3663327097892761
+          },
+          {
+            "id": "https://openalex.org/C95457728",
+            "wikidata": "https://www.wikidata.org/wiki/Q309",
+            "display_name": "History",
+            "level": 0,
+            "score": 0.32164186239242554
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.1163/9789004312906",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.1163/9789004312906",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": null,
+            "raw_type": "monograph"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": false,
+          "pdf": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W2899084033",
+          "https://openalex.org/W2765387638",
+          "https://openalex.org/W2331269012",
+          "https://openalex.org/W3007581847",
+          "https://openalex.org/W2604451700",
+          "https://openalex.org/W3023304313",
+          "https://openalex.org/W401777604",
+          "https://openalex.org/W2165911545",
+          "https://openalex.org/W4317623232",
+          "https://openalex.org/W2131334305"
+        ],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 43
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 42
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 1
+          }
+        ],
+        "updated_date": "2026-06-04T09:04:59.091469",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W2782608786",
+        "doi": null,
+        "title": "Philo of Alexandria an intellectual biography",
+        "display_name": "Philo of Alexandria an intellectual biography",
+        "relevance_score": 1137.9735,
+        "publication_year": null,
+        "publication_date": null,
+        "ids": {
+          "openalex": "https://openalex.org/W2782608786",
+          "mag": "2782608786"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "pmh:oai:aleph.bib-bvb.de:BVB01-030019033",
+          "is_oa": false,
+          "landing_page_url": "http://www.sehepunkte.de/2019/09/31390.html",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "type": "article",
+        "indexed_in": [],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5041665102",
+              "display_name": "Maren R. Niehoff",
+              "orcid": "https://orcid.org/0000-0002-0815-6929"
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": true,
+            "raw_author_name": "Niehoff, Maren R. 1963-",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5041665102"
+        ],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": null,
+        "has_fulltext": false,
+        "cited_by_count": 210,
+        "citation_normalized_percentile": null,
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11463",
+          "display_name": "Classical Philosophy and Thought",
+          "score": 0.7754999995231628,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1211",
+            "display_name": "Philosophy"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/12",
+            "display_name": "Arts and Humanities"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11463",
+            "display_name": "Classical Philosophy and Thought",
+            "score": 0.7754999995231628,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1211",
+              "display_name": "Philosophy"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/biography",
+            "display_name": "Biography",
+            "score": 0.8721215128898621
+          },
+          {
+            "id": "https://openalex.org/keywords/art",
+            "display_name": "Art",
+            "score": 0.4176884889602661
+          },
+          {
+            "id": "https://openalex.org/keywords/philosophy",
+            "display_name": "Philosophy",
+            "score": 0.4121738076210022
+          },
+          {
+            "id": "https://openalex.org/keywords/classics",
+            "display_name": "Classics",
+            "score": 0.35340166091918945
+          },
+          {
+            "id": "https://openalex.org/keywords/history",
+            "display_name": "History",
+            "score": 0.3288116455078125
+          },
+          {
+            "id": "https://openalex.org/keywords/art-history",
+            "display_name": "Art history",
+            "score": 0.3000611662864685
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C520712124",
+            "wikidata": "https://www.wikidata.org/wiki/Q36279",
+            "display_name": "Biography",
+            "level": 2,
+            "score": 0.8721215128898621
+          },
+          {
+            "id": "https://openalex.org/C142362112",
+            "wikidata": "https://www.wikidata.org/wiki/Q735",
+            "display_name": "Art",
+            "level": 0,
+            "score": 0.4176884889602661
+          },
+          {
+            "id": "https://openalex.org/C138885662",
+            "wikidata": "https://www.wikidata.org/wiki/Q5891",
+            "display_name": "Philosophy",
+            "level": 0,
+            "score": 0.4121738076210022
+          },
+          {
+            "id": "https://openalex.org/C74916050",
+            "wikidata": "https://www.wikidata.org/wiki/Q841090",
+            "display_name": "Classics",
+            "level": 1,
+            "score": 0.35340166091918945
+          },
+          {
+            "id": "https://openalex.org/C95457728",
+            "wikidata": "https://www.wikidata.org/wiki/Q309",
+            "display_name": "History",
+            "level": 0,
+            "score": 0.3288116455078125
+          },
+          {
+            "id": "https://openalex.org/C52119013",
+            "wikidata": "https://www.wikidata.org/wiki/Q50637",
+            "display_name": "Art history",
+            "level": 1,
+            "score": 0.3000611662864685
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "pmh:oai:aleph.bib-bvb.de:BVB01-030019033",
+            "is_oa": false,
+            "landing_page_url": "http://www.sehepunkte.de/2019/09/31390.html",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "text"
+          },
+          {
+            "id": "pmh:oai:aleph.bib-bvb.de:BVB01-030353689",
+            "is_oa": false,
+            "landing_page_url": null,
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "Biografie"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": false,
+          "pdf": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 62
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 33
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 80
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 6
+          }
+        ],
+        "updated_date": "2026-08-26T07:47:46.906454",
+        "created_date": "2025-10-10T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}

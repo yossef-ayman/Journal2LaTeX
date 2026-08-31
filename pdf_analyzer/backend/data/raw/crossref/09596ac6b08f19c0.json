@@ -1,0 +1,4224 @@
+{
+  "provider": "crossref",
+  "query_key": "title:Multimodal deep learning models for early detection of alzheimer’s disease stage",
+  "query_hash": "09596ac6b08f19c0",
+  "saved_at": "2026-08-31T07:16:23.589560+00:00",
+  "status_code": 200,
+  "candidate_count": 10,
+  "raw_response": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 8037344,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                25
+              ]
+            ],
+            "date-time": "2026-08-25T23:32:24Z",
+            "timestamp": 1787700744754,
+            "version": "build-2784847793"
+          },
+          "reference-count": 54,
+          "publisher": "Springer Science and Business Media LLC",
+          "issue": "1",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2021,
+                    2,
+                    5
+                  ]
+                ],
+                "date-time": "2021-02-05T00:00:00Z",
+                "timestamp": 1612483200000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2021,
+                    2,
+                    5
+                  ]
+                ],
+                "date-time": "2021-02-05T00:00:00Z",
+                "timestamp": 1612483200000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0"
+            }
+          ],
+          "funder": [
+            {
+              "name": "U.S. Department of Health & Human Services | NIH | National Center for Advancing Translational Sciences",
+              "award": [
+                "UL1TR000454"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "UL1TR000454"
+                  ]
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/100006112",
+              "name": "Microsoft Research",
+              "doi-asserted-by": "crossref",
+              "id": [
+                {
+                  "id": "10.13039/100006112",
+                  "id-type": "DOI",
+                  "asserted-by": "crossref"
+                }
+              ]
+            },
+            {
+              "name": "Hewlett Packard | HP Labs"
+            },
+            {
+              "name": "U.S. Department of Health & Human Services | NIH | Center for Information Technology",
+              "award": [
+                "UL1TR000454"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "UL1TR000454"
+                  ]
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "link.springer.com"
+            ],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "Sci Rep"
+          ],
+          "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Most current Alzheimer’s disease (AD) and mild cognitive disorders (MCI) studies use single data modality to make predictions such as AD stages. The fusion of multiple data modalities can provide a holistic view of AD staging analysis. Thus, we use deep learning (DL) to integrally analyze imaging (magnetic resonance imaging (MRI)), genetic (single nucleotide polymorphisms (SNPs)), and clinical test data to classify patients into AD, MCI, and controls (CN). We use stacked denoising auto-encoders to extract features from clinical and genetic data, and use 3D-convolutional neural networks (CNNs) for imaging data. We also develop a novel data interpretation method to identify top-performing features learned by the deep-models with clustering and perturbation analysis. Using Alzheimer’s disease neuroimaging initiative (ADNI) dataset, we demonstrate that deep models outperform shallow models, including support vector machines, decision trees, random forests, and k-nearest neighbors. In addition, we demonstrate that integrating multi-modality data outperforms single modality models in terms of accuracy, precision, recall, and meanF1 scores. Our models have identified hippocampus, amygdala brain areas, and the Rey Auditory Verbal Learning Test (RAVLT) as top distinguished features, which are consistent with the known AD literature.</jats:p>",
+          "DOI": "10.1038/s41598-020-74399-w",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2021,
+                2,
+                5
+              ]
+            ],
+            "date-time": "2021-02-05T06:24:30Z",
+            "timestamp": 1612506270000
+          },
+          "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 652,
+          "title": [
+            "Multimodal deep learning models for early detection of Alzheimer’s disease stage"
+          ],
+          "prefix": "10.1038",
+          "volume": "11",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-9049-6024",
+              "authenticated-orcid": false,
+              "given": "Janani",
+              "family": "Venugopalan",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Li",
+              "family": "Tong",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Hamid Reza",
+              "family": "Hassanzadeh",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "May D.",
+              "family": "Wang",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "297",
+          "published-online": {
+            "date-parts": [
+              [
+                2021,
+                2,
+                5
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "74399_CR1",
+              "doi-asserted-by": "publisher",
+              "first-page": "2402",
+              "DOI": "10.1001/jama.2016.17216",
+              "volume": "316",
+              "author": "V Gulshan",
+              "year": "2016",
+              "unstructured": "Gulshan, V. et al. Development and validation of a deep learning algorithm for detection of diabetic retinopathy in retinal fundus photographs. JAMA 316, 2402–2410 (2016).",
+              "journal-title": "JAMA"
+            },
+            {
+              "key": "74399_CR2",
+              "doi-asserted-by": "publisher",
+              "first-page": "2211",
+              "DOI": "10.1001/jama.2017.18152",
+              "volume": "318",
+              "author": "DSW Ting",
+              "year": "2017",
+              "unstructured": "Ting, D. S. W. et al. Development and validation of a deep learning system for diabetic retinopathy and related eye diseases using retinal images from multiethnic populations with diabetes. JAMA 318, 2211–2223 (2017).",
+              "journal-title": "JAMA"
+            },
+            {
+              "key": "74399_CR3",
+              "doi-asserted-by": "publisher",
+              "first-page": "115",
+              "DOI": "10.1038/nature21056",
+              "volume": "542",
+              "author": "A Esteva",
+              "year": "2017",
+              "unstructured": "Esteva, A. et al. Dermatologist-level classification of skin cancer with deep neural networks. Nature 542, 115 (2017).",
+              "journal-title": "Nature"
+            },
+            {
+              "key": "74399_CR4",
+              "doi-asserted-by": "publisher",
+              "first-page": "106017",
+              "DOI": "10.1117/1.JBO.22.10.106017",
+              "volume": "22",
+              "author": "S Weng",
+              "year": "2017",
+              "unstructured": "Weng, S., Xu, X., Li, J. & Wong, S. T. Combining deep learning and coherent anti-Stokes Raman scattering imaging for automated differential diagnosis of lung cancer. J. Biomed. Opt. 22, 106017 (2017).",
+              "journal-title": "J. Biomed. Opt."
+            },
+            {
+              "key": "74399_CR5",
+              "first-page": "583",
+              "volume-title": "Medical Image Computing and Computer-Assisted Intervention–MICCAI 2013",
+              "author": "H-I Suk",
+              "year": "2013",
+              "unstructured": "Suk, H.-I. & Shen, D. Medical Image Computing and Computer-Assisted Intervention–MICCAI 2013 583–590 (Springer, New York, 2013)."
+            },
+            {
+              "key": "74399_CR6",
+              "doi-asserted-by": "publisher",
+              "first-page": "1132",
+              "DOI": "10.1109/TBME.2014.2372011",
+              "volume": "62",
+              "author": "S Liu",
+              "year": "2015",
+              "unstructured": "Liu, S. et al. Multimodal neuroimaging feature learning for multiclass diagnosis of Alzheimer’s disease. Biomed. Eng. IEEE Trans. 62, 1132–1140 (2015).",
+              "journal-title": "Biomed. Eng. IEEE Trans."
+            },
+            {
+              "issue": "5",
+              "key": "74399_CR7",
+              "doi-asserted-by": "publisher",
+              "first-page": "2569",
+              "DOI": "10.1007/s00429-015-1059-y",
+              "volume": "221",
+              "author": "HI Suk",
+              "year": "2016",
+              "unstructured": "Suk, H. I., Lee, S. W., Shen, D. & Alzheimer’s Disease Neuroimaging Initiative. Deep sparse multi-task learning for feature selection in Alzheimer’s disease diagnosis. Brain Struct. Funct. 221(5), 2569–2587 (2016).",
+              "journal-title": "Brain Struct. Funct."
+            },
+            {
+              "key": "74399_CR8",
+              "unstructured": "Schulam, P., Wigley, F. & Saria, S. In AAAI, 2956–2964 (2015)."
+            },
+            {
+              "key": "74399_CR9",
+              "unstructured": "Suk, H.-I. & Shen, D. In International Conference on Medical Image Computing and Computer-Assisted Intervention, 583–590 (Springer, New York, 2013)."
+            },
+            {
+              "key": "74399_CR10",
+              "unstructured": "Choi, E., Bahadori, M.T. & Sun, J. Doctor ai: Predicting clinical events via recurrent neural networks. arXiv preprint arXiv:1511.05942 (2015)."
+            },
+            {
+              "key": "74399_CR11",
+              "doi-asserted-by": "publisher",
+              "first-page": "931",
+              "DOI": "10.1038/nmeth.3547",
+              "volume": "12",
+              "author": "J Zhou",
+              "year": "2015",
+              "unstructured": "Zhou, J. & Troyanskaya, O. G. Predicting effects of noncoding variants with deep learning-based sequence model. Nat. Methods 12, 931–934 (2015).",
+              "journal-title": "Nat. Methods"
+            },
+            {
+              "key": "74399_CR12",
+              "unstructured": "Ngiam, J., Khosla, A., Kim, M., Nam, J., Lee, H. & Ng, A. Y. Multimodal deep learning. In Proceedings of the 28th International Conference on Machine Learning (ICML-11) 689–696 (2011)."
+            },
+            {
+              "issue": "4",
+              "key": "74399_CR13",
+              "doi-asserted-by": "publisher",
+              "first-page": "459",
+              "DOI": "10.1016/j.jalz.2016.03.001",
+              "volume": "12",
+              "author": "Alzheimer’s Association",
+              "year": "2016",
+              "unstructured": "Alzheimer’s Association. 2016 Alzheimer’s disease facts and figures. Alzheimer’s Dement. 12(4), 459–509 (2016).",
+              "journal-title": "Alzheimer’s Dement."
+            },
+            {
+              "issue": "2",
+              "key": "74399_CR14",
+              "doi-asserted-by": "publisher",
+              "first-page": "208",
+              "DOI": "10.1016/j.jalz.2013.02.003",
+              "volume": "9",
+              "author": "Alzheimer’s Association",
+              "year": "2013",
+              "unstructured": "Alzheimer’s Association. 2013 Alzheimer’s disease facts and figures. Alzheimer’s Dement. 9(2), 208–245 (2013).",
+              "journal-title": "Alzheimer’s Dement."
+            },
+            {
+              "key": "74399_CR15",
+              "unstructured": "Patterson, C. World Alzheimer Report 2018—The State of the Art of Dementia Research: New Frontiers. (Alzheimer’s Disease International (ADI), London, 2018)."
+            },
+            {
+              "key": "74399_CR16",
+              "doi-asserted-by": "publisher",
+              "first-page": "916",
+              "DOI": "10.1038/nature08538",
+              "volume": "461",
+              "author": "RJ Perrin",
+              "year": "2009",
+              "unstructured": "Perrin, R. J., Fagan, A. M. & Holtzman, D. M. Multimodal techniques for diagnosis and prognosis of Alzheimer’s disease. Nature 461, 916–922 (2009).",
+              "journal-title": "Nature"
+            },
+            {
+              "key": "74399_CR17",
+              "doi-asserted-by": "publisher",
+              "first-page": "58",
+              "DOI": "10.1016/j.jalz.2014.02.004",
+              "volume": "11",
+              "author": "K Blennow",
+              "year": "2015",
+              "unstructured": "Blennow, K. et al. Clinical utility of cerebrospinal fluid biomarkers in the diagnosis of early Alzheimer’s disease. Alzheimer’s Dement. 11, 58–69 (2015).",
+              "journal-title": "Alzheimer's Dement."
+            },
+            {
+              "key": "74399_CR18",
+              "doi-asserted-by": "publisher",
+              "first-page": "S23",
+              "DOI": "10.1016/j.neurobiolaging.2014.04.034",
+              "volume": "36",
+              "author": "SF Eskildsen",
+              "year": "2015",
+              "unstructured": "Eskildsen, S. F. et al. Structural imaging biomarkers of Alzheimer’s disease: Predicting disease progression. Neurobiol. Aging 36, S23–S31 (2015).",
+              "journal-title": "Neurobiol. Aging"
+            },
+            {
+              "key": "74399_CR19",
+              "doi-asserted-by": "publisher",
+              "first-page": "204",
+              "DOI": "10.2967/jnumed.115.163717",
+              "volume": "57",
+              "author": "T Grimmer",
+              "year": "2016",
+              "unstructured": "Grimmer, T. et al. Visual versus fully automated analyses of 18F-FDG and amyloid PET for prediction of dementia due to Alzheimer disease in mild cognitive impairment. J. Nucl. Med. 57, 204–207 (2016).",
+              "journal-title": "J. Nucl. Med."
+            },
+            {
+              "key": "74399_CR20",
+              "doi-asserted-by": "publisher",
+              "first-page": "1",
+              "DOI": "10.1016/j.compmedimag.2019.01.005",
+              "volume": "73",
+              "author": "R Cui",
+              "year": "2019",
+              "unstructured": "Cui, R., Liu, M. & Initiative, A. S. D. N. RNN-based longitudinal analysis for diagnosis of Alzheimer’s disease. Comput. Med. Imaging Graph. 73, 1–10 (2019).",
+              "journal-title": "Comput. Med. Imaging Graph."
+            },
+            {
+              "key": "74399_CR21",
+              "doi-asserted-by": "publisher",
+              "first-page": "1996",
+              "DOI": "10.1016/j.neurobiolaging.2013.02.003",
+              "volume": "34",
+              "author": "J Barnes",
+              "year": "2013",
+              "unstructured": "Barnes, J. et al. Vascular and Alzheimer’s disease markers independently predict brain atrophy rate in Alzheimer’s Disease Neuroimaging Initiative controls. Neurobiol. Aging 34, 1996–2002 (2013).",
+              "journal-title": "Neurobiol. Aging"
+            },
+            {
+              "key": "74399_CR22",
+              "doi-asserted-by": "publisher",
+              "first-page": "1318",
+              "DOI": "10.1001/archneurol.2012.1282",
+              "volume": "69",
+              "author": "JD Doecke",
+              "year": "2012",
+              "unstructured": "Doecke, J. D. et al. BLood-based protein biomarkers for diagnosis of alzheimer disease. Arch. Neurol. 69, 1318–1325 (2012).",
+              "journal-title": "Arch. Neurol."
+            },
+            {
+              "key": "74399_CR23",
+              "doi-asserted-by": "publisher",
+              "first-page": "1952",
+              "DOI": "10.1038/s41598-018-37769-z",
+              "volume": "9",
+              "author": "G Lee",
+              "year": "2019",
+              "unstructured": "Lee, G., Nho, K., Kang, B., Sohn, K.-A. & Kim, D. Predicting Alzheimer’s disease progression using multi-modal deep learning approach. Sci. Rep. 9, 1952 (2019).",
+              "journal-title": "Sci. Rep."
+            },
+            {
+              "key": "74399_CR24",
+              "doi-asserted-by": "publisher",
+              "first-page": "717",
+              "DOI": "10.1038/s41598-018-36745-x",
+              "volume": "9",
+              "author": "J Zhao",
+              "year": "2019",
+              "unstructured": "Zhao, J. et al. Learning from longitudinal data in electronic health record and genetic data to improve cardiovascular event prediction. Sci. Rep. 9, 717 (2019).",
+              "journal-title": "Sci. Rep."
+            },
+            {
+              "key": "74399_CR25",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Wu, W., Venugopalan, J. & Wang, M. D. 11C-PIB PET image analysis for Alzheimer’s diagnosis using weighted voting ensembles. In 2017 39th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC) 3914–3917  (IEEE, 2017).",
+              "DOI": "10.1109/EMBC.2017.8037712"
+            },
+            {
+              "key": "74399_CR26",
+              "doi-asserted-by": "publisher",
+              "first-page": "83",
+              "DOI": "10.1016/S0079-6123(06)58004-5",
+              "volume": "158",
+              "author": "JH Phan",
+              "year": "2006",
+              "unstructured": "Phan, J. H., Quo, C. F. & Wang, M. D. Functional genomics and proteomics in the clinical neurosciences: data mining and bioinformatics. Prog. Brain Res. 158, 83–108 (2006).",
+              "journal-title": "Progress Brain Res"
+            },
+            {
+              "key": "74399_CR27",
+              "doi-asserted-by": "publisher",
+              "first-page": "2118",
+              "DOI": "10.1002/hbm.22759",
+              "volume": "36",
+              "author": "M Dyrba",
+              "year": "2015",
+              "unstructured": "Dyrba, M., Grothe, M., Kirste, T. & Teipel, S. J. Multimodal analysis of functional and structural disconnection in Alzheimer’s disease using multiple kernel SVM. Hum. Brain Mapp. 36, 2118–2131 (2015).",
+              "journal-title": "Hum. Brain Mapp."
+            },
+            {
+              "key": "74399_CR28",
+              "doi-asserted-by": "publisher",
+              "first-page": "583",
+              "DOI": "10.1148/radiol.12120010",
+              "volume": "266",
+              "author": "JL Shaffer",
+              "year": "2013",
+              "unstructured": "Shaffer, J. L. et al. Predicting cognitive decline in subjects at risk for Alzheimer disease by using combined cerebrospinal fluid, MR imaging, and PET biomarkers. Radiology 266, 583–591 (2013).",
+              "journal-title": "Radiology"
+            },
+            {
+              "key": "74399_CR29",
+              "doi-asserted-by": "publisher",
+              "first-page": "2187",
+              "DOI": "10.1016/j.neuroimage.2011.10.003",
+              "volume": "59",
+              "author": "Z Dai",
+              "year": "2012",
+              "unstructured": "Dai, Z. et al. Discriminative analysis of early Alzheimer’s disease using multi-modal imaging and multi-level characterization with multi-classifier (M3). NeuroImage 59, 2187–2195 (2012).",
+              "journal-title": "NeuroImage"
+            },
+            {
+              "key": "74399_CR30",
+              "doi-asserted-by": "publisher",
+              "first-page": "738",
+              "DOI": "10.1111/jon.12214",
+              "volume": "25",
+              "author": "M Dyrba",
+              "year": "2015",
+              "unstructured": "Dyrba, M. et al. Predicting prodromal Alzheimer’s disease in subjects with mild cognitive impairment using machine learning classification of multimodal multicenter diffusion-tensor and magnetic resonance imaging data. J. Neuroimaging 25, 738–747 (2015).",
+              "journal-title": "J. Neuroimaging"
+            },
+            {
+              "key": "74399_CR31",
+              "doi-asserted-by": "publisher",
+              "first-page": "22161",
+              "DOI": "10.1038/srep22161",
+              "volume": "6",
+              "author": "M Lorenzi",
+              "year": "2016",
+              "unstructured": "Lorenzi, M. et al. Multimodal image analysis in Alzheimer’s disease via statistical modelling of non-local intensity correlations. Sci. Rep. 6, 22161 (2016).",
+              "journal-title": "Sci. Rep."
+            },
+            {
+              "key": "74399_CR32",
+              "doi-asserted-by": "publisher",
+              "first-page": "1871",
+              "DOI": "10.1093/brain/awy093",
+              "volume": "141",
+              "author": "JW Vogel",
+              "year": "2018",
+              "unstructured": "Vogel, J. W. et al. Brain properties predict proximity to symptom onset in sporadic Alzheimer’s disease. Brain 141, 1871–1883 (2018).",
+              "journal-title": "Brain"
+            },
+            {
+              "key": "74399_CR33",
+              "doi-asserted-by": "publisher",
+              "first-page": "167",
+              "DOI": "10.1016/j.neuroimage.2012.09.065",
+              "volume": "65",
+              "author": "KR Gray",
+              "year": "2013",
+              "unstructured": "Gray, K. R., Aljabar, P., Heckemann, R. A., Hammers, A. & Rueckert, D. Random forest-based similarity measures for multi-modal classification of Alzheimer’s disease. NeuroImage 65, 167–175 (2013).",
+              "journal-title": "NeuroImage"
+            },
+            {
+              "key": "74399_CR34",
+              "doi-asserted-by": "publisher",
+              "first-page": "856",
+              "DOI": "10.1016/j.neuroimage.2011.01.008",
+              "volume": "55",
+              "author": "D Zhang",
+              "year": "2011",
+              "unstructured": "Zhang, D., Wang, Y., Zhou, L., Yuan, H. & Shen, D. Multimodal classification of Alzheimer’s disease and mild cognitive impairment. NeuroImage 55, 856–867 (2011).",
+              "journal-title": "NeuroImage"
+            },
+            {
+              "key": "74399_CR35",
+              "doi-asserted-by": "publisher",
+              "first-page": "i127",
+              "DOI": "10.1093/bioinformatics/bts228",
+              "volume": "28",
+              "author": "H Wang",
+              "year": "2012",
+              "unstructured": "Wang, H. et al. Identifying disease sensitive and quantitative trait-relevant biomarkers from multidimensional heterogeneous imaging genetics data via sparse multimodal multitask learning. Bioinformatics 28, i127–i136 (2012).",
+              "journal-title": "Bioinformatics"
+            },
+            {
+              "key": "74399_CR36",
+              "doi-asserted-by": "publisher",
+              "first-page": "569",
+              "DOI": "10.1016/j.neuroimage.2014.06.077",
+              "volume": "101",
+              "author": "H-I Suk",
+              "year": "2014",
+              "unstructured": "Suk, H.-I., Lee, S.-W. & Shen, D. Hierarchical feature representation and multimodal fusion with deep learning for AD/MCI diagnosis. NeuroImage 101, 569–582 (2014).",
+              "journal-title": "NeuroImage"
+            },
+            {
+              "key": "74399_CR37",
+              "doi-asserted-by": "publisher",
+              "first-page": "55",
+              "DOI": "10.1016/j.jalz.2005.06.003",
+              "volume": "1",
+              "author": "SG Mueller",
+              "year": "2005",
+              "unstructured": "Mueller, S. G. et al. Ways toward an early diagnosis in Alzheimer’s disease: the Alzheimer’s Disease Neuroimaging Initiative (ADNI). Alzheimer’s Dement. 1, 55–66 (2005).",
+              "journal-title": "Alzheimer's Dement."
+            },
+            {
+              "key": "74399_CR38",
+              "doi-asserted-by": "publisher",
+              "first-page": "183",
+              "DOI": "10.1007/s11682-013-9262-z",
+              "volume": "8",
+              "author": "L Shen",
+              "year": "2014",
+              "unstructured": "Shen, L. et al. Genetic analysis of quantitative phenotypes in AD and MCI: Imaging, cognition and biomarkers. Brain Imaging Behav. 8, 183–207 (2014).",
+              "journal-title": "Brain Imaging Behav."
+            },
+            {
+              "key": "74399_CR39",
+              "doi-asserted-by": "publisher",
+              "first-page": "97",
+              "DOI": "10.1109/RBME.2018.2796598",
+              "volume": "11",
+              "author": "S Leandrou",
+              "year": "2018",
+              "unstructured": "Leandrou, S., Petroudi, S., Reyes-Aldasoro, C. C., Kyriacou, P. A. & Pattichis, C. S. Quantitative MRI brain studies in mild cognitive impairment and Alzheimer’s disease: A methodological review. IEEE Rev. Biomed. Eng. 11, 97–111 (2018).",
+              "journal-title": "IEEE Rev. Biomed. Eng."
+            },
+            {
+              "key": "74399_CR40",
+              "unstructured": "Mhaskar, H., Liao, Q. & Poggio, T. Learning functions: when is deep better than shallow. arXiv preprint arXiv:1603.00988 (2016)."
+            },
+            {
+              "issue": "5",
+              "key": "74399_CR41",
+              "doi-asserted-by": "publisher",
+              "first-page": "1285",
+              "DOI": "10.1109/TMI.2016.2528162",
+              "volume": "35",
+              "author": "H-C Shin",
+              "year": "2016",
+              "unstructured": "Shin, H.-C. et al. Deep convolutional neural networks for computer-aided detection: CNN architectures, dataset characteristics and transfer learning. IEEE Trans. Med. Imaging 35(5), 1285–1298 (2016).",
+              "journal-title": "IEEE Trans. Med. Imaging"
+            },
+            {
+              "key": "74399_CR42",
+              "doi-asserted-by": "publisher",
+              "first-page": "1",
+              "DOI": "10.1186/s12911-020-01225-8",
+              "volume": "20",
+              "author": "L Tong",
+              "year": "2020",
+              "unstructured": "Tong, L., Mitchel, J., Chatlin, K. & Wang, M. D. Deep learning based feature-level integration of multi-omics data for breast cancer patients survival analysis. BMC Med. Inform. Decis. Mak. 20, 1–12 (2020).",
+              "journal-title": "BMC Med. Inform. Decis. Mak."
+            },
+            {
+              "key": "74399_CR43",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.ymeth.2020.07.008",
+              "author": "L Tong",
+              "year": "2020",
+              "unstructured": "Tong, L., Wu, H. & Wang, M. D. Integrating multi-omics data by learning modality invariant representations for improved prediction of overall survival of cancer. Methods. https://doi.org/10.1016/j.ymeth.2020.07.008 (2020).",
+              "journal-title": "Methods"
+            },
+            {
+              "key": "74399_CR44",
+              "unstructured": "Che, Z., Purushotham, S., Khemani, R. & Liu, Y. Distilling knowledge from deep networks with applications to healthcare domain. arXiv preprint arXiv:1512.03542 (2015)."
+            },
+            {
+              "key": "74399_CR45",
+              "doi-asserted-by": "publisher",
+              "first-page": "1215",
+              "DOI": "10.1016/j.neurobiolaging.2011.02.012",
+              "volume": "33",
+              "author": "L Glodzik",
+              "year": "2012",
+              "unstructured": "Glodzik, L. et al. Alzheimer’s disease markers, hypertension, and gray matter damage in normal elderly. Neurobiol. Aging 33, 1215–1227 (2012).",
+              "journal-title": "Neurobiol. Aging"
+            },
+            {
+              "key": "74399_CR46",
+              "doi-asserted-by": "publisher",
+              "first-page": "614",
+              "DOI": "10.1016/S1474-4422(14)70090-0",
+              "volume": "13",
+              "author": "B Dubois",
+              "year": "2014",
+              "unstructured": "Dubois, B. et al. Advancing research diagnostic criteria for Alzheimer’s disease: the IWG-2 criteria. Lancet Neurol. 13, 614–629 (2014).",
+              "journal-title": "Lancet Neurol."
+            },
+            {
+              "key": "74399_CR47",
+              "doi-asserted-by": "publisher",
+              "first-page": "066013",
+              "DOI": "10.1088/1741-2560/10/6/066013",
+              "volume": "10",
+              "author": "RE Hampson",
+              "year": "2013",
+              "unstructured": "Hampson, R. E. et al. Facilitation of memory encoding in primate hippocampus by a neuroprosthesis that promotes task-specific neural firing. J. Neural Eng. 10, 066013 (2013).",
+              "journal-title": "J. Neural Eng."
+            },
+            {
+              "key": "74399_CR48",
+              "doi-asserted-by": "publisher",
+              "first-page": "1325",
+              "DOI": "10.1016/j.neuroimage.2004.12.034",
+              "volume": "25",
+              "author": "SB Eickhoff",
+              "year": "2005",
+              "unstructured": "Eickhoff, S. B. et al. A new SPM toolbox for combining probabilistic cytoarchitectonic maps and functional imaging data. NeuroImage 25, 1325–1335 (2005).",
+              "journal-title": "NeuroImage"
+            },
+            {
+              "key": "74399_CR49",
+              "doi-asserted-by": "publisher",
+              "first-page": "1226",
+              "DOI": "10.1109/TPAMI.2005.159",
+              "volume": "27",
+              "author": "H Peng",
+              "year": "2005",
+              "unstructured": "Peng, H., Long, F. & Ding, C. Feature selection based on mutual information criteria of max-dependency, max-relevance, and min-redundancy. IEEE Trans. Pattern Anal. Mach. Intell. 27, 1226–1238 (2005).",
+              "journal-title": "IEEE Trans. Pattern Anal. Mach. Intell."
+            },
+            {
+              "key": "74399_CR50",
+              "doi-asserted-by": "publisher",
+              "first-page": "185",
+              "DOI": "10.1142/S0219720005001004",
+              "volume": "3",
+              "author": "C Ding",
+              "year": "2005",
+              "unstructured": "Ding, C. & Peng, H. Minimum redundancy feature selection from microarray gene expression data. J. Bioinform. Comput. Biol. 3, 185–205 (2005).",
+              "journal-title": "J. Bioinform. Comput. Biol."
+            },
+            {
+              "key": "74399_CR51",
+              "unstructured": "Ioffe, S. & Szegedy, C. Batch normalization: Accelerating deep network training by reducing internal covariate shift. arXiv preprint arXiv:1502.03167 (2015)."
+            },
+            {
+              "key": "74399_CR52",
+              "doi-asserted-by": "publisher",
+              "first-page": "26094",
+              "DOI": "10.1038/srep26094",
+              "volume": "6",
+              "author": "R Miotto",
+              "year": "2016",
+              "unstructured": "Miotto, R., Li, L., Kidd, B. A. & Dudley, J. T. Deep patient: An unsupervised representation to predict the future of patients from the electronic health records. Sci. Rep. 6, 26094 (2016).",
+              "journal-title": "Sci. Rep."
+            },
+            {
+              "key": "74399_CR53",
+              "unstructured": "Kingma, D. & Ba, J. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980 (2014)."
+            },
+            {
+              "key": "74399_CR54",
+              "doi-asserted-by": "publisher",
+              "first-page": "85",
+              "DOI": "10.1038/nrg3868",
+              "volume": "16",
+              "author": "MD Ritchie",
+              "year": "2015",
+              "unstructured": "Ritchie, M. D., Holzinger, E. R., Li, R., Pendergrass, S. A. & Kim, D. Methods of integrating data to uncover genotype–phenotype interactions. Nat. Rev. Genet. 16, 85–97 (2015).",
+              "journal-title": "Nat. Rev. Genet."
+            }
+          ],
+          "container-title": [
+            "Scientific Reports"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://www.nature.com/articles/s41598-020-74399-w.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://www.nature.com/articles/s41598-020-74399-w",
+              "content-type": "text/html",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://www.nature.com/articles/s41598-020-74399-w.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2023,
+                1,
+                28
+              ]
+            ],
+            "date-time": "2023-01-28T16:08:10Z",
+            "timestamp": 1674922090000
+          },
+          "score": 51.107533,
+          "resource": {
+            "primary": {
+              "URL": "https://www.nature.com/articles/s41598-020-74399-w"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2021,
+                2,
+                5
+              ]
+            ]
+          },
+          "references-count": 54,
+          "journal-issue": {
+            "issue": "1",
+            "published-online": {
+              "date-parts": [
+                [
+                  2021,
+                  12
+                ]
+              ]
+            }
+          },
+          "alternative-id": [
+            "74399"
+          ],
+          "URL": "https://doi.org/10.1038/s41598-020-74399-w",
+          "ISSN": [
+            "2045-2322"
+          ],
+          "issn-type": [
+            {
+              "value": "2045-2322",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2021,
+                2,
+                5
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "28 August 2018",
+              "order": 1,
+              "name": "received",
+              "label": "Received",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "22 January 2020",
+              "order": 2,
+              "name": "accepted",
+              "label": "Accepted",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "5 February 2021",
+              "order": 3,
+              "name": "first_online",
+              "label": "First Online",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "The authors declare no competing interests.",
+              "order": 1,
+              "name": "Ethics",
+              "group": {
+                "name": "EthicsHeading",
+                "label": "Competing interests"
+              }
+            }
+          ],
+          "article-number": "3254"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                4,
+                24
+              ]
+            ],
+            "date-time": "2026-04-24T05:47:31Z",
+            "timestamp": 1777009651623,
+            "version": "3.51.4"
+          },
+          "reference-count": 20,
+          "publisher": "IEEE",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2025,
+                    12,
+                    29
+                  ]
+                ],
+                "date-time": "2025-12-29T00:00:00Z",
+                "timestamp": 1766966400000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-029"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2025,
+                    12,
+                    29
+                  ]
+                ],
+                "date-time": "2025-12-29T00:00:00Z",
+                "timestamp": 1766966400000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-037"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2025,
+                12,
+                29
+              ]
+            ]
+          },
+          "DOI": "10.1109/cnc68716.2025.11484682",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                4,
+                23
+              ]
+            ],
+            "date-time": "2026-04-23T19:56:58Z",
+            "timestamp": 1776974218000
+          },
+          "page": "630-635",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Detection and Analysis of Alzheimer’s Disease at the Early Stage using Deep Learning Models"
+          ],
+          "prefix": "10.1109",
+          "author": [
+            {
+              "family": "Masooda",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Sahyadri College of Engineering and Management,Department of Computer Science and Engineering,Mangalore,India"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Pushpalatha",
+              "family": "K",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Sahyadri College of Engineering and Management,Department of Computer Science and Engineering,Mangalore,India"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "263",
+          "reference": [
+            {
+              "key": "ref1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ACCESS.2023.3291406"
+            },
+            {
+              "key": "ref2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ACCESS.2023.3233969"
+            },
+            {
+              "key": "ref3",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TIM.2023.3284944"
+            },
+            {
+              "key": "ref4",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TNSRE.2023.3314100"
+            },
+            {
+              "key": "ref5",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CSCloud-EdgeCom58631.2023.00078"
+            },
+            {
+              "key": "ref6",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICCICA60014.2024.10585063"
+            },
+            {
+              "key": "ref7",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TIM.2024.3351248"
+            },
+            {
+              "key": "ref8",
+              "first-page": "1",
+              "article-title": "Alzheimer’s diseaseDetection Using Machine Learning",
+              "volume-title": "2022 International Conference on Communication, Computing and Internet of Things (IC3IoT)",
+              "author": "Roobini"
+            },
+            {
+              "key": "ref9",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSCDS53736.2022.9760962"
+            },
+            {
+              "key": "ref10",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/UEMCON54665.2022.9965732"
+            },
+            {
+              "key": "ref11",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/S0140-6736(20)32205-4"
+            },
+            {
+              "key": "ref12",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14283/jpad.2021.23"
+            },
+            {
+              "key": "ref13",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/b978-0-12-802395-2.00023-7"
+            },
+            {
+              "key": "ref14",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/S0140-6736(10)61349-9"
+            },
+            {
+              "key": "ref15",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.pharep.2014.09.004"
+            },
+            {
+              "key": "ref16",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1055/s-0033-1359319"
+            },
+            {
+              "key": "ref17",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5114/fn.2013.37702"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/B978-0-12-385883-2.00008-4"
+            },
+            {
+              "key": "ref19",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3233/JAD-2010-100975"
+            },
+            {
+              "key": "ref20",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1111/j.1749-6632.2008.03972.x"
+            }
+          ],
+          "event": {
+            "name": "2025 IEEE International Conference on Communication Networks and Computing (CNC)",
+            "location": "Sonbhadra, India",
+            "start": {
+              "date-parts": [
+                [
+                  2025,
+                  12,
+                  29
+                ]
+              ]
+            },
+            "end": {
+              "date-parts": [
+                [
+                  2025,
+                  12,
+                  30
+                ]
+              ]
+            }
+          },
+          "container-title": [
+            "2025 IEEE International Conference on Communication Networks and Computing (CNC)"
+          ],
+          "link": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/11484052/11484521/11484682.pdf?arnumber=11484682",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                4,
+                24
+              ]
+            ],
+            "date-time": "2026-04-24T05:04:36Z",
+            "timestamp": 1777007076000
+          },
+          "score": 39.368855,
+          "resource": {
+            "primary": {
+              "URL": "https://ieeexplore.ieee.org/document/11484682/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2025,
+                12,
+                29
+              ]
+            ]
+          },
+          "references-count": 20,
+          "URL": "https://doi.org/10.1109/cnc68716.2025.11484682",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                12,
+                29
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                1,
+                23
+              ]
+            ],
+            "date-time": "2026-01-23T16:14:01Z",
+            "timestamp": 1769184841172,
+            "version": "3.49.0"
+          },
+          "publisher-location": "Singapore",
+          "reference-count": 17,
+          "publisher": "Springer Nature Singapore",
+          "isbn-type": [
+            {
+              "value": "9789819627028",
+              "type": "print"
+            },
+            {
+              "value": "9789819627035",
+              "type": "electronic"
+            }
+          ],
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2025,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2025-01-01T00:00:00Z",
+                "timestamp": 1735689600000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2025,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2025-01-01T00:00:00Z",
+                "timestamp": 1735689600000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "link.springer.com"
+            ],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "DOI": "10.1007/978-981-96-2703-5_1",
+          "type": "book-chapter",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                5,
+                22
+              ]
+            ],
+            "date-time": "2025-05-22T07:11:25Z",
+            "timestamp": 1747897885000
+          },
+          "page": "1-11",
+          "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 3,
+          "title": [
+            "Enhancing Early Detection of Alzheimer’s Disease Through Integrated Deep Learning Models: A Multimodal Diagnostic Approach"
+          ],
+          "prefix": "10.1007",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-4991-8475",
+              "authenticated-orcid": false,
+              "given": "Manjunath Ramanna",
+              "family": "Lamani",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-5313-4449",
+              "authenticated-orcid": false,
+              "given": "Lalasa",
+              "family": "Mukku",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-4881-0734",
+              "authenticated-orcid": false,
+              "given": "V.",
+              "family": "Asha",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-0784-3161",
+              "authenticated-orcid": false,
+              "given": "K.",
+              "family": "Padmaja",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "297",
+          "published-online": {
+            "date-parts": [
+              [
+                2025,
+                5,
+                23
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "issue": "4",
+              "key": "1_CR1",
+              "first-page": "45",
+              "volume": "32",
+              "author": "J Smith",
+              "year": "2018",
+              "unstructured": "Smith J, Doe A (2018) Early detection of Alzheimer’s disease: a neurological perspective. J Neurol Sci 32(4):45–53",
+              "journal-title": "J Neurol Sci"
+            },
+            {
+              "issue": "7",
+              "key": "1_CR2",
+              "first-page": "645",
+              "volume": "174",
+              "author": "KA Johnson",
+              "year": "2017",
+              "unstructured": "Johnson KA, Maraganore DM (2017) Early diagnosis of Alzheimer’s disease: implications for treatment. Am J Psychiatry 174(7):645–654",
+              "journal-title": "Am J Psychiatry"
+            },
+            {
+              "issue": "3",
+              "key": "1_CR3",
+              "first-page": "1012",
+              "volume": "22",
+              "author": "H Lee",
+              "year": "2019",
+              "unstructured": "Lee H, Park Y, Kim J (2019) Deep learning applications in Alzheimer’s disease. Neuroimage 22(3):1012–1023",
+              "journal-title": "Neuroimage"
+            },
+            {
+              "key": "1_CR4",
+              "volume": "58",
+              "author": "P Gupta",
+              "year": "2020",
+              "unstructured": "Gupta P, Singh M, Kumar R (2020) Enhancing the prediction of Alzheimer’s disease using deep learning techniques. Med Image Anal 58:101597",
+              "journal-title": "Med Image Anal"
+            },
+            {
+              "issue": "2",
+              "key": "1_CR5",
+              "first-page": "300",
+              "volume": "59",
+              "author": "T Brown",
+              "year": "2021",
+              "unstructured": "Brown T, Thompson P (2021) Deep learning enhancements for early Alzheimer’s disease diagnosis: a neuroimaging study. J AI Res 59(2):300–318",
+              "journal-title": "J AI Res"
+            },
+            {
+              "issue": "5",
+              "key": "1_CR6",
+              "volume": "34",
+              "author": "R Adams",
+              "year": "2021",
+              "unstructured": "Adams R, Zhou S (2021) Challenges in the standardization of medical imaging data for deep learning applications. J Med Imaging 34(5):055001",
+              "journal-title": "J Med Imaging"
+            },
+            {
+              "key": "1_CR7",
+              "first-page": "1119",
+              "volume": "12",
+              "author": "TB Adams",
+              "year": "2016",
+              "unstructured": "Adams TB et al (2016) Early detection of Alzheimer’s through cognitive testing: a review. Neuropsychiatr Dis Treat 12:1119–1127",
+              "journal-title": "Neuropsychiatr Dis Treat"
+            },
+            {
+              "issue": "1",
+              "key": "1_CR8",
+              "first-page": "123",
+              "volume": "58",
+              "author": "T Brown",
+              "year": "2019",
+              "unstructured": "Brown T, Thompson P (2019) Neuroimaging techniques in Alzheimer’s research: a review. J Neurol 58(1):123–138",
+              "journal-title": "J Neurol"
+            },
+            {
+              "key": "1_CR9",
+              "first-page": "8846935",
+              "volume": "2020",
+              "author": "P Gupta",
+              "year": "2020",
+              "unstructured": "Gupta P et al (2020) Multimodal data for alzheimer’s disease detection using deep learning. J Healthcare Eng 2020:8846935",
+              "journal-title": "J Healthcare Eng"
+            },
+            {
+              "key": "1_CR10",
+              "volume": "59",
+              "author": "A Khan",
+              "year": "2020",
+              "unstructured": "Khan A et al (2020) Application of convolutional neural networks for automated ulcer detection in wireless capsule endoscopy images. Med Image Anal 59:101557",
+              "journal-title": "Med Image Anal"
+            },
+            {
+              "key": "1_CR11",
+              "unstructured": "Lee H et al. (2018) Machine learning algorithms for Alzheimer’s disease: enhancing prediction and classification. Front Comput Neurosci 12(58)"
+            },
+            {
+              "key": "1_CR12",
+              "first-page": "173",
+              "volume": "115",
+              "author": "R Nguyen",
+              "year": "2019",
+              "unstructured": "Nguyen R et al (2019) Deep learning for early alzheimer’s disease detection: an MRI approach. Neural Netw 115:173–182",
+              "journal-title": "Neural Netw"
+            },
+            {
+              "issue": "2",
+              "key": "1_CR13",
+              "first-page": "16",
+              "volume": "3",
+              "author": "L Smith",
+              "year": "2021",
+              "unstructured": "Smith L, Jones M (2021) Recurrent neural networks in longitudinal data analysis for Alzheimer’s prediction. Mach Learn Healthcare J 3(2):16–29",
+              "journal-title": "Mach Learn Healthcare J"
+            },
+            {
+              "issue": "4",
+              "key": "1_CR14",
+              "first-page": "1234",
+              "volume": "55",
+              "author": "R Adams",
+              "year": "2017",
+              "unstructured": "Adams R et al (2017) Alzheimer’s disease neuroimaging initiative (ADNI): clinical and genetic data. J Alzheimer’s Res 55(4):1234–1245",
+              "journal-title": "J Alzheimer’s Res"
+            },
+            {
+              "issue": "2",
+              "key": "1_CR15",
+              "first-page": "204",
+              "volume": "112",
+              "author": "T Brown",
+              "year": "2019",
+              "unstructured": "Brown T, Thompson P (2019) Image normalization techniques in deep learning. J Mach Vision and Understanding 112(2):204–219",
+              "journal-title": "J Mach Vision and Understanding"
+            },
+            {
+              "issue": "5",
+              "key": "1_CR16",
+              "first-page": "1575",
+              "volume": "30",
+              "author": "H Lee",
+              "year": "2018",
+              "unstructured": "Lee H et al (2018) Data augmentation in neuroimaging: techniques for MRI analysis in Alzheimer’s disease. Neural Comput 30(5):1575–1600",
+              "journal-title": "Neural Comput"
+            },
+            {
+              "issue": "1",
+              "key": "1_CR17",
+              "first-page": "45",
+              "volume": "4",
+              "author": "KA Johnson",
+              "year": "2022",
+              "unstructured": "Johnson KA, Maraganore DM (2022) Advanced integration techniques in neural networks for disease prediction. J Mach Learn Healthcare 4(1):45–59",
+              "journal-title": "J Mach Learn Healthcare"
+            }
+          ],
+          "container-title": [
+            "Lecture Notes in Networks and Systems",
+            "Fifth Congress on Intelligent Systems"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://link.springer.com/content/pdf/10.1007/978-981-96-2703-5_1",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                5,
+                22
+              ]
+            ],
+            "date-time": "2025-05-22T07:11:25Z",
+            "timestamp": 1747897885000
+          },
+          "score": 39.122192,
+          "resource": {
+            "primary": {
+              "URL": "https://link.springer.com/10.1007/978-981-96-2703-5_1"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "ISBN": [
+            "9789819627028",
+            "9789819627035"
+          ],
+          "references-count": 17,
+          "URL": "https://doi.org/10.1007/978-981-96-2703-5_1",
+          "ISSN": [
+            "2367-3370",
+            "2367-3389"
+          ],
+          "issn-type": [
+            {
+              "value": "2367-3370",
+              "type": "print"
+            },
+            {
+              "value": "2367-3389",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "23 May 2025",
+              "order": 1,
+              "name": "first_online",
+              "label": "First Online",
+              "group": {
+                "name": "ChapterHistory",
+                "label": "Chapter History"
+              }
+            },
+            {
+              "value": "CIS",
+              "order": 1,
+              "name": "conference_acronym",
+              "label": "Conference Acronym",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "Congress on Intelligent Systems",
+              "order": 2,
+              "name": "conference_name",
+              "label": "Conference Name",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "Bengaluru",
+              "order": 3,
+              "name": "conference_city",
+              "label": "Conference City",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "India",
+              "order": 4,
+              "name": "conference_country",
+              "label": "Conference Country",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "2024",
+              "order": 5,
+              "name": "conference_year",
+              "label": "Conference Year",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "4 September 2024",
+              "order": 7,
+              "name": "conference_start_date",
+              "label": "Conference Start Date",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "5 September 2024",
+              "order": 8,
+              "name": "conference_end_date",
+              "label": "Conference End Date",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "5",
+              "order": 9,
+              "name": "conference_number",
+              "label": "Conference Number",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "cis12024",
+              "order": 10,
+              "name": "conference_id",
+              "label": "Conference ID",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "https://scrs.in/conference/cis2024",
+              "order": 11,
+              "name": "conference_url",
+              "label": "Conference URL",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            }
+          ]
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                21
+              ]
+            ],
+            "date-time": "2026-06-21T07:47:55Z",
+            "timestamp": 1782028075434,
+            "version": "3.54.5"
+          },
+          "reference-count": 0,
+          "publisher": "Springer Science and Business Media LLC",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    6,
+                    21
+                  ]
+                ],
+                "date-time": "2026-06-21T00:00:00Z",
+                "timestamp": 1782000000000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    6,
+                    21
+                  ]
+                ],
+                "date-time": "2026-06-21T00:00:00Z",
+                "timestamp": 1782000000000
+              },
+              "content-version": "am",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0"
+            }
+          ],
+          "funder": [
+            {
+              "name": "University of Stavanger & Stavanger University Hospital"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "link.springer.com"
+            ],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "Sci Rep"
+          ],
+          "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Identifying individuals at risk of Alzheimer’s disease (AD), particularly in the preclinical and early stages, remains challenging. Although deep learning approaches based on structural MRI show promise as a non-invasive biomarker, existing multimodal models require task-specific training and depend on biomarkers that are not routinely available in clinical practice. Here, we propose a zero-shot multimodal feature extraction framework based on SigLIP that combines structural MRI embeddings with text embeddings of routinely collected clinical variables for early AD risk stratification in individuals at preclinical or mild cognitive impairment (MCI) stages. We evaluated the approach in 416 individuals from the ADNI cohort (age: 72.73 ± 6.7). SigLIP was used without fine-tuning to extract MRI and clinical text embeddings, which were combined into multimodal representations for individual-level AD risk prediction within 4 years. We further compared the model performance in a single-visit and two-visit settings to assess the value of longitudinal information and framework scalability. In the 1-visit setting, combining MRI embeddings with MMSE, age, and sex achieved an AUC of 0.91 ± 0.02, showing higher performance than the CSF Aβ42-based model (AUC 0.73 ± 0.08) and MMSE-based model (AUC 0.85 ± 0.22). In the 2-visit setting, performance was maintained or improved, supporting the scalability of the approach to longitudinal data. These findings suggest that multimodal fusion of SigLIP-derived MRI features and routinely collected clinical variables may provide a practical and scalable strategy for early AD risk progression prediction without task-specific training.</jats:p>",
+          "DOI": "10.1038/s41598-026-57861-z",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                21
+              ]
+            ],
+            "date-time": "2026-06-21T07:14:25Z",
+            "timestamp": 1782026065000
+          },
+          "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Clinical pathways matter for multimodal deep learning in early Alzheimer’s disease detection"
+          ],
+          "prefix": "10.1038",
+          "author": [
+            {
+              "given": "Yao",
+              "family": "Lu",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Solveig Kristina",
+              "family": "Hammonds",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Alvaro",
+              "family": "Fernandez-Quilez",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "297",
+          "published-online": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                21
+              ]
+            ]
+          },
+          "container-title": [
+            "Scientific Reports"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://www.nature.com/articles/s41598-026-57861-z",
+              "content-type": "text/html",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                21
+              ]
+            ],
+            "date-time": "2026-06-21T07:14:26Z",
+            "timestamp": 1782026066000
+          },
+          "score": 38.127434,
+          "resource": {
+            "primary": {
+              "URL": "https://www.nature.com/articles/s41598-026-57861-z"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                21
+              ]
+            ]
+          },
+          "references-count": 0,
+          "alternative-id": [
+            "57861"
+          ],
+          "URL": "https://doi.org/10.1038/s41598-026-57861-z",
+          "ISSN": [
+            "2045-2322"
+          ],
+          "issn-type": [
+            {
+              "value": "2045-2322",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                21
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "23 March 2026",
+              "order": 1,
+              "name": "received",
+              "label": "Received",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "10 June 2026",
+              "order": 2,
+              "name": "accepted",
+              "label": "Accepted",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "21 June 2026",
+              "order": 3,
+              "name": "first_online",
+              "label": "First Online",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "order": 1,
+              "name": "Ethics",
+              "group": {
+                "name": "EthicsHeading",
+                "label": "Declarations"
+              }
+            },
+            {
+              "value": "The authors declare no competing interests.",
+              "order": 2,
+              "name": "Ethics",
+              "group": {
+                "name": "EthicsHeading",
+                "label": "Competing interests"
+              }
+            },
+            {
+              "value": "All procedures performed in studies involving human participants were in accordance with the ethical standards of the institutional research committee and with the 1964 Helsinki declaration and its later amendments. Informed consent was obtained from all individual participants included in the ADNI dataset.",
+              "order": 3,
+              "name": "Ethics",
+              "group": {
+                "name": "EthicsHeading",
+                "label": "Ethical approval"
+              }
+            }
+          ]
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                17
+              ]
+            ],
+            "date-time": "2026-08-17T18:32:14Z",
+            "timestamp": 1786991534299,
+            "version": "build-2736575974"
+          },
+          "reference-count": 46,
+          "publisher": "Elsevier BV",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2020,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2020-09-01T00:00:00Z",
+                "timestamp": 1598918400000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2020,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2020-09-01T00:00:00Z",
+                "timestamp": 1598918400000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/legal/tdmrep-license"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2021,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2021-09-01T00:00:00Z",
+                "timestamp": 1630454400000
+              },
+              "content-version": "vor",
+              "delay-in-days": 365,
+              "URL": "http://www.elsevier.com/open-access/userlicense/1.0/"
+            }
+          ],
+          "funder": [
+            {
+              "DOI": "10.13039/501100004587",
+              "name": "Instituto de Salud Carlos III",
+              "doi-asserted-by": "publisher",
+              "id": [
+                {
+                  "id": "10.13039/501100004587",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100010198",
+              "name": "Ministerio de Asuntos Económicos y Transformación Digital, Gobierno de España",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "PI17/00936"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "PI17/00936"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100010198",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "elsevier.com",
+              "sciencedirect.com"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "Journal of Biomedical Informatics"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2020,
+                9
+              ]
+            ]
+          },
+          "DOI": "10.1016/j.jbi.2020.103514",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2020,
+                7,
+                22
+              ]
+            ],
+            "date-time": "2020-07-22T21:22:00Z",
+            "timestamp": 1595452920000
+          },
+          "page": "103514",
+          "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 94,
+          "special_numbering": "C",
+          "title": [
+            "Alzheimer’s Disease stage identification using deep learning models"
+          ],
+          "prefix": "10.1016",
+          "volume": "109",
+          "author": [
+            {
+              "given": "Santos",
+              "family": "Bringas",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Sergio",
+              "family": "Salomón",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-8636-3213",
+              "authenticated-orcid": false,
+              "given": "Rafael",
+              "family": "Duque",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Carmen",
+              "family": "Lage",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "José Luis",
+              "family": "Montaña",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "78",
+          "reference": [
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0005",
+              "first-page": "1",
+              "article-title": "World alzheimer report 2015. london, uk",
+              "author": "Prince",
+              "year": "2015",
+              "journal-title": "Alzheimer’s Disease Int."
+            },
+            {
+              "issue": "9",
+              "key": "10.1016/j.jbi.2020.103514_b0010",
+              "doi-asserted-by": "crossref",
+              "first-page": "795",
+              "DOI": "10.1056/NEJMoa1202753",
+              "article-title": "Clinical and biomarker changes in dominantly inherited alzheimer’s disease",
+              "volume": "367",
+              "author": "Bateman",
+              "year": "2012",
+              "journal-title": "New Engl. J. Med."
+            },
+            {
+              "issue": "9",
+              "key": "10.1016/j.jbi.2020.103514_b0015",
+              "doi-asserted-by": "crossref",
+              "first-page": "1136",
+              "DOI": "10.1176/ajp.139.9.1136",
+              "article-title": "The global deterioration scale for assessment of primary degenerative dementia",
+              "volume": "139",
+              "author": "Reisberg",
+              "year": "1982",
+              "journal-title": "Am. J. Psychiatry"
+            },
+            {
+              "issue": "11",
+              "key": "10.1016/j.jbi.2020.103514_b0020",
+              "doi-asserted-by": "crossref",
+              "first-page": "2412",
+              "DOI": "10.1212/WNL.43.11.2412-a",
+              "article-title": "The clinical dementia rating (cdr): current version and scoring rules",
+              "volume": "43",
+              "author": "Morris",
+              "year": "1993",
+              "journal-title": "Neurology"
+            },
+            {
+              "issue": "8",
+              "key": "10.1016/j.jbi.2020.103514_b0025",
+              "doi-asserted-by": "crossref",
+              "first-page": "1798",
+              "DOI": "10.1109/TPAMI.2013.50",
+              "article-title": "Representation learning: A review and new perspectives",
+              "volume": "35",
+              "author": "Bengio",
+              "year": "2013",
+              "journal-title": "IEEE Trans. Pattern Anal. Mach. Intell."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0030",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1016/j.cmpb.2019.105242",
+              "article-title": "Deep learning to detect alzheimer’s disease from neuroimaging: A systematic literature review",
+              "volume": "187",
+              "author": "Ebrahimighahnavieh",
+              "year": "2020",
+              "journal-title": "Comput. Methods Programs Biomed."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0035",
+              "series-title": "Human Brain and Artificial Intelligence",
+              "first-page": "52",
+              "article-title": "Early diagnosis of alzheimer’s disease based on deep learning and gwas",
+              "author": "Pan",
+              "year": "2019"
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0040",
+              "doi-asserted-by": "crossref",
+              "first-page": "185",
+              "DOI": "10.1016/j.neucom.2019.04.093",
+              "article-title": "Multi-modal deep learning model for auxiliary diagnosis of alzheimer’s disease",
+              "volume": "361",
+              "author": "Zhang",
+              "year": "2019",
+              "journal-title": "Neurocomputing"
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0045",
+              "doi-asserted-by": "crossref",
+              "first-page": "276",
+              "DOI": "10.1016/j.neuroimage.2019.01.031",
+              "article-title": "A parameter-efficient deep learning approach to predict conversion from mild cognitive impairment to alzheimer’s disease",
+              "volume": "189",
+              "author": "Spasov",
+              "year": "2019",
+              "journal-title": "NeuroImage"
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0050",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1016/j.eswa.2019.112873",
+              "article-title": "Prediction of alzheimer’s disease based on deep neural network by integrating gene expression and dna methylation dataset",
+              "volume": "140",
+              "author": "Park",
+              "year": "2020",
+              "journal-title": "Expert Syst. Appl."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0055",
+              "doi-asserted-by": "crossref",
+              "first-page": "353",
+              "DOI": "10.1016/j.eswa.2019.06.038",
+              "article-title": "Diagnosis and monitoring of alzheimer’s patients using classical and deep learning techniques",
+              "volume": "136",
+              "author": "Raza",
+              "year": "2019",
+              "journal-title": "Expert Syst. Appl."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0060",
+              "doi-asserted-by": "crossref",
+              "first-page": "424",
+              "DOI": "10.1016/j.jvcir.2018.06.019",
+              "article-title": "Feedback weight convolutional neural network for gait recognition",
+              "volume": "55",
+              "author": "Wu",
+              "year": "2018",
+              "journal-title": "J. Vis. Commun. Image Represent."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0065",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A.R. Hawas, H.A. El-Khobby, M. Abd-Elnaby, F.E. Abd El-Samie, Gait identification by convolutional neural networks and optical flow, Multimedia Tools and Applications 78 (18) (2019) 25873–25888. doi:10.1007/s11042-019-7638-9. URL https://doi.org/10.1007/s11042-019-7638-9.",
+              "DOI": "10.1007/s11042-019-7638-9"
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0070",
+              "doi-asserted-by": "crossref",
+              "first-page": "103",
+              "DOI": "10.1016/j.cviu.2017.10.004",
+              "article-title": "Improved gait recognition based on specialized deep convolutional neural network",
+              "volume": "164",
+              "author": "Alotaibi",
+              "year": "2017",
+              "journal-title": "Comput. Vis. Image Underst."
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.jbi.2020.103514_b0075",
+              "doi-asserted-by": "crossref",
+              "first-page": "492",
+              "DOI": "10.1093/ageing/afy059",
+              "article-title": "New horizons in falls prevention",
+              "volume": "47",
+              "author": "Lord",
+              "year": "2018",
+              "journal-title": "Age Ageing"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.jbi.2020.103514_b0080",
+              "doi-asserted-by": "crossref",
+              "first-page": "130",
+              "DOI": "10.1111/ggi.13565",
+              "article-title": "High frequency of getting out of bed in patients with alzheimer’s disease monitored by non-wearable actigraphy",
+              "volume": "19",
+              "author": "Higami",
+              "year": "2019",
+              "journal-title": "Geriatr. Gerontol. Int."
+            },
+            {
+              "issue": "3–4",
+              "key": "10.1016/j.jbi.2020.103514_b0085",
+              "doi-asserted-by": "crossref",
+              "first-page": "249",
+              "DOI": "10.3109/17538157.2014.931851",
+              "article-title": "A prospective field study for sensor-based identification of fall risk in older people with dementia",
+              "volume": "39",
+              "author": "Gietzelt",
+              "year": "2014",
+              "journal-title": "Inform. Health Soc. Care"
+            },
+            {
+              "issue": "7",
+              "key": "10.1016/j.jbi.2020.103514_b0090",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1371/journal.pone.0158623",
+              "article-title": "Daily-life gait quality as predictor of falls in older people: A 1-year prospective cohort study",
+              "volume": "11",
+              "author": "Van Schooten",
+              "year": "2016",
+              "journal-title": "PLoS ONE"
+            },
+            {
+              "issue": "9",
+              "key": "10.1016/j.jbi.2020.103514_b0095",
+              "doi-asserted-by": "crossref",
+              "first-page": "806",
+              "DOI": "10.1097/JGP.0b013e31823038af",
+              "article-title": "Decreased daytime motor activity associated with apathy in alzheimer disease: an actigraphic study",
+              "volume": "20",
+              "author": "David",
+              "year": "2012",
+              "journal-title": "Am. J. Geriatric Psychiatry: Off. J. Am. Assoc. Geriatric Psychiatry"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.jbi.2020.103514_b0100",
+              "doi-asserted-by": "crossref",
+              "first-page": "94",
+              "DOI": "10.1016/j.eurpsy.2011.04.006",
+              "article-title": "Actigraphic daytime activity is reduced in patients with cognitive impairment and apathy",
+              "volume": "28",
+              "author": "Kuhlmei",
+              "year": "2013",
+              "journal-title": "Eur. Psychiatry: J. Assoc. Eur. Psychiatrists"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.jbi.2020.103514_b0105",
+              "doi-asserted-by": "crossref",
+              "first-page": "391",
+              "DOI": "10.1016/j.jagp.2012.12.012",
+              "article-title": "Phenotyping apathy in individuals with alzheimer disease using functional principal component analysis",
+              "volume": "21",
+              "author": "Zeitzer",
+              "year": "2013",
+              "journal-title": "Am. J. Geriatric Psychiatry: Off. J. Am. Assoc. Geriatric Psychiatry"
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0110",
+              "doi-asserted-by": "crossref",
+              "unstructured": "D. Goerss, A. Hein, S. Bader, M. Halek, S. Kernebeck, A. Kutschke, C. Heine, F. Krueger, T. Kirste, S. Teipel, Automated sensor-based detection of challenging behaviors in advanced stages of dementia in nursing homes, Alzheimer’s & dementia: the journal of the Alzheimer’s Association. doi:10.1016/j.jalz.2019.08.193.",
+              "DOI": "10.1016/j.jalz.2019.08.193"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.jbi.2020.103514_b0115",
+              "doi-asserted-by": "crossref",
+              "first-page": "319",
+              "DOI": "10.3414/ME12-02-0009",
+              "article-title": "Measurement of accelerometry-based gait parameters in people with and without dementia in the field",
+              "volume": "52",
+              "author": "Gietzelt",
+              "year": "2013",
+              "journal-title": "Methods Inf. Med."
+            },
+            {
+              "issue": "8",
+              "key": "10.1016/j.jbi.2020.103514_b0120",
+              "doi-asserted-by": "crossref",
+              "first-page": "1078",
+              "DOI": "10.1093/gerona/glx187",
+              "article-title": "Everyday stepping quantity and quality among older adult fallers with and without mild cognitive impairment: Initial evidence for new motor markers of cognitive deficits?",
+              "volume": "73",
+              "author": "Hausdorff",
+              "year": "2018",
+              "journal-title": "J. Gerontol. Ser. A, Biol. Sci. Med. Sci."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0125",
+              "doi-asserted-by": "crossref",
+              "first-page": "372",
+              "DOI": "10.1016/j.gaitpost.2019.12.028",
+              "article-title": "Differentiating dementia disease subtypes with gait analysis: feasibility of wearable sensors?",
+              "volume": "76",
+              "author": "Mc Ardle",
+              "year": "2019",
+              "journal-title": "Gait & Posture"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.jbi.2020.103514_b0130",
+              "doi-asserted-by": "crossref",
+              "first-page": "249",
+              "DOI": "10.1007/s40520-015-0392-6",
+              "article-title": "Gait speed or gait variability, which one to use as a marker of risk to develop alzheimer disease? a pilot study",
+              "volume": "28",
+              "author": "Gillain",
+              "year": "2016",
+              "journal-title": "Aging Clin. Exp. Res."
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.jbi.2020.103514_b0135",
+              "doi-asserted-by": "crossref",
+              "first-page": "121",
+              "DOI": "10.3233/JAD-130272",
+              "article-title": "Detecting the effect of alzheimer’s disease on everyday motion behavior",
+              "volume": "38",
+              "author": "Kirste",
+              "year": "2014",
+              "journal-title": "J. Alzheimer’s Disease"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.jbi.2020.103514_b0140",
+              "doi-asserted-by": "crossref",
+              "first-page": "189",
+              "DOI": "10.1016/0022-3956(75)90026-6",
+              "article-title": "”mini-mental state”. a practical method for grading the cognitive state of patients for the clinician",
+              "volume": "12",
+              "author": "Folstein",
+              "year": "1975",
+              "journal-title": "J. Psychiatric Res."
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.jbi.2020.103514_b0145",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1371/journal.pone.0153898",
+              "article-title": "Intra-individual variability of physical activity in older adults with and without mild alzheimer’s disease",
+              "volume": "11",
+              "author": "Watts",
+              "year": "2016",
+              "journal-title": "PloS One"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.jbi.2020.103514_b0150",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1371/journal.pone.0146200",
+              "article-title": "Moderate changes in the circadian system of alzheimer’s disease patients detected in their home environment",
+              "volume": "11",
+              "author": "Weissova",
+              "year": "2016",
+              "journal-title": "PloS One"
+            },
+            {
+              "issue": "5",
+              "key": "10.1016/j.jbi.2020.103514_b0155",
+              "doi-asserted-by": "crossref",
+              "first-page": "582",
+              "DOI": "10.1001/jamaneurol.2017.4719",
+              "article-title": "Circadian rest-activity pattern changes in aging and preclinical alzheimer disease",
+              "volume": "75",
+              "author": "Musiek",
+              "year": "2018",
+              "journal-title": "JAMA Neurol."
+            },
+            {
+              "issue": "9",
+              "key": "10.1016/j.jbi.2020.103514_b0160",
+              "doi-asserted-by": "crossref",
+              "first-page": "1114",
+              "DOI": "10.1016/j.jalz.2018.03.010",
+              "article-title": "Fractal regulation and incident alzheimer’s disease in elderly individuals",
+              "volume": "14",
+              "author": "Li",
+              "year": "2018",
+              "journal-title": "Alzheimer’s & Dementia: J. Alzheimer’s Assoc."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0165",
+              "series-title": "International Workshop on Ambient Assisted Living",
+              "first-page": "38",
+              "article-title": "Energy expenditure analysis: A comparative research of based on mobile accelerometers",
+              "author": "Ruiz-Zafra",
+              "year": "2014"
+            },
+            {
+              "issue": "8",
+              "key": "10.1016/j.jbi.2020.103514_b0170",
+              "doi-asserted-by": "crossref",
+              "first-page": "18270",
+              "DOI": "10.3390/s150818270",
+              "article-title": "A comparative study on the suitability of smartphones and imu for mobile, unsupervised energy expenditure calculi",
+              "volume": "15",
+              "author": "Ruiz-Zafra",
+              "year": "2015",
+              "journal-title": "Sensors"
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0175",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. Nieto-Reyes, R. Duque, J.L. Montaña, C. Lage, Classification of alzheimer’s patients through ubiquitous computing, Sensors (Switzerland) 17 (7). doi:10.3390/s17071679.",
+              "DOI": "10.3390/s17071679"
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0180",
+              "doi-asserted-by": "crossref",
+              "unstructured": "R. Duque, A. Reyes, C. Martinez, J. Montaña, Detecting human movement patterns through data provided by accelerometers. a case study regarding alzheimer’s disease, in: Ubiquitous Computing and Ambient Intelligence - 10th International Conference, UCAmI 2016, San Bartolomé de Tirajana, Gran Canaria, Spain, November 29 - December 2, 2016, Proceedings, Part I, 2016, pp. 56–66. doi:10.1007/978-3-319-48746-5_6. URL https://doi.org/10.1007/978-3-319-48746-5_6.",
+              "DOI": "10.1007/978-3-319-48746-5_6"
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0185",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1016/j.eswa.2019.113075",
+              "article-title": "Deep 1d-convnet for accurate parkinson disease detection and severity prediction from gait",
+              "volume": "143",
+              "author": "Maachi",
+              "year": "2020",
+              "journal-title": "Expert Syst. Appl."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0190",
+              "doi-asserted-by": "crossref",
+              "unstructured": "S. Bringas, S. Salomón, R. Duque, J.L. Montaña, C. Lage, A convolutional neural network-based method for human movement patterns classification in alzheimer?s disease, in: Multidisciplinary Digital Publishing Institute Proceedings, Vol. 31, 2019, p. 72.",
+              "DOI": "10.3390/proceedings2019031072"
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0195",
+              "unstructured": "S. Ioffe, C. Szegedy, Batch normalization: Accelerating deep network training by reducing internal covariate shift, in: Proceedings of the 32Nd International Conference on International Conference on Machine Learning - Volume 37, ICML’15, JMLR.org, 2015, pp. 448–456."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0200",
+              "unstructured": "D. Kingma, J. Ba, Adam: A method for stochastic optimization, International Conference on Learning Representations abs/1412.6980."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0205",
+              "unstructured": "F. Chollet, et al., Keras, https://keras.io (2015)."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0210",
+              "unstructured": "M. Abadi, A. Agarwal, P. Barham, et al., TensorFlow: Large-scale machine learning on heterogeneous systems (2015). URL https://www.tensorflow.org/."
+            },
+            {
+              "key": "10.1016/j.jbi.2020.103514_b0215",
+              "first-page": "2825",
+              "article-title": "Scikit-learn: Machine learning in Python",
+              "volume": "12",
+              "author": "Pedregosa",
+              "year": "2011",
+              "journal-title": "J. Mach. Learn. Res."
+            },
+            {
+              "issue": "5",
+              "key": "10.1016/j.jbi.2020.103514_b0220",
+              "doi-asserted-by": "crossref",
+              "first-page": "964",
+              "DOI": "10.1249/MSS.0b013e31827f0d9c",
+              "article-title": "Estimating activity and sedentary behavior from an accelerometer on the hip or wrist",
+              "volume": "45",
+              "author": "Rosenberger",
+              "year": "2013",
+              "journal-title": "Med. Sci. Sports Exercise"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.jbi.2020.103514_b0225",
+              "doi-asserted-by": "crossref",
+              "first-page": "108",
+              "DOI": "10.1016/j.ypmed.2008.12.001",
+              "article-title": "Review of physical activity measurement using accelerometers in older adults: considerations for research design and conduct",
+              "volume": "48",
+              "author": "Murphy",
+              "year": "2009",
+              "journal-title": "Prevent. Med."
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.jbi.2020.103514_b0230",
+              "doi-asserted-by": "crossref",
+              "first-page": "40?48",
+              "DOI": "10.1145/1882471.1882478",
+              "article-title": "A brief survey on sequence classification",
+              "volume": "12",
+              "author": "Xing",
+              "year": "2010",
+              "journal-title": "SIGKDD Explor. Newsl."
+            }
+          ],
+          "container-title": [
+            "Journal of Biomedical Informatics"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S1532046420301428?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S1532046420301428?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                10,
+                26
+              ]
+            ],
+            "date-time": "2025-10-26T22:42:39Z",
+            "timestamp": 1761518559000
+          },
+          "score": 37.82327,
+          "resource": {
+            "primary": {
+              "URL": "https://linkinghub.elsevier.com/retrieve/pii/S1532046420301428"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2020,
+                9
+              ]
+            ]
+          },
+          "references-count": 46,
+          "alternative-id": [
+            "S1532046420301428"
+          ],
+          "URL": "https://doi.org/10.1016/j.jbi.2020.103514",
+          "ISSN": [
+            "1532-0464"
+          ],
+          "issn-type": [
+            {
+              "value": "1532-0464",
+              "type": "print"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2020,
+                9
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "Elsevier",
+              "name": "publisher",
+              "label": "This article is maintained by"
+            },
+            {
+              "value": "Alzheimer’s Disease stage identification using deep learning models",
+              "name": "articletitle",
+              "label": "Article Title"
+            },
+            {
+              "value": "Journal of Biomedical Informatics",
+              "name": "journaltitle",
+              "label": "Journal Title"
+            },
+            {
+              "value": "https://doi.org/10.1016/j.jbi.2020.103514",
+              "name": "articlelink",
+              "label": "CrossRef DOI link to publisher maintained version"
+            },
+            {
+              "value": "article",
+              "name": "content_type",
+              "label": "Content Type"
+            },
+            {
+              "value": "© 2020 Elsevier Inc.",
+              "name": "copyright",
+              "label": "Copyright"
+            }
+          ],
+          "article-number": "103514"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                7,
+                7
+              ]
+            ],
+            "date-time": "2026-07-07T17:10:37Z",
+            "timestamp": 1783444237044,
+            "version": "3.54.6"
+          },
+          "reference-count": 15,
+          "publisher": "European Alliance for Innovation n.o.",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2023,
+                    9,
+                    26
+                  ]
+                ],
+                "date-time": "2023-09-26T00:00:00Z",
+                "timestamp": 1695686400000
+              },
+              "content-version": "unspecified",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by-nc-sa/4.0"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "EAI Endorsed Trans Perv Health Tech"
+          ],
+          "abstract": "<jats:p>The early detection of Alzheimer's disease, a neurodegenerative ailment that affects both cognitive and social functioning, can be accomplished using deep learning technology. Deep learning is more accurate and efficient than human diagnosis in detecting functional connectivity and changes in the brain networks of people with MCI. Early detection of Mild Cognitive Impairment (MCI) can reduce the disease's development. However, achieving high accuracy levels is difficult due to the dearth of reliable biomarkers. The dataset was picked up from the Kaggle database. It contains magnetic resonance images of the brain, each image being unique and in different stages of the disease for classification purpose for our project, as it was most suitable for our project’s needs. We developed a deep learning model using learning AZ net, Dense net, Resnet, Efficient Net and Inception Net with a maximum accuracy of 99.96% for classifying Alzheimer's disease stages and early detection using transfer learning and other approaches.</jats:p>",
+          "DOI": "10.4108/eetpht.9.3966",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2023,
+                9,
+                26
+              ]
+            ],
+            "date-time": "2023-09-26T08:45:52Z",
+            "timestamp": 1695717952000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 18,
+          "title": [
+            "Early Alzheimer’s Disease Detection Using Deep Learning"
+          ],
+          "prefix": "10.4108",
+          "volume": "9",
+          "author": [
+            {
+              "given": "Kokkula",
+              "family": "Lokesh",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Nagendra Panini",
+              "family": "Challa",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Abbaraju Sai",
+              "family": "Satwik",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Jinka Chandra",
+              "family": "Kiran",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Narendra",
+              "family": "Kumar Rao",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Beebi",
+              "family": "Naseeba",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "2587",
+          "published-online": {
+            "date-parts": [
+              [
+                2023,
+                9,
+                26
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "35256",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Marwa, E.G., Moustafa, H.E.D., Khalifa, F., Khater, H. and AbdElhalim, E., 2023. An MRI-based deep learning approach for accurate detection of Alzheimer’s disease. Alexandria Engineering Journal, 63, pp.211-221.",
+              "DOI": "10.1016/j.aej.2022.07.062"
+            },
+            {
+              "key": "35257",
+              "unstructured": "Conference: Author Sisodia, P.S., Ameta, G.K., Kumar, Y. and Chaplot, N., 2023. A Review of Deep Transfer Learning Approaches for Class-Wise Prediction of Alzheimer’s Disease Using MRI Images. Archives of Computational Methods in Engineering, pp.1-21."
+            },
+            {
+              "key": "35258",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Shojaei, S., Abadeh, M.S. and Momeni, Z., 2023. An evolutionary explainable deep learning approach for Alzheimer's MRI classification. Expert Systems with Applications, 220, p.119709.",
+              "DOI": "10.1016/j.eswa.2023.119709"
+            },
+            {
+              "key": "35259",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Warren, S.L. and Moustafa, A.A., 2023. Functional magnetic resonance imaging, deep learning, and Alzheimer's disease: A systematic review. Journal of Neuroimaging, 33(1), pp.5-18.",
+              "DOI": "10.1111/jon.13063"
+            },
+            {
+              "key": "35260",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Odusami, M., Maskeliūnas, R. and Damaševičius, R., 2022. An intelligent system for early recognition of Alzheimer’s disease using neuroimaging. Sensors, 22(3), p.740.",
+              "DOI": "10.3390/s22030740"
+            },
+            {
+              "key": "35261",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Jo, T., Nho, K. and Saykin, A.J., 2019. Deep learning in Alzheimer's disease: diagnostic classification and prognostic prediction using neuroimaging data. Frontiers in aging neuroscience, 11, p.220.",
+              "DOI": "10.3389/fnagi.2019.00220"
+            },
+            {
+              "key": "35262",
+              "unstructured": "Conference: Author Islam, J. and Zhang, Y., 2018. Early diagnosis of Alzheimer's disease: A neuroimaging study with deep learning architectures. In Proceedings of the IEEE conference on computer vision and pattern recognition workshops (pp. 1881-1883)."
+            },
+            {
+              "key": "35263",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Liu, S., Masurkar, A.V., Rusinek, H., Chen, J., Zhang, B., Zhu, W., Fernandez-Granda, C. and Razavian, N., 2022. Generalizable deep learning model for early Alzheimer’s disease detection from structural MRIs. Scientific reports, 12(1), p.17106.",
+              "DOI": "10.1038/s41598-022-20674-x"
+            },
+            {
+              "key": "35264",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Odusami, M., Maskeliūnas, R., Damaševičius, R. and Krilavičius, T., 2021. Analysis of features of alzheimer’s disease: detection of early stage from functional brain changes in magnetic resonance images using a finetuned ResNet18 network. Diagnostics, 11(6), p.1071.",
+              "DOI": "10.3390/diagnostics11061071"
+            },
+            {
+              "key": "35265",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Cheung, C.Y., Ran, A.R., Wang, S., Chan, V.T., Sham, K., Hilal, S., Venketasubramanian, N., Cheng, C.Y., Sabanayagam, C., Tham, Y.C. and Schmetterer, L., 2022. A deep learning model for detection of Alzheimer's disease based on retinal photographs: a retrospective, multicentre case-control study. The Lancet Digital Health, 4(11), pp.e806-e815.",
+              "DOI": "10.1016/S2589-7500(22)00169-8"
+            },
+            {
+              "key": "35266",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Arafa, D.A., Moustafa, H.E.D., Ali-Eldin, A.M. and Ali, H.A., 2022. Early detection of Alzheimer’s disease based on the state-of-the-art deep learning approach: a comprehensive survey. Multimedia Tools and Applications, 81(17), pp.23735-23776.:",
+              "DOI": "10.1007/s11042-022-11925-0"
+            },
+            {
+              "key": "35267",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Gharaibeh, M., Almahmoud, M., Ali, M.Z., Al-Badarneh, A., El-Heis, M., Abualigah, L., Altalhi, M., Alaiad, A. and Gandomi, A.H., 2022. Early diagnosis of alzheimer’s disease using cerebral catheter angiogram neuroimaging: A novel model based on deep learning approaches. Big Data and Cognitive Computing, 6(1), p.2.",
+              "DOI": "10.3390/bdcc6010002"
+            },
+            {
+              "key": "35268",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Fathi, S., Ahmadi, M. and Dehnad, A., 2022. Early diagnosis of Alzheimer's disease based on deep learning: A systematic review. Computers in Biology and Medicine, p.105634",
+              "DOI": "10.1016/j.compbiomed.2022.105634"
+            },
+            {
+              "key": "35269",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Mahendran, N. and PM, D.R.V., 2022. A deep learning framework with an embedded-based feature selection approach for the early detection of the Alzheimer's disease. Computers in Biology and Medicine, 141, p.105056.",
+              "DOI": "10.1016/j.compbiomed.2021.105056"
+            },
+            {
+              "key": "35270",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Conference: Author Diogo, V.S., Ferreira, H.A., Prata, D. and Alzheimer’s Disease Neuroimaging Initiative, 2022. Early diagnosis of Alzheimer’s disease using machine learning: a multi-diagnostic, generalizable approach. Alzheimer's Research & Therapy, 14(1), p.107.",
+              "DOI": "10.1186/s13195-022-01047-y"
+            }
+          ],
+          "container-title": [
+            "EAI Endorsed Transactions on Pervasive Health and Technology"
+          ],
+          "link": [
+            {
+              "URL": "https://publications.eai.eu/index.php/phat/article/download/3966/2556",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://publications.eai.eu/index.php/phat/article/download/3966/2556",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                9,
+                21
+              ]
+            ],
+            "date-time": "2024-09-21T17:08:03Z",
+            "timestamp": 1726938483000
+          },
+          "score": 37.689392,
+          "resource": {
+            "primary": {
+              "URL": "https://publications.eai.eu/index.php/phat/article/view/3966"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2023,
+                9,
+                26
+              ]
+            ]
+          },
+          "references-count": 15,
+          "URL": "https://doi.org/10.4108/eetpht.9.3966",
+          "ISSN": [
+            "2411-7145"
+          ],
+          "issn-type": [
+            {
+              "value": "2411-7145",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                9,
+                26
+              ]
+            ]
+          }
+        },
+        {
+          "institution": [
+            {
+              "name": "Research Square"
+            }
+          ],
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                18
+              ]
+            ],
+            "date-time": "2026-06-18T21:59:48Z",
+            "timestamp": 1781819988492,
+            "version": "3.54.5"
+          },
+          "posted": {
+            "date-parts": [
+              [
+                2023,
+                11,
+                17
+              ]
+            ]
+          },
+          "group-title": "In Review",
+          "reference-count": 27,
+          "publisher": "Research Square Platform LLC",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2023,
+                    11,
+                    17
+                  ]
+                ],
+                "date-time": "2023-11-17T00:00:00Z",
+                "timestamp": 1700179200000
+              },
+              "content-version": "unspecified",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "accepted": {
+            "date-parts": [
+              [
+                2023,
+                9,
+                13
+              ]
+            ]
+          },
+          "abstract": "<title>Abstract</title>\n        <p>The early detection and diagnosis of Alzheimer's disease (AD) represent a pivotal aspect of ensuring effective patient care and timely intervention. This research introduces an innovative approach that harnesses the capabilities of Microsoft Azure-based custom vision technology for AD classification. The study primarily centers around the analysis of magnetic resonance imaging (MRI) scans as the primary input data, categorizing these scans into two distinct categories: Cognitive Normal and Cognitive Impairment. To accomplish this, we employ transfer learning, leveraging a pre-trained Microsoft Azure Custom Vision model fine-tuned specifically for multi-class AD classification. The proposed work shows better results with the best validation average accuracy on the test data of AD. This test accuracy score is significantly higher in comparison with existing works. This proposed solution showcases the immense potential of convolutional neural networks and advanced deep learning techniques in the early detection of Alzheimer's disease, thereby paving the way for significantly improved patient care.</p>",
+          "DOI": "10.21203/rs.3.rs-3352620/v1",
+          "type": "posted-content",
+          "created": {
+            "date-parts": [
+              [
+                2023,
+                11,
+                17
+              ]
+            ],
+            "date-time": "2023-11-17T19:10:33Z",
+            "timestamp": 1700248233000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 1,
+          "title": [
+            "Early Stage Detection of Alzheimer’s Disease With Microsoft Azure Based Deep Learning"
+          ],
+          "prefix": "10.21203",
+          "author": [
+            {
+              "given": "Krish",
+              "family": "Mittal",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Birla Institute of Technology and Science, Pilani"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "8761",
+          "reference": [
+            {
+              "issue": "3",
+              "key": "ref1",
+              "doi-asserted-by": "crossref",
+              "first-page": "391",
+              "DOI": "10.1002/alz.12068",
+              "article-title": "Alzheimer's Disease Facts and Figures",
+              "volume": "16",
+              "author": "Alzheimer's Association",
+              "year": "2020",
+              "unstructured": "Alzheimer's Association. 2020 Alzheimer's Disease Facts and Figures. Alzheimer's & Dementia, 16(3), 391–460.",
+              "journal-title": "Alzheimer's & Dementia"
+            },
+            {
+              "issue": "3",
+              "key": "ref2",
+              "doi-asserted-by": "crossref",
+              "first-page": "186",
+              "DOI": "10.1016/j.jalz.2007.04.381",
+              "article-title": "Forecasting the global burden of Alzheimer's disease",
+              "volume": "3",
+              "author": "Brookmeyer R",
+              "year": "2007",
+              "unstructured": "Brookmeyer, R., Johnson, E., Ziegler-Graham, K., & Arrighi, H. M. (2007). Forecasting the global burden of Alzheimer's disease. Alzheimer's & Dementia, 3(3), 186–191.",
+              "journal-title": "Alzheimer's & Dementia"
+            },
+            {
+              "issue": "3",
+              "key": "ref3",
+              "doi-asserted-by": "crossref",
+              "first-page": "183",
+              "DOI": "10.1111/j.1365-2796.2004.01388.x",
+              "article-title": "Mild cognitive impairment as a diagnostic entity",
+              "volume": "256",
+              "author": "Petersen RC",
+              "year": "2004",
+              "unstructured": "Petersen, R. C. (2004). Mild cognitive impairment as a diagnostic entity. Journal of Internal Medicine, 256(3), 183–194.",
+              "journal-title": "Journal of Internal Medicine"
+            },
+            {
+              "key": "ref4",
+              "author": "Daviglus ML",
+              "year": "2010",
+              "unstructured": "Daviglus, M. L., Bell, C. C., Berrettini, W., Bowen, P. E., Connolly, E. S., Jr, Cox, N. J., … Trevisan, M. (2010). National Institutes of Health State-of-the-Science Conference statement: preventing Alzheimer disease and cognitive decline. Annals of Internal Medicine, 153(3), 176–181"
+            },
+            {
+              "issue": "3",
+              "key": "ref5",
+              "doi-asserted-by": "crossref",
+              "first-page": "681",
+              "DOI": "10.1093/brain/awm319",
+              "article-title": "Automatic classification of MR scans in Alzheimer's disease",
+              "volume": "131",
+              "author": "Klöppel S",
+              "year": "2008",
+              "unstructured": "Klöppel, S., Stonnington, C. M., Chu, C., Draganski, B., Scahill, R. I., Rohrer, J. D., … Frackowiak, R. S. (2008). Automatic classification of MR scans in Alzheimer's disease. Brain, 131(3), 681–689.",
+              "journal-title": "Brain"
+            },
+            {
+              "issue": "3",
+              "key": "ref6",
+              "doi-asserted-by": "crossref",
+              "first-page": "856",
+              "DOI": "10.1016/j.neuroimage.2011.01.008",
+              "article-title": "Multimodal classification of Alzheimer's disease and mild cognitive impairment",
+              "volume": "55",
+              "author": "Zhang D",
+              "year": "2011",
+              "unstructured": "Zhang, D., Wang, Y., Zhou, L., Yuan, H., & Shen, D. (2011). Multimodal classification of Alzheimer's disease and mild cognitive impairment. Neuroimage, 55(3), 856–867.",
+              "journal-title": "Neuroimage"
+            },
+            {
+              "key": "ref7",
+              "author": "Singh N",
+              "year": "2012",
+              "unstructured": "Singh, N., Wang, A. Y., Sankaranarayanan, P., & Fletcher, P. T. (2012). Genetic, structural and functional imaging biomarkers for early detection of conversion from MCI to AD. In International Conference on Medical Image Computing and Computer-Assisted Intervention (pp. 132–140). Springer."
+            },
+            {
+              "key": "ref8",
+              "author": "Liu S",
+              "year": "2013",
+              "unstructured": "Liu, S., Cai, W., Wen, L., & Feng, D. (2013). Neuroimaging Biomarker based Prediction of Alzheimer’s Disease Severity with Optimised Graph Construction. In International Symposium on Biomedical Imaging (ISBI) (pp. 310–313). IEEE."
+            },
+            {
+              "issue": "4",
+              "key": "ref9",
+              "doi-asserted-by": "crossref",
+              "first-page": "514",
+              "DOI": "10.1016/j.neurobiolaging.2006.11.010",
+              "article-title": "Detection of prodromal Alzheimer's disease via pattern classification of magnetic resonance imaging",
+              "volume": "29",
+              "author": "Davatzikos C",
+              "year": "2008",
+              "unstructured": "Davatzikos, C., Fan, Y., Wu, X., Shen, D., Resnick, S. M., & DETECT collaboration. (2008). Detection of prodromal Alzheimer's disease via pattern classification of magnetic resonance imaging. Neurobiology of Aging, 29(4), 514–523.",
+              "journal-title": "Neurobiology of Aging"
+            },
+            {
+              "issue": "2",
+              "key": "ref10",
+              "doi-asserted-by": "crossref",
+              "first-page": "422",
+              "DOI": "10.1006/nimg.2001.0987",
+              "article-title": "Measuring size and shape of the hippocampus in MR images using a deformable shape model",
+              "volume": "15",
+              "author": "Shen D",
+              "year": "2002",
+              "unstructured": "Shen, D., Moffat, S., Resnick, S. M., & Davatzikos, C. (2002). Measuring size and shape of the hippocampus in MR images using a deformable shape model. NeuroImage, 15(2), 422–434.",
+              "journal-title": "NeuroImage"
+            },
+            {
+              "key": "ref11",
+              "unstructured": "OASIS-3: Longitudinal Multimodal Neuroimaging: Principal Investigators: T. Benzinger, D. Marcus, J. Morris; NIH P30 AG066444, P50 AG00561, P30 NS09857781, P01 AG026276, P01 AG003991, R01 AG043434, UL1 TR000448, R01 EB009352. AV-45 doses were provided by Avid Radiopharmaceuticals, a wholly owned subsidiary of Eli Lilly"
+            },
+            {
+              "key": "ref12",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1101/2019.12.13.19014902",
+              "author": "Disease Pamela J",
+              "year": "2019",
+              "unstructured": "OASIS-3: Longitudinal Neuroimaging, Clinical, and Cognitive Dataset for Normal Aging and Alzheimer Disease Pamela J LaMontagne, Tammie L.S. Benzinger, John C. Morris, Sarah Keefe, Russ Hornbeck, Chengjie Xiong, Elizabeth Grant, Jason Hassenstab, Krista Moulder, Andrei Vlassenko, Marcus E. Raichle, Carlos Cruchaga, Daniel Marcus, 2019. medRxiv. doi: 10.1101/2019.12.13.19014902"
+            },
+            {
+              "key": "ref13",
+              "unstructured": "https://learn.microsoft.com/en-us/azure/ai-services/custom-vision-service/select-domain"
+            },
+            {
+              "key": "ref14",
+              "doi-asserted-by": "crossref",
+              "first-page": "2638",
+              "DOI": "10.1021/acs.jmedchem.8b01949",
+              "article-title": "Remarkable brain penetration of cyclopentadienyl M(CO)C 3 (M = 99mTc, Re) derivatives of benzothiazole and benzimidazole paves the way for their application as diagnostic, with single-photon-emission computed tomography (spect), and therapeutic agents for Alzheimer’s disease",
+              "volume": "62",
+              "author": "Sagnou M",
+              "year": "2019",
+              "unstructured": "Sagnou, M.; Mavroidi, B.; Shegani, A.; Paravatou-Petsotas, M.; Raptopoulou, C.; Psycharis, V.; Pirmeis, I.; Papadopoulos, M.S.; Pelecanou, M. Remarkable brain penetration of cyclopentadienyl M(CO)C 3 (M = 99mTc, Re) derivatives of benzothiazole and benzimidazole paves the way for their application as diagnostic, with single-photon-emission computed tomography (spect), and therapeutic agents for Alzheimer’s disease. J. Med. Chem. 2019, 62, 2638–2650.",
+              "journal-title": "J. Med. Chem"
+            },
+            {
+              "key": "ref15",
+              "doi-asserted-by": "publisher",
+              "first-page": "e0146200",
+              "DOI": "10.1371/journal.pone.0146200 e0146200",
+              "article-title": "Moderate changes in the circadian system of Alzheimer's disease patients detected in their home environment",
+              "volume": "11",
+              "author": "Weissova K",
+              "year": "2016",
+              "unstructured": "Weissova, K.; Bartos, A.; Sladek, M.; Novakova, M.; Sumova, A. Moderate changes in the circadian system of Alzheimer's disease patients detected in their home environment. PLoS ONE 2016, 11, e0146200. hps://doi.org/10.1371/journal.pone.0146200 e0146200",
+              "journal-title": "PLoS ONE"
+            },
+            {
+              "key": "ref16",
+              "doi-asserted-by": "publisher",
+              "first-page": "806",
+              "DOI": "10.1097/JGP.0b013e31823038af",
+              "article-title": "Decreased daytime motor activity associated with apathy in alzheimer disease: An actigraphic study",
+              "volume": "20",
+              "author": "David R",
+              "year": "2012",
+              "unstructured": "David, R.; Mulin, E.; Friedman, L.; Le Duff, F.; Cygankiewicz, E.; Deschaux, O.; Garcia, R.; Yesavage, J.A.; Robert, P.H.; Zeier, J.M. Decreased daytime motor activity associated with apathy in alzheimer disease: An actigraphic study. Am. J. Geriatr. Psychiatry Off. J. Am. Assoc. Geriatr. Psychiatry 2012, 20, 806–814. hps://doi.org/10.1097/JGP.0b013e31823038af",
+              "journal-title": "Am. J. Geriatr. Psychiatry Off. J. Am. Assoc. Geriatr. Psychiatry"
+            },
+            {
+              "key": "ref17",
+              "doi-asserted-by": "publisher",
+              "first-page": "1701",
+              "DOI": "10.1109/TCSS.2022.3216802",
+              "article-title": "Blockchain-Based Two-Stage Federated Learning With Non-IID Data in IoMT System",
+              "volume": "10",
+              "author": "Lian Z",
+              "year": "2022",
+              "unstructured": "Lian, Z.; Zeng, Q.; Wang, W.; Gadekallu, T.R.; Su, C. Blockchain-Based Two-Stage Federated Learning With Non-IID Data in IoMT System. IEEE Trans. Comput. Soc. Syst. 2022, 10, 1701–1710. hps://doi.org/10.1109/TCSS.2022.3216802.",
+              "journal-title": "IEEE Trans. Comput. Soc. Syst"
+            },
+            {
+              "key": "ref18",
+              "author": "Sudharsan M",
+              "year": "2021",
+              "unstructured": "Sudharsan M, Thailambal G. Alzheimer’s disease prediction using machine learning techniques and principal component analysis (PCA), Materials Today: Proceedings (2021)."
+            },
+            {
+              "key": "ref19",
+              "doi-asserted-by": "publisher",
+              "first-page": "537",
+              "DOI": "10.3233/JAD-161208",
+              "article-title": "Modifiable risk factors for prevention of dementia in midlife, late life and the oldest-old: validation of the LIBRA Index",
+              "volume": "58",
+              "author": "Vos SJ",
+              "year": "2017",
+              "unstructured": "Vos SJ, Van Boxtel MP, Schiepers OJ, Deckers K, De Vugt M, Carrière I, et al. Modifiable risk factors for prevention of dementia in midlife, late life and the oldest-old: validation of the LIBRA Index. J Alzheimer’s Dis. (2017) 58:537–47. doi: 10.3233/JAD-161208",
+              "journal-title": "J Alzheimer’s Dis."
+            },
+            {
+              "key": "ref20",
+              "author": "Bringas S",
+              "year": "2019",
+              "unstructured": "Bringas, S.; Salomón, S.; Duque, R.; Montaña, J.L.; Lage, C. A Convolutional Neural Network-Based Method for Human Movement Paerns Classification in Alzheimer’s Disease. Proceedings 2019, 31, 72."
+            },
+            {
+              "key": "ref21",
+              "volume-title": "Sciences, Engineering, and Medicine. Preventing cognitive decline and dementia: A way forward",
+              "author": "National Academies of",
+              "year": "2018",
+              "unstructured": "National Academies of Sciences, Engineering, and Medicine. Preventing cognitive decline and dementia: A way forward. London: The National Academies Press (2018)."
+            },
+            {
+              "key": "ref22",
+              "author": "Bridle JS",
+              "year": "1990",
+              "unstructured": "J. S. Bridle, \"Probabilistic interpretation of feedforward classification network outputs, with relationships to statistical pattern recognition,\" in Neurocomputing, 1990, pp. 227–236."
+            },
+            {
+              "key": "ref23",
+              "doi-asserted-by": "publisher",
+              "first-page": "121",
+              "DOI": "10.3233/JAD-130272",
+              "article-title": "Detecting the effect of alzheimer’s disease on everyday motion behavior",
+              "volume": "38",
+              "author": "Kirste T",
+              "year": "2014",
+              "unstructured": "Kirste, T.; Hoffmeyer, A.; Koldrack, P.; Bauer, A.; Schubert, S.; Schröder, S.; Teipel, S. Detecting the effect of alzheimer’s disease on everyday motion behavior. J. Alzheimer’s Dis. 2014, 38, 121–132. hps://doi.org/10.3233/JAD-130272.",
+              "journal-title": "J. Alzheimer’s Dis"
+            },
+            {
+              "key": "ref24",
+              "volume-title": "Feature extraction from structural MRI images based on VBM: data from OASIS database",
+              "author": "Chyzhyk A",
+              "year": "2010",
+              "unstructured": "Chyzhyk A, Savio D. Feature extraction from structural MRI images based on VBM: data from OASIS database, University of The Basque Country, Internal research publication (2010)."
+            },
+            {
+              "key": "ref25",
+              "doi-asserted-by": "publisher",
+              "first-page": "5",
+              "DOI": "10.5013/IJSSST.a.19.05.26",
+              "article-title": "Comparison and evaluation of cloud processing models in cloud-based networks",
+              "volume": "19",
+              "author": "Abdulsahib GM",
+              "year": "2018",
+              "unstructured": "Abdulsahib GM, Khalaf IO. Comparison and evaluation of cloud processing models in cloud-based networks. Int J Simul Syst Sci Technol. (2018) 19:5. doi: 10.5013/IJSSST.a.19.05.26",
+              "journal-title": "Int J Simul Syst Sci Technol"
+            },
+            {
+              "key": "ref26",
+              "doi-asserted-by": "publisher",
+              "first-page": "102572",
+              "DOI": "10.1016/j.scs.2020.102572",
+              "article-title": "Automated cognitive health assessment in smart homes using machine learning",
+              "volume": "65",
+              "author": "Javed AR",
+              "year": "2020",
+              "unstructured": "Javed AR, Fahad LG, Farhan AA, Abbas S, Srivastava G, Parizi RM, et al. Automated cognitive health assessment in smart homes using machine learning. Sustain Cities Soc. (2020) 65:102572. doi: 10.1016/j.scs.2020.102572",
+              "journal-title": "Sustain Cities Soc."
+            },
+            {
+              "key": "ref27",
+              "doi-asserted-by": "publisher",
+              "first-page": "5697",
+              "DOI": "10.1038/s41598-018-22871-z",
+              "article-title": "Multimodal and multiscale deep neural networks for the early diagnosis of Alzheimer’s disease using structuralMR and FDG-PET images",
+              "volume": "8",
+              "author": "Lu D",
+              "year": "2018",
+              "unstructured": "] Lu, D.; Popuri, K.; Ding, G.W.; Balachandar, R.; Beg, M.F.; Weiner, M.; Aisen, P.; Petersen, R.; Jack, C.; Jagust, W.; et al. Multimodal and multiscale deep neural networks for the early diagnosis of Alzheimer’s disease using structuralMR and FDG-PET images. Sci. Rep. 2018, 8, 5697. hps://doi.org/10.1038/s41598-018-22871-z",
+              "journal-title": "Sci. Rep"
+            }
+          ],
+          "link": [
+            {
+              "URL": "https://www.researchsquare.com/article/rs-3352620/v1",
+              "content-type": "text/html",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://www.researchsquare.com/article/rs-3352620/v1.html",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                6,
+                11
+              ]
+            ],
+            "date-time": "2024-06-11T07:00:53Z",
+            "timestamp": 1718089253000
+          },
+          "score": 37.093266,
+          "resource": {
+            "primary": {
+              "URL": "https://www.researchsquare.com/article/rs-3352620/v1"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2023,
+                11,
+                17
+              ]
+            ]
+          },
+          "references-count": 27,
+          "URL": "https://doi.org/10.21203/rs.3.rs-3352620/v1",
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                11,
+                17
+              ]
+            ]
+          },
+          "subtype": "preprint"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                2,
+                21
+              ]
+            ],
+            "date-time": "2026-02-21T07:20:33Z",
+            "timestamp": 1771658433079,
+            "version": "3.50.1"
+          },
+          "publisher-location": "Cham",
+          "reference-count": 21,
+          "publisher": "Springer Nature Switzerland",
+          "isbn-type": [
+            {
+              "value": "9783031730641",
+              "type": "print"
+            },
+            {
+              "value": "9783031730658",
+              "type": "electronic"
+            }
+          ],
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    10,
+                    1
+                  ]
+                ],
+                "date-time": "2024-10-01T00:00:00Z",
+                "timestamp": 1727740800000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    10,
+                    1
+                  ]
+                ],
+                "date-time": "2024-10-01T00:00:00Z",
+                "timestamp": 1727740800000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "link.springer.com"
+            ],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "DOI": "10.1007/978-3-031-73065-8_12",
+          "type": "book-chapter",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                9,
+                30
+              ]
+            ],
+            "date-time": "2024-09-30T08:02:57Z",
+            "timestamp": 1727683377000
+          },
+          "page": "147-157",
+          "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 2,
+          "title": [
+            "Early-Stage Detection of Alzheimer’s Disease Using MRI Scans with Deep Learning"
+          ],
+          "prefix": "10.1007",
+          "author": [
+            {
+              "given": "R.",
+              "family": "Sarala",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "P.",
+              "family": "Bharath",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "S. Lakshman",
+              "family": "Raj",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "M. Selva",
+              "family": "Kumar",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "M. D. Harish",
+              "family": "Srinivas",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "297",
+          "published-online": {
+            "date-parts": [
+              [
+                2024,
+                10,
+                1
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "issue": "1",
+              "key": "12_CR1",
+              "doi-asserted-by": "publisher",
+              "first-page": "33",
+              "DOI": "10.1038/s43856-023-00262-4",
+              "volume": "3",
+              "author": "AJ Chang",
+              "year": "2023",
+              "unstructured": "Chang, A.J.: MRI-based deep learning can discriminate between temporal lobe epilepsy, Alzheimer’s disease, and healthy controls. Commun. Med. 3(1), 33 (2023). https://doi.org/10.1038/s43856-023-00262-4",
+              "journal-title": "Commun. Med."
+            },
+            {
+              "issue": "1",
+              "key": "12_CR2",
+              "doi-asserted-by": "publisher",
+              "first-page": "5",
+              "DOI": "10.1111/jon.13063",
+              "volume": "33",
+              "author": "SL Warren",
+              "year": "2023",
+              "unstructured": "Warren, S.L., Moustafa, A.A.: Functional magnetic resonance imaging, deep learning, and Alzheimer’s disease: a systematic review. J. Neuroimaging 33(1), 5–18 (2023)",
+              "journal-title": "J. Neuroimaging"
+            },
+            {
+              "issue": "4",
+              "key": "12_CR3",
+              "doi-asserted-by": "publisher",
+              "first-page": "2409",
+              "DOI": "10.1007/s11831-022-09870-0",
+              "volume": "30",
+              "author": "PS Sisodia",
+              "year": "2023",
+              "unstructured": "Sisodia, P.S., Ameta, G.K., Kumar, Y., Chaplot, N.: A review of deep transfer learning approaches for class-wise prediction of Alzheimer’s disease using MRI images. Arch. Comput. Methods Eng. 30(4), 2409–2429 (2023)",
+              "journal-title": "Arch. Comput. Methods Eng."
+            },
+            {
+              "issue": "3",
+              "key": "12_CR4",
+              "doi-asserted-by": "publisher",
+              "first-page": "557",
+              "DOI": "10.1093/cercor/bhac084",
+              "volume": "33",
+              "author": "H Lin",
+              "year": "2023",
+              "unstructured": "Lin, H., et al.: Identification of subjective cognitive decline due to Alzheimer’s disease using multimodal MRI combining with machine learning. Cereb. Cortex 33(3), 557–566 (2023). https://doi.org/10.1093/cercor/bhac084",
+              "journal-title": "Cereb. Cortex"
+            },
+            {
+              "key": "12_CR5",
+              "doi-asserted-by": "publisher",
+              "first-page": "211",
+              "DOI": "10.1016/j.aej.2022.07.062",
+              "volume": "63",
+              "author": "EG Marwa",
+              "year": "2023",
+              "unstructured": "Marwa, E.G., Moustafa, H.E.D., Khalifa, F., Khater, H., AbdElhalim, E.: An MRI-based deep learning approach for accurate detection of Alzheimer’s disease. Alexandria Eng. J. 63, 211–221 (2023). https://doi.org/10.1016/j.aej.2022.07.062",
+              "journal-title": "Alexandria Eng. J."
+            },
+            {
+              "key": "12_CR6",
+              "doi-asserted-by": "publisher",
+              "first-page": "109031",
+              "DOI": "10.1016/j.patcog.2022.109031",
+              "volume": "133",
+              "author": "SQ Abbas",
+              "year": "2023",
+              "unstructured": "Abbas, S.Q., Chi, L., Chen, Y.P.P.: Transformed domain convolutional neural network for Alzheimer’s disease diagnosis using structural MRI. Pattern Recogn. 133, 109031 (2023)",
+              "journal-title": "Pattern Recogn."
+            },
+            {
+              "key": "12_CR7",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Dhinagar, N.J., Thomopoulos, S.I., Rajagopalan, P., Stripelis, D., Ambite, J.L., Ver Steeg, G., Thompson, P.M.: Evaluation of transfer learning methods for detecting Alzheimer’s disease with brain MRI. In: 18th International Symposium on Medical Information Processing and Analysis (Vol. 12567, pp. 504-513). SPIE (2023)",
+              "DOI": "10.1117/12.2670457"
+            },
+            {
+              "key": "12_CR8",
+              "doi-asserted-by": "publisher",
+              "first-page": "105019",
+              "DOI": "10.1016/j.neubiorev.2022.105019",
+              "volume": "146",
+              "author": "A Boots",
+              "year": "2023",
+              "unstructured": "Boots, A., Wiegersma, A.M., Vali, Y., van den Hof, M., Langendam, M.W., Limpens, J., de Rooij, S.R.: Shaping the risk for late-life neurodegenerative disease: a systematic review on prenatal risk factors for Alzheimer’s disease-related volumetric brain biomarkers. Neurosci. Biobehav. Rev. 146, 105019 (2023)",
+              "journal-title": "Neurosci. Biobehav. Rev."
+            },
+            {
+              "key": "12_CR9",
+              "doi-asserted-by": "publisher",
+              "first-page": "104375",
+              "DOI": "10.1016/j.bspc.2022.104375",
+              "volume": "80",
+              "author": "S Lahmiri",
+              "year": "2023",
+              "unstructured": "Lahmiri, S.: Integrating convolutional neural networks, kNN, and Bayesian optimization for efficient diagnosis of Alzheimer’s disease in magnetic resonance images. Biomed. Signal Process. Control 80, 104375–104398 (2023)",
+              "journal-title": "Biomed. Signal Process. Control"
+            },
+            {
+              "issue": "3",
+              "key": "12_CR10",
+              "doi-asserted-by": "publisher",
+              "first-page": "754",
+              "DOI": "10.1093/cercor/bhac099",
+              "volume": "33",
+              "author": "H Huang",
+              "year": "2023",
+              "unstructured": "Huang, H., et al.: Voxel-based morphometry and a deep learning model for the diagnosis of early Alzheimer’s disease based on cerebral gray matter changes. Cereb. Cortex 33(3), 754–763 (2023)",
+              "journal-title": "Cereb. Cortex"
+            },
+            {
+              "key": "12_CR11",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Abed, M.T., Fatema, U., Nabil, S.A., Alam, M.A., Reza, M.T. Alzheimer’s disease prediction using convolutional neural network models leveraging pre-existing architecture and transfer learning. In: 2020 Joint 9th International Conference on Informatics, Electronics & Vision (ICIEV) and 2020 4th International Conference on Imaging, Vision & Pattern Recognition (icIVPR) (pp. 1-6). IEEE (2020).https://doi.org/10.1109/ICIEVicIVPR48672.2020.9306649",
+              "DOI": "10.1109/ICIEVicIVPR48672.2020.9306649"
+            },
+            {
+              "key": "12_CR12",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Yagis, E., De Herrera, A.G.S., Citi, L.: Convolutional autoencoder based deep learning approach for Alzheimer's disease diagnosis using brain MRI. In: 2021 IEEE 34th International Symposium on Computer-Based Medical Systems (CBMS) (pp. 486-491). IEEE (2021) https://doi.org/10.1109/CBMS52027.2021.0009",
+              "DOI": "10.1109/CBMS52027.2021.0009"
+            },
+            {
+              "key": "12_CR13",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Swetha, K., Kumari, E.V., Kiran, A., Arrola, K.S.: Alzheimer's disease Diagnosis from MRI using Siamese Convolutional Neural Network. In: 2022 International Conference on Advancements in Smart, Secure and Intelligent Computing (ASSIC) (pp. 1-6). IEEE (2022) https://doi.org/10.1109/ASSIC55218.2022.10088352",
+              "DOI": "10.1109/ASSIC55218.2022.10088352"
+            },
+            {
+              "key": "12_CR14",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Vashishtha, A., Acharya, A.K., Swain, S.: Automatically detection of multi-class Alzheimer disease using deep Siamese convolutional neural network. In: 2022 International Conference on Advancements in Smart, Secure and Intelligent Computing (ASSIC) (pp. 1-7). IEEE (2022) https://doi.org/10.1109/ASSIC55218.2022.1008829",
+              "DOI": "10.1109/ASSIC55218.2022.1008829"
+            },
+            {
+              "key": "12_CR15",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Xu, R., Luo, X., & Yuan, S.: Classification of Alzheimer’s disease based on deep learning. In: 2022 9th International conference on digital home (ICDH) (pp. 128-134). IEEE (2022) https://doi.org/10.1109/ICDH57206.2022.0002",
+              "DOI": "10.1109/ICDH57206.2022.0002"
+            },
+            {
+              "issue": "4",
+              "key": "12_CR16",
+              "doi-asserted-by": "publisher",
+              "first-page": "573",
+              "DOI": "10.1109/TCBB.2022.3219032",
+              "volume": "21",
+              "author": "I Razzak",
+              "year": "2024",
+              "unstructured": "Razzak, I., Naz, S., Hamid Alinejad-Rokny, T., Nguyen, F.K.: A cascaded mutliresolution ensemble deep learning framework for large scale Alzheimer’s disease detection using brain MRIs. IEEE/ACM Trans. Comput. Biol. Bioinf. 21(4), 573–581 (2024). https://doi.org/10.1109/TCBB.2022.3219032",
+              "journal-title": "IEEE/ACM Trans. Comput. Biol. Bioinf."
+            },
+            {
+              "key": "12_CR17",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Hernandez-Lorenzo, L., Ilundain, I.S., Rodrigo, J.L.A.: Timeseries biomarkers clustering for Alzheimer’s disease progression. In: 2022 IEEE International Conference on Omni-layer Intelligent Systems (COINS) (pp. 1-7). IEEE (2022) https://doi.org/10.1109/COINS54846.2022.9855010",
+              "DOI": "10.1109/COINS54846.2022.9855010"
+            },
+            {
+              "issue": "5",
+              "key": "12_CR18",
+              "doi-asserted-by": "publisher",
+              "first-page": "1649",
+              "DOI": "10.1109/TCBB.2017.2731849",
+              "volume": "15",
+              "author": "J Liu",
+              "year": "2018",
+              "unstructured": "Liu, J., Wang, J., Tang, Z., Bin, H., Fang-Xiang, W., Pan, Y.: Improving Alzheimer’s disease classification by combining multiple measures. IEEE/ACM Trans. Comput. Biol. Bioinf. 15(5), 1649–1659 (2018). https://doi.org/10.1109/TCBB.2017.2731849",
+              "journal-title": "IEEE/ACM Trans. Comput. Biol. Bioinf."
+            },
+            {
+              "key": "12_CR19",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Pang, Z., Zhang, S., Yang, Y., Qi, J., & Yang, P.: Interoperable multi-modal data analysis platform for Alzheimer's disease management. In: 2020 IEEE Intl Conf on Parallel & Distributed Processing with Applications, Big Data & Cloud Computing, Sustainable Computing & Communications, Social Computing & Networking (ISPA/BDCloud/SocialCom/SustainCom) (pp. 1321-1327). IEEE (2020) https://doi.org/10.1109/ISPA-BDCloud-SocialCom-SustainCom51426.2020.00196",
+              "DOI": "10.1109/ISPA-BDCloud-SocialCom-SustainCom51426.2020.00196"
+            },
+            {
+              "issue": "2",
+              "key": "12_CR20",
+              "doi-asserted-by": "publisher",
+              "first-page": "624",
+              "DOI": "10.1109/TCBB.2016.2635144",
+              "volume": "15",
+              "author": "J Liu",
+              "year": "2018",
+              "unstructured": "Liu, J., et al.: Classification of Alzheimer’s disease using whole brain hierarchical network. IEEE/ACM Trans. Comput. Biol. Bioinf.Bioinf. 15(2), 624–632 (2018). https://doi.org/10.1109/TCBB.2016.2635144",
+              "journal-title": "IEEE/ACM Trans. Comput. Biol. Bioinf.Bioinf."
+            },
+            {
+              "key": "12_CR21",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Pan, Q., Ding, K., Chen, D.: Multi-classification prediction of Alzheimer’s disease based on fusing multi-modal features. In: 2021 IEEE International Conference on Data Mining (ICDM) (pp. 1270-1275). IEEE (2021) https://doi.org/10.1109/ICDM51629.2021.00156",
+              "DOI": "10.1109/ICDM51629.2021.00156"
+            }
+          ],
+          "container-title": [
+            "Communications in Computer and Information Science",
+            "Advances in Artificial Intelligence and Machine Learning in Big Data Processing"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://link.springer.com/content/pdf/10.1007/978-3-031-73065-8_12",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                9,
+                30
+              ]
+            ],
+            "date-time": "2024-09-30T08:27:54Z",
+            "timestamp": 1727684874000
+          },
+          "score": 37.068356,
+          "resource": {
+            "primary": {
+              "URL": "https://link.springer.com/10.1007/978-3-031-73065-8_12"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                10,
+                1
+              ]
+            ]
+          },
+          "ISBN": [
+            "9783031730641",
+            "9783031730658"
+          ],
+          "references-count": 21,
+          "URL": "https://doi.org/10.1007/978-3-031-73065-8_12",
+          "ISSN": [
+            "1865-0929",
+            "1865-0937"
+          ],
+          "issn-type": [
+            {
+              "value": "1865-0929",
+              "type": "print"
+            },
+            {
+              "value": "1865-0937",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                10,
+                1
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "1 October 2024",
+              "order": 1,
+              "name": "first_online",
+              "label": "First Online",
+              "group": {
+                "name": "ChapterHistory",
+                "label": "Chapter History"
+              }
+            },
+            {
+              "value": "AAIMB",
+              "order": 1,
+              "name": "conference_acronym",
+              "label": "Conference Acronym",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "International Conference on Advances in Artificial Intelligence and Machine Learning in Big Data Processinging",
+              "order": 2,
+              "name": "conference_name",
+              "label": "Conference Name",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "Chennai",
+              "order": 3,
+              "name": "conference_city",
+              "label": "Conference City",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "India",
+              "order": 4,
+              "name": "conference_country",
+              "label": "Conference Country",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "2023",
+              "order": 5,
+              "name": "conference_year",
+              "label": "Conference Year",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "16 August 2023",
+              "order": 7,
+              "name": "conference_start_date",
+              "label": "Conference Start Date",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "17 August 2023",
+              "order": 8,
+              "name": "conference_end_date",
+              "label": "Conference End Date",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "aaimb2023",
+              "order": 10,
+              "name": "conference_id",
+              "label": "Conference ID",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            }
+          ]
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2025,
+                3,
+                26
+              ]
+            ],
+            "date-time": "2025-03-26T21:10:19Z",
+            "timestamp": 1743023419206,
+            "version": "3.40.3"
+          },
+          "reference-count": 0,
+          "publisher": "Foundation of Computer Science",
+          "issue": "75",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "IJCA"
+          ],
+          "DOI": "10.5120/ijca2025924640",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                3,
+                26
+              ]
+            ],
+            "date-time": "2025-03-26T20:37:13Z",
+            "timestamp": 1743021433000
+          },
+          "page": "26-31",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Early-Stage Alzheimer’s Disease Prediction using MRI -based Data: A Multimodal Deep Learning Approach"
+          ],
+          "prefix": "10.5120",
+          "volume": "186",
+          "author": [
+            {
+              "given": "Sujan",
+              "family": "Aryal",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "3103",
+          "published-online": {
+            "date-parts": [
+              [
+                2025,
+                3,
+                25
+              ]
+            ]
+          },
+          "container-title": [
+            "International Journal of Computer Applications"
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                3,
+                26
+              ]
+            ],
+            "date-time": "2025-03-26T20:37:19Z",
+            "timestamp": 1743021439000
+          },
+          "score": 37.049953,
+          "resource": {
+            "primary": {
+              "URL": "https://ijcaonline.org/archives/volume186/number75/aryal-2025-ijca-924640.pdf"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2025,
+                3,
+                25
+              ]
+            ]
+          },
+          "references-count": 0,
+          "journal-issue": {
+            "issue": "75",
+            "published-online": {
+              "date-parts": [
+                [
+                  2025,
+                  3,
+                  25
+                ]
+              ]
+            }
+          },
+          "URL": "https://doi.org/10.5120/ijca2025924640",
+          "ISSN": [
+            "0975-8887"
+          ],
+          "issn-type": [
+            {
+              "value": "0975-8887",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                3,
+                25
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                18
+              ]
+            ],
+            "date-time": "2026-08-18T03:05:21Z",
+            "timestamp": 1787022321586,
+            "version": "build-2736575974"
+          },
+          "reference-count": 0,
+          "publisher": "Seventh Sense Research Group Journals",
+          "issue": "11",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "SSRG-IJECE"
+          ],
+          "DOI": "10.14445/23488549/ijece-v11i11p102",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                12,
+                10
+              ]
+            ],
+            "date-time": "2024-12-10T00:54:16Z",
+            "timestamp": 1733792056000
+          },
+          "page": "12-25",
+          "source": "Crossref",
+          "is-referenced-by-count": 7,
+          "title": [
+            "A Novel Multimodal Framework for Early Detection of Alzheimer’s Disease Using Deep Learning"
+          ],
+          "prefix": "10.14445",
+          "volume": "11",
+          "author": [
+            {
+              "given": "Tatwadarshi",
+              "family": "P. Nagarhalli",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Sanket",
+              "family": "Patil",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Vishal",
+              "family": "Pande",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Uday",
+              "family": "Aswalekar",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Prafulla",
+              "family": "Patil",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "5576",
+          "published-online": {
+            "date-parts": [
+              [
+                2024,
+                11,
+                30
+              ]
+            ]
+          },
+          "container-title": [
+            "International Journal of Electronics and Communication Engineering"
+          ],
+          "original-title": [
+            "English"
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                12,
+                10
+              ]
+            ],
+            "date-time": "2024-12-10T00:54:18Z",
+            "timestamp": 1733792058000
+          },
+          "score": 36.96339,
+          "resource": {
+            "primary": {
+              "URL": "https://www.internationaljournalssrg.org/IJECE/paper-details?Id=721"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                11,
+                30
+              ]
+            ]
+          },
+          "references-count": 0,
+          "journal-issue": {
+            "issue": "11",
+            "published-online": {
+              "date-parts": [
+                [
+                  2024,
+                  11,
+                  30
+                ]
+              ]
+            }
+          },
+          "URL": "https://doi.org/10.14445/23488549/ijece-v11i11p102",
+          "ISSN": [
+            "2348-8549"
+          ],
+          "issn-type": [
+            {
+              "value": "2348-8549",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                11,
+                30
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 10,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

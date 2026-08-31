@@ -1,0 +1,774 @@
+{
+  "reference_id": "ref_002a339afbc0",
+  "project_id": "project_20260831_071545_c5883250",
+  "created_at": "2026-08-31T07:16:27.098063+00:00",
+  "input": {
+    "original_text": "Deshan Zhou, Zhijian Xu, WenTao Li, Xiaolan Xie, and Shaoliang Peng. Multidti: drug–target interaction prediction based on multi-modal representation learning to bridge the gap between new chemical entities and known heterogeneous network. Bioinformatics, 37(23):4485–4492,",
+    "parsed": {
+      "title": "Multidti: drug–target interaction prediction based on multi-modal representation learning to bridge the gap between new chemical entities and known heterogeneous network",
+      "authors": [
+        {
+          "name": "Zhijian Xu Deshan Zhou",
+          "given": "Zhijian Xu",
+          "family": "Deshan Zhou"
+        },
+        {
+          "name": "Xiaolan Xie WenTao Li",
+          "given": "Xiaolan Xie",
+          "family": "WenTao Li"
+        },
+        {
+          "name": "Shaoliang Peng",
+          "given": "Shaoliang",
+          "family": "Peng"
+        }
+      ],
+      "year": null,
+      "reference_type": "journal-article",
+      "journal": "Bioinformatics, –4492",
+      "publisher": null,
+      "volume": "37",
+      "issue": "23",
+      "pages": "4485–4492",
+      "doi": null,
+      "isbn": null,
+      "arxiv_id": null
+    }
+  },
+  "canonical": {
+    "title": {
+      "value": "MultiDTI: drug–target interaction prediction based on multi-modal representation learning to bridge the gap between new chemical entities and known heterogeneous network",
+      "source": "openalex",
+      "confidence": 0.99,
+      "verification_status": "verified"
+    },
+    "year": {
+      "value": 2021,
+      "source": "openalex",
+      "confidence": 0.99,
+      "verification_status": "verified"
+    },
+    "venue": {
+      "value": "Bioinformatics, –4492",
+      "source": "parsed",
+      "confidence": 0.85,
+      "verification_status": "verified"
+    },
+    "reference_type": {
+      "value": "journal-article",
+      "source": "openalex",
+      "confidence": 0.9,
+      "verification_status": "verified"
+    },
+    "publisher": {
+      "value": "Oxford University Press",
+      "source": "openalex",
+      "confidence": 0.9,
+      "verification_status": "verified"
+    },
+    "volume": "37",
+    "issue": "23",
+    "pages": "4485–4492",
+    "abstract": "MOTIVATION: Predicting new drug-target interactions is an important step in new drug development, understanding of its side effects and drug repositioning. Heterogeneous data sources can provide comprehensive information and different perspectives for drug-target interaction prediction. Thus, there have been many calculation methods relying on heterogeneous networks. Most of them use graph-related algorithms to characterize nodes in heterogeneous networks for predicting new drug-target interactions (DTI). However, these methods can only make predictions in known heterogeneous network datasets, and cannot support the prediction of new chemical entities outside the heterogeneous network, which hinder further drug discovery and development. RESULTS: To solve this problem, we proposed a multi-modal DTI prediction model named 'MultiDTI' which uses our proposed joint learning framework based on heterogeneous networks. It combines the interaction or association information of the heterogeneous network and the drug/target sequence information, and maps the drugs, targets, side effects and disease nodes in the heterogeneous network into a common space. In this way, 'MultiDTI' can map the new chemical entity to this learned common space based on the chemical structure of the new entity. That is, bridging the gap between new chemical entities and known heterogeneous network. Our model has strong predictive performance, and the area under the receiver operating characteristic curve of the model is 0.961 and the area under the precision recall curve is 0.947 with 10-fold cross validation. In addition, some predicted new DTIs have been confirmed by ChEMBL database. Our results indicate that 'MultiDTI' is a powerful and practical tool for predicting new DTI, which can promote the development of drug discovery or drug repositioning. AVAILABILITY AND IMPLEMENTATION: Python codes and dataset are available at https://github.com/Deshan-Zhou/MultiDTI/. SUPPLEMENTARY INFORMATION: Supplementary data are available at Bioinformatics online.",
+    "url": "https://doi.org/10.1093/bioinformatics/btab473",
+    "identifiers": {
+      "doi": {
+        "value": "10.1093/bioinformatics/btab473",
+        "source": "doi_verifier",
+        "confidence": 1.0,
+        "verification_status": "verified"
+      },
+      "openalex_id": {
+        "value": "https://openalex.org/W3175599101",
+        "source": "openalex",
+        "confidence": 0.99,
+        "verification_status": "verified"
+      },
+      "arxiv_id": {
+        "value": null,
+        "source": "arxiv_resolver",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "isbn": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_cluster_id": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_url": {
+        "value": "https://scholar.google.com/scholar?q=Multidti%3A%20drug%E2%80%93target%20interaction%20prediction%20based%20on%20multi-modal%20representation%20learning%20to%20bridge%20the%20gap%20between%20new%20chemical%20entities%20and%20known%20heterogeneous%20network%20Deshan%20Zhou",
+        "source": "google_scholar",
+        "confidence": 1.0,
+        "verification_status": "verified"
+      }
+    },
+    "citation_counts": {
+      "canonical_value": 99,
+      "google_scholar": null,
+      "openalex": 99,
+      "crossref": 95
+    }
+  },
+  "canonical_authors": [
+    {
+      "name": "Deshan Zhou",
+      "display_name": "Deshan Zhou",
+      "given": "Deshan",
+      "family": "Zhou",
+      "author_id": "https://openalex.org/A5074343752",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5074343752",
+        "orcid": "https://orcid.org/0000-0002-6725-9303",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Hunan University"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Zhijian Xu",
+      "display_name": "Zhijian Xu",
+      "given": "Zhijian",
+      "family": "Xu",
+      "author_id": "https://openalex.org/A5083748084",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5083748084",
+        "orcid": "https://orcid.org/0000-0002-3063-8473",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Chinese Academy of Sciences",
+        "Shanghai Institute of Materia Medica"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Wentao Li",
+      "display_name": "Wentao Li",
+      "given": "Wentao",
+      "family": "Li",
+      "author_id": "https://openalex.org/A5100451412",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5100451412",
+        "orcid": "https://orcid.org/0000-0002-7777-0818",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "National University of Defense Technology"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Xiaolan Xie",
+      "display_name": "Xiaolan Xie",
+      "given": "Xiaolan",
+      "family": "Xie",
+      "author_id": "https://openalex.org/A5101699482",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5101699482",
+        "orcid": "https://orcid.org/0000-0001-9546-5115",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Guilin University of Technology"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Shaoliang Peng",
+      "display_name": "Shaoliang Peng",
+      "given": "Shaoliang",
+      "family": "Peng",
+      "author_id": "https://openalex.org/A5108008219",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5108008219",
+        "orcid": "https://orcid.org/0000-0002-4647-2615",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Hunan University",
+        "National University of Defense Technology"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    }
+  ],
+  "sources": {
+    "openalex": {
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 0.99,
+      "citation_count": 99,
+      "openalex_id": "https://openalex.org/W3175599101",
+      "doi": "10.1093/bioinformatics/btab473",
+      "url": "https://doi.org/10.1093/bioinformatics/btab473",
+      "pdf_url": null,
+      "raw_file": "data/raw/openalex/83afdad7942b44dc.json",
+      "normalized_file": null,
+      "data": {
+        "title": "MultiDTI: drug–target interaction prediction based on multi-modal representation learning to bridge the gap between new chemical entities and known heterogeneous network",
+        "display_name": "MultiDTI: drug–target interaction prediction based on multi-modal representation learning to bridge the gap between new chemical entities and known heterogeneous network",
+        "authors": [
+          {
+            "name": "Deshan Zhou",
+            "given": "Deshan",
+            "family": "Zhou",
+            "author_id": "https://openalex.org/A5074343752",
+            "display_name": "Deshan Zhou",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5074343752",
+              "orcid": "https://orcid.org/0000-0002-6725-9303",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Hunan University"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Zhijian Xu",
+            "given": "Zhijian",
+            "family": "Xu",
+            "author_id": "https://openalex.org/A5083748084",
+            "display_name": "Zhijian Xu",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5083748084",
+              "orcid": "https://orcid.org/0000-0002-3063-8473",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Chinese Academy of Sciences",
+              "Shanghai Institute of Materia Medica"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Wentao Li",
+            "given": "Wentao",
+            "family": "Li",
+            "author_id": "https://openalex.org/A5100451412",
+            "display_name": "Wentao Li",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5100451412",
+              "orcid": "https://orcid.org/0000-0002-7777-0818",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "National University of Defense Technology"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Xiaolan Xie",
+            "given": "Xiaolan",
+            "family": "Xie",
+            "author_id": "https://openalex.org/A5101699482",
+            "display_name": "Xiaolan Xie",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5101699482",
+              "orcid": "https://orcid.org/0000-0001-9546-5115",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Guilin University of Technology"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Shaoliang Peng",
+            "given": "Shaoliang",
+            "family": "Peng",
+            "author_id": "https://openalex.org/A5108008219",
+            "display_name": "Shaoliang Peng",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5108008219",
+              "orcid": "https://orcid.org/0000-0002-4647-2615",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Hunan University",
+              "National University of Defense Technology"
+            ],
+            "countries": [
+              "CN"
+            ]
+          }
+        ],
+        "year": 2021,
+        "publication_date": "2021-06-27",
+        "journal": "Bioinformatics",
+        "venue": "Bioinformatics",
+        "publisher": "Oxford University Press",
+        "reference_type": "journal-article",
+        "volume": "37",
+        "issue": "23",
+        "pages": "4485-4492",
+        "doi": "10.1093/bioinformatics/btab473",
+        "url": "https://doi.org/10.1093/bioinformatics/btab473",
+        "pdf_url": null,
+        "openalex_id": "https://openalex.org/W3175599101",
+        "citation_count": 99,
+        "cited_by_count": 99,
+        "is_oa": false,
+        "oa_status": "closed",
+        "abstract": "MOTIVATION: Predicting new drug-target interactions is an important step in new drug development, understanding of its side effects and drug repositioning. Heterogeneous data sources can provide comprehensive information and different perspectives for drug-target interaction prediction. Thus, there have been many calculation methods relying on heterogeneous networks. Most of them use graph-related algorithms to characterize nodes in heterogeneous networks for predicting new drug-target interactions (DTI). However, these methods can only make predictions in known heterogeneous network datasets, and cannot support the prediction of new chemical entities outside the heterogeneous network, which hinder further drug discovery and development. RESULTS: To solve this problem, we proposed a multi-modal DTI prediction model named 'MultiDTI' which uses our proposed joint learning framework based on heterogeneous networks. It combines the interaction or association information of the heterogeneous network and the drug/target sequence information, and maps the drugs, targets, side effects and disease nodes in the heterogeneous network into a common space. In this way, 'MultiDTI' can map the new chemical entity to this learned common space based on the chemical structure of the new entity. That is, bridging the gap between new chemical entities and known heterogeneous network. Our model has strong predictive performance, and the area under the receiver operating characteristic curve of the model is 0.961 and the area under the precision recall curve is 0.947 with 10-fold cross validation. In addition, some predicted new DTIs have been confirmed by ChEMBL database. Our results indicate that 'MultiDTI' is a powerful and practical tool for predicting new DTI, which can promote the development of drug discovery or drug repositioning. AVAILABILITY AND IMPLEMENTATION: Python codes and dataset are available at https://github.com/Deshan-Zhou/MultiDTI/. SUPPLEMENTARY INFORMATION: Supplementary data are available at Bioinformatics online.",
+        "topics": [
+          "Computational Drug Discovery Methods",
+          "Machine Learning in Bioinformatics",
+          "Advanced Graph Neural Networks"
+        ],
+        "referenced_works_count": 32,
+        "related_works": [
+          "https://openalex.org/W3005441379",
+          "https://openalex.org/W4207063555",
+          "https://openalex.org/W2604173773",
+          "https://openalex.org/W2997728144",
+          "https://openalex.org/W4210747027"
+        ],
+        "source": "openalex",
+        "raw_file": "data/raw/openalex/83afdad7942b44dc.json"
+      }
+    },
+    "crossref": {
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 0.99,
+      "citation_count": 95,
+      "doi": "10.1093/bioinformatics/btab473",
+      "url": "https://doi.org/10.1093/bioinformatics/btab473",
+      "raw_file": "data/raw/crossref/f44f52b45e32eda0.json",
+      "normalized_file": null,
+      "data": {
+        "title": "MultiDTI: drug–target interaction prediction based on multi-modal representation learning to bridge the gap between new chemical entities and known heterogeneous network",
+        "authors": [
+          {
+            "name": "Deshan Zhou",
+            "given": "Deshan",
+            "family": "Zhou",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "Zhijian Xu",
+            "given": "Zhijian",
+            "family": "Xu",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "WenTao Li",
+            "given": "WenTao",
+            "family": "Li",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "Xiaolan Xie",
+            "given": "Xiaolan",
+            "family": "Xie",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "Shaoliang Peng",
+            "given": "Shaoliang",
+            "family": "Peng",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          }
+        ],
+        "year": 2021,
+        "journal": "Bioinformatics",
+        "doi": "10.1093/bioinformatics/btab473",
+        "url": "https://doi.org/10.1093/bioinformatics/btab473",
+        "openalex_id": "",
+        "citation_count": 95,
+        "source": "crossref",
+        "raw_file": "data/raw/crossref/f44f52b45e32eda0.json"
+      }
+    },
+    "google_scholar": {
+      "available": false,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "url": "https://scholar.google.com/scholar?q=Multidti%3A%20drug%E2%80%93target%20interaction%20prediction%20based%20on%20multi-modal%20representation%20learning%20to%20bridge%20the%20gap%20between%20new%20chemical%20entities%20and%20known%20heterogeneous%20network%20Deshan%20Zhou",
+      "cluster_id": null,
+      "cited_by_url": null,
+      "citation_count": null,
+      "versions_count": null,
+      "raw_file": null,
+      "normalized_file": "data/normalized/google_scholar/f0fcb39b9da838a7.json",
+      "data": {
+        "title": "Multidti: drug–target interaction prediction based on multi-modal representation learning to bridge the gap between new chemical entities and known heterogeneous network",
+        "authors": [
+          {
+            "name": "Zhijian Xu Deshan Zhou",
+            "given": "Zhijian Xu",
+            "family": "Deshan Zhou"
+          },
+          {
+            "name": "Xiaolan Xie WenTao Li",
+            "given": "Xiaolan Xie",
+            "family": "WenTao Li"
+          },
+          {
+            "name": "Shaoliang Peng",
+            "given": "Shaoliang",
+            "family": "Peng"
+          }
+        ],
+        "year": null,
+        "journal": "Bioinformatics, –4492",
+        "doi": "",
+        "url": "https://scholar.google.com/scholar?q=Multidti%3A%20drug%E2%80%93target%20interaction%20prediction%20based%20on%20multi-modal%20representation%20learning%20to%20bridge%20the%20gap%20between%20new%20chemical%20entities%20and%20known%20heterogeneous%20network%20Deshan%20Zhou",
+        "citation_count": null,
+        "source": "google_scholar",
+        "scholar_url": "https://scholar.google.com/scholar?q=Multidti%3A%20drug%E2%80%93target%20interaction%20prediction%20based%20on%20multi-modal%20representation%20learning%20to%20bridge%20the%20gap%20between%20new%20chemical%20entities%20and%20known%20heterogeneous%20network%20Deshan%20Zhou",
+        "available": false,
+        "reason": "SERPAPI_KEY_NOT_CONFIGURED",
+        "raw_file": null,
+        "normalized_file": "data/normalized/google_scholar/f0fcb39b9da838a7.json"
+      }
+    }
+  },
+  "doi_verification": {
+    "status": "verified",
+    "canonical_doi": "10.1093/bioinformatics/btab473",
+    "reconciled_with_arxiv": false,
+    "confidence": 1.0,
+    "reason": "Verified with crossref metadata consistency (title_sim=1.00).",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/bioinformatics/btad451",
+        "reason": "Metadata mismatch (title_sim=0.50, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/bib/bbac578",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41598-022-08787-9",
+        "reason": "Metadata mismatch (title_sim=0.52, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s12967-023-03876-3",
+        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s12859-024-05671-3",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/bib/bbad474",
+        "reason": "Metadata mismatch (title_sim=0.66, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s12859-022-05101-2",
+        "reason": "Metadata mismatch (title_sim=0.59, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s13755-024-00287-6",
+        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/bioinformatics/btad411",
+        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/bib/bbae294",
+        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.artmed.2026.103425",
+        "reason": "Metadata mismatch (title_sim=0.34, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1109/bibm52615.2021.9669468",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3390/molecules28186546",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1109/bibm62325.2024.10822124",
+        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1186/s12859-022-05101-2",
+        "reason": "Metadata mismatch (title_sim=0.59, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.54097/529xas83",
+        "reason": "Metadata mismatch (title_sim=0.53, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.jbi.2025.104852",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1007/s12539-024-00668-1",
+        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/bib/bbag034",
+        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
+    "unverified_dois": []
+  },
+  "quality_and_conflicts": {
+    "overall_confidence": 1.0,
+    "metadata_completeness": 1.0,
+    "doi_verified": true,
+    "author_verified": true,
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/bioinformatics/btad451",
+        "reason": "Metadata mismatch (title_sim=0.50, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/bib/bbac578",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41598-022-08787-9",
+        "reason": "Metadata mismatch (title_sim=0.52, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s12967-023-03876-3",
+        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s12859-024-05671-3",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/bib/bbad474",
+        "reason": "Metadata mismatch (title_sim=0.66, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s12859-022-05101-2",
+        "reason": "Metadata mismatch (title_sim=0.59, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s13755-024-00287-6",
+        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/bioinformatics/btad411",
+        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/bib/bbae294",
+        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.artmed.2026.103425",
+        "reason": "Metadata mismatch (title_sim=0.34, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1109/bibm52615.2021.9669468",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3390/molecules28186546",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1109/bibm62325.2024.10822124",
+        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1186/s12859-022-05101-2",
+        "reason": "Metadata mismatch (title_sim=0.59, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.54097/529xas83",
+        "reason": "Metadata mismatch (title_sim=0.53, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.jbi.2025.104852",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1007/s12539-024-00668-1",
+        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/bib/bbag034",
+        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
+  },
+  "telemetry": {
+    "providers_queried": [
+      "google_scholar",
+      "crossref",
+      "openalex"
+    ],
+    "latency_ms": {
+      "google_scholar": 9.44,
+      "crossref": 19217.55,
+      "openalex": 20073.46
+    },
+    "candidate_counts": {
+      "google_scholar": 1,
+      "crossref": 10,
+      "openalex": 12
+    },
+    "errors": {}
+  }
+}

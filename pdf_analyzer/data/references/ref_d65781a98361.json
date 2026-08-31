@@ -1,0 +1,211 @@
+{
+  "reference_id": "ref_d65781a98361",
+  "project_id": "",
+  "created_at": "2026-08-25T10:25:35.877436+00:00",
+  "input": {
+    "original_text": "Vaswani, A. et al. (2017). Attention is all you need.",
+    "parsed": {
+      "title": "Attention is all you need",
+      "authors": [],
+      "year": 2017,
+      "reference_type": "journal-article",
+      "journal": null,
+      "publisher": null,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "doi": null,
+      "isbn": null,
+      "arxiv_id": null
+    }
+  },
+  "canonical": {
+    "title": {
+      "value": "Attention Is All You Need",
+      "source": "openalex",
+      "confidence": 0.98,
+      "verification_status": "verified"
+    },
+    "year": {
+      "value": 2017,
+      "source": "openalex",
+      "confidence": 0.98,
+      "verification_status": "verified"
+    },
+    "venue": {
+      "value": null,
+      "source": "none",
+      "confidence": 0.0,
+      "verification_status": "unverified"
+    },
+    "reference_type": {
+      "value": "journal-article",
+      "source": "openalex",
+      "confidence": 0.9,
+      "verification_status": "verified"
+    },
+    "publisher": {
+      "value": null,
+      "source": "none",
+      "confidence": 0.9,
+      "verification_status": "unverified"
+    },
+    "volume": null,
+    "issue": null,
+    "pages": null,
+    "abstract": null,
+    "url": null,
+    "identifiers": {
+      "doi": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "missing"
+      },
+      "openalex_id": {
+        "value": null,
+        "source": "openalex",
+        "confidence": 0.98,
+        "verification_status": "verified"
+      },
+      "arxiv_id": {
+        "value": null,
+        "source": "arxiv_resolver",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "isbn": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_cluster_id": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_url": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      }
+    },
+    "citation_counts": {
+      "canonical_value": null,
+      "google_scholar": null,
+      "openalex": null,
+      "crossref": null
+    }
+  },
+  "canonical_authors": [
+    {
+      "name": "Ashish Vaswani",
+      "display_name": "Ashish Vaswani",
+      "given": "",
+      "family": "",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "matched",
+      "confidence": 0.75
+    }
+  ],
+  "sources": {
+    "openalex": {
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 0.98,
+      "citation_count": null,
+      "openalex_id": null,
+      "doi": null,
+      "url": null,
+      "pdf_url": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {
+        "title": "Attention Is All You Need",
+        "authors": [
+          {
+            "name": "Ashish Vaswani",
+            "source": "openalex"
+          }
+        ],
+        "year": 2017,
+        "journal": "OpenAlex",
+        "doi": null,
+        "source": "openalex"
+      }
+    },
+    "crossref": {
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.0,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {}
+    },
+    "google_scholar": {
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 0.98,
+      "url": null,
+      "cluster_id": null,
+      "cited_by_url": null,
+      "citation_count": null,
+      "versions_count": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {
+        "title": "Attention Is All You Need",
+        "authors": [
+          {
+            "name": "Ashish Vaswani",
+            "source": "google_scholar"
+          }
+        ],
+        "year": 2017,
+        "journal": "Google Scholar",
+        "source": "google_scholar",
+        "available": true
+      }
+    }
+  },
+  "doi_verification": {
+    "status": "missing",
+    "canonical_doi": null,
+    "reconciled_with_arxiv": false,
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
+    "unverified_dois": []
+  },
+  "quality_and_conflicts": {
+    "overall_confidence": 0.98,
+    "metadata_completeness": 0.5,
+    "doi_verified": false,
+    "author_verified": true,
+    "conflicts": []
+  },
+  "telemetry": {
+    "providers_queried": [
+      "openalex",
+      "crossref",
+      "google_scholar"
+    ],
+    "latency_ms": {},
+    "candidate_counts": {}
+  }
+}

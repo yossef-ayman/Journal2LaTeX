@@ -1,0 +1,336 @@
+{
+  "reference_id": "ref_8c2278590d1a",
+  "project_id": "project_20260831_071545_c5883250",
+  "created_at": "2026-08-31T07:16:26.360376+00:00",
+  "input": {
+    "original_text": "IEEE, 2021.",
+    "parsed": {
+      "title": "IEEE, 2021",
+      "authors": [],
+      "year": 2021,
+      "reference_type": "journal-article",
+      "journal": null,
+      "publisher": "IEEE",
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "doi": null,
+      "isbn": null,
+      "arxiv_id": null
+    }
+  },
+  "canonical": {
+    "title": {
+      "value": "IEEE, 2021",
+      "source": "google_scholar",
+      "confidence": 0.98,
+      "verification_status": "verified"
+    },
+    "year": {
+      "value": 2021,
+      "source": "parsed",
+      "confidence": 0.9,
+      "verification_status": "verified"
+    },
+    "venue": {
+      "value": null,
+      "source": "none",
+      "confidence": 0.0,
+      "verification_status": "unverified"
+    },
+    "reference_type": {
+      "value": "journal-article",
+      "source": "classifier",
+      "confidence": 0.75,
+      "verification_status": "unverified"
+    },
+    "publisher": {
+      "value": "IEEE",
+      "source": "parsed",
+      "confidence": 0.0,
+      "verification_status": "unverified"
+    },
+    "volume": null,
+    "issue": null,
+    "pages": null,
+    "abstract": null,
+    "url": "https://scholar.google.com/scholar?q=IEEE%2C%202021%202021",
+    "identifiers": {
+      "doi": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.2,
+        "verification_status": "conflict"
+      },
+      "openalex_id": {
+        "value": null,
+        "source": "openalex",
+        "confidence": 0.3,
+        "verification_status": "unverified"
+      },
+      "arxiv_id": {
+        "value": null,
+        "source": "arxiv_resolver",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "isbn": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_cluster_id": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_url": {
+        "value": "https://scholar.google.com/scholar?q=IEEE%2C%202021%202021",
+        "source": "google_scholar",
+        "confidence": 0.98,
+        "verification_status": "verified"
+      }
+    },
+    "citation_counts": {
+      "canonical_value": null,
+      "google_scholar": null,
+      "openalex": null,
+      "crossref": null
+    }
+  },
+  "canonical_authors": [],
+  "sources": {
+    "openalex": {
+      "available": true,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.3,
+      "citation_count": null,
+      "openalex_id": null,
+      "doi": null,
+      "url": null,
+      "pdf_url": null,
+      "raw_file": "data/raw/openalex/0985015302bcee1b.json",
+      "normalized_file": null,
+      "data": {}
+    },
+    "crossref": {
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.0,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {}
+    },
+    "google_scholar": {
+      "available": false,
+      "matched": true,
+      "status": "matched",
+      "confidence": 0.98,
+      "url": "https://scholar.google.com/scholar?q=IEEE%2C%202021%202021",
+      "cluster_id": null,
+      "cited_by_url": null,
+      "citation_count": null,
+      "versions_count": null,
+      "raw_file": null,
+      "normalized_file": "data/normalized/google_scholar/4e4478105fd7bff7.json",
+      "data": {
+        "title": "IEEE, 2021",
+        "authors": [],
+        "year": 2021,
+        "journal": null,
+        "doi": "",
+        "url": "https://scholar.google.com/scholar?q=IEEE%2C%202021%202021",
+        "citation_count": null,
+        "source": "google_scholar",
+        "scholar_url": "https://scholar.google.com/scholar?q=IEEE%2C%202021%202021",
+        "available": false,
+        "reason": "SERPAPI_KEY_NOT_CONFIGURED",
+        "raw_file": null,
+        "normalized_file": "data/normalized/google_scholar/4e4478105fd7bff7.json"
+      }
+    }
+  },
+  "doi_verification": {
+    "status": "conflict",
+    "canonical_doi": null,
+    "reconciled_with_arxiv": false,
+    "confidence": 0.2,
+    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/icra48506.2021",
+        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/iccv48922.2021",
+        "reason": "Metadata mismatch (title_sim=0.14, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/cvpr46437.2021",
+        "reason": "Metadata mismatch (title_sim=0.12, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/tetci.2020.3020707",
+        "reason": "Metadata mismatch (title_sim=0.18, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/mci.2020.3019904",
+        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/igarss47720.2021",
+        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/icc42927.2021",
+        "reason": "Metadata mismatch (title_sim=0.15, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/infocom42981.2021",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/isbi48211.2021",
+        "reason": "Metadata mismatch (title_sim=0.16, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/cdc45484.2021",
+        "reason": "Metadata mismatch (title_sim=0.16, author_sim=0.50)",
+        "status": "conflict"
+      }
+    ],
+    "unverified_dois": []
+  },
+  "quality_and_conflicts": {
+    "overall_confidence": 0.98,
+    "metadata_completeness": 0.33,
+    "doi_verified": false,
+    "author_verified": false,
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/icra48506.2021",
+        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/iccv48922.2021",
+        "reason": "Metadata mismatch (title_sim=0.14, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/cvpr46437.2021",
+        "reason": "Metadata mismatch (title_sim=0.12, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/tetci.2020.3020707",
+        "reason": "Metadata mismatch (title_sim=0.18, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/mci.2020.3019904",
+        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/igarss47720.2021",
+        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/icc42927.2021",
+        "reason": "Metadata mismatch (title_sim=0.15, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/infocom42981.2021",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/isbi48211.2021",
+        "reason": "Metadata mismatch (title_sim=0.16, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/cdc45484.2021",
+        "reason": "Metadata mismatch (title_sim=0.16, author_sim=0.50)",
+        "status": "conflict"
+      }
+    ]
+  },
+  "telemetry": {
+    "providers_queried": [
+      "google_scholar",
+      "crossref",
+      "openalex"
+    ],
+    "latency_ms": {
+      "google_scholar": 9.22,
+      "crossref": 8771.63,
+      "openalex": 12103.9
+    },
+    "candidate_counts": {
+      "google_scholar": 1,
+      "crossref": 0,
+      "openalex": 10
+    },
+    "errors": {}
+  }
+}

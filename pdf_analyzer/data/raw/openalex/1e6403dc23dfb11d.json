@@ -1,0 +1,34 @@
+{
+  "provider": "openalex",
+  "query_key": "title_author:Multimodal machine learning framework integrated with nanoinformatics for early prediction of rheumatoid arthritis Parveen",
+  "query_hash": "1e6403dc23dfb11d",
+  "saved_at": "2026-08-31T07:16:28.880419+00:00",
+  "status_code": 200,
+  "candidate_count": 0,
+  "raw_response": {
+    "meta": {
+      "count": 0,
+      "db_response_time_ms": 110,
+      "page": 1,
+      "per_page": 10,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (Multimodal machine learning framework integrated with nanoinformatics for early prediction of rheumatoid arthritis Parveen)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Multimodal machine learning framework integrated with nanoinformatics for early prediction of rheumatoid arthritis Parveen",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Multimodal machine learning framework integrated with nanoinformatics for early prediction of rheumatoid arthritis Parveen&per_page=10"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [],
+    "group_by": []
+  }
+}

@@ -1,0 +1,789 @@
+{
+  "provider": "openalex",
+  "entity_key": "title_author:Vision-position multimodal beam prediction using real millimeter wave datasets Gouranga Charan",
+  "normalized_at": "2026-08-31T07:16:26.421810+00:00",
+  "data": [
+    {
+      "title": "Multimodal transformers for wireless communications: A case study in beam prediction",
+      "display_name": "Multimodal transformers for wireless communications: A case study in beam prediction",
+      "authors": [
+        {
+          "name": "Yu Tian",
+          "given": "Yu",
+          "family": "Tian",
+          "author_id": "https://openalex.org/A5072835438",
+          "display_name": "Yu Tian",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5072835438",
+            "orcid": "https://orcid.org/0000-0001-8079-6149",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technology Innovation Institute"
+          ],
+          "countries": [
+            "AE"
+          ]
+        },
+        {
+          "name": "Qiyang Zhao",
+          "given": "Qiyang",
+          "family": "Zhao",
+          "author_id": "https://openalex.org/A5055773757",
+          "display_name": "Qiyang Zhao",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5055773757",
+            "orcid": "https://orcid.org/0000-0001-5420-2511",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technology Innovation Institute"
+          ],
+          "countries": [
+            "AE"
+          ]
+        },
+        {
+          "name": "Zine el abidine Kherroubi",
+          "given": "Zine el abidine",
+          "family": "Kherroubi",
+          "author_id": "https://openalex.org/A5010840131",
+          "display_name": "Zine el abidine Kherroubi",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5010840131",
+            "orcid": "https://orcid.org/0000-0002-3889-6901",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technology Innovation Institute"
+          ],
+          "countries": [
+            "AE"
+          ]
+        },
+        {
+          "name": "Fouzi Boukhalfa",
+          "given": "Fouzi",
+          "family": "Boukhalfa",
+          "author_id": "https://openalex.org/A5033784262",
+          "display_name": "Fouzi Boukhalfa",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5033784262",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technology Innovation Institute"
+          ],
+          "countries": [
+            "AE"
+          ]
+        },
+        {
+          "name": "Kebin Wu",
+          "given": "Kebin",
+          "family": "Wu",
+          "author_id": "https://openalex.org/A5042260305",
+          "display_name": "Kebin Wu",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5042260305",
+            "orcid": "https://orcid.org/0000-0003-4492-4152",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technology Innovation Institute"
+          ],
+          "countries": [
+            "AE"
+          ]
+        },
+        {
+          "name": "Faouzi Bader",
+          "given": "Faouzi",
+          "family": "Bader",
+          "author_id": "https://openalex.org/A5019652901",
+          "display_name": "Faouzi Bader",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5019652901",
+            "orcid": "https://orcid.org/0000-0002-3206-9411",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technology Innovation Institute"
+          ],
+          "countries": [
+            "AE"
+          ]
+        }
+      ],
+      "year": 2023,
+      "publication_date": "2023-09-05",
+      "journal": "ITU Journal on Future and Evolving Technologies",
+      "venue": "ITU Journal on Future and Evolving Technologies",
+      "publisher": "",
+      "reference_type": "journal-article",
+      "volume": "4",
+      "issue": "3",
+      "pages": "461-471",
+      "doi": "10.52953/jwra8095",
+      "url": "https://doi.org/10.52953/jwra8095",
+      "pdf_url": "https://www.itu.int/dms_pub/itu-s/opb/jnl/S-JNL-VOL4.ISSUE3-2023-A33-PDF-E.pdf",
+      "openalex_id": "https://openalex.org/W4386456744",
+      "citation_count": 40,
+      "cited_by_count": 40,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "abstract": "Wireless communications at high-frequency bands with large antenna arrays face challenges in beam management, which can potentially be improved by multimodality sensing information from cameras, LiDAR, radar, and GPS. In this paper, we present a multimodal transformer deep learning framework for sensing-assisted beam prediction. We employ a convolutional neural network to extract the features from a sequence of images, point clouds, and radar raw data sampled over time. At each convolutional layer, we use transformer encoders to learn the hidden relations between feature tokens from different modalities and time instances over abstraction space and produce encoded vectors for the next-level feature extraction. We train the model on a combination of different modalities with supervised learning. We try to enhance the model over imbalanced data by utilizing focal loss and exponential moving average. We also evaluate data processing and augmentation techniques such as image enhancement, segmentation, background filtering, multimodal data flipping, radar signal transformation, and GPS angle calibration. Experimental results show that our solution trained on image and GPS data produces the best distance-based accuracy of predicted beams at 78.44%, with effective generalization to unseen day scenarios near 73% and night scenarios over 84%. This outperforms using other modalities and arbitrary data processing techniques, which demonstrates the effectiveness of transformers with feature fusion in performing radio beam prediction from images and GPS. Furthermore, our solution could be pretrained from large sequences of multimodality wireless data, on fine-tuning for multiple downstream radio network tasks.",
+      "topics": [
+        "Indoor and Outdoor Localization Technologies",
+        "Soil Moisture and Remote Sensing",
+        "Advanced SAR Imaging Techniques"
+      ],
+      "referenced_works_count": 22,
+      "related_works": [
+        "https://openalex.org/W4312417841",
+        "https://openalex.org/W4321369474",
+        "https://openalex.org/W2731899572",
+        "https://openalex.org/W3133861977",
+        "https://openalex.org/W4200173597"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/bb9e492e61d504d3.json"
+    },
+    {
+      "title": "User Identification: A Key Enabler for Multi-User Vision-Aided Communications",
+      "display_name": "User Identification: A Key Enabler for Multi-User Vision-Aided Communications",
+      "authors": [
+        {
+          "name": "Gouranga Charan",
+          "given": "Gouranga",
+          "family": "Charan",
+          "author_id": "https://openalex.org/A5089533209",
+          "display_name": "Gouranga Charan",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5089533209",
+            "orcid": "https://orcid.org/0000-0002-1335-0670",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Arizona State University"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Ahmed Alkhateeb",
+          "given": "Ahmed",
+          "family": "Alkhateeb",
+          "author_id": "https://openalex.org/A5003243464",
+          "display_name": "Ahmed Alkhateeb",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5003243464",
+            "orcid": "https://orcid.org/0000-0001-5648-1569",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Arizona State University"
+          ],
+          "countries": [
+            "US"
+          ]
+        }
+      ],
+      "year": 2023,
+      "publication_date": "2023-12-12",
+      "journal": "IEEE Open Journal of the Communications Society",
+      "venue": "IEEE Open Journal of the Communications Society",
+      "publisher": "IEEE Communications Society",
+      "reference_type": "journal-article",
+      "volume": "5",
+      "issue": "",
+      "pages": "472-488",
+      "doi": "10.1109/ojcoms.2023.3342089",
+      "url": "https://doi.org/10.1109/ojcoms.2023.3342089",
+      "pdf_url": "https://ieeexplore.ieee.org/ielx7/8782661/8901158/10354452.pdf",
+      "openalex_id": "https://openalex.org/W4389609800",
+      "citation_count": 11,
+      "cited_by_count": 11,
+      "is_oa": true,
+      "oa_status": "gold",
+      "abstract": "Vision-aided wireless communication is attracting increasing interest and finding new use cases in various wireless communication applications. These vision-aided communication frameworks leverage visual data captured, for example, by cameras installed at the infrastructure or mobile devices to construct some perception about the communication environment through the use of deep learning and advances in computer vision and visual scene understanding. Prior work has investigated various problems such as vision-aided beam, blockage, and hand-off prediction in millimeter wave (mmWave) systems and vision-aided covariance prediction in massive MIMO systems. This prior work, however, has focused on scenarios with a single object (user) in front of the camera. In this paper, we define the user identification task as a key enabler for realistic vision-aided communication systems that can operate in crowded scenarios and support multi-user applications. The objective of the user identification task is to identify the target communication user from the other candidate objects (distractors) in the visual scene. We develop machine learning models that process either one frame or a sequence of frames of visual and wireless data to efficiently identify the target user in the visual/communication environment. Using the large-scale multi-modal sense and communication dataset, DeepSense 6G, which is based on real-world measurements, we show that the developed approaches can successfully identify the target users with more than 97% accuracy in realistic settings. This paves the way for scaling the vision-aided wireless communication applications to real-world scenarios and practical deployments.",
+      "topics": [
+        "Indoor and Outdoor Localization Technologies",
+        "Video Surveillance and Tracking Methods",
+        "Millimeter-Wave Propagation and Modeling"
+      ],
+      "referenced_works_count": 44,
+      "related_works": [
+        "https://openalex.org/W2068608913",
+        "https://openalex.org/W3124914020",
+        "https://openalex.org/W2141033859",
+        "https://openalex.org/W2077542787",
+        "https://openalex.org/W2071701083"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/bb9e492e61d504d3.json"
+    },
+    {
+      "title": "PEACH: Proactive and Environment-Aware Channel State Information Prediction with Depth Images",
+      "display_name": "PEACH: Proactive and Environment-Aware Channel State Information Prediction with Depth Images",
+      "authors": [
+        {
+          "name": "Serkut Ayvaşık",
+          "given": "Serkut",
+          "family": "Ayvaşık",
+          "author_id": "https://openalex.org/A5024458441",
+          "display_name": "Serkut Ayvaşık",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5024458441",
+            "orcid": "https://orcid.org/0000-0002-3469-291X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technical University of Munich"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Fidan Mehmeti",
+          "given": "Fidan",
+          "family": "Mehmeti",
+          "author_id": "https://openalex.org/A5088323524",
+          "display_name": "Fidan Mehmeti",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5088323524",
+            "orcid": "https://orcid.org/0000-0002-0997-6929",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technical University of Munich"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Edwin Babaians",
+          "given": "Edwin",
+          "family": "Babaians",
+          "author_id": "https://openalex.org/A5037936533",
+          "display_name": "Edwin Babaians",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5037936533",
+            "orcid": "https://orcid.org/0000-0002-1516-9744",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technical University of Munich"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Wolfgang Kellerer",
+          "given": "Wolfgang",
+          "family": "Kellerer",
+          "author_id": "https://openalex.org/A5021781616",
+          "display_name": "Wolfgang Kellerer",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5021781616",
+            "orcid": "https://orcid.org/0000-0003-4358-8038",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technical University of Munich"
+          ],
+          "countries": [
+            "DE"
+          ]
+        }
+      ],
+      "year": 2023,
+      "publication_date": "2023-02-27",
+      "journal": "Proceedings of the ACM on Measurement and Analysis of Computing Systems",
+      "venue": "Proceedings of the ACM on Measurement and Analysis of Computing Systems",
+      "publisher": "Association for Computing Machinery",
+      "reference_type": "journal-article",
+      "volume": "7",
+      "issue": "1",
+      "pages": "1-27",
+      "doi": "10.1145/3579450",
+      "url": "https://doi.org/10.1145/3579450",
+      "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3579450",
+      "openalex_id": "https://openalex.org/W4322762522",
+      "citation_count": 9,
+      "cited_by_count": 9,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "abstract": "Up-to-date and accurate prediction of Channel State Information (CSI) is of paramount importance in Ultra-Reliable Low-Latency Communications (URLLC), specifically in dynamic environments where unpredictable mobility is inherent. CSI can be meticulously tracked by means of frequent pilot transmissions, which on the downside lead to an increase in metadata (overhead signaling) and latency, which are both detrimental for URLLC. To overcome these issues, in this paper, we take a fundamentally different approach and propose PEACH, a machine learning system which utilizes environmental information with depth images to predict CSI amplitude in beyond 5G systems, without requiring metadata radio resources, such as pilot overheads or any feedback mechanism. PEACH exploits depth images by employing a convolutional neural network to predict the current and the next 100 ms CSI amplitudes. The proposed system is experimentally validated with extensive measurements conducted in an indoor environment, involving two static receivers and two transmitters, one of which is placed on top of a mobile robot. We prove that environmental information can be instrumental towards proactive CSI amplitude acquisition of both static and mobile users on base stations, while providing an almost similar performance as pilot-based methods, and completely avoiding the dependency on feedback and pilot transmission for both downlink and uplink CSI information. Furthermore, compared to demodulation reference signal based traditional pilot estimation in ideal conditions without interference, our experimental results show that PEACH yields the same performance in terms of average bit error rate when channel conditions are poor (using low order modulation), while not being much worse when using higher modulation orders, like 16-QAM or 64-QAM. More importantly, in the realistic cases with interference taken into account, our experiments demonstrate considerable improvements introduced by PEACH in terms of normalized mean square error of CSI amplitude estimation, up to 6 dB, when compared to traditional approaches.",
+      "topics": [
+        "Wireless Signal Modulation Classification",
+        "Advanced Wireless Communication Technologies",
+        "IoT Networks and Protocols"
+      ],
+      "referenced_works_count": 56,
+      "related_works": [
+        "https://openalex.org/W2042521024",
+        "https://openalex.org/W2916179838",
+        "https://openalex.org/W2134440202",
+        "https://openalex.org/W2951161574",
+        "https://openalex.org/W2109852729"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/bb9e492e61d504d3.json"
+    },
+    {
+      "title": "Multimodal Transformers for Wireless Communications: A Case Study in Beam Prediction",
+      "display_name": "Multimodal Transformers for Wireless Communications: A Case Study in Beam Prediction",
+      "authors": [
+        {
+          "name": "Yu Tian",
+          "given": "Yu",
+          "family": "Tian",
+          "author_id": "https://openalex.org/A5072835438",
+          "display_name": "Yu Tian",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5072835438",
+            "orcid": "https://orcid.org/0000-0001-8079-6149",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Qiyang Zhao",
+          "given": "Qiyang",
+          "family": "Zhao",
+          "author_id": "https://openalex.org/A5055773757",
+          "display_name": "Qiyang Zhao",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5055773757",
+            "orcid": "https://orcid.org/0000-0001-5420-2511",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Zine el abidine Kherroubi",
+          "given": "Zine el abidine",
+          "family": "Kherroubi",
+          "author_id": "https://openalex.org/A5010840131",
+          "display_name": "Zine el abidine Kherroubi",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5010840131",
+            "orcid": "https://orcid.org/0000-0002-3889-6901",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Fouzi Boukhalfa",
+          "given": "Fouzi",
+          "family": "Boukhalfa",
+          "author_id": "https://openalex.org/A5033784262",
+          "display_name": "Fouzi Boukhalfa",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5033784262",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Kebin Wu",
+          "given": "Kebin",
+          "family": "Wu",
+          "author_id": "https://openalex.org/A5042260305",
+          "display_name": "Kebin Wu",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5042260305",
+            "orcid": "https://orcid.org/0000-0003-4492-4152",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Faouzi Bader",
+          "given": "Faouzi",
+          "family": "Bader",
+          "author_id": "https://openalex.org/A5019652901",
+          "display_name": "Faouzi Bader",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5019652901",
+            "orcid": "https://orcid.org/0000-0002-3206-9411",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        }
+      ],
+      "year": 2023,
+      "publication_date": "2023-09-21",
+      "journal": "arXiv (Cornell University)",
+      "venue": "arXiv (Cornell University)",
+      "publisher": "Cornell University",
+      "reference_type": "preprint",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "10.48550/arxiv.2309.11811",
+      "url": "http://arxiv.org/abs/2309.11811",
+      "pdf_url": "https://arxiv.org/pdf/2309.11811",
+      "openalex_id": "https://openalex.org/W4386977518",
+      "citation_count": 0,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "Wireless communications at high-frequency bands with large antenna arrays face challenges in beam management, which can potentially be improved by multimodality sensing information from cameras, LiDAR, radar, and GPS. In this paper, we present a multimodal transformer deep learning framework for sensing-assisted beam prediction. We employ a convolutional neural network to extract the features from a sequence of images, point clouds, and radar raw data sampled over time. At each convolutional layer, we use transformer encoders to learn the hidden relations between feature tokens from different modalities and time instances over abstraction space and produce encoded vectors for the next-level feature extraction. We train the model on a combination of different modalities with supervised learning. We try to enhance the model over imbalanced data by utilizing focal loss and exponential moving average. We also evaluate data processing and augmentation techniques such as image enhancement, segmentation, background filtering, multimodal data flipping, radar signal transformation, and GPS angle calibration. Experimental results show that our solution trained on image and GPS data produces the best distance-based accuracy of predicted beams at 78.44%, with effective generalization to unseen day scenarios near 73% and night scenarios over 84%. This outperforms using other modalities and arbitrary data processing techniques, which demonstrates the effectiveness of transformers with feature fusion in performing radio beam prediction from images and GPS. Furthermore, our solution could be pretrained from large sequences of multimodality wireless data, on fine-tuning for multiple downstream radio network tasks.",
+      "topics": [
+        "Indoor and Outdoor Localization Technologies",
+        "Advanced SAR Imaging Techniques",
+        "Soil Moisture and Remote Sensing"
+      ],
+      "referenced_works_count": 0,
+      "related_works": [
+        "https://openalex.org/W4319317934",
+        "https://openalex.org/W2901265155",
+        "https://openalex.org/W2956374172",
+        "https://openalex.org/W4281783339",
+        "https://openalex.org/W4319837668"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/bb9e492e61d504d3.json"
+    },
+    {
+      "title": "Beam Prediction for mmWave V2I Communication aided by Geolocation and Machine Learning",
+      "display_name": "Beam Prediction for mmWave V2I Communication aided by Geolocation and Machine Learning",
+      "authors": [
+        {
+          "name": "Sherif Adeshina Busari",
+          "given": "Sherif Adeshina",
+          "family": "Busari",
+          "author_id": "",
+          "display_name": "Sherif Adeshina Busari",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Iraqi University"
+          ],
+          "countries": [
+            "IQ"
+          ]
+        },
+        {
+          "name": "Ifiok Otung",
+          "given": "Ifiok",
+          "family": "Otung",
+          "author_id": "",
+          "display_name": "Ifiok Otung",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Iraqi University"
+          ],
+          "countries": [
+            "IQ"
+          ]
+        },
+        {
+          "name": "Muhammad Ali",
+          "given": "Muhammad",
+          "family": "Ali",
+          "author_id": "",
+          "display_name": "Muhammad Ali",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Bradford"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "Raed Abd-Alhameed",
+          "given": "Raed",
+          "family": "Abd-Alhameed",
+          "author_id": "",
+          "display_name": "Raed Abd-Alhameed",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Bradford"
+          ],
+          "countries": [
+            "GB"
+          ]
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-10-25",
+      "journal": "Annals of Emerging Technologies in Computing",
+      "venue": "Annals of Emerging Technologies in Computing",
+      "publisher": "International Association for Educators and Researchers (IAER)",
+      "reference_type": "journal-article",
+      "volume": "9",
+      "issue": "5",
+      "pages": "1-12",
+      "doi": "10.33166/aetic.2025.05.001",
+      "url": "https://doi.org/10.33166/aetic.2025.05.001",
+      "pdf_url": "http://aetic.theiaer.org/archive/v9/v9n5/p1.pdf",
+      "openalex_id": "https://openalex.org/W7104431360",
+      "citation_count": 0,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "abstract": "Millimetre wave (mmWave) systems require high beamforming gains to overcome the unfavourable impacts of high path losses at mmWave frequencies. Large antenna arrays enable such gains through highly directive narrow beams which then require multiple beams to cover the spatial directions of interest. The required beam management for such systems, particularly for mobile use cases such as the vehicle-to-infrastructure (V2I) scenarios, is challenging. Real-time optimal beam selection from codebooks consumes radio resources and incurs large training overheads. As a result, geolocation side information and machine learning (ML) algorithms are being explored to address beam management challenges. However, prior works have mostly applied their solutions using simulations that are based on synthetic datasets. Recently, real-world datasets based on extensive mmWave measurements have become available. Leveraging the real-world datasets, in this work, we evaluate and compare the performance of three ML (i.e., k-nearest neighbours, support vector machine and decision tree) algorithms on mmWave V2I beam selection aided by global positioning system latitude and longitude coordinates as the only two features for the ML. The results show the impact of codebook sizes on the accuracies of the ML algorithms under ten different scenarios. The results also reveal the limitations of the geolocation-aided beam prediction as average accuracy could go below 30% in some scenarios, and higher than 90% in other scenarios. These performance results point to the need for multi-modal approaches (involving a combination of different sensors' data) for efficient mmWave V2I beam prediction.",
+      "topics": [
+        "Millimeter-Wave Propagation and Modeling",
+        "Advanced MIMO Systems Optimization",
+        "Indoor and Outdoor Localization Technologies"
+      ],
+      "referenced_works_count": 21,
+      "related_works": [],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/bb9e492e61d504d3.json"
+    },
+    {
+      "title": "Wireless Physical-Layer Foundation Models: Architectures, Learning Paradigms, Applications, and Deployment",
+      "display_name": "Wireless Physical-Layer Foundation Models: Architectures, Learning Paradigms, Applications, and Deployment",
+      "authors": [
+        {
+          "name": "Mohammad Cheraghinia",
+          "given": "Mohammad",
+          "family": "Cheraghinia",
+          "author_id": "https://openalex.org/A5092270034",
+          "display_name": "Mohammad Cheraghinia",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5092270034",
+            "orcid": "https://orcid.org/0009-0003-4373-117X",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Davide Buffelli",
+          "given": "Davide",
+          "family": "Buffelli",
+          "author_id": "https://openalex.org/A5049877834",
+          "display_name": "Davide Buffelli",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5049877834",
+            "orcid": "https://orcid.org/0000-0001-5565-1634",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Liu Li",
+          "given": "Liu",
+          "family": "Li",
+          "author_id": "https://openalex.org/A5147913659",
+          "display_name": "Liu Li",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5147913659",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Mohammad Alhellani",
+          "given": "Mohammad",
+          "family": "Alhellani",
+          "author_id": "https://openalex.org/A5147911478",
+          "display_name": "Mohammad Alhellani",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5147911478",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Jaron Fontaine",
+          "given": "Jaron",
+          "family": "Fontaine",
+          "author_id": "https://openalex.org/A5005542751",
+          "display_name": "Jaron Fontaine",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5005542751",
+            "orcid": "https://orcid.org/0000-0001-5942-9440",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Sattar Vakili",
+          "given": "Sattar",
+          "family": "Vakili",
+          "author_id": "https://openalex.org/A5009337709",
+          "display_name": "Sattar Vakili",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5009337709",
+            "orcid": "https://orcid.org/0000-0001-7085-1191",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Mamoun Guenach",
+          "given": "Mamoun",
+          "family": "Guenach",
+          "author_id": "https://openalex.org/A5049670258",
+          "display_name": "Mamoun Guenach",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5049670258",
+            "orcid": "https://orcid.org/0000-0002-0620-8043",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Eli De Poorter",
+          "given": "Eli De",
+          "family": "Poorter",
+          "author_id": "https://openalex.org/A5026442244",
+          "display_name": "Eli De Poorter",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5026442244",
+            "orcid": "https://orcid.org/0000-0002-0214-5751",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Adnan Shahid",
+          "given": "Adnan",
+          "family": "Shahid",
+          "author_id": "https://openalex.org/A5018797700",
+          "display_name": "Adnan Shahid",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5018797700",
+            "orcid": "https://orcid.org/0000-0003-1943-6261",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-08-20",
+      "journal": "arXiv (Cornell University)",
+      "venue": "arXiv (Cornell University)",
+      "publisher": "Cornell University",
+      "reference_type": "preprint",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "10.48550/arxiv.2608.20486",
+      "url": "https://arxiv.org/abs/2608.20486",
+      "pdf_url": "https://arxiv.org/pdf/2608.20486",
+      "openalex_id": "https://openalex.org/W7204142683",
+      "citation_count": 0,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "Foundation models, i.e., large neural networks pretrained on broad unlabeled data and adapted to many downstream tasks, have reshaped natural language processing and computer vision and are now being explored for the wireless physical layer. Wireless Physical-Layer Foundation Models (WPFMs) aim to learn transferable representations of signals such as channel state information (CSI), in-phase and quadrature (IQ) samples, and spectrograms so that a single pretrained backbone can support tasks ranging from channel estimation and prediction to localization and sensing while using limited task-specific data. This paper provides a dedicated review of WPFMs from learning design to practical deployment. We first establish the theoretical background, covering the neural architectures used for wireless signals, the self-supervised pretraining paradigms of masked modeling, contrastive learning, and generative pretraining, and the fine-tuning strategies that adapt pretrained models to downstream tasks. We then introduce a taxonomy that organizes existing models along five dimensions: architecture family, input modality and tokenization, pretraining objective, model scale and deployment target, and generalization capability. Building on this basis, we review applications across telecommunications, localization, and sensing, and, for each domain, analyze deployment feasibility by mapping model size to the memory, compute, and latency budgets of representative wireless hardware. Finally, we discuss model compression and efficient deployment, summarize the cross-cutting challenges, and outline open research directions. Our goal is to provide a reference that connects pretraining, architecture, and fine-tuning with the practical constraints of wireless systems.",
+      "topics": [
+        "Wireless Signal Modulation Classification",
+        "Indoor and Outdoor Localization Technologies",
+        "Millimeter-Wave Propagation and Modeling"
+      ],
+      "referenced_works_count": 0,
+      "related_works": [],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/bb9e492e61d504d3.json"
+    }
+  ]
+}

@@ -1,0 +1,879 @@
+{
+  "provider": "openalex",
+  "query_key": "title_author:3562684 Muhammad Farman",
+  "query_hash": "9ad6b02d0d9116e6",
+  "saved_at": "2026-08-31T07:18:38.341852+00:00",
+  "status_code": 200,
+  "candidate_count": 1,
+  "raw_response": {
+    "meta": {
+      "count": 1,
+      "db_response_time_ms": 779,
+      "page": 1,
+      "per_page": 10,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (3562684 Muhammad Farman)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "3562684 Muhammad Farman",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:3562684 Muhammad Farman&per_page=10"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W7118144092",
+        "doi": "https://doi.org/10.32604/cmes.2025.074160",
+        "title": "A Fractional-Order Study for Bicomplex Haemorrhagic Infection in Several Populations Conditions",
+        "display_name": "A Fractional-Order Study for Bicomplex Haemorrhagic Infection in Several Populations Conditions",
+        "relevance_score": 2.302226,
+        "publication_year": 2026,
+        "publication_date": "2026-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W7118144092",
+          "doi": "https://doi.org/10.32604/cmes.2025.074160"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.32604/cmes.2025.074160",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.32604/cmes.2025.074160",
+          "pdf_url": "https://cdn.techscience.press/files/CMES/2026/TSP_CMES-146-1/TSP_CMES_74160/TSP_CMES_74160.pdf",
+          "source": {
+            "id": "https://openalex.org/S92199883",
+            "display_name": "Computer Modeling in Engineering & Sciences",
+            "issn_l": "1526-1492",
+            "issn": [
+              "1526-1492",
+              "1526-1506"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4324000061",
+            "host_organization_name": "Tech Science Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4324000061"
+            ],
+            "host_organization_lineage_names": [
+              "Tech Science Press"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Computer Modeling in Engineering &amp; Sciences",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://cdn.techscience.press/files/CMES/2026/TSP_CMES-146-1/TSP_CMES_74160/TSP_CMES_74160.pdf",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5121897620",
+              "display_name": "Muhammad Farman",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I142608572",
+                "display_name": "Prince Sattam Bin Abdulaziz University",
+                "ror": "https://ror.org/04jt46d36",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I142608572"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I69050122",
+                "display_name": "Near East University",
+                "ror": "https://ror.org/02x8svs93",
+                "country_code": "CY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ],
+            "countries": [
+              "CY",
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Muhammad Farman",
+            "raw_affiliation_strings": [
+              "Faculty of Art and Sciences, Department of Mathematics, Near East University, Nicosia, 99010, Türkiye 2 Research Center of Applied Mathematics, Khazar University, Baku, AZ1096, Azerbaijan 3 Jadara University Research Center, Jadara University, Irbid, 21110, Jordan 4 School of Mathematics and Statistics, Zhengzhou University, Zhengzhou, 450001, China 5 Department of Mathematics College of Arts and Science, Prince Sattam bin Abdulaziz University, Alkharj, 16273, Saudi Arabia 6 Department of Mathematical Sciences, Saveetha School of Engineering, SIMATS, Chennai, 602105, Tamilnadu, India 7 Faculty of Engineering and Quantity Surviving, INTI International University Colleges, Nilai, 71800, Malaysia 8 Faculty of Management, Shinawatra University, Pathum Thani, 12160, Thailand"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Art and Sciences, Department of Mathematics, Near East University, Nicosia, 99010, Türkiye 2 Research Center of Applied Mathematics, Khazar University, Baku, AZ1096, Azerbaijan 3 Jadara University Research Center, Jadara University, Irbid, 21110, Jordan 4 School of Mathematics and Statistics, Zhengzhou University, Zhengzhou, 450001, China 5 Department of Mathematics College of Arts and Science, Prince Sattam bin Abdulaziz University, Alkharj, 16273, Saudi Arabia 6 Department of Mathematical Sciences, Saveetha School of Engineering, SIMATS, Chennai, 602105, Tamilnadu, India 7 Faculty of Engineering and Quantity Surviving, INTI International University Colleges, Nilai, 71800, Malaysia 8 Faculty of Management, Shinawatra University, Pathum Thani, 12160, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I142608572",
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5121890706",
+              "display_name": "Muhammad Hashir Zubair",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I142608572",
+                "display_name": "Prince Sattam Bin Abdulaziz University",
+                "ror": "https://ror.org/04jt46d36",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I142608572"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I69050122",
+                "display_name": "Near East University",
+                "ror": "https://ror.org/02x8svs93",
+                "country_code": "CY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ],
+            "countries": [
+              "CY",
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Muhammad Hashir Zubair",
+            "raw_affiliation_strings": [
+              "Faculty of Art and Sciences, Department of Mathematics, Near East University, Nicosia, 99010, Türkiye 2 Research Center of Applied Mathematics, Khazar University, Baku, AZ1096, Azerbaijan 3 Jadara University Research Center, Jadara University, Irbid, 21110, Jordan 4 School of Mathematics and Statistics, Zhengzhou University, Zhengzhou, 450001, China 5 Department of Mathematics College of Arts and Science, Prince Sattam bin Abdulaziz University, Alkharj, 16273, Saudi Arabia 6 Department of Mathematical Sciences, Saveetha School of Engineering, SIMATS, Chennai, 602105, Tamilnadu, India 7 Faculty of Engineering and Quantity Surviving, INTI International University Colleges, Nilai, 71800, Malaysia 8 Faculty of Management, Shinawatra University, Pathum Thani, 12160, Thailand"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Art and Sciences, Department of Mathematics, Near East University, Nicosia, 99010, Türkiye 2 Research Center of Applied Mathematics, Khazar University, Baku, AZ1096, Azerbaijan 3 Jadara University Research Center, Jadara University, Irbid, 21110, Jordan 4 School of Mathematics and Statistics, Zhengzhou University, Zhengzhou, 450001, China 5 Department of Mathematics College of Arts and Science, Prince Sattam bin Abdulaziz University, Alkharj, 16273, Saudi Arabia 6 Department of Mathematical Sciences, Saveetha School of Engineering, SIMATS, Chennai, 602105, Tamilnadu, India 7 Faculty of Engineering and Quantity Surviving, INTI International University Colleges, Nilai, 71800, Malaysia 8 Faculty of Management, Shinawatra University, Pathum Thani, 12160, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I142608572",
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5121885495",
+              "display_name": "Hua Li",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I142608572",
+                "display_name": "Prince Sattam Bin Abdulaziz University",
+                "ror": "https://ror.org/04jt46d36",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I142608572"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I69050122",
+                "display_name": "Near East University",
+                "ror": "https://ror.org/02x8svs93",
+                "country_code": "CY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ],
+            "countries": [
+              "CY",
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Hua Li",
+            "raw_affiliation_strings": [
+              "Faculty of Art and Sciences, Department of Mathematics, Near East University, Nicosia, 99010, Türkiye 2 Research Center of Applied Mathematics, Khazar University, Baku, AZ1096, Azerbaijan 3 Jadara University Research Center, Jadara University, Irbid, 21110, Jordan 4 School of Mathematics and Statistics, Zhengzhou University, Zhengzhou, 450001, China 5 Department of Mathematics College of Arts and Science, Prince Sattam bin Abdulaziz University, Alkharj, 16273, Saudi Arabia 6 Department of Mathematical Sciences, Saveetha School of Engineering, SIMATS, Chennai, 602105, Tamilnadu, India 7 Faculty of Engineering and Quantity Surviving, INTI International University Colleges, Nilai, 71800, Malaysia 8 Faculty of Management, Shinawatra University, Pathum Thani, 12160, Thailand"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Art and Sciences, Department of Mathematics, Near East University, Nicosia, 99010, Türkiye 2 Research Center of Applied Mathematics, Khazar University, Baku, AZ1096, Azerbaijan 3 Jadara University Research Center, Jadara University, Irbid, 21110, Jordan 4 School of Mathematics and Statistics, Zhengzhou University, Zhengzhou, 450001, China 5 Department of Mathematics College of Arts and Science, Prince Sattam bin Abdulaziz University, Alkharj, 16273, Saudi Arabia 6 Department of Mathematical Sciences, Saveetha School of Engineering, SIMATS, Chennai, 602105, Tamilnadu, India 7 Faculty of Engineering and Quantity Surviving, INTI International University Colleges, Nilai, 71800, Malaysia 8 Faculty of Management, Shinawatra University, Pathum Thani, 12160, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I142608572",
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5121907935",
+              "display_name": "Kottakkaran Sooppy Nisar",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I142608572",
+                "display_name": "Prince Sattam Bin Abdulaziz University",
+                "ror": "https://ror.org/04jt46d36",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I142608572"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I69050122",
+                "display_name": "Near East University",
+                "ror": "https://ror.org/02x8svs93",
+                "country_code": "CY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ],
+            "countries": [
+              "CY",
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Kottakkaran Sooppy Nisar",
+            "raw_affiliation_strings": [
+              "Faculty of Art and Sciences, Department of Mathematics, Near East University, Nicosia, 99010, Türkiye 2 Research Center of Applied Mathematics, Khazar University, Baku, AZ1096, Azerbaijan 3 Jadara University Research Center, Jadara University, Irbid, 21110, Jordan 4 School of Mathematics and Statistics, Zhengzhou University, Zhengzhou, 450001, China 5 Department of Mathematics College of Arts and Science, Prince Sattam bin Abdulaziz University, Alkharj, 16273, Saudi Arabia 6 Department of Mathematical Sciences, Saveetha School of Engineering, SIMATS, Chennai, 602105, Tamilnadu, India 7 Faculty of Engineering and Quantity Surviving, INTI International University Colleges, Nilai, 71800, Malaysia 8 Faculty of Management, Shinawatra University, Pathum Thani, 12160, Thailand"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Art and Sciences, Department of Mathematics, Near East University, Nicosia, 99010, Türkiye 2 Research Center of Applied Mathematics, Khazar University, Baku, AZ1096, Azerbaijan 3 Jadara University Research Center, Jadara University, Irbid, 21110, Jordan 4 School of Mathematics and Statistics, Zhengzhou University, Zhengzhou, 450001, China 5 Department of Mathematics College of Arts and Science, Prince Sattam bin Abdulaziz University, Alkharj, 16273, Saudi Arabia 6 Department of Mathematical Sciences, Saveetha School of Engineering, SIMATS, Chennai, 602105, Tamilnadu, India 7 Faculty of Engineering and Quantity Surviving, INTI International University Colleges, Nilai, 71800, Malaysia 8 Faculty of Management, Shinawatra University, Pathum Thani, 12160, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I142608572",
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5121909602",
+              "display_name": "Mohamad Hafez",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I142608572",
+                "display_name": "Prince Sattam Bin Abdulaziz University",
+                "ror": "https://ror.org/04jt46d36",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I142608572"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I69050122",
+                "display_name": "Near East University",
+                "ror": "https://ror.org/02x8svs93",
+                "country_code": "CY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ],
+            "countries": [
+              "CY",
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Mohamad Hafez",
+            "raw_affiliation_strings": [
+              "Faculty of Art and Sciences, Department of Mathematics, Near East University, Nicosia, 99010, Türkiye 2 Research Center of Applied Mathematics, Khazar University, Baku, AZ1096, Azerbaijan 3 Jadara University Research Center, Jadara University, Irbid, 21110, Jordan 4 School of Mathematics and Statistics, Zhengzhou University, Zhengzhou, 450001, China 5 Department of Mathematics College of Arts and Science, Prince Sattam bin Abdulaziz University, Alkharj, 16273, Saudi Arabia 6 Department of Mathematical Sciences, Saveetha School of Engineering, SIMATS, Chennai, 602105, Tamilnadu, India 7 Faculty of Engineering and Quantity Surviving, INTI International University Colleges, Nilai, 71800, Malaysia 8 Faculty of Management, Shinawatra University, Pathum Thani, 12160, Thailand"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Art and Sciences, Department of Mathematics, Near East University, Nicosia, 99010, Türkiye 2 Research Center of Applied Mathematics, Khazar University, Baku, AZ1096, Azerbaijan 3 Jadara University Research Center, Jadara University, Irbid, 21110, Jordan 4 School of Mathematics and Statistics, Zhengzhou University, Zhengzhou, 450001, China 5 Department of Mathematics College of Arts and Science, Prince Sattam bin Abdulaziz University, Alkharj, 16273, Saudi Arabia 6 Department of Mathematical Sciences, Saveetha School of Engineering, SIMATS, Chennai, 602105, Tamilnadu, India 7 Faculty of Engineering and Quantity Surviving, INTI International University Colleges, Nilai, 71800, Malaysia 8 Faculty of Management, Shinawatra University, Pathum Thani, 12160, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I142608572",
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 2,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.0,
+        "has_fulltext": true,
+        "cited_by_count": 0,
+        "citation_normalized_percentile": {
+          "value": 0.01114712,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": "146",
+          "issue": "1",
+          "first_page": "1",
+          "last_page": "10"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11581",
+          "display_name": "Viral Infections and Outbreaks Research",
+          "score": 0.8471999764442444,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2725",
+            "display_name": "Infectious Diseases"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11581",
+            "display_name": "Viral Infections and Outbreaks Research",
+            "score": 0.8471999764442444,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2725",
+              "display_name": "Infectious Diseases"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/27",
+              "display_name": "Medicine"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/4",
+              "display_name": "Health Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10410",
+            "display_name": "COVID-19 epidemiological studies",
+            "score": 0.027499999850988388,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10288",
+            "display_name": "Fractional Differential Equations Solutions",
+            "score": 0.02590000070631504,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/lassa-fever",
+            "display_name": "Lassa fever",
+            "score": 0.7182000279426575
+          },
+          {
+            "id": "https://openalex.org/keywords/stability",
+            "display_name": "Stability (learning theory)",
+            "score": 0.5249999761581421
+          },
+          {
+            "id": "https://openalex.org/keywords/uniqueness",
+            "display_name": "Uniqueness",
+            "score": 0.4896000027656555
+          },
+          {
+            "id": "https://openalex.org/keywords/lassa-virus",
+            "display_name": "Lassa virus",
+            "score": 0.39640000462532043
+          },
+          {
+            "id": "https://openalex.org/keywords/convergence",
+            "display_name": "Convergence (economics)",
+            "score": 0.3961000144481659
+          },
+          {
+            "id": "https://openalex.org/keywords/kernel",
+            "display_name": "Kernel (algebra)",
+            "score": 0.37689998745918274
+          },
+          {
+            "id": "https://openalex.org/keywords/a-priori-and-a-posteriori",
+            "display_name": "A priori and a posteriori",
+            "score": 0.3709999918937683
+          },
+          {
+            "id": "https://openalex.org/keywords/epidemic-model",
+            "display_name": "Epidemic model",
+            "score": 0.35580000281333923
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2780023225",
+            "wikidata": "https://www.wikidata.org/wiki/Q706845",
+            "display_name": "Lassa fever",
+            "level": 3,
+            "score": 0.7182000279426575
+          },
+          {
+            "id": "https://openalex.org/C112972136",
+            "wikidata": "https://www.wikidata.org/wiki/Q7595718",
+            "display_name": "Stability (learning theory)",
+            "level": 2,
+            "score": 0.5249999761581421
+          },
+          {
+            "id": "https://openalex.org/C2777021972",
+            "wikidata": "https://www.wikidata.org/wiki/Q22976830",
+            "display_name": "Uniqueness",
+            "level": 2,
+            "score": 0.4896000027656555
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.40959998965263367
+          },
+          {
+            "id": "https://openalex.org/C2777427142",
+            "wikidata": "https://www.wikidata.org/wiki/Q24719561",
+            "display_name": "Lassa virus",
+            "level": 3,
+            "score": 0.39640000462532043
+          },
+          {
+            "id": "https://openalex.org/C2777303404",
+            "wikidata": "https://www.wikidata.org/wiki/Q759757",
+            "display_name": "Convergence (economics)",
+            "level": 2,
+            "score": 0.3961000144481659
+          },
+          {
+            "id": "https://openalex.org/C28826006",
+            "wikidata": "https://www.wikidata.org/wiki/Q33521",
+            "display_name": "Applied mathematics",
+            "level": 1,
+            "score": 0.38269999623298645
+          },
+          {
+            "id": "https://openalex.org/C74193536",
+            "wikidata": "https://www.wikidata.org/wiki/Q574844",
+            "display_name": "Kernel (algebra)",
+            "level": 2,
+            "score": 0.37689998745918274
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.3747999966144562
+          },
+          {
+            "id": "https://openalex.org/C75553542",
+            "wikidata": "https://www.wikidata.org/wiki/Q178161",
+            "display_name": "A priori and a posteriori",
+            "level": 2,
+            "score": 0.3709999918937683
+          },
+          {
+            "id": "https://openalex.org/C1627819",
+            "wikidata": "https://www.wikidata.org/wiki/Q2572354",
+            "display_name": "Epidemic model",
+            "level": 3,
+            "score": 0.35580000281333923
+          },
+          {
+            "id": "https://openalex.org/C60640748",
+            "wikidata": "https://www.wikidata.org/wiki/Q2337858",
+            "display_name": "Lyapunov function",
+            "level": 3,
+            "score": 0.3280999958515167
+          },
+          {
+            "id": "https://openalex.org/C159047783",
+            "wikidata": "https://www.wikidata.org/wiki/Q7215",
+            "display_name": "Virology",
+            "level": 1,
+            "score": 0.32589998841285706
+          },
+          {
+            "id": "https://openalex.org/C126255220",
+            "wikidata": "https://www.wikidata.org/wiki/Q141495",
+            "display_name": "Mathematical optimization",
+            "level": 1,
+            "score": 0.3183000087738037
+          },
+          {
+            "id": "https://openalex.org/C41949839",
+            "wikidata": "https://www.wikidata.org/wiki/Q1756677",
+            "display_name": "Stability theory",
+            "level": 3,
+            "score": 0.31790000200271606
+          },
+          {
+            "id": "https://openalex.org/C2779574689",
+            "wikidata": "https://www.wikidata.org/wiki/Q2368907",
+            "display_name": "Arenavirus",
+            "level": 5,
+            "score": 0.30559998750686646
+          },
+          {
+            "id": "https://openalex.org/C2908647359",
+            "wikidata": "https://www.wikidata.org/wiki/Q2625603",
+            "display_name": "Population",
+            "level": 2,
+            "score": 0.29280000925064087
+          },
+          {
+            "id": "https://openalex.org/C2776430180",
+            "wikidata": "https://www.wikidata.org/wiki/Q162272",
+            "display_name": "Viral hemorrhagic fever",
+            "level": 4,
+            "score": 0.29120001196861267
+          },
+          {
+            "id": "https://openalex.org/C2779134260",
+            "wikidata": "https://www.wikidata.org/wiki/Q12136",
+            "display_name": "Disease",
+            "level": 2,
+            "score": 0.2892000079154968
+          },
+          {
+            "id": "https://openalex.org/C192209626",
+            "wikidata": "https://www.wikidata.org/wiki/Q190909",
+            "display_name": "Focus (optics)",
+            "level": 2,
+            "score": 0.2800999879837036
+          },
+          {
+            "id": "https://openalex.org/C154249771",
+            "wikidata": "https://www.wikidata.org/wiki/Q1339058",
+            "display_name": "Fractional calculus",
+            "level": 2,
+            "score": 0.2786000072956085
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.2777000069618225
+          },
+          {
+            "id": "https://openalex.org/C86803240",
+            "wikidata": "https://www.wikidata.org/wiki/Q420",
+            "display_name": "Biology",
+            "level": 0,
+            "score": 0.25949999690055847
+          },
+          {
+            "id": "https://openalex.org/C22324862",
+            "wikidata": "https://www.wikidata.org/wiki/Q652707",
+            "display_name": "Lipschitz continuity",
+            "level": 2,
+            "score": 0.251800000667572
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.32604/cmes.2025.074160",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.32604/cmes.2025.074160",
+            "pdf_url": "https://cdn.techscience.press/files/CMES/2026/TSP_CMES-146-1/TSP_CMES_74160/TSP_CMES_74160.pdf",
+            "source": {
+              "id": "https://openalex.org/S92199883",
+              "display_name": "Computer Modeling in Engineering & Sciences",
+              "issn_l": "1526-1492",
+              "issn": [
+                "1526-1492",
+                "1526-1506"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4324000061",
+              "host_organization_name": "Tech Science Press",
+              "host_organization_lineage": [
+                "https://openalex.org/P4324000061"
+              ],
+              "host_organization_lineage_names": [
+                "Tech Science Press"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Computer Modeling in Engineering &amp; Sciences",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.32604/cmes.2025.074160",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.32604/cmes.2025.074160",
+          "pdf_url": "https://cdn.techscience.press/files/CMES/2026/TSP_CMES-146-1/TSP_CMES_74160/TSP_CMES_74160.pdf",
+          "source": {
+            "id": "https://openalex.org/S92199883",
+            "display_name": "Computer Modeling in Engineering & Sciences",
+            "issn_l": "1526-1492",
+            "issn": [
+              "1526-1492",
+              "1526-1506"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4324000061",
+            "host_organization_name": "Tech Science Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4324000061"
+            ],
+            "host_organization_lineage_names": [
+              "Tech Science Press"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Computer Modeling in Engineering &amp; Sciences",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "display_name": "Good health and well-being",
+            "id": "https://metadata.un.org/sdg/3",
+            "score": 0.8029013276100159
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W7118144092.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W7118144092.grobid-xml"
+        },
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "Lassa": [
+            0,
+            29
+          ],
+          "Fever": [
+            1
+          ],
+          "(LF)": [
+            2
+          ],
+          "is": [
+            3,
+            12
+          ],
+          "a": [
+            4,
+            25
+          ],
+          "viral": [
+            5
+          ],
+          "hemorrhagic": [
+            6
+          ],
+          "illness": [
+            7
+          ],
+          "transmitted": [
+            8
+          ],
+          "via": [
+            9
+          ],
+          "rodents": [
+            10
+          ],
+          "and": [
+            11,
+            38
+          ],
+          "endemic": [
+            13
+          ],
+          "in": [
+            14
+          ],
+          "West": [
+            15
+          ],
+          "Africa,": [
+            16
+          ],
+          "causing": [
+            17
+          ],
+          "thousands": [
+            18
+          ],
+          "of": [
+            19,
+            28
+          ],
+          "deaths": [
+            20
+          ],
+          "annually.": [
+            21
+          ],
+          "This": [
+            22
+          ],
+          "study": [
+            23
+          ],
+          "develops": [
+            24
+          ],
+          "dynamic": [
+            26
+          ],
+          "model": [
+            27
+          ],
+          "virus": [
+            30
+          ],
+          "transmission,": [
+            31
+          ],
+          "capturing": [
+            32
+          ],
+          "the": [
+            33,
+            41
+          ],
+          "progr...": [
+            34
+          ],
+          "|": [
+            35
+          ],
+          "Find,": [
+            36
+          ],
+          "read": [
+            37
+          ],
+          "cite": [
+            39
+          ],
+          "all": [
+            40
+          ],
+          "research": [
+            42
+          ],
+          "you": [
+            43
+          ],
+          "need": [
+            44
+          ],
+          "on": [
+            45
+          ],
+          "Tech": [
+            46
+          ],
+          "Science": [
+            47
+          ],
+          "Press": [
+            48
+          ]
+        },
+        "counts_by_year": [],
+        "updated_date": "2026-08-21T09:56:20.448147",
+        "created_date": "2026-01-04T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}
