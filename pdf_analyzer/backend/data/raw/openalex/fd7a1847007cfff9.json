@@ -1,0 +1,1421 @@
+{
+  "provider": "openalex",
+  "query_key": "raw:G. M. Vijayalakshmi., P. Roselyn Besi., ABC fractional order vaccination model for COVID-19 with self-productive measures. 8",
+  "query_hash": "fd7a1847007cfff9",
+  "saved_at": "2026-09-02T10:42:01.741555+00:00",
+  "status_code": 200,
+  "candidate_count": 1,
+  "raw_response": {
+    "meta": {
+      "count": 1,
+      "db_response_time_ms": 456,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (G. M. Vijayalakshmi. P. Roselyn Besi. ABC fractional order vaccination model for COVID-19 with self-productive measures. 8)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "G. M. Vijayalakshmi. P. Roselyn Besi. ABC fractional order vaccination model for COVID-19 with self-productive measures. 8",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:G. M. Vijayalakshmi. P. Roselyn Besi. ABC fractional order vaccination model for COVID-19 with self-productive measures. 8&per_page=5"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4390663269",
+        "doi": "https://doi.org/10.1002/oca.3093",
+        "title": "Fractional commensurate model on COVID‐19 with microbial co‐infection: An optimal control analysis",
+        "display_name": "Fractional commensurate model on COVID‐19 with microbial co‐infection: An optimal control analysis",
+        "relevance_score": 125.52359,
+        "publication_year": 2024,
+        "publication_date": "2024-01-08",
+        "ids": {
+          "openalex": "https://openalex.org/W4390663269",
+          "doi": "https://doi.org/10.1002/oca.3093"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1002/oca.3093",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1002/oca.3093",
+          "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/oca.3093",
+          "source": {
+            "id": "https://openalex.org/S92282528",
+            "display_name": "Optimal Control Applications and Methods",
+            "issn_l": "0143-2087",
+            "issn": [
+              "0143-2087",
+              "1099-1514"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc",
+          "license_id": "https://openalex.org/licenses/cc-by-nc",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Optimal Control Applications and Methods",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/oca.3093",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5112331538",
+              "display_name": "G. M. Vijayalakshmi",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I1330855593",
+                "display_name": "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology",
+                "ror": "https://ror.org/05bc5bx80",
+                "country_code": "IN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I1330855593"
+                ]
+              }
+            ],
+            "countries": [
+              "IN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "G. M. Vijayalakshmi",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, school of Science and Humanities Vel Tech Rangarajan Dr. Sagunthala R&amp;D Institute of Science and Technology  Chennai Tamilnadu India",
+              "Department of Mathematics, school of Science and Humanities, Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai, Tamilnadu, India"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, school of Science and Humanities Vel Tech Rangarajan Dr. Sagunthala R&amp;D Institute of Science and Technology  Chennai Tamilnadu India",
+                "institution_ids": [
+                  "https://openalex.org/I1330855593"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Mathematics, school of Science and Humanities, Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai, Tamilnadu, India",
+                "institution_ids": [
+                  "https://openalex.org/I1330855593"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5007657158",
+              "display_name": "P. Roselyn Besi",
+              "orcid": "https://orcid.org/0000-0002-3486-7054"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I1330855593",
+                "display_name": "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology",
+                "ror": "https://ror.org/05bc5bx80",
+                "country_code": "IN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I1330855593"
+                ]
+              }
+            ],
+            "countries": [
+              "IN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "P. Roselyn Besi",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, school of Science and Humanities Vel Tech Rangarajan Dr. Sagunthala R&amp;D Institute of Science and Technology  Chennai Tamilnadu India",
+              "Department of Mathematics, school of Science and Humanities, Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai, Tamilnadu, India"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, school of Science and Humanities Vel Tech Rangarajan Dr. Sagunthala R&amp;D Institute of Science and Technology  Chennai Tamilnadu India",
+                "institution_ids": [
+                  "https://openalex.org/I1330855593"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Mathematics, school of Science and Humanities, Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai, Tamilnadu, India",
+                "institution_ids": [
+                  "https://openalex.org/I1330855593"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": null,
+              "display_name": "Ali Akgül",
+              "orcid": "https://orcid.org/0009-0005-2986-5408"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I149717392",
+                "display_name": "Siirt Üniversitesi",
+                "ror": "https://ror.org/05ptwtz25",
+                "country_code": "TR",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I149717392"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I56306041",
+                "display_name": "Lebanese American University",
+                "ror": "https://ror.org/00hqkan37",
+                "country_code": "LB",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I56306041"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I69050122",
+                "display_name": "Near East University",
+                "ror": "https://ror.org/02x8svs93",
+                "country_code": "CY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ],
+            "countries": [
+              "CY",
+              "LB",
+              "TR"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Ali Akgül",
+            "raw_affiliation_strings": [
+              "Department of Computer Science and Mathematics Lebanese American University  Beirut Lebanon",
+              "Department of Mathematics, Art and Science Faculty Siirt University  Siirt Turkey",
+              "Department of Mathematics, Mathematics Research Center Near East University  Mersin Turkey",
+              "Department of Computer Science and Mathematics, Lebanese American University, Beirut, Lebanon",
+              "Department of Mathematics, Art and Science Faculty, Siirt University, Siirt, Turkey",
+              "Department of Mathematics, Mathematics Research Center, Near East University, Mersin, Turkey"
+            ],
+            "raw_orcid": "https://orcid.org/0009-0005-2986-5408",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Computer Science and Mathematics Lebanese American University  Beirut Lebanon",
+                "institution_ids": [
+                  "https://openalex.org/I56306041"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Mathematics, Art and Science Faculty Siirt University  Siirt Turkey",
+                "institution_ids": [
+                  "https://openalex.org/I149717392"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Mathematics, Mathematics Research Center Near East University  Mersin Turkey",
+                "institution_ids": [
+                  "https://openalex.org/I69050122"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Computer Science and Mathematics, Lebanese American University, Beirut, Lebanon",
+                "institution_ids": [
+                  "https://openalex.org/I56306041"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Mathematics, Art and Science Faculty, Siirt University, Siirt, Turkey",
+                "institution_ids": [
+                  "https://openalex.org/I149717392"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Mathematics, Mathematics Research Center, Near East University, Mersin, Turkey",
+                "institution_ids": [
+                  "https://openalex.org/I69050122"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 4,
+        "institutions_distinct_count": 4,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I149717392",
+          "https://openalex.org/I56306041",
+          "https://openalex.org/I69050122"
+        ],
+        "apc_list": {
+          "value": 4020,
+          "currency": "USD",
+          "value_usd": 4020
+        },
+        "apc_paid": {
+          "value": 4020,
+          "currency": "USD",
+          "value_usd": 4020
+        },
+        "fwci": 2.6254,
+        "has_fulltext": true,
+        "cited_by_count": 9,
+        "citation_normalized_percentile": {
+          "value": 0.888661,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 94,
+          "max": 98
+        },
+        "biblio": {
+          "volume": "45",
+          "issue": "3",
+          "first_page": "1108",
+          "last_page": "1121"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10288",
+          "display_name": "Fractional Differential Equations Solutions",
+          "score": 0.9987000226974487,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2611",
+            "display_name": "Modeling and Simulation"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/26",
+            "display_name": "Mathematics"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10288",
+            "display_name": "Fractional Differential Equations Solutions",
+            "score": 0.9987000226974487,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10410",
+            "display_name": "COVID-19 epidemiological studies",
+            "score": 0.9969000220298767,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10118",
+            "display_name": "SARS-CoV-2 and COVID-19 Research",
+            "score": 0.9887999892234802,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2725",
+              "display_name": "Infectious Diseases"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/27",
+              "display_name": "Medicine"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/4",
+              "display_name": "Health Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/mathematics",
+            "display_name": "Mathematics",
+            "score": 0.5425262451171875
+          },
+          {
+            "id": "https://openalex.org/keywords/allee-effect",
+            "display_name": "Allee effect",
+            "score": 0.5185868740081787
+          },
+          {
+            "id": "https://openalex.org/keywords/epidemic-model",
+            "display_name": "Epidemic model",
+            "score": 0.5010504722595215
+          },
+          {
+            "id": "https://openalex.org/keywords/lyapunov-function",
+            "display_name": "Lyapunov function",
+            "score": 0.4984629154205322
+          },
+          {
+            "id": "https://openalex.org/keywords/population",
+            "display_name": "Population",
+            "score": 0.4744894504547119
+          },
+          {
+            "id": "https://openalex.org/keywords/applied-mathematics",
+            "display_name": "Applied mathematics",
+            "score": 0.4439987242221832
+          },
+          {
+            "id": "https://openalex.org/keywords/biology",
+            "display_name": "Biology",
+            "score": 0.33423030376434326
+          },
+          {
+            "id": "https://openalex.org/keywords/medicine",
+            "display_name": "Medicine",
+            "score": 0.2811811864376068
+          },
+          {
+            "id": "https://openalex.org/keywords/environmental-health",
+            "display_name": "Environmental health",
+            "score": 0.14279162883758545
+          },
+          {
+            "id": "https://openalex.org/keywords/physics",
+            "display_name": "Physics",
+            "score": 0.11298289895057678
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.5425262451171875
+          },
+          {
+            "id": "https://openalex.org/C10958125",
+            "wikidata": "https://www.wikidata.org/wiki/Q2301505",
+            "display_name": "Allee effect",
+            "level": 3,
+            "score": 0.5185868740081787
+          },
+          {
+            "id": "https://openalex.org/C1627819",
+            "wikidata": "https://www.wikidata.org/wiki/Q2572354",
+            "display_name": "Epidemic model",
+            "level": 3,
+            "score": 0.5010504722595215
+          },
+          {
+            "id": "https://openalex.org/C60640748",
+            "wikidata": "https://www.wikidata.org/wiki/Q2337858",
+            "display_name": "Lyapunov function",
+            "level": 3,
+            "score": 0.4984629154205322
+          },
+          {
+            "id": "https://openalex.org/C2908647359",
+            "wikidata": "https://www.wikidata.org/wiki/Q2625603",
+            "display_name": "Population",
+            "level": 2,
+            "score": 0.4744894504547119
+          },
+          {
+            "id": "https://openalex.org/C28826006",
+            "wikidata": "https://www.wikidata.org/wiki/Q33521",
+            "display_name": "Applied mathematics",
+            "level": 1,
+            "score": 0.4439987242221832
+          },
+          {
+            "id": "https://openalex.org/C86803240",
+            "wikidata": "https://www.wikidata.org/wiki/Q420",
+            "display_name": "Biology",
+            "level": 0,
+            "score": 0.33423030376434326
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.2811811864376068
+          },
+          {
+            "id": "https://openalex.org/C99454951",
+            "wikidata": "https://www.wikidata.org/wiki/Q932068",
+            "display_name": "Environmental health",
+            "level": 1,
+            "score": 0.14279162883758545
+          },
+          {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.11298289895057678
+          },
+          {
+            "id": "https://openalex.org/C62520636",
+            "wikidata": "https://www.wikidata.org/wiki/Q944",
+            "display_name": "Quantum mechanics",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C158622935",
+            "wikidata": "https://www.wikidata.org/wiki/Q660848",
+            "display_name": "Nonlinear system",
+            "level": 2,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.1002/oca.3093",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1002/oca.3093",
+            "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/oca.3093",
+            "source": {
+              "id": "https://openalex.org/S92282528",
+              "display_name": "Optimal Control Applications and Methods",
+              "issn_l": "0143-2087",
+              "issn": [
+                "0143-2087",
+                "1099-1514"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320595",
+              "host_organization_name": "Wiley",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320595"
+              ],
+              "host_organization_lineage_names": [
+                "Wiley"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by-nc",
+            "license_id": "https://openalex.org/licenses/cc-by-nc",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Optimal Control Applications and Methods",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1002/oca.3093",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1002/oca.3093",
+          "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/oca.3093",
+          "source": {
+            "id": "https://openalex.org/S92282528",
+            "display_name": "Optimal Control Applications and Methods",
+            "issn_l": "0143-2087",
+            "issn": [
+              "0143-2087",
+              "1099-1514"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc",
+          "license_id": "https://openalex.org/licenses/cc-by-nc",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Optimal Control Applications and Methods",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.8500000238418579,
+            "display_name": "Good health and well-being",
+            "id": "https://metadata.un.org/sdg/3"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4390663269.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4390663269.grobid-xml"
+        },
+        "referenced_works_count": 46,
+        "referenced_works": [
+          "https://openalex.org/W1553338987",
+          "https://openalex.org/W1662782990",
+          "https://openalex.org/W2062163287",
+          "https://openalex.org/W2148301044",
+          "https://openalex.org/W2160371604",
+          "https://openalex.org/W3002108456",
+          "https://openalex.org/W3004318991",
+          "https://openalex.org/W3018099102",
+          "https://openalex.org/W3097077756",
+          "https://openalex.org/W3170919069",
+          "https://openalex.org/W3177749336",
+          "https://openalex.org/W3207093090",
+          "https://openalex.org/W3210455201",
+          "https://openalex.org/W4200389663",
+          "https://openalex.org/W4200390946",
+          "https://openalex.org/W4205596256",
+          "https://openalex.org/W4205680452",
+          "https://openalex.org/W4206728043",
+          "https://openalex.org/W4214652678",
+          "https://openalex.org/W4221038131",
+          "https://openalex.org/W4224263494",
+          "https://openalex.org/W4225159386",
+          "https://openalex.org/W4280526816",
+          "https://openalex.org/W4283314879",
+          "https://openalex.org/W4286884481",
+          "https://openalex.org/W4292236752",
+          "https://openalex.org/W4293537889",
+          "https://openalex.org/W4300980900",
+          "https://openalex.org/W4306893737",
+          "https://openalex.org/W4308582138",
+          "https://openalex.org/W4313568182",
+          "https://openalex.org/W4316042090",
+          "https://openalex.org/W4317743338",
+          "https://openalex.org/W4364380723",
+          "https://openalex.org/W4367594355",
+          "https://openalex.org/W4367835735",
+          "https://openalex.org/W4379233399",
+          "https://openalex.org/W4379534080",
+          "https://openalex.org/W4379537031",
+          "https://openalex.org/W4380359289",
+          "https://openalex.org/W4380738082",
+          "https://openalex.org/W4382884875",
+          "https://openalex.org/W4385278119",
+          "https://openalex.org/W4385330831",
+          "https://openalex.org/W4386074170",
+          "https://openalex.org/W7056707242"
+        ],
+        "related_works": [
+          "https://openalex.org/W2735032095",
+          "https://openalex.org/W2107190886",
+          "https://openalex.org/W2187747741",
+          "https://openalex.org/W2774394389",
+          "https://openalex.org/W8757030",
+          "https://openalex.org/W2555117577",
+          "https://openalex.org/W2382293748",
+          "https://openalex.org/W3195354540",
+          "https://openalex.org/W3029978767",
+          "https://openalex.org/W2829041456"
+        ],
+        "abstract_inverted_index": {
+          "Abstract": [
+            0
+          ],
+          "Crossover": [
+            1
+          ],
+          "behaviors": [
+            2
+          ],
+          "have": [
+            3
+          ],
+          "always": [
+            4
+          ],
+          "existed": [
+            5
+          ],
+          "in": [
+            6,
+            46,
+            62,
+            123,
+            169,
+            210,
+            231,
+            267
+          ],
+          "the": [
+            7,
+            25,
+            29,
+            36,
+            58,
+            73,
+            77,
+            89,
+            99,
+            106,
+            116,
+            136,
+            145,
+            152,
+            156,
+            166,
+            179,
+            191,
+            203,
+            232,
+            235,
+            256,
+            269,
+            284,
+            305,
+            309
+          ],
+          "history": [
+            8,
+            75
+          ],
+          "of": [
+            9,
+            28,
+            48,
+            60,
+            76,
+            110,
+            131,
+            215,
+            224,
+            234,
+            246,
+            259,
+            263,
+            271,
+            283,
+            292
+          ],
+          "infectious": [
+            10
+          ],
+          "pandemics": [
+            11
+          ],
+          "due": [
+            12,
+            237
+          ],
+          "to": [
+            13,
+            23,
+            164,
+            189,
+            212,
+            238
+          ],
+          "a": [
+            14,
+            279
+          ],
+          "few": [
+            15
+          ],
+          "distinct,": [
+            16
+          ],
+          "erratic": [
+            17
+          ],
+          "spread": [
+            18,
+            158
+          ],
+          "outlines.": [
+            19
+          ],
+          "This": [
+            20
+          ],
+          "research": [
+            21
+          ],
+          "aims": [
+            22
+          ],
+          "investigate": [
+            24,
+            165
+          ],
+          "crossover": [
+            26
+          ],
+          "behavior": [
+            27
+          ],
+          "proposed": [
+            30
+          ],
+          "SVICR": [
+            31,
+            92,
+            204
+          ],
+          "commensurate": [
+            32
+          ],
+          "fractional": [
+            33,
+            53
+          ],
+          "model": [
+            34,
+            45,
+            93,
+            205
+          ],
+          "for": [
+            35,
+            182,
+            202,
+            289
+          ],
+          "COVID‐19": [
+            37,
+            64,
+            170,
+            186,
+            264
+          ],
+          "delta": [
+            38
+          ],
+          "variant,": [
+            39
+          ],
+          "considering": [
+            40
+          ],
+          "microbial": [
+            41,
+            68
+          ],
+          "coinfections.": [
+            42
+          ],
+          "A": [
+            43
+          ],
+          "mathematical": [
+            44
+          ],
+          "terms": [
+            47
+          ],
+          "Atangana–Baleanu": [
+            49
+          ],
+          "Caputo": [
+            50
+          ],
+          "(ABC)": [
+            51
+          ],
+          "category": [
+            52
+          ],
+          "integrals": [
+            54
+          ],
+          "takes": [
+            55
+          ],
+          "into": [
+            56
+          ],
+          "account": [
+            57
+          ],
+          "co‐infection": [
+            59
+          ],
+          "mucormycosis": [
+            61,
+            260
+          ],
+          "immunocompromised": [
+            63
+          ],
+          "patients": [
+            65,
+            171
+          ],
+          "caused": [
+            66
+          ],
+          "by": [
+            67,
+            115,
+            206
+          ],
+          "infections.": [
+            69
+          ],
+          "ABC": [
+            70
+          ],
+          "operators": [
+            71
+          ],
+          "preserve": [
+            72
+          ],
+          "intact": [
+            74
+          ],
+          "happenings": [
+            78
+          ],
+          "under": [
+            79
+          ],
+          "contemplation": [
+            80
+          ],
+          "through": [
+            81,
+            144,
+            243
+          ],
+          "its": [
+            82
+          ],
+          "nonsingular": [
+            83
+          ],
+          "kernel.": [
+            84
+          ],
+          "It": [
+            85
+          ],
+          "is": [
+            86,
+            94,
+            121,
+            142,
+            163,
+            178,
+            199,
+            241,
+            287
+          ],
+          "observed": [
+            87
+          ],
+          "that": [
+            88,
+            297
+          ],
+          "framed": [
+            90
+          ],
+          "five‐compartmental": [
+            91
+          ],
+          "positively": [
+            95
+          ],
+          "bounded": [
+            96
+          ],
+          "on": [
+            97
+          ],
+          "R5,": [
+            98
+          ],
+          "solution": [
+            100
+          ],
+          "space.": [
+            101
+          ],
+          "Two": [
+            102
+          ],
+          "equilibrium": [
+            103
+          ],
+          "points": [
+            104
+          ],
+          "representing": [
+            105
+          ],
+          "survival": [
+            107
+          ],
+          "and": [
+            108,
+            221,
+            249,
+            261
+          ],
+          "annihilation": [
+            109
+          ],
+          "sickness": [
+            111
+          ],
+          "respectively": [
+            112
+          ],
+          "are": [
+            113,
+            274
+          ],
+          "contributed": [
+            114
+          ],
+          "single": [
+            117
+          ],
+          "population": [
+            118
+          ],
+          "N(t),": [
+            119
+          ],
+          "which": [
+            120
+          ],
+          "counted": [
+            122
+          ],
+          "five": [
+            124
+          ],
+          "dependent": [
+            125
+          ],
+          "compartments:": [
+            126
+          ],
+          "The": [
+            127,
+            160,
+            229
+          ],
+          "bilinear": [
+            128
+          ],
+          "growth": [
+            129
+          ],
+          "rate": [
+            130
+          ],
+          "new": [
+            132
+          ],
+          "additional": [
+            133
+          ],
+          "infections": [
+            134,
+            262
+          ],
+          "from": [
+            135,
+            255
+          ],
+          "contagious": [
+            137
+          ],
+          "infectives": [
+            138
+          ],
+          "over": [
+            139,
+            155
+          ],
+          "time": [
+            140
+          ],
+          "‘t’": [
+            141
+          ],
+          "viewed": [
+            143
+          ],
+          "threshold": [
+            146
+          ],
+          "metric": [
+            147
+          ],
+          "Lyapunov's": [
+            148
+          ],
+          "stability": [
+            149
+          ],
+          "function": [
+            150
+          ],
+          "examines": [
+            151
+          ],
+          "parametric": [
+            153,
+            253
+          ],
+          "influences": [
+            154
+          ],
+          "virulent": [
+            157
+          ],
+          "globally.": [
+            159
+          ],
+          "significant": [
+            161
+          ],
+          "focus": [
+            162
+          ],
+          "Mucormycosis": [
+            167
+          ],
+          "cases": [
+            168,
+            266
+          ],
+          "with": [
+            172,
+            308
+          ],
+          "underlying": [
+            173
+          ],
+          "diabetic": [
+            174,
+            227
+          ],
+          "complications.": [
+            175
+          ],
+          "Diabetes": [
+            176
+          ],
+          "mellitus": [
+            177
+          ],
+          "major": [
+            180
+          ],
+          "concern": [
+            181
+          ],
+          "several": [
+            183
+          ],
+          "coinfections": [
+            184
+          ],
+          "among": [
+            185
+          ],
+          "recoveries.": [
+            187
+          ],
+          "Aiming": [
+            188
+          ],
+          "minimalize": [
+            190
+          ],
+          "critical": [
+            192
+          ],
+          "states,": [
+            193
+          ],
+          "an": [
+            194
+          ],
+          "Lagrangian–Hamiltonian": [
+            195
+          ],
+          "optimum": [
+            196
+          ],
+          "control": [
+            197,
+            208,
+            223,
+            272,
+            293,
+            299
+          ],
+          "structure": [
+            198
+          ],
+          "also": [
+            200
+          ],
+          "performed": [
+            201
+          ],
+          "introducing": [
+            207
+          ],
+          "variables": [
+            209
+          ],
+          "effect": [
+            211
+          ],
+          "tri‐control": [
+            213
+          ],
+          "probes": [
+            214
+          ],
+          "minimized": [
+            216
+          ],
+          "contact": [
+            217
+          ],
+          "rates,": [
+            218
+          ],
+          "persuasive": [
+            219
+          ],
+          "vaccinations,": [
+            220
+          ],
+          "glycemic": [
+            222
+          ],
+          "post": [
+            225
+          ],
+          "recovered": [
+            226
+          ],
+          "patients.": [
+            228
+          ],
+          "hike": [
+            230
+          ],
+          "Severity": [
+            233
+          ],
+          "ailment": [
+            236
+          ],
+          "fungal": [
+            239
+          ],
+          "pathogens": [
+            240
+          ],
+          "studied": [
+            242
+          ],
+          "numerical": [
+            244
+          ],
+          "convergence": [
+            245
+          ],
+          "predictor–corrector": [
+            247
+          ],
+          "scheme": [
+            248
+          ],
+          "simulations.": [
+            250
+          ],
+          "Using": [
+            251
+          ],
+          "estimated": [
+            252
+          ],
+          "values": [
+            254
+          ],
+          "statistical": [
+            257
+          ],
+          "data": [
+            258
+          ],
+          "reported": [
+            265
+          ],
+          "India,": [
+            268
+          ],
+          "prominence": [
+            270
+          ],
+          "effects": [
+            273
+          ],
+          "visualized": [
+            275
+          ],
+          "graphically.": [
+            276
+          ],
+          "To": [
+            277
+          ],
+          "conclude,": [
+            278
+          ],
+          "complete": [
+            280
+          ],
+          "qualitative": [
+            281
+          ],
+          "analysis": [
+            282
+          ],
+          "minimization": [
+            285
+          ],
+          "problem": [
+            286
+          ],
+          "executed": [
+            288
+          ],
+          "different": [
+            290
+          ],
+          "levels": [
+            291
+          ],
+          "values.": [
+            294
+          ],
+          "We": [
+            295
+          ],
+          "avow": [
+            296
+          ],
+          "effective": [
+            298
+          ],
+          "intrusions": [
+            300
+          ],
+          "would": [
+            301
+          ],
+          "almost": [
+            302
+          ],
+          "certainly": [
+            303
+          ],
+          "decline": [
+            304
+          ],
+          "complexities": [
+            306
+          ],
+          "associated": [
+            307
+          ],
+          "viral": [
+            310
+          ],
+          "pathogens.": [
+            311
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ],
+        "updated_date": "2026-08-21T09:56:20.448147",
+        "created_date": "2025-10-10T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}

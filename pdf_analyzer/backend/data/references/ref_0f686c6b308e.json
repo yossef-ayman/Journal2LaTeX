@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_0f686c6b308e",
-  "project_id": "project_20260831_081840_857bd2f2",
-  "created_at": "2026-08-31T08:19:53.996650+00:00",
+  "project_id": "project_20260903_113352_bb902af0",
+  "created_at": "2026-09-03T11:35:04.977147+00:00",
   "input": {
     "original_text": "Hussain, Z., Griffiths, M. D., The associations between problematic social networking site use and sleep quality, attention-deficit hyperactivity disorder, depression, anxiety and stress. International Journal of Mental Health and Addiction. (2019) 1–15.",
     "parsed": {
@@ -95,13 +95,13 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.14,
+        "confidence": 0.0,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -245,16 +245,16 @@
   ],
   "sources": {
     "openalex": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.14,
+      "confidence": 0.0,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": "data/raw/openalex/6533b3ce33db4ea9.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -336,83 +336,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1021/acscentsci.7b00028",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1161/circulationaha.110.971119",
-        "reason": "Metadata mismatch (title_sim=0.18, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1371/journal.pone.0139981",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1186/1477-3155-8-1",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1021/cr200176r",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1074/jbc.m409699200",
-        "reason": "Metadata mismatch (title_sim=0.10, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2337/dc14-1140",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2337/diabetes.49.5.741",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1101/cshperspect.a006627",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.4324/9780203495360",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -420,94 +349,23 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1021/acscentsci.7b00028",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1161/circulationaha.110.971119",
-        "reason": "Metadata mismatch (title_sim=0.18, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1371/journal.pone.0139981",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1186/1477-3155-8-1",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1021/cr200176r",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1074/jbc.m409699200",
-        "reason": "Metadata mismatch (title_sim=0.10, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2337/dc14-1140",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2337/diabetes.49.5.741",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1101/cshperspect.a006627",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.4324/9780203495360",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
       "google_scholar",
-      "openalex",
-      "crossref"
+      "crossref",
+      "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.84,
-      "openalex": 46589.01,
-      "crossref": 46031.01
+      "google_scholar": 7.2,
+      "crossref": 47613.76,
+      "openalex": 63355.32
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "openalex": 10,
-      "crossref": 0
+      "crossref": 0,
+      "openalex": 0
     },
     "errors": {}
   }

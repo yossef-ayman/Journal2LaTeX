@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_9f6e5ac173b5",
-  "project_id": "project_20260831_081840_857bd2f2",
-  "created_at": "2026-08-31T08:20:18.043059+00:00",
+  "project_id": "project_20260903_113352_bb902af0",
+  "created_at": "2026-09-03T11:35:13.402491+00:00",
   "input": {
     "original_text": "Samad, S.A., Islam, M.T., Tomal, S.T.H., Biswas, M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh. Int. J. Sci. Manag. Stud. 3(2) (2020) 36–48.",
     "parsed": {
@@ -42,10 +42,10 @@
   },
   "canonical": {
     "title": {
-      "value": "36–48",
-      "source": "google_scholar",
-      "confidence": 1.0,
-      "verification_status": "verified"
+      "value": "GENESIS 36–48",
+      "source": "crossref",
+      "confidence": 0.51,
+      "verification_status": "unverified"
     },
     "year": {
       "value": 2020,
@@ -80,8 +80,8 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.0,
-        "verification_status": "missing"
+        "confidence": 0.2,
+        "verification_status": "conflict"
       },
       "openalex_id": {
         "value": null,
@@ -115,10 +115,10 @@
       }
     },
     "citation_counts": {
-      "canonical_value": null,
+      "canonical_value": 0,
       "google_scholar": null,
       "openalex": null,
-      "crossref": null
+      "crossref": 0
     }
   },
   "canonical_authors": [
@@ -199,16 +199,27 @@
       "data": {}
     },
     "crossref": {
-      "available": false,
+      "available": true,
       "matched": false,
-      "status": "not_found",
-      "confidence": 0.0,
-      "citation_count": null,
-      "doi": null,
-      "url": null,
-      "raw_file": null,
+      "status": "low_confidence",
+      "confidence": 0.51,
+      "citation_count": 0,
+      "doi": "10.2307/j.ctvbtzkwj.13",
+      "url": "https://doi.org/10.2307/j.ctvbtzkwj.13",
+      "raw_file": "data/raw/crossref/970ec1897ca4d296.json",
       "normalized_file": null,
-      "data": {}
+      "data": {
+        "title": "GENESIS 36–48",
+        "authors": [],
+        "year": 2019,
+        "journal": "Glaphyra on the Pentateuch, Volume 1",
+        "doi": "10.2307/j.ctvbtzkwj.13",
+        "url": "https://doi.org/10.2307/j.ctvbtzkwj.13",
+        "openalex_id": "",
+        "citation_count": 0,
+        "source": "crossref",
+        "raw_file": "data/raw/crossref/970ec1897ca4d296.json"
+      }
     },
     "google_scholar": {
       "available": false,
@@ -261,20 +272,50 @@
     }
   },
   "doi_verification": {
-    "status": "missing",
+    "status": "conflict",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.0,
-    "reason": "No DOI or arXiv identifier present in reference or provider results.",
-    "conflicts": [],
+    "confidence": 0.2,
+    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2307/j.ctvbtzkwj.13",
+        "reason": "Metadata mismatch (title_sim=0.56, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1515/9783110888164-051",
+        "reason": "Metadata mismatch (title_sim=0.22, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
     "overall_confidence": 1.0,
-    "metadata_completeness": 0.5,
+    "metadata_completeness": 0.67,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2307/j.ctvbtzkwj.13",
+        "reason": "Metadata mismatch (title_sim=0.56, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1515/9783110888164-051",
+        "reason": "Metadata mismatch (title_sim=0.22, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -283,13 +324,13 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.31,
-      "crossref": 43520.47,
-      "openalex": 64810.82
+      "google_scholar": 6.72,
+      "crossref": 45433.09,
+      "openalex": 69600.33
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
+      "crossref": 2,
       "openalex": 0
     },
     "errors": {}

@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_dd494776e52f",
-  "project_id": "project_20260831_081840_857bd2f2",
-  "created_at": "2026-08-31T08:20:18.081513+00:00",
+  "project_id": "project_20260903_084424_bb902af0",
+  "created_at": "2026-09-03T08:46:04.955166+00:00",
   "input": {
     "original_text": "Christiane Eichenber, Raphaela Schneider and Helena Rumpl, Social media addiction associations with attachment style, mental distress, and personality. BMC Psychiatry. (2024) 24-278.",
     "parsed": {
@@ -85,8 +85,8 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
@@ -219,14 +219,14 @@
       "data": {}
     },
     "crossref": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.26,
+      "confidence": 0.0,
       "citation_count": null,
       "doi": null,
       "url": null,
-      "raw_file": "data/raw/crossref/9a8e2e967dc88e60.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -286,83 +286,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/978-3-658-28514-2",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/s00350-025-7013-y",
-        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/978-3-662-69580-7_28",
-        "reason": "Metadata mismatch (title_sim=0.14, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/s00350-024-6859-8",
-        "reason": "Metadata mismatch (title_sim=0.14, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/s00350-024-6889-2",
-        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5771/0340-8574-2020-1-10",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.14361/9783839443941-005",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1055/b-0038-151488",
-        "reason": "Metadata mismatch (title_sim=0.12, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5414/alx01582",
-        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1111/j.1365-2265.1989.tb00439.x",
-        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -370,78 +299,7 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/978-3-658-28514-2",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/s00350-025-7013-y",
-        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/978-3-662-69580-7_28",
-        "reason": "Metadata mismatch (title_sim=0.14, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/s00350-024-6859-8",
-        "reason": "Metadata mismatch (title_sim=0.14, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/s00350-024-6889-2",
-        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5771/0340-8574-2020-1-10",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.14361/9783839443941-005",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1055/b-0038-151488",
-        "reason": "Metadata mismatch (title_sim=0.12, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5414/alx01582",
-        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1111/j.1365-2265.1989.tb00439.x",
-        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -450,13 +308,13 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.29,
-      "crossref": 65153.62,
-      "openalex": 88425.13
+      "google_scholar": 8.2,
+      "crossref": 77210.54,
+      "openalex": 99471.59
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 10,
+      "crossref": 0,
       "openalex": 0
     },
     "errors": {}

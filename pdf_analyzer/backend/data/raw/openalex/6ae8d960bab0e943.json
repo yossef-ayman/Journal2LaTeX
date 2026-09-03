@@ -1,0 +1,4512 @@
+{
+  "provider": "openalex",
+  "query_key": "raw:Hussain, Z., Griffiths, M. D., The associations between problematic social networking site use and sleep quality, attention-deficit hyperact",
+  "query_hash": "6ae8d960bab0e943",
+  "saved_at": "2026-09-03T07:27:02.516262+00:00",
+  "status_code": 200,
+  "candidate_count": 3,
+  "raw_response": {
+    "meta": {
+      "count": 3,
+      "db_response_time_ms": 328,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (Hussain Z. Griffiths M. D. The associations between problematic social networking site use \"and\" sleep quality attention-deficit hyperact)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Hussain Z. Griffiths M. D. The associations between problematic social networking site use and sleep quality attention-deficit hyperact",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Hussain Z. Griffiths M. D. The associations between problematic social networking site use and sleep quality attention-deficit hyperact&per_page=5"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2798179625",
+        "doi": "https://doi.org/10.1111/dmcn.13754",
+        "title": "Internet gaming disorder in children and adolescents: a systematic review",
+        "display_name": "Internet gaming disorder in children and adolescents: a systematic review",
+        "relevance_score": 163.57571,
+        "publication_year": 2018,
+        "publication_date": "2018-04-06",
+        "ids": {
+          "openalex": "https://openalex.org/W2798179625",
+          "doi": "https://doi.org/10.1111/dmcn.13754",
+          "mag": "2798179625",
+          "pmid": "https://pubmed.ncbi.nlm.nih.gov/29633243"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1111/dmcn.13754",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1111/dmcn.13754",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S158041768",
+            "display_name": "Developmental Medicine & Child Neurology",
+            "issn_l": "0012-1622",
+            "issn": [
+              "0012-1622",
+              "1469-8749"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Developmental Medicine &amp; Child Neurology",
+          "raw_type": "journal-article"
+        },
+        "type": "review",
+        "indexed_in": [
+          "crossref",
+          "pubmed"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5059796391",
+              "display_name": "Frank W. Paulus",
+              "orcid": "https://orcid.org/0000-0001-9052-0779"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I91712215",
+                "display_name": "Saarland University",
+                "ror": "https://ror.org/01jdpyv68",
+                "country_code": "DE",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I91712215"
+                ]
+              }
+            ],
+            "countries": [
+              "DE"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Frank W Paulus",
+            "raw_affiliation_strings": [
+              "Department of Child and Adolescent Psychiatry Saarland University Hospital Homburg Germany",
+              "Department of Child and Adolescent Psychiatry, Saarland University Hospital, Homburg, Germany"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0001-9052-0779",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Child and Adolescent Psychiatry Saarland University Hospital Homburg Germany",
+                "institution_ids": [
+                  "https://openalex.org/I91712215"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Child and Adolescent Psychiatry, Saarland University Hospital, Homburg, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I91712215"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5048725933",
+              "display_name": "Susanne Ohmann",
+              "orcid": "https://orcid.org/0000-0003-0709-0080"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I76134821",
+                "display_name": "Medical University of Vienna",
+                "ror": "https://ror.org/05n3x4p02",
+                "country_code": "AT",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I76134821"
+                ]
+              }
+            ],
+            "countries": [
+              "AT"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Susanne Ohmann",
+            "raw_affiliation_strings": [
+              "Department of Child and Adolescent Psychiatry Medical University of Vienna Vienna Austria",
+              "Department of Child and Adolescent Psychiatry, Medical University of Vienna, Vienna, Austria"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Child and Adolescent Psychiatry Medical University of Vienna Vienna Austria",
+                "institution_ids": [
+                  "https://openalex.org/I76134821"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Child and Adolescent Psychiatry, Medical University of Vienna, Vienna, Austria",
+                "institution_ids": [
+                  "https://openalex.org/I76134821"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5082411625",
+              "display_name": "Alexander von Gontard",
+              "orcid": "https://orcid.org/0000-0002-3579-6200"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I91712215",
+                "display_name": "Saarland University",
+                "ror": "https://ror.org/01jdpyv68",
+                "country_code": "DE",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I91712215"
+                ]
+              }
+            ],
+            "countries": [
+              "DE"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Alexander von Gontard",
+            "raw_affiliation_strings": [
+              "Department of Child and Adolescent Psychiatry Saarland University Hospital Homburg Germany",
+              "Department of Child and Adolescent Psychiatry, Saarland University Hospital, Homburg, Germany"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Child and Adolescent Psychiatry Saarland University Hospital Homburg Germany",
+                "institution_ids": [
+                  "https://openalex.org/I91712215"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Child and Adolescent Psychiatry, Saarland University Hospital, Homburg, Germany",
+                "institution_ids": [
+                  "https://openalex.org/I91712215"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5007298460",
+              "display_name": "Christian Popow",
+              "orcid": "https://orcid.org/0000-0002-0496-1453"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I76134821",
+                "display_name": "Medical University of Vienna",
+                "ror": "https://ror.org/05n3x4p02",
+                "country_code": "AT",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I76134821"
+                ]
+              }
+            ],
+            "countries": [
+              "AT"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Christian Popow",
+            "raw_affiliation_strings": [
+              "Department of Child and Adolescent Psychiatry Medical University of Vienna Vienna Austria",
+              "Department of Child and Adolescent Psychiatry, Medical University of Vienna, Vienna, Austria"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Child and Adolescent Psychiatry Medical University of Vienna Vienna Austria",
+                "institution_ids": [
+                  "https://openalex.org/I76134821"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Child and Adolescent Psychiatry, Medical University of Vienna, Vienna, Austria",
+                "institution_ids": [
+                  "https://openalex.org/I76134821"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 2,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5059796391"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I91712215"
+        ],
+        "apc_list": {
+          "value": 5300,
+          "currency": "USD",
+          "value_usd": 5300
+        },
+        "apc_paid": null,
+        "fwci": 26.1748,
+        "has_fulltext": true,
+        "cited_by_count": 644,
+        "citation_normalized_percentile": {
+          "value": 1.0,
+          "is_in_top_1_percent": true,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 98,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "60",
+          "issue": "7",
+          "first_page": "645",
+          "last_page": "659"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10355",
+          "display_name": "Impact of Technology on Adolescents",
+          "score": 0.9934999942779541,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3312",
+            "display_name": "Sociology and Political Science"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/33",
+            "display_name": "Social Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10355",
+            "display_name": "Impact of Technology on Adolescents",
+            "score": 0.9934999942779541,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3312",
+              "display_name": "Sociology and Political Science"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11519",
+            "display_name": "Digital Mental Health Interventions",
+            "score": 0.0006000000284984708,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3202",
+              "display_name": "Applied Psychology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/32",
+              "display_name": "Psychology"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T12335",
+            "display_name": "Sexuality, Behavior, and Technology",
+            "score": 0.00039999998989515007,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3203",
+              "display_name": "Clinical Psychology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/32",
+              "display_name": "Psychology"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/immunoglobulin-d",
+            "display_name": "Immunoglobulin D",
+            "score": 0.7063629627227783
+          },
+          {
+            "id": "https://openalex.org/keywords/mood",
+            "display_name": "Mood",
+            "score": 0.5811840295791626
+          },
+          {
+            "id": "https://openalex.org/keywords/psychology",
+            "display_name": "Psychology",
+            "score": 0.5456498265266418
+          },
+          {
+            "id": "https://openalex.org/keywords/psycinfo",
+            "display_name": "PsycINFO",
+            "score": 0.5422374606132507
+          },
+          {
+            "id": "https://openalex.org/keywords/psychosocial",
+            "display_name": "Psychosocial",
+            "score": 0.514553964138031
+          },
+          {
+            "id": "https://openalex.org/keywords/addiction",
+            "display_name": "Addiction",
+            "score": 0.513146698474884
+          },
+          {
+            "id": "https://openalex.org/keywords/etiology",
+            "display_name": "Etiology",
+            "score": 0.4835112392902374
+          },
+          {
+            "id": "https://openalex.org/keywords/clinical-psychology",
+            "display_name": "Clinical psychology",
+            "score": 0.4308548867702484
+          },
+          {
+            "id": "https://openalex.org/keywords/behavioral-addiction",
+            "display_name": "Behavioral addiction",
+            "score": 0.4131518006324768
+          },
+          {
+            "id": "https://openalex.org/keywords/medicine",
+            "display_name": "Medicine",
+            "score": 0.3956635594367981
+          },
+          {
+            "id": "https://openalex.org/keywords/psychiatry",
+            "display_name": "Psychiatry",
+            "score": 0.39037394523620605
+          },
+          {
+            "id": "https://openalex.org/keywords/developmental-psychology",
+            "display_name": "Developmental psychology",
+            "score": 0.3625124394893646
+          },
+          {
+            "id": "https://openalex.org/keywords/medline",
+            "display_name": "MEDLINE",
+            "score": 0.2727952003479004
+          },
+          {
+            "id": "https://openalex.org/keywords/immunology",
+            "display_name": "Immunology",
+            "score": 0.15415337681770325
+          },
+          {
+            "id": "https://openalex.org/keywords/biology",
+            "display_name": "Biology",
+            "score": 0.11230751872062683
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C48010095",
+            "wikidata": "https://www.wikidata.org/wiki/Q79447",
+            "display_name": "Immunoglobulin D",
+            "level": 4,
+            "score": 0.7063629627227783
+          },
+          {
+            "id": "https://openalex.org/C2780733359",
+            "wikidata": "https://www.wikidata.org/wiki/Q331769",
+            "display_name": "Mood",
+            "level": 2,
+            "score": 0.5811840295791626
+          },
+          {
+            "id": "https://openalex.org/C15744967",
+            "wikidata": "https://www.wikidata.org/wiki/Q9418",
+            "display_name": "Psychology",
+            "level": 0,
+            "score": 0.5456498265266418
+          },
+          {
+            "id": "https://openalex.org/C2779549880",
+            "wikidata": "https://www.wikidata.org/wiki/Q5542226",
+            "display_name": "PsycINFO",
+            "level": 3,
+            "score": 0.5422374606132507
+          },
+          {
+            "id": "https://openalex.org/C150966472",
+            "wikidata": "https://www.wikidata.org/wiki/Q3410145",
+            "display_name": "Psychosocial",
+            "level": 2,
+            "score": 0.514553964138031
+          },
+          {
+            "id": "https://openalex.org/C48856860",
+            "wikidata": "https://www.wikidata.org/wiki/Q12029",
+            "display_name": "Addiction",
+            "level": 2,
+            "score": 0.513146698474884
+          },
+          {
+            "id": "https://openalex.org/C137627325",
+            "wikidata": "https://www.wikidata.org/wiki/Q156318",
+            "display_name": "Etiology",
+            "level": 2,
+            "score": 0.4835112392902374
+          },
+          {
+            "id": "https://openalex.org/C70410870",
+            "wikidata": "https://www.wikidata.org/wiki/Q199906",
+            "display_name": "Clinical psychology",
+            "level": 1,
+            "score": 0.4308548867702484
+          },
+          {
+            "id": "https://openalex.org/C2777271380",
+            "wikidata": "https://www.wikidata.org/wiki/Q1513352",
+            "display_name": "Behavioral addiction",
+            "level": 3,
+            "score": 0.4131518006324768
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.3956635594367981
+          },
+          {
+            "id": "https://openalex.org/C118552586",
+            "wikidata": "https://www.wikidata.org/wiki/Q7867",
+            "display_name": "Psychiatry",
+            "level": 1,
+            "score": 0.39037394523620605
+          },
+          {
+            "id": "https://openalex.org/C138496976",
+            "wikidata": "https://www.wikidata.org/wiki/Q175002",
+            "display_name": "Developmental psychology",
+            "level": 1,
+            "score": 0.3625124394893646
+          },
+          {
+            "id": "https://openalex.org/C2779473830",
+            "wikidata": "https://www.wikidata.org/wiki/Q1540899",
+            "display_name": "MEDLINE",
+            "level": 2,
+            "score": 0.2727952003479004
+          },
+          {
+            "id": "https://openalex.org/C203014093",
+            "wikidata": "https://www.wikidata.org/wiki/Q101929",
+            "display_name": "Immunology",
+            "level": 1,
+            "score": 0.15415337681770325
+          },
+          {
+            "id": "https://openalex.org/C86803240",
+            "wikidata": "https://www.wikidata.org/wiki/Q420",
+            "display_name": "Biology",
+            "level": 0,
+            "score": 0.11230751872062683
+          },
+          {
+            "id": "https://openalex.org/C159654299",
+            "wikidata": "https://www.wikidata.org/wiki/Q79460",
+            "display_name": "Antibody",
+            "level": 2,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C55493867",
+            "wikidata": "https://www.wikidata.org/wiki/Q7094",
+            "display_name": "Biochemistry",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C2778453870",
+            "wikidata": "https://www.wikidata.org/wiki/Q188930",
+            "display_name": "B cell",
+            "level": 3,
+            "score": 0.0
+          }
+        ],
+        "mesh": [
+          {
+            "descriptor_ui": "D000293",
+            "descriptor_name": "Adolescent",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D000293",
+            "descriptor_name": "Adolescent",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D000293",
+            "descriptor_name": "Adolescent",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D000293",
+            "descriptor_name": "Adolescent",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D016739",
+            "descriptor_name": "Behavior, Addictive",
+            "qualifier_ui": "Q000175",
+            "qualifier_name": "diagnosis",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D016739",
+            "descriptor_name": "Behavior, Addictive",
+            "qualifier_ui": "Q000175",
+            "qualifier_name": "diagnosis",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D016739",
+            "descriptor_name": "Behavior, Addictive",
+            "qualifier_ui": "Q000175",
+            "qualifier_name": "diagnosis",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D016739",
+            "descriptor_name": "Behavior, Addictive",
+            "qualifier_ui": "Q000175",
+            "qualifier_name": "diagnosis",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D016739",
+            "descriptor_name": "Behavior, Addictive",
+            "qualifier_ui": "Q000453",
+            "qualifier_name": "epidemiology",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D016739",
+            "descriptor_name": "Behavior, Addictive",
+            "qualifier_ui": "Q000453",
+            "qualifier_name": "epidemiology",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D016739",
+            "descriptor_name": "Behavior, Addictive",
+            "qualifier_ui": "Q000453",
+            "qualifier_name": "epidemiology",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D016739",
+            "descriptor_name": "Behavior, Addictive",
+            "qualifier_ui": "Q000453",
+            "qualifier_name": "epidemiology",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D018910",
+            "descriptor_name": "Video Games",
+            "qualifier_ui": "Q000009",
+            "qualifier_name": "adverse effects",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D018910",
+            "descriptor_name": "Video Games",
+            "qualifier_ui": "Q000009",
+            "qualifier_name": "adverse effects",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D018910",
+            "descriptor_name": "Video Games",
+            "qualifier_ui": "Q000009",
+            "qualifier_name": "adverse effects",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D018910",
+            "descriptor_name": "Video Games",
+            "qualifier_ui": "Q000009",
+            "qualifier_name": "adverse effects",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D020407",
+            "descriptor_name": "Internet",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D020407",
+            "descriptor_name": "Internet",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D020407",
+            "descriptor_name": "Internet",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D020407",
+            "descriptor_name": "Internet",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          }
+        ],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.1111/dmcn.13754",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.1111/dmcn.13754",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S158041768",
+              "display_name": "Developmental Medicine & Child Neurology",
+              "issn_l": "0012-1622",
+              "issn": [
+                "0012-1622",
+                "1469-8749"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320595",
+              "host_organization_name": "Wiley",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320595"
+              ],
+              "host_organization_lineage_names": [
+                "Wiley"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Developmental Medicine &amp; Child Neurology",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmid:29633243",
+            "is_oa": false,
+            "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/29633243",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306525036",
+              "display_name": "PubMed",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1299303238",
+              "host_organization_name": "National Institutes of Health",
+              "host_organization_lineage": [
+                "https://openalex.org/I1299303238"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Developmental medicine and child neurology",
+            "raw_type": "Journal Article"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [
+          {
+            "display_name": "Peace, Justice and strong institutions",
+            "score": 0.4300000071525574,
+            "id": "https://metadata.un.org/sdg/16"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 248,
+        "referenced_works": [
+          "https://openalex.org/W26825768",
+          "https://openalex.org/W28169380",
+          "https://openalex.org/W102968215",
+          "https://openalex.org/W151094267",
+          "https://openalex.org/W158118704",
+          "https://openalex.org/W178691628",
+          "https://openalex.org/W310237691",
+          "https://openalex.org/W986809902",
+          "https://openalex.org/W1005059776",
+          "https://openalex.org/W1169029839",
+          "https://openalex.org/W1412166696",
+          "https://openalex.org/W1519933583",
+          "https://openalex.org/W1528134319",
+          "https://openalex.org/W1534377796",
+          "https://openalex.org/W1541818464",
+          "https://openalex.org/W1549095346",
+          "https://openalex.org/W1555219449",
+          "https://openalex.org/W1555243340",
+          "https://openalex.org/W1557308778",
+          "https://openalex.org/W1567030315",
+          "https://openalex.org/W1720114320",
+          "https://openalex.org/W1730940283",
+          "https://openalex.org/W1751563614",
+          "https://openalex.org/W1792437561",
+          "https://openalex.org/W1859138231",
+          "https://openalex.org/W1906221453",
+          "https://openalex.org/W1911326182",
+          "https://openalex.org/W1947503653",
+          "https://openalex.org/W1952102930",
+          "https://openalex.org/W1954487403",
+          "https://openalex.org/W1965942083",
+          "https://openalex.org/W1966033964",
+          "https://openalex.org/W1967171076",
+          "https://openalex.org/W1969762404",
+          "https://openalex.org/W1970019936",
+          "https://openalex.org/W1970074891",
+          "https://openalex.org/W1971199153",
+          "https://openalex.org/W1973101847",
+          "https://openalex.org/W1975200586",
+          "https://openalex.org/W1976154159",
+          "https://openalex.org/W1981012747",
+          "https://openalex.org/W1981465402",
+          "https://openalex.org/W1982547370",
+          "https://openalex.org/W1983543830",
+          "https://openalex.org/W1984144783",
+          "https://openalex.org/W1984214913",
+          "https://openalex.org/W1985565252",
+          "https://openalex.org/W1986240290",
+          "https://openalex.org/W1986708741",
+          "https://openalex.org/W1987486473",
+          "https://openalex.org/W1987969604",
+          "https://openalex.org/W1988421676",
+          "https://openalex.org/W1988710891",
+          "https://openalex.org/W1988738540",
+          "https://openalex.org/W1989031680",
+          "https://openalex.org/W1990204148",
+          "https://openalex.org/W1990320202",
+          "https://openalex.org/W1991466490",
+          "https://openalex.org/W1991933160",
+          "https://openalex.org/W1992114985",
+          "https://openalex.org/W1992796941",
+          "https://openalex.org/W1994901859",
+          "https://openalex.org/W1995332146",
+          "https://openalex.org/W1995347209",
+          "https://openalex.org/W1996310162",
+          "https://openalex.org/W1997120260",
+          "https://openalex.org/W1998872554",
+          "https://openalex.org/W2000432371",
+          "https://openalex.org/W2001194161",
+          "https://openalex.org/W2003924641",
+          "https://openalex.org/W2008426677",
+          "https://openalex.org/W2010835019",
+          "https://openalex.org/W2010869231",
+          "https://openalex.org/W2011095012",
+          "https://openalex.org/W2011649078",
+          "https://openalex.org/W2012031682",
+          "https://openalex.org/W2013628821",
+          "https://openalex.org/W2013746463",
+          "https://openalex.org/W2013963581",
+          "https://openalex.org/W2014172645",
+          "https://openalex.org/W2015221608",
+          "https://openalex.org/W2017171074",
+          "https://openalex.org/W2017966418",
+          "https://openalex.org/W2018163583",
+          "https://openalex.org/W2018427128",
+          "https://openalex.org/W2019660540",
+          "https://openalex.org/W2021740767",
+          "https://openalex.org/W2022142504",
+          "https://openalex.org/W2022946287",
+          "https://openalex.org/W2023197058",
+          "https://openalex.org/W2023479769",
+          "https://openalex.org/W2023518101",
+          "https://openalex.org/W2024937234",
+          "https://openalex.org/W2025486171",
+          "https://openalex.org/W2027090189",
+          "https://openalex.org/W2027733460",
+          "https://openalex.org/W2032258890",
+          "https://openalex.org/W2033183461",
+          "https://openalex.org/W2033572306",
+          "https://openalex.org/W2033646624",
+          "https://openalex.org/W2034144472",
+          "https://openalex.org/W2035764316",
+          "https://openalex.org/W2036230720",
+          "https://openalex.org/W2038054630",
+          "https://openalex.org/W2040660647",
+          "https://openalex.org/W2042550292",
+          "https://openalex.org/W2043082865",
+          "https://openalex.org/W2045066042",
+          "https://openalex.org/W2047008178",
+          "https://openalex.org/W2047259778",
+          "https://openalex.org/W2047539318",
+          "https://openalex.org/W2048714669",
+          "https://openalex.org/W2052152962",
+          "https://openalex.org/W2056700696",
+          "https://openalex.org/W2056966949",
+          "https://openalex.org/W2057067643",
+          "https://openalex.org/W2061099893",
+          "https://openalex.org/W2061258922",
+          "https://openalex.org/W2062186979",
+          "https://openalex.org/W2063284279",
+          "https://openalex.org/W2064093160",
+          "https://openalex.org/W2064118495",
+          "https://openalex.org/W2065877231",
+          "https://openalex.org/W2066360597",
+          "https://openalex.org/W2066848874",
+          "https://openalex.org/W2068456141",
+          "https://openalex.org/W2069071353",
+          "https://openalex.org/W2069151305",
+          "https://openalex.org/W2070135319",
+          "https://openalex.org/W2072338474",
+          "https://openalex.org/W2073764814",
+          "https://openalex.org/W2075440169",
+          "https://openalex.org/W2075757788",
+          "https://openalex.org/W2079058884",
+          "https://openalex.org/W2079086672",
+          "https://openalex.org/W2080541846",
+          "https://openalex.org/W2084081433",
+          "https://openalex.org/W2085906110",
+          "https://openalex.org/W2087042918",
+          "https://openalex.org/W2087328247",
+          "https://openalex.org/W2088776070",
+          "https://openalex.org/W2089529470",
+          "https://openalex.org/W2089996056",
+          "https://openalex.org/W2091691481",
+          "https://openalex.org/W2094350399",
+          "https://openalex.org/W2096389535",
+          "https://openalex.org/W2096474397",
+          "https://openalex.org/W2096721624",
+          "https://openalex.org/W2097104154",
+          "https://openalex.org/W2097844564",
+          "https://openalex.org/W2098620135",
+          "https://openalex.org/W2100079293",
+          "https://openalex.org/W2101293084",
+          "https://openalex.org/W2102968543",
+          "https://openalex.org/W2103393657",
+          "https://openalex.org/W2105271747",
+          "https://openalex.org/W2105579159",
+          "https://openalex.org/W2105975366",
+          "https://openalex.org/W2107847937",
+          "https://openalex.org/W2108836528",
+          "https://openalex.org/W2110049365",
+          "https://openalex.org/W2110758530",
+          "https://openalex.org/W2112311786",
+          "https://openalex.org/W2113688372",
+          "https://openalex.org/W2115351632",
+          "https://openalex.org/W2118242114",
+          "https://openalex.org/W2118647169",
+          "https://openalex.org/W2119807602",
+          "https://openalex.org/W2120950450",
+          "https://openalex.org/W2123016305",
+          "https://openalex.org/W2123110589",
+          "https://openalex.org/W2124267749",
+          "https://openalex.org/W2124553691",
+          "https://openalex.org/W2126695368",
+          "https://openalex.org/W2127928677",
+          "https://openalex.org/W2128481569",
+          "https://openalex.org/W2128716131",
+          "https://openalex.org/W2129377936",
+          "https://openalex.org/W2129639061",
+          "https://openalex.org/W2130475706",
+          "https://openalex.org/W2131239197",
+          "https://openalex.org/W2132394551",
+          "https://openalex.org/W2136483344",
+          "https://openalex.org/W2136728109",
+          "https://openalex.org/W2138462405",
+          "https://openalex.org/W2139943709",
+          "https://openalex.org/W2140015224",
+          "https://openalex.org/W2141148393",
+          "https://openalex.org/W2141356457",
+          "https://openalex.org/W2143426475",
+          "https://openalex.org/W2145167064",
+          "https://openalex.org/W2145668659",
+          "https://openalex.org/W2147164166",
+          "https://openalex.org/W2150250810",
+          "https://openalex.org/W2151922135",
+          "https://openalex.org/W2152140975",
+          "https://openalex.org/W2154806445",
+          "https://openalex.org/W2157441133",
+          "https://openalex.org/W2158633372",
+          "https://openalex.org/W2161562531",
+          "https://openalex.org/W2162424417",
+          "https://openalex.org/W2163215148",
+          "https://openalex.org/W2165185488",
+          "https://openalex.org/W2165497484",
+          "https://openalex.org/W2166267770",
+          "https://openalex.org/W2173864261",
+          "https://openalex.org/W2177319014",
+          "https://openalex.org/W2178803363",
+          "https://openalex.org/W2192831116",
+          "https://openalex.org/W2196755824",
+          "https://openalex.org/W2207590618",
+          "https://openalex.org/W2210579090",
+          "https://openalex.org/W2215897089",
+          "https://openalex.org/W2219027774",
+          "https://openalex.org/W2220986948",
+          "https://openalex.org/W2238379657",
+          "https://openalex.org/W2270884166",
+          "https://openalex.org/W2285269059",
+          "https://openalex.org/W2286221480",
+          "https://openalex.org/W2293057177",
+          "https://openalex.org/W2296410535",
+          "https://openalex.org/W2314751257",
+          "https://openalex.org/W2336088829",
+          "https://openalex.org/W2336570817",
+          "https://openalex.org/W2339906250",
+          "https://openalex.org/W2346320573",
+          "https://openalex.org/W2402175173",
+          "https://openalex.org/W2416416290",
+          "https://openalex.org/W2469874704",
+          "https://openalex.org/W2499309354",
+          "https://openalex.org/W2510595667",
+          "https://openalex.org/W2517049233",
+          "https://openalex.org/W2517534189",
+          "https://openalex.org/W2517793972",
+          "https://openalex.org/W2526879497",
+          "https://openalex.org/W2582847400",
+          "https://openalex.org/W2600208371",
+          "https://openalex.org/W2607786073",
+          "https://openalex.org/W2771272888",
+          "https://openalex.org/W2921068806",
+          "https://openalex.org/W2993568315",
+          "https://openalex.org/W2997130438",
+          "https://openalex.org/W2997693103",
+          "https://openalex.org/W3022903699",
+          "https://openalex.org/W3141820223",
+          "https://openalex.org/W3214923421",
+          "https://openalex.org/W4247665917",
+          "https://openalex.org/W4255572655"
+        ],
+        "related_works": [
+          "https://openalex.org/W2110049365",
+          "https://openalex.org/W4200368495",
+          "https://openalex.org/W2484609305",
+          "https://openalex.org/W1995102479",
+          "https://openalex.org/W2808240146",
+          "https://openalex.org/W2328710067",
+          "https://openalex.org/W3118361681",
+          "https://openalex.org/W2404996441",
+          "https://openalex.org/W2557451298",
+          "https://openalex.org/W3091992679"
+        ],
+        "abstract_inverted_index": {
+          "AIM:": [
+            0
+          ],
+          "Internet": [
+            1,
+            210
+          ],
+          "gaming": [
+            2,
+            211
+          ],
+          "disorder": [
+            3,
+            8,
+            187,
+            212
+          ],
+          "(IGD)": [
+            4
+          ],
+          "is": [
+            5,
+            232
+          ],
+          "a": [
+            6,
+            90,
+            189
+          ],
+          "serious": [
+            7
+          ],
+          "leading": [
+            9,
+            166
+          ],
+          "to": [
+            10,
+            20,
+            38,
+            66,
+            167,
+            239
+          ],
+          "and": [
+            11,
+            15,
+            27,
+            47,
+            59,
+            69,
+            81,
+            113,
+            119,
+            127,
+            153,
+            163,
+            202,
+            226,
+            242
+          ],
+          "maintaining": [
+            12
+          ],
+          "pertinent": [
+            13
+          ],
+          "personal": [
+            14
+          ],
+          "social": [
+            16,
+            128
+          ],
+          "impairment.": [
+            17
+          ],
+          "IGD": [
+            18,
+            37,
+            96,
+            102,
+            147,
+            162,
+            180
+          ],
+          "has": [
+            19
+          ],
+          "be": [
+            21,
+            182
+          ],
+          "considered": [
+            22
+          ],
+          "in": [
+            23,
+            78
+          ],
+          "view": [
+            24
+          ],
+          "of": [
+            25,
+            84,
+            117,
+            146,
+            151,
+            161,
+            200,
+            244,
+            252,
+            257
+          ],
+          "heterogeneous": [
+            26,
+            225
+          ],
+          "incomplete": [
+            28
+          ],
+          "concepts.": [
+            29
+          ],
+          "We": [
+            30,
+            50
+          ],
+          "therefore": [
+            31
+          ],
+          "reviewed": [
+            32,
+            52
+          ],
+          "the": [
+            33,
+            53,
+            62,
+            79,
+            149,
+            159,
+            164,
+            227,
+            240,
+            255
+          ],
+          "scientific": [
+            34
+          ],
+          "literature": [
+            35
+          ],
+          "on": [
+            36,
+            43,
+            204
+          ],
+          "provide": [
+            39
+          ],
+          "an": [
+            40,
+            143,
+            185,
+            249
+          ],
+          "overview": [
+            41
+          ],
+          "focusing": [
+            42
+          ],
+          "definitions,": [
+            44
+          ],
+          "symptoms,": [
+            45
+          ],
+          "prevalence,": [
+            46
+          ],
+          "aetiology.": [
+            48
+          ],
+          "METHOD:": [
+            49
+          ],
+          "systematically": [
+            51
+          ],
+          "databases": [
+            54
+          ],
+          "ERIC,": [
+            55
+          ],
+          "PsyARTICLES,": [
+            56
+          ],
+          "PsycINFO,": [
+            57
+          ],
+          "PSYNDEX,": [
+            58
+          ],
+          "PubMed": [
+            60
+          ],
+          "for": [
+            61,
+            94
+          ],
+          "period": [
+            63
+          ],
+          "January": [
+            64
+          ],
+          "1991": [
+            65
+          ],
+          "August": [
+            67
+          ],
+          "2016,": [
+            68
+          ],
+          "additionally": [
+            70
+          ],
+          "identified": [
+            71
+          ],
+          "secondary": [
+            72
+          ],
+          "references.": [
+            73
+          ],
+          "RESULTS:": [
+            74
+          ],
+          "The": [
+            75,
+            214
+          ],
+          "proposed": [
+            76
+          ],
+          "definition": [
+            77
+          ],
+          "Diagnostic": [
+            80
+          ],
+          "Statistical": [
+            82
+          ],
+          "Manual": [
+            83
+          ],
+          "Mental": [
+            85
+          ],
+          "Disorders,": [
+            86
+          ],
+          "Fifth": [
+            87
+          ],
+          "Edition": [
+            88
+          ],
+          "provides": [
+            89
+          ],
+          "good": [
+            91
+          ],
+          "starting": [
+            92
+          ],
+          "point": [
+            93
+          ],
+          "diagnosing": [
+            95
+          ],
+          "but": [
+            97
+          ],
+          "entails": [
+            98
+          ],
+          "some": [
+            99
+          ],
+          "disadvantages.": [
+            100
+          ],
+          "Developing": [
+            101
+          ],
+          "requires": [
+            103
+          ],
+          "several": [
+            104
+          ],
+          "interacting": [
+            105
+          ],
+          "internal": [
+            106,
+            152
+          ],
+          "factors": [
+            107,
+            121,
+            134,
+            236
+          ],
+          "such": [
+            108,
+            122
+          ],
+          "as": [
+            109,
+            123,
+            184
+          ],
+          "deficient": [
+            110,
+            124
+          ],
+          "self,": [
+            111
+          ],
+          "mood": [
+            112
+          ],
+          "reward": [
+            114
+          ],
+          "regulation,": [
+            115
+          ],
+          "problems": [
+            116
+          ],
+          "decision-making,": [
+            118
+          ],
+          "external": [
+            120,
+            154
+          ],
+          "family": [
+            125
+          ],
+          "background": [
+            126
+          ],
+          "skills.": [
+            129
+          ],
+          "In": [
+            130,
+            173,
+            197
+          ],
+          "addition,": [
+            131
+          ],
+          "specific": [
+            132
+          ],
+          "game-related": [
+            133
+          ],
+          "may": [
+            135
+          ],
+          "promote": [
+            136
+          ],
+          "IGD.": [
+            137,
+            245
+          ],
+          "Summarizing": [
+            138
+          ],
+          "aetiological": [
+            139,
+            235
+          ],
+          "knowledge,": [
+            140
+          ],
+          "we": [
+            141
+          ],
+          "suggest": [
+            142
+          ],
+          "integrated": [
+            144,
+            250
+          ],
+          "model": [
+            145,
+            251
+          ],
+          "elucidating": [
+            148
+          ],
+          "interplay": [
+            150,
+            256
+          ],
+          "factors.": [
+            155,
+            259
+          ],
+          "INTERPRETATION:": [
+            156
+          ],
+          "So": [
+            157
+          ],
+          "far,": [
+            158
+          ],
+          "concept": [
+            160
+          ],
+          "pathways": [
+            165
+          ],
+          "it": [
+            168
+          ],
+          "are": [
+            169,
+            178,
+            207,
+            224,
+            237
+          ],
+          "not": [
+            170
+          ],
+          "entirely": [
+            171
+          ],
+          "clear.": [
+            172
+          ],
+          "particular,": [
+            174
+          ],
+          "long-term": [
+            175
+          ],
+          "follow-up": [
+            176
+          ],
+          "studies": [
+            177
+          ],
+          "missing.": [
+            179
+          ],
+          "should": [
+            181
+          ],
+          "understood": [
+            183
+          ],
+          "endangering": [
+            186
+          ],
+          "with": [
+            188,
+            229
+          ],
+          "complex": [
+            190
+          ],
+          "psychosocial": [
+            191
+          ],
+          "background.": [
+            192
+          ],
+          "WHAT": [
+            193
+          ],
+          "THIS": [
+            194
+          ],
+          "PAPER": [
+            195
+          ],
+          "ADDS:": [
+            196
+          ],
+          "representative": [
+            198
+          ],
+          "samples": [
+            199,
+            219
+          ],
+          "children": [
+            201
+          ],
+          "adolescents,": [
+            203
+          ],
+          "average,": [
+            205
+          ],
+          "2%": [
+            206
+          ],
+          "affected": [
+            208
+          ],
+          "by": [
+            209
+          ],
+          "(IGD).": [
+            213
+          ],
+          "mean": [
+            215
+          ],
+          "prevalences": [
+            216
+          ],
+          "(overall,": [
+            217
+          ],
+          "clinical": [
+            218
+          ],
+          "included)": [
+            220
+          ],
+          "reach": [
+            221
+          ],
+          "5.5%.": [
+            222
+          ],
+          "Definitions": [
+            223
+          ],
+          "relationship": [
+            228
+          ],
+          "substance-related": [
+            230
+          ],
+          "addictions": [
+            231
+          ],
+          "inconsistent.": [
+            233
+          ],
+          "Many": [
+            234
+          ],
+          "related": [
+            238
+          ],
+          "development": [
+            241
+          ],
+          "maintenance": [
+            243
+          ],
+          "This": [
+            246
+          ],
+          "review": [
+            247
+          ],
+          "presents": [
+            248
+          ],
+          "IGD,": [
+            253
+          ],
+          "delineating": [
+            254
+          ],
+          "these": [
+            258
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 61
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 86
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 101
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 103
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 109
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 94
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 60
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 25
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 5
+          }
+        ],
+        "updated_date": "2026-09-02T07:38:04.252551",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4386116219",
+        "doi": "https://doi.org/10.1177/13623613231192870",
+        "title": "Digital citizenship of children and youth with autism: Developing guidelines and strategies for caregivers and clinicians to support healthy use of screens",
+        "display_name": "Digital citizenship of children and youth with autism: Developing guidelines and strategies for caregivers and clinicians to support healthy use of screens",
+        "relevance_score": 37.278355,
+        "publication_year": 2023,
+        "publication_date": "2023-08-24",
+        "ids": {
+          "openalex": "https://openalex.org/W4386116219",
+          "doi": "https://doi.org/10.1177/13623613231192870",
+          "pmid": "https://pubmed.ncbi.nlm.nih.gov/37615409"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1177/13623613231192870",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1177/13623613231192870",
+          "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/dmcn.13754",
+          "source": {
+            "id": "https://openalex.org/S1824407",
+            "display_name": "Autism",
+            "issn_l": "1362-3613",
+            "issn": [
+              "1362-3613",
+              "1461-7005"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320017",
+            "host_organization_name": "SAGE Publishing",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320017"
+            ],
+            "host_organization_lineage_names": [
+              "SAGE Publishing"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc",
+          "license_id": "https://openalex.org/licenses/cc-by-nc",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Autism",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "pubmed"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/dmcn.13754",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5068918252",
+              "display_name": "Yael Mayer",
+              "orcid": "https://orcid.org/0000-0002-5576-402X"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I141945490",
+                "display_name": "University of British Columbia",
+                "ror": "https://ror.org/03rmrcq20",
+                "country_code": "CA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I141945490"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I91203450",
+                "display_name": "University of Haifa",
+                "ror": "https://ror.org/02f009v59",
+                "country_code": "IL",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I91203450"
+                ]
+              }
+            ],
+            "countries": [
+              "CA",
+              "IL"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Yael Mayer",
+            "raw_affiliation_strings": [
+              "The University of British Columbia, Canada",
+              "University of Haifa, Israel"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-5576-402X",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "The University of British Columbia, Canada",
+                "institution_ids": [
+                  "https://openalex.org/I141945490"
+                ]
+              },
+              {
+                "raw_affiliation_string": "University of Haifa, Israel",
+                "institution_ids": [
+                  "https://openalex.org/I91203450"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5051153596",
+              "display_name": "Mor Cohen‐Eilig",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I141945490",
+                "display_name": "University of British Columbia",
+                "ror": "https://ror.org/03rmrcq20",
+                "country_code": "CA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I141945490"
+                ]
+              }
+            ],
+            "countries": [
+              "CA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Mor Cohen-Eilig",
+            "raw_affiliation_strings": [
+              "The University of British Columbia, Canada"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "The University of British Columbia, Canada",
+                "institution_ids": [
+                  "https://openalex.org/I141945490"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5068611545",
+              "display_name": "Janice Chan",
+              "orcid": "https://orcid.org/0000-0002-0800-1206"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I141945490",
+                "display_name": "University of British Columbia",
+                "ror": "https://ror.org/03rmrcq20",
+                "country_code": "CA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I141945490"
+                ]
+              }
+            ],
+            "countries": [
+              "CA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Janice Chan",
+            "raw_affiliation_strings": [
+              "The University of British Columbia, Canada"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "The University of British Columbia, Canada",
+                "institution_ids": [
+                  "https://openalex.org/I141945490"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5092685940",
+              "display_name": "Natasha Kuzyk",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I141945490",
+                "display_name": "University of British Columbia",
+                "ror": "https://ror.org/03rmrcq20",
+                "country_code": "CA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I141945490"
+                ]
+              }
+            ],
+            "countries": [
+              "CA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Natasha Kuzyk",
+            "raw_affiliation_strings": [
+              "The University of British Columbia, Canada"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "The University of British Columbia, Canada",
+                "institution_ids": [
+                  "https://openalex.org/I141945490"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5069356621",
+              "display_name": "Armansa Glodjo",
+              "orcid": "https://orcid.org/0000-0002-2451-3199"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I141945490",
+                "display_name": "University of British Columbia",
+                "ror": "https://ror.org/03rmrcq20",
+                "country_code": "CA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I141945490"
+                ]
+              }
+            ],
+            "countries": [
+              "CA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Armansa Glodjo",
+            "raw_affiliation_strings": [
+              "The University of British Columbia, Canada"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "The University of British Columbia, Canada",
+                "institution_ids": [
+                  "https://openalex.org/I141945490"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5043505740",
+              "display_name": "Tal Jarus",
+              "orcid": "https://orcid.org/0000-0003-4124-7782"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I141945490",
+                "display_name": "University of British Columbia",
+                "ror": "https://ror.org/03rmrcq20",
+                "country_code": "CA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I141945490"
+                ]
+              }
+            ],
+            "countries": [
+              "CA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Tal Jarus",
+            "raw_affiliation_strings": [
+              "The University of British Columbia, Canada"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "The University of British Columbia, Canada",
+                "institution_ids": [
+                  "https://openalex.org/I141945490"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 2,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5068918252"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I141945490",
+          "https://openalex.org/I91203450"
+        ],
+        "apc_list": {
+          "value": 3500,
+          "currency": "USD",
+          "value_usd": 3500
+        },
+        "apc_paid": {
+          "value": 3500,
+          "currency": "USD",
+          "value_usd": 3500
+        },
+        "fwci": 13.042,
+        "has_fulltext": true,
+        "cited_by_count": 16,
+        "citation_normalized_percentile": {
+          "value": 0.98792924,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 97,
+          "max": 99
+        },
+        "biblio": {
+          "volume": "28",
+          "issue": "4",
+          "first_page": "1010",
+          "last_page": "1028"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T12060",
+          "display_name": "Child Development and Digital Technology",
+          "score": 0.9983999729156494,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3304",
+            "display_name": "Education"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/33",
+            "display_name": "Social Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T12060",
+            "display_name": "Child Development and Digital Technology",
+            "score": 0.9983999729156494,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3304",
+              "display_name": "Education"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10106",
+            "display_name": "Autism Spectrum Disorder Research",
+            "score": 0.9979000091552734,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2805",
+              "display_name": "Cognitive Neuroscience"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/28",
+              "display_name": "Neuroscience"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/1",
+              "display_name": "Life Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11632",
+            "display_name": "Family and Disability Support Research",
+            "score": 0.9904999732971191,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3203",
+              "display_name": "Clinical Psychology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/32",
+              "display_name": "Psychology"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/autism",
+            "display_name": "Autism",
+            "score": 0.903504490852356
+          },
+          {
+            "id": "https://openalex.org/keywords/screen-time",
+            "display_name": "Screen time",
+            "score": 0.6959881782531738
+          },
+          {
+            "id": "https://openalex.org/keywords/psychology",
+            "display_name": "Psychology",
+            "score": 0.5317809581756592
+          },
+          {
+            "id": "https://openalex.org/keywords/psychological-intervention",
+            "display_name": "Psychological intervention",
+            "score": 0.5317608118057251
+          },
+          {
+            "id": "https://openalex.org/keywords/delphi-method",
+            "display_name": "Delphi method",
+            "score": 0.4272751212120056
+          },
+          {
+            "id": "https://openalex.org/keywords/medicine",
+            "display_name": "Medicine",
+            "score": 0.37892425060272217
+          },
+          {
+            "id": "https://openalex.org/keywords/clinical-psychology",
+            "display_name": "Clinical psychology",
+            "score": 0.3513467311859131
+          },
+          {
+            "id": "https://openalex.org/keywords/psychiatry",
+            "display_name": "Psychiatry",
+            "score": 0.3093726634979248
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C205778803",
+            "wikidata": "https://www.wikidata.org/wiki/Q38404",
+            "display_name": "Autism",
+            "level": 2,
+            "score": 0.903504490852356
+          },
+          {
+            "id": "https://openalex.org/C2781253360",
+            "wikidata": "https://www.wikidata.org/wiki/Q28130149",
+            "display_name": "Screen time",
+            "level": 3,
+            "score": 0.6959881782531738
+          },
+          {
+            "id": "https://openalex.org/C15744967",
+            "wikidata": "https://www.wikidata.org/wiki/Q9418",
+            "display_name": "Psychology",
+            "level": 0,
+            "score": 0.5317809581756592
+          },
+          {
+            "id": "https://openalex.org/C27415008",
+            "wikidata": "https://www.wikidata.org/wiki/Q7256382",
+            "display_name": "Psychological intervention",
+            "level": 2,
+            "score": 0.5317608118057251
+          },
+          {
+            "id": "https://openalex.org/C60641444",
+            "wikidata": "https://www.wikidata.org/wiki/Q841602",
+            "display_name": "Delphi method",
+            "level": 2,
+            "score": 0.4272751212120056
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.37892425060272217
+          },
+          {
+            "id": "https://openalex.org/C70410870",
+            "wikidata": "https://www.wikidata.org/wiki/Q199906",
+            "display_name": "Clinical psychology",
+            "level": 1,
+            "score": 0.3513467311859131
+          },
+          {
+            "id": "https://openalex.org/C118552586",
+            "wikidata": "https://www.wikidata.org/wiki/Q7867",
+            "display_name": "Psychiatry",
+            "level": 1,
+            "score": 0.3093726634979248
+          },
+          {
+            "id": "https://openalex.org/C105795698",
+            "wikidata": "https://www.wikidata.org/wiki/Q12483",
+            "display_name": "Statistics",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C126322002",
+            "wikidata": "https://www.wikidata.org/wiki/Q11180",
+            "display_name": "Internal medicine",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C511355011",
+            "wikidata": "https://www.wikidata.org/wiki/Q12174",
+            "display_name": "Obesity",
+            "level": 2,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.0
+          }
+        ],
+        "mesh": [
+          {
+            "descriptor_ui": "D000067877",
+            "descriptor_name": "Autism Spectrum Disorder",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D000067877",
+            "descriptor_name": "Autism Spectrum Disorder",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D000067877",
+            "descriptor_name": "Autism Spectrum Disorder",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D000067877",
+            "descriptor_name": "Autism Spectrum Disorder",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D000087482",
+            "descriptor_name": "Citizenship",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D000087482",
+            "descriptor_name": "Citizenship",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D000087482",
+            "descriptor_name": "Citizenship",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D000087482",
+            "descriptor_name": "Citizenship",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D000293",
+            "descriptor_name": "Adolescent",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D000293",
+            "descriptor_name": "Adolescent",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D000293",
+            "descriptor_name": "Adolescent",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D000293",
+            "descriptor_name": "Adolescent",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D001321",
+            "descriptor_name": "Autistic Disorder",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D001321",
+            "descriptor_name": "Autistic Disorder",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D001321",
+            "descriptor_name": "Autistic Disorder",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D001321",
+            "descriptor_name": "Autistic Disorder",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D011795",
+            "descriptor_name": "Surveys and Questionnaires",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D011795",
+            "descriptor_name": "Surveys and Questionnaires",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D011795",
+            "descriptor_name": "Surveys and Questionnaires",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D011795",
+            "descriptor_name": "Surveys and Questionnaires",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D017028",
+            "descriptor_name": "Caregivers",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D017028",
+            "descriptor_name": "Caregivers",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D017028",
+            "descriptor_name": "Caregivers",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D017028",
+            "descriptor_name": "Caregivers",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          }
+        ],
+        "locations_count": 3,
+        "locations": [
+          {
+            "id": "doi:10.1177/13623613231192870",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1177/13623613231192870",
+            "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/dmcn.13754",
+            "source": {
+              "id": "https://openalex.org/S1824407",
+              "display_name": "Autism",
+              "issn_l": "1362-3613",
+              "issn": [
+                "1362-3613",
+                "1461-7005"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320017",
+              "host_organization_name": "SAGE Publishing",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320017"
+              ],
+              "host_organization_lineage_names": [
+                "SAGE Publishing"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by-nc",
+            "license_id": "https://openalex.org/licenses/cc-by-nc",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Autism",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmid:37615409",
+            "is_oa": false,
+            "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/37615409",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306525036",
+              "display_name": "PubMed",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1299303238",
+              "host_organization_name": "National Institutes of Health",
+              "host_organization_lineage": [
+                "https://openalex.org/I1299303238"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Autism : the international journal of research and practice",
+            "raw_type": "Journal Article"
+          },
+          {
+            "id": "pmh:oai:pubmedcentral.nih.gov:10981179",
+            "is_oa": true,
+            "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10981179",
+            "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10981179/pdf/10.1177_13623613231192870.pdf",
+            "source": {
+              "id": "https://openalex.org/S2764455111",
+              "display_name": "PubMed Central",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1299303238",
+              "host_organization_name": "National Institutes of Health",
+              "host_organization_lineage": [
+                "https://openalex.org/I1299303238"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-nc",
+            "license_id": "https://openalex.org/licenses/cc-by-nc",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Autism",
+            "raw_type": "Text"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1177/13623613231192870",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1177/13623613231192870",
+          "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/dmcn.13754",
+          "source": {
+            "id": "https://openalex.org/S1824407",
+            "display_name": "Autism",
+            "issn_l": "1362-3613",
+            "issn": [
+              "1362-3613",
+              "1461-7005"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320017",
+            "host_organization_name": "SAGE Publishing",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320017"
+            ],
+            "host_organization_lineage_names": [
+              "SAGE Publishing"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc",
+          "license_id": "https://openalex.org/licenses/cc-by-nc",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Autism",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "display_name": "Partnerships for the goals",
+            "score": 0.4699999988079071,
+            "id": "https://metadata.un.org/sdg/17"
+          }
+        ],
+        "awards": [
+          {
+            "id": "https://openalex.org/G878072419",
+            "display_name": null,
+            "funder_award_id": "C2-2020-1433",
+            "funder_id": "https://openalex.org/F4320319965",
+            "funder_display_name": "Michael Smith Health Research BC"
+          }
+        ],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320319965",
+            "display_name": "Michael Smith Health Research BC",
+            "ror": "https://ror.org/020x39229"
+          },
+          {
+            "id": "https://openalex.org/F4320323387",
+            "display_name": "University of Haifa",
+            "ror": "https://ror.org/02f009v59"
+          }
+        ],
+        "has_content": {
+          "pdf": true,
+          "grobid_xml": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4386116219.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4386116219.grobid-xml"
+        },
+        "referenced_works_count": 34,
+        "referenced_works": [
+          "https://openalex.org/W1967766053",
+          "https://openalex.org/W2022662741",
+          "https://openalex.org/W2039906750",
+          "https://openalex.org/W2051367348",
+          "https://openalex.org/W2101270539",
+          "https://openalex.org/W2118802064",
+          "https://openalex.org/W2131575393",
+          "https://openalex.org/W2477671038",
+          "https://openalex.org/W2538387706",
+          "https://openalex.org/W2566114807",
+          "https://openalex.org/W2583504027",
+          "https://openalex.org/W2598458554",
+          "https://openalex.org/W2763766763",
+          "https://openalex.org/W2791193995",
+          "https://openalex.org/W2796664773",
+          "https://openalex.org/W2891085020",
+          "https://openalex.org/W2891287555",
+          "https://openalex.org/W2903835952",
+          "https://openalex.org/W2930681536",
+          "https://openalex.org/W2937227953",
+          "https://openalex.org/W2955104494",
+          "https://openalex.org/W2968759185",
+          "https://openalex.org/W2973004054",
+          "https://openalex.org/W2982155410",
+          "https://openalex.org/W2988128310",
+          "https://openalex.org/W3013654737",
+          "https://openalex.org/W3028070355",
+          "https://openalex.org/W3028649824",
+          "https://openalex.org/W3047723167",
+          "https://openalex.org/W3048316354",
+          "https://openalex.org/W3090387014",
+          "https://openalex.org/W3108703508",
+          "https://openalex.org/W3169247795",
+          "https://openalex.org/W4230804826"
+        ],
+        "related_works": [
+          "https://openalex.org/W4280602684",
+          "https://openalex.org/W4310092953",
+          "https://openalex.org/W2227393071",
+          "https://openalex.org/W1995350144",
+          "https://openalex.org/W2082102603",
+          "https://openalex.org/W2166141227",
+          "https://openalex.org/W3133980636",
+          "https://openalex.org/W4378085486",
+          "https://openalex.org/W4366602711",
+          "https://openalex.org/W620566831"
+        ],
+        "abstract_inverted_index": {
+          "Over": [
+            0
+          ],
+          "the": [
+            1,
+            27,
+            36,
+            59,
+            67,
+            113,
+            122,
+            182,
+            197,
+            308,
+            335,
+            344,
+            411
+          ],
+          "past": [
+            2
+          ],
+          "few": [
+            3
+          ],
+          "years,": [
+            4
+          ],
+          "screen-based": [
+            5
+          ],
+          "usage": [
+            6
+          ],
+          "among": [
+            7,
+            15
+          ],
+          "children": [
+            8,
+            32,
+            63,
+            193,
+            238,
+            267,
+            291,
+            417
+          ],
+          "and": [
+            9,
+            33,
+            45,
+            48,
+            52,
+            75,
+            104,
+            137,
+            148,
+            152,
+            170,
+            209,
+            219,
+            226,
+            239,
+            264,
+            268,
+            280,
+            292,
+            360,
+            371,
+            375,
+            393,
+            418,
+            422
+          ],
+          "youth": [
+            10,
+            210,
+            240,
+            269,
+            293,
+            419
+          ],
+          "has": [
+            11
+          ],
+          "increased": [
+            12
+          ],
+          "significantly,": [
+            13
+          ],
+          "particularly": [
+            14
+          ],
+          "those": [
+            16
+          ],
+          "with": [
+            17,
+            64,
+            194,
+            211,
+            241,
+            270,
+            287,
+            294,
+            315,
+            420
+          ],
+          "autism.": [
+            18,
+            65,
+            271
+          ],
+          "Yet": [
+            19
+          ],
+          "current": [
+            20
+          ],
+          "screen": [
+            21,
+            141,
+            154,
+            162,
+            189,
+            198,
+            234,
+            318,
+            364,
+            377,
+            385,
+            430
+          ],
+          "time": [
+            22,
+            142,
+            155,
+            163,
+            190,
+            199,
+            235,
+            319,
+            365,
+            378,
+            386,
+            431
+          ],
+          "guidelines": [
+            23,
+            47,
+            103,
+            114,
+            126,
+            167,
+            175,
+            257,
+            336,
+            348,
+            390,
+            398
+          ],
+          "do": [
+            24
+          ],
+          "not": [
+            25
+          ],
+          "address": [
+            26
+          ],
+          "specific": [
+            28,
+            44,
+            229
+          ],
+          "needs": [
+            29
+          ],
+          "of": [
+            30,
+            38,
+            62,
+            84,
+            98,
+            121,
+            139,
+            192,
+            237,
+            266,
+            302,
+            343,
+            362,
+            413
+          ],
+          "autistic": [
+            31
+          ],
+          "youth.": [
+            34
+          ],
+          "Therefore,": [
+            35,
+            250
+          ],
+          "objective": [
+            37
+          ],
+          "this": [
+            39,
+            178,
+            247,
+            251,
+            401
+          ],
+          "study": [
+            40,
+            179,
+            252,
+            402
+          ],
+          "was": [
+            41,
+            324
+          ],
+          "to": [
+            42,
+            57,
+            80,
+            90,
+            109,
+            150,
+            159,
+            254,
+            298,
+            311,
+            326,
+            331,
+            373,
+            382,
+            409,
+            425,
+            427
+          ],
+          "develop": [
+            43,
+            255
+          ],
+          "clear": [
+            46,
+            256
+          ],
+          "strategies": [
+            49,
+            145,
+            368,
+            424
+          ],
+          "that": [
+            50,
+            100,
+            201,
+            258
+          ],
+          "caregivers": [
+            51,
+            147,
+            370
+          ],
+          "expert": [
+            53,
+            262
+          ],
+          "clinicians": [
+            54,
+            74,
+            149,
+            227,
+            263,
+            279,
+            372
+          ],
+          "agree": [
+            55
+          ],
+          "upon": [
+            56
+          ],
+          "support": [
+            58
+          ],
+          "digital": [
+            60,
+            414
+          ],
+          "citizenship": [
+            61,
+            415
+          ],
+          "Using": [
+            66,
+            272
+          ],
+          "Delphi": [
+            68
+          ],
+          "method,": [
+            69
+          ],
+          "30": [
+            70,
+            277
+          ],
+          "experts,": [
+            71
+          ],
+          "including": [
+            72
+          ],
+          "20": [
+            73
+          ],
+          "10": [
+            76,
+            281
+          ],
+          "caregivers,": [
+            77,
+            282
+          ],
+          "were": [
+            78,
+            115,
+            296,
+            337
+          ],
+          "invited": [
+            79,
+            297
+          ],
+          "complete": [
+            81,
+            299
+          ],
+          "a": [
+            82,
+            96,
+            273,
+            300
+          ],
+          "series": [
+            83,
+            97,
+            301
+          ],
+          "three": [
+            85,
+            303
+          ],
+          "surveys.": [
+            86,
+            304
+          ],
+          "The": [
+            87,
+            106,
+            124,
+            173,
+            321,
+            328,
+            346,
+            396
+          ],
+          "experts": [
+            88,
+            309
+          ],
+          "had": [
+            89,
+            310
+          ],
+          "rate": [
+            91,
+            312
+          ],
+          "their": [
+            92,
+            216,
+            221,
+            313
+          ],
+          "agreement": [
+            93,
+            314,
+            322
+          ],
+          "levels": [
+            94
+          ],
+          "on": [
+            95,
+            407
+          ],
+          "statements": [
+            99,
+            108,
+            316
+          ],
+          "included": [
+            101,
+            111,
+            127,
+            333,
+            349
+          ],
+          "possible": [
+            102
+          ],
+          "strategies.": [
+            105
+          ],
+          "final": [
+            107,
+            125,
+            329,
+            347
+          ],
+          "be": [
+            110,
+            181,
+            332
+          ],
+          "in": [
+            112,
+            177,
+            215,
+            220,
+            334,
+            400
+          ],
+          "accepted": [
+            116,
+            338
+          ],
+          "by": [
+            117,
+            261,
+            339
+          ],
+          "more": [
+            118,
+            340
+          ],
+          "than": [
+            119,
+            341
+          ],
+          "75%": [
+            120,
+            342
+          ],
+          "panel.": [
+            123,
+            345
+          ],
+          "six": [
+            128,
+            350
+          ],
+          "sections:": [
+            129,
+            352
+          ],
+          "(1)": [
+            130,
+            353
+          ],
+          "general": [
+            131,
+            354
+          ],
+          "principles,": [
+            132,
+            355
+          ],
+          "(2)": [
+            133,
+            356
+          ],
+          "considerations": [
+            134,
+            357
+          ],
+          "for": [
+            135,
+            146,
+            161,
+            168,
+            185,
+            246,
+            290,
+            358,
+            369,
+            384,
+            391,
+            416
+          ],
+          "timing": [
+            136,
+            359
+          ],
+          "content": [
+            138,
+            361
+          ],
+          "leisure": [
+            140,
+            363
+          ],
+          "use,": [
+            143,
+            156,
+            366,
+            379
+          ],
+          "(3)": [
+            144,
+            367
+          ],
+          "monitor": [
+            151,
+            160,
+            374,
+            383
+          ],
+          "regulate": [
+            153,
+            376
+          ],
+          "(4)": [
+            157,
+            380
+          ],
+          "behaviors": [
+            158,
+            381
+          ],
+          "overuse,": [
+            164,
+            387
+          ],
+          "(5)": [
+            165,
+            388
+          ],
+          "additional": [
+            166,
+            389
+          ],
+          "clinicians,": [
+            169,
+            392
+          ],
+          "(6)": [
+            171,
+            394
+          ],
+          "resources.": [
+            172,
+            395
+          ],
+          "agreed-upon": [
+            174
+          ],
+          "developed": [
+            176,
+            399
+          ],
+          "could": [
+            180
+          ],
+          "stepping": [
+            183
+          ],
+          "stones": [
+            184
+          ],
+          "clinical": [
+            186
+          ],
+          "interventions": [
+            187
+          ],
+          "targeting": [
+            188
+          ],
+          "overuse": [
+            191
+          ],
+          "autism,": [
+            195,
+            242
+          ],
+          "addressing": [
+            196
+          ],
+          "challenges": [
+            200,
+            230
+          ],
+          "many": [
+            202
+          ],
+          "families": [
+            203,
+            426
+          ],
+          "are": [
+            204,
+            259
+          ],
+          "experiencing.": [
+            205
+          ],
+          "Lay": [
+            206
+          ],
+          "Abstract": [
+            207
+          ],
+          "Children": [
+            208
+          ],
+          "autism": [
+            212,
+            295,
+            421
+          ],
+          "use": [
+            213,
+            236
+          ],
+          "screens": [
+            214
+          ],
+          "daily": [
+            217
+          ],
+          "lives": [
+            218
+          ],
+          "rehabilitation": [
+            222
+          ],
+          "programs.": [
+            223
+          ],
+          "Although": [
+            224
+          ],
+          "parents": [
+            225,
+            265
+          ],
+          "experience": [
+            228,
+            285
+          ],
+          "when": [
+            231
+          ],
+          "supporting": [
+            232
+          ],
+          "positive": [
+            233
+          ],
+          "no": [
+            243
+          ],
+          "detailed": [
+            244
+          ],
+          "information": [
+            245
+          ],
+          "group": [
+            248
+          ],
+          "exists.": [
+            249
+          ],
+          "aimed": [
+            253
+          ],
+          "agreed": [
+            260
+          ],
+          "method": [
+            274
+          ],
+          "called": [
+            275
+          ],
+          "Delphi,": [
+            276
+          ],
+          "experts—20": [
+            278
+          ],
+          "who": [
+            283
+          ],
+          "have": [
+            284
+          ],
+          "working": [
+            286
+          ],
+          "or": [
+            288
+          ],
+          "caring": [
+            289
+          ],
+          "In": [
+            305
+          ],
+          "each": [
+            306
+          ],
+          "round,": [
+            307
+          ],
+          "regarding": [
+            317
+          ],
+          "management.": [
+            320
+          ],
+          "level": [
+            323
+          ],
+          "set": [
+            325
+          ],
+          "75%.": [
+            327
+          ],
+          "themes": [
+            330
+          ],
+          "main": [
+            351
+          ],
+          "new": [
+            397
+          ],
+          "can": [
+            403
+          ],
+          "provide": [
+            404,
+            423
+          ],
+          "potential": [
+            405
+          ],
+          "guidance": [
+            406
+          ],
+          "how": [
+            408
+          ],
+          "further": [
+            410
+          ],
+          "development": [
+            412
+          ],
+          "help": [
+            428
+          ],
+          "manage": [
+            429
+          ],
+          "use.": [
+            432
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          }
+        ],
+        "updated_date": "2026-08-28T12:50:07.497085",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4410121424",
+        "doi": "https://doi.org/10.14232/phd.12432",
+        "title": "Through the lens of ADHD",
+        "display_name": "Through the lens of ADHD",
+        "relevance_score": 2.2847352,
+        "publication_year": 2025,
+        "publication_date": "2025-03-19",
+        "ids": {
+          "openalex": "https://openalex.org/W4410121424",
+          "doi": "https://doi.org/10.14232/phd.12432"
+        },
+        "language": "hu",
+        "primary_location": {
+          "id": "doi:10.14232/phd.12432",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.14232/phd.12432",
+          "pdf_url": "https://doktori.bibl.u-szeged.hu/12432/1/Dissertation_2024_MV.pdf",
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Szegedi Tudományegyetem",
+          "raw_type": "dissertation"
+        },
+        "type": "dissertation",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://doktori.bibl.u-szeged.hu/12432/1/Dissertation_2024_MV.pdf",
+          "any_repository_has_fulltext": null
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5041548851",
+              "display_name": "Vanessa Müller",
+              "orcid": "https://orcid.org/0000-0003-4027-3452"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I227486990",
+                "display_name": "University of Szeged",
+                "ror": "https://ror.org/01pnej532",
+                "country_code": "HU",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I227486990"
+                ]
+              }
+            ],
+            "countries": [
+              "HU"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Vanessa Müller",
+            "raw_affiliation_strings": [
+              "University of Szeged"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0003-4027-3452",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "University of Szeged",
+                "institution_ids": [
+                  "https://openalex.org/I227486990"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5041548851"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I227486990"
+        ],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": null,
+        "has_fulltext": true,
+        "cited_by_count": 0,
+        "citation_normalized_percentile": null,
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10537",
+          "display_name": "Attention Deficit Hyperactivity Disorder",
+          "score": 0.853600025177002,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2738",
+            "display_name": "Psychiatry and Mental health"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10537",
+            "display_name": "Attention Deficit Hyperactivity Disorder",
+            "score": 0.853600025177002,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2738",
+              "display_name": "Psychiatry and Mental health"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/27",
+              "display_name": "Medicine"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/4",
+              "display_name": "Health Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T13106",
+            "display_name": "Neuroscience, Education and Cognitive Function",
+            "score": 0.760699987411499,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2805",
+              "display_name": "Cognitive Neuroscience"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/28",
+              "display_name": "Neuroscience"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/1",
+              "display_name": "Life Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/lens",
+            "display_name": "Lens (geology)",
+            "score": 0.5527747869491577
+          },
+          {
+            "id": "https://openalex.org/keywords/optometry",
+            "display_name": "Optometry",
+            "score": 0.5221396088600159
+          },
+          {
+            "id": "https://openalex.org/keywords/psychology",
+            "display_name": "Psychology",
+            "score": 0.49932360649108887
+          },
+          {
+            "id": "https://openalex.org/keywords/through-the-lens-metering",
+            "display_name": "Through-the-lens metering",
+            "score": 0.45872730016708374
+          },
+          {
+            "id": "https://openalex.org/keywords/medicine",
+            "display_name": "Medicine",
+            "score": 0.21809333562850952
+          },
+          {
+            "id": "https://openalex.org/keywords/optics",
+            "display_name": "Optics",
+            "score": 0.19186845421791077
+          },
+          {
+            "id": "https://openalex.org/keywords/physics",
+            "display_name": "Physics",
+            "score": 0.13952535390853882
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C15336307",
+            "wikidata": "https://www.wikidata.org/wiki/Q1766051",
+            "display_name": "Lens (geology)",
+            "level": 2,
+            "score": 0.5527747869491577
+          },
+          {
+            "id": "https://openalex.org/C119767625",
+            "wikidata": "https://www.wikidata.org/wiki/Q618211",
+            "display_name": "Optometry",
+            "level": 1,
+            "score": 0.5221396088600159
+          },
+          {
+            "id": "https://openalex.org/C15744967",
+            "wikidata": "https://www.wikidata.org/wiki/Q9418",
+            "display_name": "Psychology",
+            "level": 0,
+            "score": 0.49932360649108887
+          },
+          {
+            "id": "https://openalex.org/C43091099",
+            "wikidata": "https://www.wikidata.org/wiki/Q1067788",
+            "display_name": "Through-the-lens metering",
+            "level": 3,
+            "score": 0.45872730016708374
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.21809333562850952
+          },
+          {
+            "id": "https://openalex.org/C120665830",
+            "wikidata": "https://www.wikidata.org/wiki/Q14620",
+            "display_name": "Optics",
+            "level": 1,
+            "score": 0.19186845421791077
+          },
+          {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.13952535390853882
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.14232/phd.12432",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.14232/phd.12432",
+            "pdf_url": "https://doktori.bibl.u-szeged.hu/12432/1/Dissertation_2024_MV.pdf",
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Szegedi Tudományegyetem",
+            "raw_type": "dissertation"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.14232/phd.12432",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.14232/phd.12432",
+          "pdf_url": "https://doktori.bibl.u-szeged.hu/12432/1/Dissertation_2024_MV.pdf",
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Szegedi Tudományegyetem",
+          "raw_type": "dissertation"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": true,
+          "grobid_xml": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4410121424.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4410121424.grobid-xml"
+        },
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W4321486002",
+          "https://openalex.org/W2050941231",
+          "https://openalex.org/W2348285641",
+          "https://openalex.org/W1622737280",
+          "https://openalex.org/W4321517506",
+          "https://openalex.org/W4387524676",
+          "https://openalex.org/W2390629623",
+          "https://openalex.org/W4399703469",
+          "https://openalex.org/W4251444559",
+          "https://openalex.org/W2386987825"
+        ],
+        "abstract_inverted_index": {
+          "A": [
+            0,
+            37,
+            72,
+            154,
+            172,
+            189,
+            197
+          ],
+          "figyelemhiányos": [
+            1
+          ],
+          "hiperaktivitás-zavar": [
+            2
+          ],
+          "(ADHD)": [
+            3
+          ],
+          "gyermekkor": [
+            4
+          ],
+          "óta": [
+            5
+          ],
+          "fennálló,": [
+            6
+          ],
+          "pervazív": [
+            7
+          ],
+          "tünetegyüttes,": [
+            8
+          ],
+          "amely": [
+            9,
+            161
+          ],
+          "érinti": [
+            10
+          ],
+          "a": [
+            11,
+            31,
+            55,
+            61,
+            67,
+            93,
+            98,
+            131,
+            146,
+            166,
+            176,
+            192,
+            226,
+            234,
+            243,
+            250,
+            255,
+            262
+          ],
+          "figyelmi": [
+            12
+          ],
+          "készségeket,": [
+            13
+          ],
+          "valamint": [
+            14,
+            144
+          ],
+          "az": [
+            15,
+            45,
+            85,
+            90,
+            108,
+            113,
+            121,
+            141,
+            162,
+            180,
+            187,
+            216,
+            220
+          ],
+          "érzelmi-indulati": [
+            16
+          ],
+          "és": [
+            17,
+            66,
+            97,
+            112,
+            123,
+            130,
+            148,
+            165,
+            175,
+            212,
+            219,
+            228,
+            245
+          ],
+          "aktivitási": [
+            18
+          ],
+          "szabályozást.": [
+            19
+          ],
+          "Magyarországi": [
+            20
+          ],
+          "felsőoktatásban": [
+            21
+          ],
+          "tanuló": [
+            22
+          ],
+          "hallgatók": [
+            23,
+            49,
+            116
+          ],
+          "érintettségéről": [
+            24
+          ],
+          "egyelőre": [
+            25
+          ],
+          "nem": [
+            26,
+            57
+          ],
+          "állnak": [
+            27
+          ],
+          "rendelkezésre": [
+            28
+          ],
+          "adatok,": [
+            29
+          ],
+          "ellenben": [
+            30
+          ],
+          "nemzetközi": [
+            32
+          ],
+          "összehasonlítások": [
+            33
+          ],
+          "15,9%-os": [
+            34
+          ],
+          "érintettségét": [
+            35
+          ],
+          "jeleznek.": [
+            36
+          ],
+          "zavar": [
+            38
+          ],
+          "felismerése": [
+            39
+          ],
+          "körükben": [
+            40
+          ],
+          "kiemelt": [
+            41
+          ],
+          "fontosságú": [
+            42
+          ],
+          "lehet,": [
+            43
+          ],
+          "mivel": [
+            44
+          ],
+          "ADHD": [
+            46,
+            91,
+            109,
+            142,
+            163,
+            217
+          ],
+          "tüneteket": [
+            47,
+            56
+          ],
+          "mutató": [
+            48,
+            58,
+            111
+          ],
+          "pszichoszociális": [
+            50
+          ],
+          "státusza": [
+            51
+          ],
+          "jelentősen": [
+            52
+          ],
+          "alacsonyabb,": [
+            53
+          ],
+          "mint": [
+            54
+          ],
+          "társaiké:": [
+            59
+          ],
+          "veszélyeztetettek": [
+            60
+          ],
+          "felsőoktatási": [
+            62,
+            94
+          ],
+          "lemorzsolódás,": [
+            63
+          ],
+          "addikciós": [
+            64
+          ],
+          "viselkedés": [
+            65
+          ],
+          "depresszió": [
+            68,
+            132,
+            177
+          ],
+          "tüneteinek": [
+            69,
+            133
+          ],
+          "megjelenése": [
+            70
+          ],
+          "tekintetében.": [
+            71
+          ],
+          "fenti": [
+            73
+          ],
+          "kihívásokra": [
+            74
+          ],
+          "reagálva": [
+            75
+          ],
+          "kutatásunk": [
+            76
+          ],
+          "egy": [
+            77,
+            157
+          ],
+          "átfogó": [
+            78
+          ],
+          "kép": [
+            79
+          ],
+          "megalkotását": [
+            80
+          ],
+          "tűzte": [
+            81
+          ],
+          "ki": [
+            82
+          ],
+          "célul.": [
+            83
+          ],
+          "Ehhez": [
+            84
+          ],
+          "értekezés": [
+            86
+          ],
+          "három": [
+            87
+          ],
+          "részterületet": [
+            88
+          ],
+          "vizsgál:": [
+            89
+          ],
+          "tüneteit,": [
+            92
+          ],
+          "lemorzsolódás": [
+            95
+          ],
+          "szándékot": [
+            96
+          ],
+          "szociális": [
+            99,
+            193
+          ],
+          "kapcsolatok": [
+            100,
+            194
+          ],
+          "rendszerét": [
+            101
+          ],
+          "–": [
+            102
+          ],
+          "feltárva": [
+            103
+          ],
+          "ezek": [
+            104
+          ],
+          "összefüggéseit.Az": [
+            105
+          ],
+          "első": [
+            106
+          ],
+          "tanulmány": [
+            107,
+            156,
+            191
+          ],
+          "tüneteit": [
+            110
+          ],
+          "anélkül": [
+            114
+          ],
+          "élő": [
+            115
+          ],
+          "közötti": [
+            117,
+            169
+          ],
+          "lehetséges": [
+            118
+          ],
+          "különbségeket": [
+            119
+          ],
+          "elemezte:": [
+            120
+          ],
+          "aktív": [
+            122
+          ],
+          "passzív": [
+            124
+          ],
+          "halogatás,": [
+            125
+          ],
+          "tanulmányi": [
+            126,
+            173
+          ],
+          "unalom,": [
+            127
+          ],
+          "problémás": [
+            128
+          ],
+          "okostelefon-használat": [
+            129
+          ],
+          "tárgykörében.": [
+            134
+          ],
+          "Lineáris": [
+            135
+          ],
+          "regresszióelemzést": [
+            136
+          ],
+          "alkalmaztunk": [
+            137
+          ],
+          "annak": [
+            138
+          ],
+          "érdekében,": [
+            139
+          ],
+          "hogy": [
+            140
+          ],
+          "összpontszámok,": [
+            143
+          ],
+          "külön-külön,": [
+            145
+          ],
+          "figyelemhiányra": [
+            147
+          ],
+          "hiperaktivitásra": [
+            149
+          ],
+          "utaló": [
+            150
+          ],
+          "tünetek": [
+            151,
+            218,
+            251
+          ],
+          "prediktorait": [
+            152
+          ],
+          "azonosítsuk.": [
+            153
+          ],
+          "második": [
+            155
+          ],
+          "útmodellt": [
+            158
+          ],
+          "mutat": [
+            159
+          ],
+          "be,": [
+            160
+          ],
+          "tünetei": [
+            164
+          ],
+          "lemorzsolódási": [
+            167
+          ],
+          "szándék": [
+            168
+          ],
+          "kapcsolatot": [
+            170
+          ],
+          "vizsgálja.": [
+            171
+          ],
+          "reziliencia": [
+            174
+          ],
+          "mediátorként": [
+            178
+          ],
+          "szerepelt,": [
+            179
+          ],
+          "általános": [
+            181
+          ],
+          "énhatékonyság": [
+            182
+          ],
+          "moderátoként": [
+            183
+          ],
+          "jelent": [
+            184
+          ],
+          "meg": [
+            185
+          ],
+          "ebben": [
+            186
+          ],
+          "összefüggésben.": [
+            188
+          ],
+          "harmadik": [
+            190
+          ],
+          "témakörét": [
+            195
+          ],
+          "képviseli.": [
+            196
+          ],
+          "Fenntartható": [
+            198
+          ],
+          "Pozitív": [
+            199
+          ],
+          "Mentális": [
+            200
+          ],
+          "Egészség": [
+            201
+          ],
+          "Elmélet": [
+            202
+          ],
+          "elemeinek": [
+            203
+          ],
+          "(globális": [
+            204
+          ],
+          "jóllét,": [
+            205
+          ],
+          "reziliencia,": [
+            206
+          ],
+          "savoring,": [
+            207
+          ],
+          "önreguláció,": [
+            208
+          ],
+          "társas": [
+            209
+          ],
+          "hatékonyság)": [
+            210
+          ],
+          "mediáló": [
+            211
+          ],
+          "moderáló": [
+            213
+          ],
+          "lehetőségét": [
+            214
+          ],
+          "vizsgáltuk": [
+            215
+          ],
+          "elutasításra": [
+            221
+          ],
+          "való": [
+            222
+          ],
+          "érzékenység": [
+            223
+          ],
+          "kölcsönhatásában.": [
+            224
+          ],
+          "Kutatásunk": [
+            225
+          ],
+          "rizikó-": [
+            227
+          ],
+          "protektív": [
+            229
+          ],
+          "faktorok": [
+            230
+          ],
+          "azonosításával": [
+            231
+          ],
+          "teremt": [
+            232
+          ],
+          "bázist": [
+            233
+          ],
+          "hallgatókat": [
+            235
+          ],
+          "célzó": [
+            236
+          ],
+          "intervenciók": [
+            237
+          ],
+          "számára.": [
+            238
+          ],
+          "Fontos": [
+            239
+          ],
+          "azonban": [
+            240
+          ],
+          "kiemelni": [
+            241
+          ],
+          "korlátait:": [
+            242
+          ],
+          "keresztmetszeti": [
+            244
+          ],
+          "önbeszámolós": [
+            246
+          ],
+          "módszer": [
+            247
+          ],
+          "okán": [
+            248
+          ],
+          "csak": [
+            249
+          ],
+          "előfordulására": [
+            252
+          ],
+          "támaszkodhattunk,": [
+            253
+          ],
+          "így": [
+            254
+          ],
+          "jövőbeli": [
+            256
+          ],
+          "hosszmetszeti": [
+            257
+          ],
+          "kutatások": [
+            258
+          ],
+          "szükségességére": [
+            259
+          ],
+          "hívják": [
+            260
+          ],
+          "fel": [
+            261
+          ],
+          "figyelmet.": [
+            263
+          ]
+        },
+        "counts_by_year": [],
+        "updated_date": "2026-08-21T09:56:20.448147",
+        "created_date": "2025-10-10T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}

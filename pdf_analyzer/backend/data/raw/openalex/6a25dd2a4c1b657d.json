@@ -2,13 +2,13 @@
   "provider": "openalex",
   "query_key": "title_author:Attention is all you need Vaswani",
   "query_hash": "6a25dd2a4c1b657d",
-  "saved_at": "2026-08-31T08:13:46.236493+00:00",
+  "saved_at": "2026-09-02T10:40:06.571368+00:00",
   "status_code": 200,
   "candidate_count": 10,
   "raw_response": {
     "meta": {
-      "count": 124563,
-      "db_response_time_ms": 145,
+      "count": 124697,
+      "db_response_time_ms": 108,
       "page": 1,
       "per_page": 10,
       "groups_count": null,
@@ -34,7 +34,7 @@
         "doi": "https://doi.org/10.4230/lipics.cosit.2022.18",
         "title": "AI-Assisted Pipeline for Dynamic Generation of Trustworthy Health Supplement Content at Scale",
         "display_name": "AI-Assisted Pipeline for Dynamic Generation of Trustworthy Health Supplement Content at Scale",
-        "relevance_score": 479.66156,
+        "relevance_score": 480.31247,
         "publication_year": 2018,
         "publication_date": "2018-10-11",
         "ids": {
@@ -44,9 +44,9 @@
         },
         "language": "en",
         "primary_location": {
-          "id": "pmh:oai:drops-oai.dagstuhl.de:10385",
+          "id": "pmh:oai:drops-oai.dagstuhl.de:16903",
           "is_oa": true,
-          "landing_page_url": "https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.LDK.2019.21",
+          "landing_page_url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.COSIT.2022.18",
           "pdf_url": null,
           "source": {
             "id": "https://openalex.org/S4377196569",
@@ -81,7 +81,7 @@
         "open_access": {
           "is_oa": true,
           "oa_status": "green",
-          "oa_url": "https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.LDK.2019.21",
+          "oa_url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.COSIT.2022.18",
           "any_repository_has_fulltext": true
         },
         "authorships": [
@@ -465,7 +465,7 @@
         "corresponding_institution_ids": [],
         "apc_list": null,
         "apc_paid": null,
-        "fwci": 2698.7935,
+        "fwci": 2698.3758,
         "has_fulltext": true,
         "cited_by_count": 46036,
         "citation_normalized_percentile": {
@@ -667,35 +667,6 @@
         "locations_count": 16,
         "locations": [
           {
-            "id": "pmh:oai:drops-oai.dagstuhl.de:10385",
-            "is_oa": true,
-            "landing_page_url": "https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.LDK.2019.21",
-            "pdf_url": null,
-            "source": {
-              "id": "https://openalex.org/S4377196569",
-              "display_name": "DROPS (Schloss Dagstuhl – Leibniz Center for Informatics)",
-              "issn_l": null,
-              "issn": null,
-              "is_oa": false,
-              "is_in_doaj": false,
-              "is_core": false,
-              "host_organization": "https://openalex.org/I2799853480",
-              "host_organization_name": "Schloss Dagstuhl – Leibniz Center for Informatics",
-              "host_organization_lineage": [
-                "https://openalex.org/I2799853480"
-              ],
-              "host_organization_lineage_names": [],
-              "type": "repository"
-            },
-            "license": "cc-by",
-            "license_id": "https://openalex.org/licenses/cc-by",
-            "version": "publishedVersion",
-            "is_accepted": true,
-            "is_published": true,
-            "raw_source_name": "",
-            "raw_type": "InProceedings"
-          },
-          {
             "id": "pmh:oai:drops-oai.dagstuhl.de:16903",
             "is_oa": true,
             "landing_page_url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.COSIT.2022.18",
@@ -754,6 +725,35 @@
             "is_published": false,
             "raw_source_name": null,
             "raw_type": "text"
+          },
+          {
+            "id": "pmh:oai:drops-oai.dagstuhl.de:10385",
+            "is_oa": true,
+            "landing_page_url": "https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.LDK.2019.21",
+            "pdf_url": "https://drops.dagstuhl.de/storage/01oasics/oasics-vol070-ldk2019/OASIcs.LDK.2019.21/OASIcs.LDK.2019.21.pdf",
+            "source": {
+              "id": "https://openalex.org/S4377196569",
+              "display_name": "DROPS (Schloss Dagstuhl – Leibniz Center for Informatics)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I2799853480",
+              "host_organization_name": "Schloss Dagstuhl – Leibniz Center for Informatics",
+              "host_organization_lineage": [
+                "https://openalex.org/I2799853480"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": null,
+            "raw_type": "InProceedings"
           },
           {
             "id": "pmh:oai:drops-oai.dagstuhl.de:19696",
@@ -1144,9 +1144,9 @@
           }
         ],
         "best_oa_location": {
-          "id": "pmh:oai:drops-oai.dagstuhl.de:10385",
+          "id": "pmh:oai:drops-oai.dagstuhl.de:16903",
           "is_oa": true,
-          "landing_page_url": "https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.LDK.2019.21",
+          "landing_page_url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.COSIT.2022.18",
           "pdf_url": null,
           "source": {
             "id": "https://openalex.org/S4377196569",
@@ -1175,8 +1175,8 @@
         "sustainable_development_goals": [
           {
             "score": 0.8399999737739563,
-            "id": "https://metadata.un.org/sdg/4",
-            "display_name": "Quality Education"
+            "display_name": "Quality Education",
+            "id": "https://metadata.un.org/sdg/4"
           }
         ],
         "awards": [
@@ -1208,8 +1208,8 @@
           }
         ],
         "has_content": {
-          "pdf": false,
-          "grobid_xml": false
+          "grobid_xml": false,
+          "pdf": false
         },
         "content_urls": null,
         "referenced_works_count": 55,
@@ -1610,11 +1610,11 @@
         "counts_by_year": [
           {
             "year": 2026,
-            "cited_by_count": 662
+            "cited_by_count": 663
           },
           {
             "year": 2025,
-            "cited_by_count": 4629
+            "cited_by_count": 4628
           },
           {
             "year": 2024,
@@ -1661,7 +1661,7 @@
             "cited_by_count": 2
           }
         ],
-        "updated_date": "2026-08-30T07:30:35.949966",
+        "updated_date": "2026-09-01T08:31:24.195828",
         "created_date": "2018-10-26T00:00:00"
       },
       {
@@ -1669,7 +1669,7 @@
         "doi": "https://doi.org/10.1093/bib/bbad467",
         "title": "Attention is all you need: utilizing attention in AI-enabled drug discovery",
         "display_name": "Attention is all you need: utilizing attention in AI-enabled drug discovery",
-        "relevance_score": 414.76385,
+        "relevance_score": 408.46878,
         "publication_year": 2023,
         "publication_date": "2023-11-22",
         "ids": {
@@ -2779,8 +2779,8 @@
           }
         ],
         "has_content": {
-          "pdf": true,
-          "grobid_xml": true
+          "grobid_xml": true,
+          "pdf": true
         },
         "content_urls": {
           "pdf": "https://content.openalex.org/works/W4390678101.pdf",
@@ -3396,7 +3396,7 @@
         "doi": "https://doi.org/10.1007/978-3-031-84300-6_13",
         "title": "Is Attention All You Need?",
         "display_name": "Is Attention All You Need?",
-        "relevance_score": 404.68497,
+        "relevance_score": 404.26825,
         "publication_year": 2025,
         "publication_date": "2025-01-01",
         "ids": {
@@ -3620,8 +3620,8 @@
         "awards": [],
         "funders": [],
         "has_content": {
-          "pdf": false,
-          "grobid_xml": false
+          "grobid_xml": false,
+          "pdf": false
         },
         "content_urls": null,
         "referenced_works_count": 69,
@@ -3727,7 +3727,7 @@
         "doi": "https://doi.org/10.1007/s41095-022-0271-y",
         "title": "Attention mechanisms in computer vision: A survey",
         "display_name": "Attention mechanisms in computer vision: A survey",
-        "relevance_score": 400.94412,
+        "relevance_score": 397.82758,
         "publication_year": 2022,
         "publication_date": "2022-03-15",
         "ids": {
@@ -4232,9 +4232,9 @@
           "value_usd": 0
         },
         "apc_paid": null,
-        "fwci": 178.5584,
+        "fwci": 178.4301,
         "has_fulltext": true,
-        "cited_by_count": 2487,
+        "cited_by_count": 2488,
         "citation_normalized_percentile": {
           "value": 0.99997526,
           "is_in_top_1_percent": true,
@@ -4608,8 +4608,8 @@
           }
         ],
         "has_content": {
-          "pdf": true,
-          "grobid_xml": true
+          "grobid_xml": true,
+          "pdf": true
         },
         "content_urls": {
           "pdf": "https://content.openalex.org/works/W3212386989.pdf",
@@ -5210,7 +5210,7 @@
         "counts_by_year": [
           {
             "year": 2026,
-            "cited_by_count": 331
+            "cited_by_count": 332
           },
           {
             "year": 2025,
@@ -5233,7 +5233,7 @@
             "cited_by_count": 2
           }
         ],
-        "updated_date": "2026-08-29T07:29:34.045763",
+        "updated_date": "2026-09-01T08:31:24.195828",
         "created_date": "2025-10-10T00:00:00"
       },
       {
@@ -5241,7 +5241,7 @@
         "doi": "https://doi.org/10.1609/aaai.v34i07.6693",
         "title": "Channel Attention Is All You Need for Video Frame Interpolation",
         "display_name": "Channel Attention Is All You Need for Video Frame Interpolation",
-        "relevance_score": 393.9815,
+        "relevance_score": 394.16522,
         "publication_year": 2020,
         "publication_date": "2020-04-03",
         "ids": {
@@ -5998,8 +5998,8 @@
           }
         ],
         "has_content": {
-          "pdf": false,
-          "grobid_xml": false
+          "grobid_xml": false,
+          "pdf": false
         },
         "content_urls": null,
         "referenced_works_count": 74,
@@ -6515,7 +6515,7 @@
         "doi": "https://doi.org/10.1038/s41586-021-03819-2",
         "title": "Highly accurate protein structure prediction with AlphaFold",
         "display_name": "Highly accurate protein structure prediction with AlphaFold",
-        "relevance_score": 387.1609,
+        "relevance_score": 388.5247,
         "publication_year": 2021,
         "publication_date": "2021-07-15",
         "ids": {
@@ -7907,9 +7907,9 @@
           "currency": "USD",
           "value_usd": 11390
         },
-        "fwci": 2237.9378,
+        "fwci": 2237.872,
         "has_fulltext": true,
-        "cited_by_count": 46865,
+        "cited_by_count": 46905,
         "citation_normalized_percentile": {
           "value": 1.0,
           "is_in_top_1_percent": true,
@@ -8885,8 +8885,8 @@
           }
         ],
         "has_content": {
-          "pdf": true,
-          "grobid_xml": true
+          "grobid_xml": true,
+          "pdf": true
         },
         "content_urls": {
           "pdf": "https://content.openalex.org/works/W3177828909.pdf",
@@ -9585,7 +9585,7 @@
         "counts_by_year": [
           {
             "year": 2026,
-            "cited_by_count": 6192
+            "cited_by_count": 6231
           },
           {
             "year": 2025,
@@ -9593,7 +9593,7 @@
           },
           {
             "year": 2024,
-            "cited_by_count": 11955
+            "cited_by_count": 11956
           },
           {
             "year": 2023,
@@ -9632,7 +9632,7 @@
             "cited_by_count": 7
           }
         ],
-        "updated_date": "2026-08-30T07:30:35.949966",
+        "updated_date": "2026-09-01T08:31:24.195828",
         "created_date": "2021-07-19T00:00:00"
       },
       {
@@ -9640,7 +9640,7 @@
         "doi": "https://doi.org/10.1016/j.ebiom.2023.104512",
         "title": "Attention is not all you need: the complicated case of ethically using large language models in healthcare and medicine",
         "display_name": "Attention is not all you need: the complicated case of ethically using large language models in healthcare and medicine",
-        "relevance_score": 373.8296,
+        "relevance_score": 369.64456,
         "publication_year": 2023,
         "publication_date": "2023-03-15",
         "ids": {
@@ -10303,15 +10303,15 @@
         "sustainable_development_goals": [
           {
             "score": 0.6600000262260437,
-            "id": "https://metadata.un.org/sdg/16",
-            "display_name": "Peace, Justice and strong institutions"
+            "display_name": "Peace, Justice and strong institutions",
+            "id": "https://metadata.un.org/sdg/16"
           }
         ],
         "awards": [],
         "funders": [],
         "has_content": {
-          "pdf": false,
-          "grobid_xml": false
+          "grobid_xml": false,
+          "pdf": false
         },
         "content_urls": null,
         "referenced_works_count": 40,
@@ -10831,7 +10831,7 @@
         "doi": "https://doi.org/10.1609/aaai.v34i01.5477",
         "title": "GMAN: A Graph Multi-Attention Network for Traffic Prediction",
         "display_name": "GMAN: A Graph Multi-Attention Network for Traffic Prediction",
-        "relevance_score": 314.5578,
+        "relevance_score": 312.81528,
         "publication_year": 2020,
         "publication_date": "2020-04-03",
         "ids": {
@@ -11392,8 +11392,8 @@
         "sustainable_development_goals": [
           {
             "score": 0.6200000047683716,
-            "id": "https://metadata.un.org/sdg/11",
-            "display_name": "Sustainable cities and communities"
+            "display_name": "Sustainable cities and communities",
+            "id": "https://metadata.un.org/sdg/11"
           }
         ],
         "awards": [
@@ -11432,8 +11432,8 @@
           }
         ],
         "has_content": {
-          "pdf": false,
-          "grobid_xml": false
+          "grobid_xml": false,
+          "pdf": false
         },
         "content_urls": null,
         "referenced_works_count": 50,
@@ -11999,7 +11999,7 @@
         "doi": "https://doi.org/10.1016/j.media.2019.01.012",
         "title": "Attention gated networks: Learning to leverage salient regions in medical images",
         "display_name": "Attention gated networks: Learning to leverage salient regions in medical images",
-        "relevance_score": 308.4677,
+        "relevance_score": 305.50293,
         "publication_year": 2019,
         "publication_date": "2019-02-05",
         "ids": {
@@ -12382,11 +12382,11 @@
           "currency": "USD",
           "value_usd": 3150
         },
-        "fwci": 82.7047,
+        "fwci": 82.7485,
         "has_fulltext": true,
-        "cited_by_count": 1990,
+        "cited_by_count": 1992,
         "citation_normalized_percentile": {
-          "value": 0.99971451,
+          "value": 0.99971452,
           "is_in_top_1_percent": true,
           "is_in_top_10_percent": true
         },
@@ -13369,8 +13369,8 @@
           }
         ],
         "has_content": {
-          "pdf": true,
-          "grobid_xml": true
+          "grobid_xml": true,
+          "pdf": true
         },
         "content_urls": {
           "pdf": "https://content.openalex.org/works/W2888358068.pdf",
@@ -14040,7 +14040,7 @@
         "counts_by_year": [
           {
             "year": 2026,
-            "cited_by_count": 217
+            "cited_by_count": 219
           },
           {
             "year": 2025,
@@ -14075,7 +14075,7 @@
             "cited_by_count": 1
           }
         ],
-        "updated_date": "2026-08-30T07:30:35.949966",
+        "updated_date": "2026-09-01T08:31:24.195828",
         "created_date": "2025-10-10T00:00:00"
       },
       {
@@ -14083,7 +14083,7 @@
         "doi": "https://doi.org/10.4230/lipics.itp.2023.19",
         "title": "Exploiting Generative AI to Scale up Intelligent Tutoring Systems",
         "display_name": "Exploiting Generative AI to Scale up Intelligent Tutoring Systems",
-        "relevance_score": 298.1208,
+        "relevance_score": 301.95508,
         "publication_year": 2023,
         "publication_date": "2023-01-01",
         "ids": {
@@ -15064,8 +15064,8 @@
         "sustainable_development_goals": [
           {
             "score": 0.550000011920929,
-            "id": "https://metadata.un.org/sdg/4",
-            "display_name": "Quality Education"
+            "display_name": "Quality Education",
+            "id": "https://metadata.un.org/sdg/4"
           }
         ],
         "awards": [
@@ -15191,8 +15191,8 @@
           }
         ],
         "has_content": {
-          "pdf": true,
-          "grobid_xml": true
+          "grobid_xml": true,
+          "pdf": true
         },
         "content_urls": {
           "pdf": "https://content.openalex.org/works/W4385245566.pdf",

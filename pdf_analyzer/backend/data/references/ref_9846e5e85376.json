@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_9846e5e85376",
-  "project_id": "project_20260831_081840_857bd2f2",
-  "created_at": "2026-08-31T08:20:07.268229+00:00",
+  "project_id": "project_20260903_084424_bb902af0",
+  "created_at": "2026-09-03T08:45:57.269880+00:00",
   "input": {
     "original_text": "Rajeshwari S., S. Meenakshi, The age of doom scrolling Social media’s attractive addiction. Journal of Education and Health",
     "parsed": {
@@ -70,13 +70,13 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.25,
+        "confidence": 0.0,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -145,16 +145,16 @@
   ],
   "sources": {
     "openalex": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.25,
+      "confidence": 0.0,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": "data/raw/openalex/b851fab146a45c3b.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -211,48 +211,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.4103/jehp.jehp_1045_23",
-        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.61113/ijiap.v2i12.630",
-        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.62225/2583049x.2024.4.3.2796",
-        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.30872/psikostudia.v13i3.15920",
-        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2147/prbm.s420771",
-        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -260,43 +224,7 @@
     "metadata_completeness": 0.33,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.4103/jehp.jehp_1045_23",
-        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.61113/ijiap.v2i12.630",
-        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.62225/2583049x.2024.4.3.2796",
-        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.30872/psikostudia.v13i3.15920",
-        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2147/prbm.s420771",
-        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -305,14 +233,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.83,
-      "crossref": 60846.71,
-      "openalex": 72198.84
+      "google_scholar": 4.45,
+      "crossref": 69000.41,
+      "openalex": 82532.98
     },
     "candidate_counts": {
       "google_scholar": 1,
       "crossref": 0,
-      "openalex": 5
+      "openalex": 0
     },
     "errors": {}
   }

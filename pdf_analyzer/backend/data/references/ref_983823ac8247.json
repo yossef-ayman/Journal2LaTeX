@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_983823ac8247",
-  "project_id": "project_20260831_081840_857bd2f2",
-  "created_at": "2026-08-31T08:19:56.558598+00:00",
+  "project_id": "project_20260903_084424_bb902af0",
+  "created_at": "2026-09-03T08:46:05.430955+00:00",
   "input": {
     "original_text": "HF Huo, Q Wang., Modelling the influence of awareness programs by media on the drinking dynamics. Abstract and Applied Analysis, 2014(1)(2014) 938080.",
     "parsed": {
@@ -75,13 +75,13 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.26,
+        "confidence": 0.0,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -165,16 +165,16 @@
   ],
   "sources": {
     "openalex": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.26,
+      "confidence": 0.0,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": "data/raw/openalex/a1baf44c4b80fc17.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -236,76 +236,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.5517/cc10h4n9",
-        "reason": "Metadata mismatch (title_sim=0.19, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1017/s037346331400068x",
-        "reason": "Metadata mismatch (title_sim=0.15, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1155/2015/260195",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.14744/hf.2023.2023.0044",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1155/2020/9284698",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1186/s13662-021-03515-5",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2118/938080-g",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.3390/biomedicines11041097",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1155/2022/2140649",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -313,71 +249,7 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.5517/cc10h4n9",
-        "reason": "Metadata mismatch (title_sim=0.19, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1017/s037346331400068x",
-        "reason": "Metadata mismatch (title_sim=0.15, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1155/2015/260195",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.14744/hf.2023.2023.0044",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1155/2020/9284698",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1186/s13662-021-03515-5",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2118/938080-g",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.3390/biomedicines11041097",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1155/2022/2140649",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -386,14 +258,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 10.83,
-      "crossref": 20030.66,
-      "openalex": 23169.99
+      "google_scholar": 8.71,
+      "crossref": 15839.55,
+      "openalex": 37746.18
     },
     "candidate_counts": {
       "google_scholar": 1,
       "crossref": 0,
-      "openalex": 10
+      "openalex": 0
     },
     "errors": {}
   }
