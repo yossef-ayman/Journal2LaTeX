@@ -163,6 +163,43 @@ if (document.readyState === 'loading') {
     initializeUploadFlow();
 }
 
+// ==========================================
+// AUTHOR PROFILE AUTO-OPEN VIA URL PARAMS
+// ==========================================
+// When a new tab is opened with /?author=...&name=... (by clicking an author chip),
+// automatically show the author profile modal in that new tab.
+(function checkAuthorParam() {
+    function tryOpenAuthorFromParams() {
+        const params = new URLSearchParams(window.location.search);
+        const authorParam = params.get('author');
+        const nameParam = params.get('name');
+        if (authorParam) {
+            // Render the existing author component as a dedicated profile page.
+            // The original dashboard stays unchanged in the tab the user clicked from.
+            document.documentElement.classList.add('author-profile-page');
+            const searchInput = document.getElementById('scholar-search-input');
+            if (searchInput) searchInput.value = nameParam || authorParam;
+            if (uploadScreen) {
+                uploadScreen.style.display = 'none';
+                uploadScreen.classList.remove('active');
+            }
+            if (dashboardScreen) {
+                dashboardScreen.style.display = 'block';
+                dashboardScreen.classList.add('active');
+            }
+            // Open the author profile modal with the existing component and data flow
+            openAuthorProfile(authorParam, nameParam || authorParam);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', tryOpenAuthorFromParams);
+    } else {
+        tryOpenAuthorFromParams();
+    }
+})();
+
+
 // File processing and upload
 function handleFile(file) {
     if (!file || !file.name.toLowerCase().endsWith('.pdf')) {
@@ -328,9 +365,16 @@ function populateDashboard(data) {
             const authorId = typeof author === 'object' ? (author.author_id || author.id || '') : '';
             const initials = nameStr.split(' ').filter(Boolean).map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'A';
             
-            const chip = document.createElement('div');
+            // Build an internal URL that will auto-open the author profile modal in the new tab
+            const idParam = encodeURIComponent(authorId || nameStr);
+            const nameParam = encodeURIComponent(nameStr);
+            const authorUrl = `/?author=${idParam}&name=${nameParam}`;
+            
+            const chip = document.createElement('a');
             chip.className = 'author-chip';
-            chip.style.cursor = 'pointer';
+            chip.href = authorUrl;
+            chip.target = '_blank';
+            chip.rel = 'noopener noreferrer';
             chip.title = `Click to view Academic Profile for ${nameStr}`;
             chip.innerHTML = `
                 <div class="author-avatar">${initials}</div>
@@ -338,35 +382,28 @@ function populateDashboard(data) {
             `;
             chip.onclick = (e) => {
                 e.stopPropagation();
-                openAuthorProfile(authorId || nameStr, nameStr);
             };
             authorsList.appendChild(chip);
         });
     }
     
-    // Affiliations
-    const affilContainer = document.getElementById('affiliations-list');
-    if (data.affiliations && data.affiliations.length > 0) {
-        affilContainer.innerHTML = '<strong>Affiliations:</strong><br>' + data.affiliations.map(a => escapeHtml(a)).join('<br>');
-    } else {
-        affilContainer.innerHTML = '';
-    }
-    
-    // Populate Headings Outline
-    headingsOutline.innerHTML = '';
-    if (!Array.isArray(data.headings) || data.headings.length === 0) {
-        headingsOutline.innerHTML = '<div class="text-muted" style="padding: 1rem;">No headings identified in the document structure.</div>';
-    } else {
-        data.headings.forEach(heading => {
-            const item = document.createElement('div');
-            item.className = `heading-item level-${heading.level || 1}`;
-            item.innerHTML = `
-                ${escapeHtml(heading.text || '')}
-                <span class="heading-page">P. ${heading.page || 1}</span>
-            `;
-            item.onclick = () => analyzeElement('heading', { text: heading.text || '', level: heading.level || 1, page: heading.page || 1 });
-            headingsOutline.appendChild(item);
-        });
+    // Populate Headings Outline if container exists
+    if (headingsOutline) {
+        headingsOutline.innerHTML = '';
+        if (!Array.isArray(data.headings) || data.headings.length === 0) {
+            headingsOutline.innerHTML = '<div class="text-muted" style="padding: 1rem;">No headings identified in the document structure.</div>';
+        } else {
+            data.headings.forEach(heading => {
+                const item = document.createElement('div');
+                item.className = 'heading-card-item';
+                item.innerHTML = `
+                    <span class="heading-card-text">${escapeHtml(heading.text || '')}</span>
+                    <span class="heading-card-page">P. ${heading.page || 1}</span>
+                `;
+                item.onclick = () => analyzeElement('heading', { text: heading.text || '', level: heading.level || 1, page: heading.page || 1 });
+                headingsOutline.appendChild(item);
+            });
+        }
     }
 
     // Populate References List
@@ -516,7 +553,7 @@ function renderReferencesList(refsList) {
                 if (aOpenAlexId) idBadges += `<span class="author-openalex-badge" title="OpenAlex ID: ${escapeHtml(aOpenAlexId)}">🌐</span>`;
 
                 authorsHtml += `
-                    <div class="author-chip author-card-chip" onclick="event.stopPropagation(); openAuthorProfile('${escapeHtml(aId)}', '${escapeHtml(aName)}')">
+                    <div class="author-chip author-card-chip" onclick="event.stopPropagation(); openAuthorProfileNewTab('${escapeHtml(aId)}', '${escapeHtml(aName)}')">
                         <span class="author-avatar">${initials}</span>
                         <span class="author-name">${escapeHtml(aName)}</span>
                         ${idBadges}
@@ -527,7 +564,7 @@ function renderReferencesList(refsList) {
             if (allAuthors.length > 5) {
                 const remaining = allAuthors.length - 4;
                 authorsHtml += `
-                    <div class="author-chip author-card-chip author-chip-more" onclick="event.stopPropagation(); openPaperModalToTab('${escapeHtml(refId)}', 'authors', ${escapeHtml(JSON.stringify(ref))})">
+                    <div class="author-chip author-card-chip author-chip-more" onclick="event.stopPropagation(); openPaperModalToTab(${idx}, 'authors')">
                         <span class="author-name">+${remaining} more authors</span>
                     </div>
                 `;
@@ -580,23 +617,37 @@ function renderReferencesList(refsList) {
 
         const idsHtml = idBadges.length > 0 ? `<div class="ref-identifiers-row">${idBadges.join(' ')}</div>` : '';
 
-        // Citation Intelligence Box in Reference Card
+        // Citation Intelligence Box in Reference Card (Split metrics and quick action buttons)
         const citeBoxHtml = `
             <div class="card-citation-intel-box">
-                <div class="intel-header-label">📊 Citation Intelligence</div>
-                <div class="intel-metrics-row">
-                    <div class="intel-metric-item">
-                        <span class="im-source">🎓 Google Scholar</span>
+                <div class="intel-metrics-col">
+                    <div class="intel-header-label">CITATION INTELLIGENCE</div>
+                    <div class="intel-metric-row">
+                        <span class="im-source">Google Scholar:</span>
                         <span class="im-val">${scholarCite !== null && scholarCite !== undefined ? scholarCite.toLocaleString() : '—'}</span>
                     </div>
-                    <div class="intel-metric-item">
-                        <span class="im-source">🌐 OpenAlex</span>
+                    <div class="intel-metric-row">
+                        <span class="im-source">OpenAlex:</span>
                         <span class="im-val">${alexCite !== null && alexCite !== undefined ? alexCite.toLocaleString() : '—'}</span>
                     </div>
-                    <div class="intel-metric-item">
-                        <span class="im-source">🔗 Crossref</span>
+                    <div class="intel-metric-row">
+                        <span class="im-source">Crossref:</span>
                         <span class="im-val">${crossCite !== null && crossCite !== undefined ? crossCite.toLocaleString() : '—'}</span>
                     </div>
+                </div>
+                <div class="intel-actions-col">
+                    <button class="btn-intel-action" onclick="event.stopPropagation(); openPaperModalToTab(${idx}, 'overview')">
+                        🔍 View Sources
+                    </button>
+                    <a href="${scholarResultUrl}" target="_blank" class="btn-intel-action" onclick="event.stopPropagation();">
+                        🎓 Open Scholar
+                    </a>
+                    <button class="btn-intel-action" onclick="event.stopPropagation(); searchPaperByIndex(${idx})">
+                        🔎 Search Paper
+                    </button>
+                    <button class="btn-intel-action" onclick="event.stopPropagation(); copySingleRefBibtex(${idx})">
+                        📋 BibTeX
+                    </button>
                 </div>
             </div>
         `;
@@ -605,13 +656,24 @@ function renderReferencesList(refsList) {
         let findCitesLabel = '📊 Find Citations';
         const bestCiteCount = scholarCite || canonicalCiteVal;
         if (bestCiteCount !== null && bestCiteCount !== undefined) {
-            findCitesLabel = `📊 Find Citations · ${bestCiteCount.toLocaleString()}`;
+            findCitesLabel = `📊 Citations · ${bestCiteCount.toLocaleString()}`;
         }
 
-        // Action Toolbar
+        // Secondary / Extended Actions Toolbar
+        let secondaryActions = [];
+        secondaryActions.push(`<button class="btn-action-primary-sm" onclick="event.stopPropagation(); openPaperModalToTab(${idx}, 'citations')">${findCitesLabel}</button>`);
+        secondaryActions.push(`<button class="btn-action-secondary-sm" onclick="event.stopPropagation(); openPaperModal(${idx})">📖 Full Profile</button>`);
+        if (directPdfUrl) {
+            secondaryActions.push(`<a href="${directPdfUrl}" target="_blank" class="btn-pdf-link-sm" onclick="event.stopPropagation();">📄 PDF</a>`);
+        }
+        if (doiVal) {
+            secondaryActions.push(`<button class="btn-action-secondary-sm" onclick="event.stopPropagation(); copyText('${escapeHtml(doiVal)}', 'DOI copied!')">🔗 Copy DOI</button>`);
+        }
+
+        // Full Reference Card Assembly
         item.innerHTML = `
             <div class="ref-card-header">
-                <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                <div class="ref-card-badges-left">
                     <span class="ref-index-badge">#${idx + 1}</span>
                     <span class="badge-ref-type ${typeBadgeClass}">${typeLabel}</span>
                     ${matchBadge}
@@ -619,7 +681,7 @@ function renderReferencesList(refsList) {
                 ${providersHtml}
             </div>
 
-            <div class="ref-card-title-row" onclick="openPaperModal('${escapeHtml(refId)}', ${escapeHtml(JSON.stringify(ref))})">
+            <div class="ref-card-title-row" onclick="openPaperModal(${idx})">
                 <h4 class="ref-card-title">${escapeHtml(displayTitle)}</h4>
             </div>
 
@@ -628,21 +690,29 @@ function renderReferencesList(refsList) {
             ${idsHtml}
             ${citeBoxHtml}
 
-            <div class="ref-card-actions">
-                <button class="btn-action-primary" onclick="event.stopPropagation(); openPaperModalToTab('${escapeHtml(refId)}', 'citations', ${escapeHtml(JSON.stringify(ref))})">${findCitesLabel}</button>
-                <button class="btn-action-secondary" onclick="event.stopPropagation(); openPaperModal('${escapeHtml(refId)}', ${escapeHtml(JSON.stringify(ref))})">📖 Open Paper Profile</button>
-                <button class="btn-action-secondary" onclick="event.stopPropagation(); openPaperModalToTab('${escapeHtml(refId)}', 'authors', ${escapeHtml(JSON.stringify(ref))})">👥 Authors</button>
-                <button class="btn-action-secondary" onclick="event.stopPropagation(); openPaperModalToTab('${escapeHtml(refId)}', 'overview', ${escapeHtml(JSON.stringify(ref))})">🔍 View Sources</button>
-                <a href="${scholarResultUrl}" target="_blank" class="btn-scholar-ref" onclick="event.stopPropagation();">🎓 Open Scholar</a>
-                ${directPdfUrl ? `<a href="${directPdfUrl}" target="_blank" class="btn-pdf-link" onclick="event.stopPropagation();">📄 PDF</a>` : ''}
-                <button class="btn-scholar-ref" onclick="event.stopPropagation(); searchPaperOptimized('${escapeHtml(displayTitle)}', '${escapeHtml(firstAuthorName)}', '${displayYear || ''}')">🔎 Search Paper</button>
-                ${doiVal ? `<button class="btn-action-secondary" onclick="event.stopPropagation(); copyText('${escapeHtml(doiVal)}', 'DOI copied!')">📋 Copy DOI</button>` : ''}
-                <button class="btn-action-secondary" onclick="event.stopPropagation(); copySingleRefBibtex(${escapeHtml(JSON.stringify(ref))}, ${idx + 1})">📋 BibTeX</button>
+            <div class="ref-card-secondary-actions">
+                ${secondaryActions.join(' ')}
             </div>
         `;
         
         referencesList.appendChild(item);
     });
+}
+
+// Search Paper By Index helper
+function searchPaperByIndex(idx) {
+    if (!currentProjectReferences || !currentProjectReferences[idx]) return;
+    const ref = currentProjectReferences[idx];
+    const master = ref.master_record || {};
+    const canonical = master.canonical || {};
+    const inputParsed = (master.input && master.input.parsed) || {};
+    const displayTitle = (canonical.title && canonical.title.value) || ref.title || cleanRefQuery(ref.original_text || ref.text || '') || '';
+    const displayYear = (canonical.year && canonical.year.value) || ref.year || inputParsed.year || '';
+    const allAuthors = (master.canonical_authors && master.canonical_authors.length > 0)
+        ? master.canonical_authors
+        : (Array.isArray(ref.authors) ? ref.authors : (inputParsed.authors || []));
+    const firstAuthor = allAuthors.length > 0 ? (typeof allAuthors[0] === 'object' ? allAuthors[0].name : String(allAuthors[0])) : '';
+    searchPaperOptimized(displayTitle, firstAuthor, displayYear);
 }
 
 // Clean reference text to isolate title
@@ -681,17 +751,24 @@ function cleanRefQuery(refText) {
     return text.trim() || refText.trim();
 }
 
-// Tab Switching (Right Panel)
+// Tab Switching (XML & Analysis Workbench)
 function switchRightTab(tabName) {
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-    
+    const xmlBtn = document.getElementById('tab-xml-btn');
+    const analysisBtn = document.getElementById('tab-analysis-btn');
+    const xmlContent = document.getElementById('tab-xml-content');
+    const analysisContent = document.getElementById('tab-analysis-content');
+
+    if (xmlBtn) xmlBtn.classList.remove('active');
+    if (analysisBtn) analysisBtn.classList.remove('active');
+    if (xmlContent) xmlContent.classList.remove('active');
+    if (analysisContent) analysisContent.classList.remove('active');
+
     if (tabName === 'xml') {
-        document.getElementById('tab-xml-btn').classList.add('active');
-        document.getElementById('tab-xml-content').classList.add('active');
+        if (xmlBtn) xmlBtn.classList.add('active');
+        if (xmlContent) xmlContent.classList.add('active');
     } else if (tabName === 'analysis') {
-        document.getElementById('tab-analysis-btn').classList.add('active');
-        document.getElementById('tab-analysis-content').classList.add('active');
+        if (analysisBtn) analysisBtn.classList.add('active');
+        if (analysisContent) analysisContent.classList.add('active');
     }
 }
 
@@ -924,33 +1001,55 @@ function renderScholarSearchResults(data) {
 // ==========================================
 // PAPER PROFILE MODAL LOGIC (7 TABS)
 // ==========================================
-function openPaperModal(refId, fallbackRefObj = null) {
-    openPaperModalToTab(refId, 'overview', fallbackRefObj);
+function openPaperModal(refIdOrIndex, fallbackRefObj = null) {
+    openPaperModalToTab(refIdOrIndex, 'overview', fallbackRefObj);
 }
 
-function openPaperModalToTab(refId, tabName = 'overview', fallbackRefObj = null) {
+function openPaperModalToTab(refIdOrIndex, tabName = 'overview', fallbackRefObj = null) {
+    let refId = '';
+    if (typeof refIdOrIndex === 'number') {
+        const refItem = currentProjectReferences && currentProjectReferences[refIdOrIndex];
+        if (refItem) {
+            fallbackRefObj = refItem;
+            refId = refItem.reference_id || refItem.id || `ref_${refIdOrIndex + 1}`;
+        } else {
+            refId = `ref_${refIdOrIndex + 1}`;
+        }
+    } else {
+        refId = String(refIdOrIndex || '');
+        if (!fallbackRefObj && currentProjectReferences && currentProjectReferences.length > 0) {
+            fallbackRefObj = currentProjectReferences.find(r => (r.reference_id || r.id) === refId);
+        }
+    }
+
     const modal = document.getElementById('paper-modal');
-    modal.style.display = 'flex';
+    if (modal) modal.style.display = 'flex';
     switchPaperTab(tabName);
 
-    fetch(`/references/${encodeURIComponent(refId)}`)
-        .then(res => {
-            if (!res.ok) {
-                if (fallbackRefObj) return fallbackRefObj.master_record || fallbackRefObj;
-                throw new Error('Reference record not found');
-            }
-            return res.json();
-        })
-        .then(master => {
-            currentPaperRecord = master;
-            populatePaperModal(master);
-        })
-        .catch(err => {
-            console.warn('Loading paper modal with fallback:', err);
-            const fallback = fallbackRefObj ? (fallbackRefObj.master_record || fallbackRefObj) : { reference_id: refId };
-            currentPaperRecord = fallback;
-            populatePaperModal(fallback);
-        });
+    if (refId) {
+        fetch(`/references/${encodeURIComponent(refId)}`)
+            .then(res => {
+                if (!res.ok) {
+                    if (fallbackRefObj) return fallbackRefObj.master_record || fallbackRefObj;
+                    throw new Error('Reference record not found');
+                }
+                return res.json();
+            })
+            .then(master => {
+                currentPaperRecord = master;
+                populatePaperModal(master);
+            })
+            .catch(err => {
+                console.warn('Loading paper modal with fallback:', err);
+                const fallback = fallbackRefObj ? (fallbackRefObj.master_record || fallbackRefObj) : { reference_id: refId };
+                currentPaperRecord = fallback;
+                populatePaperModal(fallback);
+            });
+    } else if (fallbackRefObj) {
+        const fallback = fallbackRefObj.master_record || fallbackRefObj;
+        currentPaperRecord = fallback;
+        populatePaperModal(fallback);
+    }
 }
 
 function closePaperModal() {
@@ -1131,7 +1230,7 @@ function populatePaperModal(master) {
             <span class="author-avatar">${initials}</span>
             <span class="author-name">${escapeHtml(aName)}</span>
         `;
-        chip.onclick = () => openAuthorProfile(aId, aName);
+        chip.onclick = () => openAuthorProfileNewTab(aId, aName);
         overviewAuthorsContainer.appendChild(chip);
     });
 
@@ -1319,7 +1418,7 @@ function populatePaperModal(master) {
                 </div>
                 ${idBadges.length > 0 ? `<div class="author-id-badges-row">${idBadges.join(' ')}</div>` : ''}
                 <div style="margin-top: 0.75rem;">
-                    <button class="btn-action-primary" style="width: 100%; justify-content: center;" onclick="openAuthorProfile('${escapeHtml(aId)}', '${escapeHtml(aName)}')">👤 View Author Profile</button>
+                    <button class="btn-action-primary" style="width: 100%; justify-content: center;" onclick="openAuthorProfileNewTab('${escapeHtml(aId)}', '${escapeHtml(aName)}')">👤 View Author Profile</button>
                 </div>
             `;
             authorsContainer.appendChild(authorCard);
@@ -1447,7 +1546,14 @@ function copyCurrentPaperBibtex() {
     copyText(bib, 'BibTeX entry copied to clipboard!');
 }
 
-function copySingleRefBibtex(ref, idx = 1) {
+function copySingleRefBibtex(refOrIndex, idx = 1) {
+    let ref = refOrIndex;
+    if (typeof refOrIndex === 'number') {
+        idx = refOrIndex + 1;
+        ref = currentProjectReferences && currentProjectReferences[refOrIndex];
+    }
+    if (!ref) return;
+
     const master = ref.master_record || ref;
     const can = master.canonical || {};
     const title = (can.title && can.title.value) || ref.title || cleanRefQuery(ref.original_text || ref.text || '') || 'Untitled';
@@ -1722,14 +1828,21 @@ function openAuthorProfile(authorId, fallbackName = '') {
     currentAuthorProvider = 'openalex';
     
     const modal = document.getElementById('author-modal');
-    modal.style.display = 'flex';
-    
-    const alexBtn = document.getElementById('prov-openalex-btn');
-    const scholarBtn = document.getElementById('prov-scholar-btn');
-    if (alexBtn) alexBtn.classList.add('active');
-    if (scholarBtn) scholarBtn.classList.remove('active');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
     
     fetchAuthorProfileAndWorks();
+}
+
+// Opens the author profile page in a NEW browser tab using URL query params.
+// The new tab auto-triggers the author profile modal on load.
+function openAuthorProfileNewTab(authorId, fallbackName) {
+    const id = authorId || fallbackName || '';
+    const name = fallbackName || authorId || '';
+    if (!id && !name) return;
+    const url = '/?author=' + encodeURIComponent(id) + '&name=' + encodeURIComponent(name);
+    window.open(url, '_blank', 'noopener,noreferrer');
 }
 
 function fetchAuthorProfileAndWorks() {
@@ -1771,7 +1884,8 @@ function fetchAuthorProfileAndWorks() {
             return res.json();
         })
         .then(data => {
-            document.getElementById('author-profile-name').textContent = data.display_name || data.name || fallbackName;
+            const displayName = data.display_name || data.name || fallbackName;
+            document.getElementById('author-profile-name').textContent = displayName;
             
             if (data.scholar_url && scholarLink) {
                 scholarLink.href = data.scholar_url;
