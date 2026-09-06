@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_83ddca57328f",
-  "project_id": "project_20260903_113352_bb902af0",
-  "created_at": "2026-09-03T11:35:05.756910+00:00",
+  "project_id": "project_20260906_082722_bb902af0",
+  "created_at": "2026-09-06T08:28:52.360663+00:00",
   "input": {
     "original_text": "Lu, X., Huang, P., Feng, X., He, Y., A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput. 92(3) (2022) 104.",
     "parsed": {
@@ -85,8 +85,8 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.0,
-        "verification_status": "missing"
+        "confidence": 0.2,
+        "verification_status": "conflict"
       },
       "openalex_id": {
         "value": null,
@@ -219,14 +219,14 @@
       "data": {}
     },
     "crossref": {
-      "available": false,
+      "available": true,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.0,
+      "confidence": 0.2,
       "citation_count": null,
       "doi": null,
       "url": null,
-      "raw_file": null,
+      "raw_file": "data/raw/crossref/5420e0974ab49217.json",
       "normalized_file": null,
       "data": {}
     },
@@ -246,12 +246,83 @@
     }
   },
   "doi_verification": {
-    "status": "missing",
+    "status": "conflict",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.0,
-    "reason": "No DOI or arXiv identifier present in reference or provider results.",
-    "conflicts": [],
+    "confidence": 0.2,
+    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1299/jsmetokai.2005.54.7",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1051/vcm/2024005",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1136/jitc-2023-sitc2023.0104",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.telpol.2025.103073",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2139/ssrn.5277548",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.5414/cn111702cor",
+        "reason": "Metadata mismatch (title_sim=0.10, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/s0145-2126(05)80168-7",
+        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1118/1.3181396",
+        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.4028/www.scientific.net/amm.128-129.661",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/bjs/znac269.452",
+        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -259,7 +330,78 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1299/jsmetokai.2005.54.7",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1051/vcm/2024005",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1136/jitc-2023-sitc2023.0104",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.telpol.2025.103073",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2139/ssrn.5277548",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.5414/cn111702cor",
+        "reason": "Metadata mismatch (title_sim=0.10, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/s0145-2126(05)80168-7",
+        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1118/1.3181396",
+        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.4028/www.scientific.net/amm.128-129.661",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/bjs/znac269.452",
+        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -268,13 +410,13 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 10.23,
-      "crossref": 42781.69,
-      "openalex": 59075.83
+      "google_scholar": 9.26,
+      "crossref": 58258.2,
+      "openalex": 75387.96
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
+      "crossref": 10,
       "openalex": 0
     },
     "errors": {}

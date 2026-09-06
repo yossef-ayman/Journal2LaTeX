@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_6c6ca128510f",
-  "project_id": "project_20260903_113352_bb902af0",
-  "created_at": "2026-09-03T11:35:13.355556+00:00",
+  "project_id": "project_20260906_082722_bb902af0",
+  "created_at": "2026-09-06T08:29:00.864807+00:00",
   "input": {
     "original_text": "Psychology (2026) 6:103.",
     "parsed": {
@@ -65,8 +65,8 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
@@ -139,14 +139,14 @@
       "data": {}
     },
     "crossref": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.39,
+      "confidence": 0.0,
       "citation_count": null,
       "doi": null,
       "url": null,
-      "raw_file": "data/raw/crossref/77bc7110ce46b015.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -186,83 +186,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5005/jp/books/11592_103",
-        "reason": "Metadata mismatch (title_sim=0.36, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5040/9780300261271.0009.ch003",
-        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/j.jss.2006.12.116",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00135469",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00171426",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2307/2969998",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9783112635100-104",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1053/j.ajkd.2007.02.109",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2307/2970503",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9780429053740-107",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -270,78 +199,7 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5005/jp/books/11592_103",
-        "reason": "Metadata mismatch (title_sim=0.36, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5040/9780300261271.0009.ch003",
-        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/j.jss.2006.12.116",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00135469",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00171426",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2307/2969998",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9783112635100-104",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1053/j.ajkd.2007.02.109",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2307/2970503",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9780429053740-107",
-        "reason": "Metadata mismatch (title_sim=0.75, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -350,13 +208,13 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.93,
-      "crossref": 51866.12,
-      "openalex": 76056.33
+      "google_scholar": 7.62,
+      "crossref": 66372.25,
+      "openalex": 92469.07
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 10,
+      "crossref": 0,
       "openalex": 0
     },
     "errors": {}
