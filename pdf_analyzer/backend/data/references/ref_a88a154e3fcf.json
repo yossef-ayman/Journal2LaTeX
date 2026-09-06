@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_a88a154e3fcf",
-  "project_id": "project_20260831_090611_857bd2f2",
-  "created_at": "2026-08-31T09:07:29.819644+00:00",
+  "project_id": "project_20260906_075341_bb902af0",
+  "created_at": "2026-09-06T07:55:21.029625+00:00",
   "input": {
     "original_text": "Xiao-Hong Zhang, Aatif Ali, Muhammad Altaf Khan, Mohammad Y. Alshahrani, Taseer Muhammad and Saeed Islam, Mathematical Analysis of the TB Model with Treatment via Caputo-Type Fractional Derivative. Hindawi 2021(2021) 9512371-86.",
     "parsed": {
@@ -90,8 +90,8 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
@@ -239,14 +239,14 @@
       "data": {}
     },
     "crossref": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.18,
+      "confidence": 0.0,
       "citation_count": null,
       "doi": null,
       "url": null,
-      "raw_file": "data/raw/crossref/ca213a8527d139bd.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -311,83 +311,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/0030-3992(86)90096-4",
-        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2135/cropsci1989.0011183x002900020068x",
-        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1002/0471701343.sdp43916",
-        "reason": "Metadata mismatch (title_sim=0.20, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1002/0471701343.sdp18208",
-        "reason": "Metadata mismatch (title_sim=0.20, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5040/9780300261264.0007.ch036",
-        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/s0031--866(3()49)80027--5",
-        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/978-90-313-8458-7_86",
-        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.15375/9783814557915-100",
-        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00304741",
-        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00101778",
-        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -395,78 +324,7 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/0030-3992(86)90096-4",
-        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2135/cropsci1989.0011183x002900020068x",
-        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1002/0471701343.sdp43916",
-        "reason": "Metadata mismatch (title_sim=0.20, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1002/0471701343.sdp18208",
-        "reason": "Metadata mismatch (title_sim=0.20, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5040/9780300261264.0007.ch036",
-        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/s0031--866(3()49)80027--5",
-        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/978-90-313-8458-7_86",
-        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.15375/9783814557915-100",
-        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00304741",
-        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00101778",
-        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -475,13 +333,13 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.46,
-      "crossref": 47267.92,
-      "openalex": 69677.2
+      "google_scholar": 6.19,
+      "crossref": 66483.18,
+      "openalex": 87744.17
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 10,
+      "crossref": 0,
       "openalex": 0
     },
     "errors": {}

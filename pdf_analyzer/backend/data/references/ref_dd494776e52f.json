@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_dd494776e52f",
-  "project_id": "project_20260831_090611_857bd2f2",
-  "created_at": "2026-08-31T09:07:30.014428+00:00",
+  "project_id": "project_20260906_075341_bb902af0",
+  "created_at": "2026-09-06T07:55:20.889082+00:00",
   "input": {
     "original_text": "Christiane Eichenber, Raphaela Schneider and Helena Rumpl, Social media addiction associations with attachment style, mental distress, and personality. BMC Psychiatry. (2024) 24-278.",
     "parsed": {
@@ -85,8 +85,8 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
@@ -219,14 +219,14 @@
       "data": {}
     },
     "crossref": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.12,
+      "confidence": 0.0,
       "citation_count": null,
       "doi": null,
       "url": null,
-      "raw_file": "data/raw/crossref/8350c2b887ca5530.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -286,20 +286,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00103515",
-        "reason": "Metadata mismatch (title_sim=0.16, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -307,15 +299,7 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00103515",
-        "reason": "Metadata mismatch (title_sim=0.16, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -324,13 +308,13 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 15.17,
-      "crossref": 54842.66,
-      "openalex": 77355.61
+      "google_scholar": 4.66,
+      "crossref": 78044.8,
+      "openalex": 98563.83
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 1,
+      "crossref": 0,
       "openalex": 0
     },
     "errors": {}

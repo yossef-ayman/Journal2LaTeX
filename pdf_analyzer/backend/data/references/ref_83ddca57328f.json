@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_83ddca57328f",
-  "project_id": "project_20260831_071737_bb902af0",
-  "created_at": "2026-08-31T07:18:39.186566+00:00",
+  "project_id": "project_20260906_082722_bb902af0",
+  "created_at": "2026-09-06T08:28:52.360663+00:00",
   "input": {
     "original_text": "Lu, X., Huang, P., Feng, X., He, Y., A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput. 92(3) (2022) 104.",
     "parsed": {
@@ -91,7 +91,7 @@
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.2,
+        "confidence": 0.0,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -205,28 +205,28 @@
   ],
   "sources": {
     "openalex": {
-      "available": true,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.2,
-      "citation_count": null,
-      "openalex_id": null,
-      "doi": null,
-      "url": null,
-      "pdf_url": null,
-      "raw_file": "data/raw/openalex/9b3f8d71190d205f.json",
-      "normalized_file": null,
-      "data": {}
-    },
-    "crossref": {
       "available": false,
       "matched": false,
       "status": "not_found",
       "confidence": 0.0,
       "citation_count": null,
+      "openalex_id": null,
       "doi": null,
       "url": null,
+      "pdf_url": null,
       "raw_file": null,
+      "normalized_file": null,
+      "data": {}
+    },
+    "crossref": {
+      "available": true,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.2,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": "data/raw/crossref/5420e0974ab49217.json",
       "normalized_file": null,
       "data": {}
     },
@@ -254,72 +254,72 @@
     "conflicts": [
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0140-6736(21)01330-1",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1299/jsmetokai.2005.54.7",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1200/jco.2007.15.2553",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1159/000522082",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1145/362946.362974",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1186/gb-2010-11-3-r31",
+        "provider": "crossref",
+        "rejected_value": "10.1051/vcm/2024005",
         "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1029/2000jb900040",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1080/07366299.2016.1207459",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/j.memsci.2020.118263",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1038/s41592-019-0686-2",
+        "provider": "crossref",
+        "rejected_value": "10.1136/jitc-2023-sitc2023.0104",
         "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.3322/caac.20107",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.telpol.2025.103073",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2139/ssrn.5277548",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.5414/cn111702cor",
+        "reason": "Metadata mismatch (title_sim=0.10, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/s0145-2126(05)80168-7",
+        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1118/1.3181396",
+        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.4028/www.scientific.net/amm.128-129.661",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/bjs/znac269.452",
+        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
         "status": "conflict"
       }
     ],
@@ -333,72 +333,72 @@
     "conflicts": [
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0140-6736(21)01330-1",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1299/jsmetokai.2005.54.7",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1200/jco.2007.15.2553",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1159/000522082",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1145/362946.362974",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1186/gb-2010-11-3-r31",
+        "provider": "crossref",
+        "rejected_value": "10.1051/vcm/2024005",
         "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1029/2000jb900040",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1080/07366299.2016.1207459",
-        "reason": "Metadata mismatch (title_sim=0.05, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/j.memsci.2020.118263",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1038/s41592-019-0686-2",
+        "provider": "crossref",
+        "rejected_value": "10.1136/jitc-2023-sitc2023.0104",
         "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.3322/caac.20107",
-        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.telpol.2025.103073",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2139/ssrn.5277548",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.5414/cn111702cor",
+        "reason": "Metadata mismatch (title_sim=0.10, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/s0145-2126(05)80168-7",
+        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1118/1.3181396",
+        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.4028/www.scientific.net/amm.128-129.661",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/bjs/znac269.452",
+        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
         "status": "conflict"
       }
     ]
@@ -410,14 +410,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.65,
-      "crossref": 32952.29,
-      "openalex": 36364.87
+      "google_scholar": 9.26,
+      "crossref": 58258.2,
+      "openalex": 75387.96
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
-      "openalex": 10
+      "crossref": 10,
+      "openalex": 0
     },
     "errors": {}
   }

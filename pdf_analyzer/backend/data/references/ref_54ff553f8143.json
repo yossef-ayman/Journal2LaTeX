@@ -1,18 +1,12 @@
 {
   "reference_id": "ref_54ff553f8143",
   "project_id": "",
-  "created_at": "2026-09-06T09:43:45.211564+00:00",
+  "created_at": "2026-09-02T12:00:52.058325+00:00",
   "input": {
     "original_text": "Smith, J. Simple Title.",
     "parsed": {
-      "title": "Simple Title",
-      "authors": [
-        {
-          "name": "J Smith",
-          "given": "J",
-          "family": "Smith"
-        }
-      ],
+      "title": "Smith, J. Simple Title",
+      "authors": [],
       "year": null,
       "reference_type": "journal-article",
       "journal": null,
@@ -27,7 +21,7 @@
   },
   "canonical": {
     "title": {
-      "value": "Simple Title",
+      "value": "Smith, J. Simple Title",
       "source": "parsed",
       "confidence": 0.5,
       "verification_status": "unverified"
@@ -106,23 +100,7 @@
       "crossref": null
     }
   },
-  "canonical_authors": [
-    {
-      "name": "J Smith",
-      "display_name": "J Smith",
-      "given": "J",
-      "family": "Smith",
-      "author_id": "",
-      "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
-        "google_scholar_id": null
-      },
-      "affiliations": [],
-      "match_status": "matched",
-      "confidence": 0.75
-    }
-  ],
+  "canonical_authors": [],
   "sources": {
     "openalex": {
       "available": false,
@@ -176,9 +154,9 @@
   },
   "quality_and_conflicts": {
     "overall_confidence": 0.0,
-    "metadata_completeness": 0.33,
+    "metadata_completeness": 0.17,
     "doi_verified": false,
-    "author_verified": true,
+    "author_verified": false,
     "conflicts": []
   },
   "telemetry": {

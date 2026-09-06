@@ -1559,7 +1559,7 @@ function populatePaperModal(master) {
             <div class="doi-box doi-box-conflict">
                 <span class="doi-icon">⚠️</span>
                 <div style="width: 100%;">
-                    <div style="font-weight: 600; color: #f87171;">Conflicting Metadata Excluded</div>
+                    <div style="font-weight: 600; color: #ef9a9a;">Conflicting Metadata Excluded</div>
                     <div style="font-size: 0.84rem; margin-top: 0.15rem; color: var(--text-secondary);">
                         The DOI or venue returned by third-party deposits failed strict consistency checks and was excluded from canonical fields.
                     </div>

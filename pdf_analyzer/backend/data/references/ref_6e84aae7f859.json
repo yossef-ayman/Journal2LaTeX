@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_6e84aae7f859",
-  "project_id": "project_20260831_090611_857bd2f2",
-  "created_at": "2026-08-31T09:07:30.625922+00:00",
+  "project_id": "project_20260906_075341_bb902af0",
+  "created_at": "2026-09-06T07:55:21.338541+00:00",
   "input": {
     "original_text": "Huo, H., Jing, S.L., Wang, X.Y., Xiang, H., Modelling and analysis of an alcoholism model with treatment and effect of Twitter. AIMS Math. 16 (2019) 3595–3622.",
     "parsed": {
@@ -95,8 +95,8 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.0,
-        "verification_status": "missing"
+        "confidence": 0.2,
+        "verification_status": "conflict"
       },
       "openalex_id": {
         "value": null,
@@ -259,14 +259,14 @@
       "data": {}
     },
     "crossref": {
-      "available": false,
+      "available": true,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.0,
+      "confidence": 0.37,
       "citation_count": null,
       "doi": null,
       "url": null,
-      "raw_file": null,
+      "raw_file": "data/raw/crossref/3519d6539117fe94.json",
       "normalized_file": null,
       "data": {}
     },
@@ -336,12 +336,83 @@
     }
   },
   "doi_verification": {
-    "status": "missing",
+    "status": "conflict",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.0,
-    "reason": "No DOI or arXiv identifier present in reference or provider results.",
-    "conflicts": [],
+    "confidence": 0.2,
+    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.ultrasmedbio.2006.02.1394",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2307/2301575",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2307/2300462",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1007/978-3-540-29925-7_3594",
+        "reason": "Metadata mismatch (title_sim=0.43, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.ultrasmedbio.2006.02.1367",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3998/gabii.1.sd3622",
+        "reason": "Metadata mismatch (title_sim=0.43, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1007/978-3-540-29925-7_3621",
+        "reason": "Metadata mismatch (title_sim=0.38, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3998/gabii.1.3595",
+        "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3998/gabii.1.sd3595",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3998/gabii.1.3622",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -349,7 +420,78 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.ultrasmedbio.2006.02.1394",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2307/2301575",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2307/2300462",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1007/978-3-540-29925-7_3594",
+        "reason": "Metadata mismatch (title_sim=0.43, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.ultrasmedbio.2006.02.1367",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3998/gabii.1.sd3622",
+        "reason": "Metadata mismatch (title_sim=0.43, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1007/978-3-540-29925-7_3621",
+        "reason": "Metadata mismatch (title_sim=0.38, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3998/gabii.1.3595",
+        "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3998/gabii.1.sd3595",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3998/gabii.1.3622",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -358,13 +500,13 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.7,
-      "crossref": 33408.25,
-      "openalex": 56715.31
+      "google_scholar": 4.57,
+      "crossref": 53140.61,
+      "openalex": 75530.18
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
+      "crossref": 10,
       "openalex": 0
     },
     "errors": {}

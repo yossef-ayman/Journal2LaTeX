@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_9846e5e85376",
-  "project_id": "project_20260831_090611_857bd2f2",
-  "created_at": "2026-08-31T09:07:22.676406+00:00",
+  "project_id": "project_20260906_075341_bb902af0",
+  "created_at": "2026-09-06T07:55:12.837570+00:00",
   "input": {
     "original_text": "Rajeshwari S., S. Meenakshi, The age of doom scrolling Social media’s attractive addiction. Journal of Education and Health",
     "parsed": {
@@ -32,16 +32,16 @@
   },
   "canonical": {
     "title": {
-      "value": "Health Education and Education for Health",
-      "source": "crossref",
-      "confidence": 0.53,
-      "verification_status": "unverified"
+      "value": "Journal of Education and Health",
+      "source": "google_scholar",
+      "confidence": 1.0,
+      "verification_status": "verified"
     },
     "year": {
-      "value": 1987,
-      "source": "crossref",
-      "confidence": 0.53,
-      "verification_status": "verified"
+      "value": null,
+      "source": "parsed",
+      "confidence": 0.0,
+      "verification_status": "unverified"
     },
     "venue": {
       "value": null,
@@ -70,8 +70,8 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
@@ -105,10 +105,10 @@
       }
     },
     "citation_counts": {
-      "canonical_value": 0,
+      "canonical_value": null,
       "google_scholar": null,
       "openalex": null,
-      "crossref": 0
+      "crossref": null
     }
   },
   "canonical_authors": [
@@ -159,36 +159,16 @@
       "data": {}
     },
     "crossref": {
-      "available": true,
+      "available": false,
       "matched": false,
-      "status": "low_confidence",
-      "confidence": 0.53,
-      "citation_count": 0,
-      "doi": "10.1016/b978-0-08-033947-4.50007-x",
-      "url": "https://doi.org/10.1016/b978-0-08-033947-4.50007-x",
-      "raw_file": "data/raw/crossref/e63c91b6aad64366.json",
+      "status": "not_found",
+      "confidence": 0.0,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": null,
       "normalized_file": null,
-      "data": {
-        "title": "Health Education and Education for Health",
-        "authors": [
-          {
-            "name": "S. NAYAR",
-            "given": "S.",
-            "family": "NAYAR",
-            "author_id": "",
-            "source": "crossref",
-            "author_match_status": "ambiguous"
-          }
-        ],
-        "year": 1987,
-        "journal": "Education and Health",
-        "doi": "10.1016/b978-0-08-033947-4.50007-x",
-        "url": "https://doi.org/10.1016/b978-0-08-033947-4.50007-x",
-        "openalex_id": "",
-        "citation_count": 0,
-        "source": "crossref",
-        "raw_file": "data/raw/crossref/e63c91b6aad64366.json"
-      }
+      "data": {}
     },
     "google_scholar": {
       "available": false,
@@ -231,162 +211,20 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/b978-0-08-033947-4.50007-x",
-        "reason": "Metadata mismatch (title_sim=0.64, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9781315146706-41",
-        "reason": "Metadata mismatch (title_sim=0.34, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/s0033-3506(49)81524-1",
-        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9780203137161-6",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1136/bmj.1.5330.601",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/978-3-031-25910-4_222",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1080/09540128908260258",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1136/bmj.1.4236.361",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9781003660514-6",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1097/00006199-196807000-00062",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
     "overall_confidence": 1.0,
-    "metadata_completeness": 0.67,
+    "metadata_completeness": 0.33,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/b978-0-08-033947-4.50007-x",
-        "reason": "Metadata mismatch (title_sim=0.64, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9781315146706-41",
-        "reason": "Metadata mismatch (title_sim=0.34, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/s0033-3506(49)81524-1",
-        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9780203137161-6",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1136/bmj.1.5330.601",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/978-3-031-25910-4_222",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1080/09540128908260258",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1136/bmj.1.4236.361",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9781003660514-6",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1097/00006199-196807000-00062",
-        "reason": "Metadata mismatch (title_sim=0.51, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -395,13 +233,13 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 8.92,
-      "crossref": 49416.38,
-      "openalex": 64654.92
+      "google_scholar": 7.73,
+      "crossref": 69368.26,
+      "openalex": 83381.58
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 10,
+      "crossref": 0,
       "openalex": 0
     },
     "errors": {}

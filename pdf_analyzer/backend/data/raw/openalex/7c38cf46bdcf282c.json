@@ -1,0 +1,2907 @@
+{
+  "provider": "openalex",
+  "query_key": "raw:Abdon Atangana, Seda Igret., Fractional Stochastic Differential Equations. Springer, 2022.",
+  "query_hash": "7c38cf46bdcf282c",
+  "saved_at": "2026-09-03T07:27:00.270919+00:00",
+  "status_code": 200,
+  "candidate_count": 2,
+  "raw_response": {
+    "meta": {
+      "count": 2,
+      "db_response_time_ms": 276,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (Abdon Atangana Seda Igret. Fractional Stochastic Differential Equations. Springer 2022.)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Abdon Atangana Seda Igret. Fractional Stochastic Differential Equations. Springer 2022.",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Abdon Atangana Seda Igret. Fractional Stochastic Differential Equations. Springer 2022.&per_page=5"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4361011480",
+        "doi": "https://doi.org/10.1016/j.aej.2023.03.037",
+        "title": "A vigorous study of fractional order mathematical model for SARS-CoV-2 epidemic with Mittag-Leffler kernel",
+        "display_name": "A vigorous study of fractional order mathematical model for SARS-CoV-2 epidemic with Mittag-Leffler kernel",
+        "relevance_score": 127.209114,
+        "publication_year": 2023,
+        "publication_date": "2023-03-27",
+        "ids": {
+          "openalex": "https://openalex.org/W4361011480",
+          "doi": "https://doi.org/10.1016/j.aej.2023.03.037"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1016/j.aej.2023.03.037",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.aej.2023.03.037",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2764413287",
+            "display_name": "Alexandria Engineering Journal",
+            "issn_l": "1110-0168",
+            "issn": [
+              "1110-0168",
+              "2090-2670"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Alexandria Engineering Journal",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://doi.org/10.1016/j.aej.2023.03.037",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5033493619",
+              "display_name": "Yu-Ming Chu",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3018263800",
+                "display_name": "Huzhou Normal University",
+                "ror": "https://ror.org/04mvpxy20",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3018263800"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I39521962",
+                "display_name": "Hunan City University",
+                "ror": "https://ror.org/01vd7vb53",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I39521962"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Yu-Ming Chu",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Huzhou University, Huzhou 313000, PR China",
+              "School of Science, Hunan City University, Yiyang 413000, PR China"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Huzhou University, Huzhou 313000, PR China",
+                "institution_ids": [
+                  "https://openalex.org/I3018263800"
+                ]
+              },
+              {
+                "raw_affiliation_string": "School of Science, Hunan City University, Yiyang 413000, PR China",
+                "institution_ids": [
+                  "https://openalex.org/I39521962"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5063810826",
+              "display_name": "Rahat Zarin",
+              "orcid": "https://orcid.org/0000-0002-9759-2924"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I60837268",
+                "display_name": "King Mongkut's University of Technology Thonburi",
+                "ror": "https://ror.org/0057ax056",
+                "country_code": "TH",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I60837268"
+                ]
+              }
+            ],
+            "countries": [
+              "TH"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Rahat Zarin",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Faculty of Science, King Mongkut’s University of Technology Thonburi (KMUTT), 126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand",
+              "Department of Mathematics, Faculty of Science, King Mongkut's University of Technology Thonburi (KMUTT), 126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Faculty of Science, King Mongkut’s University of Technology Thonburi (KMUTT), 126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I60837268"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Mathematics, Faculty of Science, King Mongkut's University of Technology Thonburi (KMUTT), 126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I60837268"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5100412509",
+              "display_name": "Asad Ullah Khan",
+              "orcid": "https://orcid.org/0000-0002-3429-5148"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I37987034",
+                "display_name": "Guangzhou University",
+                "ror": "https://ror.org/05ar8rn06",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I37987034"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Asad Khan",
+            "raw_affiliation_strings": [
+              "School of Computer Science and Cyber Engineering, Guangzhou University, Guangzhou 510006, PR China"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "School of Computer Science and Cyber Engineering, Guangzhou University, Guangzhou 510006, PR China",
+                "institution_ids": [
+                  "https://openalex.org/I37987034"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5049517618",
+              "display_name": "Saqib Murtaza",
+              "orcid": "https://orcid.org/0000-0003-3085-5053"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I60837268",
+                "display_name": "King Mongkut's University of Technology Thonburi",
+                "ror": "https://ror.org/0057ax056",
+                "country_code": "TH",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I60837268"
+                ]
+              }
+            ],
+            "countries": [
+              "TH"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Saqib Murtaza",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Faculty of Science, King Mongkut’s University of Technology Thonburi (KMUTT), 126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand",
+              "Department of Mathematics, Faculty of Science, King Mongkut's University of Technology Thonburi (KMUTT), 126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Faculty of Science, King Mongkut’s University of Technology Thonburi (KMUTT), 126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I60837268"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Mathematics, Faculty of Science, King Mongkut's University of Technology Thonburi (KMUTT), 126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok 10140, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I60837268"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 4,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5100412509"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I37987034"
+        ],
+        "apc_list": {
+          "value": 1200,
+          "currency": "USD",
+          "value_usd": 1200
+        },
+        "apc_paid": {
+          "value": 1200,
+          "currency": "USD",
+          "value_usd": 1200
+        },
+        "fwci": 6.6826,
+        "has_fulltext": true,
+        "cited_by_count": 38,
+        "citation_normalized_percentile": {
+          "value": 0.98016184,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 97,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "71",
+          "issue": null,
+          "first_page": "565",
+          "last_page": "579"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10288",
+          "display_name": "Fractional Differential Equations Solutions",
+          "score": 0.9998999834060669,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2611",
+            "display_name": "Modeling and Simulation"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/26",
+            "display_name": "Mathematics"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10288",
+            "display_name": "Fractional Differential Equations Solutions",
+            "score": 0.9998999834060669,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10482",
+            "display_name": "Mathematical and Theoretical Epidemiology and Ecology Models",
+            "score": 0.9955000281333923,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2739",
+              "display_name": "Public Health, Environmental and Occupational Health"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/27",
+              "display_name": "Medicine"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/4",
+              "display_name": "Health Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10410",
+            "display_name": "COVID-19 epidemiological studies",
+            "score": 0.9821000099182129,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/fractional-calculus",
+            "display_name": "Fractional calculus",
+            "score": 0.6851449608802795
+          },
+          {
+            "id": "https://openalex.org/keywords/applied-mathematics",
+            "display_name": "Applied mathematics",
+            "score": 0.6366673111915588
+          },
+          {
+            "id": "https://openalex.org/keywords/operator",
+            "display_name": "Operator (biology)",
+            "score": 0.5987155437469482
+          },
+          {
+            "id": "https://openalex.org/keywords/stability",
+            "display_name": "Stability (learning theory)",
+            "score": 0.5857948064804077
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematics",
+            "display_name": "Mathematics",
+            "score": 0.5814096331596375
+          },
+          {
+            "id": "https://openalex.org/keywords/basic-reproduction-number",
+            "display_name": "Basic reproduction number",
+            "score": 0.5691617131233215
+          },
+          {
+            "id": "https://openalex.org/keywords/nonlinear-system",
+            "display_name": "Nonlinear system",
+            "score": 0.5513144731521606
+          },
+          {
+            "id": "https://openalex.org/keywords/stability-theory",
+            "display_name": "Stability theory",
+            "score": 0.524536669254303
+          },
+          {
+            "id": "https://openalex.org/keywords/kernel",
+            "display_name": "Kernel (algebra)",
+            "score": 0.5226014256477356
+          },
+          {
+            "id": "https://openalex.org/keywords/transmission",
+            "display_name": "Transmission (telecommunications)",
+            "score": 0.46380332112312317
+          },
+          {
+            "id": "https://openalex.org/keywords/order",
+            "display_name": "Order (exchange)",
+            "score": 0.4530293047428131
+          },
+          {
+            "id": "https://openalex.org/keywords/variety",
+            "display_name": "Variety (cybernetics)",
+            "score": 0.43476077914237976
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematical-model",
+            "display_name": "Mathematical model",
+            "score": 0.4118522107601166
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematical-optimization",
+            "display_name": "Mathematical optimization",
+            "score": 0.37092500925064087
+          },
+          {
+            "id": "https://openalex.org/keywords/computer-science",
+            "display_name": "Computer science",
+            "score": 0.27677929401397705
+          },
+          {
+            "id": "https://openalex.org/keywords/pure-mathematics",
+            "display_name": "Pure mathematics",
+            "score": 0.13214445114135742
+          },
+          {
+            "id": "https://openalex.org/keywords/population",
+            "display_name": "Population",
+            "score": 0.08556213974952698
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C154249771",
+            "wikidata": "https://www.wikidata.org/wiki/Q1339058",
+            "display_name": "Fractional calculus",
+            "level": 2,
+            "score": 0.6851449608802795
+          },
+          {
+            "id": "https://openalex.org/C28826006",
+            "wikidata": "https://www.wikidata.org/wiki/Q33521",
+            "display_name": "Applied mathematics",
+            "level": 1,
+            "score": 0.6366673111915588
+          },
+          {
+            "id": "https://openalex.org/C17020691",
+            "wikidata": "https://www.wikidata.org/wiki/Q139677",
+            "display_name": "Operator (biology)",
+            "level": 5,
+            "score": 0.5987155437469482
+          },
+          {
+            "id": "https://openalex.org/C112972136",
+            "wikidata": "https://www.wikidata.org/wiki/Q7595718",
+            "display_name": "Stability (learning theory)",
+            "level": 2,
+            "score": 0.5857948064804077
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.5814096331596375
+          },
+          {
+            "id": "https://openalex.org/C204264503",
+            "wikidata": "https://www.wikidata.org/wiki/Q901464",
+            "display_name": "Basic reproduction number",
+            "level": 3,
+            "score": 0.5691617131233215
+          },
+          {
+            "id": "https://openalex.org/C158622935",
+            "wikidata": "https://www.wikidata.org/wiki/Q660848",
+            "display_name": "Nonlinear system",
+            "level": 2,
+            "score": 0.5513144731521606
+          },
+          {
+            "id": "https://openalex.org/C41949839",
+            "wikidata": "https://www.wikidata.org/wiki/Q1756677",
+            "display_name": "Stability theory",
+            "level": 3,
+            "score": 0.524536669254303
+          },
+          {
+            "id": "https://openalex.org/C74193536",
+            "wikidata": "https://www.wikidata.org/wiki/Q574844",
+            "display_name": "Kernel (algebra)",
+            "level": 2,
+            "score": 0.5226014256477356
+          },
+          {
+            "id": "https://openalex.org/C761482",
+            "wikidata": "https://www.wikidata.org/wiki/Q118093",
+            "display_name": "Transmission (telecommunications)",
+            "level": 2,
+            "score": 0.46380332112312317
+          },
+          {
+            "id": "https://openalex.org/C182306322",
+            "wikidata": "https://www.wikidata.org/wiki/Q1779371",
+            "display_name": "Order (exchange)",
+            "level": 2,
+            "score": 0.4530293047428131
+          },
+          {
+            "id": "https://openalex.org/C136197465",
+            "wikidata": "https://www.wikidata.org/wiki/Q1729295",
+            "display_name": "Variety (cybernetics)",
+            "level": 2,
+            "score": 0.43476077914237976
+          },
+          {
+            "id": "https://openalex.org/C76969082",
+            "wikidata": "https://www.wikidata.org/wiki/Q486902",
+            "display_name": "Mathematical model",
+            "level": 2,
+            "score": 0.4118522107601166
+          },
+          {
+            "id": "https://openalex.org/C126255220",
+            "wikidata": "https://www.wikidata.org/wiki/Q141495",
+            "display_name": "Mathematical optimization",
+            "level": 1,
+            "score": 0.37092500925064087
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.27677929401397705
+          },
+          {
+            "id": "https://openalex.org/C202444582",
+            "wikidata": "https://www.wikidata.org/wiki/Q837863",
+            "display_name": "Pure mathematics",
+            "level": 1,
+            "score": 0.13214445114135742
+          },
+          {
+            "id": "https://openalex.org/C2908647359",
+            "wikidata": "https://www.wikidata.org/wiki/Q2625603",
+            "display_name": "Population",
+            "level": 2,
+            "score": 0.08556213974952698
+          },
+          {
+            "id": "https://openalex.org/C185592680",
+            "wikidata": "https://www.wikidata.org/wiki/Q2329",
+            "display_name": "Chemistry",
+            "level": 0,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C86339819",
+            "wikidata": "https://www.wikidata.org/wiki/Q407384",
+            "display_name": "Transcription factor",
+            "level": 3,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C62520636",
+            "wikidata": "https://www.wikidata.org/wiki/Q944",
+            "display_name": "Quantum mechanics",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C119857082",
+            "wikidata": "https://www.wikidata.org/wiki/Q2539",
+            "display_name": "Machine learning",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C144024400",
+            "wikidata": "https://www.wikidata.org/wiki/Q21201",
+            "display_name": "Sociology",
+            "level": 0,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C76155785",
+            "wikidata": "https://www.wikidata.org/wiki/Q418",
+            "display_name": "Telecommunications",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C162324750",
+            "wikidata": "https://www.wikidata.org/wiki/Q8134",
+            "display_name": "Economics",
+            "level": 0,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C105795698",
+            "wikidata": "https://www.wikidata.org/wiki/Q12483",
+            "display_name": "Statistics",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C55493867",
+            "wikidata": "https://www.wikidata.org/wiki/Q7094",
+            "display_name": "Biochemistry",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C10138342",
+            "wikidata": "https://www.wikidata.org/wiki/Q43015",
+            "display_name": "Finance",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C104317684",
+            "wikidata": "https://www.wikidata.org/wiki/Q7187",
+            "display_name": "Gene",
+            "level": 2,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C149923435",
+            "wikidata": "https://www.wikidata.org/wiki/Q37732",
+            "display_name": "Demography",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C158448853",
+            "wikidata": "https://www.wikidata.org/wiki/Q425218",
+            "display_name": "Repressor",
+            "level": 4,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 3,
+        "locations": [
+          {
+            "id": "doi:10.1016/j.aej.2023.03.037",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1016/j.aej.2023.03.037",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S2764413287",
+              "display_name": "Alexandria Engineering Journal",
+              "issn_l": "1110-0168",
+              "issn": [
+                "1110-0168",
+                "2090-2670"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320990",
+              "host_organization_name": "Elsevier BV",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320990"
+              ],
+              "host_organization_lineage_names": [
+                "Elsevier BV"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by-nc-nd",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Alexandria Engineering Journal",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:pubmedcentral.nih.gov:10040393",
+            "is_oa": true,
+            "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10040393",
+            "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10040393/pdf/main.pdf",
+            "source": {
+              "id": "https://openalex.org/S2764455111",
+              "display_name": "PubMed Central",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1299303238",
+              "host_organization_name": "National Institutes of Health",
+              "host_organization_lineage": [
+                "https://openalex.org/I1299303238"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Alexandria Engineering Journal",
+            "raw_type": "Text"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:1d0e8bb8001a4ffebfc25c5b5f87bc08",
+            "is_oa": true,
+            "landing_page_url": "https://doaj.org/article/1d0e8bb8001a4ffebfc25c5b5f87bc08",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Alexandria Engineering Journal, Vol 71, Iss , Pp 565-579 (2023)",
+            "raw_type": "article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1016/j.aej.2023.03.037",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.aej.2023.03.037",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2764413287",
+            "display_name": "Alexandria Engineering Journal",
+            "issn_l": "1110-0168",
+            "issn": [
+              "1110-0168",
+              "2090-2670"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Alexandria Engineering Journal",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.8500000238418579,
+            "display_name": "Good health and well-being",
+            "id": "https://metadata.un.org/sdg/3"
+          }
+        ],
+        "awards": [
+          {
+            "id": "https://openalex.org/G2045410146",
+            "display_name": null,
+            "funder_award_id": "62216235",
+            "funder_id": "https://openalex.org/F4320321001",
+            "funder_display_name": "National Natural Science Foundation of China"
+          },
+          {
+            "id": "https://openalex.org/G315389867",
+            "display_name": null,
+            "funder_award_id": "622260-1",
+            "funder_id": "https://openalex.org/F4320321001",
+            "funder_display_name": "National Natural Science Foundation of China"
+          }
+        ],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320321001",
+            "display_name": "National Natural Science Foundation of China",
+            "ror": "https://ror.org/01h0zpd94"
+          }
+        ],
+        "has_content": {
+          "grobid_xml": false,
+          "pdf": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 60,
+        "referenced_works": [
+          "https://openalex.org/W2001800250",
+          "https://openalex.org/W2102798763",
+          "https://openalex.org/W2107073197",
+          "https://openalex.org/W2171634348",
+          "https://openalex.org/W2772981348",
+          "https://openalex.org/W2945388147",
+          "https://openalex.org/W2965612715",
+          "https://openalex.org/W2994681762",
+          "https://openalex.org/W3019775607",
+          "https://openalex.org/W3033003925",
+          "https://openalex.org/W3033287871",
+          "https://openalex.org/W3080404639",
+          "https://openalex.org/W3086212987",
+          "https://openalex.org/W3088478741",
+          "https://openalex.org/W3091924023",
+          "https://openalex.org/W3092136311",
+          "https://openalex.org/W3092626277",
+          "https://openalex.org/W3093720553",
+          "https://openalex.org/W3105931917",
+          "https://openalex.org/W3112906428",
+          "https://openalex.org/W3118191862",
+          "https://openalex.org/W3126199721",
+          "https://openalex.org/W3132101082",
+          "https://openalex.org/W3138843423",
+          "https://openalex.org/W3161227889",
+          "https://openalex.org/W3162362862",
+          "https://openalex.org/W3174705187",
+          "https://openalex.org/W3179373633",
+          "https://openalex.org/W3188734037",
+          "https://openalex.org/W3200382202",
+          "https://openalex.org/W3208604851",
+          "https://openalex.org/W3210921815",
+          "https://openalex.org/W4200624012",
+          "https://openalex.org/W4205643895",
+          "https://openalex.org/W4205751650",
+          "https://openalex.org/W4210293671",
+          "https://openalex.org/W4214652678",
+          "https://openalex.org/W4214843515",
+          "https://openalex.org/W4247488377",
+          "https://openalex.org/W4281654464",
+          "https://openalex.org/W4282928215",
+          "https://openalex.org/W4283261555",
+          "https://openalex.org/W4283795877",
+          "https://openalex.org/W4293110145",
+          "https://openalex.org/W4297180544",
+          "https://openalex.org/W4308327104",
+          "https://openalex.org/W4309187723",
+          "https://openalex.org/W4310249254",
+          "https://openalex.org/W4313254889",
+          "https://openalex.org/W4313334785",
+          "https://openalex.org/W4322774715",
+          "https://openalex.org/W6750609437",
+          "https://openalex.org/W6777939832",
+          "https://openalex.org/W6784268341",
+          "https://openalex.org/W6787096647",
+          "https://openalex.org/W6797811379",
+          "https://openalex.org/W6802985549",
+          "https://openalex.org/W6828757341",
+          "https://openalex.org/W6839493713",
+          "https://openalex.org/W6846585578"
+        ],
+        "related_works": [
+          "https://openalex.org/W4402582198",
+          "https://openalex.org/W2372335318",
+          "https://openalex.org/W2291742240",
+          "https://openalex.org/W4320351350",
+          "https://openalex.org/W2511412881",
+          "https://openalex.org/W2372947689",
+          "https://openalex.org/W2009249058",
+          "https://openalex.org/W4220658483",
+          "https://openalex.org/W4388177052",
+          "https://openalex.org/W2253278609"
+        ],
+        "abstract_inverted_index": {
+          "SARS-CoV-2": [
+            0,
+            18,
+            55
+          ],
+          "and": [
+            1,
+            28,
+            71,
+            135,
+            220,
+            232,
+            245
+          ],
+          "its": [
+            2
+          ],
+          "variants": [
+            3
+          ],
+          "have": [
+            4
+          ],
+          "been": [
+            5
+          ],
+          "investigated": [
+            6,
+            49
+          ],
+          "using": [
+            7,
+            57
+          ],
+          "a": [
+            8,
+            21,
+            86,
+            160,
+            179,
+            205,
+            215,
+            254
+          ],
+          "variety": [
+            9,
+            206
+          ],
+          "of": [
+            10,
+            42,
+            46,
+            53,
+            69,
+            94,
+            115,
+            122,
+            142,
+            166,
+            201,
+            207,
+            209,
+            234,
+            257,
+            267
+          ],
+          "mathematical": [
+            11
+          ],
+          "models.": [
+            12
+          ],
+          "In": [
+            13
+          ],
+          "contrast": [
+            14
+          ],
+          "to": [
+            15,
+            84,
+            130,
+            147,
+            188,
+            204,
+            269
+          ],
+          "multi-strain": [
+            16
+          ],
+          "models,": [
+            17
+          ],
+          "models": [
+            19
+          ],
+          "exhibit": [
+            20
+          ],
+          "memory": [
+            22
+          ],
+          "effect": [
+            23,
+            241
+          ],
+          "that": [
+            24,
+            212
+          ],
+          "is": [
+            25,
+            34,
+            110,
+            145,
+            175,
+            214
+          ],
+          "often": [
+            26
+          ],
+          "overlooked": [
+            27
+          ],
+          "more": [
+            29
+          ],
+          "realistic.": [
+            30
+          ],
+          "Atangana-Baleanu’s": [
+            31
+          ],
+          "fractional-order": [
+            32,
+            61
+          ],
+          "operator": [
+            33,
+            109,
+            114
+          ],
+          "discussed": [
+            35
+          ],
+          "in": [
+            36,
+            128,
+            158,
+            186
+          ],
+          "this": [
+            37,
+            202,
+            250
+          ],
+          "manuscript": [
+            38
+          ],
+          "for": [
+            39,
+            88,
+            170,
+            194
+          ],
+          "the": [
+            40,
+            43,
+            50,
+            54,
+            58,
+            66,
+            89,
+            95,
+            104,
+            107,
+            111,
+            123,
+            132,
+            137,
+            143,
+            149,
+            164,
+            171,
+            195,
+            221,
+            230,
+            243,
+            247,
+            258,
+            265
+          ],
+          "analysis": [
+            41,
+            141
+          ],
+          "transmission": [
+            44,
+            51,
+            72
+          ],
+          "dynamics": [
+            45,
+            219,
+            244
+          ],
+          "SARS-CoV-2.": [
+            47
+          ],
+          "We": [
+            48,
+            177,
+            224
+          ],
+          "mechanism": [
+            52
+          ],
+          "virus": [
+            56
+          ],
+          "non-local": [
+            59
+          ],
+          "Atangana-Baleanu": [
+            60
+          ],
+          "approach": [
+            62
+          ],
+          "taking": [
+            63
+          ],
+          "into": [
+            64,
+            103
+          ],
+          "account": [
+            65
+          ],
+          "different": [
+            67,
+            235
+          ],
+          "phases": [
+            68
+          ],
+          "infection": [
+            70,
+            218
+          ],
+          "routes.": [
+            73
+          ],
+          "Using": [
+            74
+          ],
+          "conventional": [
+            75
+          ],
+          "ordinary": [
+            76
+          ],
+          "derivative": [
+            77
+          ],
+          "operators,": [
+            78
+          ],
+          "our": [
+            79
+          ],
+          "first": [
+            80
+          ],
+          "step": [
+            81
+          ],
+          "will": [
+            82,
+            98,
+            252
+          ],
+          "be": [
+            83
+          ],
+          "develop": [
+            85
+          ],
+          "model": [
+            87,
+            105,
+            125,
+            144
+          ],
+          "proposed": [
+            90,
+            124,
+            196
+          ],
+          "study.": [
+            91
+          ],
+          "As": [
+            92
+          ],
+          "part": [
+            93
+          ],
+          "extension,": [
+            96
+          ],
+          "we": [
+            97
+          ],
+          "incorporate": [
+            99
+          ],
+          "fractional": [
+            100,
+            112
+          ],
+          "order": [
+            101,
+            113,
+            116,
+            187
+          ],
+          "derivatives": [
+            102
+          ],
+          "where": [
+            106
+          ],
+          "used": [
+            108
+          ],
+          "Ψ1.": [
+            117
+          ],
+          "Additionally,": [
+            118
+          ],
+          "some": [
+            119
+          ],
+          "basic": [
+            120
+          ],
+          "aspects": [
+            121
+          ],
+          "are": [
+            126,
+            155
+          ],
+          "examined": [
+            127
+          ],
+          "addition": [
+            129
+          ],
+          "calculating": [
+            131
+          ],
+          "reproduction": [
+            133
+          ],
+          "number": [
+            134
+          ],
+          "determining": [
+            136
+          ],
+          "possible": [
+            138
+          ],
+          "equilibrium.": [
+            139
+          ],
+          "Stability": [
+            140
+          ],
+          "conducted": [
+            146
+          ],
+          "determine": [
+            148
+          ],
+          "necessary": [
+            150
+          ],
+          "equilibrium": [
+            151
+          ],
+          "conditions": [
+            152
+          ],
+          "as": [
+            153,
+            237,
+            239
+          ],
+          "they": [
+            154
+          ],
+          "also": [
+            156
+          ],
+          "required": [
+            157
+          ],
+          "developing": [
+            159
+          ],
+          "numerical": [
+            161,
+            180
+          ],
+          "setup.": [
+            162
+          ],
+          "Utilizing": [
+            163
+          ],
+          "theory": [
+            165
+          ],
+          "nonlinear": [
+            167
+          ],
+          "functional": [
+            168
+          ],
+          "analysis,": [
+            169
+          ],
+          "model,": [
+            172
+          ],
+          "Ulam-Hyers’": [
+            173
+          ],
+          "stability": [
+            174
+          ],
+          "established.": [
+            176
+          ],
+          "present": [
+            178,
+            225
+          ],
+          "scheme": [
+            181,
+            203
+          ],
+          "based": [
+            182
+          ],
+          "on": [
+            183,
+            242
+          ],
+          "Newton’s": [
+            184
+          ],
+          "polynomial": [
+            185
+          ],
+          "set": [
+            189
+          ],
+          "up": [
+            190
+          ],
+          "an": [
+            191
+          ],
+          "iterative": [
+            192
+          ],
+          "algorithm": [
+            193
+          ],
+          "ABC": [
+            197
+          ],
+          "system.": [
+            198
+          ],
+          "The": [
+            199
+          ],
+          "application": [
+            200
+          ],
+          "values": [
+            208
+          ],
+          "Φ1": [
+            210
+          ],
+          "indicates": [
+            211
+          ],
+          "there": [
+            213
+          ],
+          "relationship": [
+            216
+          ],
+          "between": [
+            217
+          ],
+          "derivative’s": [
+            222
+          ],
+          "order.": [
+            223
+          ],
+          "further": [
+            226
+          ],
+          "simulations": [
+            227
+          ],
+          "which": [
+            228
+          ],
+          "demonstrate": [
+            229
+          ],
+          "importance": [
+            231
+          ],
+          "cruciality": [
+            233
+          ],
+          "parameters,": [
+            236
+          ],
+          "well": [
+            238
+          ],
+          "their": [
+            240
+          ],
+          "administer": [
+            246
+          ],
+          "disease.": [
+            248
+          ],
+          "Furthermore,": [
+            249
+          ],
+          "study": [
+            251
+          ],
+          "provide": [
+            253
+          ],
+          "better": [
+            255
+          ],
+          "understanding": [
+            256
+          ],
+          "mechanisms": [
+            259
+          ],
+          "underlying": [
+            260
+          ],
+          "contagious": [
+            261
+          ],
+          "diseases,": [
+            262
+          ],
+          "thus": [
+            263
+          ],
+          "supporting": [
+            264
+          ],
+          "development": [
+            266
+          ],
+          "policies": [
+            268
+          ],
+          "control": [
+            270
+          ],
+          "them.": [
+            271
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          }
+        ],
+        "updated_date": "2026-08-28T12:50:07.497085",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4306954599",
+        "doi": "https://doi.org/10.1016/j.aej.2022.10.025",
+        "title": "Modeling and numerical analysis of a fractional order model for dual variants of SARS-CoV-2",
+        "display_name": "Modeling and numerical analysis of a fractional order model for dual variants of SARS-CoV-2",
+        "relevance_score": 125.15033,
+        "publication_year": 2022,
+        "publication_date": "2022-10-20",
+        "ids": {
+          "openalex": "https://openalex.org/W4306954599",
+          "doi": "https://doi.org/10.1016/j.aej.2022.10.025"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1016/j.aej.2022.10.025",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.aej.2022.10.025",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S1110016822006810/pdf",
+          "source": {
+            "id": "https://openalex.org/S2764413287",
+            "display_name": "Alexandria Engineering Journal",
+            "issn_l": "1110-0168",
+            "issn": [
+              "1110-0168",
+              "2090-2670"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Alexandria Engineering Journal",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S1110016822006810/pdf",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5102955533",
+              "display_name": "Peijiang Liu",
+              "orcid": "https://orcid.org/0000-0003-3638-8679"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210149618",
+                "display_name": "Guangdong University of Finance",
+                "ror": "https://ror.org/04grzdh47",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210149618"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Peijiang Liu",
+            "raw_affiliation_strings": [
+              "School of statistics and mathematics, Guangdong university of finance and economic, Guangzhou 510320, People’s Republic of China",
+              "School of statistics and mathematics, Guangdong university of finance and economic, Guangzhou 510320, People's Republic of China"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "School of statistics and mathematics, Guangdong university of finance and economic, Guangzhou 510320, People’s Republic of China",
+                "institution_ids": [
+                  "https://openalex.org/I4210149618"
+                ]
+              },
+              {
+                "raw_affiliation_string": "School of statistics and mathematics, Guangdong university of finance and economic, Guangzhou 510320, People's Republic of China",
+                "institution_ids": [
+                  "https://openalex.org/I4210149618"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5084123655",
+              "display_name": "Xiangxiang Huang",
+              "orcid": "https://orcid.org/0000-0002-5608-3218"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I2799850029",
+                "display_name": "Dongguan University of Technology",
+                "ror": "https://ror.org/01m8p7q42",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I2799850029"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Xiangxiang Huang",
+            "raw_affiliation_strings": [
+              "School of Computer Science and Technology, Dongguan University of Technology, Dongguan 523808, People’s Republic of China",
+              "School of Computer Science and Technology, Dongguan University of Technology, Dongguan 523808, People's Republic of China"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "School of Computer Science and Technology, Dongguan University of Technology, Dongguan 523808, People’s Republic of China",
+                "institution_ids": [
+                  "https://openalex.org/I2799850029"
+                ]
+              },
+              {
+                "raw_affiliation_string": "School of Computer Science and Technology, Dongguan University of Technology, Dongguan 523808, People's Republic of China",
+                "institution_ids": [
+                  "https://openalex.org/I2799850029"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5063810826",
+              "display_name": "Rahat Zarin",
+              "orcid": "https://orcid.org/0000-0002-9759-2924"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I90610274",
+                "display_name": "University of Engineering and Technology Peshawar",
+                "ror": "https://ror.org/00p034093",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I90610274"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Rahat Zarin",
+            "raw_affiliation_strings": [
+              "Department of Basic Sciences, University of Engineering and Technology, Peshawar, Khyber Pakhtunkhwa, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Basic Sciences, University of Engineering and Technology, Peshawar, Khyber Pakhtunkhwa, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I90610274"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5110371061",
+              "display_name": "Ting Cui",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I201459984",
+                "display_name": "Guangdong University Of Finances and Economics",
+                "ror": "https://ror.org/0459pv085",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I201459984"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4210149618",
+                "display_name": "Guangdong University of Finance",
+                "ror": "https://ror.org/04grzdh47",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210149618"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Ting Cui",
+            "raw_affiliation_strings": [
+              "Guangdong University of Finance and Economics, People’s Republic of China",
+              "Guangdong University of Finance and Economics, People's Republic of China"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Guangdong University of Finance and Economics, People’s Republic of China",
+                "institution_ids": [
+                  "https://openalex.org/I201459984",
+                  "https://openalex.org/I4210149618"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Guangdong University of Finance and Economics, People's Republic of China",
+                "institution_ids": [
+                  "https://openalex.org/I201459984",
+                  "https://openalex.org/I4210149618"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5022101442",
+              "display_name": "Anwarud Din",
+              "orcid": "https://orcid.org/0000-0003-0463-0360"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I157773358",
+                "display_name": "Sun Yat-sen University",
+                "ror": "https://ror.org/0064kty71",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I157773358"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Anwarud Din",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Sun Yat-Sen University, Guangzhou 510275, People’s Republic of China",
+              "Department of Mathematics, Sun Yat-Sen University, Guangzhou 510275, People's Republic of China"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Sun Yat-Sen University, Guangzhou 510275, People’s Republic of China",
+                "institution_ids": [
+                  "https://openalex.org/I157773358"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Mathematics, Sun Yat-Sen University, Guangzhou 510275, People's Republic of China",
+                "institution_ids": [
+                  "https://openalex.org/I157773358"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 5,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5084123655"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I2799850029"
+        ],
+        "apc_list": {
+          "value": 990,
+          "currency": "USD",
+          "value_usd": 990
+        },
+        "apc_paid": {
+          "value": 990,
+          "currency": "USD",
+          "value_usd": 990
+        },
+        "fwci": 4.117,
+        "has_fulltext": true,
+        "cited_by_count": 33,
+        "citation_normalized_percentile": {
+          "value": 0.95352204,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 93,
+          "max": 99
+        },
+        "biblio": {
+          "volume": "65",
+          "issue": null,
+          "first_page": "427",
+          "last_page": "442"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10288",
+          "display_name": "Fractional Differential Equations Solutions",
+          "score": 0.9991000294685364,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2611",
+            "display_name": "Modeling and Simulation"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/26",
+            "display_name": "Mathematics"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10288",
+            "display_name": "Fractional Differential Equations Solutions",
+            "score": 0.9991000294685364,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10118",
+            "display_name": "SARS-CoV-2 and COVID-19 Research",
+            "score": 0.9961000084877014,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2725",
+              "display_name": "Infectious Diseases"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/27",
+              "display_name": "Medicine"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/4",
+              "display_name": "Health Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11081",
+            "display_name": "Advanced Control Systems Design",
+            "score": 0.9904000163078308,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2207",
+              "display_name": "Control and Systems Engineering"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/dual",
+            "display_name": "Dual (grammatical number)",
+            "score": 0.6699455976486206
+          },
+          {
+            "id": "https://openalex.org/keywords/order",
+            "display_name": "Order (exchange)",
+            "score": 0.61370849609375
+          },
+          {
+            "id": "https://openalex.org/keywords/applied-mathematics",
+            "display_name": "Applied mathematics",
+            "score": 0.4324479401111603
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematics",
+            "display_name": "Mathematics",
+            "score": 0.42244040966033936
+          },
+          {
+            "id": "https://openalex.org/keywords/computer-science",
+            "display_name": "Computer science",
+            "score": 0.32858142256736755
+          },
+          {
+            "id": "https://openalex.org/keywords/economics",
+            "display_name": "Economics",
+            "score": 0.1558503806591034
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2780980858",
+            "wikidata": "https://www.wikidata.org/wiki/Q110022",
+            "display_name": "Dual (grammatical number)",
+            "level": 2,
+            "score": 0.6699455976486206
+          },
+          {
+            "id": "https://openalex.org/C182306322",
+            "wikidata": "https://www.wikidata.org/wiki/Q1779371",
+            "display_name": "Order (exchange)",
+            "level": 2,
+            "score": 0.61370849609375
+          },
+          {
+            "id": "https://openalex.org/C28826006",
+            "wikidata": "https://www.wikidata.org/wiki/Q33521",
+            "display_name": "Applied mathematics",
+            "level": 1,
+            "score": 0.4324479401111603
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.42244040966033936
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.32858142256736755
+          },
+          {
+            "id": "https://openalex.org/C162324750",
+            "wikidata": "https://www.wikidata.org/wiki/Q8134",
+            "display_name": "Economics",
+            "level": 0,
+            "score": 0.1558503806591034
+          },
+          {
+            "id": "https://openalex.org/C124952713",
+            "wikidata": "https://www.wikidata.org/wiki/Q8242",
+            "display_name": "Literature",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C10138342",
+            "wikidata": "https://www.wikidata.org/wiki/Q43015",
+            "display_name": "Finance",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C142362112",
+            "wikidata": "https://www.wikidata.org/wiki/Q735",
+            "display_name": "Art",
+            "level": 0,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 3,
+        "locations": [
+          {
+            "id": "doi:10.1016/j.aej.2022.10.025",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1016/j.aej.2022.10.025",
+            "pdf_url": "https://www.sciencedirect.com/science/article/pii/S1110016822006810/pdf",
+            "source": {
+              "id": "https://openalex.org/S2764413287",
+              "display_name": "Alexandria Engineering Journal",
+              "issn_l": "1110-0168",
+              "issn": [
+                "1110-0168",
+                "2090-2670"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320990",
+              "host_organization_name": "Elsevier BV",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320990"
+              ],
+              "host_organization_lineage_names": [
+                "Elsevier BV"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by-nc-nd",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Alexandria Engineering Journal",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:pubmedcentral.nih.gov:9581800",
+            "is_oa": true,
+            "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/9581800",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S2764455111",
+              "display_name": "PubMed Central",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1299303238",
+              "host_organization_name": "National Institutes of Health",
+              "host_organization_lineage": [
+                "https://openalex.org/I1299303238"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Alexandria Engineering Journal",
+            "raw_type": "Text"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:40248fea03ba4e6cbf08d0e08cc20671",
+            "is_oa": true,
+            "landing_page_url": "https://doaj.org/article/40248fea03ba4e6cbf08d0e08cc20671",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Alexandria Engineering Journal, Vol 65, Iss , Pp 427-442 (2023)",
+            "raw_type": "article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1016/j.aej.2022.10.025",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.aej.2022.10.025",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S1110016822006810/pdf",
+          "source": {
+            "id": "https://openalex.org/S2764413287",
+            "display_name": "Alexandria Engineering Journal",
+            "issn_l": "1110-0168",
+            "issn": [
+              "1110-0168",
+              "2090-2670"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Alexandria Engineering Journal",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.44999998807907104,
+            "display_name": "Good health and well-being",
+            "id": "https://metadata.un.org/sdg/3"
+          }
+        ],
+        "awards": [
+          {
+            "id": "https://openalex.org/G290214929",
+            "display_name": null,
+            "funder_award_id": "2017A030310598",
+            "funder_id": "https://openalex.org/F4320321921",
+            "funder_display_name": "Natural Science Foundation of Guangdong Province"
+          },
+          {
+            "id": "https://openalex.org/G4990738077",
+            "display_name": null,
+            "funder_award_id": "11901114",
+            "funder_id": "https://openalex.org/F4320321921",
+            "funder_display_name": "Natural Science Foundation of Guangdong Province"
+          },
+          {
+            "id": "https://openalex.org/G5134110715",
+            "display_name": null,
+            "funder_award_id": "62002068",
+            "funder_id": "https://openalex.org/F4320321001",
+            "funder_display_name": "National Natural Science Foundation of China"
+          },
+          {
+            "id": "https://openalex.org/G5237786165",
+            "display_name": null,
+            "funder_award_id": "11801073",
+            "funder_id": "https://openalex.org/F4320321001",
+            "funder_display_name": "National Natural Science Foundation of China"
+          },
+          {
+            "id": "https://openalex.org/G7663229032",
+            "display_name": null,
+            "funder_award_id": "11901114",
+            "funder_id": "https://openalex.org/F4320321001",
+            "funder_display_name": "National Natural Science Foundation of China"
+          }
+        ],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320321001",
+            "display_name": "National Natural Science Foundation of China",
+            "ror": "https://ror.org/01h0zpd94"
+          },
+          {
+            "id": "https://openalex.org/F4320321921",
+            "display_name": "Natural Science Foundation of Guangdong Province",
+            "ror": null
+          }
+        ],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4306954599.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4306954599.grobid-xml"
+        },
+        "referenced_works_count": 56,
+        "referenced_works": [
+          "https://openalex.org/W1993680495",
+          "https://openalex.org/W2001800250",
+          "https://openalex.org/W2107073197",
+          "https://openalex.org/W2112680994",
+          "https://openalex.org/W2147910047",
+          "https://openalex.org/W2161009528",
+          "https://openalex.org/W2171634348",
+          "https://openalex.org/W3007780411",
+          "https://openalex.org/W3009041394",
+          "https://openalex.org/W3009946390",
+          "https://openalex.org/W3025717063",
+          "https://openalex.org/W3040845152",
+          "https://openalex.org/W3041120019",
+          "https://openalex.org/W3088478741",
+          "https://openalex.org/W3091924023",
+          "https://openalex.org/W3092136311",
+          "https://openalex.org/W3105931917",
+          "https://openalex.org/W3112906428",
+          "https://openalex.org/W3131688063",
+          "https://openalex.org/W3138843423",
+          "https://openalex.org/W3139712591",
+          "https://openalex.org/W3141986261",
+          "https://openalex.org/W3152867524",
+          "https://openalex.org/W3161227889",
+          "https://openalex.org/W3163281738",
+          "https://openalex.org/W3200382202",
+          "https://openalex.org/W3207663626",
+          "https://openalex.org/W3208251563",
+          "https://openalex.org/W3208604851",
+          "https://openalex.org/W3210921815",
+          "https://openalex.org/W3214758414",
+          "https://openalex.org/W3215027598",
+          "https://openalex.org/W3217336716",
+          "https://openalex.org/W4205643895",
+          "https://openalex.org/W4206313755",
+          "https://openalex.org/W4210533869",
+          "https://openalex.org/W4212816354",
+          "https://openalex.org/W4214843515",
+          "https://openalex.org/W4231989503",
+          "https://openalex.org/W4280598099",
+          "https://openalex.org/W4282928215",
+          "https://openalex.org/W4283795877",
+          "https://openalex.org/W4285277807",
+          "https://openalex.org/W4286750129",
+          "https://openalex.org/W4293110145",
+          "https://openalex.org/W4293473042",
+          "https://openalex.org/W6683820420",
+          "https://openalex.org/W6750609437",
+          "https://openalex.org/W6774028147",
+          "https://openalex.org/W6777939832",
+          "https://openalex.org/W6783438045",
+          "https://openalex.org/W6802596615",
+          "https://openalex.org/W6839493713",
+          "https://openalex.org/W6840633727",
+          "https://openalex.org/W6842302299",
+          "https://openalex.org/W6842767809"
+        ],
+        "related_works": [
+          "https://openalex.org/W2899084033",
+          "https://openalex.org/W2748952813",
+          "https://openalex.org/W4391375266",
+          "https://openalex.org/W1979597421",
+          "https://openalex.org/W2007980826",
+          "https://openalex.org/W2061531152",
+          "https://openalex.org/W3002753104",
+          "https://openalex.org/W2077600819",
+          "https://openalex.org/W2142036596",
+          "https://openalex.org/W2072657027"
+        ],
+        "abstract_inverted_index": {
+          "This": [
+            0
+          ],
+          "paper": [
+            1
+          ],
+          "considers": [
+            2
+          ],
+          "the": [
+            3,
+            14,
+            18,
+            21,
+            26,
+            47,
+            51,
+            60,
+            64,
+            72,
+            77,
+            94,
+            113,
+            119,
+            124,
+            128,
+            134,
+            169,
+            195,
+            218,
+            221,
+            224,
+            227,
+            235,
+            243,
+            249,
+            254,
+            270
+          ],
+          "novel": [
+            4
+          ],
+          "fractional-order": [
+            5,
+            24
+          ],
+          "operator": [
+            6,
+            66,
+            90,
+            97
+          ],
+          "developed": [
+            7,
+            186
+          ],
+          "by": [
+            8,
+            62
+          ],
+          "Atangana-Baleanu": [
+            9,
+            23
+          ],
+          "for": [
+            10,
+            138,
+            144,
+            194,
+            207
+          ],
+          "transmission": [
+            11,
+            27,
+            44
+          ],
+          "dynamics": [
+            12,
+            219,
+            250
+          ],
+          "of": [
+            13,
+            20,
+            29,
+            40,
+            46,
+            55,
+            67,
+            112,
+            127,
+            133,
+            154,
+            159,
+            168,
+            175,
+            210,
+            220,
+            226,
+            239,
+            245,
+            253,
+            260,
+            272
+          ],
+          "SARS-CoV-2": [
+            15,
+            30
+          ],
+          "epidemic.": [
+            16
+          ],
+          "Assuming": [
+            17
+          ],
+          "importance": [
+            19,
+            238
+          ],
+          "non-local": [
+            22
+          ],
+          "approach,": [
+            25
+          ],
+          "mechanism": [
+            28
+          ],
+          "has": [
+            31,
+            99
+          ],
+          "been": [
+            32
+          ],
+          "investigated": [
+            33,
+            116
+          ],
+          "while": [
+            34
+          ],
+          "taking": [
+            35
+          ],
+          "into": [
+            36,
+            269
+          ],
+          "account": [
+            37
+          ],
+          "different": [
+            38
+          ],
+          "phases": [
+            39
+          ],
+          "infection": [
+            41,
+            222
+          ],
+          "and": [
+            42,
+            76,
+            98,
+            108,
+            123,
+            141,
+            165,
+            180,
+            212,
+            223,
+            237,
+            242,
+            251
+          ],
+          "various": [
+            43,
+            208,
+            240
+          ],
+          "routes": [
+            45
+          ],
+          "disease.": [
+            48
+          ],
+          "To": [
+            49
+          ],
+          "conduct": [
+            50
+          ],
+          "proposed": [
+            52,
+            129,
+            196
+          ],
+          "study,": [
+            53
+          ],
+          "first": [
+            54
+          ],
+          "all,": [
+            56
+          ],
+          "we": [
+            57
+          ],
+          "shall": [
+            58
+          ],
+          "formulate": [
+            59
+          ],
+          "model": [
+            61,
+            78,
+            84,
+            104,
+            114,
+            135,
+            170
+          ],
+          "using": [
+            63
+          ],
+          "classical": [
+            65
+          ],
+          "ordinary": [
+            68
+          ],
+          "derivatives.": [
+            69,
+            88
+          ],
+          "We": [
+            70
+          ],
+          "utilize": [
+            71
+          ],
+          "fractional": [
+            73,
+            86,
+            95,
+            100
+          ],
+          "order": [
+            74,
+            87,
+            101,
+            225
+          ],
+          "derivative": [
+            75
+          ],
+          "will": [
+            79,
+            263
+          ],
+          "be": [
+            80
+          ],
+          "extended": [
+            81
+          ],
+          "to": [
+            82
+          ],
+          "a": [
+            83,
+            181,
+            213
+          ],
+          "containing": [
+            85
+          ],
+          "The": [
+            89,
+            103,
+            131,
+            157,
+            173,
+            258
+          ],
+          "being": [
+            91
+          ],
+          "used": [
+            92
+          ],
+          "is": [
+            93,
+            105,
+            149,
+            163,
+            171,
+            178,
+            185,
+            215,
+            256
+          ],
+          "differential": [
+            96
+          ],
+          "Φ1.": [
+            102
+          ],
+          "analyzed": [
+            106
+          ],
+          "further": [
+            107
+          ],
+          "some": [
+            109
+          ],
+          "basic": [
+            110,
+            120
+          ],
+          "aspects": [
+            111
+          ],
+          "are": [
+            115,
+            136,
+            146,
+            205,
+            231
+          ],
+          "besides": [
+            117
+          ],
+          "calculating": [
+            118
+          ],
+          "reproduction": [
+            121
+          ],
+          "number": [
+            122
+          ],
+          "possible": [
+            125
+          ],
+          "equilibria": [
+            126,
+            132
+          ],
+          "model.": [
+            130
+          ],
+          "examined": [
+            137
+          ],
+          "stability": [
+            139,
+            145,
+            167
+          ],
+          "purposes": [
+            140
+          ],
+          "necessary": [
+            142,
+            151
+          ],
+          "conditions": [
+            143
+          ],
+          "obtained.": [
+            147
+          ],
+          "Stability": [
+            148
+          ],
+          "also": [
+            150,
+            264
+          ],
+          "in": [
+            152,
+            189,
+            278
+          ],
+          "terms": [
+            153
+          ],
+          "numerical": [
+            155,
+            183
+          ],
+          "setup.": [
+            156
+          ],
+          "theory": [
+            158
+          ],
+          "non-linear": [
+            160
+          ],
+          "functional": [
+            161
+          ],
+          "analysis": [
+            162
+          ],
+          "employed": [
+            164
+          ],
+          "Ulam-Hyers’s": [
+            166
+          ],
+          "presented.": [
+            172,
+            257
+          ],
+          "approach": [
+            174
+          ],
+          "newton’s": [
+            176
+          ],
+          "polynomial": [
+            177
+          ],
+          "considered": [
+            179
+          ],
+          "new": [
+            182
+          ],
+          "scheme": [
+            184
+          ],
+          "which": [
+            187,
+            233
+          ],
+          "helped": [
+            188
+          ],
+          "presenting": [
+            190
+          ],
+          "an": [
+            191
+          ],
+          "iterative": [
+            192
+          ],
+          "process": [
+            193
+          ],
+          "ABC": [
+            197
+          ],
+          "system.": [
+            198
+          ],
+          "Based": [
+            199
+          ],
+          "on": [
+            200,
+            248
+          ],
+          "this": [
+            201,
+            261
+          ],
+          "scheme,": [
+            202
+          ],
+          "sample": [
+            203
+          ],
+          "curves": [
+            204
+          ],
+          "obtained": [
+            206
+          ],
+          "values": [
+            209
+          ],
+          "Φ1": [
+            211
+          ],
+          "pattern": [
+            214
+          ],
+          "derived": [
+            216
+          ],
+          "between": [
+            217
+          ],
+          "derivative.": [
+            228
+          ],
+          "Further": [
+            229
+          ],
+          "simulations": [
+            230
+          ],
+          "presented": [
+            232
+          ],
+          "show": [
+            234
+          ],
+          "cruciality": [
+            236
+          ],
+          "parameters": [
+            241,
+            247
+          ],
+          "impact": [
+            244
+          ],
+          "such": [
+            246
+          ],
+          "control": [
+            252,
+            280
+          ],
+          "disease": [
+            255
+          ],
+          "findings": [
+            259
+          ],
+          "study": [
+            262
+          ],
+          "provide": [
+            265
+          ],
+          "strong": [
+            266
+          ],
+          "conceptual": [
+            267
+          ],
+          "insights": [
+            268
+          ],
+          "mechanisms": [
+            271
+          ],
+          "contagious": [
+            273
+          ],
+          "diseases,": [
+            274
+          ],
+          "assisting": [
+            275
+          ],
+          "global": [
+            276
+          ],
+          "professionals": [
+            277
+          ],
+          "developing": [
+            279
+          ],
+          "policies.": [
+            281
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 10
+          }
+        ],
+        "updated_date": "2026-08-28T12:50:07.497085",
+        "created_date": "2025-10-10T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}
