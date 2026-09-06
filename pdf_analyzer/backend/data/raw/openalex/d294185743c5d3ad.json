@@ -1,0 +1,5265 @@
+{
+  "provider": "openalex",
+  "query_key": "raw:Wang, M., Tian, B., Hu, C.-C., & Liu, S.-H. (2021). Generalized Darboux transformation, solitonic interactions and bound states for a couple",
+  "query_hash": "d294185743c5d3ad",
+  "saved_at": "2026-08-31T09:05:57.552350+00:00",
+  "status_code": 200,
+  "candidate_count": 5,
+  "raw_response": {
+    "meta": {
+      "count": 23,
+      "db_response_time_ms": 389,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (Wang M. Tian B. Hu C.-C. \"&\" Liu S.-H. 2021 . Generalized Darboux transformation solitonic interactions \"and\" bound states for a couple)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Wang M. Tian B. Hu C.-C. & Liu S.-H. (2021). Generalized Darboux transformation solitonic interactions and bound states for a couple",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Wang M. Tian B. Hu C.-C. %26 Liu S.-H. %282021%29. Generalized Darboux transformation solitonic interactions and bound states for a couple&per_page=5"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4200484418",
+        "doi": "https://doi.org/10.1016/j.rinp.2021.105069",
+        "title": "Weakly nonlinear electron-acoustic waves in the fluid ions propagated via a (3+1)-dimensional generalized Korteweg–de-Vries–Zakharov–Kuznetsov equation in plasma physics",
+        "display_name": "Weakly nonlinear electron-acoustic waves in the fluid ions propagated via a (3+1)-dimensional generalized Korteweg–de-Vries–Zakharov–Kuznetsov equation in plasma physics",
+        "relevance_score": 84.73594,
+        "publication_year": 2021,
+        "publication_date": "2021-12-23",
+        "ids": {
+          "openalex": "https://openalex.org/W4200484418",
+          "doi": "https://doi.org/10.1016/j.rinp.2021.105069"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1016/j.rinp.2021.105069",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.rinp.2021.105069",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2211379721010536/pdf",
+          "source": {
+            "id": "https://openalex.org/S2764941219",
+            "display_name": "Results in Physics",
+            "issn_l": "2211-3797",
+            "issn": [
+              "2211-3797"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Results in Physics",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S2211379721010536/pdf",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5013313431",
+              "display_name": "Hamood Ur Rehman",
+              "orcid": "https://orcid.org/0000-0002-7338-6288"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3130814776",
+                "display_name": "University of Okara",
+                "ror": "https://ror.org/02fmg6q11",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "H.U. Rehman",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, University of Okara, Okara, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, University of Okara, Okara, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5061661736",
+              "display_name": "Aly R. Seadawy",
+              "orcid": "https://orcid.org/0000-0002-7412-4773"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I23075662",
+                "display_name": "Taibah University",
+                "ror": "https://ror.org/01xv1nn60",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I23075662"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Aly R. Seadawy",
+            "raw_affiliation_strings": [
+              "Mathematics Department, Faculty of Science, Taibah University, Al-Madinah Al-Munawarah, Saudi Arabia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Mathematics Department, Faculty of Science, Taibah University, Al-Madinah Al-Munawarah, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I23075662"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5070791672",
+              "display_name": "Muhammad Younis",
+              "orcid": "https://orcid.org/0000-0002-8547-7478"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I172780181",
+                "display_name": "University of the Punjab",
+                "ror": "https://ror.org/011maz450",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I172780181"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "M. Younis",
+            "raw_affiliation_strings": [
+              "Department of Computer Science, University of the Punjab, Lahore, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Computer Science, University of the Punjab, Lahore, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I172780181"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5112635827",
+              "display_name": "Syed T. R. Rizvi",
+              "orcid": "https://orcid.org/0000-0002-1730-7864"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I16076960",
+                "display_name": "COMSATS University Islamabad",
+                "ror": "https://ror.org/00nqqvk19",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I16076960"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "S.T.R. Rizvi",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, COMSATS University Islamabad, Lahore Campus, Pakistan"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-1730-7864",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, COMSATS University Islamabad, Lahore Campus, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I16076960"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5091452226",
+              "display_name": "I. Anwar",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3130814776",
+                "display_name": "University of Okara",
+                "ror": "https://ror.org/02fmg6q11",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "I. Anwar",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, University of Okara, Okara, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, University of Okara, Okara, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5112880062",
+              "display_name": "Muhammad Zafarullah Baber",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I142204992",
+                "display_name": "University of Lahore",
+                "ror": "https://ror.org/051jrjw38",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I142204992"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "M.Z. Baber",
+            "raw_affiliation_strings": [
+              "Department of Mathematics and Statistics, The University of Lahore, Lahore, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics and Statistics, The University of Lahore, Lahore, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I142204992"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5011211798",
+              "display_name": "Ali Althobaiti",
+              "orcid": "https://orcid.org/0000-0001-6076-625X"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I179331831",
+                "display_name": "Taif University",
+                "ror": "https://ror.org/014g1a453",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I179331831"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Ali Althobaiti",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, College of Science, Taif University, P.O. Box 11099, Taif 21944, Saudi Arabia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, College of Science, Taif University, P.O. Box 11099, Taif 21944, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I179331831"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 6,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5061661736"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I23075662"
+        ],
+        "apc_list": {
+          "value": 1200,
+          "currency": "USD",
+          "value_usd": 1200
+        },
+        "apc_paid": {
+          "value": 1200,
+          "currency": "USD",
+          "value_usd": 1200
+        },
+        "fwci": 5.5432,
+        "has_fulltext": true,
+        "cited_by_count": 54,
+        "citation_normalized_percentile": {
+          "value": 0.97052714,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 97,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "33",
+          "issue": null,
+          "first_page": "105069",
+          "last_page": "105069"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10248",
+          "display_name": "Nonlinear Waves and Solitons",
+          "score": 1.0,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3109",
+            "display_name": "Statistical and Nonlinear Physics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10248",
+            "display_name": "Nonlinear Waves and Solitons",
+            "score": 1.0,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3109",
+              "display_name": "Statistical and Nonlinear Physics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11575",
+            "display_name": "Nonlinear Photonic Systems",
+            "score": 0.9976000189781189,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3109",
+              "display_name": "Statistical and Nonlinear Physics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10288",
+            "display_name": "Fractional Differential Equations Solutions",
+            "score": 0.9789000153541565,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/physics",
+            "display_name": "Physics",
+            "score": 0.6957219839096069
+          },
+          {
+            "id": "https://openalex.org/keywords/shock-wave",
+            "display_name": "Shock wave",
+            "score": 0.666702151298523
+          },
+          {
+            "id": "https://openalex.org/keywords/soliton",
+            "display_name": "Soliton",
+            "score": 0.650348424911499
+          },
+          {
+            "id": "https://openalex.org/keywords/plasma",
+            "display_name": "Plasma",
+            "score": 0.6431272625923157
+          },
+          {
+            "id": "https://openalex.org/keywords/algebraic-number",
+            "display_name": "Algebraic number",
+            "score": 0.6230835318565369
+          },
+          {
+            "id": "https://openalex.org/keywords/korteweg–de-vries-equation",
+            "display_name": "Korteweg–de Vries equation",
+            "score": 0.6141843199729919
+          },
+          {
+            "id": "https://openalex.org/keywords/nonlinear-system",
+            "display_name": "Nonlinear system",
+            "score": 0.6005695462226868
+          },
+          {
+            "id": "https://openalex.org/keywords/magnetic-field",
+            "display_name": "Magnetic field",
+            "score": 0.5895202159881592
+          },
+          {
+            "id": "https://openalex.org/keywords/electron",
+            "display_name": "Electron",
+            "score": 0.5697357654571533
+          },
+          {
+            "id": "https://openalex.org/keywords/shock",
+            "display_name": "Shock (circulatory)",
+            "score": 0.5668829679489136
+          },
+          {
+            "id": "https://openalex.org/keywords/field",
+            "display_name": "Field (mathematics)",
+            "score": 0.5349304676055908
+          },
+          {
+            "id": "https://openalex.org/keywords/ion",
+            "display_name": "Ion",
+            "score": 0.5121691226959229
+          },
+          {
+            "id": "https://openalex.org/keywords/work",
+            "display_name": "Work (physics)",
+            "score": 0.41381949186325073
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematical-physics",
+            "display_name": "Mathematical physics",
+            "score": 0.3805186152458191
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematical-analysis",
+            "display_name": "Mathematical analysis",
+            "score": 0.23144996166229248
+          },
+          {
+            "id": "https://openalex.org/keywords/mechanics",
+            "display_name": "Mechanics",
+            "score": 0.22582954168319702
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematics",
+            "display_name": "Mathematics",
+            "score": 0.22197923064231873
+          },
+          {
+            "id": "https://openalex.org/keywords/quantum-mechanics",
+            "display_name": "Quantum mechanics",
+            "score": 0.17019733786582947
+          },
+          {
+            "id": "https://openalex.org/keywords/pure-mathematics",
+            "display_name": "Pure mathematics",
+            "score": 0.0605103075504303
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.6957219839096069
+          },
+          {
+            "id": "https://openalex.org/C70477161",
+            "wikidata": "https://www.wikidata.org/wiki/Q190688",
+            "display_name": "Shock wave",
+            "level": 2,
+            "score": 0.666702151298523
+          },
+          {
+            "id": "https://openalex.org/C87651913",
+            "wikidata": "https://www.wikidata.org/wiki/Q464949",
+            "display_name": "Soliton",
+            "level": 3,
+            "score": 0.650348424911499
+          },
+          {
+            "id": "https://openalex.org/C82706917",
+            "wikidata": "https://www.wikidata.org/wiki/Q10251",
+            "display_name": "Plasma",
+            "level": 2,
+            "score": 0.6431272625923157
+          },
+          {
+            "id": "https://openalex.org/C9376300",
+            "wikidata": "https://www.wikidata.org/wiki/Q168817",
+            "display_name": "Algebraic number",
+            "level": 2,
+            "score": 0.6230835318565369
+          },
+          {
+            "id": "https://openalex.org/C146630112",
+            "wikidata": "https://www.wikidata.org/wiki/Q601796",
+            "display_name": "Korteweg–de Vries equation",
+            "level": 3,
+            "score": 0.6141843199729919
+          },
+          {
+            "id": "https://openalex.org/C158622935",
+            "wikidata": "https://www.wikidata.org/wiki/Q660848",
+            "display_name": "Nonlinear system",
+            "level": 2,
+            "score": 0.6005695462226868
+          },
+          {
+            "id": "https://openalex.org/C115260700",
+            "wikidata": "https://www.wikidata.org/wiki/Q11408",
+            "display_name": "Magnetic field",
+            "level": 2,
+            "score": 0.5895202159881592
+          },
+          {
+            "id": "https://openalex.org/C147120987",
+            "wikidata": "https://www.wikidata.org/wiki/Q2225",
+            "display_name": "Electron",
+            "level": 2,
+            "score": 0.5697357654571533
+          },
+          {
+            "id": "https://openalex.org/C2781300812",
+            "wikidata": "https://www.wikidata.org/wiki/Q178061",
+            "display_name": "Shock (circulatory)",
+            "level": 2,
+            "score": 0.5668829679489136
+          },
+          {
+            "id": "https://openalex.org/C9652623",
+            "wikidata": "https://www.wikidata.org/wiki/Q190109",
+            "display_name": "Field (mathematics)",
+            "level": 2,
+            "score": 0.5349304676055908
+          },
+          {
+            "id": "https://openalex.org/C145148216",
+            "wikidata": "https://www.wikidata.org/wiki/Q36496",
+            "display_name": "Ion",
+            "level": 2,
+            "score": 0.5121691226959229
+          },
+          {
+            "id": "https://openalex.org/C18762648",
+            "wikidata": "https://www.wikidata.org/wiki/Q42213",
+            "display_name": "Work (physics)",
+            "level": 2,
+            "score": 0.41381949186325073
+          },
+          {
+            "id": "https://openalex.org/C37914503",
+            "wikidata": "https://www.wikidata.org/wiki/Q156495",
+            "display_name": "Mathematical physics",
+            "level": 1,
+            "score": 0.3805186152458191
+          },
+          {
+            "id": "https://openalex.org/C134306372",
+            "wikidata": "https://www.wikidata.org/wiki/Q7754",
+            "display_name": "Mathematical analysis",
+            "level": 1,
+            "score": 0.23144996166229248
+          },
+          {
+            "id": "https://openalex.org/C57879066",
+            "wikidata": "https://www.wikidata.org/wiki/Q41217",
+            "display_name": "Mechanics",
+            "level": 1,
+            "score": 0.22582954168319702
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.22197923064231873
+          },
+          {
+            "id": "https://openalex.org/C62520636",
+            "wikidata": "https://www.wikidata.org/wiki/Q944",
+            "display_name": "Quantum mechanics",
+            "level": 1,
+            "score": 0.17019733786582947
+          },
+          {
+            "id": "https://openalex.org/C202444582",
+            "wikidata": "https://www.wikidata.org/wiki/Q837863",
+            "display_name": "Pure mathematics",
+            "level": 1,
+            "score": 0.0605103075504303
+          },
+          {
+            "id": "https://openalex.org/C126322002",
+            "wikidata": "https://www.wikidata.org/wiki/Q11180",
+            "display_name": "Internal medicine",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.1016/j.rinp.2021.105069",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1016/j.rinp.2021.105069",
+            "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2211379721010536/pdf",
+            "source": {
+              "id": "https://openalex.org/S2764941219",
+              "display_name": "Results in Physics",
+              "issn_l": "2211-3797",
+              "issn": [
+                "2211-3797"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320990",
+              "host_organization_name": "Elsevier BV",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320990"
+              ],
+              "host_organization_lineage_names": [
+                "Elsevier BV"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by-nc-nd",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Results in Physics",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:76e6888c42b5456fa3824e5767782fc7",
+            "is_oa": true,
+            "landing_page_url": "https://doaj.org/article/76e6888c42b5456fa3824e5767782fc7",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Results in Physics, Vol 33, Iss , Pp 105069- (2022)",
+            "raw_type": "article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1016/j.rinp.2021.105069",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.rinp.2021.105069",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2211379721010536/pdf",
+          "source": {
+            "id": "https://openalex.org/S2764941219",
+            "display_name": "Results in Physics",
+            "issn_l": "2211-3797",
+            "issn": [
+              "2211-3797"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Results in Physics",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [
+          {
+            "id": "https://openalex.org/G7299194679",
+            "display_name": null,
+            "funder_award_id": "TURSP-2020",
+            "funder_id": "https://openalex.org/F4320323722",
+            "funder_display_name": "Taif University"
+          },
+          {
+            "id": "https://openalex.org/G806181061",
+            "display_name": null,
+            "funder_award_id": "TURSP - 2020/326",
+            "funder_id": "https://openalex.org/F4320323722",
+            "funder_display_name": "Taif University"
+          }
+        ],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320323722",
+            "display_name": "Taif University",
+            "ror": "https://ror.org/014g1a453"
+          }
+        ],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4200484418.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4200484418.grobid-xml"
+        },
+        "referenced_works_count": 47,
+        "referenced_works": [
+          "https://openalex.org/W1965978806",
+          "https://openalex.org/W1984696323",
+          "https://openalex.org/W2008586251",
+          "https://openalex.org/W2009337802",
+          "https://openalex.org/W2031666682",
+          "https://openalex.org/W2032625821",
+          "https://openalex.org/W2043756190",
+          "https://openalex.org/W2053833421",
+          "https://openalex.org/W2073817609",
+          "https://openalex.org/W2080011055",
+          "https://openalex.org/W2082571393",
+          "https://openalex.org/W2085345248",
+          "https://openalex.org/W2086698446",
+          "https://openalex.org/W2088816238",
+          "https://openalex.org/W2091392594",
+          "https://openalex.org/W2097705920",
+          "https://openalex.org/W2110627003",
+          "https://openalex.org/W2141112962",
+          "https://openalex.org/W2493461835",
+          "https://openalex.org/W2597333421",
+          "https://openalex.org/W2600724485",
+          "https://openalex.org/W2615673852",
+          "https://openalex.org/W2803423774",
+          "https://openalex.org/W2905688796",
+          "https://openalex.org/W2914527950",
+          "https://openalex.org/W2923521371",
+          "https://openalex.org/W2949386031",
+          "https://openalex.org/W2988726051",
+          "https://openalex.org/W2990674868",
+          "https://openalex.org/W2994516566",
+          "https://openalex.org/W3037211662",
+          "https://openalex.org/W3088702586",
+          "https://openalex.org/W3092200290",
+          "https://openalex.org/W3095780859",
+          "https://openalex.org/W3111836368",
+          "https://openalex.org/W3123313777",
+          "https://openalex.org/W3129375424",
+          "https://openalex.org/W3133789907",
+          "https://openalex.org/W3133992788",
+          "https://openalex.org/W3135772062",
+          "https://openalex.org/W3152777496",
+          "https://openalex.org/W3159005468",
+          "https://openalex.org/W3173291906",
+          "https://openalex.org/W3185939613",
+          "https://openalex.org/W3205559105",
+          "https://openalex.org/W3213620173",
+          "https://openalex.org/W6674791347"
+        ],
+        "related_works": [
+          "https://openalex.org/W1985080983",
+          "https://openalex.org/W2102153656",
+          "https://openalex.org/W2774129652",
+          "https://openalex.org/W2056035810",
+          "https://openalex.org/W2263050974",
+          "https://openalex.org/W2223488821",
+          "https://openalex.org/W2353815637",
+          "https://openalex.org/W2067598262",
+          "https://openalex.org/W2016664673",
+          "https://openalex.org/W1971248990"
+        ],
+        "abstract_inverted_index": {
+          "In": [
+            0
+          ],
+          "present": [
+            1
+          ],
+          "work,": [
+            2
+          ],
+          "we": [
+            3,
+            80
+          ],
+          "discussed": [
+            4
+          ],
+          "the": [
+            5,
+            13,
+            25,
+            53,
+            67,
+            76,
+            91
+          ],
+          "(3+1)-dimensional": [
+            6
+          ],
+          "generalized": [
+            7
+          ],
+          "Korteweg–de-Vries–Zakharov–Kuznetsov": [
+            8
+          ],
+          "equation": [
+            9
+          ],
+          "(gKdV-ZKe)": [
+            10
+          ],
+          "which": [
+            11
+          ],
+          "describes": [
+            12
+          ],
+          "effect": [
+            14
+          ],
+          "of": [
+            15,
+            27,
+            30,
+            37,
+            55,
+            69
+          ],
+          "magnetic": [
+            16
+          ],
+          "field": [
+            17,
+            26
+          ],
+          "on": [
+            18
+          ],
+          "weak": [
+            19
+          ],
+          "nonlinear": [
+            20
+          ],
+          "ion-acoustic": [
+            21
+          ],
+          "waves": [
+            22
+          ],
+          "studied": [
+            23
+          ],
+          "in": [
+            24,
+            52,
+            82,
+            99
+          ],
+          "plasma": [
+            28,
+            100
+          ],
+          "comprised": [
+            29
+          ],
+          "cool": [
+            31
+          ],
+          "and": [
+            32,
+            49,
+            61,
+            89,
+            96
+          ],
+          "hot": [
+            33
+          ],
+          "electrons.": [
+            34
+          ],
+          "The": [
+            35,
+            78,
+            102
+          ],
+          "solutions": [
+            36,
+            71,
+            93,
+            98,
+            104
+          ],
+          "gKdV-ZKe": [
+            38
+          ],
+          "are": [
+            39,
+            50,
+            72,
+            85,
+            105
+          ],
+          "acquired": [
+            40
+          ],
+          "by": [
+            41
+          ],
+          "new": [
+            42
+          ],
+          "modified": [
+            43
+          ],
+          "extended": [
+            44
+          ],
+          "direct": [
+            45
+          ],
+          "algebraic": [
+            46
+          ],
+          "method": [
+            47
+          ],
+          "(MEDAM)": [
+            48
+          ],
+          "observed": [
+            51
+          ],
+          "form": [
+            54
+          ],
+          "solitary,": [
+            56
+          ],
+          "shock,": [
+            57
+          ],
+          "singular,": [
+            58
+          ],
+          "shock-singular,": [
+            59
+          ],
+          "solitary-shock": [
+            60
+          ],
+          "double": [
+            62
+          ],
+          "singular": [
+            63
+          ],
+          "soliton": [
+            64
+          ],
+          "solutions.": [
+            65
+          ],
+          "Moreover,": [
+            66
+          ],
+          "families": [
+            68
+          ],
+          "rational": [
+            70
+          ],
+          "also": [
+            73,
+            106
+          ],
+          "emerged": [
+            74
+          ],
+          "during": [
+            75
+          ],
+          "derivation.": [
+            77
+          ],
+          "results": [
+            79
+          ],
+          "derive,": [
+            81
+          ],
+          "this": [
+            83
+          ],
+          "article,": [
+            84
+          ],
+          "useful": [
+            86
+          ],
+          "to": [
+            87
+          ],
+          "study": [
+            88
+          ],
+          "verify": [
+            90
+          ],
+          "analytical": [
+            92
+          ],
+          "with": [
+            94
+          ],
+          "numerical": [
+            95
+          ],
+          "experimental": [
+            97
+          ],
+          "physics.": [
+            101
+          ],
+          "obtained": [
+            103
+          ],
+          "illustrated": [
+            107
+          ],
+          "graphically.": [
+            108
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 19
+          }
+        ],
+        "updated_date": "2026-08-28T12:50:07.497085",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4200046966",
+        "doi": "https://doi.org/10.1016/j.rinp.2021.105092",
+        "title": "Wave structures to the three coupled nonlinear Maccari’s systems in plasma physics",
+        "display_name": "Wave structures to the three coupled nonlinear Maccari’s systems in plasma physics",
+        "relevance_score": 79.36416,
+        "publication_year": 2021,
+        "publication_date": "2021-12-21",
+        "ids": {
+          "openalex": "https://openalex.org/W4200046966",
+          "doi": "https://doi.org/10.1016/j.rinp.2021.105092"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1016/j.rinp.2021.105092",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.rinp.2021.105092",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2211379721010688/pdf",
+          "source": {
+            "id": "https://openalex.org/S2764941219",
+            "display_name": "Results in Physics",
+            "issn_l": "2211-3797",
+            "issn": [
+              "2211-3797"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Results in Physics",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S2211379721010688/pdf",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5102935616",
+              "display_name": "Hanan A. Alkhidhr",
+              "orcid": "https://orcid.org/0000-0002-8066-7790"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I156216236",
+                "display_name": "Qassim University",
+                "ror": "https://ror.org/01wsfe280",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I156216236"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Hanan A. Alkhidhr",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, College of Science, Qassim University, Buraidah, Saudi Arabia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, College of Science, Qassim University, Buraidah, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I156216236"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5035955474",
+              "display_name": "Mahmoud A. E. Abdelrahman",
+              "orcid": "https://orcid.org/0000-0002-7351-2088"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I159247623",
+                "display_name": "Mansoura University",
+                "ror": "https://ror.org/01k8vtd75",
+                "country_code": "EG",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I159247623"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I23075662",
+                "display_name": "Taibah University",
+                "ror": "https://ror.org/01xv1nn60",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I23075662"
+                ]
+              }
+            ],
+            "countries": [
+              "EG",
+              "SA"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Mahmoud A.E. Abdelrahman",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, College of Science, Taibah University, Al-Madinah Al-Munawarah, Saudi Arabia",
+              "Department of Mathematics, Faculty of Science, Mansoura University, 35516 Mansoura, Egypt"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-7351-2088",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, College of Science, Taibah University, Al-Madinah Al-Munawarah, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I23075662"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Department of Mathematics, Faculty of Science, Mansoura University, 35516 Mansoura, Egypt",
+                "institution_ids": [
+                  "https://openalex.org/I159247623"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 3,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5035955474"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I159247623",
+          "https://openalex.org/I23075662"
+        ],
+        "apc_list": {
+          "value": 1200,
+          "currency": "USD",
+          "value_usd": 1200
+        },
+        "apc_paid": {
+          "value": 1200,
+          "currency": "USD",
+          "value_usd": 1200
+        },
+        "fwci": 2.3588,
+        "has_fulltext": true,
+        "cited_by_count": 29,
+        "citation_normalized_percentile": {
+          "value": 0.89507663,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 95,
+          "max": 99
+        },
+        "biblio": {
+          "volume": "33",
+          "issue": null,
+          "first_page": "105092",
+          "last_page": "105092"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10248",
+          "display_name": "Nonlinear Waves and Solitons",
+          "score": 0.9998999834060669,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3109",
+            "display_name": "Statistical and Nonlinear Physics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10248",
+            "display_name": "Nonlinear Waves and Solitons",
+            "score": 0.9998999834060669,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3109",
+              "display_name": "Statistical and Nonlinear Physics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10288",
+            "display_name": "Fractional Differential Equations Solutions",
+            "score": 0.9950000047683716,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11575",
+            "display_name": "Nonlinear Photonic Systems",
+            "score": 0.9921000003814697,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3109",
+              "display_name": "Statistical and Nonlinear Physics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/nonlinear-system",
+            "display_name": "Nonlinear system",
+            "score": 0.7783562541007996
+          },
+          {
+            "id": "https://openalex.org/keywords/solver",
+            "display_name": "Solver",
+            "score": 0.6888998746871948
+          },
+          {
+            "id": "https://openalex.org/keywords/physics",
+            "display_name": "Physics",
+            "score": 0.5973737239837646
+          },
+          {
+            "id": "https://openalex.org/keywords/partial-differential-equation",
+            "display_name": "Partial differential equation",
+            "score": 0.5582860708236694
+          },
+          {
+            "id": "https://openalex.org/keywords/plasma",
+            "display_name": "Plasma",
+            "score": 0.538190484046936
+          },
+          {
+            "id": "https://openalex.org/keywords/dynamical-systems-theory",
+            "display_name": "Dynamical systems theory",
+            "score": 0.5188285708427429
+          },
+          {
+            "id": "https://openalex.org/keywords/ionosphere",
+            "display_name": "Ionosphere",
+            "score": 0.4495568871498108
+          },
+          {
+            "id": "https://openalex.org/keywords/complex-system",
+            "display_name": "Complex system",
+            "score": 0.4310971796512604
+          },
+          {
+            "id": "https://openalex.org/keywords/classical-mechanics",
+            "display_name": "Classical mechanics",
+            "score": 0.40848758816719055
+          },
+          {
+            "id": "https://openalex.org/keywords/applied-mathematics",
+            "display_name": "Applied mathematics",
+            "score": 0.37655216455459595
+          },
+          {
+            "id": "https://openalex.org/keywords/statistical-physics",
+            "display_name": "Statistical physics",
+            "score": 0.32380008697509766
+          },
+          {
+            "id": "https://openalex.org/keywords/computer-science",
+            "display_name": "Computer science",
+            "score": 0.3149759769439697
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematics",
+            "display_name": "Mathematics",
+            "score": 0.2357933521270752
+          },
+          {
+            "id": "https://openalex.org/keywords/geophysics",
+            "display_name": "Geophysics",
+            "score": 0.21746423840522766
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematical-optimization",
+            "display_name": "Mathematical optimization",
+            "score": 0.14798381924629211
+          },
+          {
+            "id": "https://openalex.org/keywords/quantum-mechanics",
+            "display_name": "Quantum mechanics",
+            "score": 0.11965563893318176
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C158622935",
+            "wikidata": "https://www.wikidata.org/wiki/Q660848",
+            "display_name": "Nonlinear system",
+            "level": 2,
+            "score": 0.7783562541007996
+          },
+          {
+            "id": "https://openalex.org/C2778770139",
+            "wikidata": "https://www.wikidata.org/wiki/Q1966904",
+            "display_name": "Solver",
+            "level": 2,
+            "score": 0.6888998746871948
+          },
+          {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.5973737239837646
+          },
+          {
+            "id": "https://openalex.org/C93779851",
+            "wikidata": "https://www.wikidata.org/wiki/Q271977",
+            "display_name": "Partial differential equation",
+            "level": 2,
+            "score": 0.5582860708236694
+          },
+          {
+            "id": "https://openalex.org/C82706917",
+            "wikidata": "https://www.wikidata.org/wiki/Q10251",
+            "display_name": "Plasma",
+            "level": 2,
+            "score": 0.538190484046936
+          },
+          {
+            "id": "https://openalex.org/C79379906",
+            "wikidata": "https://www.wikidata.org/wiki/Q3174497",
+            "display_name": "Dynamical systems theory",
+            "level": 2,
+            "score": 0.5188285708427429
+          },
+          {
+            "id": "https://openalex.org/C116403925",
+            "wikidata": "https://www.wikidata.org/wiki/Q162219",
+            "display_name": "Ionosphere",
+            "level": 2,
+            "score": 0.4495568871498108
+          },
+          {
+            "id": "https://openalex.org/C47822265",
+            "wikidata": "https://www.wikidata.org/wiki/Q854457",
+            "display_name": "Complex system",
+            "level": 2,
+            "score": 0.4310971796512604
+          },
+          {
+            "id": "https://openalex.org/C74650414",
+            "wikidata": "https://www.wikidata.org/wiki/Q11397",
+            "display_name": "Classical mechanics",
+            "level": 1,
+            "score": 0.40848758816719055
+          },
+          {
+            "id": "https://openalex.org/C28826006",
+            "wikidata": "https://www.wikidata.org/wiki/Q33521",
+            "display_name": "Applied mathematics",
+            "level": 1,
+            "score": 0.37655216455459595
+          },
+          {
+            "id": "https://openalex.org/C121864883",
+            "wikidata": "https://www.wikidata.org/wiki/Q677916",
+            "display_name": "Statistical physics",
+            "level": 1,
+            "score": 0.32380008697509766
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.3149759769439697
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.2357933521270752
+          },
+          {
+            "id": "https://openalex.org/C8058405",
+            "wikidata": "https://www.wikidata.org/wiki/Q46255",
+            "display_name": "Geophysics",
+            "level": 1,
+            "score": 0.21746423840522766
+          },
+          {
+            "id": "https://openalex.org/C126255220",
+            "wikidata": "https://www.wikidata.org/wiki/Q141495",
+            "display_name": "Mathematical optimization",
+            "level": 1,
+            "score": 0.14798381924629211
+          },
+          {
+            "id": "https://openalex.org/C62520636",
+            "wikidata": "https://www.wikidata.org/wiki/Q944",
+            "display_name": "Quantum mechanics",
+            "level": 1,
+            "score": 0.11965563893318176
+          },
+          {
+            "id": "https://openalex.org/C154945302",
+            "wikidata": "https://www.wikidata.org/wiki/Q11660",
+            "display_name": "Artificial intelligence",
+            "level": 1,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.1016/j.rinp.2021.105092",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1016/j.rinp.2021.105092",
+            "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2211379721010688/pdf",
+            "source": {
+              "id": "https://openalex.org/S2764941219",
+              "display_name": "Results in Physics",
+              "issn_l": "2211-3797",
+              "issn": [
+                "2211-3797"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320990",
+              "host_organization_name": "Elsevier BV",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320990"
+              ],
+              "host_organization_lineage_names": [
+                "Elsevier BV"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by-nc-nd",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Results in Physics",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:85c86492d6ab429a9b799074a2d7dc37",
+            "is_oa": true,
+            "landing_page_url": "https://doaj.org/article/85c86492d6ab429a9b799074a2d7dc37",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Results in Physics, Vol 33, Iss , Pp 105092- (2022)",
+            "raw_type": "article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1016/j.rinp.2021.105092",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.rinp.2021.105092",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2211379721010688/pdf",
+          "source": {
+            "id": "https://openalex.org/S2764941219",
+            "display_name": "Results in Physics",
+            "issn_l": "2211-3797",
+            "issn": [
+              "2211-3797"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Results in Physics",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4200046966.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4200046966.grobid-xml"
+        },
+        "referenced_works_count": 46,
+        "referenced_works": [
+          "https://openalex.org/W375160764",
+          "https://openalex.org/W1807044718",
+          "https://openalex.org/W1965978806",
+          "https://openalex.org/W1991751411",
+          "https://openalex.org/W1993792469",
+          "https://openalex.org/W2021095734",
+          "https://openalex.org/W2031666682",
+          "https://openalex.org/W2035224562",
+          "https://openalex.org/W2045592573",
+          "https://openalex.org/W2054746106",
+          "https://openalex.org/W2066443285",
+          "https://openalex.org/W2072058762",
+          "https://openalex.org/W2075531343",
+          "https://openalex.org/W2080011055",
+          "https://openalex.org/W2082571393",
+          "https://openalex.org/W2183832887",
+          "https://openalex.org/W2465647285",
+          "https://openalex.org/W2588903120",
+          "https://openalex.org/W2594303560",
+          "https://openalex.org/W2744953953",
+          "https://openalex.org/W2775378605",
+          "https://openalex.org/W2791085359",
+          "https://openalex.org/W2884499921",
+          "https://openalex.org/W2902958202",
+          "https://openalex.org/W2920957514",
+          "https://openalex.org/W2972159872",
+          "https://openalex.org/W2982127288",
+          "https://openalex.org/W2984309987",
+          "https://openalex.org/W3011358647",
+          "https://openalex.org/W3033632051",
+          "https://openalex.org/W3034378757",
+          "https://openalex.org/W3049382071",
+          "https://openalex.org/W3081186684",
+          "https://openalex.org/W3088184248",
+          "https://openalex.org/W3089591553",
+          "https://openalex.org/W3111836368",
+          "https://openalex.org/W3117015786",
+          "https://openalex.org/W3133789907",
+          "https://openalex.org/W3135772062",
+          "https://openalex.org/W3152777496",
+          "https://openalex.org/W3159005468",
+          "https://openalex.org/W3171041021",
+          "https://openalex.org/W3205311254",
+          "https://openalex.org/W6686325294",
+          "https://openalex.org/W6743001824",
+          "https://openalex.org/W6759800490"
+        ],
+        "related_works": [
+          "https://openalex.org/W2354177919",
+          "https://openalex.org/W2186864281",
+          "https://openalex.org/W2033398951",
+          "https://openalex.org/W2063188081",
+          "https://openalex.org/W2070062488",
+          "https://openalex.org/W1501974031",
+          "https://openalex.org/W1664443510",
+          "https://openalex.org/W2103316155",
+          "https://openalex.org/W92118459",
+          "https://openalex.org/W3011358647"
+        ],
+        "abstract_inverted_index": {
+          "We": [
+            0,
+            44
+          ],
+          "consider": [
+            1
+          ],
+          "three": [
+            2
+          ],
+          "types": [
+            3
+          ],
+          "of": [
+            4,
+            20,
+            28,
+            41,
+            53,
+            110
+          ],
+          "the": [
+            5,
+            13,
+            18,
+            46,
+            54,
+            106,
+            111
+          ],
+          "coupled": [
+            6
+          ],
+          "nonlinear": [
+            7,
+            14,
+            66
+          ],
+          "Maccari’s": [
+            8,
+            55
+          ],
+          "systems.": [
+            9,
+            56
+          ],
+          "These": [
+            10
+          ],
+          "systems": [
+            11
+          ],
+          "are": [
+            12,
+            100
+          ],
+          "models": [
+            15
+          ],
+          "that": [
+            16
+          ],
+          "depict": [
+            17
+          ],
+          "dynamics": [
+            19
+          ],
+          "isolated": [
+            21
+          ],
+          "waves,": [
+            22
+          ],
+          "detained": [
+            23
+          ],
+          "in": [
+            24,
+            30,
+            71,
+            81,
+            102
+          ],
+          "a": [
+            25
+          ],
+          "small": [
+            26
+          ],
+          "part": [
+            27
+          ],
+          "space": [
+            29
+          ],
+          "plasma": [
+            31,
+            83
+          ],
+          "physics,": [
+            32
+          ],
+          "optical": [
+            33
+          ],
+          "fibre": [
+            34
+          ],
+          "communications,": [
+            35
+          ],
+          "superfluid": [
+            36
+          ],
+          "and": [
+            37,
+            62,
+            93
+          ],
+          "many": [
+            38
+          ],
+          "other": [
+            39
+          ],
+          "fields": [
+            40
+          ],
+          "applied": [
+            42
+          ],
+          "science.": [
+            43
+          ],
+          "tackle": [
+            45
+          ],
+          "unified": [
+            47
+          ],
+          "method": [
+            48
+          ],
+          "to": [
+            49,
+            104
+          ],
+          "extract": [
+            50
+          ],
+          "exact": [
+            51
+          ],
+          "solutions": [
+            52,
+            76,
+            99
+          ],
+          "This": [
+            57
+          ],
+          "solver": [
+            58
+          ],
+          "is": [
+            59
+          ],
+          "straight,": [
+            60
+          ],
+          "sturdy": [
+            61
+          ],
+          "adequate": [
+            63
+          ],
+          "for": [
+            64,
+            96
+          ],
+          "solving": [
+            65
+          ],
+          "partial": [
+            67
+          ],
+          "differential": [
+            68
+          ],
+          "equations": [
+            69
+          ],
+          "arising": [
+            70
+          ],
+          "natural": [
+            72
+          ],
+          "sciences.": [
+            73
+          ],
+          "The": [
+            74
+          ],
+          "presented": [
+            75
+          ],
+          "admit": [
+            77
+          ],
+          "some": [
+            78,
+            82,
+            97
+          ],
+          "interesting": [
+            79
+          ],
+          "applications": [
+            80
+          ],
+          "environments,": [
+            84
+          ],
+          "such": [
+            85
+          ],
+          "as": [
+            86
+          ],
+          "new": [
+            87
+          ],
+          "earth’s": [
+            88
+          ],
+          "ionosphere": [
+            89
+          ],
+          "zone.": [
+            90
+          ],
+          "Some": [
+            91
+          ],
+          "2D": [
+            92
+          ],
+          "3D": [
+            94
+          ],
+          "graphs": [
+            95
+          ],
+          "selected": [
+            98
+          ],
+          "given": [
+            101
+          ],
+          "order": [
+            103
+          ],
+          "clarify": [
+            105
+          ],
+          "dynamical": [
+            107
+          ],
+          "physical": [
+            108
+          ],
+          "behaviour": [
+            109
+          ],
+          "acquired": [
+            112
+          ],
+          "solutions.": [
+            113
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 3
+          }
+        ],
+        "updated_date": "2026-08-28T12:50:07.497085",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4283524586",
+        "doi": "https://doi.org/10.1016/j.rinp.2022.105755",
+        "title": "Solitary wave solutions for a strain wave equation in a microstructured solid",
+        "display_name": "Solitary wave solutions for a strain wave equation in a microstructured solid",
+        "relevance_score": 52.407272,
+        "publication_year": 2022,
+        "publication_date": "2022-06-25",
+        "ids": {
+          "openalex": "https://openalex.org/W4283524586",
+          "doi": "https://doi.org/10.1016/j.rinp.2022.105755"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1016/j.rinp.2022.105755",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.rinp.2022.105755",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2211379722004272/pdf",
+          "source": {
+            "id": "https://openalex.org/S2764941219",
+            "display_name": "Results in Physics",
+            "issn_l": "2211-3797",
+            "issn": [
+              "2211-3797"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Results in Physics",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S2211379722004272/pdf",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5013313431",
+              "display_name": "Hamood Ur Rehman",
+              "orcid": "https://orcid.org/0000-0002-7338-6288"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3130814776",
+                "display_name": "University of Okara",
+                "ror": "https://ror.org/02fmg6q11",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Hamood ur Rehman",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, University of Okara, Okara, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, University of Okara, Okara, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5042244937",
+              "display_name": "Aziz Ullah Awan",
+              "orcid": "https://orcid.org/0000-0003-3184-3652"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I172780181",
+                "display_name": "University of the Punjab",
+                "ror": "https://ror.org/011maz450",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I172780181"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Aziz Ullah Awan",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, University of the Punjab, Lahore 54590, Pakistan"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0003-3184-3652",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, University of the Punjab, Lahore 54590, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I172780181"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5074083196",
+              "display_name": "Azka Habib",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3130814776",
+                "display_name": "University of Okara",
+                "ror": "https://ror.org/02fmg6q11",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Azka Habib",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, University of Okara, Okara, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, University of Okara, Okara, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I3130814776"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5078545683",
+              "display_name": "Fehmi Gamaoun",
+              "orcid": "https://orcid.org/0000-0001-5851-650X"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I82952536",
+                "display_name": "King Khalid University",
+                "ror": "https://ror.org/052kwzs30",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I82952536"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Fehmi Gamaoun",
+            "raw_affiliation_strings": [
+              "Department of Mechanical Engineering, College of Engineering, King Khalid University, Abha 61421, Saudi Arabia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mechanical Engineering, College of Engineering, King Khalid University, Abha 61421, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I82952536"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5085677919",
+              "display_name": "ElSayed M. Tag El Din",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I186217134",
+                "display_name": "Future University in Egypt",
+                "ror": "https://ror.org/03s8c2x09",
+                "country_code": "EG",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I186217134"
+                ]
+              }
+            ],
+            "countries": [
+              "EG"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "ElSayed M. Tag El Din",
+            "raw_affiliation_strings": [
+              "Faculty of Engineering and Technology, Future University in Egypt, New Cairo 11835, Egypt"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Engineering and Technology, Future University in Egypt, New Cairo 11835, Egypt",
+                "institution_ids": [
+                  "https://openalex.org/I186217134"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5033799057",
+              "display_name": "Ahmed M. Galal",
+              "orcid": "https://orcid.org/0000-0002-3541-9704"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I142608572",
+                "display_name": "Prince Sattam Bin Abdulaziz University",
+                "ror": "https://ror.org/04jt46d36",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I142608572"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I159247623",
+                "display_name": "Mansoura University",
+                "ror": "https://ror.org/01k8vtd75",
+                "country_code": "EG",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I159247623"
+                ]
+              }
+            ],
+            "countries": [
+              "EG",
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Ahmed M. Galal",
+            "raw_affiliation_strings": [
+              "Mechanical Engineering Department, College of Engineering, Prince Sattam Bin Abdulaziz University, Wadi addawaser 11991, Saudi Arabia",
+              "Production Engineering and Mechanical Design Department, Faculty of Engineering, Mansoura University, P.O 35516, Mansoura, Egypt"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Mechanical Engineering Department, College of Engineering, Prince Sattam Bin Abdulaziz University, Wadi addawaser 11991, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I142608572"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Production Engineering and Mechanical Design Department, Faculty of Engineering, Mansoura University, P.O 35516, Mansoura, Egypt",
+                "institution_ids": [
+                  "https://openalex.org/I159247623"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 3,
+        "institutions_distinct_count": 6,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5042244937"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I172780181"
+        ],
+        "apc_list": {
+          "value": 1550,
+          "currency": "USD",
+          "value_usd": 1550
+        },
+        "apc_paid": {
+          "value": 1550,
+          "currency": "USD",
+          "value_usd": 1550
+        },
+        "fwci": 5.2156,
+        "has_fulltext": true,
+        "cited_by_count": 49,
+        "citation_normalized_percentile": {
+          "value": 0.96658098,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 98,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "39",
+          "issue": null,
+          "first_page": "105755",
+          "last_page": "105755"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10248",
+          "display_name": "Nonlinear Waves and Solitons",
+          "score": 1.0,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3109",
+            "display_name": "Statistical and Nonlinear Physics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10248",
+            "display_name": "Nonlinear Waves and Solitons",
+            "score": 1.0,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3109",
+              "display_name": "Statistical and Nonlinear Physics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11575",
+            "display_name": "Nonlinear Photonic Systems",
+            "score": 0.9993000030517578,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3109",
+              "display_name": "Statistical and Nonlinear Physics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10514",
+            "display_name": "Numerical methods in engineering",
+            "score": 0.9871000051498413,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2211",
+              "display_name": "Mechanics of Materials"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/soliton",
+            "display_name": "Soliton",
+            "score": 0.7647334337234497
+          },
+          {
+            "id": "https://openalex.org/keywords/periodic-wave",
+            "display_name": "Periodic wave",
+            "score": 0.7363835573196411
+          },
+          {
+            "id": "https://openalex.org/keywords/physics",
+            "display_name": "Physics",
+            "score": 0.5349931120872498
+          },
+          {
+            "id": "https://openalex.org/keywords/classical-mechanics",
+            "display_name": "Classical mechanics",
+            "score": 0.44884029030799866
+          },
+          {
+            "id": "https://openalex.org/keywords/wave-equation",
+            "display_name": "Wave equation",
+            "score": 0.44754353165626526
+          },
+          {
+            "id": "https://openalex.org/keywords/nonlinear-system",
+            "display_name": "Nonlinear system",
+            "score": 0.2627376616001129
+          },
+          {
+            "id": "https://openalex.org/keywords/quantum-mechanics",
+            "display_name": "Quantum mechanics",
+            "score": 0.17307695746421814
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C87651913",
+            "wikidata": "https://www.wikidata.org/wiki/Q464949",
+            "display_name": "Soliton",
+            "level": 3,
+            "score": 0.7647334337234497
+          },
+          {
+            "id": "https://openalex.org/C2993172089",
+            "wikidata": "https://www.wikidata.org/wiki/Q37172",
+            "display_name": "Periodic wave",
+            "level": 3,
+            "score": 0.7363835573196411
+          },
+          {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.5349931120872498
+          },
+          {
+            "id": "https://openalex.org/C74650414",
+            "wikidata": "https://www.wikidata.org/wiki/Q11397",
+            "display_name": "Classical mechanics",
+            "level": 1,
+            "score": 0.44884029030799866
+          },
+          {
+            "id": "https://openalex.org/C59696629",
+            "wikidata": "https://www.wikidata.org/wiki/Q193846",
+            "display_name": "Wave equation",
+            "level": 2,
+            "score": 0.44754353165626526
+          },
+          {
+            "id": "https://openalex.org/C158622935",
+            "wikidata": "https://www.wikidata.org/wiki/Q660848",
+            "display_name": "Nonlinear system",
+            "level": 2,
+            "score": 0.2627376616001129
+          },
+          {
+            "id": "https://openalex.org/C62520636",
+            "wikidata": "https://www.wikidata.org/wiki/Q944",
+            "display_name": "Quantum mechanics",
+            "level": 1,
+            "score": 0.17307695746421814
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.1016/j.rinp.2022.105755",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1016/j.rinp.2022.105755",
+            "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2211379722004272/pdf",
+            "source": {
+              "id": "https://openalex.org/S2764941219",
+              "display_name": "Results in Physics",
+              "issn_l": "2211-3797",
+              "issn": [
+                "2211-3797"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320990",
+              "host_organization_name": "Elsevier BV",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320990"
+              ],
+              "host_organization_lineage_names": [
+                "Elsevier BV"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by-nc-nd",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Results in Physics",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:15df2cde913c4070835021e590e64819",
+            "is_oa": false,
+            "landing_page_url": "https://doaj.org/article/15df2cde913c4070835021e590e64819",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Results in Physics, Vol 39, Iss , Pp 105755- (2022)",
+            "raw_type": "article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1016/j.rinp.2022.105755",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.rinp.2022.105755",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2211379722004272/pdf",
+          "source": {
+            "id": "https://openalex.org/S2764941219",
+            "display_name": "Results in Physics",
+            "issn_l": "2211-3797",
+            "issn": [
+              "2211-3797"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Results in Physics",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [
+          {
+            "id": "https://openalex.org/G1959350189",
+            "display_name": null,
+            "funder_award_id": "RGP.2/12/43",
+            "funder_id": "https://openalex.org/F4320322804",
+            "funder_display_name": "Deanship of Scientific Research, King Faisal University"
+          },
+          {
+            "id": "https://openalex.org/G8731263660",
+            "display_name": null,
+            "funder_award_id": "RGP.2/12/43",
+            "funder_id": "https://openalex.org/F4320324433",
+            "funder_display_name": "King Khalid University"
+          }
+        ],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320322804",
+            "display_name": "Deanship of Scientific Research, King Faisal University",
+            "ror": "https://ror.org/00dn43547"
+          },
+          {
+            "id": "https://openalex.org/F4320324433",
+            "display_name": "King Khalid University",
+            "ror": "https://ror.org/052kwzs30"
+          }
+        ],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4283524586.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4283524586.grobid-xml"
+        },
+        "referenced_works_count": 58,
+        "referenced_works": [
+          "https://openalex.org/W1993800396",
+          "https://openalex.org/W2001152247",
+          "https://openalex.org/W2009153306",
+          "https://openalex.org/W2018046235",
+          "https://openalex.org/W2028262801",
+          "https://openalex.org/W2028719097",
+          "https://openalex.org/W2031405373",
+          "https://openalex.org/W2046828453",
+          "https://openalex.org/W2053833421",
+          "https://openalex.org/W2059986038",
+          "https://openalex.org/W2065385179",
+          "https://openalex.org/W2083960709",
+          "https://openalex.org/W2085810477",
+          "https://openalex.org/W2094038138",
+          "https://openalex.org/W2187346609",
+          "https://openalex.org/W2586576485",
+          "https://openalex.org/W2793574860",
+          "https://openalex.org/W2795317778",
+          "https://openalex.org/W2982645832",
+          "https://openalex.org/W2997263932",
+          "https://openalex.org/W3049484234",
+          "https://openalex.org/W3083348511",
+          "https://openalex.org/W3093668698",
+          "https://openalex.org/W3111818111",
+          "https://openalex.org/W3111836368",
+          "https://openalex.org/W3121349440",
+          "https://openalex.org/W3131493531",
+          "https://openalex.org/W3132412711",
+          "https://openalex.org/W3132583166",
+          "https://openalex.org/W3133789907",
+          "https://openalex.org/W3135772062",
+          "https://openalex.org/W3143492965",
+          "https://openalex.org/W3152777496",
+          "https://openalex.org/W3157251203",
+          "https://openalex.org/W3157692717",
+          "https://openalex.org/W3158373125",
+          "https://openalex.org/W3158408423",
+          "https://openalex.org/W3166568193",
+          "https://openalex.org/W3171940731",
+          "https://openalex.org/W3171950248",
+          "https://openalex.org/W3185804325",
+          "https://openalex.org/W3185939613",
+          "https://openalex.org/W3188398469",
+          "https://openalex.org/W3188593508",
+          "https://openalex.org/W3192727715",
+          "https://openalex.org/W3193670758",
+          "https://openalex.org/W3194240865",
+          "https://openalex.org/W3196160536",
+          "https://openalex.org/W3196524070",
+          "https://openalex.org/W3196656896",
+          "https://openalex.org/W3211651118",
+          "https://openalex.org/W4226213671",
+          "https://openalex.org/W4281570990",
+          "https://openalex.org/W4312731675",
+          "https://openalex.org/W6686832199",
+          "https://openalex.org/W6782860979",
+          "https://openalex.org/W6838688985",
+          "https://openalex.org/W6847645161"
+        ],
+        "related_works": [
+          "https://openalex.org/W4391375266",
+          "https://openalex.org/W2935759653",
+          "https://openalex.org/W3105167352",
+          "https://openalex.org/W54078636",
+          "https://openalex.org/W2369768928",
+          "https://openalex.org/W2367009666",
+          "https://openalex.org/W3182804407",
+          "https://openalex.org/W2012493829",
+          "https://openalex.org/W3163423191",
+          "https://openalex.org/W4385154975"
+        ],
+        "abstract_inverted_index": {
+          "In": [
+            0
+          ],
+          "this": [
+            1,
+            45
+          ],
+          "article,": [
+            2
+          ],
+          "a": [
+            3,
+            22
+          ],
+          "strain": [
+            4
+          ],
+          "wave": [
+            5,
+            15,
+            76,
+            83
+          ],
+          "equation": [
+            6,
+            29
+          ],
+          "(SWE)": [
+            7
+          ],
+          "is": [
+            8,
+            11,
+            42
+          ],
+          "studied,": [
+            9
+          ],
+          "which": [
+            10
+          ],
+          "used": [
+            12
+          ],
+          "to": [
+            13,
+            50,
+            101,
+            118
+          ],
+          "model": [
+            14
+          ],
+          "propagation": [
+            16
+          ],
+          "in": [
+            17,
+            25,
+            88,
+            124
+          ],
+          "microstructured": [
+            18
+          ],
+          "materials": [
+            19
+          ],
+          "that": [
+            20
+          ],
+          "earn": [
+            21
+          ],
+          "noteworthy": [
+            23
+          ],
+          "place": [
+            24
+          ],
+          "solid-state": [
+            26
+          ],
+          "physics.": [
+            27
+          ],
+          "This": [
+            28
+          ],
+          "also": [
+            30
+          ],
+          "signifies": [
+            31
+          ],
+          "the": [
+            32,
+            97,
+            103,
+            106,
+            109,
+            120
+          ],
+          "dynamics": [
+            33
+          ],
+          "of": [
+            34,
+            56,
+            96,
+            105
+          ],
+          "various": [
+            35,
+            54
+          ],
+          "physical": [
+            36,
+            125
+          ],
+          "phenomena.": [
+            37
+          ],
+          "The": [
+            38,
+            93
+          ],
+          "Sardar-subequation": [
+            39
+          ],
+          "method": [
+            40
+          ],
+          "(SSM)": [
+            41
+          ],
+          "utilized": [
+            43,
+            114
+          ],
+          "for": [
+            44,
+            115
+          ],
+          "model.": [
+            46
+          ],
+          "Granting": [
+            47
+          ],
+          "appropriate": [
+            48
+          ],
+          "values": [
+            49
+          ],
+          "parameters,": [
+            51
+          ],
+          "we": [
+            52
+          ],
+          "obtain": [
+            53
+          ],
+          "types": [
+            55
+          ],
+          "soliton": [
+            57
+          ],
+          "solutions": [
+            58
+          ],
+          "such": [
+            59
+          ],
+          "as": [
+            60
+          ],
+          "periodic": [
+            61
+          ],
+          "singular": [
+            62,
+            68
+          ],
+          "solitons,": [
+            63,
+            65,
+            67,
+            72
+          ],
+          "bright": [
+            64
+          ],
+          "dark": [
+            66
+          ],
+          "soliton,": [
+            69
+          ],
+          "combined": [
+            70
+          ],
+          "dark-bright": [
+            71
+          ],
+          "and": [
+            73,
+            81,
+            90,
+            126
+          ],
+          "some": [
+            74
+          ],
+          "other": [
+            75,
+            82
+          ],
+          "solutions.": [
+            77
+          ],
+          "These": [
+            78
+          ],
+          "novel": [
+            79
+          ],
+          "solitons": [
+            80
+          ],
+          "results": [
+            84,
+            98
+          ],
+          "have": [
+            85
+          ],
+          "significant": [
+            86
+          ],
+          "applications": [
+            87
+          ],
+          "engineering": [
+            89,
+            127
+          ],
+          "applied": [
+            91
+          ],
+          "sciences.": [
+            92
+          ],
+          "graphical": [
+            94
+          ],
+          "sketchings": [
+            95
+          ],
+          "are": [
+            99
+          ],
+          "illustrated": [
+            100
+          ],
+          "purify": [
+            102
+          ],
+          "impact": [
+            104
+          ],
+          "SSM.": [
+            107
+          ],
+          "Furthermore,": [
+            108
+          ],
+          "executed": [
+            110
+          ],
+          "technique": [
+            111
+          ],
+          "can": [
+            112
+          ],
+          "be": [
+            113
+          ],
+          "further": [
+            116
+          ],
+          "studies": [
+            117
+          ],
+          "discuss": [
+            119
+          ],
+          "realistic": [
+            121
+          ],
+          "phenomena": [
+            122
+          ],
+          "developing": [
+            123
+          ],
+          "problems.": [
+            128
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 17
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 8
+          }
+        ],
+        "updated_date": "2026-08-28T12:50:07.497085",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4220980893",
+        "doi": "https://doi.org/10.1016/j.rinp.2022.105459",
+        "title": "Dark-soliton behaviors arising from a coupled nonlinear Schrödinger system",
+        "display_name": "Dark-soliton behaviors arising from a coupled nonlinear Schrödinger system",
+        "relevance_score": 51.66237,
+        "publication_year": 2022,
+        "publication_date": "2022-03-29",
+        "ids": {
+          "openalex": "https://openalex.org/W4220980893",
+          "doi": "https://doi.org/10.1016/j.rinp.2022.105459"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1016/j.rinp.2022.105459",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.rinp.2022.105459",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S221137972200211X/pdf",
+          "source": {
+            "id": "https://openalex.org/S2764941219",
+            "display_name": "Results in Physics",
+            "issn_l": "2211-3797",
+            "issn": [
+              "2211-3797"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Results in Physics",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S221137972200211X/pdf",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5029392860",
+              "display_name": "Emad H. M. Zahran",
+              "orcid": "https://orcid.org/0000-0002-6025-5510"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I207547235",
+                "display_name": "Benha University",
+                "ror": "https://ror.org/03tn5ee41",
+                "country_code": "EG",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I207547235"
+                ]
+              }
+            ],
+            "countries": [
+              "EG"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Emad H.M. Zahran",
+            "raw_affiliation_strings": [
+              "Department of Basic Science, Benha University, Faculty of Engineering, Shubra, Egypt"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Basic Science, Benha University, Faculty of Engineering, Shubra, Egypt",
+                "institution_ids": [
+                  "https://openalex.org/I207547235"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5114376646",
+              "display_name": "Hijaz Ahmad",
+              "orcid": "https://orcid.org/0000-0002-5438-5407"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210155399",
+                "display_name": "UniNettuno University",
+                "ror": "https://ror.org/04q0nep37",
+                "country_code": "IT",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210155399"
+                ]
+              }
+            ],
+            "countries": [
+              "IT"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Hijaz Ahmad",
+            "raw_affiliation_strings": [
+              "Section of Mathematics, International Telematic University Uninettuno, Corso Vittorio, Emanuele II, 39, 00186 Roma, Italy"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Section of Mathematics, International Telematic University Uninettuno, Corso Vittorio, Emanuele II, 39, 00186 Roma, Italy",
+                "institution_ids": [
+                  "https://openalex.org/I4210155399"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5088545047",
+              "display_name": "Sameh Askar",
+              "orcid": "https://orcid.org/0000-0002-1167-2430"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I28022161",
+                "display_name": "King Saud University",
+                "ror": "https://ror.org/02f81g417",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I28022161"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Sameh Askar",
+            "raw_affiliation_strings": [
+              "Department of Statistics and Operations Research, College of Science, King Saud University, P.O. Box 2455, Riyadh 11451, Saudi Arabia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Statistics and Operations Research, College of Science, King Saud University, P.O. Box 2455, Riyadh 11451, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I28022161"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5078096818",
+              "display_name": "Thongchai Botmart",
+              "orcid": "https://orcid.org/0000-0001-9325-5560"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I179193067",
+                "display_name": "Khon Kaen University",
+                "ror": "https://ror.org/03cq4gr50",
+                "country_code": "TH",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I179193067"
+                ]
+              }
+            ],
+            "countries": [
+              "TH"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Thongchai Botmart",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Faculty of Science, Khon Kaen University, Khon Kaen 40002, Thailand"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Faculty of Science, Khon Kaen University, Khon Kaen 40002, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I179193067"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5108589168",
+              "display_name": "Maha S. M. Shehata",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I192398990",
+                "display_name": "Zagazig University",
+                "ror": "https://ror.org/053g6we49",
+                "country_code": "EG",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I192398990"
+                ]
+              }
+            ],
+            "countries": [
+              "EG"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Maha S.M. Shehata",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Zagazig University, Faculty of Science, Zagazig, Egypt"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Zagazig University, Faculty of Science, Zagazig, Egypt",
+                "institution_ids": [
+                  "https://openalex.org/I192398990"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 4,
+        "institutions_distinct_count": 5,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5078096818"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I179193067"
+        ],
+        "apc_list": {
+          "value": 1550,
+          "currency": "USD",
+          "value_usd": 1550
+        },
+        "apc_paid": {
+          "value": 1550,
+          "currency": "USD",
+          "value_usd": 1550
+        },
+        "fwci": 1.2472,
+        "has_fulltext": true,
+        "cited_by_count": 13,
+        "citation_normalized_percentile": {
+          "value": 0.77886188,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 93,
+          "max": 98
+        },
+        "biblio": {
+          "volume": "36",
+          "issue": null,
+          "first_page": "105459",
+          "last_page": "105459"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10248",
+          "display_name": "Nonlinear Waves and Solitons",
+          "score": 0.9998999834060669,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3109",
+            "display_name": "Statistical and Nonlinear Physics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10248",
+            "display_name": "Nonlinear Waves and Solitons",
+            "score": 0.9998999834060669,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3109",
+              "display_name": "Statistical and Nonlinear Physics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10988",
+            "display_name": "Advanced Fiber Laser Technologies",
+            "score": 0.9994000196456909,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3107",
+              "display_name": "Atomic and Molecular Physics, and Optics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11575",
+            "display_name": "Nonlinear Photonic Systems",
+            "score": 0.9994000196456909,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3109",
+              "display_name": "Statistical and Nonlinear Physics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/nonlinear-system",
+            "display_name": "Nonlinear system",
+            "score": 0.6771734356880188
+          },
+          {
+            "id": "https://openalex.org/keywords/soliton",
+            "display_name": "Soliton",
+            "score": 0.5879708528518677
+          },
+          {
+            "id": "https://openalex.org/keywords/physics",
+            "display_name": "Physics",
+            "score": 0.5845653414726257
+          },
+          {
+            "id": "https://openalex.org/keywords/ode",
+            "display_name": "Ode",
+            "score": 0.526792585849762
+          },
+          {
+            "id": "https://openalex.org/keywords/simple",
+            "display_name": "Simple (philosophy)",
+            "score": 0.4742637872695923
+          },
+          {
+            "id": "https://openalex.org/keywords/applied-mathematics",
+            "display_name": "Applied mathematics",
+            "score": 0.3737037181854248
+          },
+          {
+            "id": "https://openalex.org/keywords/statistical-physics",
+            "display_name": "Statistical physics",
+            "score": 0.3246886134147644
+          },
+          {
+            "id": "https://openalex.org/keywords/quantum-mechanics",
+            "display_name": "Quantum mechanics",
+            "score": 0.20817279815673828
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematics",
+            "display_name": "Mathematics",
+            "score": 0.1935117542743683
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C158622935",
+            "wikidata": "https://www.wikidata.org/wiki/Q660848",
+            "display_name": "Nonlinear system",
+            "level": 2,
+            "score": 0.6771734356880188
+          },
+          {
+            "id": "https://openalex.org/C87651913",
+            "wikidata": "https://www.wikidata.org/wiki/Q464949",
+            "display_name": "Soliton",
+            "level": 3,
+            "score": 0.5879708528518677
+          },
+          {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.5845653414726257
+          },
+          {
+            "id": "https://openalex.org/C34862557",
+            "wikidata": "https://www.wikidata.org/wiki/Q178985",
+            "display_name": "Ode",
+            "level": 2,
+            "score": 0.526792585849762
+          },
+          {
+            "id": "https://openalex.org/C2780586882",
+            "wikidata": "https://www.wikidata.org/wiki/Q7520643",
+            "display_name": "Simple (philosophy)",
+            "level": 2,
+            "score": 0.4742637872695923
+          },
+          {
+            "id": "https://openalex.org/C28826006",
+            "wikidata": "https://www.wikidata.org/wiki/Q33521",
+            "display_name": "Applied mathematics",
+            "level": 1,
+            "score": 0.3737037181854248
+          },
+          {
+            "id": "https://openalex.org/C121864883",
+            "wikidata": "https://www.wikidata.org/wiki/Q677916",
+            "display_name": "Statistical physics",
+            "level": 1,
+            "score": 0.3246886134147644
+          },
+          {
+            "id": "https://openalex.org/C62520636",
+            "wikidata": "https://www.wikidata.org/wiki/Q944",
+            "display_name": "Quantum mechanics",
+            "level": 1,
+            "score": 0.20817279815673828
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.1935117542743683
+          },
+          {
+            "id": "https://openalex.org/C138885662",
+            "wikidata": "https://www.wikidata.org/wiki/Q5891",
+            "display_name": "Philosophy",
+            "level": 0,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C111472728",
+            "wikidata": "https://www.wikidata.org/wiki/Q9471",
+            "display_name": "Epistemology",
+            "level": 1,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.1016/j.rinp.2022.105459",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1016/j.rinp.2022.105459",
+            "pdf_url": "https://www.sciencedirect.com/science/article/pii/S221137972200211X/pdf",
+            "source": {
+              "id": "https://openalex.org/S2764941219",
+              "display_name": "Results in Physics",
+              "issn_l": "2211-3797",
+              "issn": [
+                "2211-3797"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320990",
+              "host_organization_name": "Elsevier BV",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320990"
+              ],
+              "host_organization_lineage_names": [
+                "Elsevier BV"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Results in Physics",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:3ecdb0e132b146168745f2d92ee1201d",
+            "is_oa": false,
+            "landing_page_url": "https://doaj.org/article/3ecdb0e132b146168745f2d92ee1201d",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Results in Physics, Vol 36, Iss , Pp 105459- (2022)",
+            "raw_type": "article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1016/j.rinp.2022.105459",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.rinp.2022.105459",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S221137972200211X/pdf",
+          "source": {
+            "id": "https://openalex.org/S2764941219",
+            "display_name": "Results in Physics",
+            "issn_l": "2211-3797",
+            "issn": [
+              "2211-3797"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Results in Physics",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [
+          {
+            "id": "https://openalex.org/G8274354555",
+            "display_name": null,
+            "funder_award_id": "RSP-2022/167",
+            "funder_id": "https://openalex.org/F4320321145",
+            "funder_display_name": "King Saud University"
+          }
+        ],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320321145",
+            "display_name": "King Saud University",
+            "ror": "https://ror.org/02f81g417"
+          }
+        ],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4220980893.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4220980893.grobid-xml"
+        },
+        "referenced_works_count": 46,
+        "referenced_works": [
+          "https://openalex.org/W1965400258",
+          "https://openalex.org/W2003003014",
+          "https://openalex.org/W2036007414",
+          "https://openalex.org/W2042754733",
+          "https://openalex.org/W2061593168",
+          "https://openalex.org/W2189176737",
+          "https://openalex.org/W2579071589",
+          "https://openalex.org/W2765901924",
+          "https://openalex.org/W2990764323",
+          "https://openalex.org/W2998150764",
+          "https://openalex.org/W3001018173",
+          "https://openalex.org/W3016339942",
+          "https://openalex.org/W3027960922",
+          "https://openalex.org/W3034101448",
+          "https://openalex.org/W3034378757",
+          "https://openalex.org/W3034778829",
+          "https://openalex.org/W3047388336",
+          "https://openalex.org/W3048256540",
+          "https://openalex.org/W3091809962",
+          "https://openalex.org/W3111836368",
+          "https://openalex.org/W3115672256",
+          "https://openalex.org/W3116367718",
+          "https://openalex.org/W3128819056",
+          "https://openalex.org/W3130713343",
+          "https://openalex.org/W3131010780",
+          "https://openalex.org/W3133789907",
+          "https://openalex.org/W3135772062",
+          "https://openalex.org/W3137552574",
+          "https://openalex.org/W3139270774",
+          "https://openalex.org/W3152777496",
+          "https://openalex.org/W3155857824",
+          "https://openalex.org/W3161108786",
+          "https://openalex.org/W3194489654",
+          "https://openalex.org/W3195079519",
+          "https://openalex.org/W3195219638",
+          "https://openalex.org/W3195954636",
+          "https://openalex.org/W3196656896",
+          "https://openalex.org/W3200685977",
+          "https://openalex.org/W3204117857",
+          "https://openalex.org/W3205624401",
+          "https://openalex.org/W4200081738",
+          "https://openalex.org/W4200569087",
+          "https://openalex.org/W4280543448",
+          "https://openalex.org/W4321262556",
+          "https://openalex.org/W6792649267",
+          "https://openalex.org/W6800587098"
+        ],
+        "related_works": [
+          "https://openalex.org/W2371448224",
+          "https://openalex.org/W3134495997",
+          "https://openalex.org/W2363680170",
+          "https://openalex.org/W2376428685",
+          "https://openalex.org/W4256082577",
+          "https://openalex.org/W625783435",
+          "https://openalex.org/W2048742619",
+          "https://openalex.org/W2384641672",
+          "https://openalex.org/W2742179975",
+          "https://openalex.org/W2362647823"
+        ],
+        "abstract_inverted_index": {
+          "The": [
+            0,
+            37,
+            73,
+            109,
+            148,
+            185,
+            201
+          ],
+          "principal": [
+            1
+          ],
+          "objective": [
+            2
+          ],
+          "of": [
+            3,
+            11,
+            29,
+            50,
+            135,
+            146,
+            212
+          ],
+          "this": [
+            4,
+            55,
+            113,
+            155
+          ],
+          "work": [
+            5
+          ],
+          "focuses": [
+            6
+          ],
+          "on": [
+            7
+          ],
+          "achieving": [
+            8
+          ],
+          "a": [
+            9
+          ],
+          "class": [
+            10
+          ],
+          "advanced": [
+            12
+          ],
+          "and": [
+            13,
+            90,
+            96,
+            132,
+            179,
+            196
+          ],
+          "impressive": [
+            14
+          ],
+          "N-dark–dark": [
+            15
+          ],
+          "solitons": [
+            16,
+            53,
+            75,
+            98,
+            111,
+            136
+          ],
+          "estimations": [
+            17
+          ],
+          "to": [
+            18,
+            54,
+            127
+          ],
+          "the": [
+            19,
+            27,
+            33,
+            48,
+            51,
+            105,
+            129,
+            158,
+            164,
+            168,
+            174,
+            180,
+            213
+          ],
+          "coupled": [
+            20
+          ],
+          "nonlinear": [
+            21,
+            44,
+            139
+          ],
+          "Schrödinger": [
+            22
+          ],
+          "system": [
+            23
+          ],
+          "(CNLSS)": [
+            24
+          ],
+          "that": [
+            25,
+            65,
+            123,
+            141,
+            151
+          ],
+          "represents": [
+            26
+          ],
+          "propagation": [
+            28
+          ],
+          "optical": [
+            30,
+            63
+          ],
+          "pluses": [
+            31
+          ],
+          "in": [
+            32,
+            62,
+            143
+          ],
+          "model-locked": [
+            34
+          ],
+          "fiber": [
+            35
+          ],
+          "lasers.": [
+            36
+          ],
+          "achieved": [
+            38,
+            202
+          ],
+          "results": [
+            39,
+            203
+          ],
+          "will": [
+            40,
+            107,
+            115,
+            204
+          ],
+          "perfectly": [
+            41
+          ],
+          "describe": [
+            42
+          ],
+          "different": [
+            43
+          ],
+          "coherent": [
+            45
+          ],
+          "structures": [
+            46
+          ],
+          "for": [
+            47,
+            69,
+            112,
+            137,
+            154,
+            192,
+            208
+          ],
+          "behavior": [
+            49
+          ],
+          "resultant": [
+            52
+          ],
+          "model": [
+            56,
+            114
+          ],
+          "as": [
+            57,
+            59
+          ],
+          "well": [
+            58
+          ],
+          "ottosecond": [
+            60
+          ],
+          "pulses": [
+            61
+          ],
+          "fibers": [
+            64
+          ],
+          "play": [
+            66
+          ],
+          "fundamental": [
+            67
+          ],
+          "rule": [
+            68
+          ],
+          "all": [
+            70,
+            80,
+            209
+          ],
+          "recent": [
+            71,
+            210
+          ],
+          "telecommunications.": [
+            72
+          ],
+          "N-dark-dark": [
+            74
+          ],
+          "arise": [
+            76,
+            142
+          ],
+          "when": [
+            77,
+            83
+          ],
+          "nonlinearities": [
+            78
+          ],
+          "are": [
+            79,
+            100,
+            152,
+            157
+          ],
+          "removed,": [
+            81
+          ],
+          "or": [
+            82
+          ],
+          "there": [
+            84
+          ],
+          "is": [
+            85
+          ],
+          "mixture": [
+            86
+          ],
+          "between": [
+            87
+          ],
+          "both": [
+            88
+          ],
+          "focusing": [
+            89,
+            95
+          ],
+          "defocusing": [
+            91,
+            97
+          ],
+          "nonlinearities.": [
+            92
+          ],
+          "If": [
+            93
+          ],
+          "various": [
+            94
+          ],
+          "components": [
+            99
+          ],
+          "collide": [
+            101
+          ],
+          "with": [
+            102
+          ],
+          "each": [
+            103
+          ],
+          "other,": [
+            104
+          ],
+          "energies": [
+            106
+          ],
+          "emerge.": [
+            108
+          ],
+          "N–dark-dark": [
+            110
+          ],
+          "be": [
+            116
+          ],
+          "established": [
+            117
+          ],
+          "by": [
+            118
+          ],
+          "using": [
+            119
+          ],
+          "five": [
+            120
+          ],
+          "significant": [
+            121
+          ],
+          "schemas": [
+            122
+          ],
+          "were": [
+            124
+          ],
+          "checked": [
+            125,
+            190
+          ],
+          "before": [
+            126,
+            191
+          ],
+          "extracting": [
+            128
+          ],
+          "bright,": [
+            130
+          ],
+          "dark": [
+            131
+          ],
+          "other": [
+            133,
+            194
+          ],
+          "types": [
+            134
+          ],
+          "many": [
+            138,
+            144,
+            193
+          ],
+          "problems": [
+            140
+          ],
+          "branches": [
+            145
+          ],
+          "science.": [
+            147
+          ],
+          "proposed": [
+            149
+          ],
+          "methods": [
+            150,
+            187
+          ],
+          "bided": [
+            153
+          ],
+          "goal": [
+            156
+          ],
+          "extended": [
+            159,
+            169
+          ],
+          "direct": [
+            160
+          ],
+          "algebraic": [
+            161
+          ],
+          "method": [
+            162,
+            172,
+            177,
+            183
+          ],
+          "(EDAM),": [
+            163
+          ],
+          "(G′G)": [
+            165
+          ],
+          "-expansion": [
+            166
+          ],
+          "method,": [
+            167
+          ],
+          "simple": [
+            170
+          ],
+          "equation": [
+            171
+          ],
+          "(ESEM),": [
+            173
+          ],
+          "Paul-Painleve": [
+            175
+          ],
+          "approach": [
+            176
+          ],
+          "(PPAM)": [
+            178
+          ],
+          "Riccati-Bernoulli": [
+            181
+          ],
+          "Sub-ODE": [
+            182
+          ],
+          "(RBSODM).": [
+            184
+          ],
+          "suggested": [
+            186
+          ],
+          "have": [
+            188
+          ],
+          "been": [
+            189
+          ],
+          "NLPDE": [
+            195
+          ],
+          "continuously": [
+            197
+          ],
+          "achieve": [
+            198
+          ],
+          "distinct": [
+            199
+          ],
+          "results.": [
+            200
+          ],
+          "add": [
+            205
+          ],
+          "future": [
+            206
+          ],
+          "studies": [
+            207
+          ],
+          "applications": [
+            211
+          ],
+          "internet": [
+            214
+          ],
+          "communications.": [
+            215
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2
+          }
+        ],
+        "updated_date": "2026-08-28T12:50:07.497085",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4391955888",
+        "doi": "https://doi.org/10.1063/5.0189585",
+        "title": "Some new lump molecules and hybrid molecular states of a (3 + 1)-dimensional generalized variable coefficient Kadomtsev–Petviashvili equation",
+        "display_name": "Some new lump molecules and hybrid molecular states of a (3 + 1)-dimensional generalized variable coefficient Kadomtsev–Petviashvili equation",
+        "relevance_score": 49.109528,
+        "publication_year": 2024,
+        "publication_date": "2024-02-01",
+        "ids": {
+          "openalex": "https://openalex.org/W4391955888",
+          "doi": "https://doi.org/10.1063/5.0189585"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1063/5.0189585",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1063/5.0189585",
+          "pdf_url": "https://pubs.aip.org/aip/pof/article-pdf/doi/10.1063/5.0189585/19683905/027130_1_5.0189585.pdf",
+          "source": {
+            "id": "https://openalex.org/S22862804",
+            "display_name": "Physics of Fluids",
+            "issn_l": "1070-6631",
+            "issn": [
+              "1070-6631",
+              "1089-7666",
+              "1527-2435"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320257",
+            "host_organization_name": "American Institute of Physics",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320257"
+            ],
+            "host_organization_lineage_names": [
+              "American Institute of Physics"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Physics of Fluids",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://pubs.aip.org/aip/pof/article-pdf/doi/10.1063/5.0189585/19683905/027130_1_5.0189585.pdf",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5084374258",
+              "display_name": "Juan Yue",
+              "orcid": "https://orcid.org/0009-0001-6783-0549"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I135714990",
+                "display_name": "North University of China",
+                "ror": "https://ror.org/047bp1713",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I135714990"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Juan Yue",
+            "raw_affiliation_strings": [
+              "School of Mathematics, North University of China , Taiyuan, Shanxi 030051, People's Republic of China"
+            ],
+            "raw_orcid": "https://orcid.org/0009-0001-6783-0549",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "School of Mathematics, North University of China , Taiyuan, Shanxi 030051, People's Republic of China",
+                "institution_ids": [
+                  "https://openalex.org/I135714990"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5023763385",
+              "display_name": "Zhonglong Zhao",
+              "orcid": "https://orcid.org/0000-0003-0335-1917"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I135714990",
+                "display_name": "North University of China",
+                "ror": "https://ror.org/047bp1713",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I135714990"
+                ]
+              }
+            ],
+            "countries": [
+              "CN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Zhonglong Zhao",
+            "raw_affiliation_strings": [
+              "School of Mathematics, North University of China , Taiyuan, Shanxi 030051, People's Republic of China"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0003-0335-1917",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "School of Mathematics, North University of China , Taiyuan, Shanxi 030051, People's Republic of China",
+                "institution_ids": [
+                  "https://openalex.org/I135714990"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I135714990"
+        ],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.9763,
+        "has_fulltext": true,
+        "cited_by_count": 5,
+        "citation_normalized_percentile": {
+          "value": 0.70961285,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 93,
+          "max": 97
+        },
+        "biblio": {
+          "volume": "36",
+          "issue": "2",
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10248",
+          "display_name": "Nonlinear Waves and Solitons",
+          "score": 1.0,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3109",
+            "display_name": "Statistical and Nonlinear Physics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10248",
+            "display_name": "Nonlinear Waves and Solitons",
+            "score": 1.0,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3109",
+              "display_name": "Statistical and Nonlinear Physics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11575",
+            "display_name": "Nonlinear Photonic Systems",
+            "score": 0.9994000196456909,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3109",
+              "display_name": "Statistical and Nonlinear Physics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10988",
+            "display_name": "Advanced Fiber Laser Technologies",
+            "score": 0.9699000120162964,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3107",
+              "display_name": "Atomic and Molecular Physics, and Optics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/31",
+              "display_name": "Physics and Astronomy"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/breather",
+            "display_name": "Breather",
+            "score": 0.8761216402053833
+          },
+          {
+            "id": "https://openalex.org/keywords/physics",
+            "display_name": "Physics",
+            "score": 0.7819277048110962
+          },
+          {
+            "id": "https://openalex.org/keywords/variable-coefficient",
+            "display_name": "Variable coefficient",
+            "score": 0.7688762545585632
+          },
+          {
+            "id": "https://openalex.org/keywords/integrable-system",
+            "display_name": "Integrable system",
+            "score": 0.679925262928009
+          },
+          {
+            "id": "https://openalex.org/keywords/kadomtsev–petviashvili-equation",
+            "display_name": "Kadomtsev–Petviashvili equation",
+            "score": 0.5256085395812988
+          },
+          {
+            "id": "https://openalex.org/keywords/perturbation",
+            "display_name": "Perturbation (astronomy)",
+            "score": 0.5158714056015015
+          },
+          {
+            "id": "https://openalex.org/keywords/classical-mechanics",
+            "display_name": "Classical mechanics",
+            "score": 0.5015068054199219
+          },
+          {
+            "id": "https://openalex.org/keywords/nonlinear-system",
+            "display_name": "Nonlinear system",
+            "score": 0.48142239451408386
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematical-analysis",
+            "display_name": "Mathematical analysis",
+            "score": 0.4347767233848572
+          },
+          {
+            "id": "https://openalex.org/keywords/variable",
+            "display_name": "Variable (mathematics)",
+            "score": 0.433495432138443
+          },
+          {
+            "id": "https://openalex.org/keywords/amplitude",
+            "display_name": "Amplitude",
+            "score": 0.41416120529174805
+          },
+          {
+            "id": "https://openalex.org/keywords/quantum-mechanics",
+            "display_name": "Quantum mechanics",
+            "score": 0.34900712966918945
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematical-physics",
+            "display_name": "Mathematical physics",
+            "score": 0.3418579697608948
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematics",
+            "display_name": "Mathematics",
+            "score": 0.15100237727165222
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C74455749",
+            "wikidata": "https://www.wikidata.org/wiki/Q5254599",
+            "display_name": "Breather",
+            "level": 3,
+            "score": 0.8761216402053833
+          },
+          {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.7819277048110962
+          },
+          {
+            "id": "https://openalex.org/C3018795394",
+            "wikidata": "https://www.wikidata.org/wiki/Q465274",
+            "display_name": "Variable coefficient",
+            "level": 2,
+            "score": 0.7688762545585632
+          },
+          {
+            "id": "https://openalex.org/C200741047",
+            "wikidata": "https://www.wikidata.org/wiki/Q1957758",
+            "display_name": "Integrable system",
+            "level": 2,
+            "score": 0.679925262928009
+          },
+          {
+            "id": "https://openalex.org/C159785203",
+            "wikidata": "https://www.wikidata.org/wiki/Q6345653",
+            "display_name": "Kadomtsev–Petviashvili equation",
+            "level": 4,
+            "score": 0.5256085395812988
+          },
+          {
+            "id": "https://openalex.org/C177918212",
+            "wikidata": "https://www.wikidata.org/wiki/Q803623",
+            "display_name": "Perturbation (astronomy)",
+            "level": 2,
+            "score": 0.5158714056015015
+          },
+          {
+            "id": "https://openalex.org/C74650414",
+            "wikidata": "https://www.wikidata.org/wiki/Q11397",
+            "display_name": "Classical mechanics",
+            "level": 1,
+            "score": 0.5015068054199219
+          },
+          {
+            "id": "https://openalex.org/C158622935",
+            "wikidata": "https://www.wikidata.org/wiki/Q660848",
+            "display_name": "Nonlinear system",
+            "level": 2,
+            "score": 0.48142239451408386
+          },
+          {
+            "id": "https://openalex.org/C134306372",
+            "wikidata": "https://www.wikidata.org/wiki/Q7754",
+            "display_name": "Mathematical analysis",
+            "level": 1,
+            "score": 0.4347767233848572
+          },
+          {
+            "id": "https://openalex.org/C182365436",
+            "wikidata": "https://www.wikidata.org/wiki/Q50701",
+            "display_name": "Variable (mathematics)",
+            "level": 2,
+            "score": 0.433495432138443
+          },
+          {
+            "id": "https://openalex.org/C180205008",
+            "wikidata": "https://www.wikidata.org/wiki/Q159190",
+            "display_name": "Amplitude",
+            "level": 2,
+            "score": 0.41416120529174805
+          },
+          {
+            "id": "https://openalex.org/C62520636",
+            "wikidata": "https://www.wikidata.org/wiki/Q944",
+            "display_name": "Quantum mechanics",
+            "level": 1,
+            "score": 0.34900712966918945
+          },
+          {
+            "id": "https://openalex.org/C37914503",
+            "wikidata": "https://www.wikidata.org/wiki/Q156495",
+            "display_name": "Mathematical physics",
+            "level": 1,
+            "score": 0.3418579697608948
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.15100237727165222
+          },
+          {
+            "id": "https://openalex.org/C129747778",
+            "wikidata": "https://www.wikidata.org/wiki/Q1014918",
+            "display_name": "Burgers' equation",
+            "level": 3,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.1063/5.0189585",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1063/5.0189585",
+            "pdf_url": "https://pubs.aip.org/aip/pof/article-pdf/doi/10.1063/5.0189585/19683905/027130_1_5.0189585.pdf",
+            "source": {
+              "id": "https://openalex.org/S22862804",
+              "display_name": "Physics of Fluids",
+              "issn_l": "1070-6631",
+              "issn": [
+                "1070-6631",
+                "1089-7666",
+                "1527-2435"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320257",
+              "host_organization_name": "American Institute of Physics",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320257"
+              ],
+              "host_organization_lineage_names": [
+                "American Institute of Physics"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Physics of Fluids",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1063/5.0189585",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1063/5.0189585",
+          "pdf_url": "https://pubs.aip.org/aip/pof/article-pdf/doi/10.1063/5.0189585/19683905/027130_1_5.0189585.pdf",
+          "source": {
+            "id": "https://openalex.org/S22862804",
+            "display_name": "Physics of Fluids",
+            "issn_l": "1070-6631",
+            "issn": [
+              "1070-6631",
+              "1089-7666",
+              "1527-2435"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320257",
+            "host_organization_name": "American Institute of Physics",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320257"
+            ],
+            "host_organization_lineage_names": [
+              "American Institute of Physics"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Physics of Fluids",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.8100000023841858,
+            "id": "https://metadata.un.org/sdg/6",
+            "display_name": "Clean water and sanitation"
+          }
+        ],
+        "awards": [
+          {
+            "id": "https://openalex.org/G5242326667",
+            "display_name": null,
+            "funder_award_id": "12101572",
+            "funder_id": "https://openalex.org/F4320321001",
+            "funder_display_name": "National Natural Science Foundation of China"
+          },
+          {
+            "id": "https://openalex.org/G6647390541",
+            "display_name": null,
+            "funder_award_id": "12371256",
+            "funder_id": "https://openalex.org/F4320321001",
+            "funder_display_name": "National Natural Science Foundation of China"
+          },
+          {
+            "id": "https://openalex.org/G8844338637",
+            "display_name": null,
+            "funder_award_id": "12101572&#x3001",
+            "funder_id": "https://openalex.org/F4320321001",
+            "funder_display_name": "National Natural Science Foundation of China"
+          }
+        ],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320321001",
+            "display_name": "National Natural Science Foundation of China",
+            "ror": "https://ror.org/01h0zpd94"
+          }
+        ],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4391955888.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4391955888.grobid-xml"
+        },
+        "referenced_works_count": 49,
+        "referenced_works": [
+          "https://openalex.org/W302658422",
+          "https://openalex.org/W1501561933",
+          "https://openalex.org/W1541519688",
+          "https://openalex.org/W1965081021",
+          "https://openalex.org/W1968720209",
+          "https://openalex.org/W1984672675",
+          "https://openalex.org/W1989760690",
+          "https://openalex.org/W2024021018",
+          "https://openalex.org/W2052853059",
+          "https://openalex.org/W2069872719",
+          "https://openalex.org/W2077630243",
+          "https://openalex.org/W2082613840",
+          "https://openalex.org/W2082912027",
+          "https://openalex.org/W2087799565",
+          "https://openalex.org/W2090764660",
+          "https://openalex.org/W2107898301",
+          "https://openalex.org/W2249332047",
+          "https://openalex.org/W2339996220",
+          "https://openalex.org/W2513437296",
+          "https://openalex.org/W2566998196",
+          "https://openalex.org/W2605049938",
+          "https://openalex.org/W2767038712",
+          "https://openalex.org/W2914014857",
+          "https://openalex.org/W2969055270",
+          "https://openalex.org/W2982822377",
+          "https://openalex.org/W3013453060",
+          "https://openalex.org/W3014001436",
+          "https://openalex.org/W3100122163",
+          "https://openalex.org/W3106118591",
+          "https://openalex.org/W3135772062",
+          "https://openalex.org/W3176009037",
+          "https://openalex.org/W3176084428",
+          "https://openalex.org/W3183815466",
+          "https://openalex.org/W3187674031",
+          "https://openalex.org/W3217542190",
+          "https://openalex.org/W4212802964",
+          "https://openalex.org/W4224319983",
+          "https://openalex.org/W4229050415",
+          "https://openalex.org/W4287377707",
+          "https://openalex.org/W4293045394",
+          "https://openalex.org/W4304756227",
+          "https://openalex.org/W4313480758",
+          "https://openalex.org/W4313648943",
+          "https://openalex.org/W4367323268",
+          "https://openalex.org/W4381735730",
+          "https://openalex.org/W4386887658",
+          "https://openalex.org/W4387363324",
+          "https://openalex.org/W4387504329",
+          "https://openalex.org/W4388025036"
+        ],
+        "related_works": [
+          "https://openalex.org/W88263287",
+          "https://openalex.org/W4380358832",
+          "https://openalex.org/W4402991704",
+          "https://openalex.org/W4205967490",
+          "https://openalex.org/W2586317588",
+          "https://openalex.org/W2080410786",
+          "https://openalex.org/W2340746774",
+          "https://openalex.org/W2579058019",
+          "https://openalex.org/W4403685985",
+          "https://openalex.org/W4381988055"
+        ],
+        "abstract_inverted_index": {
+          "In": [
+            0,
+            62
+          ],
+          "this": [
+            1
+          ],
+          "paper,": [
+            2
+          ],
+          "a": [
+            3,
+            56,
+            93,
+            124
+          ],
+          "(3": [
+            4
+          ],
+          "+": [
+            5
+          ],
+          "1)-dimensional": [
+            6
+          ],
+          "generalized": [
+            7
+          ],
+          "variable": [
+            8,
+            84
+          ],
+          "coefficient": [
+            9
+          ],
+          "Kadomtsev–Petviashvili": [
+            10
+          ],
+          "equation": [
+            11
+          ],
+          "is": [
+            12,
+            74
+          ],
+          "investigated": [
+            13
+          ],
+          "systematically,": [
+            14
+          ],
+          "which": [
+            15,
+            98
+          ],
+          "can": [
+            16,
+            110
+          ],
+          "characterize": [
+            17
+          ],
+          "evolution": [
+            18
+          ],
+          "of": [
+            19,
+            67,
+            83,
+            89,
+            102
+          ],
+          "the": [
+            20,
+            30,
+            64,
+            81,
+            86,
+            100
+          ],
+          "long": [
+            21
+          ],
+          "water": [
+            22
+          ],
+          "waves": [
+            23,
+            28,
+            73
+          ],
+          "and": [
+            24,
+            35,
+            45,
+            52,
+            70,
+            105
+          ],
+          "small": [
+            25
+          ],
+          "amplitude": [
+            26
+          ],
+          "surface": [
+            27
+          ],
+          "with": [
+            29
+          ],
+          "weak": [
+            31,
+            33,
+            36
+          ],
+          "nonlinearity,": [
+            32
+          ],
+          "dispersion,": [
+            34
+          ],
+          "perturbation": [
+            37
+          ],
+          "in": [
+            38,
+            119
+          ],
+          "fluid": [
+            39
+          ],
+          "mechanics.": [
+            40
+          ],
+          "We": [
+            41
+          ],
+          "investigate": [
+            42
+          ],
+          "one": [
+            43,
+            50
+          ],
+          "lump": [
+            44,
+            46,
+            68,
+            116
+          ],
+          "molecules": [
+            47,
+            54,
+            69,
+            117
+          ],
+          "obtained": [
+            48
+          ],
+          "from": [
+            49,
+            123
+          ],
+          "breather": [
+            51,
+            53,
+            59
+          ],
+          "by": [
+            55,
+            77
+          ],
+          "new": [
+            57,
+            125
+          ],
+          "degenerating": [
+            58
+          ],
+          "method,": [
+            60
+          ],
+          "respectively.": [
+            61
+          ],
+          "addition,": [
+            63
+          ],
+          "bound": [
+            65
+          ],
+          "state": [
+            66
+          ],
+          "other": [
+            71,
+            120
+          ],
+          "localized": [
+            72
+          ],
+          "derived": [
+            75
+          ],
+          "theoretically": [
+            76
+          ],
+          "velocity": [
+            78
+          ],
+          "resonance.": [
+            79
+          ],
+          "Considering": [
+            80
+          ],
+          "condition": [
+            82
+          ],
+          "coefficient,": [
+            85
+          ],
+          "several": [
+            87
+          ],
+          "sets": [
+            88
+          ],
+          "interesting": [
+            90
+          ],
+          "solutions": [
+            91
+          ],
+          "having": [
+            92
+          ],
+          "complex": [
+            94
+          ],
+          "structure": [
+            95
+          ],
+          "are": [
+            96
+          ],
+          "obtained,": [
+            97
+          ],
+          "include": [
+            99
+          ],
+          "type": [
+            101
+          ],
+          "parabolic,": [
+            103
+          ],
+          "S-shaped,": [
+            104
+          ],
+          "periodic.": [
+            106
+          ],
+          "The": [
+            107
+          ],
+          "analysis": [
+            108
+          ],
+          "method": [
+            109
+          ],
+          "also": [
+            111
+          ],
+          "help": [
+            112
+          ],
+          "us": [
+            113
+          ],
+          "to": [
+            114
+          ],
+          "study": [
+            115
+          ],
+          "existing": [
+            118
+          ],
+          "integrable": [
+            121
+          ],
+          "systems": [
+            122
+          ],
+          "perspective.": [
+            126
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ],
+        "updated_date": "2026-08-29T07:29:34.045763",
+        "created_date": "2025-10-10T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}

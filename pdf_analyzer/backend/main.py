@@ -1,7 +1,7 @@
 import os
 import sys
 import re
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
@@ -52,6 +52,14 @@ def clean_text(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def safe_xml_text(val: Any) -> str:
+    """Sanitize text for XML output."""
+    if val is None:
+        return ""
+    s = str(val)
+    return re.sub(r"[\x00-\x08\x0B\x0C\x0E-\x1F]", "", s)
+
+
 def is_arabic_text(text: str) -> bool:
     """Check if text contains Arabic characters."""
     return bool(re.search(r"[\u0600-\u06FF]", text))
@@ -74,8 +82,8 @@ def get_sorted_blocks(page: fitz.Page) -> List[dict]:
             return []
             
         col_split = x_offset + (v_width / 2.0)
-        left_blocks = [b for b in text_blocks if (b["x0"] + b["x1"]) / 2.0 < col_split]
-        right_blocks = [b for b in text_blocks if (b["x0"] + b["x1"]) / 2.0 >= col_split]
+        left_blocks = [b for b in text_blocks if b["x1"] <= col_split * 1.1 and (b["x1"] - b["x0"]) < v_width * 0.55]
+        right_blocks = [b for b in text_blocks if b["x0"] >= col_split * 0.85 and (b["x1"] - b["x0"]) < v_width * 0.55]
         
         is_multi_column = len(left_blocks) >= 2 and len(right_blocks) >= 2
         
@@ -154,12 +162,12 @@ def extract_doi_and_arxiv(text_full: str) -> Dict[str, Optional[str]]:
 
 
 def is_valid_author_name(name: str) -> bool:
-    """Validate extracted author name strictly (2 to 5 words, no institutions or single words)."""
+    """Validate extracted author name strictly (initials allowed, no institutions or numbers)."""
     name_clean = clean_text(name)
     name_clean = re.sub(r"^[\d\*\†\‡\§\^,#\-]+|[\d\*\†\‡\§\^,#\-\.]+$", "", name_clean).strip()
     name_clean = re.sub(r"^(?:Dr\.|Prof\.|Eng\.|Mr\.|Ms\.|Mrs\.|Ph\.D\.|أ\.D\.|أ\.د\.|د\.|م\.|أ\.|الأستاذ|الدكتور|الباحث)\s*", "", name_clean, flags=re.IGNORECASE).strip()
     
-    if len(name_clean) < 3 or len(name_clean) > 50:
+    if len(name_clean) < 3 or len(name_clean) > 60:
         return False
         
     name_lower = name_clean.lower()
@@ -170,7 +178,7 @@ def is_valid_author_name(name: str) -> bool:
         "corporation", "corp", "inc", "ltd", "center", "centre", "editor", "guest", "staff", "fellow", "member",
         "journal", "proceeding", "transactions", "symposium", "conference", "society", "abstract", "keywords",
         "introduction", "vol", "no", "pp", "pages", "received", "accepted", "revised", "copyright", "rights",
-        "corresponding", "address", "email", "mail", "tel", "phone", "fax", "orcid",
+        "corresponding", "address", "email", "mail", "tel", "phone", "fax", "orcid", "http", "www", "github", "doi",
         "جامعة", "كلية", "قسم", "معهد", "مركز", "مختبر", "مجلة", "مؤتمر", "بحث", "ملخص", "دراسة", "المقدمة", "الباحث"
     ]
     
@@ -185,20 +193,273 @@ def is_valid_author_name(name: str) -> bool:
         return False
         
     words = name_clean.split()
-    # Authors must have at least 2 words (First + Last Name) up to 5 words
-    if len(words) < 2 or len(words) > 5:
+    if len(words) < 2 or len(words) > 6:
         return False
         
     if not is_arabic_text(name_clean):
+        valid_particles = {"van", "der", "den", "de", "von", "al", "el", "bin", "ibn", "da", "di", "del", "du"}
         for w in words:
-            if not w[0].isupper():
+            w_strip = w.rstrip(".,")
+            if w_strip.lower() in valid_particles:
+                continue
+            if not w_strip or not w_strip[0].isupper():
                 return False
                 
     return True
 
 
+def extract_manuscript_authors(doc: fitz.Document, title_y_end: float, abstract_y_start: float, metadata: dict) -> Tuple[List[str], List[str]]:
+    """
+    Extract clean manuscript author names and affiliations with high precision.
+    Strips footnotes, superscripts, emails, and institutional noise.
+    """
+    authors = []
+    affiliations = []
+    page_count = doc.page_count
+    if page_count == 0:
+        return ["Unknown Author"], []
+
+    p1 = doc[0]
+    p1_height = p1.rect.height
+    p1_blocks = get_sorted_blocks(p1)
+
+    if abstract_y_start <= title_y_end + 5:
+        abstract_y_start = p1_height * 0.60
+
+    author_blocks = []
+    for b in p1_blocks:
+        if (title_y_end - 10) <= b["y0"] <= (abstract_y_start + 20):
+            author_blocks.append(b)
+
+    if not author_blocks:
+        for b in p1_blocks:
+            if (title_y_end - 10) <= b["y0"] <= (p1_height * 0.50):
+                author_blocks.append(b)
+
+    affiliation_keywords = [
+        "university", "department", "dept", "institute", "faculty", "school", "college",
+        "laboratory", "lab", "center", "centre", "corporation", "inc.", "ltd.", "gmbh",
+        "hospital", "clinic", "polytechnic", "academy", "universität", "université",
+        "جامعة", "كلية", "قسم", "معهد", "مركز", "مختبر", "أكاديمية", "مستشفى"
+    ]
+
+    for b in author_blocks:
+        txt = b["text"].strip()
+        if not txt:
+            continue
+
+        txt_clean = re.sub(r"\((?:Student\s+)?Member,\s*IEEE\)", "", txt, flags=re.IGNORECASE)
+        txt_clean = re.sub(r"\((?:Fellow|Senior\s+Member),\s*IEEE\)", "", txt_clean, flags=re.IGNORECASE)
+
+        lines = [clean_text(l) for l in txt_clean.split("\n") if clean_text(l)]
+        for line in lines:
+            line_lower = line.lower()
+
+            if "@" in line or any(ak in line_lower for ak in affiliation_keywords):
+                if len(line) < 160 and not any(kw in line_lower for kw in ["abstract", "introduction", "keywords", "index terms"]):
+                    affiliations.append(clean_text(line))
+                continue
+
+            line_no_email = re.sub(r"\(?[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\)?", "", line).strip()
+            line_stripped = re.sub(r"[\d\*\†\‡\§\^#\+]+", "", line_no_email).strip()
+            line_stripped = line_stripped.rstrip(".")
+
+            parts = re.split(r"\s+and\s+|\s*,\s*|\s*;\s*|\s*&\s*|\s*و\s*|\s*،\s*", line_stripped)
+            for part in parts:
+                p_clean = clean_text(part)
+                if is_valid_author_name(p_clean):
+                    authors.append(p_clean)
+
+    if not authors:
+        meta_auth = metadata.get("author")
+        if meta_auth:
+            for a in re.split(r"[,;]| and | و |،", meta_auth):
+                a_clean = clean_text(a)
+                a_stripped = re.sub(r"[\d\*\†\‡\§\^#\+]+", "", a_clean).strip()
+                if is_valid_author_name(a_stripped):
+                    authors.append(a_stripped)
+
+    deduped_authors = list(dict.fromkeys(authors))
+    if not deduped_authors:
+        deduped_authors = ["Unknown Author"]
+
+    deduped_affils = list(dict.fromkeys(affiliations))[:5]
+    return deduped_authors, deduped_affils
+
+
+def extract_academic_references(doc: fitz.Document) -> List[Dict[str, Any]]:
+    """
+    State-of-the-art reference extraction from academic PDF documents.
+    Extracts all references, normalizes them, and extracts structured metadata (title, authors, year, doi, venue).
+    """
+    page_count = doc.page_count
+    if page_count == 0:
+        return []
+
+    ref_header_pattern = re.compile(
+        r"^(?:\d+[\.\)]?\s*|[IVXLCDM]+[\.\)]?\s*|\[\s*\d+\s*\]\s*)?(?:references|bibliography|literature cited|works cited|references and notes|المراجع|قائمة المراجع|المصادر والمراجع|المصادر|ثبت المراجع)\b[\s:—\-]*$",
+        re.IGNORECASE
+    )
+
+    stop_header_pattern = re.compile(
+        r"^(?:\d+[\.\)]?\s*|[IVXLCDM]+[\.\)]?\s*)?(?:appendix(?:\s+[A-Z0-9]+)?|appendices|author biograph(?:y|ies)|biographical notes?|about the authors?|الملحق|سيرة المؤلفين)\b",
+        re.IGNORECASE
+    )
+
+    in_ref_section = False
+    ref_raw_lines = []
+
+    for page_num in range(page_count):
+        page = doc[page_num]
+        p_height = page.rect.height
+        header_limit = p_height * 0.08
+        footer_start = p_height * 0.92
+
+        blocks = get_sorted_blocks(page)
+
+        for b in blocks:
+            text = b["text"].strip()
+            if not text:
+                continue
+
+            lines = [clean_text(l) for l in text.split("\n") if clean_text(l)]
+
+            for line in lines:
+                if not in_ref_section:
+                    if ref_header_pattern.match(line):
+                        in_ref_section = True
+                        continue
+                else:
+                    if (b["y0"] < header_limit or b["y1"] > footer_start) and len(line) < 100:
+                        continue
+
+                    if ref_raw_lines and stop_header_pattern.match(line):
+                        in_ref_section = False
+                        break
+
+                    ref_raw_lines.append(line)
+
+        if not in_ref_section and ref_raw_lines:
+            break
+
+    if not ref_raw_lines:
+        return []
+
+    raw_references: List[Dict[str, str]] = []
+    
+    def _is_doi_or_url(s: str) -> bool:
+        t = s.strip()
+        return bool(re.match(r"^(?:https?://|doi:\s*|doi\.org/|10\.\d{4,9}/|\d{4,9}/)", t, re.IGNORECASE))
+
+    def _match_ref_start(s: str):
+        if _is_doi_or_url(s):
+            return None
+        return re.match(r"^(?:\[\s*(\d{1,4})\s*\]|\(\s*(\d{1,4})\s*\)\s*|(\d{1,4})\s*[\.\)]\s+)(.*)", s)
+
+    numbered_matches = [
+        _match_ref_start(l)
+        for l in ref_raw_lines
+    ]
+    num_count = sum(1 for m in numbered_matches if m is not None)
+
+    if num_count >= 2:
+        current_id = "1"
+        current_text_parts = []
+        has_started_refs = False
+
+        for line in ref_raw_lines:
+            num_m = _match_ref_start(line)
+            # Ensure line isn't a DOI continuation when previous line ended with DOI indicator
+            prev_ended_with_doi = (
+                bool(current_text_parts) and
+                bool(re.search(r"\bdoi:?$", current_text_parts[-1].strip(), re.IGNORECASE))
+            )
+            if num_m and not prev_ended_with_doi:
+                if current_text_parts and has_started_refs:
+                    raw_references.append({
+                        "id": current_id,
+                        "text": " ".join(current_text_parts)
+                    })
+                has_started_refs = True
+                current_id = num_m.group(1) or num_m.group(2) or num_m.group(3) or str(len(raw_references) + 1)
+                rem = num_m.group(4).strip()
+                current_text_parts = [rem] if rem else []
+            else:
+                if has_started_refs:
+                    if current_text_parts:
+                        if current_text_parts[-1].endswith("-") and not current_text_parts[-1].endswith(" -"):
+                            current_text_parts[-1] = current_text_parts[-1][:-1] + line
+                        else:
+                            current_text_parts.append(line)
+                    else:
+                        current_text_parts.append(line)
+
+        if current_text_parts and has_started_refs:
+            raw_references.append({
+                "id": current_id,
+                "text": " ".join(current_text_parts)
+            })
+
+    else:
+        current_parts = []
+        for line in ref_raw_lines:
+            is_start = False
+            if not _is_doi_or_url(line):
+                if re.match(r"^[A-Z\u0600-\u06FF][a-zA-Z\u0600-\u06FF\s\.,\-–&]+\s*(?:\(\s*1[89]\d\d|20\d\d\s*\)|1[89]\d\d\.|20\d\d\.)", line):
+                    is_start = True
+                elif re.match(r"^[A-Z\u0600-\u06FF][a-zA-Z\u0600-\u06FF\-]+,\s+[A-Z]\.", line) and not (current_parts and not current_parts[-1].endswith(".")):
+                    is_start = True
+
+            if is_start and current_parts:
+                raw_references.append({
+                    "id": str(len(raw_references) + 1),
+                    "text": " ".join(current_parts)
+                })
+                current_parts = [line]
+            else:
+                if current_parts:
+                    if current_parts[-1].endswith("-") and not current_parts[-1].endswith(" -"):
+                        current_parts[-1] = current_parts[-1][:-1] + line
+                    else:
+                        current_parts.append(line)
+                else:
+                    current_parts.append(line)
+
+        if current_parts:
+            raw_references.append({
+                "id": str(len(raw_references) + 1),
+                "text": " ".join(current_parts)
+            })
+
+    from enrichment.parser import ReferenceParser
+    structured_references = []
+    
+    for ref in raw_references:
+        raw_txt = clean_text(ref["text"])
+        if len(raw_txt) < 8:
+            continue
+
+        parsed = ReferenceParser.parse(raw_txt)
+        
+        ref_obj = {
+            "id": ref["id"],
+            "text": raw_txt,
+            "title": parsed.title or raw_txt,
+            "authors": parsed.authors,
+            "year": parsed.year,
+            "journal": parsed.journal,
+            "doi": parsed.doi or None,
+            "arxiv_id": parsed.arxiv_id or None,
+            "reference_type": parsed.reference_type
+        }
+        structured_references.append(ref_obj)
+
+    from enrichment.pipeline import deduplicate_references
+    return deduplicate_references(structured_references)
+
+
 def analyze_pdf_content(doc: fitz.Document) -> Dict[str, Any]:
-    """Analyze PDF pages using PyMuPDF to extract rich structured data."""
+    """Analyze PDF pages using PyMuPDF to extract clean metadata, authors, and references."""
     metadata = doc.metadata or {}
     page_count = doc.page_count
     
@@ -305,7 +566,7 @@ def analyze_pdf_content(doc: fitz.Document) -> Dict[str, Any]:
     if title_y_end == 0 and page_count > 0:
         title_y_end = doc[0].rect.height * 0.15
 
-    # 3. Abstract & Keywords Extraction & Precise Abstract Top Boundary
+    # 3. Abstract & Keywords Extraction
     abstract = ""
     keywords = []
     abstract_y_start = doc[0].rect.height * 0.65 if page_count > 0 else 500
@@ -339,138 +600,11 @@ def analyze_pdf_content(doc: fitz.Document) -> Dict[str, Any]:
             keywords = [clean_text(k) for k in raw_kws if clean_text(k) and len(clean_text(k)) < 60]
             break
 
-    # 4. Pinpoint Author Extraction (Strict separation by comma / AND / dot)
-    authors = []
-    affiliations = []
+    # 4. Supercharged Manuscript Author Extraction
+    authors, affiliations = extract_manuscript_authors(doc, title_y_end, abstract_y_start, metadata)
 
-    if abstract_y_start <= title_y_end + 5 and page_count > 0:
-        abstract_y_start = doc[0].rect.height * 0.65
-
-    if p1_blocks:
-        for b in p1_blocks:
-            if (title_y_end - 5) <= b["y0"] <= (abstract_y_start + 15):
-                txt = b["text"].strip()
-                if not txt:
-                    continue
-                    
-                txt_clean = re.sub(r"\((?:Student\s+)?Member,\s*IEEE\)", "", txt, flags=re.IGNORECASE)
-                txt_clean = re.sub(r"\((?:Fellow|Senior\s+Member),\s*IEEE\)", "", txt_clean, flags=re.IGNORECASE)
-                
-                if "@" in txt or any(kw in txt.lower() for kw in ["university", "department", "institute", "faculty", "school", "laboratory", "center", "جامعة", "كلية", "قسم", "معهد", "مختبر"]):
-                    affiliations.append(clean_text(txt))
-                else:
-                    lines = [clean_text(l) for l in txt_clean.split("\n") if clean_text(l)]
-                    for line in lines:
-                        # Strip superscripts, numbers, asterisks
-                        line_stripped = re.sub(r"[\d\*\†\‡\§\^#]+", "", line).strip()
-                        line_stripped = line_stripped.rstrip(".")
-                        
-                        # Split by comma, 'and', '&', '،', ' و '
-                        parts = re.split(r"\s+and\s+|\s*,\s*|\s*;\s*|\s*&\s*|\s*و\s*|\s*،\s*", line_stripped)
-                        for part in parts:
-                            p_clean = clean_text(part)
-                            if is_valid_author_name(p_clean):
-                                authors.append(p_clean)
-
-        # Fallback author search on page 1 if initial bounds yielded empty authors
-        if not authors:
-            for b in p1_blocks:
-                if (title_y_end - 5) <= b["y0"] <= (doc[0].rect.height * 0.55):
-                    txt = b["text"].strip()
-                    lines = [clean_text(l) for l in txt.split("\n") if clean_text(l)]
-                    for line in lines:
-                        line_stripped = re.sub(r"[\d\*\†\‡\§\^#]+", "", line).strip().rstrip(".")
-                        parts = re.split(r"\s+and\s+|\s*,\s*|\s*;\s*|\s*&\s*|\s*و\s*|\s*،\s*", line_stripped)
-                        for part in parts:
-                            p_clean = clean_text(part)
-                            if is_valid_author_name(p_clean):
-                                authors.append(p_clean)
-
-    if not authors:
-        meta_auth = metadata.get("author")
-        if meta_auth:
-            for a in re.split(r"[,;]| and | و |،", meta_auth):
-                a_clean = clean_text(a)
-                if is_valid_author_name(a_clean):
-                    authors.append(a_clean)
-
-    authors = list(dict.fromkeys(authors))
-    if not authors:
-        authors = ["Unknown Author"]
-        
-    affiliations = list(dict.fromkeys(affiliations))[:5]
-
-    # 5. Headings & References Extraction
-    headings = []
-    references = []
-    in_ref_section = False
-    ref_header_pattern = r"^(?:\d+\.?\s*)?(?:references|bibliography|literature cited|works cited|المراجع|قائمة المراجع|المصادر والمراجع|المصادر|قائمة المصادر)[\s:]*$"
-    
-    for page_num in range(page_count):
-        page = doc[page_num]
-        p_height = page.rect.height
-        header_limit = p_height * 0.08
-        footer_start = p_height * 0.92
-        
-        blocks = get_sorted_blocks(page)
-        
-        for b in blocks:
-            if b["y0"] < header_limit or b["y1"] > footer_start:
-                continue
-                
-            text = b["text"].strip()
-            if not text:
-                continue
-                
-            lines = [clean_text(l) for l in text.split("\n") if clean_text(l)]
-            
-            for line in lines:
-                if re.match(ref_header_pattern, line, re.IGNORECASE) or \
-                   re.match(r"^(?:\d+|[IVXLCDM]+)\.?\s+(?:references|bibliography|literature cited|works cited|المراجع|المصادر)[\s:]*$", line, re.IGNORECASE):
-                    in_ref_section = True
-                    headings.append({"text": line, "level": 1, "page": page_num + 1})
-                    continue
-                    
-                if in_ref_section:
-                    num_match = re.match(r"^(?:\[(\d+)\]|(\d+)[\.\)]|\((\d+)\))\s*(.*)", line)
-                    apa_match = re.match(r"^[A-Z\u0600-\u06FF][a-zA-Z\u0600-\u06FF\s\.,\-–&\(\)]+\s*(?:\(\d{4}[a-z]?\)|\d{4}\.)", line)
-                    
-                    if num_match:
-                        ref_id = num_match.group(1) or num_match.group(2) or num_match.group(3)
-                        ref_body = num_match.group(4).strip()
-                        references.append({"id": ref_id, "text": ref_body})
-                    elif apa_match:
-                        ref_id = str(len(references) + 1)
-                        references.append({"id": ref_id, "text": line})
-                    elif len(line) > 5:
-                        if references:
-                            prev = references[-1]["text"]
-                            if prev.endswith("-") and not prev.endswith(" -"):
-                                references[-1]["text"] = prev[:-1] + line
-                            else:
-                                references[-1]["text"] += " " + line
-                        else:
-                            references.append({"id": str(len(references) + 1), "text": line})
-                else:
-                    is_h = False
-                    h_level = 2
-                    
-                    if re.match(r"^[IVXLCDM]+\.\s+[A-Za-z\u0600-\u06FF]", line):
-                        is_h = True
-                        h_level = 1
-                    elif re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Za-z\u0600-\u06FF]", line):
-                        is_h = True
-                        num_part = line.split()[0].rstrip('.')
-                        h_level = min(3, max(1, len(num_part.split('.'))))
-                    elif len(line) < 65 and line.isupper() and not re.search(r"[,;:@\.]", line) and len(line.split()) <= 7:
-                        is_h = True
-                        h_level = 1
-                        
-                    if is_h:
-                        headings.append({"text": line, "level": h_level, "page": page_num + 1})
-
-    from enrichment.pipeline import deduplicate_references
-    deduped_references = deduplicate_references(references)
+    # 5. Supercharged Academic References Extraction (No document structure headings)
+    references = extract_academic_references(doc)
 
     return {
         "title": title,
@@ -482,8 +616,8 @@ def analyze_pdf_content(doc: fitz.Document) -> Dict[str, Any]:
         "abstract": abstract,
         "keywords": keywords,
         "page_count": page_count,
-        "headings": headings,
-        "references": deduped_references,
+        "headings": [],  # Document structure omitted as requested
+        "references": references,
     }
 
 
@@ -519,18 +653,19 @@ def generate_xml_string(data: Dict[str, Any]) -> str:
             
     ET.SubElement(metadata_el, "references_count").text = str(len(data["references"]))
     
-    structure_el = ET.SubElement(root, "structure")
-    for heading in data["headings"]:
-        heading_el = ET.SubElement(structure_el, "heading", {
-            "level": str(heading["level"]),
-            "page": str(heading["page"])
-        })
-        heading_el.text = heading["text"]
+    if data.get("headings"):
+        structure_el = ET.SubElement(root, "structure")
+        for heading in data["headings"]:
+            heading_el = ET.SubElement(structure_el, "heading", {
+                "level": str(heading.get("level", 1)),
+                "page": str(heading.get("page", 1))
+            })
+            heading_el.text = safe_xml_text(heading.get("text", ""))
         
     references_el = ET.SubElement(root, "references")
-    for ref in data["references"]:
-        ref_el = ET.SubElement(references_el, "reference", {"id": str(ref["id"])})
-        ref_el.text = ref["text"]
+    for ref in (data.get("references") or []):
+        ref_el = ET.SubElement(references_el, "reference", {"id": str(ref.get("id", ""))})
+        ref_el.text = safe_xml_text(ref.get("text", ""))
         
     raw_str = ET.tostring(root, encoding="utf-8")
     parsed = minidom.parseString(raw_str)
@@ -538,8 +673,14 @@ def generate_xml_string(data: Dict[str, Any]) -> str:
 
 
 @app.get("/", response_class=HTMLResponse)
+@app.get("/author", response_class=HTMLResponse)
+@app.get("/author/", response_class=HTMLResponse)
+@app.get("/reference", response_class=HTMLResponse)
+@app.get("/reference/", response_class=HTMLResponse)
+@app.get("/paper", response_class=HTMLResponse)
+@app.get("/paper/", response_class=HTMLResponse)
 async def serve_index():
-    """Serve the frontend single page application."""
+    """Serve the frontend single page application for main dashboard or dedicated author/reference pages."""
     index_path = os.path.join(FRONTEND_DIR, "index.html")
     if os.path.exists(index_path):
         return FileResponse(index_path)
@@ -552,6 +693,7 @@ from pydantic import BaseModel
 from enrichment.storage import storage
 from enrichment.providers import OpenAlexAuthorProvider, GoogleScholarAuthorProvider, GoogleScholarProvider
 from enrichment import ReferenceEnricher
+from enrichment.xml_storage import xml_storage
 
 
 @app.post("/analyze")
@@ -563,6 +705,14 @@ async def analyze_pdf(file: UploadFile = File(...), enrich_references: bool = Fa
     try:
         file_bytes = await file.read()
         sha256_hash = hashlib.sha256(file_bytes).hexdigest()
+
+        # 1. Check local XML cache first - 0 parsing, 0 tokens, 0ms!
+        cached_results = xml_storage.get_cached_document(sha256_hash)
+        if cached_results and not enrich_references:
+            if not cached_results.get("project_id"):
+                cached_results["project_id"] = f"project_cached_{sha256_hash[:8]}"
+            return JSONResponse(content=cached_results)
+
         doc = fitz.open(stream=file_bytes, filetype="pdf")
         
         analysis_results = analyze_pdf_content(doc)
@@ -571,6 +721,8 @@ async def analyze_pdf(file: UploadFile = File(...), enrich_references: bool = Fa
         timestamp_str = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
         project_id = f"project_{timestamp_str}_{sha256_hash[:8]}"
         analysis_results["project_id"] = project_id
+        analysis_results["pdf_hash"] = sha256_hash
+        analysis_results["cached"] = False
 
         if enrich_references and analysis_results.get("references"):
             enricher = ReferenceEnricher()
@@ -579,6 +731,9 @@ async def analyze_pdf(file: UploadFile = File(...), enrich_references: bool = Fa
             
         xml_content = generate_xml_string(analysis_results)
         analysis_results["xml"] = xml_content
+        
+        # Save structured document to local XML archive linked to SHA-256 hash!
+        xml_storage.save_document_xml(sha256_hash, file.filename, analysis_results)
         
         # Save project record to disk
         project_record = {
@@ -605,6 +760,8 @@ async def analyze_pdf(file: UploadFile = File(...), enrich_references: bool = Fa
                 }
                 for ref in (analysis_results.get("enriched_references") or analysis_results.get("references") or [])
             ],
+            "headings": analysis_results.get("headings", []),
+            "xml": xml_content,
             "statistics": {
                 "total_references": len(analysis_results.get("references") or []),
                 "enriched_count": len(analysis_results.get("enriched_references") or [])
@@ -644,15 +801,6 @@ async def enrich_references_endpoint(request: EnrichRequest):
     return JSONResponse(content={"results": enriched_results})
 
 
-@app.get("/references/{ref_id}")
-async def get_reference_endpoint(ref_id: str):
-    """Get complete Master JSON Record of an enriched reference from disk storage."""
-    record = storage.load_reference(ref_id)
-    if not record:
-        raise HTTPException(status_code=404, detail=f"Reference '{ref_id}' not found.")
-    return JSONResponse(content=record)
-
-
 @app.get("/references/{ref_id}/sources")
 async def get_reference_sources_endpoint(ref_id: str):
     """Get multi-source comparison (OpenAlex vs Crossref vs Google Scholar) for a reference."""
@@ -668,6 +816,34 @@ async def get_reference_sources_endpoint(ref_id: str):
         "doi_verification": record.get("doi_verification")
     }
     return JSONResponse(content=sources_data)
+
+
+@app.get("/references/{ref_id}")
+async def get_reference_endpoint(ref_id: str, project_id: Optional[str] = None):
+    """Get complete Master JSON Record of an enriched reference from disk storage with project fallback."""
+    record = storage.load_reference(ref_id)
+    if not record and project_id:
+        proj = storage.load_project(project_id)
+        if proj:
+            for r in (proj.get("references") or []):
+                r_id = str(r.get("reference_id") or r.get("id") or "")
+                if r_id and (r_id == ref_id or ref_id.endswith(r_id)):
+                    record = storage.load_reference(r.get("reference_id")) if r.get("reference_id") else None
+                    if not record:
+                        record = {
+                            "reference_id": ref_id,
+                            "project_id": project_id,
+                            "title": r.get("text"),
+                            "original_text": r.get("text"),
+                            "canonical": {
+                                "title": {"value": r.get("text")},
+                                "reference_type": {"value": "journal-article"}
+                            }
+                        }
+                    break
+    if not record:
+        raise HTTPException(status_code=404, detail=f"Reference '{ref_id}' not found.")
+    return JSONResponse(content=record)
 
 
 @app.get("/papers/{paper_id:path}")
@@ -695,42 +871,50 @@ async def get_author_works_endpoint(author_id: str, page: int = 1, per_page: int
         prov_instance = OpenAlexAuthorProvider()
         
     result = await prov_instance.get_author_works(author_id, page=page, per_page=per_page)
-    
-    # Check if author exists if results empty
-    if not result.get("results") and page == 1:
-        author_profile = await prov_instance.get_author(author_id)
-        if not author_profile:
-            raise HTTPException(status_code=404, detail=f"Author '{author_id}' not found.")
-            
-    return JSONResponse(content=result)
+    return JSONResponse(content={
+        "results": result.get("results") or [],
+        "page": page,
+        "per_page": per_page,
+        "total_count": result.get("total_count") or 0
+    })
 
 
 @app.get("/authors/{author_id:path}")
-async def get_author_profile_endpoint(author_id: str, provider: str = "openalex"):
+async def get_author_profile_endpoint(author_id: str, provider: str = "openalex", refresh: bool = False):
     """
     Get author profile details with multi-source metric aggregation.
     Supports provider='openalex' or provider='google_scholar'.
     """
-    # 1. Check provider first if explicit or fetch live
-    if provider.lower() in ("google_scholar", "scholar") or author_id.startswith("scholar:") or author_id.startswith("google_scholar:"):
+    clean_id = (author_id or "").strip()
+    if not clean_id:
+        raise HTTPException(status_code=400, detail="Author ID must not be empty.")
+
+    # 1. Check local XML cache first - 0 API tokens consumed!
+    if not refresh:
+        cached_author = xml_storage.get_cached_author(clean_id)
+        if cached_author:
+            return JSONResponse(content=cached_author)
+
+    # 2. Check provider first if explicit or fetch live
+    if provider.lower() in ("google_scholar", "scholar") or clean_id.startswith("scholar:") or clean_id.startswith("google_scholar:"):
         prov_instance = GoogleScholarAuthorProvider()
     else:
         prov_instance = OpenAlexAuthorProvider()
         
-    profile = await prov_instance.get_author(author_id)
+    profile = await prov_instance.get_author(clean_id)
     
     if not profile:
         # Check local storage fallback
-        cached_author = storage.load_author(author_id)
+        cached_author = storage.load_author(clean_id)
         if cached_author:
-            display_name = cached_author.get("display_name") or cached_author.get("name") or cached_author.get("identity", {}).get("name") or author_id
+            display_name = cached_author.get("display_name") or cached_author.get("name") or cached_author.get("identity", {}).get("name") or clean_id
             cached_author["display_name"] = display_name
             cached_author["name"] = display_name
             return JSONResponse(content=cached_author)
-        raise HTTPException(status_code=404, detail=f"Author '{author_id}' not found.")
+        raise HTTPException(status_code=404, detail=f"Author '{clean_id}' not found.")
     
     # Structure into multi-source author format
-    author_name = profile.get("display_name") or profile.get("name") or author_id
+    author_name = profile.get("display_name") or profile.get("name") or clean_id
     metrics = {
         "openalex": {
             "works_count": profile.get("works_count"),
@@ -765,22 +949,42 @@ async def get_author_profile_endpoint(author_id: str, provider: str = "openalex"
         "scholar_url": profile.get("scholar_url")
     }
 
-    storage.save_author(author_id, aggregated)
+    storage.save_author(clean_id, aggregated)
+    xml_storage.save_author_xml(clean_id, aggregated)
     return JSONResponse(content=aggregated)
 
 
 @app.get("/scholar/search")
-async def scholar_search_endpoint(q: str, num: int = 10):
+async def scholar_search_endpoint(q: str, num: int = 10, refresh: bool = False):
     """
     Search Google Scholar directly from within website via SerpApi.
-    Returns normalized search results and persists raw/normalized files.
+    Checks local XML archive first to save API credits (0 tokens, 0ms).
+    Persists and incrementally merges all results into structured XML.
     """
     clean_q = (q or "").strip()
     if not clean_q:
         raise HTTPException(status_code=400, detail="Query parameter 'q' must not be empty.")
 
+    from enrichment.config import config
+    if not config.serpapi_key:
+        provider = GoogleScholarProvider()
+        results = await provider.search_query(clean_q, num=num)
+        return JSONResponse(content=results)
+
+    # 1. Local XML Cache hit check
+    if not refresh:
+        cached_search = xml_storage.get_cached_search(clean_q)
+        if cached_search and cached_search.get("results"):
+            return JSONResponse(content=cached_search)
+
+    # 2. Live search query
     provider = GoogleScholarProvider()
     results = await provider.search_query(clean_q, num=num)
+
+    # 3. Save / merge incrementally into XML archive
+    if results and "results" in results and results.get("available") is not False:
+        xml_storage.save_search_xml(clean_q, results.get("results", []))
+
     return JSONResponse(content=results)
 
 
@@ -898,7 +1102,23 @@ async def export_project_endpoint(project_id: str, format: str = "json"):
         return HTMLResponse(content="\n".join(bib_entries), media_type="text/plain")
 
     elif fmt == "xml":
-        return HTMLResponse(content="<export><project>" + proj.get("project_id", "") + "</project></export>", media_type="application/xml")
+        xml_content = proj.get("xml")
+        if not xml_content:
+            data = {
+                "title": proj.get("metadata", {}).get("title"),
+                "journal": proj.get("metadata", {}).get("journal"),
+                "doi": proj.get("metadata", {}).get("doi"),
+                "arxiv_id": proj.get("metadata", {}).get("arxiv_id"),
+                "page_count": proj.get("input_pdf", {}).get("page_count", 0),
+                "authors": proj.get("metadata", {}).get("authors", []),
+                "affiliations": proj.get("metadata", {}).get("affiliations", []),
+                "abstract": proj.get("metadata", {}).get("abstract", ""),
+                "keywords": proj.get("metadata", {}).get("keywords", []),
+                "headings": proj.get("headings", []),
+                "references": proj.get("references", []),
+            }
+            xml_content = generate_xml_string(data)
+        return HTMLResponse(content=xml_content, media_type="application/xml")
 
 
 @app.get("/projects/{project_id:path}")
@@ -908,6 +1128,40 @@ async def get_project_endpoint(project_id: str):
     if not proj:
         raise HTTPException(status_code=404, detail=f"Project '{project_id}' not found.")
     return JSONResponse(content=proj)
+
+
+@app.get("/xml/documents")
+async def list_xml_documents_endpoint():
+    """List all indexed XML documents stored locally in XML archive."""
+    docs = xml_storage.list_documents()
+    return JSONResponse(content={"count": len(docs), "documents": docs})
+
+
+@app.get("/xml/document/{pdf_hash}")
+async def get_xml_document_endpoint(pdf_hash: str):
+    """Retrieve raw XML content for a specific cached PDF document."""
+    clean_h = (pdf_hash or "").strip()
+    xml_content = xml_storage.get_document_xml_raw(clean_h)
+    if not xml_content:
+        raise HTTPException(status_code=404, detail=f"XML document for hash '{clean_h}' not found.")
+    return HTMLResponse(content=xml_content, media_type="application/xml")
+
+
+@app.get("/xml/searches")
+async def list_xml_searches_endpoint():
+    """List all cached search queries stored locally in XML."""
+    searches = xml_storage.list_searches()
+    return JSONResponse(content={"count": len(searches), "searches": searches})
+
+
+@app.get("/xml/search/{query_or_hash}")
+async def get_xml_search_endpoint(query_or_hash: str):
+    """Retrieve raw XML content for a cached search query or hash."""
+    clean_qh = (query_or_hash or "").strip()
+    xml_content = xml_storage.get_search_xml_raw(clean_qh)
+    if not xml_content:
+        raise HTTPException(status_code=404, detail=f"XML search archive for '{clean_qh}' not found.")
+    return HTMLResponse(content=xml_content, media_type="application/xml")
 
 
 @app.get("/favicon.ico", include_in_schema=False)

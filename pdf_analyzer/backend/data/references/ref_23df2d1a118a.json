@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_23df2d1a118a",
-  "project_id": "project_20260831_081840_857bd2f2",
-  "created_at": "2026-08-31T08:20:05.077501+00:00",
+  "project_id": "project_20260831_090611_857bd2f2",
+  "created_at": "2026-08-31T09:07:29.958692+00:00",
   "input": {
     "original_text": "Alemneh, H.T., Alemu, N.Y.: Mathematical modeling with optimal control analysis of social media addiction. Infect. Dis. Model. 6 (2021) 405–419.",
     "parsed": {
@@ -70,13 +70,13 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.12,
+        "confidence": 0.0,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -145,16 +145,16 @@
   ],
   "sources": {
     "openalex": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.12,
+      "confidence": 0.0,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": "data/raw/openalex/19bffa91281765f6.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -211,83 +211,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/j.strusafe.2012.09.007",
-        "reason": "Metadata mismatch (title_sim=0.16, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1073/pnas.96.14.8132",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1146/annurev.pp.36.060185.002145",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/1882847",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.5281/zenodo.13304955",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1080/00343409850116817",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.5840/monist198871326",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0378-4347(98)00480-0",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/2617389",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.3758/s13414-011-0090-1",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -295,78 +224,7 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/j.strusafe.2012.09.007",
-        "reason": "Metadata mismatch (title_sim=0.16, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1073/pnas.96.14.8132",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1146/annurev.pp.36.060185.002145",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/1882847",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.5281/zenodo.13304955",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1080/00343409850116817",
-        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.5840/monist198871326",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s0378-4347(98)00480-0",
-        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.2307/2617389",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.3758/s13414-011-0090-1",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -375,14 +233,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.77,
-      "crossref": 41181.58,
-      "openalex": 49590.05
+      "google_scholar": 9.1,
+      "crossref": 29042.78,
+      "openalex": 51723.22
     },
     "candidate_counts": {
       "google_scholar": 1,
       "crossref": 0,
-      "openalex": 10
+      "openalex": 0
     },
     "errors": {}
   }

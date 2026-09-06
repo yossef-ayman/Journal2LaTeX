@@ -125,7 +125,7 @@ class ReferenceParser:
                 return "proceedings-article"
 
         # 3. Book Chapter
-        if re.search(r"\bin:?\s+[^,]+(?:\(eds?\.?\)|ed\.?)", text, re.IGNORECASE) or re.search(r"\bchapter\s+\d+\b", t_lower):
+        if re.search(r"\bin:?\s+[^,]+(?:\b\(eds?\.?\)\b|\beds?\.?\b)", text, re.IGNORECASE) or re.search(r"\bchapter\s+\d+\b", t_lower):
             return "book-chapter"
 
         # 4. Book
@@ -145,7 +145,7 @@ class ReferenceParser:
     def parse(cls, raw_text: str) -> ParsedReference:
         """Parse raw reference text into complete structured bibliographic entity."""
         clean_text = raw_text.strip()
-        clean_text_no_prefix = re.sub(r"^(?:\[\d+\]|\(\d+\)|\d+\.)\s*", "", clean_text)
+        clean_text_no_prefix = re.sub(r"^(?:\[\d+\]|\(\d+\)|\b\d+\.)\s*", "", clean_text)
         
         doi = cls.extract_doi(clean_text_no_prefix) or ""
         isbn = cls.extract_isbn(clean_text_no_prefix) or ""
@@ -173,35 +173,107 @@ class ReferenceParser:
             if suffix:
                 journal = cls._clean_journal_part(suffix)
         else:
-            # Attempt year-split parsing (APA style: Authors (Year). Title. Journal...)
-            year_match = re.search(r"\((1[89]\d\d|20\d\d)\)[\.,\s]*", clean_text_no_prefix)
-            if year_match:
-                authors_part = clean_text_no_prefix[:year_match.start()].strip()
-                remainder = clean_text_no_prefix[year_match.end():].strip()
-                
+            # 2. APA format ONLY: Authors (Year). Title. Journal...
+            # Starts near beginning with candidate authors (no volume/issue/journal words), followed by (Year). Title
+            apa_match = re.search(
+                r"^([^()]{3,120})\s*\((1[89]\d\d|20\d\d)[a-z]?\)\s*[\.:]\s+([A-Z\u0600-\u06FF\"“'].*)",
+                clean_text_no_prefix,
+                re.DOTALL
+            )
+            if apa_match and not re.search(r"\b(?:Journal|Review|Letters|Transactions|16\(13\))\b", apa_match.group(1), re.IGNORECASE):
+                authors_part = apa_match.group(1).strip().rstrip(".,")
+                remainder = apa_match.group(3).strip()
                 if authors_part:
                     raw_authors = cls._parse_authors_part(authors_part)
-                
                 if remainder:
                     parts = re.split(r"[\.:]\s+", remainder, maxsplit=1)
                     title = parts[0].strip()
                     if len(parts) > 1:
                         journal = cls._clean_journal_part(parts[1])
             else:
-                sentences = [s.strip() for s in re.split(r"(?<!\b[A-Z])\.(?!\d)\s+", clean_text_no_prefix) if s.strip()]
-                if len(sentences) >= 3:
-                    raw_authors = cls._parse_authors_part(sentences[0])
-                    title = sentences[1]
-                    journal = cls._clean_journal_part(" ".join(sentences[2:]))
-                elif len(sentences) == 2:
-                    if re.search(r"\b(?:and|&)\b|,\s*[A-Z]\b", sentences[0]):
-                        raw_authors = cls._parse_authors_part(sentences[0])
-                        title = sentences[1]
-                    else:
-                        title = sentences[0]
-                        journal = cls._clean_journal_part(sentences[1])
+                # 3. IEEE / Journal citation with journal tail:
+                # e.g. ", Journal of Vibration and Control 16(13) (2010) 1967–1976"
+                working = re.sub(r"\bhttps?\s*:\s*//\S*", "", clean_text_no_prefix, flags=re.IGNORECASE).strip()
+                working = re.sub(r"\b(?:DOI\s*:\s*|doi\.org/)?10\.\d{4,9}/\S*", "", working, flags=re.IGNORECASE).strip()
+                working = re.sub(r"\bDOI\s*:\s*\S*", "", working, flags=re.IGNORECASE).strip()
+                working = re.sub(r"\bDOI\s*:?\s*$", "", working, flags=re.IGNORECASE).strip()
+                working = working.rstrip(".,;:")
+
+                tail_pattern = re.compile(
+                    r",\s*([A-Z][a-zA-Z\s&]+?(?:Journal|Review|Letters|Transactions|Proceedings|Optics|Physics|Communications|Methods|Sciences|Mathematics|Engineering|Reports|Frontiers|Nature|Science|BMC|Computers|Systems|Control|Analysis|Chaos)[a-zA-Z\s&]*?)"
+                    r"(?:,?\s+(\d+))?"                          # volume e.g. 16 or 45 or 10
+                    r"(?:\s*\((\d+)\))?"                       # issue e.g. (13) or (4)
+                    r"(?:[,\s]*\((1[89]\d\d|20\d\d)\)|[,\s]+(1[89]\d\d|20\d\d))?" # year e.g. (2010) or (2024)
+                    r"(?:[,\s]+(?:pp\.?\s*|pages?\s*)?([A-Za-z0-9]+(?:\s*[-–—]\s*[A-Za-z0-9]+)?))?" # pages e.g. 1967–1976 or 32
+                    r"\s*$",
+                    re.IGNORECASE
+                )
+                tm = tail_pattern.search(working)
+                if tm:
+                    prefix = working[:tm.start()].strip().rstrip(".,")
+                    journal = cls._clean_journal_part(tm.group(1).strip())
+                    if tm.group(2) and not volume:
+                        volume = tm.group(2)
+                    if tm.group(3) and not issue:
+                        issue = tm.group(3)
+                    if (tm.group(4) or tm.group(5)) and not year:
+                        try:
+                            year = int(tm.group(4) or tm.group(5))
+                        except (ValueError, TypeError):
+                            pass
+                    if tm.group(6) and not pages:
+                        pages = tm.group(6).replace(" ", "")
+
+                    raw_authors, title = cls._split_authors_and_title(prefix)
                 else:
-                    title = clean_text_no_prefix
+                    # 4. Fallback author-pattern matching (e.g. Zhang, J.-S., Chen, A.-X., Abdel-Aty, M. Title, Journal, Year...)
+                    author_pattern = re.compile(
+                        r"^((?:(?:[A-Z\u0600-\u06FF][a-zA-Z\u0600-\u06FF\-']+(?:,\s+[A-Z]\.?(?:\s*[-–]\s*[A-Z]\.?)?)+)|"
+                        r"(?:(?:[A-Z]\.?(?:\s*[-–]\s*[A-Z]\.?)?\s+)+[A-Z\u0600-\u06FF][a-zA-Z\u0600-\u06FF\-']+)|"
+                        r"(?:[A-Z\u0600-\u06FF][a-zA-Z\u0600-\u06FF\-']+,\s+[A-Z][a-z]+))"
+                        r"(?:,\s*(?:and\s+|&\s*)?(?:(?:[A-Z\u0600-\u06FF][a-zA-Z\u0600-\u06FF\-']+(?:,\s+[A-Z]\.?(?:\s*[-–]\s*[A-Z]\.?)?)+)|"
+                        r"(?:(?:[A-Z]\.?(?:\s*[-–]\s*[A-Z]\.?)?\s+)+[A-Z\u0600-\u06FF][a-zA-Z\u0600-\u06FF\-']+)|"
+                        r"(?:[A-Z\u0600-\u06FF][a-zA-Z\u0600-\u06FF\-']+,\s+[A-Z][a-z]+)))*[\.,]?)\s+(.*)",
+                        re.DOTALL
+                    )
+                    am = author_pattern.match(clean_text_no_prefix)
+                    if am:
+                        authors_str = am.group(1).strip().rstrip(".,")
+                        raw_authors = cls._parse_authors_part(authors_str)
+                        rest = am.group(2).strip()
+                        
+                        # Look for journal indicator or tail pattern
+                        j_match = re.search(r"[,.]\s*([A-Z][a-zA-Z\s&]+(?:Journal|Transactions|Letters|Proceedings|Review|Physics|Chemistry|Nature|Science|Annals|Optics|Communications|Bulletin|Computers|Systems)[a-zA-Z\s&]*)[,.]\s*(.*)$", rest)
+                        if j_match:
+                            title = rest[:j_match.start()].strip().rstrip(".,")
+                            journal = cls._clean_journal_part(j_match.group(1).strip() + " " + j_match.group(2).strip())
+                        else:
+                            tail_match = re.search(r",\s*([A-Z][a-zA-Z\s&]+),\s*(?:(?:19\d\d|20\d\d)|(?:\d+\s*\(\s*\d+\s*\))|\bvol\.?\s*\d+|\bpp\.?\s*[\d\-]+).*$", rest)
+                            if tail_match:
+                                title = rest[:tail_match.start()].strip().rstrip(".,")
+                                journal = cls._clean_journal_part(tail_match.group(1).strip())
+                            else:
+                                parts = re.split(r"(?<!\b[A-Z])\.(?!\d)\s+", rest, maxsplit=1)
+                                if len(parts) == 2:
+                                    title = parts[0].strip()
+                                    journal = cls._clean_journal_part(parts[1])
+                                else:
+                                    title = rest
+                    else:
+                        sentences = [s.strip() for s in re.split(r"(?<!\b[A-Z])\.(?!\d)\s+", clean_text_no_prefix) if s.strip()]
+                        if len(sentences) >= 3:
+                            raw_authors = cls._parse_authors_part(sentences[0])
+                            title = sentences[1]
+                            journal = cls._clean_journal_part(" ".join(sentences[2:]))
+                        elif len(sentences) == 2:
+                            if re.search(r"\b(?:and|&)\b|,\s*[A-Z]\b", sentences[0]):
+                                raw_authors = cls._parse_authors_part(sentences[0])
+                                title = sentences[1]
+                            else:
+                                title = sentences[0]
+                                journal = cls._clean_journal_part(sentences[1])
+                        else:
+                            title = clean_text_no_prefix
 
         # Cleanup title (strip trailing URLs, DOIs, years)
         title = re.sub(r"\bhttps?://\S+", "", title).strip()
@@ -262,10 +334,79 @@ class ReferenceParser:
     def _clean_journal_part(text: str) -> str:
         """Clean and extract journal name from suffix string."""
         text = re.sub(r"\bhttps?://\S+", "", text)
-        text = re.sub(r"\bdoi:\S+", "", text, flags=re.IGNORECASE)
+        text = re.sub(r"\bdoi(?::\s*|\.org/\S*|\s+)\S*", "", text, flags=re.IGNORECASE)
         text = re.sub(r"\bISBN:\S+", "", text, flags=re.IGNORECASE)
         text = re.sub(r"\b\d+\s*\(\d+\)\s*:\s*\d+(?:-\d+)?", "", text)
+        text = re.sub(r"\b\d+\s*\(\d+\)[,\s]*\d*", "", text)
         text = re.sub(r"\bvol\.?\s*\d+", "", text, flags=re.IGNORECASE)
         text = re.sub(r"\bpp\.?\s*\d+(?:-\d+)?", "", text, flags=re.IGNORECASE)
+        text = re.sub(r"\b(?:19\d\d|20\d\d)\b", "", text)
+        text = re.sub(r"\bDOI\b", "", text, flags=re.IGNORECASE)
         text = text.strip(".,;: ")
         return text[:100]
+
+    TITLE_STOP_WORDS = {
+        "a", "an", "the", "in", "on", "at", "of", "for", "with", "without", "by", "via", "under", "using",
+        "from", "to", "into", "through", "over", "between", "among",
+        "model", "models", "modelling", "modeling", "optimal", "control", "analysis", "approach",
+        "problems", "problem", "several", "state", "variables", "variable", "system", "systems",
+        "study", "investigation", "numerical", "simulation", "simulations", "stability",
+        "fractional", "bifurcation", "bifurcations", "stochastic", "differential", "equations",
+        "equation", "methods", "method", "effect", "effects", "dynamics", "framework",
+        "covid-19", "dengue", "disease", "epidemic", "transmission", "two", "three", "four", "atoms",
+        "quantum", "entropy", "dissipative", "cavities", "dispersive", "entanglement"
+    }
+
+    @classmethod
+    def _is_author_chunk(cls, chunk: str) -> bool:
+        c = chunk.strip()
+        if not c or len(c) < 2:
+            return False
+        if ":" in c:
+            return False
+        words = c.split()
+        if len(words) > 4:
+            return False
+        for w in words:
+            clean_w = w.lower().strip(".,:;()[]\"'")
+            if clean_w in cls.TITLE_STOP_WORDS:
+                return False
+        return True
+
+    @classmethod
+    def _split_authors_and_title(cls, prefix: str) -> Tuple[List[str], str]:
+        """Split a pre-journal citation text into candidate authors and clean title."""
+        # Check dot split e.g. "Abdel-Aty, M. Two atoms in dissipative cavities..."
+        dot_m = re.search(r"(?<=\b[A-Z]\.)\s+([A-Z][a-z]+(?:\s+[a-z]+|\s+[A-Z][a-z]+){2,})", prefix)
+        if dot_m:
+            dot_idx = dot_m.start()
+            authors_str = prefix[:dot_idx].strip()
+            title_str = prefix[dot_idx:].strip()
+            raw_authors = cls._parse_authors_part(authors_str)
+            return raw_authors, title_str
+
+        chunks = [c.strip() for c in prefix.split(",") if c.strip()]
+        auth_chunks = []
+        title_chunks = []
+        in_title = False
+
+        for c in chunks:
+            if in_title:
+                title_chunks.append(c)
+            elif not cls._is_author_chunk(c):
+                in_title = True
+                title_chunks.append(c)
+            else:
+                auth_chunks.append(c)
+
+        if not title_chunks and auth_chunks:
+            if len(auth_chunks) > 1:
+                title_chunks = [auth_chunks.pop()]
+
+        raw_authors = []
+        for c in auth_chunks:
+            for a in cls._parse_authors_part(c):
+                if a and a not in raw_authors:
+                    raw_authors.append(a)
+        title_str = ", ".join(title_chunks).strip()
+        return raw_authors, title_str

@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_517e7b01b1fc",
-  "project_id": "project_20260831_082256_e63dea74",
-  "created_at": "2026-08-31T08:23:26.861438+00:00",
+  "project_id": "project_20260906_102443_69092c9c",
+  "created_at": "2026-09-06T10:25:15.666864+00:00",
   "input": {
     "original_text": "Sebawe Abdalla, M., Hassan, S.S., Abdel-Aty, M. Entropic uncertainty in the Jaynes-Cummings model in presence of a second harmonic generation, Optics Communications, 2005, 244(1-6), pp. 431–443 DOI: http://dx.doi.org/10.1016/j.optcom.2004.09.051",
     "parsed": {
@@ -113,7 +113,7 @@
       "canonical_value": 40,
       "google_scholar": null,
       "openalex": 40,
-      "crossref": null
+      "crossref": 37
     }
   },
   "canonical_authors": [
@@ -283,16 +283,52 @@
       }
     },
     "crossref": {
-      "available": false,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.0,
-      "citation_count": null,
-      "doi": null,
-      "url": null,
-      "raw_file": null,
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "citation_count": 37,
+      "doi": "10.1016/j.optcom.2004.09.051",
+      "url": "https://doi.org/10.1016/j.optcom.2004.09.051",
+      "raw_file": "data/raw/crossref/b7ea6137f7088b80.json",
       "normalized_file": null,
-      "data": {}
+      "data": {
+        "title": "Entropic uncertainty in the Jaynes–Cummings model in presence of a second harmonic generation",
+        "authors": [
+          {
+            "name": "M. Sebawe Abdalla",
+            "given": "M. Sebawe",
+            "family": "Abdalla",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "S.S. Hassan",
+            "given": "S.S.",
+            "family": "Hassan",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "M. Abdel-Aty",
+            "given": "M.",
+            "family": "Abdel-Aty",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          }
+        ],
+        "year": 2005,
+        "journal": "Optics Communications",
+        "doi": "10.1016/j.optcom.2004.09.051",
+        "url": "https://doi.org/10.1016/j.optcom.2004.09.051",
+        "openalex_id": "",
+        "citation_count": 37,
+        "source": "crossref",
+        "raw_file": "data/raw/crossref/b7ea6137f7088b80.json"
+      }
     },
     "google_scholar": {
       "available": false,
@@ -352,6 +388,13 @@
         "rejected_value": "10.1016/j.optcom.2004.09.051",
         "reason": "Metadata mismatch (title_sim=0.10, author_sim=1.00)",
         "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.optcom.2004.09.051",
+        "reason": "Metadata mismatch (title_sim=0.10, author_sim=1.00)",
+        "status": "conflict"
       }
     ],
     "unverified_dois": []
@@ -368,24 +411,31 @@
         "rejected_value": "10.1016/j.optcom.2004.09.051",
         "reason": "Metadata mismatch (title_sim=0.10, author_sim=1.00)",
         "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.optcom.2004.09.051",
+        "reason": "Metadata mismatch (title_sim=0.10, author_sim=1.00)",
+        "status": "conflict"
       }
     ]
   },
   "telemetry": {
     "providers_queried": [
       "google_scholar",
-      "crossref",
-      "openalex"
+      "openalex",
+      "crossref"
     ],
     "latency_ms": {
-      "google_scholar": 9.43,
-      "crossref": 16411.37,
-      "openalex": 17493.38
+      "google_scholar": 11.57,
+      "openalex": 18766.26,
+      "crossref": 19205.14
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
-      "openalex": 1
+      "openalex": 1,
+      "crossref": 1
     },
     "errors": {}
   }

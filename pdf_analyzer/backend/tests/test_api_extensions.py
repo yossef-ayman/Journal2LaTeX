@@ -152,3 +152,11 @@ def test_export_project_bibtex():
 def test_export_project_invalid_format_400():
     res = client.get("/projects/proj_test_001/export?format=pdf_bundle")
     assert res.status_code == 400
+
+
+def test_export_project_xml():
+    res = client.get("/projects/proj_test_001/export?format=xml")
+    assert res.status_code == 200
+    assert "application/xml" in res.headers.get("content-type", "")
+    assert "<document" in res.text or "<article" in res.text or "<metadata" in res.text
+

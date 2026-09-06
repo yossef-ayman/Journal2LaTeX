@@ -1,11 +1,11 @@
 {
   "reference_id": "ref_53ad5aca9a0d",
-  "project_id": "project_20260831_082256_e63dea74",
-  "created_at": "2026-08-31T08:23:26.841012+00:00",
+  "project_id": "project_20260906_102443_69092c9c",
+  "created_at": "2026-09-06T10:25:15.966213+00:00",
   "input": {
     "original_text": "Kumar, D., Singh, J., Baleanu, D., 2018. A new numerical algorithm for fractional differential equations with applications to chaotic models. Applied Mathematical Modelling 62, 179–190. http://dx.doi.org/10.1051/mmnp/2018010",
     "parsed": {
-      "title": "A new numerical algorithm for fractional differential equations with applications to chaotic models",
+      "title": "2018",
       "authors": [
         {
           "name": "D Kumar",
@@ -21,16 +21,11 @@
           "name": "D Baleanu",
           "given": "D",
           "family": "Baleanu"
-        },
-        {
-          "name": "2018",
-          "given": "",
-          "family": "2018"
         }
       ],
       "year": 2018,
       "reference_type": "journal-article",
-      "journal": "Applied Mathematical Modelling 62, 179–190",
+      "journal": "A new numerical algorithm for fractional differential equations with applications to chaotic models.",
       "publisher": null,
       "volume": null,
       "issue": null,
@@ -54,7 +49,7 @@
       "verification_status": "verified"
     },
     "venue": {
-      "value": "Applied Mathematical Modelling 62, 179–190",
+      "value": "A new numerical algorithm for fractional differential equations with applications to chaotic models.",
       "source": "parsed",
       "confidence": 0.85,
       "verification_status": "verified"
@@ -275,7 +270,7 @@
       "raw_file": null,
       "normalized_file": "data/normalized/google_scholar/40e3f360bfe5ec91.json",
       "data": {
-        "title": "A new numerical algorithm for fractional differential equations with applications to chaotic models",
+        "title": "2018",
         "authors": [
           {
             "name": "D Kumar",
@@ -291,15 +286,10 @@
             "name": "D Baleanu",
             "given": "D",
             "family": "Baleanu"
-          },
-          {
-            "name": "2018",
-            "given": "",
-            "family": "2018"
           }
         ],
         "year": 2018,
-        "journal": "Applied Mathematical Modelling 62, 179–190",
+        "journal": "A new numerical algorithm for fractional differential equations with applications to chaotic models.",
         "doi": "10.1051/mmnp/2018010",
         "url": "https://scholar.google.com/scholar?q=doi%3A10.1051/mmnp/2018010",
         "citation_count": null,
@@ -323,7 +313,7 @@
         "field": "doi",
         "provider": "openalex",
         "rejected_value": "10.1051/mmnp/2018010",
-        "reason": "Metadata mismatch (title_sim=0.69, author_sim=0.00)",
+        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
         "status": "conflict"
       }
     ],
@@ -339,7 +329,7 @@
         "field": "doi",
         "provider": "openalex",
         "rejected_value": "10.1051/mmnp/2018010",
-        "reason": "Metadata mismatch (title_sim=0.69, author_sim=0.00)",
+        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
         "status": "conflict"
       }
     ]
@@ -347,18 +337,18 @@
   "telemetry": {
     "providers_queried": [
       "google_scholar",
-      "crossref",
-      "openalex"
+      "openalex",
+      "crossref"
     ],
     "latency_ms": {
-      "google_scholar": 3.3,
-      "crossref": 12156.51,
-      "openalex": 13260.88
+      "google_scholar": 8.95,
+      "openalex": 14229.49,
+      "crossref": 15047.43
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
-      "openalex": 1
+      "openalex": 1,
+      "crossref": 0
     },
     "errors": {}
   }

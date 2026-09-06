@@ -1,0 +1,375 @@
+{
+  "provider": "openalex",
+  "entity_key": "title:Extended trial equation method to generalized non-linear partial diﬀerential equations",
+  "normalized_at": "2026-08-31T09:05:49.370548+00:00",
+  "data": [
+    {
+      "title": "A Collage-Based Approach to Inverse Problems for Nonlinear Systems of Partial Differential Equations",
+      "display_name": "A Collage-Based Approach to Inverse Problems for Nonlinear Systems of Partial Differential Equations",
+      "authors": [
+        {
+          "name": "Kimberly M. Levere",
+          "given": "Kimberly M.",
+          "family": "Levere",
+          "author_id": "https://openalex.org/A5036454375",
+          "display_name": "Kimberly M. Levere",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5036454375",
+            "orcid": "https://orcid.org/0000-0001-6802-2300",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        }
+      ],
+      "year": 2012,
+      "publication_date": "2012-03-01",
+      "journal": "The Atrium (University of Guelph)",
+      "venue": "The Atrium (University of Guelph)",
+      "publisher": "University of Guelph",
+      "reference_type": "thesis",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "http://hdl.handle.net/10214/3475",
+      "pdf_url": null,
+      "openalex_id": "https://openalex.org/W2677474977",
+      "citation_count": 3,
+      "cited_by_count": 3,
+      "is_oa": false,
+      "oa_status": "closed",
+      "abstract": "Inverse problems occur in a wide variety of applications and are an active area of research in many disciplines. We consider inverse problems for a broad class of nonlinear systems of partial diﬀerential equations (PDEs). We develop collage-based approaches for solving inverse problems for nonlinear PDEs of elliptic, parabolic and hyperbolic type. The original collage method for solving inverse problems was developed in [29] with broad application, in particular to ordinary diﬀerential equations (ODEs). Using a consequence of Banach’s ﬁxed point theorem, the collage theorem, one can bound the approximation error above by the so-called collage distance, which is more readily minimizable. By minimizing the collage distance the approximation error can be controlled. In the case of nonlinear PDEs we consider the weak formulation of the PDE and make use of the nonlinear Lax-Milgram representation theorem and Galerkin approximation theory in order to develop a similar upper-bound on the approximation error. Supporting background theory, including weak solution theory,is presented and example problems are solved for each type of PDE to showcase the methods in practice. Numerical techniques and considerations are discussed and results are presented. To demonstrate the practical applicability of this work, we study two real-world applications. First, we investigate a model for the migration of three ﬁsh species through ﬂoodplain waters. A development of the mathematical model is presented and a collage-based method is applied to this model to recover the diﬀusion parameters. Theoretical and numerical particulars are discussed and results are presented. Finally, we investigate a model for the “Gao beam”, a nonlinear beam model that incorporates the possibility of buckling. The mathematical model is developed and the weak formulation is discussed. An inverse problem that seeks the ﬂexural rigidity of the beam is solved and results are presented. Finally, we discuss avenues of future research arising from this work.",
+      "topics": [
+        "Advanced Mathematical Modeling in Engineering",
+        "Numerical methods in inverse problems",
+        "Differential Equations and Numerical Methods"
+      ],
+      "referenced_works_count": 0,
+      "related_works": [
+        "https://openalex.org/W2162184119",
+        "https://openalex.org/W1509473330",
+        "https://openalex.org/W2366915541",
+        "https://openalex.org/W2130963027",
+        "https://openalex.org/W1581673629"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/882ea40b5987312b.json"
+    },
+    {
+      "title": "Quantum algorithms for image classiﬁcation and nonlinear diﬀerential equations",
+      "display_name": "Quantum algorithms for image classiﬁcation and nonlinear diﬀerential equations",
+      "authors": [
+        {
+          "name": "Paolo Alessandro Xavier Tognini",
+          "given": "Paolo Alessandro Xavier",
+          "family": "Tognini",
+          "author_id": "https://openalex.org/A5120051114",
+          "display_name": "Paolo Alessandro Xavier Tognini",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5120051114",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-04-28",
+      "journal": "Open MIND",
+      "venue": "Open MIND",
+      "publisher": "",
+      "reference_type": "journal-article",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "10.25429/tognini-paolo-alessandro-xavier_phd2026-04-28",
+      "url": "https://hdl.handle.net/11384/166284",
+      "pdf_url": "https://ricerca.sns.it/bitstream/11384/166284/2/Tognini_Tesi.pdf",
+      "openalex_id": "https://openalex.org/W7160516596",
+      "citation_count": 0,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "This thesis presents two works related to quantum algorithms.In the first part, we propose a new quantum neural network for image classification, which is able to classify the parity of the MNIST dataset with full resolution with a test accuracy of up to 97.5% without any classical pre-processing or post-processing.Our architecture is based on a mixture of experts whose model function is the sum of the model functions of each expert.We encode the input with amplitude encoding, which allows us to encode full-resolution MNIST images with 10 qubits and to implement a convolution on the whole image with just a single one-qubit gate.Our training algorithm is based on training all the experts together, which significantly improves trainability with respect to training each expert independently.In fact, in the limit of infinitely many experts, our training algorithm can perfectly fit the training data.Our results demonstrate the potential of our quantum neural network to achieve high-accuracy image classification with minimal quantum resources, paving the way for more scalable and efficient quantum machine learning models.In the second part, we study with classical simulations and analytical calculations the quantum algorithm of [Lloyd et al., arXiv:2011.06571] for solving nonlinear differential equations, showing its strong limitations.availability, his insights, his patience with me.I was not the best programmer at the beginning, I am not it now, but in the end I arrived at the end of a journey.I have fought the good fight, I have finished the race, I have kept the faith.But my journey is not at its end.But at its beginning.May I say these words at the end of my whole journey...! This thesis was realized during the Artificial Intelligence revolution, in which I wish to contribute in the near future; in an age of confusion and of doubt in who are we and what do we want; and the same is true for me.I guess I have to thank Francesco Mele for his suggestion of pursuing a Ph.D. in Quantum Machine Learning.I thank my theater group here in Pisa for the friendships and the insights: because theater is life.In these last few weeks in which all the magic of all these years came together, I want to thank Marco Eterno, Francesco Zigliotto for the encouragements, Mauro for his praise and good feelings, Giuseppe Ielo and Lavinia Ambrosi for being family and all my present and past roommates, I want to thank Bruno for his technical help, Giacomo for his theoretical help, Edo for his practical",
+      "topics": [
+        "Quantum Computing Algorithms and Architecture",
+        "Quantum many-body systems",
+        "Quantum Information and Cryptography"
+      ],
+      "referenced_works_count": 0,
+      "related_works": [],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/882ea40b5987312b.json"
+    },
+    {
+      "title": "Symbolic Computational Algorithm for Hirota Bilinear Form to Higher-dimensional Nonlinear Partial Diﬀerential Equations in Nonlinear Sciences",
+      "display_name": "Symbolic Computational Algorithm for Hirota Bilinear Form to Higher-dimensional Nonlinear Partial Diﬀerential Equations in Nonlinear Sciences",
+      "authors": [
+        {
+          "name": "Ankit Dadhich",
+          "given": "Ankit",
+          "family": "Dadhich",
+          "author_id": "https://openalex.org/A5120567439",
+          "display_name": "Ankit Dadhich",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5120567439",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Central University of Haryana"
+          ],
+          "countries": [
+            "IN"
+          ]
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-09-02",
+      "journal": "Communications on Applied Nonlinear Analysis",
+      "venue": "Communications on Applied Nonlinear Analysis",
+      "publisher": "",
+      "reference_type": "journal-article",
+      "volume": "31",
+      "issue": "8s",
+      "pages": "1212-1235",
+      "doi": "10.52783/cana.v31.6244",
+      "url": "https://doi.org/10.52783/cana.v31.6244",
+      "pdf_url": "https://internationalpubls.com/index.php/cana/article/download/6244/3513",
+      "openalex_id": "https://openalex.org/W4416724809",
+      "citation_count": 0,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "abstract": "In the physical world, many real systems are governed by nonlinear partial diﬀerential equations from ﬂuid dynamics and plasma phyasics to shallow-water waves and oceanographic systems. There is no uniform approach for solving nonlinear partial diﬀerential equations; consequently, we consider each equation as a separate problem. The most eﬀective technique for building multi-soliton solutions of an integrable nonlinear PDE is the Hirota direct method from the several methods used to explore nonlinear PDEs to obtain solitons, lumps, rogue waves, breathers, and kink waves. To derive the multi-solitons of the non-linear PDEs, this method requires ﬁrst transforming the equation into the bilinear form proposed by Hirota, and then applying the dependent variable transformation. Converting nonlinear evolution equations into Hirota bilinear form is the primary goal of the research study. This work investigated several well-known nonlinear PDEs, including the KdV Equation, Boussinesq Equation, GS Equation, KP equation, and other equations in order to comprehend and apply the concept. We design the algorithm using symbolic software Mathematica. These equations are widely recognized for multi-solitons and their integrability, which having applications in diverse ﬁleds oceanography, ﬂuid dynamics, plasma physics, mechanics, and other nonlinear sciences.",
+      "topics": [
+        "Nonlinear Waves and Solitons",
+        "Fractional Differential Equations Solutions",
+        "Iterative Methods for Nonlinear Equations"
+      ],
+      "referenced_works_count": 0,
+      "related_works": [],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/882ea40b5987312b.json"
+    },
+    {
+      "title": "Diﬀerential Equations Modeling of Integration of Ordered Memory, Perception, and Attention Activities in Episode Processing",
+      "display_name": "Diﬀerential Equations Modeling of Integration of Ordered Memory, Perception, and Attention Activities in Episode Processing",
+      "authors": [
+        {
+          "name": "Eva Čadež",
+          "given": "Eva",
+          "family": "Čadež",
+          "author_id": "https://openalex.org/A5006978516",
+          "display_name": "Eva Čadež",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5006978516",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        }
+      ],
+      "year": 2013,
+      "publication_date": "2013-01-01",
+      "journal": "eScholarship (California Digital Library)",
+      "venue": "eScholarship (California Digital Library)",
+      "publisher": "California Digital Library",
+      "reference_type": "thesis",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "https://escholarship.org/uc/item/7z10257t",
+      "pdf_url": "https://escholarship.org/uc/item/7z10257t",
+      "openalex_id": "https://openalex.org/W267776255",
+      "citation_count": 0,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "By using differential equations to simulate cognition at the level of abstract mental constructs, the Complex Dynamical Integrated Episode Processing Hypothesis (CDIE) sheds new light on how ordered events are encoded in episode processing. It assumes that during the episode processing current distribution of activated information is influenced by external inputs of information in a complex way due to additional influences of spatiotemporal context and spontaneous decay. In particular, it integrates perception and existing memory, attention related to time based decay modification and as possible additional simple source of information, forgetting (including both constant and non-constant time-based decay and interference), relationship of this decay and item distinctiveness, false memories resulting from three possible mechanisms and their suppression, etc. Cognition is treated as a complex dynamical system and this model for the first time in the literature integrates all of the mentioned classical concepts and sheds light on their temporal dynamics. The following are some of the unique contributions of this project.Episode processing is currently not a particularly well identified traditional research area. Nonetheless, there exists a continuity in cognitive processing explored in many other areas and \"episode processing\" or the \"episode processor\" are defined as a complex system changing in time.This dynamical process model is an innovative application of an infinite-dimensional dynamical system to the ordered cognitive events in episode processing. On the one hand, while dynamical systems (DS) theory has been recognized as an important tool in cognitive science, this kind of infinite-dimensional system, where a continuum of values evolves in time, has not been heavily studied by modelers or philosophers discussing dynamical approaches to non-neural level cognitive science. The model assumes that order in time is cognitively treated as order in space. A complex systems differential equations approach to time-as-space ideas of cognitive linguistics has not been quantitatively implemented in cognitive science and it shows promise to open an entirely new area of research in cognitive linguistics.",
+      "topics": [
+        "Language, Metaphor, and Cognition",
+        "Language and cultural evolution"
+      ],
+      "referenced_works_count": 0,
+      "related_works": [
+        "https://openalex.org/W1977284756",
+        "https://openalex.org/W2036892063",
+        "https://openalex.org/W1676556607",
+        "https://openalex.org/W2107798719",
+        "https://openalex.org/W2515299368"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/882ea40b5987312b.json"
+    },
+    {
+      "title": "Advanced Tracking Loop Architectures for Multi-frequency GNSS Receiver",
+      "display_name": "Advanced Tracking Loop Architectures for Multi-frequency GNSS Receiver",
+      "authors": [
+        {
+          "name": "Padma Bolla",
+          "given": "Padma",
+          "family": "Bolla",
+          "author_id": "https://openalex.org/A5004290060",
+          "display_name": "Padma Bolla",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5004290060",
+            "orcid": "https://orcid.org/0000-0001-6186-8186",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        }
+      ],
+      "year": 2018,
+      "publication_date": "2018-12-17",
+      "journal": "Tampere University Institutional Repository (Tampere University)",
+      "venue": "Tampere University Institutional Repository (Tampere University)",
+      "publisher": "Tampere University of Applied Sciences",
+      "reference_type": "thesis",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "https://trepo.tuni.fi//handle/10024/114116",
+      "pdf_url": "https://trepo.tuni.fi//handle/10024/114116",
+      "openalex_id": "https://openalex.org/W3162324453",
+      "citation_count": 4,
+      "cited_by_count": 4,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "The multi-frequency Global Navigation Satellite System (GNSS) signals are designed to overcome the inherent performance limitations of single-frequency receivers. However, the processing of multiple frequency signals in a time-varying GNSS signal environment which are potentially aﬀected by multipath, ionosphere scintillation, blockage, and interference is quite challenging, as each signal is inﬂuenced diﬀerently by channel eﬀects according to its Radio Frequency (RF). In order to get beneﬁt of synchronously/coherently generated multiple frequency signals, advanced receiver signal processing techniques need to be developed. The aim of this research thesis is to extract the best performance beneﬁts out of multifrequency GNSS signals in a time-varying GNSS signal environment. To accomplish this objective, it is necessary to analyze the multi-frequency signal characteristics and to investigate suitable signal processing algorithms in order to enable the best performance of each signal. The GNSS receiver position accuracy and reliability are majorly determined by the signal tracking-loop performance, hence, the primary focus of this thesis is on improving the tracking-loop performance of coherently generated multi-frequency signals. In the ﬁrst phase of this research, the performance of multi-frequency GNSS signals is analyzed using conventional signal processing algorithms. Furthermore, the performance of a combination of multi-frequency signals is evaluated in order to ﬁnd the optimum two-frequency signal combination for standalone and diﬀerential positioning applications. The limitations of the conventional multi-frequency signal processing algorithms are identiﬁed and an optimum dual-frequency signal processing architecture is proposed for robust and precise positioning applications. By making use of the inherent linear relation between the Line-of-Sight (LOS) Doppler shifts of multi-frequency GNSS signals, a computationally eﬃcient Centralized Dynamics Tracking Loop (CTL) architecture is also proposed. In the CTL architecture, the common geometric Doppler shift in the received multi-frequency signals is estimated using a higher-order wide-band ﬁlter by making use of multiple frequency channel measurements in a coordinated manner. Additionally, the residual-phase variations speciﬁc to each frequency channel are tracked using Phase Lock Loop (PLL) with a narrow bandwidth ﬁlter. The CTL ﬁlter provides the geometric Doppler shift aid to individual frequency channels. The common Doppler-aided narrow-band signal tracking enhances the signal tracking sensitivity and robustness to the in-band interference in each frequency channel. This further reduces the noise in the linear combination of pseudorange observations. In real GNSS signal environment, multiple frequency signals are often subjected to intentional or unintentional RF interference either at the same time or at diﬀerent time instants. Moreover, each of these signals is inﬂuenced diﬀerently by RF interference. To track signals in such time-varying signal conditions, the CTL using an Adaptive Kalman Filter (AKF) is proposed to enable an adaptive tracking loop bandwidth in response to received signal power level and signal dynamics. The central task of the AKF is to eﬀectively blend multiple frequency carrier-phase observations to estimate the common geometric Doppler frequency of received multiple frequency signals. A suitable collaboration in multi-frequency channel tracking using centralized dynamics tracking loop enables a robust carrier tracking even if some of the frequency channels are aﬀected by ionospheric scintillation, multipath, or interference. The performance of the proposed multi-frequency GNSS signal processing algorithms is demonstrated using analytical methods and experimental results based on live satellite data collected over GPS L1, L2C, and L5 signal frequencies. The dual-frequency signal processing architecture proposed in this research thesis has reduced the position error by 50%. The centralized dynamics multi-frequency carrier tracking loop has enhanced the individual channel tracking loop threshold by 7 dB in challenging signal conditions.",
+      "topics": [
+        "GNSS positioning and interference"
+      ],
+      "referenced_works_count": 0,
+      "related_works": [
+        "https://openalex.org/W3197622019",
+        "https://openalex.org/W2036533261",
+        "https://openalex.org/W2360328601",
+        "https://openalex.org/W1597042951",
+        "https://openalex.org/W2733203724"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/882ea40b5987312b.json"
+    },
+    {
+      "title": "Network inference for logic-based ordinary differential equations",
+      "display_name": "Network inference for logic-based ordinary differential equations",
+      "authors": [
+        {
+          "name": "David Henriques",
+          "given": "David",
+          "family": "Henriques",
+          "author_id": "https://openalex.org/A5051590122",
+          "display_name": "David Henriques",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5051590122",
+            "orcid": "https://orcid.org/0000-0002-9477-292X",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        }
+      ],
+      "year": 2016,
+      "publication_date": "2016-12-21",
+      "journal": "DIGITAL.CSIC (Spanish National Research Council (CSIC))",
+      "venue": "DIGITAL.CSIC (Spanish National Research Council (CSIC))",
+      "publisher": "Consejo Superior de Investigaciones Científicas",
+      "reference_type": "thesis",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "http://hdl.handle.net/10261/310312",
+      "pdf_url": "https://digital.csic.es/bitstream/10261/310312/1/Tesis_David_Henriques.pdf",
+      "openalex_id": "https://openalex.org/W2910535926",
+      "citation_count": 0,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "Signaling is a highly dynamic and context speciﬁc process. When cells fail to interpret external stimuli from the environment or emitted by other cells the consequences can be disastrous. Mechanistic signaling models with predictive value have the potential to help developing new therapheutical strategies targeting molecules involved in signal transduction. However, the complexity of signaling networks, the nonlinear nature of these systems and several technological limitations regarding the ability to manipulate cells in vitro and measure post translational modiﬁcations experimentally, make the task of building quantitative models for signaling very diﬃcult. Many interactions in signaling pathways are known but, because they are not well characterized from the biochemical point of view, it is not straightforward to turn this information into a model. In this thesis, we present methods for reverse engineering mechanistic models combining data from cell-line perturbation experiments. Here, the model dynamics is described by means of logic-based ordinary diﬀerential equations, a recent formalism that through a set of reasonable assumptions describes regulatory mechanisms in a relatively simple, yet, dynamic and continuous manner. We formulate model selection and network inference as dynamic optimization problems, which are nonlinear non-convex and, thus very hard to solve. Here, we formulate model selection as a mixed-integer dynamic optimization problem and solve it recurring to state of the art meta-heuristics for optimization and numerical methods for simulation. We apply the methods to several signaling case-studies and concluded the method scales up well. In addition, we develop a relaxation tailored for this problem that improves convergence in large problems. The network inference problem is tackled with the help of mutual information and an ensemble approach. To compensate for the lack of prior knowledge, we build data-driven networks based in mutual information. With the ensemble approach, we explore the landscape of possible models, providing more reliable predictions for trajectories and network inference. The method was applied to several in silico and experimental case studies including data from the HPN-DREAM Breast Cancer Network Inference challenge. We were able to generate predictions that were in some cases signiﬁcantly better than those provided by the best performers. To facilitate the implementation and redistribution of dynamic optimization problems in systems biology, such as those described above, we also develop a C library. This library is open-source and platform independent. The implementation and some applications of the library are discussed. Building dynamic models of signaling with predictive power is possible despite of a number of well known pitfalls and limitations. The heavy computational cost of simulating ordinary diﬀerential equations models can be palliated by combining state of the art numerical methods with meta-heuristics and the power of cluster computing.",
+      "topics": [
+        "Formal Methods in Verification",
+        "Neural Networks and Applications",
+        "Gene Regulatory Network Analysis"
+      ],
+      "referenced_works_count": 0,
+      "related_works": [
+        "https://openalex.org/W2149936530",
+        "https://openalex.org/W2935911103",
+        "https://openalex.org/W2777555835",
+        "https://openalex.org/W3089887622",
+        "https://openalex.org/W3047475898"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/882ea40b5987312b.json"
+    },
+    {
+      "title": "Classification and Analysis of Differential Mobility Spectrometry Measurements",
+      "display_name": "Classification and Analysis of Differential Mobility Spectrometry Measurements",
+      "authors": [
+        {
+          "name": "Anton Rauhameri",
+          "given": "Anton",
+          "family": "Rauhameri",
+          "author_id": "https://openalex.org/A5127503487",
+          "display_name": "Anton Rauhameri",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5127503487",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-01-01",
+      "journal": "Tampere University Institutional Repository (Tampere University)",
+      "venue": "Tampere University Institutional Repository (Tampere University)",
+      "publisher": "Tampere University of Applied Sciences",
+      "reference_type": "thesis",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "",
+      "url": "https://trepo.tuni.fi/handle/10024/227178",
+      "pdf_url": "https://trepo.tuni.fi/bitstream/10024/227178/2/978-952-03-3967-8.pdf",
+      "openalex_id": "https://openalex.org/W7133022531",
+      "citation_count": 0,
+      "cited_by_count": 0,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "There are many ﬁelds, where chemical analysis and detection volatile organic compounds (VOCs) are needed. Examples are warfare agents monitoring in critical infrastructures, food quality control, and rapid diagnosis of various diseases. The ﬁeld of chemical detection has evolved, and various approaches were developed for such purposes. One of these approaches is diﬀerential mobility spectrometry. The working principle of DMS is based on the behavior of charged molecules in gaseous medium under the eﬀect of weak and strong electric ﬁelds. The result of a measurement is a matrix, also called a dispersion plot, with rows that contain measurements over a certain range of separation voltages, and columns that contain measurements over a certain range of so-called compensation voltages. However, the interpretation of DMS measurements is challenging. One of the main challenges is that the DMS measurement does not provide direct information what VOC was measured. Additionally, obtaining information on measured substance by visual inspection is cumbersome or even unfeasible. This thesis aims to overcome these challenges by employing machine learning algorithms for automated analysis. Ongoing research at Tampere University Hospital explores potential of using DMS for brain cancer detection and analysis. DMS might be suitable for analyzing of volatile organic com- pounds emitted by tissues. One application area is surgical treatment of solid cancers. Here, the surgeon must remove malignant cells completely to achieve negative margin, meaning no cancer cells are left at the edges of the excised tissue. A positive margin, in contrast, indicates that cancerous cells remain, increasing the risk of re- currence. However, achieving a negative margin is not always possible because it is diﬃcult to discriminate between healthy and malignant tissue. As a result, patients are often subject to a reoperation, which aﬀects their wellbeing and causes additional costs to health service. Thus, there is a need to develop a method for automatic intraoperative detection of tissue types. Diﬀerent types of tissues are characterized by diﬀerent biomolecular content that include proteins, fatty acids, and metabolic products. Cancerous tissues diﬀer from surrounding cells by speciﬁc metabolic products and other biomarkers, which can be exploited for automatic tissue analysis. This idea is currently being implemented through the development of an electric knife coupled with DMS. During the incision, the electric knife produces surgical smoke, which is fed into the DMS for rapid analysis. One crucial part of the system, to be addressed in this dissertation, is algorithms for reliable classiﬁcation and analysis of the tissues being incised. The aim of this thesis is to develop algorithms and preprocessing methods for analysis and classiﬁcation through four publications. The work was divided into two parts: the ﬁrst part focused on the analysis of collected data from measured chemicals, and the second part focused on the processing samples from patients. The results from the ﬁrst part demonstrated the advantages of approaching the dispersion plots as sequential phenomenon. The ﬁrst publication in this part discusses the possibility of applying clustering algorithms for isolating the signal in dispersion plots. The results showed that this strategy has potential but needs further investigation. Next, more advanced models for time-series data, such as attention and self-attention mechanisms, and transformers can be tested. The second publication proposes to interpret dispersion plots as multidimensional sequential data and, hence, uses time series analysis algorithms for the classiﬁcation of dispersion plots. It is shown that this method yields accuracy as high as previously used state-of-the-art algorithms. The papers in the second part show that it is possible to discriminate between isocytrate dehydrogynase mutated cancer and so-called wild type with good accuracy. The publications also conﬁrmed that the use of linear discriminant analysis algorithm is advantageous for this type of tasks. The ﬁndings of this thesis oﬀer new perspectives on dispersion plots and contribute to advancing research in the ﬁeld by introducing novel ideas and methodologies.",
+      "topics": [
+        "Advanced Chemical Sensor Technologies",
+        "Mass Spectrometry Techniques and Applications",
+        "Spectroscopy and Chemometric Analyses"
+      ],
+      "referenced_works_count": 0,
+      "related_works": [],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/882ea40b5987312b.json"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import asyncio
 import httpx
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional, Tuple
@@ -54,6 +55,8 @@ class OpenAlexAuthorProvider(AuthorProvider):
         params = dict(base_params or {})
         if config.openalex_email and "mailto" not in params:
             params["mailto"] = config.openalex_email
+        if config.openalex_api_key and "api_key" not in params:
+            params["api_key"] = config.openalex_api_key
         return params
 
     async def _safe_get(self, client: httpx.AsyncClient, endpoint: str, params: Dict[str, Any]) -> Optional[Dict[str, Any]]:
@@ -107,7 +110,27 @@ class OpenAlexAuthorProvider(AuthorProvider):
                 if results:
                     return self._format_author_profile(results[0])
 
-        return None
+        # 3. Graceful fallback format with direct search links
+        import urllib.parse
+        display_name = author_id.strip()
+        return {
+            "id": f"openalex:{clean_id}",
+            "name": display_name,
+            "display_name": display_name,
+            "identifiers": {
+                "openalex_id": clean_id if (clean_id.startswith("A") and clean_id[1:].isdigit()) else None,
+                "orcid": None,
+                "google_scholar_id": None
+            },
+            "works_count": None,
+            "cited_by_count": None,
+            "h_index": None,
+            "i10_index": None,
+            "affiliations": [],
+            "topics": [],
+            "source": self.name,
+            "scholar_url": f'https://scholar.google.com/scholar?q=author:%22{urllib.parse.quote(display_name)}%22'
+        }
 
     def _format_author_profile(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """Convert OpenAlex author object to standardized format."""

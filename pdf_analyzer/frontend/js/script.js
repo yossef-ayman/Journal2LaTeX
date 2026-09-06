@@ -12,6 +12,38 @@
 })();
 
 // ==========================================
+// NAVIGATION URL BUILDER
+// ==========================================
+function buildNavigationUrl(type, params = {}) {
+    const isStaticDev = window.location.protocol === 'file:' || (window.location.port && window.location.port !== '8080');
+    const path = window.location.pathname || '/';
+    
+    // On FastAPI backend server, use clean dedicated paths /author or /reference
+    // On static Live Server or file://, use current path with query parameters
+    const base = isStaticDev ? (path.endsWith('.html') ? path : (path.replace(/\/$/, '') + '/index.html')) : `/${type}`;
+    
+    const qs = new URLSearchParams();
+    for (const [k, v] of Object.entries(params)) {
+        if (v !== undefined && v !== null && v !== '') {
+            qs.set(k, v);
+        }
+    }
+    
+    // Ensure universal identification params are present
+    if (type === 'author') {
+        const authId = params.id || params.author || params.name || '';
+        qs.set('author', authId);
+        if (params.name) qs.set('name', params.name);
+    }
+    if (type === 'reference') {
+        const rId = params.reference || params.id || '';
+        qs.set('reference', rId);
+    }
+    
+    return `${base}?${qs.toString()}`;
+}
+
+// ==========================================
 // DOM ELEMENTS & GLOBAL STATE
 // ==========================================
 const uploadScreen = document.getElementById('upload-screen');
@@ -26,10 +58,9 @@ const articleTitle = document.getElementById('article-title');
 const articleJournal = document.getElementById('article-journal');
 const kpiPages = document.getElementById('kpi-pages');
 const kpiAuthors = document.getElementById('kpi-authors');
-const kpiHeadings = document.getElementById('kpi-headings');
+const kpiEnriched = document.getElementById('kpi-enriched');
 const kpiReferences = document.getElementById('kpi-references');
 const authorsList = document.getElementById('authors-list');
-const headingsOutline = document.getElementById('headings-outline');
 const referencesList = document.getElementById('references-list');
 const xmlCode = document.getElementById('xml-code');
 
@@ -123,8 +154,7 @@ function initializeUploadFlow() {
         dropZone.addEventListener(eventName, (e) => {
             e.preventDefault();
             e.stopPropagation();
-            dropZone.style.borderColor = 'var(--primary-color)';
-            dropZone.style.boxShadow = '0 0 25px var(--primary-glow)';
+            dropZone.classList.add('drag-over');
         });
     });
 
@@ -132,8 +162,7 @@ function initializeUploadFlow() {
         dropZone.addEventListener(eventName, (e) => {
             e.preventDefault();
             e.stopPropagation();
-            dropZone.style.borderColor = 'var(--panel-border)';
-            dropZone.style.boxShadow = 'none';
+            dropZone.classList.remove('drag-over');
         });
     });
 
@@ -148,6 +177,13 @@ function initializeUploadFlow() {
             fileInput.click();
         }
     });
+
+    if (browseBtn) {
+        browseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            fileInput.click();
+        });
+    }
 
     fileInput.addEventListener('click', (e) => e.stopPropagation());
     fileInput.addEventListener('change', (e) => {
@@ -164,38 +200,120 @@ if (document.readyState === 'loading') {
 }
 
 // ==========================================
-// AUTHOR PROFILE AUTO-OPEN VIA URL PARAMS
+// DEDICATED PAGE & DEEP-LINKING ROUTER
 // ==========================================
-// When a new tab is opened with /?author=...&name=... (by clicking an author chip),
-// automatically show the author profile modal in that new tab.
-(function checkAuthorParam() {
-    function tryOpenAuthorFromParams() {
+// When opened directly or in a new tab for an author or reference/paper,
+// activate full-page presentation mode and load data from backend/storage.
+(function checkRouteParams() {
+    function tryOpenFromParams() {
         const params = new URLSearchParams(window.location.search);
-        const authorParam = params.get('author');
-        const nameParam = params.get('name');
-        if (authorParam) {
-            // Render the existing author component as a dedicated profile page.
-            // The original dashboard stays unchanged in the tab the user clicked from.
+        const path = (window.location.pathname || '').toLowerCase();
+        
+        // 1. AUTHOR DEDICATED PAGE
+        const isAuthorRoute = path.includes('/author') || params.has('author') || (params.has('id') && !params.has('reference'));
+        const authorId = params.get('author') || params.get('author_id') || params.get('id');
+        const authorName = params.get('name');
+        
+        if (isAuthorRoute && (authorId || authorName)) {
             document.documentElement.classList.add('author-profile-page');
-            const searchInput = document.getElementById('scholar-search-input');
-            if (searchInput) searchInput.value = nameParam || authorParam;
-            if (uploadScreen) {
-                uploadScreen.style.display = 'none';
-                uploadScreen.classList.remove('active');
+            document.documentElement.classList.remove('paper-profile-page');
+            if (uploadScreen) uploadScreen.style.display = 'none';
+            if (dashboardScreen) dashboardScreen.style.display = 'none';
+            const modal = document.getElementById('author-modal');
+            if (modal) modal.style.display = 'block';
+
+            let cachedAuthor = null;
+            try {
+                const storedAuth = localStorage.getItem('author_nav_' + authorId)
+                                || (authorName && localStorage.getItem('author_nav_' + authorName))
+                                || localStorage.getItem('author_last_opened')
+                                || sessionStorage.getItem('author_nav_' + authorId);
+                if (storedAuth) cachedAuthor = JSON.parse(storedAuth);
+            } catch(e) {}
+
+            const finalName = authorName || (cachedAuthor && cachedAuthor.name) || authorId;
+            openAuthorProfile(authorId, finalName);
+            return;
+        }
+
+        // 2. REFERENCE / PAPER DEDICATED PAGE
+        const isPaperRoute = path.includes('/reference') || path.includes('/paper') || params.has('reference') || params.has('paper') || params.has('ref');
+        const refId = params.get('reference') || params.get('paper') || params.get('ref') || params.get('id');
+        
+        if (isPaperRoute && (refId || params.has('title') || params.has('doi'))) {
+            document.documentElement.classList.add('paper-profile-page');
+            document.documentElement.classList.remove('author-profile-page');
+            if (uploadScreen) uploadScreen.style.display = 'none';
+            if (dashboardScreen) dashboardScreen.style.display = 'none';
+            
+            const titleParam = params.get('title') || 'Academic Reference';
+            const doiParam = params.get('doi') || '';
+            const clusterParam = params.get('cluster') || '';
+            const openalexParam = params.get('openalex') || '';
+            const projectParam = params.get('project') || '';
+            const tabParam = params.get('tab') || 'overview';
+
+            const modal = document.getElementById('paper-modal');
+            if (modal) modal.style.display = 'block';
+            switchPaperTab(tabParam);
+
+            // Attempt to retrieve from localStorage or sessionStorage first for instantaneous rendering
+            let cachedNav = null;
+            try {
+                const stored = localStorage.getItem('paper_nav_' + refId)
+                            || localStorage.getItem('paper_last_opened')
+                            || sessionStorage.getItem('paper_nav_' + refId)
+                            || sessionStorage.getItem('paper_last_opened');
+                if (stored) cachedNav = JSON.parse(stored);
+            } catch(e) {}
+
+            if (cachedNav && cachedNav.record && Object.keys(cachedNav.record).length > 0) {
+                currentPaperRecord = cachedNav.record;
+                populatePaperModal(cachedNav.record);
+            } else {
+                document.getElementById('paper-modal-title').textContent = titleParam;
+                if (doiParam) document.getElementById('paper-modal-subtitle').textContent = `DOI: ${doiParam}`;
             }
-            if (dashboardScreen) {
-                dashboardScreen.style.display = 'block';
-                dashboardScreen.classList.add('active');
+
+            // Fetch live data from backend storage
+            if (refId) {
+                const url = `/references/${encodeURIComponent(refId)}${projectParam ? `?project_id=${encodeURIComponent(projectParam)}` : ''}`;
+                fetch(url)
+                    .then(res => {
+                        if (!res.ok) throw new Error('Reference record not found');
+                        return res.json();
+                    })
+                    .then(data => {
+                        currentPaperRecord = data;
+                        populatePaperModal(data);
+                    })
+                    .catch(err => {
+                        if (!cachedNav || !cachedNav.record) {
+                            const fallback = {
+                                reference_id: refId,
+                                title: titleParam,
+                                doi: doiParam,
+                                canonical: {
+                                    title: { value: titleParam },
+                                    identifiers: {
+                                        doi: { value: doiParam },
+                                        google_scholar_cluster_id: { value: clusterParam },
+                                        openalex_id: { value: openalexParam }
+                                    }
+                                }
+                            };
+                            currentPaperRecord = fallback;
+                            populatePaperModal(fallback);
+                        }
+                    });
             }
-            // Open the author profile modal with the existing component and data flow
-            openAuthorProfile(authorParam, nameParam || authorParam);
         }
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', tryOpenAuthorFromParams);
+        document.addEventListener('DOMContentLoaded', tryOpenFromParams);
     } else {
-        tryOpenAuthorFromParams();
+        tryOpenFromParams();
     }
 })();
 
@@ -236,7 +354,11 @@ function handleFile(file) {
         populateDashboard(data);
         showScreen(dashboardScreen);
         showLoading(false);
-        showToast('PDF parsed successfully! Enriching references from academic providers...', 'success');
+        if (data.cached) {
+            showToast('⚡ تم تحميل المستند فورياً من أرشيف الـ XML المحلي (0 توكنز)', 'success', 5000);
+        } else {
+            showToast('PDF parsed successfully & archived to local XML! Enriching references...', 'success');
+        }
         
         if (data.references && data.references.length > 0) {
             enrichDashboardReferences(data.references, currentProjectId);
@@ -270,6 +392,10 @@ function enrichDashboardReferences(references, projectId = '') {
         if (data && data.results && data.results.length > 0) {
             currentProjectReferences = data.results;
             renderReferencesList(data.results);
+            if (kpiEnriched) {
+                const verified = data.results.filter(r => r.match_status === 'matched').length;
+                kpiEnriched.textContent = verified || data.results.length;
+            }
             showToast(`Enriched ${data.results.length} references with multi-source intelligence!`, 'success');
         }
     })
@@ -315,7 +441,12 @@ function populateDashboard(data) {
     
     kpiPages.textContent = data.page_count !== undefined ? data.page_count : '-';
     kpiAuthors.textContent = Array.isArray(data.authors) ? data.authors.length : 0;
-    kpiHeadings.textContent = Array.isArray(data.headings) ? data.headings.length : 0;
+    if (kpiEnriched) {
+        const enrichedMatched = Array.isArray(data.enriched_references)
+            ? data.enriched_references.filter(r => r.match_status === 'matched').length
+            : (data.statistics ? data.statistics.enriched_count : null);
+        kpiEnriched.textContent = enrichedMatched !== null ? enrichedMatched : '-';
+    }
     
     const refsList = (Array.isArray(data.enriched_references) && data.enriched_references.length > 0)
         ? data.enriched_references
@@ -359,51 +490,37 @@ function populateDashboard(data) {
     
     // Populate Authors List
     authorsList.innerHTML = '';
-    if (Array.isArray(data.authors)) {
+    if (Array.isArray(data.authors) && data.authors.length > 0) {
         data.authors.forEach(author => {
             const nameStr = typeof author === 'object' ? (author.name || author.display_name || 'Author') : String(author || 'Author');
             const authorId = typeof author === 'object' ? (author.author_id || author.id || '') : '';
             const initials = nameStr.split(' ').filter(Boolean).map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'A';
             
-            // Build an internal URL that will auto-open the author profile modal in the new tab
-            const idParam = encodeURIComponent(authorId || nameStr);
-            const nameParam = encodeURIComponent(nameStr);
-            const authorUrl = `/?author=${idParam}&name=${nameParam}`;
+            const authorUrl = buildNavigationUrl('author', { id: authorId || nameStr, name: nameStr });
             
             const chip = document.createElement('a');
             chip.className = 'author-chip';
             chip.href = authorUrl;
             chip.target = '_blank';
             chip.rel = 'noopener noreferrer';
-            chip.title = `Click to view Academic Profile for ${nameStr}`;
+            chip.title = `Click to open Academic Profile for ${nameStr} in a new page`;
             chip.innerHTML = `
                 <div class="author-avatar">${initials}</div>
                 <div class="author-name">${escapeHtml(nameStr)}</div>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.55; margin-left: 2px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             `;
             chip.onclick = (e) => {
+                try {
+                    const authKey = authorId || nameStr;
+                    localStorage.setItem('author_nav_' + authKey, JSON.stringify({ id: authKey, name: nameStr }));
+                    localStorage.setItem('author_last_opened', JSON.stringify({ id: authKey, name: nameStr }));
+                } catch(err) {}
                 e.stopPropagation();
             };
             authorsList.appendChild(chip);
         });
-    }
-    
-    // Populate Headings Outline if container exists
-    if (headingsOutline) {
-        headingsOutline.innerHTML = '';
-        if (!Array.isArray(data.headings) || data.headings.length === 0) {
-            headingsOutline.innerHTML = '<div class="text-muted" style="padding: 1rem;">No headings identified in the document structure.</div>';
-        } else {
-            data.headings.forEach(heading => {
-                const item = document.createElement('div');
-                item.className = 'heading-card-item';
-                item.innerHTML = `
-                    <span class="heading-card-text">${escapeHtml(heading.text || '')}</span>
-                    <span class="heading-card-page">P. ${heading.page || 1}</span>
-                `;
-                item.onclick = () => analyzeElement('heading', { text: heading.text || '', level: heading.level || 1, page: heading.page || 1 });
-                headingsOutline.appendChild(item);
-            });
-        }
+    } else {
+        authorsList.innerHTML = '<div class="text-muted" style="padding: 0.5rem; font-size: 0.82rem;">No authors identified in document.</div>';
     }
 
     // Populate References List
@@ -453,8 +570,8 @@ function renderReferencesList(refsList) {
         const arxivVal = (canonical.identifiers && canonical.identifiers.arxiv_id && canonical.identifiers.arxiv_id.value) || ref.arxiv_id || inputParsed.arxiv_id || null;
         const isbnVal = (canonical.identifiers && canonical.identifiers.isbn && canonical.identifiers.isbn.value) || inputParsed.isbn || null;
         const openalexId = (canonical.identifiers && canonical.identifiers.openalex_id && canonical.identifiers.openalex_id.value) || null;
-        const clusterId = (canonical.identifiers && canonical.identifiers.google_scholar_cluster_id && canonical.identifiers.google_scholar_cluster_id.value) || (scholarData && scholarData.cluster_id) || '';
-        const scholarResultUrl = (canonical.identifiers && canonical.identifiers.google_scholar_url && canonical.identifiers.google_scholar_url.value) || ref.scholar_url || (scholarData && scholarData.link) || `https://scholar.google.com/scholar?q=${encodedQuery}`;
+        const scholarQueryParam = doiVal ? encodeURIComponent(`doi:${doiVal}`) : encodedQuery;
+        const scholarResultUrl = (canonical.identifiers && canonical.identifiers.google_scholar_url && canonical.identifiers.google_scholar_url.value) || ref.scholar_url || (scholarData && scholarData.link) || `https://scholar.google.com/scholar?q=${scholarQueryParam}`;
 
         // PDF Link
         let directPdfUrl = '';
@@ -564,7 +681,7 @@ function renderReferencesList(refsList) {
             if (allAuthors.length > 5) {
                 const remaining = allAuthors.length - 4;
                 authorsHtml += `
-                    <div class="author-chip author-card-chip author-chip-more" onclick="event.stopPropagation(); openPaperModalToTab(${idx}, 'authors')">
+                    <div class="author-chip author-card-chip author-chip-more" onclick="event.stopPropagation(); openPaperProfileNewTab(${idx}, null, 'authors')" title="View all authors in new page">
                         <span class="author-name">+${remaining} more authors</span>
                     </div>
                 `;
@@ -636,7 +753,7 @@ function renderReferencesList(refsList) {
                     </div>
                 </div>
                 <div class="intel-actions-col">
-                    <button class="btn-intel-action" onclick="event.stopPropagation(); openPaperModalToTab(${idx}, 'overview')">
+                    <button class="btn-intel-action" onclick="event.stopPropagation(); openPaperProfileNewTab(${idx}, null, 'overview')" title="View source comparisons in new page">
                         🔍 View Sources
                     </button>
                     <a href="${scholarResultUrl}" target="_blank" class="btn-intel-action" onclick="event.stopPropagation();">
@@ -661,8 +778,8 @@ function renderReferencesList(refsList) {
 
         // Secondary / Extended Actions Toolbar
         let secondaryActions = [];
-        secondaryActions.push(`<button class="btn-action-primary-sm" onclick="event.stopPropagation(); openPaperModalToTab(${idx}, 'citations')">${findCitesLabel}</button>`);
-        secondaryActions.push(`<button class="btn-action-secondary-sm" onclick="event.stopPropagation(); openPaperModal(${idx})">📖 Full Profile</button>`);
+        secondaryActions.push(`<button class="btn-action-primary-sm" onclick="event.stopPropagation(); openPaperProfileNewTab(${idx}, null, 'citations')" title="Explore citing papers in new page">${findCitesLabel}</button>`);
+        secondaryActions.push(`<button class="btn-action-secondary-sm" onclick="event.stopPropagation(); openPaperProfileNewTab(${idx})" title="Open full paper profile in new page">📖 Full Profile</button>`);
         if (directPdfUrl) {
             secondaryActions.push(`<a href="${directPdfUrl}" target="_blank" class="btn-pdf-link-sm" onclick="event.stopPropagation();">📄 PDF</a>`);
         }
@@ -681,7 +798,7 @@ function renderReferencesList(refsList) {
                 ${providersHtml}
             </div>
 
-            <div class="ref-card-title-row" onclick="openPaperModal(${idx})">
+            <div class="ref-card-title-row" onclick="openPaperProfileNewTab(${idx})" title="Click to open Academic Reference Profile in a new page" style="cursor: pointer;">
                 <h4 class="ref-card-title">${escapeHtml(displayTitle)}</h4>
             </div>
 
@@ -706,6 +823,11 @@ function searchPaperByIndex(idx) {
     const master = ref.master_record || {};
     const canonical = master.canonical || {};
     const inputParsed = (master.input && master.input.parsed) || {};
+    const doiVal = (canonical.identifiers && canonical.identifiers.doi && canonical.identifiers.doi.value) || ref.doi || inputParsed.doi || '';
+    if (doiVal) {
+        searchPaperOnScholar(`doi:${doiVal}`);
+        return;
+    }
     const displayTitle = (canonical.title && canonical.title.value) || ref.title || cleanRefQuery(ref.original_text || ref.text || '') || '';
     const displayYear = (canonical.year && canonical.year.value) || ref.year || inputParsed.year || '';
     const allAuthors = (master.canonical_authors && master.canonical_authors.length > 0)
@@ -719,26 +841,58 @@ function searchPaperByIndex(idx) {
 function cleanRefQuery(refText) {
     if (!refText) return '';
     let text = refText.trim();
-    text = text.replace(/^(?:\[\d+\]|\(\d+\)|\d+\.)\s*/, '');
+    text = text.replace(/^(?:\[\d+\]|\(\d+\)|\b\d+\.)\s*/, '');
     text = text.replace(/(\w+)-\s+(\w+)/g, '$1$2');
     
+    // Clean DOI / URLs even with OCR broken spaces
+    text = text.replace(/\bhttps?:\s*\/\/\S*/gi, '').trim();
+    text = text.replace(/\b(?:DOI\s*:\s*|doi\.org\/)?10\.\d{4,9}\/\S*/gi, '').trim();
+    text = text.replace(/\bDOI\s*:\s*\S*/gi, '').trim();
+    text = text.replace(/\bDOI\s*:?\s*$/gi, '').trim();
+    text = text.replace(/[,;:]+$/, '').trim();
+
     const quoteMatch = text.match(/["“']([^"”']{8,})["”']/);
     if (quoteMatch && quoteMatch[1].length > 8) {
         return quoteMatch[1].trim();
     }
     
-    const yearMatch = text.match(/\(\d{4}[a-z]?\)[\.,\s]*/);
-    if (yearMatch && yearMatch.index !== undefined) {
-        const titlePart = text.substring(yearMatch.index + yearMatch[0].length).trim();
-        if (titlePart.length > 5) {
-            const parts = titlePart.split(/\.(?!\s*[A-Z]\b)\s+/);
-            if (parts[0] && parts[0].length > 8) {
-                return parts[0].trim();
-            }
-            return titlePart;
+    // Match APA format ONLY when year is near the start and followed by period + Title
+    const apaMatch = text.match(/^([^()]{3,120})\s*\((1[89]\d\d|20\d\d)[a-z]?\)\s*[\.:]\s+([A-Z\u0600-\u06FF"“'].*)/);
+    if (apaMatch && !/Journal|Review|Letters|Transactions/i.test(apaMatch[1])) {
+        const remainder = apaMatch[3].trim();
+        const parts = remainder.split(/\.(?!\s*[A-Z]\b)\s+/);
+        if (parts[0] && parts[0].length > 8) {
+            return parts[0].trim();
         }
+        return remainder;
     }
     
+    // IEEE / Journal tail pattern: e.g. ", Journal of Vibration and Control 16(13) (2010) 1967–1976"
+    const tailMatch = text.match(/,\s*([A-Z][a-zA-Z\s&]+?(?:Journal|Review|Letters|Transactions|Proceedings|Optics|Physics|Communications|Methods|Sciences|Mathematics|Engineering|Reports|Frontiers|Nature|Science|BMC|Computers|Systems|Control|Analysis|Chaos)[a-zA-Z\s&]*?)(?:,?\s+\d+)?(?:\s*\(\d+\))?(?:[,\s]*\(\d{4}\)|[,\s]+\d{4})?(?:[,\s]+(?:pp\.?\s*|pages?\s*)?[A-Za-z0-9\-–]+)?\s*$/i);
+    if (tailMatch && tailMatch.index !== undefined) {
+        const prefix = text.substring(0, tailMatch.index).trim();
+        const dotMatch = prefix.match(/(?<=\b[A-Z]\.)\s+([A-Z][a-z]+(?:\s+[a-z]+|\s+[A-Z][a-z]+){2,})/);
+        if (dotMatch && dotMatch.index !== undefined) {
+            return prefix.substring(dotMatch.index).trim();
+        }
+        const chunks = prefix.split(',').map(c => c.trim()).filter(Boolean);
+        const titleParts = [];
+        let inTitle = false;
+        const titleIndicators = /model|optimal|control|analysis|approach|problem|variable|system|study|numerical|simulation|stability|fractional|differential|equation|covid|dengue|disease|with|without|on|in|for/i;
+        for (const c of chunks) {
+            if (inTitle) {
+                titleParts.push(c);
+            } else if (titleIndicators.test(c) || c.split(/\s+/).length > 4) {
+                inTitle = true;
+                titleParts.push(c);
+            }
+        }
+        if (titleParts.length > 0) {
+            return titleParts.join(', ').trim();
+        }
+        return prefix;
+    }
+
     const sentences = text.split(/\.(?!\s*[A-Z]\b)\s+/);
     if (sentences.length >= 2) {
         if (sentences[0].length > 15 && !sentences[0].match(/^(?:[A-Z][a-z]+,?\s+)+/)) {
@@ -805,7 +959,7 @@ function analyzeElement(type, data) {
         } else if (words.length > 2) {
             notes += "Includes middle names or patronymic/nobiliary particles.";
         }
-        notes += `<div style="margin-top: 1rem;"><button class="btn-action-primary" onclick="openAuthorProfile('${escapeHtml(data.text)}', '${escapeHtml(data.text)}')">🌐 Open Academic Profile (OpenAlex / Scholar)</button></div>`;
+        notes += `<div style="margin-top: 1rem;"><button class="btn-action-primary" onclick="openAuthorProfileNewTab('${escapeHtml(data.text)}', '${escapeHtml(data.text)}')">🌐 Open Academic Profile (New Tab)</button></div>`;
         notesVal.innerHTML = notes;
     } else if (type === 'heading') {
         typeTitle.textContent = '📂 Heading Analysis';
@@ -820,11 +974,33 @@ function analyzeElement(type, data) {
             notes += `Classified as a subsection (H${data.level}). It organizes details under a parent heading.`;
         }
         notesVal.innerHTML = notes;
+    } else if (type === 'reference') {
+        typeTitle.textContent = `📚 Reference #${data.index || 1} Analysis`;
+        typeVal.textContent = 'Academic Citation / Bibliography Entity';
+        pageRow.style.display = 'none';
+        
+        let notes = `<div style="font-size: 0.88rem; line-height: 1.5;">`;
+        if (data.title) notes += `<div style="margin-bottom: 0.35rem;"><strong>Title:</strong> ${escapeHtml(data.title)}</div>`;
+        if (data.venue) notes += `<div style="margin-bottom: 0.35rem;"><strong>Venue:</strong> ${escapeHtml(data.venue)}</div>`;
+        if (data.year) notes += `<div style="margin-bottom: 0.35rem;"><strong>Year:</strong> ${escapeHtml(data.year)}</div>`;
+        if (data.doi) notes += `<div style="margin-bottom: 0.35rem;"><strong>DOI:</strong> <a href="https://doi.org/${escapeHtml(data.doi)}" target="_blank" style="color: var(--primary-accent);">${escapeHtml(data.doi)}</a></div>`;
+        if (data.refIdx !== undefined) {
+            notes += `<div style="margin-top: 0.85rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button class="btn-action-primary" onclick="openPaperProfileNewTab(${data.refIdx})">📖 Open Paper Profile (New Page)</button>
+                <button class="btn-action-secondary" onclick="openPaperProfileNewTab(${data.refIdx}, null, 'citations')">📊 Citations Intelligence</button>
+            </div>`;
+        }
+        notes += `</div>`;
+        notesVal.innerHTML = notes;
     }
 }
 
 // Clipboard copy helper
 function copyXml() {
+    if (!currentXml) {
+        showToast('No XML content available to copy.', 'warning');
+        return;
+    }
     navigator.clipboard.writeText(currentXml)
         .then(() => showToast('XML content copied to clipboard!', 'success'))
         .catch(err => console.error('Could not copy text: ', err));
@@ -832,16 +1008,22 @@ function copyXml() {
 
 // Download XML helper
 function downloadXml() {
+    if (!currentXml) {
+        showToast('No XML content available to download.', 'warning');
+        return;
+    }
     const blob = new Blob([currentXml], { type: 'application/xml' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${articleTitle.textContent.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_structure.xml`;
+    const titleText = (articleTitle && articleTitle.textContent) ? articleTitle.textContent.trim() : 'document';
+    const safeTitle = titleText.replace(/[\\/:*?"<>|]/g, '_').replace(/\s+/g, '_').slice(0, 50) || 'document';
+    a.download = `${safeTitle}_structure.xml`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    showToast('XML file downloaded.', 'info');
+    showToast('XML file downloaded successfully.', 'info');
 }
 
 function copyText(text, successMsg = 'Copied to clipboard!') {
@@ -881,10 +1063,18 @@ function searchPaperOptimized(title, firstAuthor = '', year = '') {
     searchPaperOnScholar(q);
 }
 
-function searchPaperOnScholar(query) {
+function searchPaperOnScholar(query, forceRefresh = false) {
     if (!query) return;
     const input = document.getElementById('scholar-search-input');
     if (input) input.value = query;
+
+    if (dashboardScreen && !dashboardScreen.classList.contains('active')) {
+        showScreen(dashboardScreen);
+        if (!currentProjectData) {
+            articleTitle.textContent = 'Google Scholar Research Explorer';
+            articleJournal.textContent = 'Global Academic Search & Multi-Source Intelligence';
+        }
+    }
 
     const sec = document.getElementById('scholar-results-section');
     const titleEl = document.getElementById('scholar-results-title');
@@ -898,11 +1088,12 @@ function searchPaperOnScholar(query) {
     
     sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    fetch(`/scholar/search?q=${encodeURIComponent(query)}&num=10`)
+    const fetchUrl = `/scholar/search?q=${encodeURIComponent(query)}&num=10${forceRefresh ? '&refresh=true' : ''}`;
+    fetch(fetchUrl)
         .then(res => res.json())
         .then(data => {
             loadingEl.style.display = 'none';
-            renderScholarSearchResults(data);
+            renderScholarSearchResults(data, query);
         })
         .catch(err => {
             console.error('Scholar Search Error:', err);
@@ -916,9 +1107,19 @@ function closeScholarSearchResults() {
     if (sec) sec.style.display = 'none';
 }
 
-function renderScholarSearchResults(data) {
+function renderScholarSearchResults(data, query = '') {
     const listEl = document.getElementById('scholar-results-list');
+    const titleEl = document.getElementById('scholar-results-title');
     listEl.innerHTML = '';
+
+    const effectiveQuery = query || data.query || '';
+    if (titleEl && effectiveQuery) {
+        if (data.cached) {
+            titleEl.innerHTML = `Google Scholar Results for "${escapeHtml(effectiveQuery)}" <span style="display:inline-flex; align-items:center; gap:0.35rem; font-size:0.8rem; background:rgba(34, 197, 94, 0.15); color:#22c55e; border:1px solid rgba(34, 197, 94, 0.3); border-radius:12px; padding:0.2rem 0.6rem; font-weight:600; vertical-align:middle; margin-left:0.5rem;" title="Loaded instantly from local XML archive. 0 API tokens consumed.">💾 Local XML Archive (0 tokens)</span> <button onclick="searchPaperOnScholar('${escapeHtml(effectiveQuery)}', true)" style="display:inline-flex; align-items:center; gap:0.25rem; font-size:0.75rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); border-radius:10px; padding:0.2rem 0.55rem; color:var(--text-main); cursor:pointer; vertical-align:middle; margin-left:0.4rem;" title="Fetch live from SerpApi and update local XML">🔄 Live Refresh</button>`;
+        } else {
+            titleEl.innerHTML = `Google Scholar Results for "${escapeHtml(effectiveQuery)}" <span style="display:inline-flex; align-items:center; gap:0.35rem; font-size:0.8rem; background:rgba(59, 130, 246, 0.15); color:#60a5fa; border:1px solid rgba(59, 130, 246, 0.3); border-radius:12px; padding:0.2rem 0.6rem; font-weight:600; vertical-align:middle; margin-left:0.5rem;" title="Results saved locally to XML archive">⚡ Saved to XML</span>`;
+        }
+    }
 
     if (!data.available) {
         const reasonMsg = data.reason === 'SERPAPI_KEY_NOT_CONFIGURED'
@@ -949,10 +1150,9 @@ function renderScholarSearchResults(data) {
 
         // Authors list
         const authorsArr = (item.authors || []).map(a => {
-            if (a.author_id) {
-                return `<span class="author-link-chip" onclick="openAuthorProfile('${escapeHtml(a.author_id)}', '${escapeHtml(a.name)}')">👤 ${escapeHtml(a.name)}</span>`;
-            }
-            return `<span class="text-muted">${escapeHtml(a.name)}</span>`;
+            const aName = a.name || 'Author';
+            const aId = a.author_id || '';
+            return `<span class="author-link-chip" onclick="openAuthorProfileNewTab('${escapeHtml(aId)}', '${escapeHtml(aName)}')" title="Click to view author profile in a new page">👤 ${escapeHtml(aName)}</span>`;
         }).join(', ') || 'Unknown Authors';
 
         // Citations & Versions count (Null safe: Never show 0 if null, show "—")
@@ -1763,10 +1963,9 @@ function renderScholarSearchResultsToElement(results, container) {
         card.className = 'scholar-card glass-panel';
 
         const authorsArr = (item.authors || []).map(a => {
-            if (a.author_id) {
-                return `<span class="author-link-chip" onclick="openAuthorProfile('${escapeHtml(a.author_id)}', '${escapeHtml(a.name)}')">👤 ${escapeHtml(a.name)}</span>`;
-            }
-            return `<span class="text-muted">${escapeHtml(a.name)}</span>`;
+            const aName = a.name || 'Author';
+            const aId = a.author_id || '';
+            return `<span class="author-link-chip" onclick="openAuthorProfileNewTab('${escapeHtml(aId)}', '${escapeHtml(aName)}')" title="Click to view author profile in a new page">👤 ${escapeHtml(aName)}</span>`;
         }).join(', ') || 'Unknown Authors';
 
         const citeCount = item.citations && item.citations.count !== null && item.citations.count !== undefined ? item.citations.count : null;
@@ -1835,14 +2034,91 @@ function openAuthorProfile(authorId, fallbackName = '') {
     fetchAuthorProfileAndWorks();
 }
 
+// Handles return from dedicated author/reference page
+function handleBackNavigation(e) {
+    if (e) e.preventDefault();
+    if (window.opener && !window.opener.closed) {
+        window.close();
+        return;
+    }
+    if (window.history.length > 1) {
+        window.history.back();
+        return;
+    }
+    const isStaticDev = window.location.protocol === 'file:' || (window.location.port && window.location.port !== '8080');
+    if (isStaticDev) {
+        const path = window.location.pathname.replace(/\/author|\/reference|\/paper/gi, '');
+        window.location.href = path.endsWith('.html') ? path : (path.replace(/\/$/, '') + '/index.html');
+    } else {
+        window.location.href = '/';
+    }
+}
+
 // Opens the author profile page in a NEW browser tab using URL query params.
-// The new tab auto-triggers the author profile modal on load.
 function openAuthorProfileNewTab(authorId, fallbackName) {
     const id = authorId || fallbackName || '';
     const name = fallbackName || authorId || '';
     if (!id && !name) return;
-    const url = '/?author=' + encodeURIComponent(id) + '&name=' + encodeURIComponent(name);
+    try {
+        localStorage.setItem('author_nav_' + id, JSON.stringify({ id: id, name: name }));
+        localStorage.setItem('author_last_opened', JSON.stringify({ id: id, name: name }));
+        sessionStorage.setItem('author_nav_' + id, JSON.stringify({ id: id, name: name }));
+    } catch(e) {}
+    const url = buildNavigationUrl('author', { id: id, name: name });
     window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+// Opens the paper/reference profile page in a NEW browser tab using URL query params.
+function openPaperProfileNewTab(refIdOrIndex, fallbackRefObj = null, tabName = 'overview') {
+    let ref = fallbackRefObj;
+    let refId = '';
+    let idx = 0;
+    if (typeof refIdOrIndex === 'number') {
+        idx = refIdOrIndex;
+        ref = ref || (currentProjectReferences && currentProjectReferences[refIdOrIndex]) || {};
+        refId = ref.reference_id || ref.id || `ref_${refIdOrIndex + 1}`;
+    } else {
+        refId = String(refIdOrIndex || '');
+        if (!ref && currentProjectReferences) {
+            ref = currentProjectReferences.find(r => (r.reference_id || r.id) === refId) || {};
+        }
+    }
+
+    const master = (ref && (ref.master_record || ref)) || {};
+    const can = master.canonical || {};
+    const title = (can.title && can.title.value) || (ref && (ref.title || cleanRefQuery(ref.original_text || ref.text || ''))) || 'Academic Reference';
+    const doi = (can.identifiers && can.identifiers.doi && can.identifiers.doi.value) || (ref && ref.doi) || '';
+    const clusterId = (can.identifiers && can.identifiers.google_scholar_cluster_id && can.identifiers.google_scholar_cluster_id.value) || (ref && ref.cluster_id) || '';
+    const openalexId = (can.identifiers && can.identifiers.openalex_id && can.identifiers.openalex_id.value) || (ref && ref.openalex_id) || '';
+
+    // Cache in localStorage AND sessionStorage for instantaneous loading in new tab
+    const payload = {
+        ref_id: refId,
+        project_id: currentProjectId || '',
+        title: title,
+        doi: doi,
+        cluster_id: clusterId,
+        openalex_id: openalexId,
+        record: master,
+        tab: tabName
+    };
+    try {
+        localStorage.setItem('paper_nav_' + refId, JSON.stringify(payload));
+        localStorage.setItem('paper_last_opened', JSON.stringify(payload));
+        sessionStorage.setItem('paper_nav_' + refId, JSON.stringify(payload));
+        sessionStorage.setItem('paper_last_opened', JSON.stringify(payload));
+    } catch(e) {}
+
+    const targetUrl = buildNavigationUrl('reference', {
+        reference: refId,
+        title: title,
+        doi: doi,
+        cluster: clusterId,
+        openalex: openalexId,
+        project: currentProjectId,
+        tab: (tabName && tabName !== 'overview') ? tabName : ''
+    });
+    window.open(targetUrl, '_blank', 'noopener,noreferrer');
 }
 
 function fetchAuthorProfileAndWorks() {
@@ -2092,3 +2368,36 @@ function copyProjectBibtex() {
         })
         .catch(err => showToast(`Error: ${err.message}`, 'error'));
 }
+
+// ==========================================
+// WORKSPACE STATUS HELPER
+// ==========================================
+function showAccountInfo() {
+    showToast('Local Academic Workspace is Active (Private, Local Processing, Offline-Ready)', 'info', 3500);
+}
+
+// ==========================================
+// GLOBAL MODAL DISMISS (BACKDROP CLICK & ESC)
+// ==========================================
+document.addEventListener('click', (e) => {
+    const paperModal = document.getElementById('paper-modal');
+    const authorModal = document.getElementById('author-modal');
+    if (e.target === paperModal) {
+        closePaperModal();
+    } else if (e.target === authorModal) {
+        closeAuthorProfile();
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+        const paperModal = document.getElementById('paper-modal');
+        const authorModal = document.getElementById('author-modal');
+        if (paperModal && paperModal.style.display !== 'none') {
+            closePaperModal();
+        } else if (authorModal && authorModal.style.display !== 'none') {
+            closeAuthorProfile();
+        }
+    }
+});
+

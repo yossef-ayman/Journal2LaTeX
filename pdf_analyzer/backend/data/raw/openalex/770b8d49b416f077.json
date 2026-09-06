@@ -1,0 +1,5364 @@
+{
+  "provider": "openalex",
+  "query_key": "title_author:.& Saraireh Abueid",
+  "query_hash": "770b8d49b416f077",
+  "saved_at": "2026-09-06T07:19:53.660395+00:00",
+  "status_code": 200,
+  "candidate_count": 5,
+  "raw_response": {
+    "meta": {
+      "count": 5,
+      "db_response_time_ms": 31,
+      "page": 1,
+      "per_page": 10,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (.& Saraireh Abueid)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": ".& Saraireh Abueid",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:.%26 Saraireh Abueid&per_page=10"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4223526671",
+        "doi": "https://doi.org/10.22159/ijbm.2022.v10i1.44401",
+        "title": "THE NEXUS BETWEEN FISCAL POLICY AND ECONOMIC GROWTH FOR JORDAN: FRESH INSIGHTS FROM MAKI COINTEGRATION",
+        "display_name": "THE NEXUS BETWEEN FISCAL POLICY AND ECONOMIC GROWTH FOR JORDAN: FRESH INSIGHTS FROM MAKI COINTEGRATION",
+        "relevance_score": 10.207119,
+        "publication_year": 2022,
+        "publication_date": "2022-03-10",
+        "ids": {
+          "openalex": "https://openalex.org/W4223526671",
+          "doi": "https://doi.org/10.22159/ijbm.2022.v10i1.44401"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.22159/ijbm.2022.v10i1.44401",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.22159/ijbm.2022.v10i1.44401",
+          "pdf_url": "https://innovareacademics.in/journals/index.php/ijbm/article/download/44401/26357",
+          "source": {
+            "id": "https://openalex.org/S4387279578",
+            "display_name": "Innovare Journal of Business Management",
+            "issn_l": "2321-6816",
+            "issn": [
+              "2321-6816"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/P4322697801",
+            "host_organization_name": "Innovare Academic Sciences",
+            "host_organization_lineage": [
+              "https://openalex.org/P4322697801"
+            ],
+            "host_organization_lineage_names": [
+              "Innovare Academic Sciences"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Innovare Journal of Business Management",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://innovareacademics.in/journals/index.php/ijbm/article/download/44401/26357",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5075522719",
+              "display_name": "OMAR MOHAMMAD AL-KASASBEH",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I114972647",
+                "display_name": "University of Jordan",
+                "ror": "https://ror.org/05k89ew48",
+                "country_code": "JO",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I114972647"
+                ]
+              }
+            ],
+            "countries": [
+              "JO"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "OMAR MOHAMMAD AL-KASASBEH",
+            "raw_affiliation_strings": [
+              "Faculty of Business and Management Unisza University, Jordan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Business and Management Unisza University, Jordan",
+                "institution_ids": [
+                  "https://openalex.org/I114972647"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5075522719"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I114972647"
+        ],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 1.39,
+        "has_fulltext": true,
+        "cited_by_count": 5,
+        "citation_normalized_percentile": {
+          "value": 0.87388305,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 90,
+          "max": 96
+        },
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": "1",
+          "last_page": "4"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11770",
+          "display_name": "Fiscal Policy and Economic Growth",
+          "score": 0.9984999895095825,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2002",
+            "display_name": "Economics and Econometrics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/20",
+            "display_name": "Economics, Econometrics and Finance"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11770",
+            "display_name": "Fiscal Policy and Economic Growth",
+            "score": 0.9984999895095825,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2002",
+              "display_name": "Economics and Econometrics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/20",
+              "display_name": "Economics, Econometrics and Finance"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11621",
+            "display_name": "Fiscal Policies and Political Economy",
+            "score": 0.9679999947547913,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2002",
+              "display_name": "Economics and Econometrics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/20",
+              "display_name": "Economics, Econometrics and Finance"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11257",
+            "display_name": "Taxation and Compliance Studies",
+            "score": 0.9369999766349792,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2002",
+              "display_name": "Economics and Econometrics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/20",
+              "display_name": "Economics, Econometrics and Finance"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/cointegration",
+            "display_name": "Cointegration",
+            "score": 0.8976585865020752
+          },
+          {
+            "id": "https://openalex.org/keywords/economics",
+            "display_name": "Economics",
+            "score": 0.82215815782547
+          },
+          {
+            "id": "https://openalex.org/keywords/unit-root",
+            "display_name": "Unit root",
+            "score": 0.696492612361908
+          },
+          {
+            "id": "https://openalex.org/keywords/structural-break",
+            "display_name": "Structural break",
+            "score": 0.6156537532806396
+          },
+          {
+            "id": "https://openalex.org/keywords/macroeconomics",
+            "display_name": "Macroeconomics",
+            "score": 0.5659201145172119
+          },
+          {
+            "id": "https://openalex.org/keywords/debt",
+            "display_name": "Debt",
+            "score": 0.5529428720474243
+          },
+          {
+            "id": "https://openalex.org/keywords/fiscal-policy",
+            "display_name": "Fiscal policy",
+            "score": 0.5488486886024475
+          },
+          {
+            "id": "https://openalex.org/keywords/unit-root-test",
+            "display_name": "Unit root test",
+            "score": 0.49555790424346924
+          },
+          {
+            "id": "https://openalex.org/keywords/monetary-economics",
+            "display_name": "Monetary economics",
+            "score": 0.48542842268943787
+          },
+          {
+            "id": "https://openalex.org/keywords/nexus",
+            "display_name": "Nexus (standard)",
+            "score": 0.48117977380752563
+          },
+          {
+            "id": "https://openalex.org/keywords/government-revenue",
+            "display_name": "Government revenue",
+            "score": 0.4442431330680847
+          },
+          {
+            "id": "https://openalex.org/keywords/real-gross-domestic-product",
+            "display_name": "Real gross domestic product",
+            "score": 0.42945975065231323
+          },
+          {
+            "id": "https://openalex.org/keywords/public-finance",
+            "display_name": "Public finance",
+            "score": 0.2910812497138977
+          },
+          {
+            "id": "https://openalex.org/keywords/econometrics",
+            "display_name": "Econometrics",
+            "score": 0.2527230381965637
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C145162277",
+            "wikidata": "https://www.wikidata.org/wiki/Q1751675",
+            "display_name": "Cointegration",
+            "level": 2,
+            "score": 0.8976585865020752
+          },
+          {
+            "id": "https://openalex.org/C162324750",
+            "wikidata": "https://www.wikidata.org/wiki/Q8134",
+            "display_name": "Economics",
+            "level": 0,
+            "score": 0.82215815782547
+          },
+          {
+            "id": "https://openalex.org/C195561663",
+            "wikidata": "https://www.wikidata.org/wiki/Q1307899",
+            "display_name": "Unit root",
+            "level": 2,
+            "score": 0.696492612361908
+          },
+          {
+            "id": "https://openalex.org/C186008389",
+            "wikidata": "https://www.wikidata.org/wiki/Q7625010",
+            "display_name": "Structural break",
+            "level": 2,
+            "score": 0.6156537532806396
+          },
+          {
+            "id": "https://openalex.org/C139719470",
+            "wikidata": "https://www.wikidata.org/wiki/Q39680",
+            "display_name": "Macroeconomics",
+            "level": 1,
+            "score": 0.5659201145172119
+          },
+          {
+            "id": "https://openalex.org/C120527767",
+            "wikidata": "https://www.wikidata.org/wiki/Q3196867",
+            "display_name": "Debt",
+            "level": 2,
+            "score": 0.5529428720474243
+          },
+          {
+            "id": "https://openalex.org/C524878704",
+            "wikidata": "https://www.wikidata.org/wiki/Q187021",
+            "display_name": "Fiscal policy",
+            "level": 2,
+            "score": 0.5488486886024475
+          },
+          {
+            "id": "https://openalex.org/C144341231",
+            "wikidata": "https://www.wikidata.org/wiki/Q7887151",
+            "display_name": "Unit root test",
+            "level": 3,
+            "score": 0.49555790424346924
+          },
+          {
+            "id": "https://openalex.org/C556758197",
+            "wikidata": "https://www.wikidata.org/wiki/Q580018",
+            "display_name": "Monetary economics",
+            "level": 1,
+            "score": 0.48542842268943787
+          },
+          {
+            "id": "https://openalex.org/C148609458",
+            "wikidata": "https://www.wikidata.org/wiki/Q7021281",
+            "display_name": "Nexus (standard)",
+            "level": 2,
+            "score": 0.48117977380752563
+          },
+          {
+            "id": "https://openalex.org/C193991484",
+            "wikidata": "https://www.wikidata.org/wiki/Q2509483",
+            "display_name": "Government revenue",
+            "level": 3,
+            "score": 0.4442431330680847
+          },
+          {
+            "id": "https://openalex.org/C181683161",
+            "wikidata": "https://www.wikidata.org/wiki/Q7301159",
+            "display_name": "Real gross domestic product",
+            "level": 2,
+            "score": 0.42945975065231323
+          },
+          {
+            "id": "https://openalex.org/C178283979",
+            "wikidata": "https://www.wikidata.org/wiki/Q274490",
+            "display_name": "Public finance",
+            "level": 2,
+            "score": 0.2910812497138977
+          },
+          {
+            "id": "https://openalex.org/C149782125",
+            "wikidata": "https://www.wikidata.org/wiki/Q160039",
+            "display_name": "Econometrics",
+            "level": 1,
+            "score": 0.2527230381965637
+          },
+          {
+            "id": "https://openalex.org/C149635348",
+            "wikidata": "https://www.wikidata.org/wiki/Q193040",
+            "display_name": "Embedded system",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.22159/ijbm.2022.v10i1.44401",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.22159/ijbm.2022.v10i1.44401",
+            "pdf_url": "https://innovareacademics.in/journals/index.php/ijbm/article/download/44401/26357",
+            "source": {
+              "id": "https://openalex.org/S4387279578",
+              "display_name": "Innovare Journal of Business Management",
+              "issn_l": "2321-6816",
+              "issn": [
+                "2321-6816"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/P4322697801",
+              "host_organization_name": "Innovare Academic Sciences",
+              "host_organization_lineage": [
+                "https://openalex.org/P4322697801"
+              ],
+              "host_organization_lineage_names": [
+                "Innovare Academic Sciences"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Innovare Journal of Business Management",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:ojs2.innovareacacdemics.in:article/44401",
+            "is_oa": true,
+            "landing_page_url": "https://innovareacademics.in/journals/index.php/ijbm/article/view/44401",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306400440",
+              "display_name": "Innovare Academic Sciences - Innovare Journal of Business Management",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-nc",
+            "license_id": "https://openalex.org/licenses/cc-by-nc",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Innovare Journal of Business Management; Volume 10; 1-4",
+            "raw_type": "info:eu-repo/semantics/article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.22159/ijbm.2022.v10i1.44401",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.22159/ijbm.2022.v10i1.44401",
+          "pdf_url": "https://innovareacademics.in/journals/index.php/ijbm/article/download/44401/26357",
+          "source": {
+            "id": "https://openalex.org/S4387279578",
+            "display_name": "Innovare Journal of Business Management",
+            "issn_l": "2321-6816",
+            "issn": [
+              "2321-6816"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/P4322697801",
+            "host_organization_name": "Innovare Academic Sciences",
+            "host_organization_lineage": [
+              "https://openalex.org/P4322697801"
+            ],
+            "host_organization_lineage_names": [
+              "Innovare Academic Sciences"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Innovare Journal of Business Management",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.46000000834465027,
+            "display_name": "Decent work and economic growth",
+            "id": "https://metadata.un.org/sdg/8"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4223526671.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4223526671.grobid-xml"
+        },
+        "referenced_works_count": 20,
+        "referenced_works": [
+          "https://openalex.org/W1867751776",
+          "https://openalex.org/W1985498394",
+          "https://openalex.org/W1996007708",
+          "https://openalex.org/W2004259268",
+          "https://openalex.org/W2136798339",
+          "https://openalex.org/W2188618260",
+          "https://openalex.org/W2221822378",
+          "https://openalex.org/W2426828806",
+          "https://openalex.org/W2555150121",
+          "https://openalex.org/W2586897358",
+          "https://openalex.org/W2622656012",
+          "https://openalex.org/W2622661212",
+          "https://openalex.org/W2751972031",
+          "https://openalex.org/W2897909476",
+          "https://openalex.org/W2913936081",
+          "https://openalex.org/W3122611856",
+          "https://openalex.org/W3139797901",
+          "https://openalex.org/W3193236711",
+          "https://openalex.org/W4232813716",
+          "https://openalex.org/W4289083196"
+        ],
+        "related_works": [
+          "https://openalex.org/W3123551648",
+          "https://openalex.org/W3122916106",
+          "https://openalex.org/W3149781249",
+          "https://openalex.org/W149471877",
+          "https://openalex.org/W2186799462",
+          "https://openalex.org/W3204547382",
+          "https://openalex.org/W1985568478",
+          "https://openalex.org/W2368604504",
+          "https://openalex.org/W2284487626",
+          "https://openalex.org/W2475264410"
+        ],
+        "abstract_inverted_index": {
+          "The": [
+            0,
+            113
+          ],
+          "current": [
+            1
+          ],
+          "study": [
+            2,
+            53,
+            73
+          ],
+          "was": [
+            3,
+            54,
+            130
+          ],
+          "carried": [
+            4,
+            55
+          ],
+          "out": [
+            5,
+            56
+          ],
+          "to": [
+            6,
+            57,
+            157
+          ],
+          "empirically": [
+            7
+          ],
+          "investigate": [
+            8
+          ],
+          "the": [
+            9,
+            20,
+            26,
+            30,
+            34,
+            47,
+            69,
+            72,
+            116,
+            120,
+            133,
+            144,
+            158,
+            171
+          ],
+          "relationships": [
+            10
+          ],
+          "between": [
+            11
+          ],
+          "government": [
+            12,
+            60
+          ],
+          "expenditure,": [
+            13,
+            61
+          ],
+          "taxes,": [
+            14,
+            62
+          ],
+          "and": [
+            15,
+            63,
+            83,
+            85,
+            87,
+            164,
+            170
+          ],
+          "debt": [
+            16,
+            64,
+            165
+          ],
+          "in": [
+            17,
+            46,
+            138,
+            147
+          ],
+          "Jordan,": [
+            18
+          ],
+          "using": [
+            19
+          ],
+          "annual": [
+            21
+          ],
+          "time": [
+            22
+          ],
+          "series": [
+            23
+          ],
+          "data": [
+            24
+          ],
+          "over": [
+            25
+          ],
+          "period": [
+            27
+          ],
+          "1980-2020.": [
+            28
+          ],
+          "Despite": [
+            29
+          ],
+          "increased": [
+            31
+          ],
+          "awareness": [
+            32
+          ],
+          "of": [
+            33,
+            36,
+            49,
+            111,
+            115,
+            122
+          ],
+          "importance": [
+            35
+          ],
+          "fiscal": [
+            37,
+            179
+          ],
+          "policy,": [
+            38
+          ],
+          "Jordan": [
+            39
+          ],
+          "is": [
+            40
+          ],
+          "still": [
+            41
+          ],
+          "seeing": [
+            42
+          ],
+          "a": [
+            43,
+            123
+          ],
+          "drastic": [
+            44
+          ],
+          "decrease": [
+            45
+          ],
+          "volume": [
+            48
+          ],
+          "growth.": [
+            50,
+            67,
+            142,
+            155
+          ],
+          "Thus,": [
+            51
+          ],
+          "this": [
+            52
+          ],
+          "determine": [
+            58
+          ],
+          "how": [
+            59
+          ],
+          "affect": [
+            65
+          ],
+          "economic": [
+            66,
+            141,
+            154
+          ],
+          "For": [
+            68
+          ],
+          "empirical": [
+            70
+          ],
+          "analysis,": [
+            71
+          ],
+          "adopted": [
+            74
+          ],
+          "Augmented": [
+            75
+          ],
+          "Dicky": [
+            76
+          ],
+          "Fuller,": [
+            77
+          ],
+          "Phillips-Perron": [
+            78
+          ],
+          "unit": [
+            79,
+            89
+          ],
+          "root": [
+            80,
+            90
+          ],
+          "tests,": [
+            81
+          ],
+          "Zivot": [
+            82
+          ],
+          "Andrews": [
+            84
+          ],
+          "Lumsdaine": [
+            86
+          ],
+          "Papell": [
+            88
+          ],
+          "tests": [
+            91,
+            105
+          ],
+          "with": [
+            92,
+            126
+          ],
+          "structural": [
+            93,
+            127,
+            145
+          ],
+          "breaks.": [
+            94,
+            112,
+            128
+          ],
+          "It": [
+            95,
+            129
+          ],
+          "employs": [
+            96
+          ],
+          "recently": [
+            97
+          ],
+          "developed": [
+            98
+          ],
+          "econometric": [
+            99
+          ],
+          "techniques": [
+            100
+          ],
+          "such": [
+            101
+          ],
+          "as": [
+            102
+          ],
+          "Maki": [
+            103
+          ],
+          "cointegration": [
+            104,
+            117,
+            124
+          ],
+          "allowing": [
+            106
+          ],
+          "for": [
+            107
+          ],
+          "an": [
+            108,
+            150
+          ],
+          "unknown": [
+            109
+          ],
+          "number": [
+            110
+          ],
+          "results": [
+            114
+          ],
+          "test": [
+            118
+          ],
+          "showed": [
+            119
+          ],
+          "presence": [
+            121
+          ],
+          "relationship": [
+            125
+          ],
+          "found": [
+            131
+          ],
+          "that": [
+            132,
+            136,
+            181
+          ],
+          "Jordanian": [
+            134
+          ],
+          "crisis": [
+            135
+          ],
+          "occurred": [
+            137
+          ],
+          "1989": [
+            139
+          ],
+          "harmed": [
+            140
+          ],
+          "However,": [
+            143
+          ],
+          "break": [
+            146
+          ],
+          "2008": [
+            148
+          ],
+          "had": [
+            149
+          ],
+          "affirmative": [
+            151
+          ],
+          "effect": [
+            152
+          ],
+          "on": [
+            153
+          ],
+          "According": [
+            156
+          ],
+          "study,": [
+            159
+          ],
+          "tax": [
+            160
+          ],
+          "revenues,": [
+            161
+          ],
+          "public": [
+            162
+          ],
+          "deficits,": [
+            163
+          ],
+          "can": [
+            166,
+            173
+          ],
+          "all": [
+            167
+          ],
+          "be": [
+            168
+          ],
+          "reduced": [
+            169
+          ],
+          "economy": [
+            172
+          ],
+          "thrive": [
+            174
+          ],
+          "if": [
+            175
+          ],
+          "policymakers": [
+            176
+          ],
+          "implement": [
+            177
+          ],
+          "smart": [
+            178
+          ],
+          "policies": [
+            180
+          ],
+          "boost": [
+            182
+          ],
+          "gross": [
+            183
+          ],
+          "fixed": [
+            184
+          ],
+          "capital": [
+            185
+          ],
+          "formation.": [
+            186
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          }
+        ],
+        "updated_date": "2026-05-21T06:26:12.895304",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4401623815",
+        "doi": "https://doi.org/10.15294/aaj.v13i1.1618",
+        "title": "Gender Diversity in the Boardroom and Earnings Quality: The Monitoring Role of Institutional Ownership",
+        "display_name": "Gender Diversity in the Boardroom and Earnings Quality: The Monitoring Role of Institutional Ownership",
+        "relevance_score": 5.082123,
+        "publication_year": 2024,
+        "publication_date": "2024-08-14",
+        "ids": {
+          "openalex": "https://openalex.org/W4401623815",
+          "doi": "https://doi.org/10.15294/aaj.v13i1.1618"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.15294/aaj.v13i1.1618",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.15294/aaj.v13i1.1618",
+          "pdf_url": "https://journal.unnes.ac.id/journals/aaj/article/download/1618/1205",
+          "source": {
+            "id": "https://openalex.org/S2737821890",
+            "display_name": "Accounting Analysis Journal",
+            "issn_l": "2252-6765",
+            "issn": [
+              "2252-6765",
+              "2502-6216"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": false,
+            "host_organization": "https://openalex.org/P4310315184",
+            "host_organization_name": "State University of Semarang",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315184"
+            ],
+            "host_organization_lineage_names": [
+              "State University of Semarang"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Accounting Analysis Journal",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://journal.unnes.ac.id/journals/aaj/article/download/1618/1205",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5033955059",
+              "display_name": "Made Aditya Budastra",
+              "orcid": "https://orcid.org/0000-0002-6636-0143"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I205133468",
+                "display_name": "Airlangga University",
+                "ror": "https://ror.org/04ctejd88",
+                "country_code": "ID",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I205133468"
+                ]
+              }
+            ],
+            "countries": [
+              "ID"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Made Aditya Budastra",
+            "raw_affiliation_strings": [
+              "Universitas Airlangga"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-6636-0143",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Universitas Airlangga",
+                "institution_ids": [
+                  "https://openalex.org/I205133468"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5025148699",
+              "display_name": "Isnalita Isnalita",
+              "orcid": "https://orcid.org/0000-0002-4566-2652"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I205133468",
+                "display_name": "Airlangga University",
+                "ror": "https://ror.org/04ctejd88",
+                "country_code": "ID",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I205133468"
+                ]
+              }
+            ],
+            "countries": [
+              "ID"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Isnalita Isnalita",
+            "raw_affiliation_strings": [
+              "Universitas Airlangga"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Universitas Airlangga",
+                "institution_ids": [
+                  "https://openalex.org/I205133468"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I205133468"
+        ],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.415,
+        "has_fulltext": true,
+        "cited_by_count": 1,
+        "citation_normalized_percentile": {
+          "value": 0.73814728,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 94,
+          "max": 97
+        },
+        "biblio": {
+          "volume": "13",
+          "issue": "1",
+          "first_page": "45",
+          "last_page": "55"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T13957",
+          "display_name": "Corporate Governance and Financial Management",
+          "score": 0.9850999712944031,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1408",
+            "display_name": "Strategy and Management"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/14",
+            "display_name": "Business, Management and Accounting"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T13957",
+            "display_name": "Corporate Governance and Financial Management",
+            "score": 0.9850999712944031,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1408",
+              "display_name": "Strategy and Management"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/14",
+              "display_name": "Business, Management and Accounting"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T14361",
+            "display_name": "Corporate Social Responsibility Disclosure",
+            "score": 0.9488000273704529,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3318",
+              "display_name": "Gender Studies"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T12123",
+            "display_name": "Financial Analysis and Corporate Governance",
+            "score": 0.9136999845504761,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1402",
+              "display_name": "Accounting"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/14",
+              "display_name": "Business, Management and Accounting"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/business",
+            "display_name": "Business",
+            "score": 0.7270939350128174
+          },
+          {
+            "id": "https://openalex.org/keywords/earnings-quality",
+            "display_name": "Earnings quality",
+            "score": 0.7221212983131409
+          },
+          {
+            "id": "https://openalex.org/keywords/accounting",
+            "display_name": "Accounting",
+            "score": 0.6880792379379272
+          },
+          {
+            "id": "https://openalex.org/keywords/earnings",
+            "display_name": "Earnings",
+            "score": 0.6300998330116272
+          },
+          {
+            "id": "https://openalex.org/keywords/incentive",
+            "display_name": "Incentive",
+            "score": 0.6039537191390991
+          },
+          {
+            "id": "https://openalex.org/keywords/gender-diversity",
+            "display_name": "Gender diversity",
+            "score": 0.6011376976966858
+          },
+          {
+            "id": "https://openalex.org/keywords/diversity",
+            "display_name": "Diversity (politics)",
+            "score": 0.5110083818435669
+          },
+          {
+            "id": "https://openalex.org/keywords/quality",
+            "display_name": "Quality (philosophy)",
+            "score": 0.45098599791526794
+          },
+          {
+            "id": "https://openalex.org/keywords/institutional-investor",
+            "display_name": "Institutional investor",
+            "score": 0.4372538924217224
+          },
+          {
+            "id": "https://openalex.org/keywords/corporate-governance",
+            "display_name": "Corporate governance",
+            "score": 0.2563926577568054
+          },
+          {
+            "id": "https://openalex.org/keywords/economics",
+            "display_name": "Economics",
+            "score": 0.20520377159118652
+          },
+          {
+            "id": "https://openalex.org/keywords/finance",
+            "display_name": "Finance",
+            "score": 0.1857927441596985
+          },
+          {
+            "id": "https://openalex.org/keywords/accrual",
+            "display_name": "Accrual",
+            "score": 0.1330440640449524
+          },
+          {
+            "id": "https://openalex.org/keywords/political-science",
+            "display_name": "Political science",
+            "score": 0.06275558471679688
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.7270939350128174
+          },
+          {
+            "id": "https://openalex.org/C2776218570",
+            "wikidata": "https://www.wikidata.org/wiki/Q5326947",
+            "display_name": "Earnings quality",
+            "level": 4,
+            "score": 0.7221212983131409
+          },
+          {
+            "id": "https://openalex.org/C121955636",
+            "wikidata": "https://www.wikidata.org/wiki/Q4116214",
+            "display_name": "Accounting",
+            "level": 1,
+            "score": 0.6880792379379272
+          },
+          {
+            "id": "https://openalex.org/C2781426361",
+            "wikidata": "https://www.wikidata.org/wiki/Q5326940",
+            "display_name": "Earnings",
+            "level": 2,
+            "score": 0.6300998330116272
+          },
+          {
+            "id": "https://openalex.org/C29122968",
+            "wikidata": "https://www.wikidata.org/wiki/Q1414816",
+            "display_name": "Incentive",
+            "level": 2,
+            "score": 0.6039537191390991
+          },
+          {
+            "id": "https://openalex.org/C2778397978",
+            "wikidata": "https://www.wikidata.org/wiki/Q1501335",
+            "display_name": "Gender diversity",
+            "level": 3,
+            "score": 0.6011376976966858
+          },
+          {
+            "id": "https://openalex.org/C2781316041",
+            "wikidata": "https://www.wikidata.org/wiki/Q1230584",
+            "display_name": "Diversity (politics)",
+            "level": 2,
+            "score": 0.5110083818435669
+          },
+          {
+            "id": "https://openalex.org/C2779530757",
+            "wikidata": "https://www.wikidata.org/wiki/Q1207505",
+            "display_name": "Quality (philosophy)",
+            "level": 2,
+            "score": 0.45098599791526794
+          },
+          {
+            "id": "https://openalex.org/C206757995",
+            "wikidata": "https://www.wikidata.org/wiki/Q1665188",
+            "display_name": "Institutional investor",
+            "level": 3,
+            "score": 0.4372538924217224
+          },
+          {
+            "id": "https://openalex.org/C39389867",
+            "wikidata": "https://www.wikidata.org/wiki/Q380767",
+            "display_name": "Corporate governance",
+            "level": 2,
+            "score": 0.2563926577568054
+          },
+          {
+            "id": "https://openalex.org/C162324750",
+            "wikidata": "https://www.wikidata.org/wiki/Q8134",
+            "display_name": "Economics",
+            "level": 0,
+            "score": 0.20520377159118652
+          },
+          {
+            "id": "https://openalex.org/C10138342",
+            "wikidata": "https://www.wikidata.org/wiki/Q43015",
+            "display_name": "Finance",
+            "level": 1,
+            "score": 0.1857927441596985
+          },
+          {
+            "id": "https://openalex.org/C4577558",
+            "wikidata": "https://www.wikidata.org/wiki/Q384475",
+            "display_name": "Accrual",
+            "level": 3,
+            "score": 0.1330440640449524
+          },
+          {
+            "id": "https://openalex.org/C17744445",
+            "wikidata": "https://www.wikidata.org/wiki/Q36442",
+            "display_name": "Political science",
+            "level": 0,
+            "score": 0.06275558471679688
+          },
+          {
+            "id": "https://openalex.org/C175444787",
+            "wikidata": "https://www.wikidata.org/wiki/Q39072",
+            "display_name": "Microeconomics",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C111472728",
+            "wikidata": "https://www.wikidata.org/wiki/Q9471",
+            "display_name": "Epistemology",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C138885662",
+            "wikidata": "https://www.wikidata.org/wiki/Q5891",
+            "display_name": "Philosophy",
+            "level": 0,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C199539241",
+            "wikidata": "https://www.wikidata.org/wiki/Q7748",
+            "display_name": "Law",
+            "level": 1,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.15294/aaj.v13i1.1618",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.15294/aaj.v13i1.1618",
+            "pdf_url": "https://journal.unnes.ac.id/journals/aaj/article/download/1618/1205",
+            "source": {
+              "id": "https://openalex.org/S2737821890",
+              "display_name": "Accounting Analysis Journal",
+              "issn_l": "2252-6765",
+              "issn": [
+                "2252-6765",
+                "2502-6216"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": false,
+              "host_organization": "https://openalex.org/P4310315184",
+              "host_organization_name": "State University of Semarang",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310315184"
+              ],
+              "host_organization_lineage_names": [
+                "State University of Semarang"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Accounting Analysis Journal",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.15294/aaj.v13i1.1618",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.15294/aaj.v13i1.1618",
+          "pdf_url": "https://journal.unnes.ac.id/journals/aaj/article/download/1618/1205",
+          "source": {
+            "id": "https://openalex.org/S2737821890",
+            "display_name": "Accounting Analysis Journal",
+            "issn_l": "2252-6765",
+            "issn": [
+              "2252-6765",
+              "2502-6216"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": false,
+            "host_organization": "https://openalex.org/P4310315184",
+            "host_organization_name": "State University of Semarang",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315184"
+            ],
+            "host_organization_lineage_names": [
+              "State University of Semarang"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Accounting Analysis Journal",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4401623815.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4401623815.grobid-xml"
+        },
+        "referenced_works_count": 51,
+        "referenced_works": [
+          "https://openalex.org/W645260185",
+          "https://openalex.org/W1603811794",
+          "https://openalex.org/W2018501639",
+          "https://openalex.org/W2078555310",
+          "https://openalex.org/W2305606550",
+          "https://openalex.org/W2506295374",
+          "https://openalex.org/W2592929006",
+          "https://openalex.org/W2618632388",
+          "https://openalex.org/W2623029808",
+          "https://openalex.org/W2796524254",
+          "https://openalex.org/W2896091576",
+          "https://openalex.org/W2901232747",
+          "https://openalex.org/W2913121141",
+          "https://openalex.org/W2914940168",
+          "https://openalex.org/W2923643964",
+          "https://openalex.org/W2931991017",
+          "https://openalex.org/W2965017687",
+          "https://openalex.org/W2969259021",
+          "https://openalex.org/W2983595994",
+          "https://openalex.org/W2995344333",
+          "https://openalex.org/W2999394624",
+          "https://openalex.org/W2999577573",
+          "https://openalex.org/W3023218619",
+          "https://openalex.org/W3023423642",
+          "https://openalex.org/W3024707504",
+          "https://openalex.org/W3041544551",
+          "https://openalex.org/W3092116656",
+          "https://openalex.org/W3095185873",
+          "https://openalex.org/W3121443369",
+          "https://openalex.org/W3123584534",
+          "https://openalex.org/W3124321936",
+          "https://openalex.org/W3125331316",
+          "https://openalex.org/W3128158495",
+          "https://openalex.org/W3130674467",
+          "https://openalex.org/W3176894441",
+          "https://openalex.org/W3181026923",
+          "https://openalex.org/W3186910803",
+          "https://openalex.org/W3198858333",
+          "https://openalex.org/W3205441565",
+          "https://openalex.org/W3206614307",
+          "https://openalex.org/W4210661304",
+          "https://openalex.org/W4234071019",
+          "https://openalex.org/W4245270852",
+          "https://openalex.org/W4245439095",
+          "https://openalex.org/W4282916339",
+          "https://openalex.org/W4294636343",
+          "https://openalex.org/W4313332398",
+          "https://openalex.org/W4318042285",
+          "https://openalex.org/W4320727260",
+          "https://openalex.org/W4388111604",
+          "https://openalex.org/W4390142430"
+        ],
+        "related_works": [
+          "https://openalex.org/W2367468089",
+          "https://openalex.org/W2358591856",
+          "https://openalex.org/W2098133976",
+          "https://openalex.org/W2347416728",
+          "https://openalex.org/W2468219149",
+          "https://openalex.org/W2974100988",
+          "https://openalex.org/W4387007725",
+          "https://openalex.org/W2389163629",
+          "https://openalex.org/W2506295374",
+          "https://openalex.org/W2782739412"
+        ],
+        "abstract_inverted_index": {
+          "Purpose": [
+            0
+          ],
+          ":": [
+            1,
+            103,
+            140,
+            227
+          ],
+          "Earnings": [
+            2
+          ],
+          "are": [
+            3,
+            47
+          ],
+          "a": [
+            4,
+            28,
+            54,
+            107
+          ],
+          "critical": [
+            5,
+            29
+          ],
+          "component": [
+            6
+          ],
+          "of": [
+            7,
+            25,
+            41,
+            59,
+            70,
+            72,
+            87,
+            93,
+            95,
+            109,
+            113,
+            150,
+            159,
+            173,
+            188,
+            203,
+            212,
+            238,
+            244
+          ],
+          "the": [
+            8,
+            21,
+            68,
+            84,
+            91,
+            145,
+            148,
+            157,
+            171,
+            180,
+            186,
+            201,
+            213,
+            218,
+            223,
+            231,
+            235,
+            242
+          ],
+          "income": [
+            9
+          ],
+          "statement": [
+            10
+          ],
+          "because": [
+            11
+          ],
+          "most": [
+            12
+          ],
+          "investors": [
+            13,
+            46
+          ],
+          "use": [
+            14
+          ],
+          "them": [
+            15,
+            52
+          ],
+          "to": [
+            16,
+            31,
+            43,
+            63,
+            120,
+            184,
+            221,
+            233
+          ],
+          "make": [
+            17
+          ],
+          "investment": [
+            18
+          ],
+          "decisions": [
+            19
+          ],
+          "in": [
+            20,
+            147,
+            195,
+            208,
+            241
+          ],
+          "company.": [
+            22
+          ],
+          "Consequently,": [
+            23
+          ],
+          "board": [
+            24,
+            71,
+            94,
+            215,
+            243
+          ],
+          "directors": [
+            26
+          ],
+          "has": [
+            27
+          ],
+          "responsibility": [
+            30
+          ],
+          "present": [
+            32
+          ],
+          "high-quality": [
+            33
+          ],
+          "earnings": [
+            34,
+            77,
+            100,
+            152,
+            249
+          ],
+          "reports": [
+            35
+          ],
+          "and": [
+            36,
+            216,
+            248
+          ],
+          "free": [
+            37
+          ],
+          "from": [
+            38,
+            118
+          ],
+          "any": [
+            39
+          ],
+          "elements": [
+            40
+          ],
+          "manipulation": [
+            42
+          ],
+          "ensure": [
+            44
+          ],
+          "that": [
+            45,
+            144,
+            170,
+            194
+          ],
+          "not": [
+            48,
+            154
+          ],
+          "misled": [
+            49
+          ],
+          "when": [
+            50
+          ],
+          "using": [
+            51
+          ],
+          "as": [
+            53,
+            199
+          ],
+          "performance": [
+            55
+          ],
+          "benchmark.": [
+            56
+          ],
+          "The": [
+            57,
+            104,
+            122,
+            141,
+            228
+          ],
+          "purpose": [
+            58
+          ],
+          "this": [
+            60,
+            80,
+            166
+          ],
+          "study": [
+            61,
+            81,
+            105,
+            142,
+            167,
+            229
+          ],
+          "is": [
+            62,
+            127,
+            153,
+            206,
+            230
+          ],
+          "provide": [
+            64
+          ],
+          "empirical": [
+            65
+          ],
+          "evidence": [
+            66
+          ],
+          "regarding": [
+            67
+          ],
+          "effect": [
+            69,
+            92
+          ],
+          "directors’": [
+            73,
+            96,
+            245
+          ],
+          "gender": [
+            74,
+            97,
+            160,
+            181,
+            246
+          ],
+          "diversity": [
+            75,
+            98,
+            161,
+            182,
+            247
+          ],
+          "on": [
+            76,
+            90,
+            99,
+            116
+          ],
+          "quality.": [
+            78,
+            101,
+            250
+          ],
+          "Furthermore,": [
+            79,
+            165
+          ],
+          "also": [
+            82,
+            168
+          ],
+          "investigates": [
+            83
+          ],
+          "moderating": [
+            85,
+            236
+          ],
+          "role": [
+            86,
+            202,
+            237
+          ],
+          "institutional": [
+            88,
+            174,
+            204,
+            239
+          ],
+          "ownership": [
+            89,
+            175,
+            205,
+            240
+          ],
+          "Method": [
+            102
+          ],
+          "uses": [
+            106
+          ],
+          "sample": [
+            108
+          ],
+          "682": [
+            110
+          ],
+          "firm-year": [
+            111
+          ],
+          "observations": [
+            112
+          ],
+          "manufacturing": [
+            114
+          ],
+          "companies": [
+            115
+          ],
+          "IDX": [
+            117
+          ],
+          "2015": [
+            119
+          ],
+          "2019.": [
+            121
+          ],
+          "data": [
+            123
+          ],
+          "analysis": [
+            124
+          ],
+          "technique": [
+            125
+          ],
+          "used": [
+            126
+          ],
+          "Moderated": [
+            128
+          ],
+          "Regression": [
+            129
+          ],
+          "Analysis": [
+            130
+          ],
+          "(MRA)": [
+            131
+          ],
+          "with": [
+            132
+          ],
+          "an": [
+            133
+          ],
+          "Ordinary": [
+            134
+          ],
+          "Least": [
+            135
+          ],
+          "Square": [
+            136
+          ],
+          "(OLS)": [
+            137
+          ],
+          "approach.": [
+            138
+          ],
+          "Findings": [
+            139
+          ],
+          "finds": [
+            143
+          ],
+          "improvement": [
+            146
+          ],
+          "quality": [
+            149,
+            187
+          ],
+          "reported": [
+            151,
+            189
+          ],
+          "determined": [
+            155
+          ],
+          "by": [
+            156
+          ],
+          "level": [
+            158
+          ],
+          "among": [
+            162
+          ],
+          "company": [
+            163
+          ],
+          "directors.": [
+            164
+          ],
+          "proves": [
+            169
+          ],
+          "effectiveness": [
+            172
+          ],
+          "roles": [
+            176
+          ],
+          "can": [
+            177
+          ],
+          "help": [
+            178
+          ],
+          "strengthen": [
+            179
+          ],
+          "mechanism": [
+            183
+          ],
+          "improve": [
+            185
+          ],
+          "earnings.": [
+            190,
+            225
+          ],
+          "This": [
+            191
+          ],
+          "finding": [
+            192
+          ],
+          "suggests": [
+            193
+          ],
+          "developing": [
+            196
+          ],
+          "countries": [
+            197
+          ],
+          "such": [
+            198
+          ],
+          "Indonesia,": [
+            200
+          ],
+          "effective": [
+            207
+          ],
+          "providing": [
+            209
+          ],
+          "external": [
+            210
+          ],
+          "monitoring": [
+            211
+          ],
+          "firm’s": [
+            214,
+            224
+          ],
+          "reducing": [
+            217
+          ],
+          "board’s": [
+            219
+          ],
+          "incentives": [
+            220
+          ],
+          "manipulate": [
+            222
+          ],
+          "Novelty": [
+            226
+          ],
+          "first": [
+            232
+          ],
+          "examine": [
+            234
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ],
+        "updated_date": "2026-08-25T07:29:55.448023",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W7167328099",
+        "doi": "https://doi.org/10.33168/jliss.2026.0712",
+        "title": "Digital Service Transformation and FinTech Adoption in Banking: Implications for Operational Performance in Jordan",
+        "display_name": "Digital Service Transformation and FinTech Adoption in Banking: Implications for Operational Performance in Jordan",
+        "relevance_score": 1.4004039,
+        "publication_year": 2026,
+        "publication_date": "2026-07-01",
+        "ids": {
+          "openalex": "https://openalex.org/W7167328099",
+          "doi": "https://doi.org/10.33168/jliss.2026.0712"
+        },
+        "language": null,
+        "primary_location": {
+          "id": "doi:10.33168/jliss.2026.0712",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.33168/jliss.2026.0712",
+          "pdf_url": "https://doi.org/10.33168/jliss.2026.0712",
+          "source": {
+            "id": "https://openalex.org/S4210188832",
+            "display_name": "Journal of Logistics Informatics and Service Science",
+            "issn_l": "2409-2665",
+            "issn": [
+              "2409-2665"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Logistics, Informatics and Service Science",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://doi.org/10.33168/jliss.2026.0712",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.0,
+        "has_fulltext": true,
+        "cited_by_count": 0,
+        "citation_normalized_percentile": {
+          "value": 0.71955179,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11995",
+          "display_name": "FinTech, Crowdfunding, Digital Finance",
+          "score": 0.4952999949455261,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1404",
+            "display_name": "Management Information Systems"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/14",
+            "display_name": "Business, Management and Accounting"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11995",
+            "display_name": "FinTech, Crowdfunding, Digital Finance",
+            "score": 0.4952999949455261,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1404",
+              "display_name": "Management Information Systems"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/14",
+              "display_name": "Business, Management and Accounting"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T14064",
+            "display_name": "Organizational and Employee Performance",
+            "score": 0.1444000005722046,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1702",
+              "display_name": "Artificial Intelligence"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/17",
+              "display_name": "Computer Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10068",
+            "display_name": "Technology Adoption and User Behaviour",
+            "score": 0.07720000296831131,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1802",
+              "display_name": "Information Systems and Management"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/18",
+              "display_name": "Decision Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/digital-transformation",
+            "display_name": "Digital transformation",
+            "score": 0.6054999828338623
+          },
+          {
+            "id": "https://openalex.org/keywords/service",
+            "display_name": "Service (business)",
+            "score": 0.46059998869895935
+          },
+          {
+            "id": "https://openalex.org/keywords/transformation",
+            "display_name": "Transformation (genetics)",
+            "score": 0.34380000829696655
+          },
+          {
+            "id": "https://openalex.org/keywords/service-innovation",
+            "display_name": "Service innovation",
+            "score": 0.33820000290870667
+          },
+          {
+            "id": "https://openalex.org/keywords/information-technology",
+            "display_name": "Information technology",
+            "score": 0.31209999322891235
+          },
+          {
+            "id": "https://openalex.org/keywords/field",
+            "display_name": "Field (mathematics)",
+            "score": 0.29339998960494995
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.6696000099182129
+          },
+          {
+            "id": "https://openalex.org/C126082660",
+            "wikidata": "https://www.wikidata.org/wiki/Q4252370",
+            "display_name": "Digital transformation",
+            "level": 2,
+            "score": 0.6054999828338623
+          },
+          {
+            "id": "https://openalex.org/C195094911",
+            "wikidata": "https://www.wikidata.org/wiki/Q14167904",
+            "display_name": "Process management",
+            "level": 1,
+            "score": 0.46149998903274536
+          },
+          {
+            "id": "https://openalex.org/C2780378061",
+            "wikidata": "https://www.wikidata.org/wiki/Q25351891",
+            "display_name": "Service (business)",
+            "level": 2,
+            "score": 0.46059998869895935
+          },
+          {
+            "id": "https://openalex.org/C56739046",
+            "wikidata": "https://www.wikidata.org/wiki/Q192060",
+            "display_name": "Knowledge management",
+            "level": 1,
+            "score": 0.3993000090122223
+          },
+          {
+            "id": "https://openalex.org/C162853370",
+            "wikidata": "https://www.wikidata.org/wiki/Q39809",
+            "display_name": "Marketing",
+            "level": 1,
+            "score": 0.36550000309944153
+          },
+          {
+            "id": "https://openalex.org/C204241405",
+            "wikidata": "https://www.wikidata.org/wiki/Q461499",
+            "display_name": "Transformation (genetics)",
+            "level": 3,
+            "score": 0.34380000829696655
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.3409000039100647
+          },
+          {
+            "id": "https://openalex.org/C40700",
+            "wikidata": "https://www.wikidata.org/wiki/Q1411783",
+            "display_name": "Industrial organization",
+            "level": 1,
+            "score": 0.3393000066280365
+          },
+          {
+            "id": "https://openalex.org/C3307092",
+            "wikidata": "https://www.wikidata.org/wiki/Q6532095",
+            "display_name": "Service innovation",
+            "level": 3,
+            "score": 0.33820000290870667
+          },
+          {
+            "id": "https://openalex.org/C121017731",
+            "wikidata": "https://www.wikidata.org/wiki/Q11661",
+            "display_name": "Information technology",
+            "level": 2,
+            "score": 0.31209999322891235
+          },
+          {
+            "id": "https://openalex.org/C9652623",
+            "wikidata": "https://www.wikidata.org/wiki/Q190109",
+            "display_name": "Field (mathematics)",
+            "level": 2,
+            "score": 0.29339998960494995
+          },
+          {
+            "id": "https://openalex.org/C76155785",
+            "wikidata": "https://www.wikidata.org/wiki/Q418",
+            "display_name": "Telecommunications",
+            "level": 1,
+            "score": 0.2892000079154968
+          },
+          {
+            "id": "https://openalex.org/C2779343474",
+            "wikidata": "https://www.wikidata.org/wiki/Q3109175",
+            "display_name": "Context (archaeology)",
+            "level": 2,
+            "score": 0.2870999872684479
+          },
+          {
+            "id": "https://openalex.org/C26517878",
+            "wikidata": "https://www.wikidata.org/wiki/Q228039",
+            "display_name": "Key (lock)",
+            "level": 2,
+            "score": 0.2847999930381775
+          },
+          {
+            "id": "https://openalex.org/C140781008",
+            "wikidata": "https://www.wikidata.org/wiki/Q1221081",
+            "display_name": "Service quality",
+            "level": 3,
+            "score": 0.2802000045776367
+          },
+          {
+            "id": "https://openalex.org/C180198813",
+            "wikidata": "https://www.wikidata.org/wiki/Q121182",
+            "display_name": "Information system",
+            "level": 2,
+            "score": 0.26489999890327454
+          },
+          {
+            "id": "https://openalex.org/C110354214",
+            "wikidata": "https://www.wikidata.org/wiki/Q6314146",
+            "display_name": "Engineering management",
+            "level": 1,
+            "score": 0.2502000033855438
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.33168/jliss.2026.0712",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.33168/jliss.2026.0712",
+            "pdf_url": "https://doi.org/10.33168/jliss.2026.0712",
+            "source": {
+              "id": "https://openalex.org/S4210188832",
+              "display_name": "Journal of Logistics Informatics and Service Science",
+              "issn_l": "2409-2665",
+              "issn": [
+                "2409-2665"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Journal of Logistics, Informatics and Service Science",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.33168/jliss.2026.0712",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.33168/jliss.2026.0712",
+          "pdf_url": "https://doi.org/10.33168/jliss.2026.0712",
+          "source": {
+            "id": "https://openalex.org/S4210188832",
+            "display_name": "Journal of Logistics Informatics and Service Science",
+            "issn_l": "2409-2665",
+            "issn": [
+              "2409-2665"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Logistics, Informatics and Service Science",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W7167328099.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W7167328099.grobid-xml"
+        },
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "This": [
+            0
+          ],
+          "paper": [
+            1
+          ],
+          "investigates": [
+            2
+          ],
+          "the": [
+            3,
+            18,
+            39,
+            71,
+            114,
+            133,
+            151,
+            189,
+            215
+          ],
+          "impact": [
+            4,
+            91
+          ],
+          "of": [
+            5,
+            42,
+            62,
+            132,
+            145,
+            191
+          ],
+          "digital": [
+            6,
+            84,
+            117,
+            159,
+            203
+          ],
+          "service": [
+            7,
+            35,
+            160,
+            173
+          ],
+          "transformation": [
+            8,
+            85,
+            118,
+            161
+          ],
+          "and": [
+            9,
+            34,
+            69,
+            83,
+            89,
+            113,
+            158,
+            163,
+            198,
+            213,
+            227,
+            240,
+            242
+          ],
+          "financial": [
+            10,
+            29
+          ],
+          "technology": [
+            11
+          ],
+          "(FinTech)": [
+            12
+          ],
+          "adoption": [
+            13,
+            82,
+            99,
+            157
+          ],
+          "on": [
+            14,
+            28,
+            92,
+            188,
+            202,
+            224
+          ],
+          "operational": [
+            15,
+            94,
+            136,
+            165
+          ],
+          "performance": [
+            16,
+            137,
+            166,
+            238
+          ],
+          "in": [
+            17,
+            24,
+            100,
+            135
+          ],
+          "banking": [
+            19,
+            93,
+            179
+          ],
+          "sector,": [
+            20
+          ],
+          "specifically": [
+            21
+          ],
+          "examining": [
+            22
+          ],
+          "banks": [
+            23
+          ],
+          "Jordan.With": [
+            25
+          ],
+          "rising": [
+            26
+          ],
+          "pressure": [
+            27
+          ],
+          "institutions": [
+            30
+          ],
+          "to": [
+            31,
+            49,
+            102,
+            150
+          ],
+          "optimize": [
+            32
+          ],
+          "efficiency": [
+            33
+          ],
+          "delivery": [
+            36
+          ],
+          "through": [
+            37,
+            171
+          ],
+          "digitalization,": [
+            38
+          ],
+          "mediating": [
+            40
+          ],
+          "role": [
+            41
+          ],
+          "technologyenabled": [
+            43
+          ],
+          "capabilities": [
+            44,
+            204
+          ],
+          "has": [
+            45
+          ],
+          "become": [
+            46
+          ],
+          "increasingly": [
+            47
+          ],
+          "important": [
+            48
+          ],
+          "understand.Design:": [
+            50
+          ],
+          "A": [
+            51
+          ],
+          "crosssectional": [
+            52
+          ],
+          "survey": [
+            53
+          ],
+          "was": [
+            54
+          ],
+          "used": [
+            55
+          ],
+          "with": [
+            56,
+            195,
+            208
+          ],
+          "a": [
+            57,
+            74,
+            87,
+            129,
+            172,
+            199
+          ],
+          "quantitative": [
+            58
+          ],
+          "design": [
+            59
+          ],
+          "among": [
+            60
+          ],
+          "employees": [
+            61
+          ],
+          "Jordanian": [
+            63
+          ],
+          "banks.We": [
+            64
+          ],
+          "collected": [
+            65
+          ],
+          "312": [
+            66
+          ],
+          "valid": [
+            67
+          ],
+          "responses": [
+            68
+          ],
+          "analyzed": [
+            70
+          ],
+          "data": [
+            72,
+            226
+          ],
+          "using": [
+            73
+          ],
+          "two-step": [
+            75
+          ],
+          "PLS-SEM": [
+            76
+          ],
+          "approach.Results": [
+            77
+          ],
+          "show": [
+            78
+          ],
+          "that": [
+            79,
+            205
+          ],
+          "both": [
+            80,
+            169
+          ],
+          "FinTech": [
+            81,
+            98,
+            156,
+            193
+          ],
+          "have": [
+            86
+          ],
+          "positive": [
+            88
+          ],
+          "significant": [
+            90,
+            123,
+            130
+          ],
+          "performance.The": [
+            95
+          ],
+          "result": [
+            96,
+            115
+          ],
+          "for": [
+            97,
+            116,
+            168,
+            185
+          ],
+          "relation": [
+            101
+          ],
+          "Financial": [
+            103
+          ],
+          "Performance": [
+            104
+          ],
+          "is": [
+            105,
+            119,
+            217
+          ],
+          "substantial": [
+            106
+          ],
+          "(β": [
+            107
+          ],
+          "=": [
+            108,
+            139
+          ],
+          "0.572,": [
+            109
+          ],
+          "p": [
+            110
+          ],
+          "<": [
+            111,
+            125
+          ],
+          "0.001)": [
+            112
+          ],
+          "moderate": [
+            120
+          ],
+          "but": [
+            121
+          ],
+          "statistically": [
+            122
+          ],
+          "(p": [
+            124
+          ],
+          "0.01).The": [
+            126
+          ],
+          "model": [
+            127
+          ],
+          "explains": [
+            128
+          ],
+          "proportion": [
+            131
+          ],
+          "variance": [
+            134
+          ],
+          "(R²": [
+            138
+          ],
+          "0.620),": [
+            140
+          ],
+          "suggesting": [
+            141
+          ],
+          "an": [
+            142,
+            177
+          ],
+          "acceptable": [
+            143
+          ],
+          "level": [
+            144
+          ],
+          "explanatory": [
+            146
+          ],
+          "power.This": [
+            147
+          ],
+          "study": [
+            148,
+            216
+          ],
+          "adds": [
+            149
+          ],
+          "existing": [
+            152
+          ],
+          "literature": [
+            153
+          ],
+          "by": [
+            154,
+            219
+          ],
+          "investigating": [
+            155
+          ],
+          "simultaneously": [
+            162
+          ],
+          "deriving": [
+            164
+          ],
+          "measures": [
+            167
+          ],
+          "constructs": [
+            170
+          ],
+          "systems": [
+            174
+          ],
+          "lens": [
+            175
+          ],
+          "within": [
+            176
+          ],
+          "emerging": [
+            178
+          ],
+          "context.They": [
+            180
+          ],
+          "also": [
+            181
+          ],
+          "offer": [
+            182
+          ],
+          "practical": [
+            183
+          ],
+          "insights": [
+            184
+          ],
+          "bank": [
+            186
+          ],
+          "managers": [
+            187
+          ],
+          "value": [
+            190
+          ],
+          "balancing": [
+            192
+          ],
+          "strategies": [
+            194
+          ],
+          "process-level": [
+            196
+          ],
+          "enhancements": [
+            197
+          ],
+          "stronger": [
+            200
+          ],
+          "focus": [
+            201
+          ],
+          "align": [
+            206
+          ],
+          "services": [
+            207
+          ],
+          "client": [
+            209
+          ],
+          "needs,": [
+            210
+          ],
+          "improving": [
+            211
+          ],
+          "responsiveness": [
+            212
+          ],
+          "effectiveness.Nevertheless,": [
+            214
+          ],
+          "limited": [
+            218
+          ],
+          "its": [
+            220
+          ],
+          "cross-sectional": [
+            221
+          ],
+          "design,": [
+            222
+          ],
+          "dependence": [
+            223
+          ],
+          "self-reported": [
+            225
+          ],
+          "single-country": [
+            228
+          ],
+          "setting.Further": [
+            229
+          ],
+          "investigations": [
+            230
+          ],
+          "should": [
+            231
+          ],
+          "consider": [
+            232
+          ],
+          "longitudinal": [
+            233
+          ],
+          "designs,": [
+            234
+          ],
+          "such": [
+            235
+          ],
+          "as": [
+            236
+          ],
+          "objective": [
+            237
+          ],
+          "indicators": [
+            239
+          ],
+          "cross-ethnic": [
+            241
+          ],
+          "geospatial": [
+            243
+          ],
+          "studies.": [
+            244
+          ]
+        },
+        "counts_by_year": [],
+        "updated_date": "2026-08-21T09:56:20.448147",
+        "created_date": "2026-07-05T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4413348340",
+        "doi": "https://doi.org/10.37641/jimkes.v13i5.3540",
+        "title": "Fintech, Digital Branding, and Customer Engagement to Enhance Gayo Arabica Coffee SMEs' Performance",
+        "display_name": "Fintech, Digital Branding, and Customer Engagement to Enhance Gayo Arabica Coffee SMEs' Performance",
+        "relevance_score": 1.2732103,
+        "publication_year": 2025,
+        "publication_date": "2025-08-16",
+        "ids": {
+          "openalex": "https://openalex.org/W4413348340",
+          "doi": "https://doi.org/10.37641/jimkes.v13i5.3540"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.37641/jimkes.v13i5.3540",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.37641/jimkes.v13i5.3540",
+          "pdf_url": "https://jurnal.ibik.ac.id/index.php/jimkes/article/download/3540/2680/17799",
+          "source": {
+            "id": "https://openalex.org/S4210180788",
+            "display_name": "Jurnal Ilmiah Manajemen Kesatuan",
+            "issn_l": "2337-7860",
+            "issn": [
+              "2337-7860",
+              "2721-169X"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Jurnal Ilmiah Manajemen Kesatuan",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://jurnal.ibik.ac.id/index.php/jimkes/article/download/3540/2680/17799",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5019034376",
+              "display_name": "Deva Djohan",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210146275",
+                "display_name": "Institut Teknologi dan Bisnis Kalbe",
+                "ror": "https://ror.org/04bs5h869",
+                "country_code": "ID",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210146275"
+                ]
+              }
+            ],
+            "countries": [
+              "ID"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Deva Djohan",
+            "raw_affiliation_strings": [
+              "Institut Bisnis Informasi Teknologi dan Bisnis, Indonesia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institut Bisnis Informasi Teknologi dan Bisnis, Indonesia",
+                "institution_ids": [
+                  "https://openalex.org/I4210146275"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5089699633",
+              "display_name": "Indra Adi Budiman",
+              "orcid": "https://orcid.org/0009-0001-5261-2549"
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "Indra Budiman",
+            "raw_affiliation_strings": [
+              "Universitas Mahkota Tricom Unggul, Indonesia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Universitas Mahkota Tricom Unggul, Indonesia",
+                "institution_ids": []
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5034856859",
+              "display_name": "Nasib",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210146275",
+                "display_name": "Institut Teknologi dan Bisnis Kalbe",
+                "ror": "https://ror.org/04bs5h869",
+                "country_code": "ID",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210146275"
+                ]
+              }
+            ],
+            "countries": [
+              "ID"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Nasib",
+            "raw_affiliation_strings": [
+              "Institut Bisnis Informasi Teknologi dan Bisnis"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institut Bisnis Informasi Teknologi dan Bisnis",
+                "institution_ids": [
+                  "https://openalex.org/I4210146275"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5098964615",
+              "display_name": "Mhd Restu Razaq",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210146275",
+                "display_name": "Institut Teknologi dan Bisnis Kalbe",
+                "ror": "https://ror.org/04bs5h869",
+                "country_code": "ID",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210146275"
+                ]
+              }
+            ],
+            "countries": [
+              "ID"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Mhd Restu Razaq",
+            "raw_affiliation_strings": [
+              "Institut Bisnis Informasi Teknologi dan Bisnis, Indonesia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institut Bisnis Informasi Teknologi dan Bisnis, Indonesia",
+                "institution_ids": [
+                  "https://openalex.org/I4210146275"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5041641604",
+              "display_name": "Muhammad Zainuddin Fathoni",
+              "orcid": "https://orcid.org/0000-0002-5930-1743"
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "Mahammad Fathoni",
+            "raw_affiliation_strings": [
+              "Politeknik Ganesha Medan, Indonesia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Politeknik Ganesha Medan, Indonesia",
+                "institution_ids": []
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.0,
+        "has_fulltext": true,
+        "cited_by_count": 0,
+        "citation_normalized_percentile": {
+          "value": 0.30500234,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": "13",
+          "issue": "5",
+          "first_page": "3449",
+          "last_page": "3460"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11995",
+          "display_name": "FinTech, Crowdfunding, Digital Finance",
+          "score": 0.9732000231742859,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1404",
+            "display_name": "Management Information Systems"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/14",
+            "display_name": "Business, Management and Accounting"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11995",
+            "display_name": "FinTech, Crowdfunding, Digital Finance",
+            "score": 0.9732000231742859,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1404",
+              "display_name": "Management Information Systems"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/14",
+              "display_name": "Business, Management and Accounting"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10987",
+            "display_name": "Microfinance and Financial Inclusion",
+            "score": 0.965499997138977,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2002",
+              "display_name": "Economics and Econometrics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/20",
+              "display_name": "Economics, Econometrics and Finance"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/business",
+            "display_name": "Business",
+            "score": 0.7543103694915771
+          },
+          {
+            "id": "https://openalex.org/keywords/business-administration",
+            "display_name": "Business administration",
+            "score": 0.4525720775127411
+          },
+          {
+            "id": "https://openalex.org/keywords/customer-engagement",
+            "display_name": "Customer engagement",
+            "score": 0.45120346546173096
+          },
+          {
+            "id": "https://openalex.org/keywords/marketing",
+            "display_name": "Marketing",
+            "score": 0.3312625288963318
+          },
+          {
+            "id": "https://openalex.org/keywords/computer-science",
+            "display_name": "Computer science",
+            "score": 0.12816375494003296
+          },
+          {
+            "id": "https://openalex.org/keywords/social-media",
+            "display_name": "Social media",
+            "score": 0.10834482312202454
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.7543103694915771
+          },
+          {
+            "id": "https://openalex.org/C178550888",
+            "wikidata": "https://www.wikidata.org/wiki/Q2043282",
+            "display_name": "Business administration",
+            "level": 1,
+            "score": 0.4525720775127411
+          },
+          {
+            "id": "https://openalex.org/C2776915394",
+            "wikidata": "https://www.wikidata.org/wiki/Q5196451",
+            "display_name": "Customer engagement",
+            "level": 3,
+            "score": 0.45120346546173096
+          },
+          {
+            "id": "https://openalex.org/C162853370",
+            "wikidata": "https://www.wikidata.org/wiki/Q39809",
+            "display_name": "Marketing",
+            "level": 1,
+            "score": 0.3312625288963318
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.12816375494003296
+          },
+          {
+            "id": "https://openalex.org/C518677369",
+            "wikidata": "https://www.wikidata.org/wiki/Q202833",
+            "display_name": "Social media",
+            "level": 2,
+            "score": 0.10834482312202454
+          },
+          {
+            "id": "https://openalex.org/C136764020",
+            "wikidata": "https://www.wikidata.org/wiki/Q466",
+            "display_name": "World Wide Web",
+            "level": 1,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.37641/jimkes.v13i5.3540",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.37641/jimkes.v13i5.3540",
+            "pdf_url": "https://jurnal.ibik.ac.id/index.php/jimkes/article/download/3540/2680/17799",
+            "source": {
+              "id": "https://openalex.org/S4210180788",
+              "display_name": "Jurnal Ilmiah Manajemen Kesatuan",
+              "issn_l": "2337-7860",
+              "issn": [
+                "2337-7860",
+                "2721-169X"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "journal"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Jurnal Ilmiah Manajemen Kesatuan",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.37641/jimkes.v13i5.3540",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.37641/jimkes.v13i5.3540",
+          "pdf_url": "https://jurnal.ibik.ac.id/index.php/jimkes/article/download/3540/2680/17799",
+          "source": {
+            "id": "https://openalex.org/S4210180788",
+            "display_name": "Jurnal Ilmiah Manajemen Kesatuan",
+            "issn_l": "2337-7860",
+            "issn": [
+              "2337-7860",
+              "2721-169X"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Jurnal Ilmiah Manajemen Kesatuan",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4413348340.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4413348340.grobid-xml"
+        },
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W4391375266",
+          "https://openalex.org/W3097186570",
+          "https://openalex.org/W3011003115",
+          "https://openalex.org/W4281764143",
+          "https://openalex.org/W3133286386",
+          "https://openalex.org/W3131352854",
+          "https://openalex.org/W2980164204",
+          "https://openalex.org/W3132716659",
+          "https://openalex.org/W1562991075",
+          "https://openalex.org/W2187644337"
+        ],
+        "abstract_inverted_index": {
+          "This": [
+            0,
+            141
+          ],
+          "study": [
+            1,
+            142,
+            168
+          ],
+          "aims": [
+            2
+          ],
+          "to": [
+            3,
+            45,
+            98,
+            137,
+            145,
+            177
+          ],
+          "analyze": [
+            4
+          ],
+          "the": [
+            5,
+            15,
+            66,
+            105,
+            124
+          ],
+          "influence": [
+            6
+          ],
+          "of": [
+            7,
+            18,
+            126
+          ],
+          "financial": [
+            8,
+            16,
+            91,
+            110,
+            119,
+            128,
+            161
+          ],
+          "technology": [
+            9,
+            52,
+            129
+          ],
+          "(fintech)": [
+            10
+          ],
+          "and": [
+            11,
+            61,
+            80,
+            90,
+            109,
+            118,
+            130,
+            149,
+            157,
+            164,
+            172,
+            183
+          ],
+          "digital": [
+            12,
+            51,
+            81,
+            116,
+            131,
+            146
+          ],
+          "branding": [
+            13,
+            82,
+            117,
+            132
+          ],
+          "on": [
+            14,
+            87
+          ],
+          "performance": [
+            17
+          ],
+          "Gayo": [
+            19
+          ],
+          "Arabica": [
+            20
+          ],
+          "coffee": [
+            21
+          ],
+          "MSMEs": [
+            22
+          ],
+          "in": [
+            23,
+            53,
+            104
+          ],
+          "Central": [
+            24
+          ],
+          "Aceh": [
+            25
+          ],
+          "Regency,": [
+            26
+          ],
+          "with": [
+            27,
+            39,
+            134
+          ],
+          "customer": [
+            28,
+            88,
+            94,
+            135
+          ],
+          "engagement": [
+            29,
+            89,
+            95,
+            136
+          ],
+          "as": [
+            30,
+            112,
+            114
+          ],
+          "a": [
+            31,
+            84,
+            100
+          ],
+          "mediating": [
+            32,
+            102
+          ],
+          "variable.": [
+            33
+          ],
+          "A": [
+            34
+          ],
+          "quantitative": [
+            35
+          ],
+          "approach": [
+            36
+          ],
+          "was": [
+            37,
+            59
+          ],
+          "employed,": [
+            38
+          ],
+          "data": [
+            40,
+            62
+          ],
+          "collected": [
+            41
+          ],
+          "through": [
+            42
+          ],
+          "questionnaires": [
+            43
+          ],
+          "distributed": [
+            44
+          ],
+          "78": [
+            46
+          ],
+          "MSME": [
+            47
+          ],
+          "actors": [
+            48
+          ],
+          "actively": [
+            49
+          ],
+          "utilizing": [
+            50
+          ],
+          "their": [
+            54
+          ],
+          "business": [
+            55,
+            139
+          ],
+          "operations.": [
+            56
+          ],
+          "Purposive": [
+            57
+          ],
+          "sampling": [
+            58
+          ],
+          "applied,": [
+            60
+          ],
+          "were": [
+            63
+          ],
+          "analyzed": [
+            64
+          ],
+          "using": [
+            65
+          ],
+          "Partial": [
+            67
+          ],
+          "Least": [
+            68
+          ],
+          "Squares–Structural": [
+            69
+          ],
+          "Equation": [
+            70
+          ],
+          "Modeling": [
+            71
+          ],
+          "(PLS-SEM)": [
+            72
+          ],
+          "method.": [
+            73
+          ],
+          "The": [
+            74,
+            167
+          ],
+          "findings": [
+            75
+          ],
+          "indicate": [
+            76
+          ],
+          "that": [
+            77
+          ],
+          "both": [
+            78
+          ],
+          "fintech": [
+            79,
+            108
+          ],
+          "have": [
+            83
+          ],
+          "significant": [
+            85,
+            101
+          ],
+          "effect": [
+            86
+          ],
+          "performance.": [
+            92,
+            120
+          ],
+          "Furthermore,": [
+            93
+          ],
+          "is": [
+            96,
+            169,
+            175
+          ],
+          "proven": [
+            97
+          ],
+          "be": [
+            99
+          ],
+          "variable": [
+            103
+          ],
+          "relationship": [
+            106
+          ],
+          "between": [
+            107,
+            115
+          ],
+          "performance,": [
+            111
+          ],
+          "well": [
+            113
+          ],
+          "These": [
+            121
+          ],
+          "results": [
+            122
+          ],
+          "highlight": [
+            123
+          ],
+          "importance": [
+            125
+          ],
+          "integrating": [
+            127
+          ],
+          "strategies": [
+            133
+          ],
+          "optimize": [
+            138
+          ],
+          "outcomes.": [
+            140
+          ],
+          "contributes": [
+            143
+          ],
+          "theoretically": [
+            144
+          ],
+          "entrepreneurship": [
+            147
+          ],
+          "literature": [
+            148
+          ],
+          "offers": [
+            150
+          ],
+          "practical": [
+            151
+          ],
+          "insights": [
+            152
+          ],
+          "for": [
+            153
+          ],
+          "MSMEs,": [
+            154
+          ],
+          "platform": [
+            155
+          ],
+          "developers,": [
+            156
+          ],
+          "policymakers": [
+            158
+          ],
+          "particularly": [
+            159
+          ],
+          "regarding": [
+            160
+          ],
+          "literacy": [
+            162
+          ],
+          "improvement": [
+            163
+          ],
+          "brand": [
+            165
+          ],
+          "strengthening.": [
+            166
+          ],
+          "geographically": [
+            170
+          ],
+          "limited,": [
+            171
+          ],
+          "future": [
+            173
+          ],
+          "research": [
+            174
+          ],
+          "recommended": [
+            176
+          ],
+          "conduct": [
+            178
+          ],
+          "comparative": [
+            179
+          ],
+          "studies": [
+            180
+          ],
+          "across": [
+            181
+          ],
+          "sectors": [
+            182
+          ],
+          "regions.": [
+            184
+          ]
+        },
+        "counts_by_year": [],
+        "updated_date": "2026-08-21T09:56:20.448147",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W7171863898",
+        "doi": "https://doi.org/10.3389/frevc.2026.1882785",
+        "title": "Circular economy readiness in Jordan's construction sector expert evidence and structural modeling from a resource economics perspective",
+        "display_name": "Circular economy readiness in Jordan's construction sector expert evidence and structural modeling from a resource economics perspective",
+        "relevance_score": 1.0746391,
+        "publication_year": 2026,
+        "publication_date": "2026-07-30",
+        "ids": {
+          "openalex": "https://openalex.org/W7171863898",
+          "doi": "https://doi.org/10.3389/frevc.2026.1882785"
+        },
+        "language": null,
+        "primary_location": {
+          "id": "doi:10.3389/frevc.2026.1882785",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3389/frevc.2026.1882785",
+          "pdf_url": "https://www.frontiersin.org/journals/environmental-economics/articles/10.3389/frevc.2026.1882785/pdf",
+          "source": {
+            "id": "https://openalex.org/S4387281381",
+            "display_name": "Frontiers in Environmental Economics",
+            "issn_l": "2813-2823",
+            "issn": [
+              "2813-2823"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320527",
+            "host_organization_name": "Frontiers Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320527"
+            ],
+            "host_organization_lineage_names": [
+              "Frontiers Media"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Frontiers in Environmental Economics",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.frontiersin.org/journals/environmental-economics/articles/10.3389/frevc.2026.1882785/pdf",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5135341696",
+              "display_name": "Ibrahim Moh’d Saraireh",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I145019703",
+                "display_name": "Al-Zaytoonah University of Jordan",
+                "ror": "https://ror.org/04a5b0p13",
+                "country_code": "JO",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I145019703"
+                ]
+              }
+            ],
+            "countries": [
+              "JO"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Ibrahim Moh'd Saraireh",
+            "raw_affiliation_strings": [
+              "Department of Civil and Infrastructure Engineering, Faculty of Engineering and Technology, Al-Zaytoonah University of Jordan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Civil and Infrastructure Engineering, Faculty of Engineering and Technology, Al-Zaytoonah University of Jordan",
+                "institution_ids": [
+                  "https://openalex.org/I145019703"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5106011306",
+              "display_name": "Faten Albtoush",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I27570832",
+                "display_name": "Jadara University",
+                "ror": "https://ror.org/001drnv35",
+                "country_code": "JO",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I27570832"
+                ]
+              }
+            ],
+            "countries": [
+              "JO"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Faten Albtoush",
+            "raw_affiliation_strings": [
+              "Jadara University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Jadara University",
+                "institution_ids": [
+                  "https://openalex.org/I27570832"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5037655156",
+              "display_name": "Mohammed A.KA. Al-Btoush",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I196431481",
+                "display_name": "Isra University",
+                "ror": "https://ror.org/04rmz8121",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I196431481"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I92449659",
+                "display_name": "Isra University",
+                "ror": "https://ror.org/04d4bt482",
+                "country_code": "JO",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I92449659"
+                ]
+              }
+            ],
+            "countries": [
+              "JO",
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Mohammed A. KA. Al-Btoush",
+            "raw_affiliation_strings": [
+              "Faculty of Engineering, Isra University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Engineering, Isra University",
+                "institution_ids": [
+                  "https://openalex.org/I196431481",
+                  "https://openalex.org/I92449659"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 4,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": {
+          "value": 1175,
+          "currency": "CHF",
+          "value_usd": 1418
+        },
+        "apc_paid": {
+          "value": 1175,
+          "currency": "CHF",
+          "value_usd": 1418
+        },
+        "fwci": 0.0,
+        "has_fulltext": true,
+        "cited_by_count": 0,
+        "citation_normalized_percentile": {
+          "value": 0.76949995,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": "5",
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11847",
+          "display_name": "Recycled Aggregate Concrete Performance",
+          "score": 0.9350000023841858,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2215",
+            "display_name": "Building and Construction"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11847",
+            "display_name": "Recycled Aggregate Concrete Performance",
+            "score": 0.9350000023841858,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2215",
+              "display_name": "Building and Construction"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10539",
+            "display_name": "Sustainable Supply Chain Management",
+            "score": 0.030899999663233757,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1408",
+              "display_name": "Strategy and Management"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/14",
+              "display_name": "Business, Management and Accounting"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11108",
+            "display_name": "Municipal Solid Waste Management",
+            "score": 0.007199999876320362,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2311",
+              "display_name": "Waste Management and Disposal"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/23",
+              "display_name": "Environmental Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/structural-equation-modeling",
+            "display_name": "Structural equation modeling",
+            "score": 0.8205000162124634
+          },
+          {
+            "id": "https://openalex.org/keywords/circular-economy",
+            "display_name": "Circular economy",
+            "score": 0.6901999711990356
+          },
+          {
+            "id": "https://openalex.org/keywords/preparedness",
+            "display_name": "Preparedness",
+            "score": 0.5371999740600586
+          },
+          {
+            "id": "https://openalex.org/keywords/procurement",
+            "display_name": "Procurement",
+            "score": 0.5242000222206116
+          },
+          {
+            "id": "https://openalex.org/keywords/sustainability",
+            "display_name": "Sustainability",
+            "score": 0.5049999952316284
+          },
+          {
+            "id": "https://openalex.org/keywords/demolition",
+            "display_name": "Demolition",
+            "score": 0.4433000087738037
+          },
+          {
+            "id": "https://openalex.org/keywords/externality",
+            "display_name": "Externality",
+            "score": 0.4327999949455261
+          },
+          {
+            "id": "https://openalex.org/keywords/confirmatory-factor-analysis",
+            "display_name": "Confirmatory factor analysis",
+            "score": 0.43130001425743103
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C71104824",
+            "wikidata": "https://www.wikidata.org/wiki/Q1476639",
+            "display_name": "Structural equation modeling",
+            "level": 2,
+            "score": 0.8205000162124634
+          },
+          {
+            "id": "https://openalex.org/C2777448596",
+            "wikidata": "https://www.wikidata.org/wiki/Q497743",
+            "display_name": "Circular economy",
+            "level": 2,
+            "score": 0.6901999711990356
+          },
+          {
+            "id": "https://openalex.org/C2777042776",
+            "wikidata": "https://www.wikidata.org/wiki/Q4583103",
+            "display_name": "Preparedness",
+            "level": 2,
+            "score": 0.5371999740600586
+          },
+          {
+            "id": "https://openalex.org/C201650216",
+            "wikidata": "https://www.wikidata.org/wiki/Q829492",
+            "display_name": "Procurement",
+            "level": 2,
+            "score": 0.5242000222206116
+          },
+          {
+            "id": "https://openalex.org/C66204764",
+            "wikidata": "https://www.wikidata.org/wiki/Q219416",
+            "display_name": "Sustainability",
+            "level": 2,
+            "score": 0.5049999952316284
+          },
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.4968999922275543
+          },
+          {
+            "id": "https://openalex.org/C2781469121",
+            "wikidata": "https://www.wikidata.org/wiki/Q331483",
+            "display_name": "Demolition",
+            "level": 2,
+            "score": 0.4433000087738037
+          },
+          {
+            "id": "https://openalex.org/C16118543",
+            "wikidata": "https://www.wikidata.org/wiki/Q275372",
+            "display_name": "Externality",
+            "level": 2,
+            "score": 0.4327999949455261
+          },
+          {
+            "id": "https://openalex.org/C40722632",
+            "wikidata": "https://www.wikidata.org/wiki/Q5160137",
+            "display_name": "Confirmatory factor analysis",
+            "level": 3,
+            "score": 0.43130001425743103
+          },
+          {
+            "id": "https://openalex.org/C121426985",
+            "wikidata": "https://www.wikidata.org/wiki/Q591763",
+            "display_name": "Private sector",
+            "level": 2,
+            "score": 0.41609999537467957
+          },
+          {
+            "id": "https://openalex.org/C134560507",
+            "wikidata": "https://www.wikidata.org/wiki/Q753291",
+            "display_name": "Environmental economics",
+            "level": 1,
+            "score": 0.398499995470047
+          },
+          {
+            "id": "https://openalex.org/C206345919",
+            "wikidata": "https://www.wikidata.org/wiki/Q20380951",
+            "display_name": "Resource (disambiguation)",
+            "level": 2,
+            "score": 0.3758000135421753
+          },
+          {
+            "id": "https://openalex.org/C12713177",
+            "wikidata": "https://www.wikidata.org/wiki/Q1900281",
+            "display_name": "Perspective (graphical)",
+            "level": 2,
+            "score": 0.36970001459121704
+          },
+          {
+            "id": "https://openalex.org/C100001284",
+            "wikidata": "https://www.wikidata.org/wiki/Q2248246",
+            "display_name": "Public economics",
+            "level": 1,
+            "score": 0.3582000136375427
+          },
+          {
+            "id": "https://openalex.org/C40700",
+            "wikidata": "https://www.wikidata.org/wiki/Q1411783",
+            "display_name": "Industrial organization",
+            "level": 1,
+            "score": 0.3499000072479248
+          },
+          {
+            "id": "https://openalex.org/C2777724570",
+            "wikidata": "https://www.wikidata.org/wiki/Q4669907",
+            "display_name": "Absorptive capacity",
+            "level": 2,
+            "score": 0.3386000096797943
+          },
+          {
+            "id": "https://openalex.org/C2779585090",
+            "wikidata": "https://www.wikidata.org/wiki/Q3457762",
+            "display_name": "Resilience (materials science)",
+            "level": 2,
+            "score": 0.329800009727478
+          },
+          {
+            "id": "https://openalex.org/C162324750",
+            "wikidata": "https://www.wikidata.org/wiki/Q8134",
+            "display_name": "Economics",
+            "level": 0,
+            "score": 0.3061999976634979
+          },
+          {
+            "id": "https://openalex.org/C147887874",
+            "wikidata": "https://www.wikidata.org/wiki/Q16252774",
+            "display_name": "Institutional theory",
+            "level": 2,
+            "score": 0.2971999943256378
+          },
+          {
+            "id": "https://openalex.org/C188959678",
+            "wikidata": "https://www.wikidata.org/wiki/Q2145933",
+            "display_name": "Resource dependence theory",
+            "level": 2,
+            "score": 0.2858000099658966
+          },
+          {
+            "id": "https://openalex.org/C2778076428",
+            "wikidata": "https://www.wikidata.org/wiki/Q15798477",
+            "display_name": "Demolition waste",
+            "level": 3,
+            "score": 0.2808000147342682
+          },
+          {
+            "id": "https://openalex.org/C137176749",
+            "wikidata": "https://www.wikidata.org/wiki/Q4105337",
+            "display_name": "Psychological resilience",
+            "level": 2,
+            "score": 0.2775000035762787
+          },
+          {
+            "id": "https://openalex.org/C107826830",
+            "wikidata": "https://www.wikidata.org/wiki/Q929380",
+            "display_name": "Environmental resource management",
+            "level": 1,
+            "score": 0.2671000063419342
+          },
+          {
+            "id": "https://openalex.org/C119002697",
+            "wikidata": "https://www.wikidata.org/wiki/Q3376999",
+            "display_name": "LISREL",
+            "level": 3,
+            "score": 0.2648000121116638
+          },
+          {
+            "id": "https://openalex.org/C147859227",
+            "wikidata": "https://www.wikidata.org/wiki/Q294217",
+            "display_name": "Public sector",
+            "level": 2,
+            "score": 0.26030001044273376
+          },
+          {
+            "id": "https://openalex.org/C198477413",
+            "wikidata": "https://www.wikidata.org/wiki/Q7647069",
+            "display_name": "Survey data collection",
+            "level": 2,
+            "score": 0.25929999351501465
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.3389/frevc.2026.1882785",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.3389/frevc.2026.1882785",
+            "pdf_url": "https://www.frontiersin.org/journals/environmental-economics/articles/10.3389/frevc.2026.1882785/pdf",
+            "source": {
+              "id": "https://openalex.org/S4387281381",
+              "display_name": "Frontiers in Environmental Economics",
+              "issn_l": "2813-2823",
+              "issn": [
+                "2813-2823"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320527",
+              "host_organization_name": "Frontiers Media",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320527"
+              ],
+              "host_organization_lineage_names": [
+                "Frontiers Media"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Frontiers in Environmental Economics",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.3389/frevc.2026.1882785",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3389/frevc.2026.1882785",
+          "pdf_url": "https://www.frontiersin.org/journals/environmental-economics/articles/10.3389/frevc.2026.1882785/pdf",
+          "source": {
+            "id": "https://openalex.org/S4387281381",
+            "display_name": "Frontiers in Environmental Economics",
+            "issn_l": "2813-2823",
+            "issn": [
+              "2813-2823"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320527",
+            "host_organization_name": "Frontiers Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320527"
+            ],
+            "host_organization_lineage_names": [
+              "Frontiers Media"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Frontiers in Environmental Economics",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.40793105959892273,
+            "display_name": "Responsible consumption and production",
+            "id": "https://metadata.un.org/sdg/12"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W7171863898.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W7171863898.grobid-xml"
+        },
+        "referenced_works_count": 27,
+        "referenced_works": [
+          "https://openalex.org/W1732240353",
+          "https://openalex.org/W2005092827",
+          "https://openalex.org/W2105846236",
+          "https://openalex.org/W2403719016",
+          "https://openalex.org/W2563187409",
+          "https://openalex.org/W2565277564",
+          "https://openalex.org/W2590760796",
+          "https://openalex.org/W2756283300",
+          "https://openalex.org/W3012502687",
+          "https://openalex.org/W3155811159",
+          "https://openalex.org/W3160121293",
+          "https://openalex.org/W4200279589",
+          "https://openalex.org/W4234806525",
+          "https://openalex.org/W4235678817",
+          "https://openalex.org/W4243667233",
+          "https://openalex.org/W4408370827",
+          "https://openalex.org/W4414717583",
+          "https://openalex.org/W4416576401",
+          "https://openalex.org/W4417229159",
+          "https://openalex.org/W7122494109",
+          "https://openalex.org/W7124356095",
+          "https://openalex.org/W7125215832",
+          "https://openalex.org/W7126088117",
+          "https://openalex.org/W7161278255",
+          "https://openalex.org/W7163523495",
+          "https://openalex.org/W7164924650",
+          "https://openalex.org/W7165535250"
+        ],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "Introduction": [
+            0
+          ],
+          "Given": [
+            1
+          ],
+          "the": [
+            2,
+            79,
+            322
+          ],
+          "construction": [
+            3,
+            15,
+            39,
+            87,
+            323
+          ],
+          "sector's": [
+            4
+          ],
+          "heavy": [
+            5
+          ],
+          "use": [
+            6
+          ],
+          "of": [
+            7,
+            14,
+            47,
+            105
+          ],
+          "raw": [
+            8
+          ],
+          "materials": [
+            9
+          ],
+          "and": [
+            10,
+            16,
+            52,
+            71,
+            76,
+            82,
+            101,
+            116,
+            140,
+            144,
+            153,
+            168,
+            176,
+            227,
+            245,
+            267,
+            284,
+            287,
+            293,
+            317
+          ],
+          "its": [
+            11
+          ],
+          "large": [
+            12
+          ],
+          "quantities": [
+            13
+          ],
+          "demolition": [
+            17
+          ],
+          "(C&D)": [
+            18
+          ],
+          "waste,": [
+            19,
+            51
+          ],
+          "it": [
+            20
+          ],
+          "plays": [
+            21
+          ],
+          "a": [
+            22,
+            28,
+            63,
+            102,
+            122,
+            298
+          ],
+          "key": [
+            23
+          ],
+          "role": [
+            24
+          ],
+          "in": [
+            25,
+            38,
+            59,
+            66,
+            78,
+            86,
+            108,
+            183,
+            321
+          ],
+          "moving": [
+            26
+          ],
+          "toward": [
+            27,
+            310
+          ],
+          "circular": [
+            29
+          ],
+          "economy": [
+            30
+          ],
+          "(CE).": [
+            31
+          ],
+          "From": [
+            32
+          ],
+          "an": [
+            33
+          ],
+          "environmental": [
+            34
+          ],
+          "economics": [
+            35
+          ],
+          "perspective,": [
+            36
+          ],
+          "CE": [
+            37,
+            69,
+            84,
+            106,
+            118,
+            126,
+            142,
+            164,
+            169,
+            214,
+            268
+          ],
+          "is": [
+            40,
+            216
+          ],
+          "directly": [
+            41
+          ],
+          "linked": [
+            42
+          ],
+          "to": [
+            43,
+            159,
+            313
+          ],
+          "resource": [
+            44,
+            291
+          ],
+          "productivity,": [
+            45
+          ],
+          "mitigation": [
+            46
+          ],
+          "externalities": [
+            48
+          ],
+          "from": [
+            49,
+            147
+          ],
+          "C&D": [
+            50,
+            130
+          ],
+          "reduced": [
+            53
+          ],
+          "dependence": [
+            54
+          ],
+          "on": [
+            55,
+            112,
+            124
+          ],
+          "imported": [
+            56
+          ],
+          "materials,": [
+            57
+          ],
+          "especially": [
+            58
+          ],
+          "resource-constrained": [
+            60,
+            299
+          ],
+          "economies.": [
+            61
+          ],
+          "Although": [
+            62
+          ],
+          "recent": [
+            64
+          ],
+          "study": [
+            65
+          ],
+          "Jordan": [
+            67
+          ],
+          "links": [
+            68
+          ],
+          "practices": [
+            70
+          ],
+          "organizational": [
+            72
+          ],
+          "capabilities": [
+            73,
+            229,
+            260
+          ],
+          "with": [
+            74,
+            172
+          ],
+          "sustainability": [
+            75
+          ],
+          "resilience": [
+            77
+          ],
+          "private": [
+            80
+          ],
+          "sector": [
+            81
+          ],
+          "SMEs,": [
+            83
+          ],
+          "preparedness": [
+            85
+          ],
+          "has": [
+            88
+          ],
+          "not": [
+            89
+          ],
+          "been": [
+            90
+          ],
+          "assessed.": [
+            91
+          ],
+          "Methods": [
+            92
+          ],
+          "This": [
+            93
+          ],
+          "paper": [
+            94
+          ],
+          "addresses": [
+            95
+          ],
+          "that": [
+            96
+          ],
+          "gap": [
+            97
+          ],
+          "using": [
+            98
+          ],
+          "expert": [
+            99
+          ],
+          "testimony": [
+            100
+          ],
+          "structural": [
+            103,
+            154
+          ],
+          "assessment": [
+            104
+          ],
+          "readiness": [
+            107
+          ],
+          "Jordanian": [
+            109,
+            117
+          ],
+          "construction.": [
+            110
+          ],
+          "Drawing": [
+            111
+          ],
+          "international": [
+            113
+          ],
+          "CE-in-construction": [
+            114
+          ],
+          "literature": [
+            115
+          ],
+          "models,": [
+            119
+          ],
+          "we": [
+            120
+          ],
+          "designed": [
+            121
+          ],
+          "survey": [
+            123
+          ],
+          "current": [
+            125
+          ],
+          "practices,": [
+            127
+          ],
+          "design-stage": [
+            128
+          ],
+          "integration,": [
+            129
+          ],
+          "waste": [
+            131
+          ],
+          "management,": [
+            132
+          ],
+          "drivers,": [
+            133,
+            174
+          ],
+          "barriers,": [
+            134,
+            175
+          ],
+          "internal": [
+            135,
+            166,
+            189,
+            228,
+            259
+          ],
+          "capabilities,": [
+            136,
+            167,
+            190
+          ],
+          "policy/public": [
+            137
+          ],
+          "procurement": [
+            138,
+            285
+          ],
+          "support,": [
+            139
+          ],
+          "future": [
+            141,
+            273
+          ],
+          "prospects,": [
+            143
+          ],
+          "obtained": [
+            145
+          ],
+          "responses": [
+            146
+          ],
+          "150": [
+            148
+          ],
+          "experts.": [
+            149
+          ],
+          "Confirmatory": [
+            150
+          ],
+          "factor": [
+            151
+          ],
+          "analysis": [
+            152
+          ],
+          "equation": [
+            155
+          ],
+          "modeling": [
+            156
+          ],
+          "were": [
+            157
+          ],
+          "used": [
+            158
+          ],
+          "identify": [
+            160
+          ],
+          "latent": [
+            161
+          ],
+          "variables": [
+            162
+          ],
+          "for": [
+            163
+          ],
+          "implementation,": [
+            165
+          ],
+          "outlook,": [
+            170
+          ],
+          "along": [
+            171
+          ],
+          "observed": [
+            173
+          ],
+          "policy/procurement": [
+            177,
+            248
+          ],
+          "support.": [
+            178
+          ],
+          "Results": [
+            179
+          ],
+          "The": [
+            180
+          ],
+          "best-fitting": [
+            181
+          ],
+          "model,": [
+            182
+          ],
+          "which": [
+            184
+          ],
+          "perceived": [
+            185
+          ],
+          "drivers": [
+            186,
+            220
+          ],
+          "also": [
+            187,
+            257
+          ],
+          "support": [
+            188,
+            249,
+            308
+          ],
+          "showed": [
+            191
+          ],
+          "excellent": [
+            192
+          ],
+          "fit": [
+            193
+          ],
+          "(χ": [
+            194
+          ],
+          "2": [
+            195
+          ],
+          "(28)": [
+            196
+          ],
+          "=": [
+            197,
+            200,
+            203,
+            206,
+            209,
+            212,
+            222,
+            231,
+            240,
+            251,
+            254,
+            262,
+            265
+          ],
+          "36.28,": [
+            198
+          ],
+          "p": [
+            199,
+            224,
+            233,
+            242,
+            253,
+            264
+          ],
+          "0.136;": [
+            201
+          ],
+          "CFI": [
+            202
+          ],
+          "0.989;": [
+            204
+          ],
+          "TLI": [
+            205
+          ],
+          "0.984;": [
+            207
+          ],
+          "RMSEA": [
+            208
+          ],
+          "0.044;": [
+            210
+          ],
+          "SRMR": [
+            211
+          ],
+          "0.029).": [
+            213
+          ],
+          "implementation": [
+            215,
+            269
+          ],
+          "positively": [
+            217
+          ],
+          "influenced": [
+            218
+          ],
+          "by": [
+            219,
+            237,
+            247
+          ],
+          "(β": [
+            221,
+            230,
+            239,
+            250,
+            261
+          ],
+          "0.342,": [
+            223
+          ],
+          "<": [
+            225,
+            234,
+            243
+          ],
+          "0.001)": [
+            226
+          ],
+          "0.356,": [
+            232
+          ],
+          "0.001),": [
+            235,
+            244
+          ],
+          "negatively": [
+            236
+          ],
+          "barriers": [
+            238
+          ],
+          "−0.318,": [
+            241
+          ],
+          "modestly": [
+            246
+          ],
+          "0.125,": [
+            252
+          ],
+          "0.036).": [
+            255
+          ],
+          "Drivers": [
+            256
+          ],
+          "predict": [
+            258
+          ],
+          "0.238,": [
+            263
+          ],
+          "0.008),": [
+            266
+          ],
+          "strongly": [
+            270
+          ],
+          "predicts": [
+            271
+          ],
+          "experts'": [
+            272
+          ],
+          "outlook.": [
+            274
+          ],
+          "Discussion": [
+            275
+          ],
+          "These": [
+            276
+          ],
+          "findings": [
+            277
+          ],
+          "highlight": [
+            278
+          ],
+          "priority": [
+            279
+          ],
+          "economic": [
+            280,
+            319
+          ],
+          "levers—capability-building,": [
+            281
+          ],
+          "targeted": [
+            282
+          ],
+          "policy": [
+            283
+          ],
+          "instruments,": [
+            286
+          ],
+          "barrier": [
+            288
+          ],
+          "removal—for": [
+            289
+          ],
+          "improving": [
+            290
+          ],
+          "efficiency": [
+            292
+          ],
+          "internalizing": [
+            294
+          ],
+          "C&D-waste": [
+            295
+          ],
+          "externalities.": [
+            296
+          ],
+          "In": [
+            297
+          ],
+          "context": [
+            300
+          ],
+          "such": [
+            301
+          ],
+          "as": [
+            302
+          ],
+          "Jordan,": [
+            303
+          ],
+          "strengthening": [
+            304
+          ],
+          "these": [
+            305
+          ],
+          "levers": [
+            306
+          ],
+          "can": [
+            307
+          ],
+          "progress": [
+            309
+          ],
+          "SDGs": [
+            311
+          ],
+          "related": [
+            312
+          ],
+          "sustainable": [
+            314
+          ],
+          "production,": [
+            315
+          ],
+          "infrastructure,": [
+            316
+          ],
+          "inclusive": [
+            318
+          ],
+          "growth": [
+            320
+          ],
+          "sector.": [
+            324
+          ]
+        },
+        "counts_by_year": [],
+        "updated_date": "2026-08-24T07:32:12.397491",
+        "created_date": "2026-07-31T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}

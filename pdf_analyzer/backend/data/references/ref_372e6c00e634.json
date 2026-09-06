@@ -1,0 +1,180 @@
+{
+  "reference_id": "ref_372e6c00e634",
+  "project_id": "project_20260906_080439_4b38db9a",
+  "created_at": "2026-09-06T08:05:17.875969+00:00",
+  "input": {
+    "original_text": "11.001",
+    "parsed": {
+      "title": "001",
+      "authors": [],
+      "year": null,
+      "reference_type": "journal-article",
+      "journal": null,
+      "publisher": null,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "doi": null,
+      "isbn": null,
+      "arxiv_id": null
+    }
+  },
+  "canonical": {
+    "title": {
+      "value": "001",
+      "source": "parsed",
+      "confidence": 0.5,
+      "verification_status": "unverified"
+    },
+    "year": {
+      "value": null,
+      "source": "parsed",
+      "confidence": 0.0,
+      "verification_status": "unverified"
+    },
+    "venue": {
+      "value": null,
+      "source": "none",
+      "confidence": 0.0,
+      "verification_status": "unverified"
+    },
+    "reference_type": {
+      "value": "journal-article",
+      "source": "classifier",
+      "confidence": 0.75,
+      "verification_status": "unverified"
+    },
+    "publisher": {
+      "value": null,
+      "source": "none",
+      "confidence": 0.0,
+      "verification_status": "unverified"
+    },
+    "volume": null,
+    "issue": null,
+    "pages": null,
+    "abstract": null,
+    "url": null,
+    "identifiers": {
+      "doi": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "missing"
+      },
+      "openalex_id": {
+        "value": null,
+        "source": "openalex",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "arxiv_id": {
+        "value": null,
+        "source": "arxiv_resolver",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "isbn": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_cluster_id": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_url": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      }
+    },
+    "citation_counts": {
+      "canonical_value": null,
+      "google_scholar": null,
+      "openalex": null,
+      "crossref": null
+    }
+  },
+  "canonical_authors": [],
+  "sources": {
+    "openalex": {
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.0,
+      "citation_count": null,
+      "openalex_id": null,
+      "doi": null,
+      "url": null,
+      "pdf_url": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {}
+    },
+    "crossref": {
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.0,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {}
+    },
+    "google_scholar": {
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.2,
+      "url": null,
+      "cluster_id": null,
+      "cited_by_url": null,
+      "citation_count": null,
+      "versions_count": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {}
+    }
+  },
+  "doi_verification": {
+    "status": "missing",
+    "canonical_doi": null,
+    "reconciled_with_arxiv": false,
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
+    "unverified_dois": []
+  },
+  "quality_and_conflicts": {
+    "overall_confidence": 0.2,
+    "metadata_completeness": 0.17,
+    "doi_verified": false,
+    "author_verified": false,
+    "conflicts": []
+  },
+  "telemetry": {
+    "providers_queried": [
+      "openalex",
+      "google_scholar",
+      "crossref"
+    ],
+    "latency_ms": {
+      "openalex": 509.62,
+      "google_scholar": 10.58,
+      "crossref": 4989.89
+    },
+    "candidate_counts": {
+      "openalex": 0,
+      "google_scholar": 1,
+      "crossref": 0
+    },
+    "errors": {}
+  }
+}

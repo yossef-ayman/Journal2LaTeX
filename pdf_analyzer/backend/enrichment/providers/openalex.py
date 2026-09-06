@@ -70,6 +70,8 @@ class OpenAlexProvider(AcademicProvider):
         params = dict(base_params or {})
         if config.openalex_email and "mailto" not in params:
             params["mailto"] = config.openalex_email
+        if config.openalex_api_key and "api_key" not in params:
+            params["api_key"] = config.openalex_api_key
         return params
 
     async def _safe_get(self, client: httpx.AsyncClient, endpoint: str, params: Dict[str, Any]) -> Optional[Dict[str, Any]]:

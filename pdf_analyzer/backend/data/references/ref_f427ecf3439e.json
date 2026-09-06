@@ -1,11 +1,11 @@
 {
   "reference_id": "ref_f427ecf3439e",
-  "project_id": "project_20260831_082256_e63dea74",
-  "created_at": "2026-08-31T08:23:27.103202+00:00",
+  "project_id": "project_20260906_102443_69092c9c",
+  "created_at": "2026-09-06T10:25:15.737121+00:00",
   "input": {
     "original_text": "Khan, H., Shah, R., Baleanu, D., 2021. On the formulation of Adams-Bashforth scheme with Atangana-Baleanu-Caputo fractional derivative to model chaotic problems. Chaos 31(1), 013134. http://dx.doi.org/10.1063/1.5085490",
     "parsed": {
-      "title": "On the formulation of Adams-Bashforth scheme with Atangana-Baleanu-Caputo fractional derivative to model chaotic problems",
+      "title": "2021",
       "authors": [
         {
           "name": "H Khan",
@@ -21,16 +21,11 @@
           "name": "D Baleanu",
           "given": "D",
           "family": "Baleanu"
-        },
-        {
-          "name": "2021",
-          "given": "",
-          "family": "2021"
         }
       ],
       "year": 2021,
       "reference_type": "journal-article",
-      "journal": "Chaos 31(1), 013134",
+      "journal": "On the formulation of Adams-Bashforth scheme with Atangana-Baleanu-Caputo fractional derivative to m",
       "publisher": null,
       "volume": "31",
       "issue": "1",
@@ -54,7 +49,7 @@
       "verification_status": "verified"
     },
     "venue": {
-      "value": "Chaos 31(1), 013134",
+      "value": "On the formulation of Adams-Bashforth scheme with Atangana-Baleanu-Caputo fractional derivative to m",
       "source": "parsed",
       "confidence": 0.85,
       "verification_status": "verified"
@@ -118,7 +113,7 @@
       "canonical_value": 162,
       "google_scholar": null,
       "openalex": 162,
-      "crossref": null
+      "crossref": 145
     }
   },
   "canonical_authors": [
@@ -194,8 +189,8 @@
               "University of the Free State"
             ],
             "countries": [
-              "ZA",
-              "NG"
+              "NG",
+              "ZA"
             ]
           },
           {
@@ -216,8 +211,8 @@
               "University of the Free State"
             ],
             "countries": [
-              "ZA",
-              "NG"
+              "NG",
+              "ZA"
             ]
           }
         ],
@@ -257,16 +252,44 @@
       }
     },
     "crossref": {
-      "available": false,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.0,
-      "citation_count": null,
-      "doi": null,
-      "url": null,
-      "raw_file": null,
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "citation_count": 145,
+      "doi": "10.1063/1.5085490",
+      "url": "https://doi.org/10.1063/1.5085490",
+      "raw_file": "data/raw/crossref/282bbfcc548c9504.json",
       "normalized_file": null,
-      "data": {}
+      "data": {
+        "title": "On the formulation of Adams-Bashforth scheme with Atangana-Baleanu-Caputo fractional derivative to model chaotic problems",
+        "authors": [
+          {
+            "name": "Kolade M. Owolabi",
+            "given": "Kolade M.",
+            "family": "Owolabi",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "Abdon Atangana",
+            "given": "Abdon",
+            "family": "Atangana",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          }
+        ],
+        "year": 2019,
+        "journal": "Chaos: An Interdisciplinary Journal of Nonlinear Science",
+        "doi": "10.1063/1.5085490",
+        "url": "https://doi.org/10.1063/1.5085490",
+        "openalex_id": "",
+        "citation_count": 145,
+        "source": "crossref",
+        "raw_file": "data/raw/crossref/282bbfcc548c9504.json"
+      }
     },
     "google_scholar": {
       "available": false,
@@ -281,7 +304,7 @@
       "raw_file": null,
       "normalized_file": "data/normalized/google_scholar/8fd12473228b3f63.json",
       "data": {
-        "title": "On the formulation of Adams-Bashforth scheme with Atangana-Baleanu-Caputo fractional derivative to model chaotic problems",
+        "title": "2021",
         "authors": [
           {
             "name": "H Khan",
@@ -297,15 +320,10 @@
             "name": "D Baleanu",
             "given": "D",
             "family": "Baleanu"
-          },
-          {
-            "name": "2021",
-            "given": "",
-            "family": "2021"
           }
         ],
         "year": 2021,
-        "journal": "Chaos 31(1), 013134",
+        "journal": "On the formulation of Adams-Bashforth scheme with Atangana-Baleanu-Caputo fractional derivative to m",
         "doi": "10.1063/1.5085490",
         "url": "https://scholar.google.com/scholar?q=doi%3A10.1063/1.5085490",
         "citation_count": null,
@@ -329,7 +347,14 @@
         "field": "doi",
         "provider": "openalex",
         "rejected_value": "10.1063/1.5085490",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1063/1.5085490",
+        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
         "status": "conflict"
       }
     ],
@@ -345,7 +370,14 @@
         "field": "doi",
         "provider": "openalex",
         "rejected_value": "10.1063/1.5085490",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1063/1.5085490",
+        "reason": "Metadata mismatch (title_sim=0.00, author_sim=0.00)",
         "status": "conflict"
       }
     ]
@@ -353,18 +385,18 @@
   "telemetry": {
     "providers_queried": [
       "google_scholar",
-      "crossref",
-      "openalex"
+      "openalex",
+      "crossref"
     ],
     "latency_ms": {
-      "google_scholar": 9.86,
-      "crossref": 21843.74,
-      "openalex": 23143.81
+      "google_scholar": 9.56,
+      "openalex": 23413.79,
+      "crossref": 24247.54
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
-      "openalex": 1
+      "openalex": 1,
+      "crossref": 1
     },
     "errors": {}
   }

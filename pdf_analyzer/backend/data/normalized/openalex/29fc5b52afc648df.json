@@ -1,0 +1,1466 @@
+{
+  "provider": "openalex",
+  "entity_key": "title_author:Bayesian learning of neural network architectures Dikov",
+  "normalized_at": "2026-09-06T07:19:58.554208+00:00",
+  "data": [
+    {
+      "title": "BayesNAS: A Bayesian Approach for Neural Architecture Search",
+      "display_name": "BayesNAS: A Bayesian Approach for Neural Architecture Search",
+      "authors": [
+        {
+          "name": "Hongpeng Zhou",
+          "given": "Hongpeng",
+          "family": "Zhou",
+          "author_id": "https://openalex.org/A5003410899",
+          "display_name": "Hongpeng Zhou",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5003410899",
+            "orcid": "https://orcid.org/0000-0002-3894-0116",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Robot Dynamics"
+          ],
+          "countries": []
+        },
+        {
+          "name": "Minghao Yang",
+          "given": "Minghao",
+          "family": "Yang",
+          "author_id": "https://openalex.org/A5108361021",
+          "display_name": "Minghao Yang",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5108361021",
+            "orcid": "https://orcid.org/0000-0001-5397-3576",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Jun Wang",
+          "given": "Jun",
+          "family": "Wang",
+          "author_id": "https://openalex.org/A5100332169",
+          "display_name": "Jun Wang",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5100332169",
+            "orcid": "https://orcid.org/0000-0003-3422-104X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University College London"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "Wei Pan",
+          "given": "Wei",
+          "family": "Pan",
+          "author_id": "https://openalex.org/A5100721259",
+          "display_name": "Wei Pan",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5100721259",
+            "orcid": "https://orcid.org/0000-0003-1121-9879",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Robot Dynamics"
+          ],
+          "countries": []
+        }
+      ],
+      "year": 2019,
+      "publication_date": "2019-05-13",
+      "journal": "arXiv (Cornell University)",
+      "venue": "arXiv (Cornell University)",
+      "publisher": "Cornell University",
+      "reference_type": "preprint",
+      "volume": "",
+      "issue": "",
+      "pages": "7603-7613",
+      "doi": "10.48550/arxiv.1905.04919",
+      "url": "http://arxiv.org/abs/1905.04919",
+      "pdf_url": "https://arxiv.org/pdf/1905.04919",
+      "openalex_id": "https://openalex.org/W2944213978",
+      "citation_count": 88,
+      "cited_by_count": 88,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "One-Shot Neural Architecture Search (NAS) is a promising method to significantly reduce search time without any separate training. It can be treated as a Network Compression problem on the architecture parameters from an over-parameterized network. However, there are two issues associated with most one-shot NAS methods. First, dependencies between a node and its predecessors and successors are often disregarded which result in improper treatment over zero operations. Second, architecture parameters pruning based on their magnitude is questionable. In this paper, we employ the classic Bayesian learning approach to alleviate these two issues by modeling architecture parameters using hierarchical automatic relevance determination (HARD) priors. Unlike other NAS methods, we train the over-parameterized network for only one epoch then update the architecture. Impressively, this enabled us to find the architecture on CIFAR-10 within only 0.2 GPU days using a single GPU. Competitive performance can be also achieved by transferring to ImageNet. As a byproduct, our approach can be applied directly to compress convolutional neural networks by enforcing structural sparsity which achieves extremely sparse networks without accuracy deterioration.",
+      "topics": [
+        "Advanced Neural Network Applications",
+        "Domain Adaptation and Few-Shot Learning",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 0,
+      "related_works": [
+        "https://openalex.org/W2965658867",
+        "https://openalex.org/W2964081807",
+        "https://openalex.org/W2810075754",
+        "https://openalex.org/W2963821229",
+        "https://openalex.org/W2963374479"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/29fc5b52afc648df.json"
+    },
+    {
+      "title": "Event-Based Vision: A Survey",
+      "display_name": "Event-Based Vision: A Survey",
+      "authors": [
+        {
+          "name": "Guillermo Gallego",
+          "given": "Guillermo",
+          "family": "Gallego",
+          "author_id": "",
+          "display_name": "Guillermo Gallego",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": "https://orcid.org/0000-0002-2672-9241",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Einstein Center Digital Future",
+            "Technische Universität Berlin"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Tobi Delbruck",
+          "given": "Tobi",
+          "family": "Delbruck",
+          "author_id": "",
+          "display_name": "Tobi Delbruck",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": "https://orcid.org/0000-0001-5479-1141",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "SIB Swiss Institute of Bioinformatics",
+            "University of Zurich",
+            "ETH Zurich"
+          ],
+          "countries": [
+            "CH"
+          ]
+        },
+        {
+          "name": "Garrick Orchard",
+          "given": "Garrick",
+          "family": "Orchard",
+          "author_id": "",
+          "display_name": "Garrick Orchard",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": "https://orcid.org/0000-0002-1243-2711",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Intel (United States)"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Chiara Bartolozzi",
+          "given": "Chiara",
+          "family": "Bartolozzi",
+          "author_id": "",
+          "display_name": "Chiara Bartolozzi",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": "https://orcid.org/0000-0003-3465-6449",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Italian Institute of Technology"
+          ],
+          "countries": [
+            "IT"
+          ]
+        },
+        {
+          "name": "Brian Taba",
+          "given": "Brian",
+          "family": "Taba",
+          "author_id": "",
+          "display_name": "Brian Taba",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "IBM (United States)"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Andrea Censi",
+          "given": "Andrea",
+          "family": "Censi",
+          "author_id": "",
+          "display_name": "Andrea Censi",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "ETH Zurich"
+          ],
+          "countries": [
+            "CH"
+          ]
+        },
+        {
+          "name": "Stefan Leutenegger",
+          "given": "Stefan",
+          "family": "Leutenegger",
+          "author_id": "",
+          "display_name": "Stefan Leutenegger",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": "https://orcid.org/0000-0002-7998-3737",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Imperial College London"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "Andrew J. Davison",
+          "given": "Andrew J.",
+          "family": "Davison",
+          "author_id": "",
+          "display_name": "Andrew J. Davison",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Imperial College London"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "Jorg Conradt",
+          "given": "Jorg",
+          "family": "Conradt",
+          "author_id": "",
+          "display_name": "Jorg Conradt",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": "https://orcid.org/0000-0001-5998-9640",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "KTH Royal Institute of Technology"
+          ],
+          "countries": [
+            "SE"
+          ]
+        },
+        {
+          "name": "Kostas Daniilidis",
+          "given": "Kostas",
+          "family": "Daniilidis",
+          "author_id": "",
+          "display_name": "Kostas Daniilidis",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": "https://orcid.org/0000-0003-0498-0758",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Pennsylvania"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Davide Scaramuzza",
+          "given": "Davide",
+          "family": "Scaramuzza",
+          "author_id": "",
+          "display_name": "Davide Scaramuzza",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": "https://orcid.org/0000-0002-3831-6778",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Zurich"
+          ],
+          "countries": [
+            "CH"
+          ]
+        }
+      ],
+      "year": 2020,
+      "publication_date": "2020-07-10",
+      "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "publisher": "IEEE Computer Society",
+      "reference_type": "journal-article",
+      "volume": "44",
+      "issue": "1",
+      "pages": "154-180",
+      "doi": "10.1109/tpami.2020.3008413",
+      "url": "https://doi.org/10.1109/tpami.2020.3008413",
+      "pdf_url": "https://ieeexplore.ieee.org/ielx7/34/9639876/09138762.pdf",
+      "openalex_id": "https://openalex.org/W3040838455",
+      "citation_count": 2224,
+      "cited_by_count": 2224,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "abstract": "Event cameras are bio-inspired sensors that differ from conventional frame cameras: Instead of capturing images at a fixed rate, they asynchronously measure per-pixel brightness changes, and output a stream of events that encode the time, location and sign of the brightness changes. Event cameras offer attractive properties compared to traditional cameras: high temporal resolution (in the order of μs), very high dynamic range (140 dB versus 60 dB), low power consumption, and high pixel bandwidth (on the order of kHz) resulting in reduced motion blur. Hence, event cameras have a large potential for robotics and computer vision in challenging scenarios for traditional cameras, such as low-latency, high speed, and high dynamic range. However, novel methods are required to process the unconventional output of these sensors in order to unlock their potential. This paper provides a comprehensive overview of the emerging field of event-based vision, with a focus on the applications and the algorithms developed to unlock the outstanding properties of event cameras. We present event cameras from their working principle, the actual sensors that are available and the tasks that they have been used for, from low-level vision (feature detection and tracking, optic flow, etc.) to high-level vision (reconstruction, segmentation, recognition). We also discuss the techniques developed to process events, including learning-based techniques, as well as specialized processors for these novel sensors, such as spiking neural networks. Additionally, we highlight the challenges that remain to be tackled and the opportunities that lie ahead in the search for a more efficient, bio-inspired way for machines to perceive and interact with the world.",
+      "topics": [
+        "Advanced Memory and Neural Computing",
+        "Ferroelectric and Negative Capacitance Devices",
+        "Neural Networks and Reservoir Computing"
+      ],
+      "referenced_works_count": 232,
+      "related_works": [],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/29fc5b52afc648df.json"
+    },
+    {
+      "title": "A review of molecular representation in the age of machine learning",
+      "display_name": "A review of molecular representation in the age of machine learning",
+      "authors": [
+        {
+          "name": "Daniel Wigh",
+          "given": "Daniel",
+          "family": "Wigh",
+          "author_id": "https://openalex.org/A5023252226",
+          "display_name": "Daniel Wigh",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5023252226",
+            "orcid": "https://orcid.org/0000-0002-0494-643X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Cambridge"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "Jonathan M. Goodman",
+          "given": "Jonathan M.",
+          "family": "Goodman",
+          "author_id": "https://openalex.org/A5086984299",
+          "display_name": "Jonathan M. Goodman",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5086984299",
+            "orcid": "https://orcid.org/0000-0002-8693-9136",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Cambridge"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "Alexei A. Lapkin",
+          "given": "Alexei A.",
+          "family": "Lapkin",
+          "author_id": "https://openalex.org/A5065798786",
+          "display_name": "Alexei A. Lapkin",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5065798786",
+            "orcid": "https://orcid.org/0000-0001-7621-0889",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Cambridge"
+          ],
+          "countries": [
+            "GB"
+          ]
+        }
+      ],
+      "year": 2022,
+      "publication_date": "2022-02-18",
+      "journal": "Wiley Interdisciplinary Reviews Computational Molecular Science",
+      "venue": "Wiley Interdisciplinary Reviews Computational Molecular Science",
+      "publisher": "Wiley",
+      "reference_type": "journal-article",
+      "volume": "12",
+      "issue": "5",
+      "pages": "",
+      "doi": "10.1002/wcms.1603",
+      "url": "https://doi.org/10.1002/wcms.1603",
+      "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/wcms.1603",
+      "openalex_id": "https://openalex.org/W4213070269",
+      "citation_count": 381,
+      "cited_by_count": 381,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "abstract": "Abstract Research in chemistry increasingly requires interdisciplinary work prompted by, among other things, advances in computing, machine learning, and artificial intelligence. Everyone working with molecules, whether chemist or not, needs an understanding of the representation of molecules in a machine‐readable format, as this is central to computational chemistry. Four classes of representations are introduced: string, connection table, feature‐based, and computer‐learned representations. Three of the most significant representations are simplified molecular‐input line‐entry system (SMILES), International Chemical Identifier (InChI), and the MDL molfile, of which SMILES was the first to successfully be used in conjunction with a variational autoencoder (VAE) to yield a continuous representation of molecules. This is noteworthy because a continuous representation allows for efficient navigation of the immensely large chemical space of possible molecules. Since 2018, when the first model of this type was published, considerable effort has been put into developing novel and improved methodologies. Most, if not all, researchers in the community make their work easily accessible on GitHub, though discussion of computation time and domain of applicability is often overlooked. Herein, we present questions for consideration in future work which we believe will make chemical VAEs even more accessible. This article is categorized under: Data Science > Chemoinformatics",
+      "topics": [
+        "Computational Drug Discovery Methods",
+        "Machine Learning in Materials Science",
+        "Metabolomics and Mass Spectrometry Studies"
+      ],
+      "referenced_works_count": 85,
+      "related_works": [
+        "https://openalex.org/W4382246684",
+        "https://openalex.org/W4387845407",
+        "https://openalex.org/W2902857455",
+        "https://openalex.org/W4207004502",
+        "https://openalex.org/W2907885506"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/29fc5b52afc648df.json"
+    },
+    {
+      "title": "Scalable reinforcement-learning-based neural architecture search for cancer deep learning research",
+      "display_name": "Scalable reinforcement-learning-based neural architecture search for cancer deep learning research",
+      "authors": [
+        {
+          "name": "Prasanna Balaprakash",
+          "given": "Prasanna",
+          "family": "Balaprakash",
+          "author_id": "",
+          "display_name": "Prasanna Balaprakash",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Argonne National Laboratory"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Romain Egele",
+          "given": "Romain",
+          "family": "Egele",
+          "author_id": "",
+          "display_name": "Romain Egele",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Argonne National Laboratory"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Misha Salim",
+          "given": "Misha",
+          "family": "Salim",
+          "author_id": "",
+          "display_name": "Misha Salim",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Argonne National Laboratory"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Stefan Wild",
+          "given": "Stefan",
+          "family": "Wild",
+          "author_id": "",
+          "display_name": "Stefan Wild",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Argonne National Laboratory"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Venkatram Vishwanath",
+          "given": "Venkatram",
+          "family": "Vishwanath",
+          "author_id": "",
+          "display_name": "Venkatram Vishwanath",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Argonne National Laboratory"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Fangfang Xia",
+          "given": "Fangfang",
+          "family": "Xia",
+          "author_id": "",
+          "display_name": "Fangfang Xia",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Argonne National Laboratory"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Tom Brettin",
+          "given": "Tom",
+          "family": "Brettin",
+          "author_id": "",
+          "display_name": "Tom Brettin",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Argonne National Laboratory"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Rick Stevens",
+          "given": "Rick",
+          "family": "Stevens",
+          "author_id": "",
+          "display_name": "Rick Stevens",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Argonne National Laboratory"
+          ],
+          "countries": [
+            "US"
+          ]
+        }
+      ],
+      "year": 2019,
+      "publication_date": "2019-11-07",
+      "journal": "",
+      "venue": "",
+      "publisher": "",
+      "reference_type": "journal-article",
+      "volume": "",
+      "issue": "",
+      "pages": "1-33",
+      "doi": "10.1145/3295500.3356202",
+      "url": "https://doi.org/10.1145/3295500.3356202",
+      "pdf_url": "http://arxiv.org/pdf/1909.00311",
+      "openalex_id": "https://openalex.org/W2971725207",
+      "citation_count": 35,
+      "cited_by_count": 35,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "Cancer is a complex disease, the understanding and treatment of which are being aided through increases in the volume of collected data and in the scale of deployed computing power. Consequently, there is a growing need for the development of data-driven and, in particular, deep learning methods for various tasks such as cancer diagnosis, detection, prognosis, and prediction. Despite recent successes, however, designing high-performing deep learning models for nonimage and nontext cancer data is a time-consuming, trial-and-error, manual task that requires both cancer domain and deep learning expertise. To that end, we develop a reinforcement-learning-based neural architecture search to automate deep-learning-based predictive model development for a class of representative cancer data. We develop custom building blocks that allow domain experts to incorporate the cancer-data-specific characteristics. We show that our approach discovers deep neural network architectures that have significantly fewer trainable parameters, shorter training time, and accuracy similar to or higher than those of manually designed architectures. We study and demonstrate the scalability of our approach on up to 1,024 Intel Knights Landing nodes of the Theta supercomputer at the Argonne Leadership Computing Facility.",
+      "topics": [
+        "Machine Learning and Data Classification",
+        "Explainable Artificial Intelligence (XAI)",
+        "Advanced Neural Network Applications"
+      ],
+      "referenced_works_count": 29,
+      "related_works": [],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/29fc5b52afc648df.json"
+    },
+    {
+      "title": "Advances and Perspectives in Applying Deep Learning for Drug Design and Discovery",
+      "display_name": "Advances and Perspectives in Applying Deep Learning for Drug Design and Discovery",
+      "authors": [
+        {
+          "name": "Célio Fernando Lipinski",
+          "given": "Célio Fernando",
+          "family": "Lipinski",
+          "author_id": "https://openalex.org/A5004815712",
+          "display_name": "Célio Fernando Lipinski",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5004815712",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universidade de São Paulo"
+          ],
+          "countries": [
+            "BR"
+          ]
+        },
+        {
+          "name": "Vinícius Gonçalves Maltarollo",
+          "given": "Vinícius Gonçalves",
+          "family": "Maltarollo",
+          "author_id": "https://openalex.org/A5034015138",
+          "display_name": "Vinícius Gonçalves Maltarollo",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5034015138",
+            "orcid": "https://orcid.org/0000-0001-9675-5907",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universidade Federal de Minas Gerais"
+          ],
+          "countries": [
+            "BR"
+          ]
+        },
+        {
+          "name": "Patrícia R. Oliveira",
+          "given": "Patrícia R.",
+          "family": "Oliveira",
+          "author_id": "https://openalex.org/A5019803207",
+          "display_name": "Patrícia R. Oliveira",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5019803207",
+            "orcid": "https://orcid.org/0009-0008-1217-7715",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universidade de São Paulo"
+          ],
+          "countries": [
+            "BR"
+          ]
+        },
+        {
+          "name": "Albérico B. F. da Silva",
+          "given": "Albérico B. F. da",
+          "family": "Silva",
+          "author_id": "https://openalex.org/A5063908281",
+          "display_name": "Albérico B. F. da Silva",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5063908281",
+            "orcid": "https://orcid.org/0000-0003-2337-1042",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universidade de São Paulo"
+          ],
+          "countries": [
+            "BR"
+          ]
+        },
+        {
+          "name": "Káthia M. Honório",
+          "given": "Káthia M.",
+          "family": "Honório",
+          "author_id": "https://openalex.org/A5044360721",
+          "display_name": "Káthia M. Honório",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5044360721",
+            "orcid": "https://orcid.org/0000-0002-6938-0676",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universidade de São Paulo",
+            "Universidade Federal do ABC"
+          ],
+          "countries": [
+            "BR"
+          ]
+        }
+      ],
+      "year": 2019,
+      "publication_date": "2019-11-05",
+      "journal": "Frontiers in Robotics and AI",
+      "venue": "Frontiers in Robotics and AI",
+      "publisher": "Frontiers Media",
+      "reference_type": "journal-article",
+      "volume": "6",
+      "issue": "",
+      "pages": "108",
+      "doi": "10.3389/frobt.2019.00108",
+      "url": "https://doi.org/10.3389/frobt.2019.00108",
+      "pdf_url": "https://www.frontiersin.org/articles/10.3389/frobt.2019.00108/pdf",
+      "openalex_id": "https://openalex.org/W2981587771",
+      "citation_count": 101,
+      "cited_by_count": 101,
+      "is_oa": true,
+      "oa_status": "gold",
+      "abstract": "Discovering (or planning) a new drug candidate involves many parameters, which makes this process slow, costly, and leading to failures at the end in some cases. In the last decades, we have witnessed a revolution in the computational area (hardware, software, large-scale computing, etc.), as well as an explosion in data generation (big data), which raises the need for more sophisticated algorithms to analyze this myriad of data. In this scenario, we can highlight the potentialities of artificial intelligence (AI) or computational intelligence (CI) as a powerful tool to analyze medicinal chemistry data. According to IEEE, computational intelligence involves the theory, the design, the application, and the development of biologically and linguistically motivated computational paradigms. In addition, CI encompasses three main methodologies: neural networks (NN), fuzzy systems, and evolutionary computation. In particular, artificial neural networks have been successfully applied in medicinal chemistry studies. A branch of the NN area that has attracted a lot of attention refers to deep learning (DL) due to its generalization power and ability to extract features from data. Therefore, in this mini-review we will briefly outline the present scope, advances, and challenges related to the use of DL in drug design and discovery, describing successful studies involving quantitative structure-activity relationships (QSAR) and virtual screening (VS) of databases containing thousands of compounds.",
+      "topics": [
+        "Computational Drug Discovery Methods",
+        "Machine Learning in Materials Science",
+        "Metabolomics and Mass Spectrometry Studies"
+      ],
+      "referenced_works_count": 42,
+      "related_works": [
+        "https://openalex.org/W2382340815",
+        "https://openalex.org/W1972650408",
+        "https://openalex.org/W2551736466",
+        "https://openalex.org/W1997566113",
+        "https://openalex.org/W3189652131"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/29fc5b52afc648df.json"
+    },
+    {
+      "title": "Weight-Sharing Neural Architecture Search: A Battle to Shrink the Optimization Gap",
+      "display_name": "Weight-Sharing Neural Architecture Search: A Battle to Shrink the Optimization Gap",
+      "authors": [
+        {
+          "name": "Lingxi Xie",
+          "given": "Lingxi",
+          "family": "Xie",
+          "author_id": "https://openalex.org/A5075290241",
+          "display_name": "Lingxi Xie",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5075290241",
+            "orcid": "https://orcid.org/0000-0003-4831-9451",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Xin Chen",
+          "given": "Xin",
+          "family": "Chen",
+          "author_id": "https://openalex.org/A5100363065",
+          "display_name": "Xin Chen",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5100363065",
+            "orcid": "https://orcid.org/0000-0002-2506-4268",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Tongji University"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Kaifeng Bi",
+          "given": "Kaifeng",
+          "family": "Bi",
+          "author_id": "https://openalex.org/A5023906567",
+          "display_name": "Kaifeng Bi",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5023906567",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Huawei Technologies (China)"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Longhui Wei",
+          "given": "Longhui",
+          "family": "Wei",
+          "author_id": "https://openalex.org/A5050660610",
+          "display_name": "Longhui Wei",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5050660610",
+            "orcid": "https://orcid.org/0000-0001-6916-3009",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Huawei Technologies (China)"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Yuhui Xu",
+          "given": "Yuhui",
+          "family": "Xu",
+          "author_id": "https://openalex.org/A5060456658",
+          "display_name": "Yuhui Xu",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5060456658",
+            "orcid": "https://orcid.org/0000-0002-7109-7140",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Huawei Technologies (China)"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Zhengsu Chen",
+          "given": "Zhengsu",
+          "family": "Chen",
+          "author_id": "https://openalex.org/A5024441112",
+          "display_name": "Zhengsu Chen",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5024441112",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Huawei Technologies (China)"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Lanfei Wang",
+          "given": "Lanfei",
+          "family": "Wang",
+          "author_id": "https://openalex.org/A5028464818",
+          "display_name": "Lanfei Wang",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5028464818",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Huawei Technologies (China)"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "An Xiao",
+          "given": "An",
+          "family": "Xiao",
+          "author_id": "https://openalex.org/A5017898444",
+          "display_name": "An Xiao",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5017898444",
+            "orcid": "https://orcid.org/0000-0003-0909-3234",
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        },
+        {
+          "name": "Jianlong Chang",
+          "given": "Jianlong",
+          "family": "Chang",
+          "author_id": "https://openalex.org/A5038083485",
+          "display_name": "Jianlong Chang",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5038083485",
+            "orcid": "https://orcid.org/0000-0002-0610-907X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Huawei Technologies (China)"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Xiaopeng Zhang",
+          "given": "Xiaopeng",
+          "family": "Zhang",
+          "author_id": "https://openalex.org/A5100614065",
+          "display_name": "Xiaopeng Zhang",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5100614065",
+            "orcid": "https://orcid.org/0000-0001-6337-5748",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Shanghai Jiao Tong University"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Qi Tian",
+          "given": "Qi",
+          "family": "Tian",
+          "author_id": "https://openalex.org/A5100393506",
+          "display_name": "Qi Tian",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5100393506",
+            "orcid": "https://orcid.org/0000-0002-7252-5047",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Beijing University of Posts and Telecommunications"
+          ],
+          "countries": [
+            "CN"
+          ]
+        }
+      ],
+      "year": 2020,
+      "publication_date": "2020-08-04",
+      "journal": "arXiv (Cornell University)",
+      "venue": "arXiv (Cornell University)",
+      "publisher": "Cornell University",
+      "reference_type": "preprint",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "10.48550/arxiv.2008.01475",
+      "url": "http://arxiv.org/abs/2008.01475",
+      "pdf_url": "https://arxiv.org/pdf/2008.01475",
+      "openalex_id": "https://openalex.org/W3047225593",
+      "citation_count": 28,
+      "cited_by_count": 28,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "Neural architecture search (NAS) has attracted increasing attentions in both academia and industry. In the early age, researchers mostly applied individual search methods which sample and evaluate the candidate architectures separately and thus incur heavy computational overheads. To alleviate the burden, weight-sharing methods were proposed in which exponentially many architectures share weights in the same super-network, and the costly training procedure is performed only once. These methods, though being much faster, often suffer the issue of instability. This paper provides a literature review on NAS, in particular the weight-sharing methods, and points out that the major challenge comes from the optimization gap between the super-network and the sub-architectures. From this perspective, we summarize existing approaches into several categories according to their efforts in bridging the gap, and analyze both advantages and disadvantages of these methodologies. Finally, we share our opinions on the future directions of NAS and AutoML. Due to the expertise of the authors, this paper mainly focuses on the application of NAS to computer vision problems and may bias towards the work in our group.",
+      "topics": [
+        "Advanced Neural Network Applications",
+        "Machine Learning and Data Classification",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "referenced_works_count": 511,
+      "related_works": [
+        "https://openalex.org/W4391375266",
+        "https://openalex.org/W2748952813",
+        "https://openalex.org/W4388870064",
+        "https://openalex.org/W2210139803",
+        "https://openalex.org/W4235186151"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/29fc5b52afc648df.json"
+    },
+    {
+      "title": "Bayesian Neural Networks",
+      "display_name": "Bayesian Neural Networks",
+      "authors": [
+        {
+          "name": "Tom Charnock",
+          "given": "Tom",
+          "family": "Charnock",
+          "author_id": "https://openalex.org/A5050531002",
+          "display_name": "Tom Charnock",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5050531002",
+            "orcid": "https://orcid.org/0000-0002-3479-3542",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Centre National de la Recherche Scientifique",
+            "Institut d'Astrophysique de Paris",
+            "Sorbonne Université"
+          ],
+          "countries": [
+            "FR"
+          ]
+        },
+        {
+          "name": "Laurence Perreault-Levasseur",
+          "given": "Laurence",
+          "family": "Perreault-Levasseur",
+          "author_id": "https://openalex.org/A5059602798",
+          "display_name": "Laurence Perreault-Levasseur",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5059602798",
+            "orcid": "https://orcid.org/0000-0003-3544-3939",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Flatiron Health (United States)",
+            "Mila - Quebec Artificial Intelligence Institute",
+            "Flatiron Institute",
+            "Université de Montréal"
+          ],
+          "countries": [
+            "CA",
+            "US"
+          ]
+        },
+        {
+          "name": "François Lanusse",
+          "given": "François",
+          "family": "Lanusse",
+          "author_id": "https://openalex.org/A5021502333",
+          "display_name": "François Lanusse",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5021502333",
+            "orcid": "https://orcid.org/0000-0001-7956-0542",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Centre National de la Recherche Scientifique",
+            "Délégation Paris 7",
+            "Université Paris Cité",
+            "Commissariat à l'Énergie Atomique et aux Énergies Alternatives",
+            "Université Paris-Saclay",
+            "Astrophysique, Instrumentation et Modélisation",
+            "Sorbonne Paris Cité",
+            "CEA Paris-Saclay"
+          ],
+          "countries": [
+            "FR"
+          ]
+        }
+      ],
+      "year": 2022,
+      "publication_date": "2022-02-06",
+      "journal": "WORLD SCIENTIFIC eBooks",
+      "venue": "WORLD SCIENTIFIC eBooks",
+      "publisher": "World Scientific",
+      "reference_type": "book-chapter",
+      "volume": "",
+      "issue": "",
+      "pages": "663-713",
+      "doi": "10.1142/9789811234026_0018",
+      "url": "https://doi.org/10.1142/9789811234026_0018",
+      "pdf_url": "https://arxiv.org/pdf/2006.01490",
+      "openalex_id": "https://openalex.org/W3033124500",
+      "citation_count": 4,
+      "cited_by_count": 4,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "In recent times, neural networks have become a powerful tool for the analysis of complex and abstract data models. However, their introduction intrinsically increases our uncertainty about which features of the analysis are model-related and which are due to the neural network. This means that predictions by neural networks have biases which cannot be trivially distinguished from being due to the true nature of the creation and observation of data or not. In order to attempt to address such issues we discuss Bayesian neural networks: neural networks where the uncertainty due to the network can be characterised. In particular, we present the Bayesian statistical framework which allows us to categorise uncertainty in terms of the ingrained randomness of observing certain data and the uncertainty from our lack of knowledge about how data can be created and observed. In presenting such techniques we show how errors in prediction by neural networks can be obtained in principle, and provide the two favoured methods for characterising these errors. We will also describe how both of these methods have substantial pitfalls when put into practice, highlighting the need for other statistical techniques to truly be able to do inference when using neural networks.",
+      "topics": [
+        "Machine Learning and Algorithms",
+        "Machine Learning and Data Classification",
+        "Fault Detection and Control Systems"
+      ],
+      "referenced_works_count": 33,
+      "related_works": [
+        "https://openalex.org/W1567512734",
+        "https://openalex.org/W152970461",
+        "https://openalex.org/W2922968883",
+        "https://openalex.org/W3014531891",
+        "https://openalex.org/W3026918225"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/29fc5b52afc648df.json"
+    },
+    {
+      "title": "Depth Uncertainty in Neural Networks",
+      "display_name": "Depth Uncertainty in Neural Networks",
+      "authors": [
+        {
+          "name": "Javier Antorán",
+          "given": "Javier",
+          "family": "Antorán",
+          "author_id": "https://openalex.org/A5051888078",
+          "display_name": "Javier Antorán",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5051888078",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Cambridge"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "James Urquhart Allingham",
+          "given": "James Urquhart",
+          "family": "Allingham",
+          "author_id": "https://openalex.org/A5064807550",
+          "display_name": "James Urquhart Allingham",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5064807550",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Cambridge"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "José Miguel Hernández-Lobato",
+          "given": "José Miguel",
+          "family": "Hernández-Lobato",
+          "author_id": "https://openalex.org/A5102890597",
+          "display_name": "José Miguel Hernández-Lobato",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5102890597",
+            "orcid": "https://orcid.org/0000-0001-7610-949X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Cambridge"
+          ],
+          "countries": [
+            "GB"
+          ]
+        }
+      ],
+      "year": 2020,
+      "publication_date": "2020-01-01",
+      "journal": "Apollo (University of Cambridge)",
+      "venue": "Apollo (University of Cambridge)",
+      "publisher": "University of Cambridge",
+      "reference_type": "journal-article",
+      "volume": "33",
+      "issue": "",
+      "pages": "10620-10634",
+      "doi": "10.17863/cam.69875",
+      "url": "https://www.repository.cam.ac.uk/handle/1810/322417",
+      "pdf_url": "https://www.repository.cam.ac.uk/handle/1810/322417",
+      "openalex_id": "https://openalex.org/W3034666242",
+      "citation_count": 6,
+      "cited_by_count": 6,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "Existing methods for estimating uncertainty in deep learning tend to require multiple forward passes, making them unsuitable for applications where computational resources are limited. To solve this, we perform probabilistic reasoning over the depth of neural networks. Different depths correspond to subnetworks which share weights and whose predictions are combined via marginalisation, yielding model uncertainty. By exploiting the sequential structure of feed-forward networks, we are able to both evaluate our training objective and make predictions with a single forward pass. We validate our approach on real-world regression and image classification tasks. Our approach provides uncertainty calibration, robustness to dataset shift, and accuracies competitive with more computationally expensive baselines.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Anomaly Detection Techniques and Applications",
+        "Machine Learning and Data Classification"
+      ],
+      "referenced_works_count": 73,
+      "related_works": [
+        "https://openalex.org/W3104259731",
+        "https://openalex.org/W3049165116",
+        "https://openalex.org/W2799977193",
+        "https://openalex.org/W2964059111",
+        "https://openalex.org/W2904979775"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/29fc5b52afc648df.json"
+    },
+    {
+      "title": "Latent Time Neural Ordinary Differential Equations",
+      "display_name": "Latent Time Neural Ordinary Differential Equations",
+      "authors": [
+        {
+          "name": "Srinivas Anumasa",
+          "given": "Srinivas",
+          "family": "Anumasa",
+          "author_id": "https://openalex.org/A5019469798",
+          "display_name": "Srinivas Anumasa",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5019469798",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Indian Institute of Technology Hyderabad"
+          ],
+          "countries": [
+            "IN"
+          ]
+        },
+        {
+          "name": "P. K. Srijith",
+          "given": "P. K.",
+          "family": "Srijith",
+          "author_id": "https://openalex.org/A5042622129",
+          "display_name": "P. K. Srijith",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5042622129",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Indian Institute of Technology Hyderabad"
+          ],
+          "countries": [
+            "IN"
+          ]
+        }
+      ],
+      "year": 2022,
+      "publication_date": "2022-06-28",
+      "journal": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "publisher": "Association for the Advancement of Artificial Intelligence",
+      "reference_type": "journal-article",
+      "volume": "36",
+      "issue": "6",
+      "pages": "6010-6018",
+      "doi": "10.1609/aaai.v36i6.20547",
+      "url": "https://doi.org/10.1609/aaai.v36i6.20547",
+      "pdf_url": null,
+      "openalex_id": "https://openalex.org/W4226086166",
+      "citation_count": 11,
+      "cited_by_count": 11,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "abstract": "Neural ordinary differential equations (NODE) have been proposed as a continuous depth generalization to popular deep learning models such as Residual networks (ResNets). They provide parameter efficiency and automate the model selection process in deep learning models to some extent. However, they lack the much-required uncertainty modelling and robustness capabilities which are crucial for their use in several real-world applications such as autonomous driving and healthcare. We propose a novel and unique approach to model uncertainty in NODE by considering a distribution over the end-time T of the ODE solver. The proposed approach, latent time NODE (LT-NODE), treats T as a latent variable and apply Bayesian learning to obtain a posterior distribution over T from the data. In particular, we use variational inference to learn an approximate posterior and the model parameters. Prediction is done by considering the NODE representations from different samples of the posterior and can be done efficiently using a single forward pass. As T implicitly defines the depth of a NODE, posterior distribution over T would also help in model selection in NODE. We also propose, adaptive latent time NODE (ALT-NODE), which allow each data point to have a distinct posterior distribution over end-times. ALT-NODE uses amortized variational inference to learn an approximate posterior using inference networks. We demonstrate the effectiveness of the proposed approaches in modelling uncertainty and robustness through experiments on synthetic and several real-world image classification data.",
+      "topics": [
+        "Model Reduction and Neural Networks",
+        "Gaussian Processes and Bayesian Inference",
+        "Machine Learning in Healthcare"
+      ],
+      "referenced_works_count": 61,
+      "related_works": [
+        "https://openalex.org/W3082668976",
+        "https://openalex.org/W2517973022",
+        "https://openalex.org/W1543121148",
+        "https://openalex.org/W1580703421",
+        "https://openalex.org/W2618518959"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/29fc5b52afc648df.json"
+    },
+    {
+      "title": "Image Analysis of the Mitochondrial Network Morphology With Applications in Cancer Research",
+      "display_name": "Image Analysis of the Mitochondrial Network Morphology With Applications in Cancer Research",
+      "authors": [
+        {
+          "name": "Ching-Hsiang Chu",
+          "given": "Ching-Hsiang",
+          "family": "Chu",
+          "author_id": "https://openalex.org/A5083471810",
+          "display_name": "Ching-Hsiang Chu",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5083471810",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "National Taiwan University"
+          ],
+          "countries": [
+            "TW"
+          ]
+        },
+        {
+          "name": "Wen-Wei Tseng",
+          "given": "Wen-Wei",
+          "family": "Tseng",
+          "author_id": "https://openalex.org/A5031966830",
+          "display_name": "Wen-Wei Tseng",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5031966830",
+            "orcid": "https://orcid.org/0000-0003-3858-4622",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "National Taiwan University"
+          ],
+          "countries": [
+            "TW"
+          ]
+        },
+        {
+          "name": "Chan-Min Hsu",
+          "given": "Chan-Min",
+          "family": "Hsu",
+          "author_id": "https://openalex.org/A5009007123",
+          "display_name": "Chan-Min Hsu",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5009007123",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "National Taiwan University"
+          ],
+          "countries": [
+            "TW"
+          ]
+        },
+        {
+          "name": "An‐Chi Wei",
+          "given": "An‐Chi",
+          "family": "Wei",
+          "author_id": "https://openalex.org/A5072321698",
+          "display_name": "An‐Chi Wei",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5072321698",
+            "orcid": "https://orcid.org/0000-0001-7927-1636",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "National Taiwan University"
+          ],
+          "countries": [
+            "TW"
+          ]
+        }
+      ],
+      "year": 2022,
+      "publication_date": "2022-04-13",
+      "journal": "Frontiers in Physics",
+      "venue": "Frontiers in Physics",
+      "publisher": "Frontiers Media",
+      "reference_type": "journal-article",
+      "volume": "10",
+      "issue": "",
+      "pages": "",
+      "doi": "10.3389/fphy.2022.855775",
+      "url": "https://doi.org/10.3389/fphy.2022.855775",
+      "pdf_url": "https://www.frontiersin.org/articles/10.3389/fphy.2022.855775/pdf",
+      "openalex_id": "https://openalex.org/W4224134022",
+      "citation_count": 34,
+      "cited_by_count": 34,
+      "is_oa": true,
+      "oa_status": "gold",
+      "abstract": "Mitochondria are dynamic organelles that integrate bioenergetics, biosynthesis, and signaling in cells and regulate redox homeostasis, apoptotic pathways, and cell proliferation and differentiation. Depending on the environmental conditions, the mitochondrial morphology dynamically changes to match the energy demands. The mitochondrial dynamics is related to the initiation, migration, and invasion of diverse human cancers and thus affects cancer metastasis, metabolism, drug resistance, and cancer stem cell survival. We reviewed the current image-based analytical tools and machine-learning techniques for phenotyping mitochondrial morphology in different cancer cell lines from confocal microscopy images. We listed and applied pipelines and packages available in ImageJ/Fiji, CellProfiler, MATLAB, Java, and Python for the analysis of fluorescently labeled mitochondria in microscopy images and compared their performance, usability and applications. Furthermore, we discussed the potential of automatic mitochondrial segmentation, classification and prediction of mitochondrial abnormalities using machine learning techniques. Quantification of the mitochondrial morphology provides potential indicators for identifying metabolic changes and drug responses in cancer cells.",
+      "topics": [
+        "Mitochondrial Function and Pathology",
+        "Cell Image Analysis Techniques",
+        "Metabolomics and Mass Spectrometry Studies"
+      ],
+      "referenced_works_count": 92,
+      "related_works": [
+        "https://openalex.org/W2943329679",
+        "https://openalex.org/W2112696881",
+        "https://openalex.org/W2396492288",
+        "https://openalex.org/W3089182355",
+        "https://openalex.org/W2898956787"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/29fc5b52afc648df.json"
+    }
+  ]
+}

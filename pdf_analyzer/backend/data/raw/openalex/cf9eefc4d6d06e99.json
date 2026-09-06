@@ -1,0 +1,5253 @@
+{
+  "provider": "openalex",
+  "query_key": "raw:Michele Caputo and Mauro Fabrizio, A new definition of fractional derivative without singular kernel, Progress in Fractional Differentiation",
+  "query_hash": "cf9eefc4d6d06e99",
+  "saved_at": "2026-09-06T10:25:20.204735+00:00",
+  "status_code": 200,
+  "candidate_count": 5,
+  "raw_response": {
+    "meta": {
+      "count": 29,
+      "db_response_time_ms": 113,
+      "page": 1,
+      "per_page": 5,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (Michele Caputo \"and\" Mauro Fabrizio A new definition of fractional derivative without singular kernel Progress in Fractional Differentiation)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Michele Caputo and Mauro Fabrizio A new definition of fractional derivative without singular kernel Progress in Fractional Differentiation",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Michele Caputo and Mauro Fabrizio A new definition of fractional derivative without singular kernel Progress in Fractional Differentiation&per_page=5"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4388420389",
+        "doi": "https://doi.org/10.3390/fractalfract7110805",
+        "title": "Mathematical Modeling of Breast Cancer Based on the Caputo–Fabrizio Fractal-Fractional Derivative",
+        "display_name": "Mathematical Modeling of Breast Cancer Based on the Caputo–Fabrizio Fractal-Fractional Derivative",
+        "relevance_score": 313.0658,
+        "publication_year": 2023,
+        "publication_date": "2023-11-06",
+        "ids": {
+          "openalex": "https://openalex.org/W4388420389",
+          "doi": "https://doi.org/10.3390/fractalfract7110805"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.3390/fractalfract7110805",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3390/fractalfract7110805",
+          "pdf_url": "https://www.mdpi.com/2504-3110/7/11/805/pdf?version=1699237364",
+          "source": {
+            "id": "https://openalex.org/S4210227020",
+            "display_name": "Fractal and Fractional",
+            "issn_l": "2504-3110",
+            "issn": [
+              "2504-3110"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310310987",
+            "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310310987"
+            ],
+            "host_organization_lineage_names": [
+              "Multidisciplinary Digital Publishing Institute"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Fractal and Fractional",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.mdpi.com/2504-3110/7/11/805/pdf?version=1699237364",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5028663746",
+              "display_name": "Muhammad Idrees",
+              "orcid": "https://orcid.org/0000-0002-9250-1317"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I142204992",
+                "display_name": "University of Lahore",
+                "ror": "https://ror.org/051jrjw38",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I142204992"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Muhammad Idrees",
+            "raw_affiliation_strings": [
+              "Department of Mathematics and Statistics, The University of Lahore, Lahore 54000, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics and Statistics, The University of Lahore, Lahore 54000, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I142204992"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5082774745",
+              "display_name": "Abeer S. Alnahdi",
+              "orcid": "https://orcid.org/0000-0002-8027-2529"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I240666556",
+                "display_name": "Imam Mohammad ibn Saud Islamic University",
+                "ror": "https://ror.org/05gxjyb39",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I240666556"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Abeer Alnahdi",
+            "raw_affiliation_strings": [
+              "Department of Mathematics and Statistics, Faculty of Science, Imam Mohammad Ibn Saud Islamic University (IMSIU), Riyadh 13318, Saudi Arabia"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-8027-2529",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics and Statistics, Faculty of Science, Imam Mohammad Ibn Saud Islamic University (IMSIU), Riyadh 13318, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I240666556"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5031627857",
+              "display_name": "Mdi Begum Jeelani",
+              "orcid": "https://orcid.org/0000-0002-8812-2859"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I240666556",
+                "display_name": "Imam Mohammad ibn Saud Islamic University",
+                "ror": "https://ror.org/05gxjyb39",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I240666556"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Mdi Jeelani",
+            "raw_affiliation_strings": [
+              "Department of Mathematics and Statistics, Faculty of Science, Imam Mohammad Ibn Saud Islamic University (IMSIU), Riyadh 13318, Saudi Arabia"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-8812-2859",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics and Statistics, Faculty of Science, Imam Mohammad Ibn Saud Islamic University (IMSIU), Riyadh 13318, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I240666556"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 2,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5082774745"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I240666556"
+        ],
+        "apc_list": {
+          "value": 1800,
+          "currency": "CHF",
+          "value_usd": 2002
+        },
+        "apc_paid": {
+          "value": 1800,
+          "currency": "CHF",
+          "value_usd": 2002
+        },
+        "fwci": 4.5327,
+        "has_fulltext": true,
+        "cited_by_count": 26,
+        "citation_normalized_percentile": {
+          "value": 0.95793133,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 89,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "7",
+          "issue": "11",
+          "first_page": "805",
+          "last_page": "805"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11829",
+          "display_name": "Mathematical Biology Tumor Growth",
+          "score": 0.9993000030517578,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2611",
+            "display_name": "Modeling and Simulation"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/26",
+            "display_name": "Mathematics"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11829",
+            "display_name": "Mathematical Biology Tumor Growth",
+            "score": 0.9993000030517578,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10288",
+            "display_name": "Fractional Differential Equations Solutions",
+            "score": 0.9919999837875366,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10580",
+            "display_name": "Immunotherapy and Immune Responses",
+            "score": 0.9271000027656555,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2403",
+              "display_name": "Immunology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/24",
+              "display_name": "Immunology and Microbiology"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/1",
+              "display_name": "Life Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/fractal",
+            "display_name": "Fractal",
+            "score": 0.7653722763061523
+          },
+          {
+            "id": "https://openalex.org/keywords/breast-cancer",
+            "display_name": "Breast cancer",
+            "score": 0.7487576007843018
+          },
+          {
+            "id": "https://openalex.org/keywords/context",
+            "display_name": "Context (archaeology)",
+            "score": 0.5824411511421204
+          },
+          {
+            "id": "https://openalex.org/keywords/fractional-calculus",
+            "display_name": "Fractional calculus",
+            "score": 0.5169931650161743
+          },
+          {
+            "id": "https://openalex.org/keywords/cancer",
+            "display_name": "Cancer",
+            "score": 0.4782777726650238
+          },
+          {
+            "id": "https://openalex.org/keywords/derivative",
+            "display_name": "Derivative (finance)",
+            "score": 0.45325806736946106
+          },
+          {
+            "id": "https://openalex.org/keywords/population",
+            "display_name": "Population",
+            "score": 0.4518515467643738
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematics",
+            "display_name": "Mathematics",
+            "score": 0.43142184615135193
+          },
+          {
+            "id": "https://openalex.org/keywords/computer-science",
+            "display_name": "Computer science",
+            "score": 0.39811232686042786
+          },
+          {
+            "id": "https://openalex.org/keywords/medicine",
+            "display_name": "Medicine",
+            "score": 0.337207168340683
+          },
+          {
+            "id": "https://openalex.org/keywords/applied-mathematics",
+            "display_name": "Applied mathematics",
+            "score": 0.2938728928565979
+          },
+          {
+            "id": "https://openalex.org/keywords/internal-medicine",
+            "display_name": "Internal medicine",
+            "score": 0.2580874562263489
+          },
+          {
+            "id": "https://openalex.org/keywords/biology",
+            "display_name": "Biology",
+            "score": 0.18791744112968445
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematical-analysis",
+            "display_name": "Mathematical analysis",
+            "score": 0.07706210017204285
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C40636538",
+            "wikidata": "https://www.wikidata.org/wiki/Q81392",
+            "display_name": "Fractal",
+            "level": 2,
+            "score": 0.7653722763061523
+          },
+          {
+            "id": "https://openalex.org/C530470458",
+            "wikidata": "https://www.wikidata.org/wiki/Q128581",
+            "display_name": "Breast cancer",
+            "level": 3,
+            "score": 0.7487576007843018
+          },
+          {
+            "id": "https://openalex.org/C2779343474",
+            "wikidata": "https://www.wikidata.org/wiki/Q3109175",
+            "display_name": "Context (archaeology)",
+            "level": 2,
+            "score": 0.5824411511421204
+          },
+          {
+            "id": "https://openalex.org/C154249771",
+            "wikidata": "https://www.wikidata.org/wiki/Q1339058",
+            "display_name": "Fractional calculus",
+            "level": 2,
+            "score": 0.5169931650161743
+          },
+          {
+            "id": "https://openalex.org/C121608353",
+            "wikidata": "https://www.wikidata.org/wiki/Q12078",
+            "display_name": "Cancer",
+            "level": 2,
+            "score": 0.4782777726650238
+          },
+          {
+            "id": "https://openalex.org/C111771559",
+            "wikidata": "https://www.wikidata.org/wiki/Q66295",
+            "display_name": "Derivative (finance)",
+            "level": 2,
+            "score": 0.45325806736946106
+          },
+          {
+            "id": "https://openalex.org/C2908647359",
+            "wikidata": "https://www.wikidata.org/wiki/Q2625603",
+            "display_name": "Population",
+            "level": 2,
+            "score": 0.4518515467643738
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.43142184615135193
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.39811232686042786
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.337207168340683
+          },
+          {
+            "id": "https://openalex.org/C28826006",
+            "wikidata": "https://www.wikidata.org/wiki/Q33521",
+            "display_name": "Applied mathematics",
+            "level": 1,
+            "score": 0.2938728928565979
+          },
+          {
+            "id": "https://openalex.org/C126322002",
+            "wikidata": "https://www.wikidata.org/wiki/Q11180",
+            "display_name": "Internal medicine",
+            "level": 1,
+            "score": 0.2580874562263489
+          },
+          {
+            "id": "https://openalex.org/C86803240",
+            "wikidata": "https://www.wikidata.org/wiki/Q420",
+            "display_name": "Biology",
+            "level": 0,
+            "score": 0.18791744112968445
+          },
+          {
+            "id": "https://openalex.org/C134306372",
+            "wikidata": "https://www.wikidata.org/wiki/Q7754",
+            "display_name": "Mathematical analysis",
+            "level": 1,
+            "score": 0.07706210017204285
+          },
+          {
+            "id": "https://openalex.org/C162324750",
+            "wikidata": "https://www.wikidata.org/wiki/Q8134",
+            "display_name": "Economics",
+            "level": 0,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C151730666",
+            "wikidata": "https://www.wikidata.org/wiki/Q7205",
+            "display_name": "Paleontology",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C106159729",
+            "wikidata": "https://www.wikidata.org/wiki/Q2294553",
+            "display_name": "Financial economics",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C99454951",
+            "wikidata": "https://www.wikidata.org/wiki/Q932068",
+            "display_name": "Environmental health",
+            "level": 1,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.3390/fractalfract7110805",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.3390/fractalfract7110805",
+            "pdf_url": "https://www.mdpi.com/2504-3110/7/11/805/pdf?version=1699237364",
+            "source": {
+              "id": "https://openalex.org/S4210227020",
+              "display_name": "Fractal and Fractional",
+              "issn_l": "2504-3110",
+              "issn": [
+                "2504-3110"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310310987",
+              "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310310987"
+              ],
+              "host_organization_lineage_names": [
+                "Multidisciplinary Digital Publishing Institute"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Fractal and Fractional",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:5e3d14a96b8d481aa59f25661e31f7e4",
+            "is_oa": true,
+            "landing_page_url": "https://doaj.org/article/5e3d14a96b8d481aa59f25661e31f7e4",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Fractal and Fractional, Vol 7, Iss 11, p 805 (2023)",
+            "raw_type": "article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.3390/fractalfract7110805",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3390/fractalfract7110805",
+          "pdf_url": "https://www.mdpi.com/2504-3110/7/11/805/pdf?version=1699237364",
+          "source": {
+            "id": "https://openalex.org/S4210227020",
+            "display_name": "Fractal and Fractional",
+            "issn_l": "2504-3110",
+            "issn": [
+              "2504-3110"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310310987",
+            "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310310987"
+            ],
+            "host_organization_lineage_names": [
+              "Multidisciplinary Digital Publishing Institute"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Fractal and Fractional",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.8700000047683716,
+            "id": "https://metadata.un.org/sdg/3",
+            "display_name": "Good health and well-being"
+          }
+        ],
+        "awards": [],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320325415",
+            "display_name": "Al-Imam Muhammad Ibn Saud Islamic University",
+            "ror": null
+          }
+        ],
+        "has_content": {
+          "pdf": true,
+          "grobid_xml": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4388420389.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4388420389.grobid-xml"
+        },
+        "referenced_works_count": 58,
+        "referenced_works": [
+          "https://openalex.org/W66623719",
+          "https://openalex.org/W609539997",
+          "https://openalex.org/W1497865291",
+          "https://openalex.org/W1500930737",
+          "https://openalex.org/W1504879144",
+          "https://openalex.org/W1598099041",
+          "https://openalex.org/W1737921880",
+          "https://openalex.org/W1817423755",
+          "https://openalex.org/W1965307823",
+          "https://openalex.org/W1969934311",
+          "https://openalex.org/W1976792850",
+          "https://openalex.org/W1979679866",
+          "https://openalex.org/W1979985168",
+          "https://openalex.org/W2006664445",
+          "https://openalex.org/W2029712941",
+          "https://openalex.org/W2039437097",
+          "https://openalex.org/W2056760381",
+          "https://openalex.org/W2066861312",
+          "https://openalex.org/W2073367384",
+          "https://openalex.org/W2074662196",
+          "https://openalex.org/W2075667285",
+          "https://openalex.org/W2094650757",
+          "https://openalex.org/W2124505818",
+          "https://openalex.org/W2147342239",
+          "https://openalex.org/W2151246207",
+          "https://openalex.org/W2153194315",
+          "https://openalex.org/W2158629510",
+          "https://openalex.org/W2172359919",
+          "https://openalex.org/W2556784265",
+          "https://openalex.org/W2569542498",
+          "https://openalex.org/W2750777809",
+          "https://openalex.org/W2783463164",
+          "https://openalex.org/W2789884519",
+          "https://openalex.org/W2889598458",
+          "https://openalex.org/W2901641402",
+          "https://openalex.org/W2918238426",
+          "https://openalex.org/W2953472735",
+          "https://openalex.org/W2995427343",
+          "https://openalex.org/W2997696500",
+          "https://openalex.org/W3004283168",
+          "https://openalex.org/W3049097801",
+          "https://openalex.org/W3091326794",
+          "https://openalex.org/W3107037748",
+          "https://openalex.org/W3123263386",
+          "https://openalex.org/W3135260529",
+          "https://openalex.org/W4214633125",
+          "https://openalex.org/W4220802625",
+          "https://openalex.org/W4236398741",
+          "https://openalex.org/W4291940541",
+          "https://openalex.org/W6602742577",
+          "https://openalex.org/W6605244241",
+          "https://openalex.org/W6637998424",
+          "https://openalex.org/W6638455689",
+          "https://openalex.org/W6642878340",
+          "https://openalex.org/W6730176618",
+          "https://openalex.org/W6748380973",
+          "https://openalex.org/W6754784751",
+          "https://openalex.org/W7011340164"
+        ],
+        "related_works": [
+          "https://openalex.org/W2013332237",
+          "https://openalex.org/W2295517574",
+          "https://openalex.org/W2380221404",
+          "https://openalex.org/W2082446734",
+          "https://openalex.org/W2373248682",
+          "https://openalex.org/W4375959275",
+          "https://openalex.org/W4382753044",
+          "https://openalex.org/W2089892488",
+          "https://openalex.org/W2416906960",
+          "https://openalex.org/W2050580331"
+        ],
+        "abstract_inverted_index": {
+          "Breast": [
+            0
+          ],
+          "cancer": [
+            1,
+            36,
+            54,
+            73
+          ],
+          "ranks": [
+            2
+          ],
+          "among": [
+            3
+          ],
+          "the": [
+            4,
+            9,
+            32,
+            57,
+            68,
+            80,
+            83,
+            95,
+            101,
+            107,
+            131,
+            141,
+            145,
+            152
+          ],
+          "most": [
+            5
+          ],
+          "prevalent": [
+            6
+          ],
+          "malignancies": [
+            7
+          ],
+          "affecting": [
+            8
+          ],
+          "female": [
+            10
+          ],
+          "population": [
+            11
+          ],
+          "and": [
+            12,
+            38,
+            40,
+            66,
+            75
+          ],
+          "is": [
+            13,
+            22,
+            63
+          ],
+          "a": [
+            14,
+            23,
+            49,
+            91,
+            122
+          ],
+          "prominent": [
+            15
+          ],
+          "contributor": [
+            16
+          ],
+          "to": [
+            17,
+            30,
+            41,
+            64,
+            121,
+            143,
+            160
+          ],
+          "cancer-related": [
+            18
+          ],
+          "mortality.": [
+            19
+          ],
+          "Mathematical": [
+            20
+          ],
+          "modeling": [
+            21
+          ],
+          "significant": [
+            24
+          ],
+          "tool": [
+            25
+          ],
+          "that": [
+            26,
+            55,
+            165
+          ],
+          "can": [
+            27
+          ],
+          "be": [
+            28
+          ],
+          "employed": [
+            29
+          ],
+          "comprehend": [
+            31,
+            67
+          ],
+          "dynamics": [
+            33,
+            70
+          ],
+          "of": [
+            34,
+            52,
+            82,
+            109,
+            114,
+            134,
+            147,
+            154
+          ],
+          "breast": [
+            35,
+            53,
+            72,
+            127,
+            155
+          ],
+          "progression": [
+            37
+          ],
+          "dissemination": [
+            39
+          ],
+          "formulate": [
+            42,
+            161
+          ],
+          "novel": [
+            43,
+            123,
+            162
+          ],
+          "therapeutic": [
+            44
+          ],
+          "approaches.": [
+            45
+          ],
+          "This": [
+            46
+          ],
+          "paper": [
+            47
+          ],
+          "introduces": [
+            48
+          ],
+          "mathematical": [
+            50,
+            124
+          ],
+          "model": [
+            51,
+            125,
+            139
+          ],
+          "utilizes": [
+            56
+          ],
+          "Caputo–Fabrizio": [
+            58
+          ],
+          "fractal-fractional": [
+            59
+          ],
+          "derivative.": [
+            60,
+            85
+          ],
+          "The": [
+            61,
+            86,
+            112,
+            137
+          ],
+          "aim": [
+            62
+          ],
+          "elucidate": [
+            65
+          ],
+          "intricate": [
+            69,
+            102
+          ],
+          "governing": [
+            71
+          ],
+          "cells": [
+            74
+          ],
+          "cytotoxic": [
+            76
+          ],
+          "T": [
+            77
+          ],
+          "lymphocytes": [
+            78
+          ],
+          "in": [
+            79,
+            106,
+            118
+          ],
+          "context": [
+            81
+          ],
+          "fractional": [
+            84
+          ],
+          "derivative": [
+            87
+          ],
+          "presented": [
+            88
+          ],
+          "herein": [
+            89
+          ],
+          "offers": [
+            90
+          ],
+          "broader": [
+            92
+          ],
+          "perspective": [
+            93
+          ],
+          "than": [
+            94
+          ],
+          "conventional": [
+            96
+          ],
+          "derivative,": [
+            97
+          ],
+          "as": [
+            98,
+            157,
+            159
+          ],
+          "it": [
+            99
+          ],
+          "incorporates": [
+            100,
+            130
+          ],
+          "fractal": [
+            103,
+            132
+          ],
+          "characteristics": [
+            104,
+            133
+          ],
+          "inherent": [
+            105
+          ],
+          "process": [
+            108
+          ],
+          "tumor": [
+            110,
+            135
+          ],
+          "proliferation.": [
+            111
+          ],
+          "significance": [
+            113
+          ],
+          "this": [
+            115
+          ],
+          "study": [
+            116
+          ],
+          "lies": [
+            117
+          ],
+          "its": [
+            119
+          ],
+          "contribution": [
+            120
+          ],
+          "for": [
+            126
+          ],
+          "cancer,": [
+            128,
+            156
+          ],
+          "which": [
+            129
+          ],
+          "development.": [
+            136
+          ],
+          "present": [
+            138
+          ],
+          "possesses": [
+            140
+          ],
+          "capability": [
+            142
+          ],
+          "investigate": [
+            144
+          ],
+          "impacts": [
+            146
+          ],
+          "diverse": [
+            148
+          ],
+          "treatment": [
+            149,
+            163
+          ],
+          "strategies": [
+            150,
+            164
+          ],
+          "on": [
+            151
+          ],
+          "proliferation": [
+            153
+          ],
+          "well": [
+            158
+          ],
+          "exhibit": [
+            166
+          ],
+          "enhanced": [
+            167
+          ],
+          "efficacy.": [
+            168
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1
+          }
+        ],
+        "updated_date": "2026-09-05T08:02:43.246662",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W3047538675",
+        "doi": "https://doi.org/10.1109/access.2020.3013701",
+        "title": "A Time Fractional Model of Generalized Couette Flow of Couple Stress Nanofluid With Heat and Mass Transfer: Applications in Engine Oil",
+        "display_name": "A Time Fractional Model of Generalized Couette Flow of Couple Stress Nanofluid With Heat and Mass Transfer: Applications in Engine Oil",
+        "relevance_score": 238.96431,
+        "publication_year": 2020,
+        "publication_date": "2020-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W3047538675",
+          "doi": "https://doi.org/10.1109/access.2020.3013701",
+          "mag": "3047538675"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1109/access.2020.3013701",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1109/access.2020.3013701",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2485537415",
+            "display_name": "IEEE Access",
+            "issn_l": "2169-3536",
+            "issn": [
+              "2169-3536"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319808",
+            "host_organization_name": "Institute of Electrical and Electronics Engineers",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319808"
+            ],
+            "host_organization_lineage_names": [
+              "Institute of Electrical and Electronics Engineers"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "IEEE Access",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://doi.org/10.1109/access.2020.3013701",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5101894790",
+              "display_name": "Farhad Ali",
+              "orcid": "https://orcid.org/0000-0001-9454-265X"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I141445968",
+                "display_name": "Ton Duc Thang University",
+                "ror": "https://ror.org/01drq0835",
+                "country_code": "VN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I141445968"
+                ]
+              }
+            ],
+            "countries": [
+              "VN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Farhad Ali",
+            "raw_affiliation_strings": [
+              "Computational Analysis Research Group, Ton Duc Thang University, Ho Chi Minh City, Vietnam",
+              "Faculty of Mathematics and Statistics, Ton Duc Thang University, Ho Chi Minh City, Vietnam"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0001-9454-265X",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Computational Analysis Research Group, Ton Duc Thang University, Ho Chi Minh City, Vietnam",
+                "institution_ids": [
+                  "https://openalex.org/I141445968"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Faculty of Mathematics and Statistics, Ton Duc Thang University, Ho Chi Minh City, Vietnam",
+                "institution_ids": [
+                  "https://openalex.org/I141445968"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5058923936",
+              "display_name": "Zubair Ahmad",
+              "orcid": "https://orcid.org/0000-0002-3488-4233"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3132053282",
+                "display_name": "City University of Science and Information Technology",
+                "ror": "https://ror.org/02jsdya97",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3132053282"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Zubair Ahmad",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, City University of Science and Information Technology, Peshawar, Pakistan"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, City University of Science and Information Technology, Peshawar, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I3132053282"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5023984001",
+              "display_name": "Muhammad Arif",
+              "orcid": "https://orcid.org/0000-0002-2462-1245"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3132053282",
+                "display_name": "City University of Science and Information Technology",
+                "ror": "https://ror.org/02jsdya97",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3132053282"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Muhammad Arif",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, City University of Science and Information Technology, Peshawar, Pakistan"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-2462-1245",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, City University of Science and Information Technology, Peshawar, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I3132053282"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5011875207",
+              "display_name": "Ilyas Khan",
+              "orcid": "https://orcid.org/0000-0002-2056-9371"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I195631090",
+                "display_name": "Majmaah University",
+                "ror": "https://ror.org/01mcrnj60",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I195631090"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Ilyas Khan",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, College of Science Al-Zulfi, Majmaah University, Al Majmaah, Saudi Arabia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, College of Science Al-Zulfi, Majmaah University, Al Majmaah, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I195631090"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5057525661",
+              "display_name": "Kottakkaran Sooppy Nisar",
+              "orcid": "https://orcid.org/0000-0001-5769-4320"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I142608572",
+                "display_name": "Prince Sattam Bin Abdulaziz University",
+                "ror": "https://ror.org/04jt46d36",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I142608572"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Kottakkaran Sooppy Nisar",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, College of Arts and Science, Prince Sattam Bin Abdulaziz University, Wadi Al-Dawasir, Saudi Arabia"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0001-5769-4320",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, College of Arts and Science, Prince Sattam Bin Abdulaziz University, Wadi Al-Dawasir, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I142608572"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 3,
+        "institutions_distinct_count": 4,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": {
+          "value": 1750,
+          "currency": "USD",
+          "value_usd": 1750
+        },
+        "apc_paid": {
+          "value": 1750,
+          "currency": "USD",
+          "value_usd": 1750
+        },
+        "fwci": 4.5308,
+        "has_fulltext": true,
+        "cited_by_count": 78,
+        "citation_normalized_percentile": {
+          "value": 0.958757,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 89,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "8",
+          "issue": null,
+          "first_page": "146944",
+          "last_page": "146966"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10104",
+          "display_name": "Nanofluid Flow and Heat Transfer",
+          "score": 0.9991999864578247,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10104",
+            "display_name": "Nanofluid Flow and Heat Transfer",
+            "score": 0.9991999864578247,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2204",
+              "display_name": "Biomedical Engineering"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11945",
+            "display_name": "Heat Transfer Mechanisms",
+            "score": 0.9966999888420105,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2210",
+              "display_name": "Mechanical Engineering"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11379",
+            "display_name": "Rheology and Fluid Dynamics Studies",
+            "score": 0.9958999752998352,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1507",
+              "display_name": "Fluid Flow and Transfer Processes"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/15",
+              "display_name": "Chemical Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/nanofluid",
+            "display_name": "Nanofluid",
+            "score": 0.9179718494415283
+          },
+          {
+            "id": "https://openalex.org/keywords/couette-flow",
+            "display_name": "Couette flow",
+            "score": 0.6620071530342102
+          },
+          {
+            "id": "https://openalex.org/keywords/heat-transfer",
+            "display_name": "Heat transfer",
+            "score": 0.6069064736366272
+          },
+          {
+            "id": "https://openalex.org/keywords/mass-transfer",
+            "display_name": "Mass transfer",
+            "score": 0.5200440883636475
+          },
+          {
+            "id": "https://openalex.org/keywords/mechanics",
+            "display_name": "Mechanics",
+            "score": 0.5148016810417175
+          },
+          {
+            "id": "https://openalex.org/keywords/flow",
+            "display_name": "Flow (mathematics)",
+            "score": 0.5072898268699646
+          },
+          {
+            "id": "https://openalex.org/keywords/materials-science",
+            "display_name": "Materials science",
+            "score": 0.44446423649787903
+          },
+          {
+            "id": "https://openalex.org/keywords/stress",
+            "display_name": "Stress (linguistics)",
+            "score": 0.4425009787082672
+          },
+          {
+            "id": "https://openalex.org/keywords/physics",
+            "display_name": "Physics",
+            "score": 0.2135273516178131
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C21946209",
+            "wikidata": "https://www.wikidata.org/wiki/Q1989679",
+            "display_name": "Nanofluid",
+            "level": 3,
+            "score": 0.9179718494415283
+          },
+          {
+            "id": "https://openalex.org/C2779099160",
+            "wikidata": "https://www.wikidata.org/wiki/Q1114429",
+            "display_name": "Couette flow",
+            "level": 3,
+            "score": 0.6620071530342102
+          },
+          {
+            "id": "https://openalex.org/C50517652",
+            "wikidata": "https://www.wikidata.org/wiki/Q179635",
+            "display_name": "Heat transfer",
+            "level": 2,
+            "score": 0.6069064736366272
+          },
+          {
+            "id": "https://openalex.org/C51038369",
+            "wikidata": "https://www.wikidata.org/wiki/Q909534",
+            "display_name": "Mass transfer",
+            "level": 2,
+            "score": 0.5200440883636475
+          },
+          {
+            "id": "https://openalex.org/C57879066",
+            "wikidata": "https://www.wikidata.org/wiki/Q41217",
+            "display_name": "Mechanics",
+            "level": 1,
+            "score": 0.5148016810417175
+          },
+          {
+            "id": "https://openalex.org/C38349280",
+            "wikidata": "https://www.wikidata.org/wiki/Q1434290",
+            "display_name": "Flow (mathematics)",
+            "level": 2,
+            "score": 0.5072898268699646
+          },
+          {
+            "id": "https://openalex.org/C192562407",
+            "wikidata": "https://www.wikidata.org/wiki/Q228736",
+            "display_name": "Materials science",
+            "level": 0,
+            "score": 0.44446423649787903
+          },
+          {
+            "id": "https://openalex.org/C21036866",
+            "wikidata": "https://www.wikidata.org/wiki/Q181767",
+            "display_name": "Stress (linguistics)",
+            "level": 2,
+            "score": 0.4425009787082672
+          },
+          {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.2135273516178131
+          },
+          {
+            "id": "https://openalex.org/C41895202",
+            "wikidata": "https://www.wikidata.org/wiki/Q8162",
+            "display_name": "Linguistics",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C138885662",
+            "wikidata": "https://www.wikidata.org/wiki/Q5891",
+            "display_name": "Philosophy",
+            "level": 0,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.1109/access.2020.3013701",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1109/access.2020.3013701",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S2485537415",
+              "display_name": "IEEE Access",
+              "issn_l": "2169-3536",
+              "issn": [
+                "2169-3536"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310319808",
+              "host_organization_name": "Institute of Electrical and Electronics Engineers",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310319808"
+              ],
+              "host_organization_lineage_names": [
+                "Institute of Electrical and Electronics Engineers"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "IEEE Access",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:acb08e7f49e74ec7b5cad372bbffdff4",
+            "is_oa": true,
+            "landing_page_url": "https://doaj.org/article/acb08e7f49e74ec7b5cad372bbffdff4",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "IEEE Access, Vol 8, Pp 146944-146966 (2020)",
+            "raw_type": "article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1109/access.2020.3013701",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1109/access.2020.3013701",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2485537415",
+            "display_name": "IEEE Access",
+            "issn_l": "2169-3536",
+            "issn": [
+              "2169-3536"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319808",
+            "host_organization_name": "Institute of Electrical and Electronics Engineers",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319808"
+            ],
+            "host_organization_lineage_names": [
+              "Institute of Electrical and Electronics Engineers"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "IEEE Access",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.7200000286102295,
+            "id": "https://metadata.un.org/sdg/7",
+            "display_name": "Affordable and clean energy"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 69,
+        "referenced_works": [
+          "https://openalex.org/W566301135",
+          "https://openalex.org/W643951637",
+          "https://openalex.org/W1966823934",
+          "https://openalex.org/W1978176153",
+          "https://openalex.org/W1984002118",
+          "https://openalex.org/W1992457517",
+          "https://openalex.org/W2015056961",
+          "https://openalex.org/W2016415236",
+          "https://openalex.org/W2019586619",
+          "https://openalex.org/W2025752922",
+          "https://openalex.org/W2032449166",
+          "https://openalex.org/W2034348204",
+          "https://openalex.org/W2038133462",
+          "https://openalex.org/W2050035182",
+          "https://openalex.org/W2059462509",
+          "https://openalex.org/W2061226634",
+          "https://openalex.org/W2075528939",
+          "https://openalex.org/W2076749418",
+          "https://openalex.org/W2076978869",
+          "https://openalex.org/W2096997687",
+          "https://openalex.org/W2104980824",
+          "https://openalex.org/W2109573261",
+          "https://openalex.org/W2117220239",
+          "https://openalex.org/W2139794367",
+          "https://openalex.org/W2149522752",
+          "https://openalex.org/W2150186191",
+          "https://openalex.org/W2188804711",
+          "https://openalex.org/W2190952933",
+          "https://openalex.org/W2345664097",
+          "https://openalex.org/W2346928155",
+          "https://openalex.org/W2464411857",
+          "https://openalex.org/W2486419284",
+          "https://openalex.org/W2523214698",
+          "https://openalex.org/W2523871742",
+          "https://openalex.org/W2533772207",
+          "https://openalex.org/W2549517549",
+          "https://openalex.org/W2556784265",
+          "https://openalex.org/W2557895751",
+          "https://openalex.org/W2562074243",
+          "https://openalex.org/W2604026034",
+          "https://openalex.org/W2740460687",
+          "https://openalex.org/W2759824122",
+          "https://openalex.org/W2778514037",
+          "https://openalex.org/W2805699932",
+          "https://openalex.org/W2883613465",
+          "https://openalex.org/W2891156843",
+          "https://openalex.org/W2895969710",
+          "https://openalex.org/W2905337751",
+          "https://openalex.org/W2915578330",
+          "https://openalex.org/W2951489882",
+          "https://openalex.org/W2955264268",
+          "https://openalex.org/W2969149526",
+          "https://openalex.org/W2974598411",
+          "https://openalex.org/W2979562792",
+          "https://openalex.org/W2980570378",
+          "https://openalex.org/W2983504174",
+          "https://openalex.org/W3003825621",
+          "https://openalex.org/W3011115649",
+          "https://openalex.org/W3014567336",
+          "https://openalex.org/W3036408205",
+          "https://openalex.org/W3102428875",
+          "https://openalex.org/W3201154547",
+          "https://openalex.org/W6687212944",
+          "https://openalex.org/W6722359880",
+          "https://openalex.org/W6730176618",
+          "https://openalex.org/W6730470552",
+          "https://openalex.org/W6764079235",
+          "https://openalex.org/W6768493575",
+          "https://openalex.org/W6802237744"
+        ],
+        "related_works": [
+          "https://openalex.org/W2063777876",
+          "https://openalex.org/W2754636322",
+          "https://openalex.org/W3150003624",
+          "https://openalex.org/W1938556690",
+          "https://openalex.org/W2886903305",
+          "https://openalex.org/W2809186558",
+          "https://openalex.org/W3095291729",
+          "https://openalex.org/W3005225185",
+          "https://openalex.org/W4387013174",
+          "https://openalex.org/W2059927201"
+        ],
+        "abstract_inverted_index": {
+          "The": [
+            0,
+            21,
+            83,
+            118,
+            142
+          ],
+          "aim": [
+            1
+          ],
+          "of": [
+            2,
+            70,
+            90,
+            94,
+            101,
+            113,
+            136,
+            144,
+            147,
+            149,
+            163,
+            195,
+            202,
+            288,
+            291
+          ],
+          "this": [
+            3,
+            55
+          ],
+          "study": [
+            4
+          ],
+          "is": [
+            5,
+            23,
+            44,
+            52,
+            59,
+            85,
+            217,
+            265,
+            283
+          ],
+          "to": [
+            6,
+            25,
+            66,
+            225,
+            234,
+            258,
+            298,
+            306
+          ],
+          "obtain": [
+            7
+          ],
+          "the": [
+            8,
+            13,
+            41,
+            68,
+            80,
+            98,
+            109,
+            133,
+            139,
+            150,
+            193,
+            200,
+            207,
+            229,
+            236,
+            240,
+            259,
+            286
+          ],
+          "closed": [
+            9
+          ],
+          "form": [
+            10
+          ],
+          "solutions": [
+            11,
+            122,
+            153,
+            176
+          ],
+          "for": [
+            12,
+            123,
+            244
+          ],
+          "laminar": [
+            14
+          ],
+          "and": [
+            15,
+            65,
+            126,
+            138,
+            190,
+            197,
+            210,
+            247,
+            276,
+            300
+          ],
+          "unsteady": [
+            16
+          ],
+          "couple": [
+            17,
+            183,
+            221
+          ],
+          "stress": [
+            18,
+            184,
+            222
+          ],
+          "fluid": [
+            19,
+            22,
+            64,
+            185,
+            189
+          ],
+          "flow.": [
+            20
+          ],
+          "allowed": [
+            24
+          ],
+          "flow": [
+            26,
+            84,
+            180
+          ],
+          "between": [
+            27
+          ],
+          "two": [
+            28
+          ],
+          "infinite": [
+            29
+          ],
+          "parallel": [
+            30
+          ],
+          "plates": [
+            31
+          ],
+          "separated": [
+            32
+          ],
+          "by": [
+            33,
+            107,
+            131,
+            156,
+            308
+          ],
+          "distance": [
+            34
+          ],
+          "ℓ.": [
+            35
+          ],
+          "Moreover,": [
+            36,
+            199
+          ],
+          "we": [
+            37
+          ],
+          "have": [
+            38
+          ],
+          "considered": [
+            39
+          ],
+          "that": [
+            40,
+            220,
+            285
+          ],
+          "lower": [
+            42,
+            268
+          ],
+          "plate": [
+            43,
+            51
+          ],
+          "moving": [
+            45
+          ],
+          "with": [
+            46
+          ],
+          "uniform": [
+            47
+          ],
+          "velocity": [
+            48,
+            230
+          ],
+          "U0and": [
+            49
+          ],
+          "upper": [
+            50,
+            272
+          ],
+          "stationary.": [
+            53
+          ],
+          "For": [
+            54
+          ],
+          "purpose,": [
+            56
+          ],
+          "engine": [
+            57,
+            81,
+            292,
+            315
+          ],
+          "oil": [
+            58,
+            293
+          ],
+          "taken": [
+            60
+          ],
+          "as": [
+            61,
+            256,
+            269,
+            271
+          ],
+          "a": [
+            62,
+            226,
+            252
+          ],
+          "base": [
+            63
+          ],
+          "enhance": [
+            67
+          ],
+          "efficiency": [
+            69
+          ],
+          "lubricating": [
+            71
+          ],
+          "oil,": [
+            72
+          ],
+          "Molybdenum": [
+            73,
+            310
+          ],
+          "disulphide": [
+            74,
+            311
+          ],
+          "nanoparticles": [
+            75,
+            312
+          ],
+          "are": [
+            76,
+            105,
+            129,
+            154,
+            170,
+            213,
+            242,
+            279
+          ],
+          "dispersed": [
+            77
+          ],
+          "uniformly": [
+            78
+          ],
+          "in": [
+            79,
+            88,
+            192,
+            228,
+            302,
+            313
+          ],
+          "oil.": [
+            82,
+            316
+          ],
+          "formulated": [
+            86
+          ],
+          "mathematically": [
+            87
+          ],
+          "terms": [
+            89
+          ],
+          "partial": [
+            91,
+            102
+          ],
+          "differential": [
+            92,
+            103
+          ],
+          "equations": [
+            93,
+            104
+          ],
+          "order": [
+            95,
+            233,
+            246,
+            249
+          ],
+          "four.": [
+            96
+          ],
+          "Furthermore,": [
+            97,
+            159
+          ],
+          "derived": [
+            99
+          ],
+          "system": [
+            100
+          ],
+          "fractionalized": [
+            106
+          ],
+          "using": [
+            108,
+            132
+          ],
+          "mostly": [
+            110
+          ],
+          "used": [
+            111
+          ],
+          "definition": [
+            112
+          ],
+          "Caputo-Fabrizio": [
+            114
+          ],
+          "time": [
+            115
+          ],
+          "fractional": [
+            116,
+            248
+          ],
+          "derivative.": [
+            117
+          ],
+          "more": [
+            119,
+            253
+          ],
+          "general": [
+            120,
+            152,
+            175
+          ],
+          "exact": [
+            121
+          ],
+          "velocity,": [
+            124,
+            208
+          ],
+          "temperature": [
+            125,
+            209
+          ],
+          "concentration": [
+            127,
+            211
+          ],
+          "distributions": [
+            128,
+            212
+          ],
+          "obtained": [
+            130,
+            151,
+            174
+          ],
+          "joint": [
+            134
+          ],
+          "applications": [
+            135
+          ],
+          "Fourier": [
+            137
+          ],
+          "Laplace": [
+            140
+          ],
+          "transforms.": [
+            141
+          ],
+          "effect": [
+            143,
+            201
+          ],
+          "different": [
+            145,
+            164,
+            167,
+            203
+          ],
+          "parameters": [
+            146,
+            205
+          ],
+          "interest": [
+            148
+          ],
+          "discussed": [
+            155,
+            214
+          ],
+          "sketching": [
+            157
+          ],
+          "graphs.": [
+            158
+          ],
+          "substituting": [
+            160
+          ],
+          "favorable": [
+            161
+          ],
+          "limits": [
+            162
+          ],
+          "parameters,": [
+            165
+          ],
+          "four": [
+            166
+          ],
+          "limiting": [
+            168
+          ],
+          "cases": [
+            169
+          ],
+          "recovered": [
+            171
+          ],
+          "from": [
+            172
+          ],
+          "our": [
+            173
+          ],
+          "i.e.": [
+            177
+          ],
+          "(a)": [
+            178
+          ],
+          "Couette": [
+            179
+          ],
+          "(b)": [
+            181
+          ],
+          "Classical": [
+            182
+          ],
+          "(c)": [
+            186
+          ],
+          "Newtonian": [
+            187
+          ],
+          "viscous": [
+            188
+          ],
+          "(d)": [
+            191
+          ],
+          "absence": [
+            194
+          ],
+          "thermal": [
+            196
+          ],
+          "concentration.": [
+            198
+          ],
+          "physical": [
+            204
+          ],
+          "on": [
+            206
+          ],
+          "graphically.": [
+            215
+          ],
+          "It": [
+            216,
+            282
+          ],
+          "worth": [
+            218
+          ],
+          "noting": [
+            219
+          ],
+          "parameter": [
+            223
+          ],
+          "corresponds": [
+            224
+          ],
+          "decrease": [
+            227,
+            301
+          ],
+          "profile.": [
+            231
+          ],
+          "In": [
+            232
+          ],
+          "observe": [
+            235
+          ],
+          "differences": [
+            237
+          ],
+          "clearly,": [
+            238
+          ],
+          "all": [
+            239
+          ],
+          "figures": [
+            241
+          ],
+          "compared": [
+            243,
+            257
+          ],
+          "integer": [
+            245
+          ],
+          "which": [
+            250
+          ],
+          "provide": [
+            251
+          ],
+          "realistic": [
+            254
+          ],
+          "approach": [
+            255
+          ],
+          "classical": [
+            260
+          ],
+          "model.": [
+            261
+          ],
+          "Additionally,": [
+            262
+          ],
+          "skin": [
+            263
+          ],
+          "friction": [
+            264
+          ],
+          "calculated": [
+            266
+          ],
+          "at": [
+            267
+          ],
+          "well": [
+            270
+          ],
+          "plate.": [
+            273
+          ],
+          "Nusselt": [
+            274
+          ],
+          "number": [
+            275,
+            278
+          ],
+          "Sherwood": [
+            277
+          ],
+          "also": [
+            280
+          ],
+          "tabulated.": [
+            281
+          ],
+          "noticed": [
+            284
+          ],
+          "rate": [
+            287
+          ],
+          "heat": [
+            289
+          ],
+          "transfer": [
+            290,
+            304
+          ],
+          "can": [
+            294
+          ],
+          "be": [
+            295
+          ],
+          "enhanced": [
+            296
+          ],
+          "up": [
+            297,
+            305
+          ],
+          "12.38%": [
+            299
+          ],
+          "mass": [
+            303
+          ],
+          "2.14%": [
+            307
+          ],
+          "adding": [
+            309
+          ],
+          "regular": [
+            314
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 27
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 20
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          }
+        ],
+        "updated_date": "2026-08-28T12:50:07.497085",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4391508260",
+        "doi": "https://doi.org/10.29020/nybg.ejpam.v17i1.5013",
+        "title": "Solving Fractional Riccati Differential Equation with Caputo-Fabrizio Fractional Derivative",
+        "display_name": "Solving Fractional Riccati Differential Equation with Caputo-Fabrizio Fractional Derivative",
+        "relevance_score": 218.65921,
+        "publication_year": 2024,
+        "publication_date": "2024-01-31",
+        "ids": {
+          "openalex": "https://openalex.org/W4391508260",
+          "doi": "https://doi.org/10.29020/nybg.ejpam.v17i1.5013"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.29020/nybg.ejpam.v17i1.5013",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.29020/nybg.ejpam.v17i1.5013",
+          "pdf_url": "https://ejpam.com/index.php/ejpam/article/download/5013/1563",
+          "source": {
+            "id": "https://openalex.org/S2764475867",
+            "display_name": "European Journal of Pure and Applied Mathematics",
+            "issn_l": "1307-5543",
+            "issn": [
+              "1307-5543"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "European Journal of Pure and Applied Mathematics",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://ejpam.com/index.php/ejpam/article/download/5013/1563",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5080412487",
+              "display_name": "Eman Abuteen",
+              "orcid": "https://orcid.org/0000-0003-1425-9454"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I33926330",
+                "display_name": "Al-Balqa Applied University",
+                "ror": "https://ror.org/00qedmt22",
+                "country_code": "JO",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I33926330"
+                ]
+              }
+            ],
+            "countries": [
+              "JO"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Eman Abuteen",
+            "raw_affiliation_strings": [
+              "Al-Balqa' applied university"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Al-Balqa' applied university",
+                "institution_ids": [
+                  "https://openalex.org/I33926330"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5080412487"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I33926330"
+        ],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 1.4385,
+        "has_fulltext": true,
+        "cited_by_count": 5,
+        "citation_normalized_percentile": {
+          "value": 0.77503729,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 94,
+          "max": 97
+        },
+        "biblio": {
+          "volume": "17",
+          "issue": "1",
+          "first_page": "372",
+          "last_page": "384"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10288",
+          "display_name": "Fractional Differential Equations Solutions",
+          "score": 0.9988999962806702,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2611",
+            "display_name": "Modeling and Simulation"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/26",
+            "display_name": "Mathematics"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10288",
+            "display_name": "Fractional Differential Equations Solutions",
+            "score": 0.9988999962806702,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10541",
+            "display_name": "Nonlinear Differential Equations Analysis",
+            "score": 0.9799000024795532,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2604",
+              "display_name": "Applied Mathematics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11416",
+            "display_name": "Numerical methods for differential equations",
+            "score": 0.9731000065803528,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2612",
+              "display_name": "Numerical Analysis"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/mathematics",
+            "display_name": "Mathematics",
+            "score": 0.9375327825546265
+          },
+          {
+            "id": "https://openalex.org/keywords/fractional-calculus",
+            "display_name": "Fractional calculus",
+            "score": 0.7886696457862854
+          },
+          {
+            "id": "https://openalex.org/keywords/riccati-equation",
+            "display_name": "Riccati equation",
+            "score": 0.624078094959259
+          },
+          {
+            "id": "https://openalex.org/keywords/applied-mathematics",
+            "display_name": "Applied mathematics",
+            "score": 0.5081605911254883
+          },
+          {
+            "id": "https://openalex.org/keywords/derivative",
+            "display_name": "Derivative (finance)",
+            "score": 0.45485973358154297
+          },
+          {
+            "id": "https://openalex.org/keywords/differential-equation",
+            "display_name": "Differential equation",
+            "score": 0.4353945851325989
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematical-analysis",
+            "display_name": "Mathematical analysis",
+            "score": 0.37907934188842773
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.9375327825546265
+          },
+          {
+            "id": "https://openalex.org/C154249771",
+            "wikidata": "https://www.wikidata.org/wiki/Q1339058",
+            "display_name": "Fractional calculus",
+            "level": 2,
+            "score": 0.7886696457862854
+          },
+          {
+            "id": "https://openalex.org/C45473103",
+            "wikidata": "https://www.wikidata.org/wiki/Q851503",
+            "display_name": "Riccati equation",
+            "level": 3,
+            "score": 0.624078094959259
+          },
+          {
+            "id": "https://openalex.org/C28826006",
+            "wikidata": "https://www.wikidata.org/wiki/Q33521",
+            "display_name": "Applied mathematics",
+            "level": 1,
+            "score": 0.5081605911254883
+          },
+          {
+            "id": "https://openalex.org/C111771559",
+            "wikidata": "https://www.wikidata.org/wiki/Q66295",
+            "display_name": "Derivative (finance)",
+            "level": 2,
+            "score": 0.45485973358154297
+          },
+          {
+            "id": "https://openalex.org/C78045399",
+            "wikidata": "https://www.wikidata.org/wiki/Q11214",
+            "display_name": "Differential equation",
+            "level": 2,
+            "score": 0.4353945851325989
+          },
+          {
+            "id": "https://openalex.org/C134306372",
+            "wikidata": "https://www.wikidata.org/wiki/Q7754",
+            "display_name": "Mathematical analysis",
+            "level": 1,
+            "score": 0.37907934188842773
+          },
+          {
+            "id": "https://openalex.org/C162324750",
+            "wikidata": "https://www.wikidata.org/wiki/Q8134",
+            "display_name": "Economics",
+            "level": 0,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C106159729",
+            "wikidata": "https://www.wikidata.org/wiki/Q2294553",
+            "display_name": "Financial economics",
+            "level": 1,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.29020/nybg.ejpam.v17i1.5013",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.29020/nybg.ejpam.v17i1.5013",
+            "pdf_url": "https://ejpam.com/index.php/ejpam/article/download/5013/1563",
+            "source": {
+              "id": "https://openalex.org/S2764475867",
+              "display_name": "European Journal of Pure and Applied Mathematics",
+              "issn_l": "1307-5543",
+              "issn": [
+                "1307-5543"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "journal"
+            },
+            "license": "cc-by-nc-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "European Journal of Pure and Applied Mathematics",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.29020/nybg.ejpam.v17i1.5013",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.29020/nybg.ejpam.v17i1.5013",
+          "pdf_url": "https://ejpam.com/index.php/ejpam/article/download/5013/1563",
+          "source": {
+            "id": "https://openalex.org/S2764475867",
+            "display_name": "European Journal of Pure and Applied Mathematics",
+            "issn_l": "1307-5543",
+            "issn": [
+              "1307-5543"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "European Journal of Pure and Applied Mathematics",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.75,
+            "id": "https://metadata.un.org/sdg/10",
+            "display_name": "Reduced inequalities"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": true,
+          "grobid_xml": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4391508260.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4391508260.grobid-xml"
+        },
+        "referenced_works_count": 41,
+        "referenced_works": [
+          "https://openalex.org/W310881058",
+          "https://openalex.org/W1584611818",
+          "https://openalex.org/W1974077123",
+          "https://openalex.org/W1975670568",
+          "https://openalex.org/W2019469368",
+          "https://openalex.org/W2022318891",
+          "https://openalex.org/W2045882715",
+          "https://openalex.org/W2061498519",
+          "https://openalex.org/W2090303355",
+          "https://openalex.org/W2187932833",
+          "https://openalex.org/W2259227674",
+          "https://openalex.org/W2556784265",
+          "https://openalex.org/W2583649390",
+          "https://openalex.org/W2740460687",
+          "https://openalex.org/W2796834464",
+          "https://openalex.org/W2801192398",
+          "https://openalex.org/W2898423578",
+          "https://openalex.org/W2963227164",
+          "https://openalex.org/W2974062228",
+          "https://openalex.org/W2990845931",
+          "https://openalex.org/W2991590936",
+          "https://openalex.org/W3011134403",
+          "https://openalex.org/W3143141409",
+          "https://openalex.org/W3189149075",
+          "https://openalex.org/W3189224876",
+          "https://openalex.org/W3192192562",
+          "https://openalex.org/W3195310268",
+          "https://openalex.org/W3208999253",
+          "https://openalex.org/W4200594137",
+          "https://openalex.org/W4206116292",
+          "https://openalex.org/W4224996817",
+          "https://openalex.org/W4225664730",
+          "https://openalex.org/W4247913510",
+          "https://openalex.org/W4251820512",
+          "https://openalex.org/W4285262994",
+          "https://openalex.org/W4321455365",
+          "https://openalex.org/W4323356190",
+          "https://openalex.org/W4361295712",
+          "https://openalex.org/W4379091158",
+          "https://openalex.org/W4382930661",
+          "https://openalex.org/W4386132968"
+        ],
+        "related_works": [
+          "https://openalex.org/W2089892488",
+          "https://openalex.org/W2416906960",
+          "https://openalex.org/W2050580331",
+          "https://openalex.org/W3049300385",
+          "https://openalex.org/W2123585262",
+          "https://openalex.org/W2937301577",
+          "https://openalex.org/W3081931655",
+          "https://openalex.org/W2062635734",
+          "https://openalex.org/W3176473605",
+          "https://openalex.org/W1755828065"
+        ],
+        "abstract_inverted_index": {
+          "This": [
+            0
+          ],
+          "article": [
+            1
+          ],
+          "offers": [
+            2
+          ],
+          "an": [
+            3
+          ],
+          "analytical": [
+            4,
+            25,
+            44
+          ],
+          "solution": [
+            5,
+            26
+          ],
+          "for": [
+            6
+          ],
+          "the": [
+            7,
+            21,
+            24,
+            29,
+            32,
+            59
+          ],
+          "fractional": [
+            8,
+            34
+          ],
+          "Riccati": [
+            9
+          ],
+          "differential": [
+            10
+          ],
+          "equation": [
+            11
+          ],
+          "in": [
+            12,
+            58
+          ],
+          "three": [
+            13
+          ],
+          "distinct": [
+            14
+          ],
+          "cases.": [
+            15
+          ],
+          "These": [
+            16
+          ],
+          "cases": [
+            17
+          ],
+          "are": [
+            18
+          ],
+          "determined": [
+            19
+          ],
+          "by": [
+            20
+          ],
+          "discriminant": [
+            22
+          ],
+          "and": [
+            23,
+            36
+          ],
+          "based": [
+            27
+          ],
+          "on": [
+            28
+          ],
+          "properties": [
+            30
+          ],
+          "of": [
+            31
+          ],
+          "Caputo-Fabrizio": [
+            33
+          ],
+          "derivative": [
+            35
+          ],
+          "integral.": [
+            37
+          ],
+          "Several": [
+            38
+          ],
+          "examples": [
+            39
+          ],
+          "were": [
+            40
+          ],
+          "tested": [
+            41
+          ],
+          "using": [
+            42
+          ],
+          "this": [
+            43
+          ],
+          "solution.": [
+            45
+          ],
+          "It": [
+            46
+          ],
+          "is": [
+            47
+          ],
+          "noteworthy": [
+            48
+          ],
+          "that": [
+            49
+          ],
+          "various": [
+            50
+          ],
+          "methods": [
+            51
+          ],
+          "have": [
+            52
+          ],
+          "yielded": [
+            53
+          ],
+          "related": [
+            54
+          ],
+          "results": [
+            55
+          ],
+          "as": [
+            56
+          ],
+          "indicated": [
+            57
+          ],
+          "literature.": [
+            60
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2
+          }
+        ],
+        "updated_date": "2026-08-18T07:49:30.821534",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4407025001",
+        "doi": "https://doi.org/10.29020/nybg.ejpam.v18i1.5509",
+        "title": "Numerical Investigation of the Dynamical Behavior of Hepatitis B Virus via Caputo-Fabrizio Fractional Derivative",
+        "display_name": "Numerical Investigation of the Dynamical Behavior of Hepatitis B Virus via Caputo-Fabrizio Fractional Derivative",
+        "relevance_score": 211.7036,
+        "publication_year": 2025,
+        "publication_date": "2025-01-31",
+        "ids": {
+          "openalex": "https://openalex.org/W4407025001",
+          "doi": "https://doi.org/10.29020/nybg.ejpam.v18i1.5509"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.29020/nybg.ejpam.v18i1.5509",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.29020/nybg.ejpam.v18i1.5509",
+          "pdf_url": "https://www.ejpam.com/index.php/ejpam/article/download/5509/1932",
+          "source": {
+            "id": "https://openalex.org/S2764475867",
+            "display_name": "European Journal of Pure and Applied Mathematics",
+            "issn_l": "1307-5543",
+            "issn": [
+              "1307-5543"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-nc",
+          "license_id": "https://openalex.org/licenses/cc-by-nc",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "European Journal of Pure and Applied Mathematics",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://www.ejpam.com/index.php/ejpam/article/download/5509/1932",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5089160568",
+              "display_name": "Imtiaz Ahmad",
+              "orcid": "https://orcid.org/0000-0002-4023-3293"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I79156528",
+                "display_name": "Universiti Tenaga Nasional",
+                "ror": "https://ror.org/03kxdn807",
+                "country_code": "MY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I79156528",
+                  "https://openalex.org/I874769580"
+                ]
+              }
+            ],
+            "countries": [
+              "MY"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Imtiaz Ahmad",
+            "raw_affiliation_strings": [
+              "Institute of Informatics and Computing in Energy (IICE), Universiti Tenaga Nasional, Kajang, Selangor, Malaysia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institute of Informatics and Computing in Energy (IICE), Universiti Tenaga Nasional, Kajang, Selangor, Malaysia",
+                "institution_ids": [
+                  "https://openalex.org/I79156528"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5058744595",
+              "display_name": "Rashid Jan",
+              "orcid": "https://orcid.org/0000-0001-9709-7045"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I79156528",
+                "display_name": "Universiti Tenaga Nasional",
+                "ror": "https://ror.org/03kxdn807",
+                "country_code": "MY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I79156528",
+                  "https://openalex.org/I874769580"
+                ]
+              }
+            ],
+            "countries": [
+              "MY"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Rashid Jan",
+            "raw_affiliation_strings": [
+              "Institute of Energy Infrastructure (IEI), Department of Civil  Engineering, College of Engineering, Universiti Tenaga  Nasional (UNITEN), Putrajaya Campus, Jalan IKRAM-UNITEN, 43000 Kajang, Selangor, Malaysia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institute of Energy Infrastructure (IEI), Department of Civil  Engineering, College of Engineering, Universiti Tenaga  Nasional (UNITEN), Putrajaya Campus, Jalan IKRAM-UNITEN, 43000 Kajang, Selangor, Malaysia",
+                "institution_ids": [
+                  "https://openalex.org/I79156528"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5003958044",
+              "display_name": "Normy Norfiza Abdul Razak",
+              "orcid": "https://orcid.org/0000-0002-2967-5728"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I79156528",
+                "display_name": "Universiti Tenaga Nasional",
+                "ror": "https://ror.org/03kxdn807",
+                "country_code": "MY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I79156528",
+                  "https://openalex.org/I874769580"
+                ]
+              }
+            ],
+            "countries": [
+              "MY"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Normy Norfiza Abdul Razak",
+            "raw_affiliation_strings": [
+              "Institute of Energy Infrastructure (IEI), Department of Civil  Engineering, College of Engineering, Universiti Tenaga  Nasional (UNITEN), Putrajaya Campus, Jalan IKRAM-UNITEN, 43000 Kajang, Selangor, Malaysia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Institute of Energy Infrastructure (IEI), Department of Civil  Engineering, College of Engineering, Universiti Tenaga  Nasional (UNITEN), Putrajaya Campus, Jalan IKRAM-UNITEN, 43000 Kajang, Selangor, Malaysia",
+                "institution_ids": [
+                  "https://openalex.org/I79156528"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5103174025",
+              "display_name": "Aziz Khan",
+              "orcid": "https://orcid.org/0000-0003-1112-831X"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I142024983",
+                "display_name": "Prince Sultan University",
+                "ror": "https://ror.org/053mqrf26",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I142024983"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Aziz Khan",
+            "raw_affiliation_strings": [
+              "Department of Mathematics and Sciences, Prince Sultan University, P.O. Box 66833, 11586 Riyadh, Saudi Arabia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics and Sciences, Prince Sultan University, P.O. Box 66833, 11586 Riyadh, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I142024983"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5043412155",
+              "display_name": "Thabet Abdeljawad",
+              "orcid": "https://orcid.org/0000-0002-8889-3768"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I142024983",
+                "display_name": "Prince Sultan University",
+                "ror": "https://ror.org/053mqrf26",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I142024983"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Thabet Abdeljawad",
+            "raw_affiliation_strings": [
+              "Department of Mathematics and Sciences, Prince Sultan University, P.O. Box 66833, 11586 Riyadh, Saudi Arabia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics and Sciences, Prince Sultan University, P.O. Box 66833, 11586 Riyadh, Saudi Arabia",
+                "institution_ids": [
+                  "https://openalex.org/I142024983"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 2,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 6.6438,
+        "has_fulltext": true,
+        "cited_by_count": 9,
+        "citation_normalized_percentile": {
+          "value": 0.97127432,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 98,
+          "max": 99
+        },
+        "biblio": {
+          "volume": "18",
+          "issue": "1",
+          "first_page": "5509",
+          "last_page": "5509"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10288",
+          "display_name": "Fractional Differential Equations Solutions",
+          "score": 0.9998000264167786,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2611",
+            "display_name": "Modeling and Simulation"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/26",
+            "display_name": "Mathematics"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10288",
+            "display_name": "Fractional Differential Equations Solutions",
+            "score": 0.9998000264167786,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10482",
+            "display_name": "Mathematical and Theoretical Epidemiology and Ecology Models",
+            "score": 0.9876000285148621,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2739",
+              "display_name": "Public Health, Environmental and Occupational Health"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/27",
+              "display_name": "Medicine"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/4",
+              "display_name": "Health Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11081",
+            "display_name": "Advanced Control Systems Design",
+            "score": 0.9692000150680542,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2207",
+              "display_name": "Control and Systems Engineering"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/mathematics",
+            "display_name": "Mathematics",
+            "score": 0.9328484535217285
+          },
+          {
+            "id": "https://openalex.org/keywords/fractional-calculus",
+            "display_name": "Fractional calculus",
+            "score": 0.6684585213661194
+          },
+          {
+            "id": "https://openalex.org/keywords/derivative",
+            "display_name": "Derivative (finance)",
+            "score": 0.543770968914032
+          },
+          {
+            "id": "https://openalex.org/keywords/applied-mathematics",
+            "display_name": "Applied mathematics",
+            "score": 0.4341597557067871
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematical-analysis",
+            "display_name": "Mathematical analysis",
+            "score": 0.39643025398254395
+          },
+          {
+            "id": "https://openalex.org/keywords/pure-mathematics",
+            "display_name": "Pure mathematics",
+            "score": 0.3624042272567749
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.9328484535217285
+          },
+          {
+            "id": "https://openalex.org/C154249771",
+            "wikidata": "https://www.wikidata.org/wiki/Q1339058",
+            "display_name": "Fractional calculus",
+            "level": 2,
+            "score": 0.6684585213661194
+          },
+          {
+            "id": "https://openalex.org/C111771559",
+            "wikidata": "https://www.wikidata.org/wiki/Q66295",
+            "display_name": "Derivative (finance)",
+            "level": 2,
+            "score": 0.543770968914032
+          },
+          {
+            "id": "https://openalex.org/C28826006",
+            "wikidata": "https://www.wikidata.org/wiki/Q33521",
+            "display_name": "Applied mathematics",
+            "level": 1,
+            "score": 0.4341597557067871
+          },
+          {
+            "id": "https://openalex.org/C134306372",
+            "wikidata": "https://www.wikidata.org/wiki/Q7754",
+            "display_name": "Mathematical analysis",
+            "level": 1,
+            "score": 0.39643025398254395
+          },
+          {
+            "id": "https://openalex.org/C202444582",
+            "wikidata": "https://www.wikidata.org/wiki/Q837863",
+            "display_name": "Pure mathematics",
+            "level": 1,
+            "score": 0.3624042272567749
+          },
+          {
+            "id": "https://openalex.org/C106159729",
+            "wikidata": "https://www.wikidata.org/wiki/Q2294553",
+            "display_name": "Financial economics",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C162324750",
+            "wikidata": "https://www.wikidata.org/wiki/Q8134",
+            "display_name": "Economics",
+            "level": 0,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.29020/nybg.ejpam.v18i1.5509",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.29020/nybg.ejpam.v18i1.5509",
+            "pdf_url": "https://www.ejpam.com/index.php/ejpam/article/download/5509/1932",
+            "source": {
+              "id": "https://openalex.org/S2764475867",
+              "display_name": "European Journal of Pure and Applied Mathematics",
+              "issn_l": "1307-5543",
+              "issn": [
+                "1307-5543"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "journal"
+            },
+            "license": "cc-by-nc",
+            "license_id": "https://openalex.org/licenses/cc-by-nc",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "European Journal of Pure and Applied Mathematics",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.29020/nybg.ejpam.v18i1.5509",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.29020/nybg.ejpam.v18i1.5509",
+          "pdf_url": "https://www.ejpam.com/index.php/ejpam/article/download/5509/1932",
+          "source": {
+            "id": "https://openalex.org/S2764475867",
+            "display_name": "European Journal of Pure and Applied Mathematics",
+            "issn_l": "1307-5543",
+            "issn": [
+              "1307-5543"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-nc",
+          "license_id": "https://openalex.org/licenses/cc-by-nc",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "European Journal of Pure and Applied Mathematics",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320327702",
+            "display_name": "Prince Sultan University",
+            "ror": "https://ror.org/053mqrf26"
+          }
+        ],
+        "has_content": {
+          "pdf": true,
+          "grobid_xml": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4407025001.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4407025001.grobid-xml"
+        },
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W4391375266",
+          "https://openalex.org/W2082446734",
+          "https://openalex.org/W4313560640",
+          "https://openalex.org/W2253351617",
+          "https://openalex.org/W4246784705",
+          "https://openalex.org/W3121927021",
+          "https://openalex.org/W2089892488",
+          "https://openalex.org/W2416906960",
+          "https://openalex.org/W2050580331",
+          "https://openalex.org/W3049300385"
+        ],
+        "abstract_inverted_index": {
+          "Hepatitis": [
+            0
+          ],
+          "B": [
+            1,
+            52,
+            211
+          ],
+          "is": [
+            2
+          ],
+          "a": [
+            3,
+            34,
+            44,
+            58,
+            154
+          ],
+          "viral": [
+            4
+          ],
+          "infection": [
+            5
+          ],
+          "that": [
+            6,
+            109,
+            200
+          ],
+          "primarily": [
+            7
+          ],
+          "targets": [
+            8
+          ],
+          "the": [
+            9,
+            48,
+            68,
+            76,
+            79,
+            83,
+            87,
+            91,
+            95,
+            98,
+            110,
+            114,
+            133,
+            140,
+            160,
+            165,
+            172,
+            178,
+            182,
+            186,
+            190,
+            198,
+            205
+          ],
+          "liver,": [
+            10
+          ],
+          "potentially": [
+            11
+          ],
+          "causing": [
+            12
+          ],
+          "acute": [
+            13
+          ],
+          "or": [
+            14
+          ],
+          "chronic": [
+            15
+          ],
+          "liver": [
+            16,
+            25
+          ],
+          "diseases": [
+            17
+          ],
+          "with": [
+            18,
+            97
+          ],
+          "severe": [
+            19
+          ],
+          "complications,": [
+            20
+          ],
+          "such": [
+            21
+          ],
+          "as": [
+            22,
+            33
+          ],
+          "cirrhosis": [
+            23
+          ],
+          "and": [
+            24,
+            65,
+            89,
+            123,
+            135,
+            184,
+            207
+          ],
+          "cancer.": [
+            26
+          ],
+          "Its": [
+            27
+          ],
+          "persistent": [
+            28
+          ],
+          "prevalence": [
+            29
+          ],
+          "underscores": [
+            30
+          ],
+          "its": [
+            31
+          ],
+          "status": [
+            32
+          ],
+          "noteworthy": [
+            35
+          ],
+          "global": [
+            36
+          ],
+          "health": [
+            37
+          ],
+          "issue.": [
+            38
+          ],
+          "In": [
+            39,
+            148
+          ],
+          "this": [
+            40
+          ],
+          "research,": [
+            41
+          ],
+          "we": [
+            42,
+            152,
+            170
+          ],
+          "construct": [
+            43
+          ],
+          "mathematical": [
+            45
+          ],
+          "model": [
+            46,
+            88,
+            115,
+            144,
+            199
+          ],
+          "for": [
+            47,
+            57,
+            75,
+            139,
+            158,
+            204
+          ],
+          "progression": [
+            49
+          ],
+          "of": [
+            50,
+            67,
+            78,
+            86,
+            94,
+            100,
+            113,
+            137,
+            145,
+            164,
+            174,
+            181,
+            197,
+            209
+          ],
+          "hepatitis": [
+            51,
+            146,
+            210
+          ],
+          "through": [
+            53
+          ],
+          "fractional": [
+            54,
+            142
+          ],
+          "derivative,": [
+            55
+          ],
+          "accounting": [
+            56
+          ],
+          "two-dose": [
+            59
+          ],
+          "vaccine": [
+            60
+          ],
+          "regimen.": [
+            61
+          ],
+          "The": [
+            62
+          ],
+          "basic": [
+            63
+          ],
+          "results": [
+            64
+          ],
+          "concepts": [
+            66
+          ],
+          "Caputo-Fabrizio": [
+            69
+          ],
+          "(CF)": [
+            70
+          ],
+          "derivative": [
+            71
+          ],
+          "has": [
+            72
+          ],
+          "been": [
+            73
+          ],
+          "presented": [
+            74
+          ],
+          "analysis": [
+            77,
+            163,
+            193
+          ],
+          "model.": [
+            80,
+            191
+          ],
+          "We": [
+            81,
+            107,
+            129
+          ],
+          "investigate": [
+            82
+          ],
+          "infection-free": [
+            84,
+            111
+          ],
+          "equilibrium": [
+            85,
+            112
+          ],
+          "determine": [
+            90
+          ],
+          "endemic": [
+            92
+          ],
+          "indicator": [
+            93
+          ],
+          "system": [
+            96,
+            183
+          ],
+          "help": [
+            99
+          ],
+          "next-generation": [
+            101
+          ],
+          "matrix": [
+            102
+          ],
+          "method,": [
+            103
+          ],
+          "indicated": [
+            104
+          ],
+          "by": [
+            105
+          ],
+          "$\\mathcal{R}_0$.": [
+            106
+          ],
+          "demonstrate": [
+            108
+          ],
+          "exhibits": [
+            116
+          ],
+          "local": [
+            117
+          ],
+          "asymptotic": [
+            118
+          ],
+          "stability": [
+            119
+          ],
+          "when": [
+            120
+          ],
+          "$\\mathcal{R}_0": [
+            121
+          ],
+          "<1$,": [
+            122
+          ],
+          "instability": [
+            124
+          ],
+          "in": [
+            125
+          ],
+          "all": [
+            126
+          ],
+          "other": [
+            127
+          ],
+          "scenarios.": [
+            128
+          ],
+          "establish": [
+            130
+          ],
+          "conditions": [
+            131
+          ],
+          "ensuring": [
+            132
+          ],
+          "existence": [
+            134
+          ],
+          "uniqueness": [
+            136
+          ],
+          "solutions": [
+            138
+          ],
+          "proposed": [
+            141
+          ],
+          "dynamics": [
+            143
+          ],
+          "B.": [
+            147
+          ],
+          "addition": [
+            149
+          ],
+          "to": [
+            150
+          ],
+          "this,": [
+            151
+          ],
+          "present": [
+            153
+          ],
+          "new": [
+            155
+          ],
+          "numerical": [
+            156
+          ],
+          "method": [
+            157
+          ],
+          "analyzing": [
+            159
+          ],
+          "time": [
+            161
+          ],
+          "series": [
+            162
+          ],
+          "system.": [
+            166
+          ],
+          "Through": [
+            167
+          ],
+          "our": [
+            168
+          ],
+          "investigation,": [
+            169
+          ],
+          "elucidate": [
+            171
+          ],
+          "impact": [
+            173
+          ],
+          "input": [
+            175
+          ],
+          "variables": [
+            176
+          ],
+          "on": [
+            177
+          ],
+          "dynamic": [
+            179
+          ],
+          "behavior": [
+            180
+          ],
+          "identify": [
+            185
+          ],
+          "critical": [
+            187
+          ],
+          "factors": [
+            188
+          ],
+          "within": [
+            189
+          ],
+          "Our": [
+            192
+          ],
+          "identifies": [
+            194
+          ],
+          "key": [
+            195
+          ],
+          "parameters": [
+            196
+          ],
+          "can": [
+            201
+          ],
+          "be": [
+            202
+          ],
+          "targeted": [
+            203
+          ],
+          "control": [
+            206
+          ],
+          "management": [
+            208
+          ],
+          "infection.": [
+            212
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 5
+          }
+        ],
+        "updated_date": "2026-08-23T07:36:19.812096",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4405390044",
+        "doi": "https://doi.org/10.56868/jmtm.v1i1.3",
+        "title": "Navigating Food Allergy Dynamics via a Novel Fractional Mathematical Model for Antacid-Induced Allergies",
+        "display_name": "Navigating Food Allergy Dynamics via a Novel Fractional Mathematical Model for Antacid-Induced Allergies",
+        "relevance_score": 207.30228,
+        "publication_year": 2024,
+        "publication_date": "2024-01-06",
+        "ids": {
+          "openalex": "https://openalex.org/W4405390044",
+          "doi": "https://doi.org/10.56868/jmtm.v1i1.3"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.56868/jmtm.v1i1.3",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.56868/jmtm.v1i1.3",
+          "pdf_url": "https://www.ufpub.com/index.php/jmtm/article/download/3/24",
+          "source": {
+            "id": "https://openalex.org/S5407045256",
+            "display_name": "Journal of Mathematical Techniques in Modeling",
+            "issn_l": "3030-671X",
+            "issn": [
+              "3030-671X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Mathematical Techniques in Modeling",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://www.ufpub.com/index.php/jmtm/article/download/3/24",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5090285163",
+              "display_name": "Walid Khan",
+              "orcid": "https://orcid.org/0009-0004-0810-280X"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I68649149",
+                "display_name": "University of Malakand",
+                "ror": "https://ror.org/012xdha97",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I68649149"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Wajahat Ali Khan",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, University of Malakand, Chakdara, Pakistan"
+            ],
+            "raw_orcid": "https://orcid.org/0009-0004-0810-280X",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, University of Malakand, Chakdara, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I68649149"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5063810826",
+              "display_name": "Rahat Zarin",
+              "orcid": "https://orcid.org/0000-0002-9759-2924"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I60837268",
+                "display_name": "King Mongkut's University of Technology Thonburi",
+                "ror": "https://ror.org/0057ax056",
+                "country_code": "TH",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I60837268"
+                ]
+              }
+            ],
+            "countries": [
+              "TH"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Rahat Zarin",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Faculty of Science, King Mongkut’s University of Technology, Thonburi (KMUTT), Bang Mod Thrung Khru, Bangkok 10140, Thailand"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-9759-2924",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Faculty of Science, King Mongkut’s University of Technology, Thonburi (KMUTT), Bang Mod Thrung Khru, Bangkok 10140, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I60837268"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5115440276",
+              "display_name": "Aurang Zeb",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I335365548",
+                "display_name": "University of Swat",
+                "ror": "https://ror.org/01q9mqz67",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I335365548"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Aurang Zeb",
+            "raw_affiliation_strings": [
+              "Department of Mathematics and Statistics, University of Swat, Khyber Pakhtunkhawa, Pakistan"
+            ],
+            "raw_orcid": "https://orcid.org/0009-0007-9141-0425",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics and Statistics, University of Swat, Khyber Pakhtunkhawa, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I335365548"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5115440277",
+              "display_name": "Yousaf Khan",
+              "orcid": "https://orcid.org/0009-0007-6287-0764"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I335365548",
+                "display_name": "University of Swat",
+                "ror": "https://ror.org/01q9mqz67",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I335365548"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Yousaf Khan",
+            "raw_affiliation_strings": [
+              "Department of Mathematics and Statistics, University of Swat, Khyber Pakhtunkhawa, Pakistan"
+            ],
+            "raw_orcid": "https://orcid.org/0009-0007-6287-0764",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics and Statistics, University of Swat, Khyber Pakhtunkhawa, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I335365548"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5053371979",
+              "display_name": "Amir Khan",
+              "orcid": "https://orcid.org/0000-0001-9466-8973"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I335365548",
+                "display_name": "University of Swat",
+                "ror": "https://ror.org/01q9mqz67",
+                "country_code": "PK",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I335365548"
+                ]
+              }
+            ],
+            "countries": [
+              "PK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Amir Khan",
+            "raw_affiliation_strings": [
+              "Department of Mathematics and Statistics, University of Swat, Khyber Pakhtunkhawa, Pakistan"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0001-9466-8973",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics and Statistics, University of Swat, Khyber Pakhtunkhawa, Pakistan",
+                "institution_ids": [
+                  "https://openalex.org/I335365548"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 3,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 9.298,
+        "has_fulltext": true,
+        "cited_by_count": 53,
+        "citation_normalized_percentile": {
+          "value": 0.99408115,
+          "is_in_top_1_percent": true,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 99,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "1",
+          "issue": "1",
+          "first_page": "25",
+          "last_page": "51"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T14479",
+          "display_name": "Freezing and Crystallization Processes",
+          "score": 0.6531999707221985,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2211",
+            "display_name": "Mechanics of Materials"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T14479",
+            "display_name": "Freezing and Crystallization Processes",
+            "score": 0.6531999707221985,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2211",
+              "display_name": "Mechanics of Materials"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/antacid",
+            "display_name": "Antacid",
+            "score": 0.8695456981658936
+          },
+          {
+            "id": "https://openalex.org/keywords/allergy",
+            "display_name": "Allergy",
+            "score": 0.7639108896255493
+          },
+          {
+            "id": "https://openalex.org/keywords/medicine",
+            "display_name": "Medicine",
+            "score": 0.3418903648853302
+          },
+          {
+            "id": "https://openalex.org/keywords/immunology",
+            "display_name": "Immunology",
+            "score": 0.2090488076210022
+          },
+          {
+            "id": "https://openalex.org/keywords/internal-medicine",
+            "display_name": "Internal medicine",
+            "score": 0.12477463483810425
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2780590083",
+            "wikidata": "https://www.wikidata.org/wiki/Q274083",
+            "display_name": "Antacid",
+            "level": 2,
+            "score": 0.8695456981658936
+          },
+          {
+            "id": "https://openalex.org/C207480886",
+            "wikidata": "https://www.wikidata.org/wiki/Q42982",
+            "display_name": "Allergy",
+            "level": 2,
+            "score": 0.7639108896255493
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.3418903648853302
+          },
+          {
+            "id": "https://openalex.org/C203014093",
+            "wikidata": "https://www.wikidata.org/wiki/Q101929",
+            "display_name": "Immunology",
+            "level": 1,
+            "score": 0.2090488076210022
+          },
+          {
+            "id": "https://openalex.org/C126322002",
+            "wikidata": "https://www.wikidata.org/wiki/Q11180",
+            "display_name": "Internal medicine",
+            "level": 1,
+            "score": 0.12477463483810425
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.56868/jmtm.v1i1.3",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.56868/jmtm.v1i1.3",
+            "pdf_url": "https://www.ufpub.com/index.php/jmtm/article/download/3/24",
+            "source": {
+              "id": "https://openalex.org/S5407045256",
+              "display_name": "Journal of Mathematical Techniques in Modeling",
+              "issn_l": "3030-671X",
+              "issn": [
+                "3030-671X"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Journal of Mathematical Techniques in Modeling",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.56868/jmtm.v1i1.3",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.56868/jmtm.v1i1.3",
+          "pdf_url": "https://www.ufpub.com/index.php/jmtm/article/download/3/24",
+          "source": {
+            "id": "https://openalex.org/S5407045256",
+            "display_name": "Journal of Mathematical Techniques in Modeling",
+            "issn_l": "3030-671X",
+            "issn": [
+              "3030-671X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Mathematical Techniques in Modeling",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "score": 0.6700000166893005,
+            "id": "https://metadata.un.org/sdg/3",
+            "display_name": "Good health and well-being"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": true,
+          "grobid_xml": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4405390044.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4405390044.grobid-xml"
+        },
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W2899084033",
+          "https://openalex.org/W2748952813",
+          "https://openalex.org/W3164314033",
+          "https://openalex.org/W2053148793",
+          "https://openalex.org/W1965144549",
+          "https://openalex.org/W3031052312",
+          "https://openalex.org/W2739595070",
+          "https://openalex.org/W1986918551",
+          "https://openalex.org/W1968026089",
+          "https://openalex.org/W2070334942"
+        ],
+        "abstract_inverted_index": {
+          "This": [
+            0
+          ],
+          "study": [
+            1,
+            240
+          ],
+          "explores": [
+            2
+          ],
+          "the": [
+            3,
+            30,
+            63,
+            79,
+            102,
+            105,
+            109,
+            131,
+            134,
+            158,
+            188,
+            208,
+            215,
+            226,
+            247,
+            255,
+            264
+          ],
+          "onset": [
+            4
+          ],
+          "of": [
+            5,
+            33,
+            66,
+            82,
+            104,
+            111,
+            133,
+            160,
+            178,
+            198,
+            212,
+            257,
+            267
+          ],
+          "food": [
+            6,
+            34,
+            75,
+            155,
+            170,
+            268
+          ],
+          "allergies": [
+            7,
+            156,
+            269
+          ],
+          "in": [
+            8,
+            88,
+            108,
+            124,
+            244,
+            261
+          ],
+          "individuals": [
+            9
+          ],
+          "using": [
+            10
+          ],
+          "antacid": [
+            11,
+            41
+          ],
+          "medications,": [
+            12
+          ],
+          "employing": [
+            13,
+            145
+          ],
+          "an": [
+            14
+          ],
+          "innovative": [
+            15
+          ],
+          "fractional": [
+            16,
+            20,
+            182,
+            258
+          ],
+          "mathematical": [
+            17,
+            99,
+            147
+          ],
+          "model": [
+            18,
+            148
+          ],
+          "integrating": [
+            19
+          ],
+          "calculus": [
+            21
+          ],
+          "and": [
+            22,
+            37,
+            50,
+            136,
+            202,
+            210,
+            237,
+            270
+          ],
+          "differential": [
+            23,
+            179
+          ],
+          "equations.": [
+            24
+          ],
+          "Through": [
+            25
+          ],
+          "this": [
+            26
+          ],
+          "methodology,": [
+            27
+          ],
+          "we": [
+            28,
+            96,
+            229
+          ],
+          "analyze": [
+            29
+          ],
+          "intricate": [
+            31
+          ],
+          "dynamics": [
+            32,
+            159,
+            266
+          ],
+          "allergy": [
+            35,
+            171
+          ],
+          "epidemics": [
+            36
+          ],
+          "their": [
+            38
+          ],
+          "interaction": [
+            39
+          ],
+          "with": [
+            40,
+            246
+          ],
+          "usage,": [
+            42
+          ],
+          "offering": [
+            43,
+            165
+          ],
+          "essential": [
+            44
+          ],
+          "perspectives": [
+            45
+          ],
+          "for": [
+            46,
+            92,
+            275
+          ],
+          "refining": [
+            47
+          ],
+          "management": [
+            48,
+            278
+          ],
+          "strategies": [
+            49
+          ],
+          "implementing": [
+            51
+          ],
+          "early": [
+            52
+          ],
+          "intervention": [
+            53
+          ],
+          "measures.": [
+            54
+          ],
+          "Our": [
+            55,
+            141
+          ],
+          "research": [
+            56
+          ],
+          "stems": [
+            57
+          ],
+          "from": [
+            58,
+            194
+          ],
+          "a": [
+            59,
+            67,
+            73,
+            85,
+            98,
+            146,
+            166,
+            175,
+            195
+          ],
+          "2001": [
+            60
+          ],
+          "case,": [
+            61
+          ],
+          "marking": [
+            62
+          ],
+          "initial": [
+            64
+          ],
+          "occurrence": [
+            65
+          ],
+          "severe": [
+            68
+          ],
+          "anaphylactic": [
+            69
+          ],
+          "reaction": [
+            70
+          ],
+          "to": [
+            71,
+            120,
+            149,
+            154
+          ],
+          "manioc,": [
+            72
+          ],
+          "novel": [
+            74,
+            176
+          ],
+          "allergy.": [
+            76
+          ],
+          "Prompted": [
+            77
+          ],
+          "by": [
+            78
+          ],
+          "prolonged": [
+            80
+          ],
+          "acknowledgment": [
+            81
+          ],
+          "incidents": [
+            83,
+            152
+          ],
+          "involving": [
+            84
+          ],
+          "tuber": [
+            86
+          ],
+          "ingrained": [
+            87
+          ],
+          "native": [
+            89
+          ],
+          "Brazilians’": [
+            90
+          ],
+          "diets": [
+            91
+          ],
+          "over": [
+            93
+          ],
+          "500": [
+            94
+          ],
+          "years,": [
+            95
+          ],
+          "establish": [
+            97,
+            207
+          ],
+          "framework": [
+            100
+          ],
+          "addressing": [
+            101
+          ],
+          "persistence": [
+            103
+          ],
+          "cassava": [
+            106
+          ],
+          "allergen": [
+            107,
+            135
+          ],
+          "presence": [
+            110
+          ],
+          "proton": [
+            112
+          ],
+          "pump": [
+            113
+          ],
+          "inhibitors": [
+            114
+          ],
+          "(PPIs).": [
+            115
+          ],
+          "These": [
+            116
+          ],
+          "medications": [
+            117
+          ],
+          "are": [
+            118,
+            192
+          ],
+          "utilized": [
+            119
+          ],
+          "reduce": [
+            121
+          ],
+          "gastric": [
+            122
+          ],
+          "acidity": [
+            123
+          ],
+          "digestive": [
+            125
+          ],
+          "disorders,": [
+            126
+          ],
+          "elevate": [
+            127
+          ],
+          "pH": [
+            128
+          ],
+          "levels,": [
+            129
+          ],
+          "foster": [
+            130
+          ],
+          "preservation": [
+            132
+          ],
+          "subsequently": [
+            137
+          ],
+          "enhance": [
+            138
+          ],
+          "immune": [
+            139
+          ],
+          "recognition.": [
+            140
+          ],
+          "investigation": [
+            142
+          ],
+          "hinges": [
+            143
+          ],
+          "on": [
+            144,
+            169,
+            174,
+            219
+          ],
+          "scrutinize": [
+            150
+          ],
+          "how": [
+            151
+          ],
+          "related": [
+            153
+          ],
+          "impact": [
+            157
+          ],
+          "scientific": [
+            161
+          ],
+          "publication.": [
+            162
+          ],
+          "The": [
+            163,
+            252
+          ],
+          "model,": [
+            164,
+            217
+          ],
+          "distinctive": [
+            167
+          ],
+          "perspective": [
+            168
+          ],
+          "characterization,": [
+            172
+          ],
+          "relies": [
+            173
+          ],
+          "set": [
+            177
+          ],
+          "equations": [
+            180
+          ],
+          "incorporating": [
+            181
+          ],
+          "Caputo-Fabrizio": [
+            183
+          ],
+          "(CF)": [
+            184
+          ],
+          "operators.": [
+            185
+          ],
+          "Insights": [
+            186
+          ],
+          "into": [
+            187
+          ],
+          "model’s": [
+            189
+          ],
+          "long-term": [
+            190
+          ],
+          "behavior": [
+            191
+          ],
+          "derived": [
+            193
+          ],
+          "comprehensive": [
+            196
+          ],
+          "examination": [
+            197
+          ],
+          "its": [
+            199
+          ],
+          "qualitative": [
+            200
+          ],
+          "characteristics": [
+            201
+          ],
+          "subsequent": [
+            203
+          ],
+          "computational": [
+            204
+          ],
+          "simulations.": [
+            205
+          ],
+          "We": [
+            206
+          ],
+          "existence": [
+            209
+          ],
+          "uniqueness": [
+            211
+          ],
+          "solutions": [
+            213
+          ],
+          "within": [
+            214
+          ],
+          "proposed": [
+            216
+          ],
+          "drawing": [
+            218
+          ],
+          "established": [
+            220
+          ],
+          "results": [
+            221
+          ],
+          "concerning": [
+            222
+          ],
+          "fixed": [
+            223
+          ],
+          "points.": [
+            224
+          ],
+          "Utilizing": [
+            225
+          ],
+          "Ulam-Hyers": [
+            227
+          ],
+          "method,": [
+            228
+          ],
+          "determine": [
+            230
+          ],
+          "stability": [
+            231
+          ],
+          "outcomes.": [
+            232
+          ],
+          "For": [
+            233
+          ],
+          "in-depth": [
+            234
+          ],
+          "numerical": [
+            235,
+            250
+          ],
+          "analysis": [
+            236
+          ],
+          "simulation,": [
+            238
+          ],
+          "our": [
+            239
+          ],
+          "employs": [
+            241
+          ],
+          "Newton’s": [
+            242
+          ],
+          "polynomial": [
+            243
+          ],
+          "conjunction": [
+            245
+          ],
+          "three-step": [
+            248
+          ],
+          "Adams-Bashforth": [
+            249
+          ],
+          "technique.": [
+            251
+          ],
+          "findings": [
+            253
+          ],
+          "underscore": [
+            254
+          ],
+          "efficacy": [
+            256
+          ],
+          "order": [
+            259
+          ],
+          "techniques": [
+            260
+          ],
+          "accurately": [
+            262
+          ],
+          "capturing": [
+            263
+          ],
+          "complex": [
+            265
+          ],
+          "providing": [
+            271
+          ],
+          "insightful": [
+            272
+          ],
+          "information": [
+            273
+          ],
+          "crucial": [
+            274
+          ],
+          "devising": [
+            276
+          ],
+          "effective": [
+            277
+          ],
+          "plans.": [
+            279
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 33
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 14
+          }
+        ],
+        "updated_date": "2026-08-24T07:32:12.397491",
+        "created_date": "2025-10-10T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}

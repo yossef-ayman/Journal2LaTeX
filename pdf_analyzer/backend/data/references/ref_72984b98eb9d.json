@@ -1,11 +1,11 @@
 {
   "reference_id": "ref_72984b98eb9d",
-  "project_id": "project_20260831_082256_e63dea74",
-  "created_at": "2026-08-31T08:23:26.776766+00:00",
+  "project_id": "project_20260906_102443_69092c9c",
+  "created_at": "2026-09-06T10:25:15.715111+00:00",
   "input": {
     "original_text": "Abdel-Aty, M., Abdel-Khalek, S., Obada, A.-S.F. Pancharatnam phase of two-mode optical fields with Kerr nonlinearity, Optical Review, 2000, 7(6), pp. 499–504 DOI: http://dx.doi.org/10.1007/s10043-000-0499-6",
     "parsed": {
-      "title": "499–504 DOI",
+      "title": "Obada, A.-S.F. Pancharatnam phase of two-mode optical fields with Kerr nonlinearity",
       "authors": [
         {
           "name": "M Abdel-Aty",
@@ -16,16 +16,11 @@
           "name": "S Abdel-Khalek",
           "given": "S",
           "family": "Abdel-Khalek"
-        },
-        {
-          "name": "A.-S.F. Pancharatnam phase of two-mode optical fields with Kerr nonlinearity, Optical Review, 2000, 7(6), pp Obada",
-          "given": "A.-S.F. Pancharatnam phase of two-mode optical fields with Kerr nonlinearity, Optical Review, 2000, 7(6), pp",
-          "family": "Obada"
         }
       ],
       "year": 2000,
       "reference_type": "journal-article",
-      "journal": null,
+      "journal": "Optical Review , –504",
       "publisher": null,
       "volume": "7",
       "issue": "6",
@@ -49,10 +44,10 @@
       "verification_status": "verified"
     },
     "venue": {
-      "value": null,
-      "source": "none",
-      "confidence": 0.0,
-      "verification_status": "unverified"
+      "value": "Optical Review , –504",
+      "source": "parsed",
+      "confidence": 0.85,
+      "verification_status": "verified"
     },
     "reference_type": {
       "value": "journal-article",
@@ -307,7 +302,7 @@
       "raw_file": null,
       "normalized_file": "data/normalized/google_scholar/ed765588132b2ee0.json",
       "data": {
-        "title": "499–504 DOI",
+        "title": "Obada, A.-S.F. Pancharatnam phase of two-mode optical fields with Kerr nonlinearity",
         "authors": [
           {
             "name": "M Abdel-Aty",
@@ -318,15 +313,10 @@
             "name": "S Abdel-Khalek",
             "given": "S",
             "family": "Abdel-Khalek"
-          },
-          {
-            "name": "A.-S.F. Pancharatnam phase of two-mode optical fields with Kerr nonlinearity, Optical Review, 2000, 7(6), pp Obada",
-            "given": "A.-S.F. Pancharatnam phase of two-mode optical fields with Kerr nonlinearity, Optical Review, 2000, 7(6), pp",
-            "family": "Obada"
           }
         ],
         "year": 2000,
-        "journal": null,
+        "journal": "Optical Review , –504",
         "doi": "10.1007/s10043-000-0499-6",
         "url": "https://scholar.google.com/scholar?q=doi%3A10.1007/s10043-000-0499-6",
         "citation_count": null,
@@ -345,47 +335,31 @@
     "reconciled_with_arxiv": false,
     "confidence": 1.0,
     "reason": "Verified with parsed metadata consistency (title_sim=1.00).",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1007/s10043-000-0499-6",
-        "reason": "Metadata mismatch (title_sim=0.13, author_sim=1.00)",
-        "status": "conflict"
-      }
-    ],
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
     "overall_confidence": 1.0,
-    "metadata_completeness": 0.83,
+    "metadata_completeness": 1.0,
     "doi_verified": true,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1007/s10043-000-0499-6",
-        "reason": "Metadata mismatch (title_sim=0.13, author_sim=1.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
       "google_scholar",
-      "crossref",
-      "openalex"
+      "openalex",
+      "crossref"
     ],
     "latency_ms": {
-      "google_scholar": 10.17,
-      "crossref": 7824.45,
-      "openalex": 8783.85
+      "google_scholar": 9.58,
+      "openalex": 10001.85,
+      "crossref": 10573.65
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
-      "openalex": 1
+      "openalex": 1,
+      "crossref": 0
     },
     "errors": {}
   }

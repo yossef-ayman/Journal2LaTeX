@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_ed10b32ac42f",
-  "project_id": "project_20260831_082256_e63dea74",
-  "created_at": "2026-08-31T08:23:40.107100+00:00",
+  "project_id": "project_20260906_080439_4b38db9a",
+  "created_at": "2026-09-06T08:05:19.574711+00:00",
   "input": {
     "original_text": "Zhang, J.-S., Chen, A.-X., Abdel-Aty, M. Two atoms in dissipative cavities in dispersive limit: Entanglement sudden death and long-lived entanglement, Journal of Physics B Atomic Molecular and Optical Physics, 2010, 43(2), 025501 DOI: http://dx.doi.org/",
     "parsed": {
@@ -21,10 +21,10 @@
   },
   "canonical": {
     "title": {
-      "value": "Zhang, J.-S., Chen, A.-X., Abdel-Aty, M. Two atoms in dissipative cavities in dispersive limit: Entanglement sudden death and long-lived entanglement, Journal of Physics B Atomic Molecular and Optical Physics, 2010, 43(2), 025501 DOI",
-      "source": "google_scholar",
-      "confidence": 0.98,
-      "verification_status": "verified"
+      "value": "Two atoms in dissipative cavities in dispersive limit: entanglement sudden death and long-lived entanglement",
+      "source": "crossref",
+      "confidence": 0.73,
+      "verification_status": "unverified"
     },
     "year": {
       "value": 2010,
@@ -33,10 +33,10 @@
       "verification_status": "verified"
     },
     "venue": {
-      "value": null,
-      "source": "none",
-      "confidence": 0.0,
-      "verification_status": "unverified"
+      "value": "Journal of Physics B: Atomic, Molecular and Optical Physics",
+      "source": "crossref",
+      "confidence": 0.85,
+      "verification_status": "verified"
     },
     "reference_type": {
       "value": "book-chapter",
@@ -57,10 +57,10 @@
     "url": "https://scholar.google.com/scholar?q=Zhang%2C%20J.-S.%2C%20Chen%2C%20A.-X.%2C%20Abdel-Aty%2C%20M.%20Two%20atoms%20in%20dissipative%20cavities%20in%20dispersive%20limit%3A%20Entanglement%20sudden%20death%20and%20long-lived%20entanglement%2C%20Journal%20of%20Physics%20B%20Atomic%20Molecular%20and%20Optical%20Physics%2C%202010%2C%2043%282%29%2C%20025501%20DOI%202010",
     "identifiers": {
       "doi": {
-        "value": null,
-        "source": "none",
-        "confidence": 0.0,
-        "verification_status": "missing"
+        "value": "10.1088/0953-4075/43/2/025501",
+        "source": "doi_verifier",
+        "confidence": 0.95,
+        "verification_status": "verified"
       },
       "openalex_id": {
         "value": null,
@@ -94,13 +94,59 @@
       }
     },
     "citation_counts": {
-      "canonical_value": null,
+      "canonical_value": 33,
       "google_scholar": null,
       "openalex": null,
-      "crossref": null
+      "crossref": 33
     }
   },
-  "canonical_authors": [],
+  "canonical_authors": [
+    {
+      "name": "Jian-Song Zhang",
+      "display_name": "Jian-Song Zhang",
+      "given": "Jian-Song",
+      "family": "Zhang",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "ambiguous",
+      "confidence": 0.75
+    },
+    {
+      "name": "Ai-Xi Chen",
+      "display_name": "Ai-Xi Chen",
+      "given": "Ai-Xi",
+      "family": "Chen",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "ambiguous",
+      "confidence": 0.75
+    },
+    {
+      "name": "M Abdel-Aty",
+      "display_name": "M Abdel-Aty",
+      "given": "M",
+      "family": "Abdel-Aty",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "ambiguous",
+      "confidence": 0.75
+    }
+  ],
   "sources": {
     "openalex": {
       "available": false,
@@ -117,16 +163,52 @@
       "data": {}
     },
     "crossref": {
-      "available": false,
+      "available": true,
       "matched": false,
-      "status": "not_found",
-      "confidence": 0.0,
-      "citation_count": null,
-      "doi": null,
-      "url": null,
-      "raw_file": null,
+      "status": "low_confidence",
+      "confidence": 0.73,
+      "citation_count": 33,
+      "doi": "10.1088/0953-4075/43/2/025501",
+      "url": "https://doi.org/10.1088/0953-4075/43/2/025501",
+      "raw_file": "data/raw/crossref/7bdcf526eb1563af.json",
       "normalized_file": null,
-      "data": {}
+      "data": {
+        "title": "Two atoms in dissipative cavities in dispersive limit: entanglement sudden death and long-lived entanglement",
+        "authors": [
+          {
+            "name": "Jian-Song Zhang",
+            "given": "Jian-Song",
+            "family": "Zhang",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "Ai-Xi Chen",
+            "given": "Ai-Xi",
+            "family": "Chen",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "M Abdel-Aty",
+            "given": "M",
+            "family": "Abdel-Aty",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          }
+        ],
+        "year": 2010,
+        "journal": "Journal of Physics B: Atomic, Molecular and Optical Physics",
+        "doi": "10.1088/0953-4075/43/2/025501",
+        "url": "https://doi.org/10.1088/0953-4075/43/2/025501",
+        "openalex_id": "",
+        "citation_count": 33,
+        "source": "crossref",
+        "raw_file": "data/raw/crossref/7bdcf526eb1563af.json"
+      }
     },
     "google_scholar": {
       "available": false,
@@ -158,20 +240,148 @@
     }
   },
   "doi_verification": {
-    "status": "missing",
-    "canonical_doi": null,
+    "status": "verified",
+    "canonical_doi": "10.1088/0953-4075/43/2/025501",
     "reconciled_with_arxiv": false,
-    "confidence": 0.0,
-    "reason": "No DOI or arXiv identifier present in reference or provider results.",
-    "conflicts": [],
+    "confidence": 0.95,
+    "reason": "Verified with crossref metadata consistency (title_sim=0.66).",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.physleta.2007.05.003",
+        "reason": "Metadata mismatch (title_sim=0.36, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3390/app10041510",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1007/s10773-008-9689-y",
+        "reason": "Metadata mismatch (title_sim=0.38, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1088/0953-4075/44/19/192001",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1088/0953-4075/39/15/s09",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1103/physrevlett.106.090502",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1103/physreva.92.012307",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.chaos.2008.07.007",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1142/s0219749909005213",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.50)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
-    "overall_confidence": 0.98,
-    "metadata_completeness": 0.33,
-    "doi_verified": false,
+    "overall_confidence": 1.0,
+    "metadata_completeness": 1.0,
+    "doi_verified": true,
     "author_verified": false,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.physleta.2007.05.003",
+        "reason": "Metadata mismatch (title_sim=0.36, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3390/app10041510",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1007/s10773-008-9689-y",
+        "reason": "Metadata mismatch (title_sim=0.38, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1088/0953-4075/44/19/192001",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1088/0953-4075/39/15/s09",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1103/physrevlett.106.090502",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1103/physreva.92.012307",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.chaos.2008.07.007",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.50)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1142/s0219749909005213",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.50)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -180,13 +390,13 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 2.55,
-      "crossref": 4585.03,
-      "openalex": 19192.23
+      "google_scholar": 2.71,
+      "crossref": 32326.81,
+      "openalex": 33448.28
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
+      "crossref": 10,
       "openalex": 0
     },
     "errors": {}

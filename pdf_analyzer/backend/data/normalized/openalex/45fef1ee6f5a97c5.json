@@ -1,0 +1,1268 @@
+{
+  "provider": "openalex",
+  "entity_key": "title:Bayesian learning of neural network architectures",
+  "normalized_at": "2026-09-06T07:19:52.566471+00:00",
+  "data": [
+    {
+      "title": "ImageNet classification with deep convolutional neural networks",
+      "display_name": "ImageNet classification with deep convolutional neural networks",
+      "authors": [
+        {
+          "name": "Alex Krizhevsky",
+          "given": "Alex",
+          "family": "Krizhevsky",
+          "author_id": "https://openalex.org/A5031152245",
+          "display_name": "Alex Krizhevsky",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5031152245",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Google (United States)",
+            "University of Toronto"
+          ],
+          "countries": [
+            "CA",
+            "US"
+          ]
+        },
+        {
+          "name": "Ilya Sutskever",
+          "given": "Ilya",
+          "family": "Sutskever",
+          "author_id": "https://openalex.org/A5006446297",
+          "display_name": "Ilya Sutskever",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5006446297",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Google (United States)",
+            "University of Toronto"
+          ],
+          "countries": [
+            "CA",
+            "US"
+          ]
+        },
+        {
+          "name": "Geoffrey E. Hinton",
+          "given": "Geoffrey E.",
+          "family": "Hinton",
+          "author_id": "https://openalex.org/A5108093963",
+          "display_name": "Geoffrey E. Hinton",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5108093963",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Toronto",
+            "OpenAI (United States)"
+          ],
+          "countries": [
+            "CA",
+            "US"
+          ]
+        }
+      ],
+      "year": 2017,
+      "publication_date": "2017-05-24",
+      "journal": "Communications of the ACM",
+      "venue": "Communications of the ACM",
+      "publisher": "Association for Computing Machinery",
+      "reference_type": "journal-article",
+      "volume": "60",
+      "issue": "6",
+      "pages": "84-90",
+      "doi": "10.1145/3065386",
+      "url": "https://doi.org/10.1145/3065386",
+      "pdf_url": "http://dl.acm.org/ft_gateway.cfm?id=3065386&type=pdf",
+      "openalex_id": "https://openalex.org/W2163605009",
+      "citation_count": 75666,
+      "cited_by_count": 75666,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "abstract": "We trained a large, deep convolutional neural network to classify the 1.2 million high-resolution images in the ImageNet LSVRC-2010 contest into the 1000 different classes. On the test data, we achieved top-1 and top-5 error rates of 37.5% and 17.0%, respectively, which is considerably better than the previous state-of-the-art. The neural network, which has 60 million parameters and 650,000 neurons, consists of five convolutional layers, some of which are followed by max-pooling layers, and three fully connected layers with a final 1000-way softmax. To make training faster, we used non-saturating neurons and a very efficient GPU implementation of the convolution operation. To reduce overfitting in the fully connected layers we employed a recently developed regularization method called \"dropout\" that proved to be very effective. We also entered a variant of this model in the ILSVRC-2012 competition and achieved a winning top-5 test error rate of 15.3%, compared to 26.2% achieved by the second-best entry.",
+      "topics": [
+        "Advanced Neural Network Applications",
+        "Domain Adaptation and Few-Shot Learning",
+        "Advanced Image Processing Techniques"
+      ],
+      "referenced_works_count": 26,
+      "related_works": [
+        "https://openalex.org/W3118608800",
+        "https://openalex.org/W2964121744",
+        "https://openalex.org/W2963446712",
+        "https://openalex.org/W2949117887",
+        "https://openalex.org/W2919115771"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/45fef1ee6f5a97c5.json"
+    },
+    {
+      "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+      "display_name": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+      "authors": [
+        {
+          "name": "Karen Simonyan",
+          "given": "Karen",
+          "family": "Simonyan",
+          "author_id": "https://openalex.org/A5004625775",
+          "display_name": "Karen Simonyan",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5004625775",
+            "orcid": "https://orcid.org/0000-0003-0787-5507",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Oxford"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "Andrew Zisserman",
+          "given": "Andrew",
+          "family": "Zisserman",
+          "author_id": "https://openalex.org/A5057678172",
+          "display_name": "Andrew Zisserman",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5057678172",
+            "orcid": "https://orcid.org/0000-0002-8945-8573",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Oxford"
+          ],
+          "countries": [
+            "GB"
+          ]
+        }
+      ],
+      "year": 2014,
+      "publication_date": "2014-09-04",
+      "journal": "arXiv (Cornell University)",
+      "venue": "arXiv (Cornell University)",
+      "publisher": "Cornell University",
+      "reference_type": "preprint",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "10.48550/arxiv.1409.1556",
+      "url": "http://arxiv.org/abs/1409.1556",
+      "pdf_url": "https://arxiv.org/pdf/1409.1556",
+      "openalex_id": "https://openalex.org/W1686810756",
+      "citation_count": 75490,
+      "cited_by_count": 75490,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.",
+      "topics": [
+        "Advanced Vision and Imaging",
+        "Advanced Neural Network Applications",
+        "Image Processing Techniques and Applications"
+      ],
+      "referenced_works_count": 30,
+      "related_works": [
+        "https://openalex.org/W3118608800",
+        "https://openalex.org/W2964121744",
+        "https://openalex.org/W2963446712",
+        "https://openalex.org/W2949117887",
+        "https://openalex.org/W2919115771"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/45fef1ee6f5a97c5.json"
+    },
+    {
+      "title": "Support-vector networks",
+      "display_name": "Support-vector networks",
+      "authors": [
+        {
+          "name": "Corinna Cortes",
+          "given": "Corinna",
+          "family": "Cortes",
+          "author_id": "https://openalex.org/A5013243115",
+          "display_name": "Corinna Cortes",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5013243115",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "AT&T (United States)"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Vladimir Vapnik",
+          "given": "Vladimir",
+          "family": "Vapnik",
+          "author_id": "https://openalex.org/A5062753972",
+          "display_name": "Vladimir Vapnik",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5062753972",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "AT&T (United States)"
+          ],
+          "countries": [
+            "US"
+          ]
+        }
+      ],
+      "year": 1995,
+      "publication_date": "1995-09-01",
+      "journal": "Machine Learning",
+      "venue": "Machine Learning",
+      "publisher": "Springer Science+Business Media",
+      "reference_type": "journal-article",
+      "volume": "20",
+      "issue": "3",
+      "pages": "273-297",
+      "doi": "10.1007/bf00994018",
+      "url": "https://doi.org/10.1007/bf00994018",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/BF00994018.pdf",
+      "openalex_id": "https://openalex.org/W4239510810",
+      "citation_count": 41045,
+      "cited_by_count": 41045,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "abstract": null,
+      "topics": [
+        "Neural Networks and Applications",
+        "Face and Expression Recognition",
+        "Machine Learning and ELM"
+      ],
+      "referenced_works_count": 14,
+      "related_works": [
+        "https://openalex.org/W4291214623",
+        "https://openalex.org/W147281455",
+        "https://openalex.org/W2119118554",
+        "https://openalex.org/W2352397209",
+        "https://openalex.org/W2189588699"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/45fef1ee6f5a97c5.json"
+    },
+    {
+      "title": "Support-Vector Networks",
+      "display_name": "Support-Vector Networks",
+      "authors": [
+        {
+          "name": "Corinna Cortes",
+          "given": "Corinna",
+          "family": "Cortes",
+          "author_id": "https://openalex.org/A5013243115",
+          "display_name": "Corinna Cortes",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5013243115",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "AT&T (United States)",
+            "Nokia (United States)"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Vladimir Vapnik",
+          "given": "Vladimir",
+          "family": "Vapnik",
+          "author_id": "https://openalex.org/A5062753972",
+          "display_name": "Vladimir Vapnik",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5062753972",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "AT&T (United States)",
+            "Nokia (United States)"
+          ],
+          "countries": [
+            "US"
+          ]
+        }
+      ],
+      "year": 1995,
+      "publication_date": "1995-09-01",
+      "journal": "Machine Learning",
+      "venue": "Machine Learning",
+      "publisher": "Springer Science+Business Media",
+      "reference_type": "journal-article",
+      "volume": "20",
+      "issue": "3",
+      "pages": "273-297",
+      "doi": "10.1023/a:1022627411411",
+      "url": "https://doi.org/10.1023/a:1022627411411",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1023/A:1022627411411.pdf",
+      "openalex_id": "https://openalex.org/W2119821739",
+      "citation_count": 33944,
+      "cited_by_count": 33944,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "abstract": null,
+      "topics": [
+        "Neural Networks and Applications",
+        "Face and Expression Recognition",
+        "Blind Source Separation Techniques"
+      ],
+      "referenced_works_count": 18,
+      "related_works": [
+        "https://openalex.org/W4291214623",
+        "https://openalex.org/W147281455",
+        "https://openalex.org/W2119118554",
+        "https://openalex.org/W2352397209",
+        "https://openalex.org/W2189588699"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/45fef1ee6f5a97c5.json"
+    },
+    {
+      "title": "Dropout as a Bayesian Approximation: Representing Model Uncertainty in\\n Deep Learning",
+      "display_name": "Dropout as a Bayesian Approximation: Representing Model Uncertainty in\\n Deep Learning",
+      "authors": [
+        {
+          "name": "Yarin Gal",
+          "given": "Yarin",
+          "family": "Gal",
+          "author_id": "https://openalex.org/A5029186201",
+          "display_name": "Yarin Gal",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5029186201",
+            "orcid": "https://orcid.org/0000-0002-2733-2078",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Cambridge"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "Zoubin Ghahramani",
+          "given": "Zoubin",
+          "family": "Ghahramani",
+          "author_id": "https://openalex.org/A5010820865",
+          "display_name": "Zoubin Ghahramani",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5010820865",
+            "orcid": "https://orcid.org/0000-0002-7464-6475",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Cambridge"
+          ],
+          "countries": [
+            "GB"
+          ]
+        }
+      ],
+      "year": 2015,
+      "publication_date": "2015-06-06",
+      "journal": "arXiv (Cornell University)",
+      "venue": "arXiv (Cornell University)",
+      "publisher": "Cornell University",
+      "reference_type": "preprint",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "10.48550/arxiv.1506.02142",
+      "url": "http://arxiv.org/abs/1506.02142",
+      "pdf_url": "https://arxiv.org/pdf/1506.02142",
+      "openalex_id": "https://openalex.org/W2964059111",
+      "citation_count": 4187,
+      "cited_by_count": 4187,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "Deep learning tools have gained tremendous attention in applied machine\\nlearning. However such tools for regression and classification do not capture\\nmodel uncertainty. In comparison, Bayesian models offer a mathematically\\ngrounded framework to reason about model uncertainty, but usually come with a\\nprohibitive computational cost. In this paper we develop a new theoretical\\nframework casting dropout training in deep neural networks (NNs) as approximate\\nBayesian inference in deep Gaussian processes. A direct result of this theory\\ngives us tools to model uncertainty with dropout NNs -- extracting information\\nfrom existing models that has been thrown away so far. This mitigates the\\nproblem of representing uncertainty in deep learning without sacrificing either\\ncomputational complexity or test accuracy. We perform an extensive study of the\\nproperties of dropout's uncertainty. Various network architectures and\\nnon-linearities are assessed on tasks of regression and classification, using\\nMNIST as an example. We show a considerable improvement in predictive\\nlog-likelihood and RMSE compared to existing state-of-the-art methods, and\\nfinish by using dropout's uncertainty in deep reinforcement learning.\\n",
+      "topics": [
+        "Gaussian Processes and Bayesian Inference",
+        "Adversarial Robustness in Machine Learning",
+        "Model Reduction and Neural Networks"
+      ],
+      "referenced_works_count": 36,
+      "related_works": [
+        "https://openalex.org/W2407375987",
+        "https://openalex.org/W2505726097",
+        "https://openalex.org/W2010643158",
+        "https://openalex.org/W3049691116",
+        "https://openalex.org/W2106867672"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/45fef1ee6f5a97c5.json"
+    },
+    {
+      "title": "Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning",
+      "display_name": "Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning",
+      "authors": [
+        {
+          "name": "Yarin Gal",
+          "given": "Yarin",
+          "family": "Gal",
+          "author_id": "https://openalex.org/A5029186201",
+          "display_name": "Yarin Gal",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5029186201",
+            "orcid": "https://orcid.org/0000-0002-2733-2078",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Cambridge"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "Zoubin Ghahramani",
+          "given": "Zoubin",
+          "family": "Ghahramani",
+          "author_id": "https://openalex.org/A5010820865",
+          "display_name": "Zoubin Ghahramani",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5010820865",
+            "orcid": "https://orcid.org/0000-0002-7464-6475",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Cambridge"
+          ],
+          "countries": [
+            "GB"
+          ]
+        }
+      ],
+      "year": 2015,
+      "publication_date": "2015-06-06",
+      "journal": "arXiv (Cornell University)",
+      "venue": "arXiv (Cornell University)",
+      "publisher": "Cornell University",
+      "reference_type": "preprint",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "doi": "10.48550/arxiv.1506.02142",
+      "url": "http://arxiv.org/abs/1506.02142",
+      "pdf_url": "https://arxiv.org/pdf/1506.02142",
+      "openalex_id": "https://openalex.org/W582134693",
+      "citation_count": 2672,
+      "cited_by_count": 2672,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "Deep learning tools have gained tremendous attention in applied machine learning. However such tools for regression and classification do not capture model uncertainty. In comparison, Bayesian models offer a mathematically grounded framework to reason about model uncertainty, but usually come with a prohibitive computational cost. In this paper we develop a new theoretical framework casting dropout training in deep neural networks (NNs) as approximate Bayesian inference in deep Gaussian processes. A direct result of this theory gives us tools to model uncertainty with dropout NNs -- extracting information from existing models that has been thrown away so far. This mitigates the problem of representing uncertainty in deep learning without sacrificing either computational complexity or test accuracy. We perform an extensive study of the properties of dropout's uncertainty. Various network architectures and non-linearities are assessed on tasks of regression and classification, using MNIST as an example. We show a considerable improvement in predictive log-likelihood and RMSE compared to existing state-of-the-art methods, and finish by using dropout's uncertainty in deep reinforcement learning.",
+      "topics": [
+        "Gaussian Processes and Bayesian Inference",
+        "Adversarial Robustness in Machine Learning",
+        "Machine Learning and Data Classification"
+      ],
+      "referenced_works_count": 40,
+      "related_works": [
+        "https://openalex.org/W2095705004",
+        "https://openalex.org/W2951266961",
+        "https://openalex.org/W2919115771",
+        "https://openalex.org/W2108677974",
+        "https://openalex.org/W2194775991"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/45fef1ee6f5a97c5.json"
+    },
+    {
+      "title": "Review of deep learning: concepts, CNN architectures, challenges, applications, future directions",
+      "display_name": "Review of deep learning: concepts, CNN architectures, challenges, applications, future directions",
+      "authors": [
+        {
+          "name": "Laith Alzubaidi",
+          "given": "Laith",
+          "family": "Alzubaidi",
+          "author_id": "https://openalex.org/A5102889969",
+          "display_name": "Laith Alzubaidi",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5102889969",
+            "orcid": "https://orcid.org/0000-0002-7296-5413",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Queensland University of Technology",
+            "University of Information Technology and Communications"
+          ],
+          "countries": [
+            "IQ",
+            "AU"
+          ]
+        },
+        {
+          "name": "Jinglan Zhang",
+          "given": "Jinglan",
+          "family": "Zhang",
+          "author_id": "https://openalex.org/A5101979224",
+          "display_name": "Jinglan Zhang",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5101979224",
+            "orcid": "https://orcid.org/0000-0001-6459-2963",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Queensland University of Technology"
+          ],
+          "countries": [
+            "AU"
+          ]
+        },
+        {
+          "name": "Amjad J. Humaidi",
+          "given": "Amjad J.",
+          "family": "Humaidi",
+          "author_id": "https://openalex.org/A5016153721",
+          "display_name": "Amjad J. Humaidi",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5016153721",
+            "orcid": "https://orcid.org/0000-0002-9071-1329",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Technology - Iraq"
+          ],
+          "countries": [
+            "IQ"
+          ]
+        },
+        {
+          "name": "Ayad Q. Al-Dujaili",
+          "given": "Ayad Q.",
+          "family": "Al-Dujaili",
+          "author_id": "https://openalex.org/A5052471696",
+          "display_name": "Ayad Q. Al-Dujaili",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5052471696",
+            "orcid": "https://orcid.org/0000-0002-1126-3290",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Middle Technical University"
+          ],
+          "countries": [
+            "IQ"
+          ]
+        },
+        {
+          "name": "Ye Duan",
+          "given": "Ye",
+          "family": "Duan",
+          "author_id": "https://openalex.org/A5101430356",
+          "display_name": "Ye Duan",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5101430356",
+            "orcid": "https://orcid.org/0000-0002-1166-7703",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Missouri"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Omran Al-Shamma",
+          "given": "Omran",
+          "family": "Al-Shamma",
+          "author_id": "https://openalex.org/A5008534489",
+          "display_name": "Omran Al-Shamma",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5008534489",
+            "orcid": "https://orcid.org/0000-0001-5930-6176",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Information Technology and Communications"
+          ],
+          "countries": [
+            "IQ"
+          ]
+        },
+        {
+          "name": "José Santamaría",
+          "given": "José",
+          "family": "Santamaría",
+          "author_id": "https://openalex.org/A5010765865",
+          "display_name": "José Santamaría",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5010765865",
+            "orcid": "https://orcid.org/0000-0002-2022-6838",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universidad de Jaén"
+          ],
+          "countries": [
+            "ES"
+          ]
+        },
+        {
+          "name": "Mohammed A. Fadhel",
+          "given": "Mohammed A.",
+          "family": "Fadhel",
+          "author_id": "https://openalex.org/A5090966997",
+          "display_name": "Mohammed A. Fadhel",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5090966997",
+            "orcid": "https://orcid.org/0000-0001-9877-049X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Thi Qar University",
+            "University of Sumer"
+          ],
+          "countries": [
+            "IQ"
+          ]
+        },
+        {
+          "name": "Muthana Al‐Amidie",
+          "given": "Muthana",
+          "family": "Al‐Amidie",
+          "author_id": "https://openalex.org/A5036536042",
+          "display_name": "Muthana Al‐Amidie",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5036536042",
+            "orcid": "https://orcid.org/0000-0002-8116-1871",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Missouri"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Laith Farhan",
+          "given": "Laith",
+          "family": "Farhan",
+          "author_id": "https://openalex.org/A5059266881",
+          "display_name": "Laith Farhan",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5059266881",
+            "orcid": "https://orcid.org/0000-0001-8256-7323",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Manchester Metropolitan University"
+          ],
+          "countries": [
+            "GB"
+          ]
+        }
+      ],
+      "year": 2021,
+      "publication_date": "2021-03-31",
+      "journal": "Journal Of Big Data",
+      "venue": "Journal Of Big Data",
+      "publisher": "Springer Science+Business Media",
+      "reference_type": "journal-article",
+      "volume": "8",
+      "issue": "1",
+      "pages": "53",
+      "doi": "10.1186/s40537-021-00444-8",
+      "url": "https://doi.org/10.1186/s40537-021-00444-8",
+      "pdf_url": "https://journalofbigdata.springeropen.com/counter/pdf/10.1186/s40537-021-00444-8",
+      "openalex_id": "https://openalex.org/W3140854437",
+      "citation_count": 7858,
+      "cited_by_count": 7858,
+      "is_oa": true,
+      "oa_status": "gold",
+      "abstract": "In the last few years, the deep learning (DL) computing paradigm has been deemed the Gold Standard in the machine learning (ML) community. Moreover, it has gradually become the most widely used computational approach in the field of ML, thus achieving outstanding results on several complex cognitive tasks, matching or even beating those provided by human performance. One of the benefits of DL is the ability to learn massive amounts of data. The DL field has grown fast in the last few years and it has been extensively used to successfully address a wide range of traditional applications. More importantly, DL has outperformed well-known ML techniques in many domains, e.g., cybersecurity, natural language processing, bioinformatics, robotics and control, and medical information processing, among many others. Despite it has been contributed several works reviewing the State-of-the-Art on DL, all of them only tackled one aspect of the DL, which leads to an overall lack of knowledge about it. Therefore, in this contribution, we propose using a more holistic approach in order to provide a more suitable starting point from which to develop a full understanding of DL. Specifically, this review attempts to provide a more comprehensive survey of the most important aspects of DL and including those enhancements recently added to the field. In particular, this paper outlines the importance of DL, presents the types of DL techniques and networks. It then presents convolutional neural networks (CNNs) which the most utilized DL network type and describes the development of CNNs architectures together with their main features, e.g., starting with the AlexNet network and closing with the High-Resolution network (HR.Net). Finally, we further present the challenges and suggested solutions to help researchers understand the existing research gaps. It is followed by a list of the major DL applications. Computational tools including FPGA, GPU, and CPU are summarized along with a description of their influence on DL. The paper ends with the evolution matrix, benchmark datasets, and summary and conclusion.",
+      "topics": [
+        "Advanced Neural Network Applications",
+        "COVID-19 diagnosis using AI",
+        "Anomaly Detection Techniques and Applications"
+      ],
+      "referenced_works_count": 362,
+      "related_works": [
+        "https://openalex.org/W4293226380",
+        "https://openalex.org/W4375867731",
+        "https://openalex.org/W2611989081",
+        "https://openalex.org/W4226493464",
+        "https://openalex.org/W4312417841"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/45fef1ee6f5a97c5.json"
+    },
+    {
+      "title": "Deep learning with convolutional neural networks for EEG decoding and visualization",
+      "display_name": "Deep learning with convolutional neural networks for EEG decoding and visualization",
+      "authors": [
+        {
+          "name": "Robin Tibor Schirrmeister",
+          "given": "Robin Tibor",
+          "family": "Schirrmeister",
+          "author_id": "https://openalex.org/A5018131113",
+          "display_name": "Robin Tibor Schirrmeister",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5018131113",
+            "orcid": "https://orcid.org/0000-0002-5518-7445",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Freiburg",
+            "Brain (Germany)"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Jost Tobias Springenberg",
+          "given": "Jost Tobias",
+          "family": "Springenberg",
+          "author_id": "https://openalex.org/A5017985443",
+          "display_name": "Jost Tobias Springenberg",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5017985443",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Freiburg",
+            "Brain (Germany)"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Lukas D. J. Fiederer",
+          "given": "Lukas D. J.",
+          "family": "Fiederer",
+          "author_id": "https://openalex.org/A5102811270",
+          "display_name": "Lukas D. J. Fiederer",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5102811270",
+            "orcid": "https://orcid.org/0000-0003-1803-9694",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Freiburg",
+            "Brain (Germany)"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Martin Glasstetter",
+          "given": "Martin",
+          "family": "Glasstetter",
+          "author_id": "https://openalex.org/A5054081898",
+          "display_name": "Martin Glasstetter",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5054081898",
+            "orcid": "https://orcid.org/0000-0002-4929-4332",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Freiburg",
+            "Brain (Germany)"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Katharina Eggensperger",
+          "given": "Katharina",
+          "family": "Eggensperger",
+          "author_id": "https://openalex.org/A5081813991",
+          "display_name": "Katharina Eggensperger",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5081813991",
+            "orcid": "https://orcid.org/0000-0002-0309-401X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Freiburg",
+            "Brain (Germany)"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Michael Tangermann",
+          "given": "Michael",
+          "family": "Tangermann",
+          "author_id": "https://openalex.org/A5067573169",
+          "display_name": "Michael Tangermann",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5067573169",
+            "orcid": "https://orcid.org/0000-0001-6729-0290",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Freiburg",
+            "Brain (Germany)"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Frank Hutter",
+          "given": "Frank",
+          "family": "Hutter",
+          "author_id": "https://openalex.org/A5031002895",
+          "display_name": "Frank Hutter",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5031002895",
+            "orcid": "https://orcid.org/0000-0002-2037-3694",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Freiburg",
+            "Brain (Germany)"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Wolfram Burgard",
+          "given": "Wolfram",
+          "family": "Burgard",
+          "author_id": "https://openalex.org/A5084499878",
+          "display_name": "Wolfram Burgard",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5084499878",
+            "orcid": "https://orcid.org/0000-0002-5680-6500",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Freiburg",
+            "Brain (Germany)"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Tonio Ball",
+          "given": "Tonio",
+          "family": "Ball",
+          "author_id": "https://openalex.org/A5049330818",
+          "display_name": "Tonio Ball",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5049330818",
+            "orcid": "https://orcid.org/0000-0002-4993-466X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Freiburg",
+            "Brain (Germany)"
+          ],
+          "countries": [
+            "DE"
+          ]
+        }
+      ],
+      "year": 2017,
+      "publication_date": "2017-08-07",
+      "journal": "Human Brain Mapping",
+      "venue": "Human Brain Mapping",
+      "publisher": "Wiley",
+      "reference_type": "journal-article",
+      "volume": "38",
+      "issue": "11",
+      "pages": "5391-5420",
+      "doi": "10.1002/hbm.23730",
+      "url": "https://doi.org/10.1002/hbm.23730",
+      "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/hbm.23730",
+      "openalex_id": "https://openalex.org/W2741907166",
+      "citation_count": 3700,
+      "cited_by_count": 3700,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "abstract": "Deep learning with convolutional neural networks (deep ConvNets) has revolutionized computer vision through end-to-end learning, that is, learning from the raw data. There is increasing interest in using deep ConvNets for end-to-end EEG analysis, but a better understanding of how to design and train ConvNets for end-to-end EEG decoding and how to visualize the informative EEG features the ConvNets learn is still needed. Here, we studied deep ConvNets with a range of different architectures, designed for decoding imagined or executed tasks from raw EEG. Our results show that recent advances from the machine learning field, including batch normalization and exponential linear units, together with a cropped training strategy, boosted the deep ConvNets decoding performance, reaching at least as good performance as the widely used filter bank common spatial patterns (FBCSP) algorithm (mean decoding accuracies 82.1% FBCSP, 84.0% deep ConvNets). While FBCSP is designed to use spectral power modulations, the features used by ConvNets are not fixed a priori. Our novel methods for visualizing the learned features demonstrated that ConvNets indeed learned to use spectral power modulations in the alpha, beta, and high gamma frequencies, and proved useful for spatially mapping the learned features by revealing the topography of the causal contributions of features in different frequency bands to the decoding decision. Our study thus shows how to design and train ConvNets to decode task-related information from the raw EEG without handcrafted features and highlights the potential of deep ConvNets combined with advanced visualization techniques for EEG-based brain mapping. Hum Brain Mapp 38:5391-5420, 2017. © 2017 Wiley Periodicals, Inc.",
+      "topics": [
+        "EEG and Brain-Computer Interfaces",
+        "Neural dynamics and brain function",
+        "Advanced Memory and Neural Computing"
+      ],
+      "referenced_works_count": 131,
+      "related_works": [
+        "https://openalex.org/W2591697403",
+        "https://openalex.org/W2944728705",
+        "https://openalex.org/W2904022177",
+        "https://openalex.org/W2359348847",
+        "https://openalex.org/W3011538607"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/45fef1ee6f5a97c5.json"
+    },
+    {
+      "title": "Continual lifelong learning with neural networks: A review",
+      "display_name": "Continual lifelong learning with neural networks: A review",
+      "authors": [
+        {
+          "name": "German I. Parisi",
+          "given": "German I.",
+          "family": "Parisi",
+          "author_id": "https://openalex.org/A5016198705",
+          "display_name": "German I. Parisi",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5016198705",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universität Hamburg",
+            "Hamburg University of Technology"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Ronald Kemker",
+          "given": "Ronald",
+          "family": "Kemker",
+          "author_id": "https://openalex.org/A5043035821",
+          "display_name": "Ronald Kemker",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5043035821",
+            "orcid": "https://orcid.org/0000-0003-4087-4952",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Rochester Institute of Technology"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Jose L. Part",
+          "given": "Jose L.",
+          "family": "Part",
+          "author_id": "https://openalex.org/A5016501969",
+          "display_name": "Jose L. Part",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5016501969",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Heriot-Watt University"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "Christopher Kanan",
+          "given": "Christopher",
+          "family": "Kanan",
+          "author_id": "https://openalex.org/A5046979072",
+          "display_name": "Christopher Kanan",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5046979072",
+            "orcid": "https://orcid.org/0000-0002-6412-995X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Rochester Institute of Technology"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Stefan Wermter",
+          "given": "Stefan",
+          "family": "Wermter",
+          "author_id": "https://openalex.org/A5033486668",
+          "display_name": "Stefan Wermter",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5033486668",
+            "orcid": "https://orcid.org/0000-0003-1343-4775",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universität Hamburg"
+          ],
+          "countries": [
+            "DE"
+          ]
+        }
+      ],
+      "year": 2019,
+      "publication_date": "2019-02-10",
+      "journal": "Neural Networks",
+      "venue": "Neural Networks",
+      "publisher": "Elsevier BV",
+      "reference_type": "journal-article",
+      "volume": "113",
+      "issue": "",
+      "pages": "54-71",
+      "doi": "10.1016/j.neunet.2019.01.012",
+      "url": "https://doi.org/10.1016/j.neunet.2019.01.012",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0893608019300231/pdf",
+      "openalex_id": "https://openalex.org/W2788388592",
+      "citation_count": 3149,
+      "cited_by_count": 3149,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "abstract": "Humans and animals have the ability to continually acquire, fine-tune, and transfer knowledge and skills throughout their lifespan. This ability, referred to as lifelong learning, is mediated by a rich set of neurocognitive mechanisms that together contribute to the development and specialization of our sensorimotor skills as well as to long-term memory consolidation and retrieval. Consequently, lifelong learning capabilities are crucial for computational learning systems and autonomous agents interacting in the real world and processing continuous streams of information. However, lifelong learning remains a long-standing challenge for machine learning and neural network models since the continual acquisition of incrementally available information from non-stationary data distributions generally leads to catastrophic forgetting or interference. This limitation represents a major drawback for state-of-the-art deep neural network models that typically learn representations from stationary batches of training data, thus without accounting for situations in which information becomes incrementally available over time. In this review, we critically summarize the main challenges linked to lifelong learning for artificial learning systems and compare existing neural network approaches that alleviate, to different extents, catastrophic forgetting. Although significant advances have been made in domain-specific learning with neural networks, extensive research efforts are required for the development of robust lifelong learning on autonomous agents and robots. We discuss well-established and emerging research motivated by lifelong learning factors in biological systems such as structural plasticity, memory replay, curriculum and transfer learning, intrinsic motivation, and multisensory integration.",
+      "topics": [
+        "Domain Adaptation and Few-Shot Learning",
+        "Multimodal Machine Learning Applications",
+        "Human Pose and Action Recognition"
+      ],
+      "referenced_works_count": 304,
+      "related_works": [
+        "https://openalex.org/W3016888008",
+        "https://openalex.org/W4394633951",
+        "https://openalex.org/W2745420784",
+        "https://openalex.org/W4387770285",
+        "https://openalex.org/W4213035857"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/45fef1ee6f5a97c5.json"
+    },
+    {
+      "title": "Neural Architectures for Named Entity Recognition",
+      "display_name": "Neural Architectures for Named Entity Recognition",
+      "authors": [
+        {
+          "name": "Guillaume Lample",
+          "given": "Guillaume",
+          "family": "Lample",
+          "author_id": "https://openalex.org/A5054371148",
+          "display_name": "Guillaume Lample",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5054371148",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universitat Pompeu Fabra",
+            "Carnegie Mellon University"
+          ],
+          "countries": [
+            "US",
+            "ES"
+          ]
+        },
+        {
+          "name": "Miguel Ballesteros",
+          "given": "Miguel",
+          "family": "Ballesteros",
+          "author_id": "https://openalex.org/A5101731788",
+          "display_name": "Miguel Ballesteros",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5101731788",
+            "orcid": "https://orcid.org/0000-0003-3949-0361",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universitat Pompeu Fabra",
+            "Carnegie Mellon University"
+          ],
+          "countries": [
+            "US",
+            "ES"
+          ]
+        },
+        {
+          "name": "Sandeep Subramanian",
+          "given": "Sandeep",
+          "family": "Subramanian",
+          "author_id": "https://openalex.org/A5013965909",
+          "display_name": "Sandeep Subramanian",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5013965909",
+            "orcid": "https://orcid.org/0000-0002-5972-1588",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universitat Pompeu Fabra",
+            "Carnegie Mellon University"
+          ],
+          "countries": [
+            "US",
+            "ES"
+          ]
+        },
+        {
+          "name": "Kazuya Kawakami",
+          "given": "Kazuya",
+          "family": "Kawakami",
+          "author_id": "https://openalex.org/A5060303231",
+          "display_name": "Kazuya Kawakami",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5060303231",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universitat Pompeu Fabra",
+            "Carnegie Mellon University"
+          ],
+          "countries": [
+            "US",
+            "ES"
+          ]
+        },
+        {
+          "name": "Chris Dyer",
+          "given": "Chris",
+          "family": "Dyer",
+          "author_id": "https://openalex.org/A5111222692",
+          "display_name": "Chris Dyer",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5111222692",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universitat Pompeu Fabra",
+            "Carnegie Mellon University"
+          ],
+          "countries": [
+            "US",
+            "ES"
+          ]
+        }
+      ],
+      "year": 2016,
+      "publication_date": "2016-01-01",
+      "journal": "",
+      "venue": "",
+      "publisher": "",
+      "reference_type": "journal-article",
+      "volume": "",
+      "issue": "",
+      "pages": "260-270",
+      "doi": "10.18653/v1/n16-1030",
+      "url": "https://doi.org/10.18653/v1/n16-1030",
+      "pdf_url": "https://www.aclweb.org/anthology/N16-1030.pdf",
+      "openalex_id": "https://openalex.org/W2296283641",
+      "citation_count": 4482,
+      "cited_by_count": 4482,
+      "is_oa": true,
+      "oa_status": "gold",
+      "abstract": "Guillaume Lample, Miguel Ballesteros, Sandeep Subramanian, Kazuya Kawakami, Chris Dyer. Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. 2016.",
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Text Readability and Simplification"
+      ],
+      "referenced_works_count": 48,
+      "related_works": [
+        "https://openalex.org/W2032007337",
+        "https://openalex.org/W2186562580",
+        "https://openalex.org/W2078793151",
+        "https://openalex.org/W2155874911",
+        "https://openalex.org/W1884363728"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/45fef1ee6f5a97c5.json"
+    }
+  ]
+}

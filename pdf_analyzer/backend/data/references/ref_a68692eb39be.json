@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_a68692eb39be",
-  "project_id": "project_20260831_081840_857bd2f2",
-  "created_at": "2026-08-31T08:20:09.869679+00:00",
+  "project_id": "project_20260831_090611_857bd2f2",
+  "created_at": "2026-08-31T09:07:22.785981+00:00",
   "input": {
     "original_text": "Lu, X., Huang, P., Feng, X., He, Y., A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput. 92(3) (2022) 104. Progr. Fract. Differ. Appl. , No. , 1-19 () / www.naturalspublishing.com/Journals.asp",
     "parsed": {
@@ -85,8 +85,8 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
@@ -219,14 +219,14 @@
       "data": {}
     },
     "crossref": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.2,
+      "confidence": 0.0,
       "citation_count": null,
       "doi": null,
       "url": null,
-      "raw_file": "data/raw/crossref/3229f99be9a3cf31.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -246,83 +246,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5005/jp/books/11592_104",
-        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5040/9780300261271.0009.ch004",
-        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1249/01.mss.0000320896.44918.51",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9780820371139-106",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00256269",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00304566",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2307/2789892",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9780824843137-106",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00030459",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00129033",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -330,78 +259,7 @@
     "metadata_completeness": 0.67,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5005/jp/books/11592_104",
-        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5040/9780300261271.0009.ch004",
-        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1249/01.mss.0000320896.44918.51",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9780820371139-106",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00256269",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00304566",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2307/2789892",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9780824843137-106",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00030459",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/oseo/instance.00129033",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -410,13 +268,13 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.62,
-      "crossref": 42608.42,
-      "openalex": 55552.27
+      "google_scholar": 9.3,
+      "crossref": 30135.99,
+      "openalex": 45659.7
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 10,
+      "crossref": 0,
       "openalex": 0
     },
     "errors": {}

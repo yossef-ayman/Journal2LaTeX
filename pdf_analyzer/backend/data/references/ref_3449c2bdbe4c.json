@@ -1,26 +1,21 @@
 {
   "reference_id": "ref_3449c2bdbe4c",
-  "project_id": "project_20260831_082256_e63dea74",
-  "created_at": "2026-08-31T08:23:26.329353+00:00",
+  "project_id": "project_20260906_102443_69092c9c",
+  "created_at": "2026-09-06T10:25:16.109840+00:00",
   "input": {
     "original_text": "Atangana, A., 2017. Fractal-fractional differentiation and integration: Connecting fractal calculus and fractional calculus to predict complex processes. Chaos, Solitons & Fractals 102, 396–406. http://dx.doi.org/10.1016/j.chaos.2017.04.027",
     "parsed": {
-      "title": "Fractal-fractional differentiation and integration: Connecting fractal calculus and fractional calculus to predict complex processes",
+      "title": "2017",
       "authors": [
         {
           "name": "A Atangana",
           "given": "A",
           "family": "Atangana"
-        },
-        {
-          "name": "2017",
-          "given": "",
-          "family": "2017"
         }
       ],
       "year": 2017,
       "reference_type": "journal-article",
-      "journal": "Chaos, Solitons & Fractals 102, 396–406",
+      "journal": "Fractal-fractional differentiation and integration: Connecting fractal calculus and fractional calcu",
       "publisher": null,
       "volume": null,
       "issue": null,
@@ -44,7 +39,7 @@
       "verification_status": "verified"
     },
     "venue": {
-      "value": "Chaos, Solitons & Fractals 102, 396–406",
+      "value": "Fractal-fractional differentiation and integration: Connecting fractal calculus and fractional calcu",
       "source": "parsed",
       "confidence": 0.85,
       "verification_status": "verified"
@@ -228,21 +223,16 @@
       "raw_file": null,
       "normalized_file": "data/normalized/google_scholar/dca36f2f754ddb67.json",
       "data": {
-        "title": "Fractal-fractional differentiation and integration: Connecting fractal calculus and fractional calculus to predict complex processes",
+        "title": "2017",
         "authors": [
           {
             "name": "A Atangana",
             "given": "A",
             "family": "Atangana"
-          },
-          {
-            "name": "2017",
-            "given": "",
-            "family": "2017"
           }
         ],
         "year": 2017,
-        "journal": "Chaos, Solitons & Fractals 102, 396–406",
+        "journal": "Fractal-fractional differentiation and integration: Connecting fractal calculus and fractional calcu",
         "doi": "10.1016/j.chaos.2017.04.027",
         "url": "https://scholar.google.com/scholar?q=doi%3A10.1016/j.chaos.2017.04.027",
         "citation_count": null,
@@ -261,7 +251,15 @@
     "reconciled_with_arxiv": false,
     "confidence": 1.0,
     "reason": "Verified with parsed metadata consistency (title_sim=1.00).",
-    "conflicts": [],
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.chaos.2017.04.027",
+        "reason": "Metadata mismatch (title_sim=0.00, author_sim=1.00)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -269,7 +267,15 @@
     "metadata_completeness": 1.0,
     "doi_verified": true,
     "author_verified": true,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.chaos.2017.04.027",
+        "reason": "Metadata mismatch (title_sim=0.00, author_sim=1.00)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -278,9 +284,9 @@
       "crossref"
     ],
     "latency_ms": {
-      "google_scholar": 9.32,
-      "openalex": 18777.15,
-      "crossref": 18705.53
+      "google_scholar": 9.29,
+      "openalex": 20436.05,
+      "crossref": 21208.97
     },
     "candidate_counts": {
       "google_scholar": 1,

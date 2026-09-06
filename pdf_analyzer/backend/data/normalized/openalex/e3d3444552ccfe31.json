@@ -1,0 +1,997 @@
+{
+  "provider": "openalex",
+  "entity_key": "title:stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations, J. Sci",
+  "normalized_at": "2026-09-06T10:25:19.919310+00:00",
+  "data": [
+    {
+      "title": "Robust Arbitrary Order Mixed Finite Element Methods for the Incompressible Stokes Equations with pressure independent velocity errors",
+      "display_name": "Robust Arbitrary Order Mixed Finite Element Methods for the Incompressible Stokes Equations with pressure independent velocity errors",
+      "authors": [
+        {
+          "name": "Alexander Linke",
+          "given": "Alexander",
+          "family": "Linke",
+          "author_id": "https://openalex.org/A5024764407",
+          "display_name": "Alexander Linke",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5024764407",
+            "orcid": "https://orcid.org/0000-0002-0165-2698",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Weierstrass Institute for Applied Analysis and Stochastics"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Gunar Matthies",
+          "given": "Gunar",
+          "family": "Matthies",
+          "author_id": "https://openalex.org/A5041040975",
+          "display_name": "Gunar Matthies",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5041040975",
+            "orcid": "https://orcid.org/0000-0002-9476-3740",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technische Universität Dresden"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Lutz Tobiska",
+          "given": "Lutz",
+          "family": "Tobiska",
+          "author_id": "https://openalex.org/A5053874836",
+          "display_name": "Lutz Tobiska",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5053874836",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Otto-von-Guericke-Universität Magdeburg"
+          ],
+          "countries": [
+            "DE"
+          ]
+        }
+      ],
+      "year": 2015,
+      "publication_date": "2015-06-08",
+      "journal": "ESAIM Mathematical Modelling and Numerical Analysis",
+      "venue": "ESAIM Mathematical Modelling and Numerical Analysis",
+      "publisher": "EDP Sciences",
+      "reference_type": "journal-article",
+      "volume": "50",
+      "issue": "1",
+      "pages": "289-309",
+      "doi": "10.1051/m2an/2015044",
+      "url": "https://doi.org/10.1051/m2an/2015044",
+      "pdf_url": "https://www.esaim-m2an.org/10.1051/m2an/2015044/pdf",
+      "openalex_id": "https://openalex.org/W2258832456",
+      "citation_count": 99,
+      "cited_by_count": 99,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "Standard mixed finite element methods for the incompressible Navier–Stokes equations that relax the divergence constraint are not robust against large irrotational forces in the momentum balance and the velocity error depends on the continuous pressure. This robustness issue can be completely cured by using divergence-free mixed finite elements which deliver pressure-independent velocity error estimates. However, the construction of H1-conforming, divergence-free mixed finite element methods is rather difficult. Instead, we present a novel approach for the construction of arbitrary order mixed finite element methods which deliver pressure-independent velocity errors. The approach does not change the trial functions but replaces discretely divergence-free test functions in some operators of the weak formulation by divergence-free ones. This modification is applied to inf-sup stable conforming and nonconforming mixed finite element methods of arbitrary order in two and three dimensions. Optimal estimates for the incompressible Stokes equations are proved for the H1 and L2 errors of the velocity and the L2 error of the pressure. Moreover, both velocity errors are pressure-independent, demonstrating the improved robustness. Several numerical examples illustrate the results.",
+      "topics": [
+        "Advanced Numerical Methods in Computational Mathematics",
+        "Numerical methods for differential equations",
+        "Computational Fluid Dynamics and Aerodynamics"
+      ],
+      "referenced_works_count": 44,
+      "related_works": [
+        "https://openalex.org/W2313597186",
+        "https://openalex.org/W2500173965",
+        "https://openalex.org/W3009263674",
+        "https://openalex.org/W126356357",
+        "https://openalex.org/W2091721497"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e3d3444552ccfe31.json"
+    },
+    {
+      "title": "Adaptive Time-Stepping for Incompressible Flow Part II: Navier–Stokes Equations",
+      "display_name": "Adaptive Time-Stepping for Incompressible Flow Part II: Navier–Stokes Equations",
+      "authors": [
+        {
+          "name": "David Kay",
+          "given": "David",
+          "family": "Kay",
+          "author_id": "https://openalex.org/A5037754645",
+          "display_name": "David Kay",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5037754645",
+            "orcid": "https://orcid.org/0000-0003-4984-3669",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "dkay@comlab.ox.ac.uk#TAB#"
+          ],
+          "countries": []
+        },
+        {
+          "name": "Philip Gresho",
+          "given": "Philip",
+          "family": "Gresho",
+          "author_id": "https://openalex.org/A5059924671",
+          "display_name": "Philip Gresho",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5059924671",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "pgresho@comcast.net#TAB#"
+          ],
+          "countries": []
+        },
+        {
+          "name": "David F. Griffiths",
+          "given": "David F.",
+          "family": "Griffiths",
+          "author_id": "https://openalex.org/A5103592010",
+          "display_name": "David F. Griffiths",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5103592010",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "dfg@maths.dundee.ac.uk#TAB#"
+          ],
+          "countries": []
+        },
+        {
+          "name": "David J. Silvester",
+          "given": "David J.",
+          "family": "Silvester",
+          "author_id": "https://openalex.org/A5007116796",
+          "display_name": "David J. Silvester",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5007116796",
+            "orcid": "https://orcid.org/0000-0002-0652-5444",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "d.silvester@manchester.ac.uk#TAB#"
+          ],
+          "countries": []
+        }
+      ],
+      "year": 2010,
+      "publication_date": "2010-01-01",
+      "journal": "SIAM Journal on Scientific Computing",
+      "venue": "SIAM Journal on Scientific Computing",
+      "publisher": "Society for Industrial and Applied Mathematics",
+      "reference_type": "journal-article",
+      "volume": "32",
+      "issue": "1",
+      "pages": "111-128",
+      "doi": "10.1137/080728032",
+      "url": "https://doi.org/10.1137/080728032",
+      "pdf_url": "https://discovery.dundee.ac.uk/en/publications/422e390a-5ffc-48db-a575-f3e31c8bb3ce",
+      "openalex_id": "https://openalex.org/W2017044842",
+      "citation_count": 91,
+      "cited_by_count": 91,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "We outline a new class of robust and efficient methods for solving the Navier–Stokes equations. We describe a general solution strategy that has two basic building blocks: an implicit time integrator using a stabilized trapezoid rule with an explicit Adams–Bashforth method for error control, and a robust Krylov subspace solver for the spatially discretized system. We present numerical experiments illustrating the potential of our approach.",
+      "topics": [
+        "Advanced Numerical Methods in Computational Mathematics",
+        "Numerical methods for differential equations",
+        "Model Reduction and Neural Networks"
+      ],
+      "referenced_works_count": 17,
+      "related_works": [
+        "https://openalex.org/W2327038764",
+        "https://openalex.org/W2137297956",
+        "https://openalex.org/W2033636177",
+        "https://openalex.org/W2500173965",
+        "https://openalex.org/W2606658789"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e3d3444552ccfe31.json"
+    },
+    {
+      "title": "A Hybrid High-Order Method for the Steady Incompressible Navier–Stokes Problem",
+      "display_name": "A Hybrid High-Order Method for the Steady Incompressible Navier–Stokes Problem",
+      "authors": [
+        {
+          "name": "Daniele A. Di Pietro",
+          "given": "Daniele A. Di",
+          "family": "Pietro",
+          "author_id": "https://openalex.org/A5037714004",
+          "display_name": "Daniele A. Di Pietro",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5037714004",
+            "orcid": "https://orcid.org/0000-0003-0959-8830",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Université de Montpellier",
+            "Institut Montpelliérain Alexander Grothendieck"
+          ],
+          "countries": [
+            "FR"
+          ]
+        },
+        {
+          "name": "Stella Krell",
+          "given": "Stella",
+          "family": "Krell",
+          "author_id": "https://openalex.org/A5111640007",
+          "display_name": "Stella Krell",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5111640007",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Centre National de la Recherche Scientifique",
+            "Institut national de recherche en sciences et technologies du numérique",
+            "Université Côte d'Azur",
+            "Laboratoire Jean-Alexandre Dieudonné",
+            "Institut de Physique de Nice"
+          ],
+          "countries": [
+            "FR"
+          ]
+        }
+      ],
+      "year": 2017,
+      "publication_date": "2017-08-04",
+      "journal": "Journal of Scientific Computing",
+      "venue": "Journal of Scientific Computing",
+      "publisher": "Springer Science+Business Media",
+      "reference_type": "journal-article",
+      "volume": "74",
+      "issue": "3",
+      "pages": "1677-1705",
+      "doi": "10.1007/s10915-017-0512-x",
+      "url": "https://doi.org/10.1007/s10915-017-0512-x",
+      "pdf_url": "https://arxiv.org/pdf/1607.08159",
+      "openalex_id": "https://openalex.org/W2478601335",
+      "citation_count": 65,
+      "cited_by_count": 65,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": null,
+      "topics": [
+        "Advanced Numerical Methods in Computational Mathematics",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Navier-Stokes equation solutions"
+      ],
+      "referenced_works_count": 52,
+      "related_works": [
+        "https://openalex.org/W2044458714",
+        "https://openalex.org/W2949706122",
+        "https://openalex.org/W4381510243",
+        "https://openalex.org/W4299548465",
+        "https://openalex.org/W1519687012"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e3d3444552ccfe31.json"
+    },
+    {
+      "title": "Study of the mixed finite volume method for Stokes and Navier‐Stokes equations",
+      "display_name": "Study of the mixed finite volume method for Stokes and Navier‐Stokes equations",
+      "authors": [
+        {
+          "name": "Jérôme Droniou",
+          "given": "Jérôme",
+          "family": "Droniou",
+          "author_id": "https://openalex.org/A5075602113",
+          "display_name": "Jérôme Droniou",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5075602113",
+            "orcid": "https://orcid.org/0000-0002-3339-3053",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Centre National de la Recherche Scientifique",
+            "Université de Montpellier",
+            "Institut Montpelliérain Alexander Grothendieck"
+          ],
+          "countries": [
+            "FR"
+          ]
+        },
+        {
+          "name": "Robert Eymard",
+          "given": "Robert",
+          "family": "Eymard",
+          "author_id": "https://openalex.org/A5057528055",
+          "display_name": "Robert Eymard",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5057528055",
+            "orcid": "https://orcid.org/0000-0002-6035-0104",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Centre National de la Recherche Scientifique",
+            "Université Paris-Est Créteil",
+            "Laboratoire d’Analyse et de Mathématiques Appliquées"
+          ],
+          "countries": [
+            "FR"
+          ]
+        }
+      ],
+      "year": 2008,
+      "publication_date": "2008-03-31",
+      "journal": "Numerical Methods for Partial Differential Equations",
+      "venue": "Numerical Methods for Partial Differential Equations",
+      "publisher": "Wiley",
+      "reference_type": "journal-article",
+      "volume": "25",
+      "issue": "1",
+      "pages": "137-171",
+      "doi": "10.1002/num.20333",
+      "url": "https://doi.org/10.1002/num.20333",
+      "pdf_url": "https://hal.science/hal-00110911v1/file/nsmixtes.pdf",
+      "openalex_id": "https://openalex.org/W1973533784",
+      "citation_count": 52,
+      "cited_by_count": 52,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": "Abstract We present finite volume schemes for Stokes and Navier‐Stokes equations. These schemes are based on the mixed finite volume introduced in (Droniou and Eymard, Numer Math 105 (2006), 35‐71), and can be applied to any type of grid (without “orthogonality” assumptions as for classical finite volume methods) and in any space dimension. We present numerical results on some irregular grids, and we prove, for both Stokes and Navier‐Stokes equations, the convergence of the scheme toward a solution of the continuous problem. © 2008 Wiley Periodicals, Inc. Numer Methods Partial Differential Eq, 2009",
+      "topics": [
+        "Advanced Numerical Methods in Computational Mathematics",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Lattice Boltzmann Simulation Studies"
+      ],
+      "referenced_works_count": 21,
+      "related_works": [
+        "https://openalex.org/W2293927022",
+        "https://openalex.org/W3143605294",
+        "https://openalex.org/W2519507806",
+        "https://openalex.org/W2625344043",
+        "https://openalex.org/W2475112809"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e3d3444552ccfe31.json"
+    },
+    {
+      "title": "Reduced Basis Approximation and a Posteriori Error Estimation for Affinely Parametrized Elliptic Coercive Partial Differential Equations",
+      "display_name": "Reduced Basis Approximation and a Posteriori Error Estimation for Affinely Parametrized Elliptic Coercive Partial Differential Equations",
+      "authors": [
+        {
+          "name": "Gianluigi Rozza",
+          "given": "Gianluigi",
+          "family": "Rozza",
+          "author_id": "https://openalex.org/A5061558433",
+          "display_name": "Gianluigi Rozza",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5061558433",
+            "orcid": "https://orcid.org/0000-0002-0810-8812",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Massachusetts Institute of Technology"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "D.B.P. Huynh",
+          "given": "D.B.P.",
+          "family": "Huynh",
+          "author_id": "https://openalex.org/A5110205138",
+          "display_name": "D.B.P. Huynh",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5110205138",
+            "orcid": "https://orcid.org/0009-0001-0399-400X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "National University of Singapore",
+            "Singapore-MIT Alliance for Research and Technology"
+          ],
+          "countries": [
+            "SG"
+          ]
+        },
+        {
+          "name": "A.T. Patera",
+          "given": "A.T.",
+          "family": "Patera",
+          "author_id": "https://openalex.org/A5110785159",
+          "display_name": "A.T. Patera",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5110785159",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Massachusetts Institute of Technology"
+          ],
+          "countries": [
+            "US"
+          ]
+        }
+      ],
+      "year": 2008,
+      "publication_date": "2008-05-20",
+      "journal": "Archives of Computational Methods in Engineering",
+      "venue": "Archives of Computational Methods in Engineering",
+      "publisher": "Springer Science+Business Media",
+      "reference_type": "journal-article",
+      "volume": "15",
+      "issue": "3",
+      "pages": "229-275",
+      "doi": "10.1007/s11831-008-9019-9",
+      "url": "https://doi.org/10.1007/s11831-008-9019-9",
+      "pdf_url": "https://hal.science/hal-01722593/document",
+      "openalex_id": "https://openalex.org/W2052690618",
+      "citation_count": 1126,
+      "cited_by_count": 1126,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": null,
+      "topics": [
+        "Advanced Numerical Methods in Computational Mathematics",
+        "Model Reduction and Neural Networks",
+        "Numerical methods for differential equations"
+      ],
+      "referenced_works_count": 178,
+      "related_works": [
+        "https://openalex.org/W2326147646",
+        "https://openalex.org/W2682190590",
+        "https://openalex.org/W935007796",
+        "https://openalex.org/W97241627",
+        "https://openalex.org/W2358589552"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e3d3444552ccfe31.json"
+    },
+    {
+      "title": "A Relaxed Splitting Preconditioner for the Incompressible Navier‐Stokes Equations",
+      "display_name": "A Relaxed Splitting Preconditioner for the Incompressible Navier‐Stokes Equations",
+      "authors": [
+        {
+          "name": "Ning-Bo Tan",
+          "given": "Ning-Bo",
+          "family": "Tan",
+          "author_id": "https://openalex.org/A5071251471",
+          "display_name": "Ning-Bo Tan",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5071251471",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Electronic Science and Technology of China"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Ting‐Zhu Huang",
+          "given": "Ting‐Zhu",
+          "family": "Huang",
+          "author_id": "https://openalex.org/A5065782725",
+          "display_name": "Ting‐Zhu Huang",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5065782725",
+            "orcid": "https://orcid.org/0000-0001-7766-230X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Electronic Science and Technology of China"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Ze-Jun Hu",
+          "given": "Ze-Jun",
+          "family": "Hu",
+          "author_id": "https://openalex.org/A5033099246",
+          "display_name": "Ze-Jun Hu",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5033099246",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Electronic Science and Technology of China"
+          ],
+          "countries": [
+            "CN"
+          ]
+        }
+      ],
+      "year": 2012,
+      "publication_date": "2012-01-01",
+      "journal": "Journal of Applied Mathematics",
+      "venue": "Journal of Applied Mathematics",
+      "publisher": "Hindawi Publishing Corporation",
+      "reference_type": "journal-article",
+      "volume": "2012",
+      "issue": "1",
+      "pages": "",
+      "doi": "10.1155/2012/402490",
+      "url": "https://doi.org/10.1155/2012/402490",
+      "pdf_url": "https://downloads.hindawi.com/journals/jam/2012/402490.pdf",
+      "openalex_id": "https://openalex.org/W2088234840",
+      "citation_count": 48,
+      "cited_by_count": 48,
+      "is_oa": true,
+      "oa_status": "gold",
+      "abstract": "A relaxed splitting preconditioner based on matrix splitting is introduced in this paper for linear systems of saddle point problem arising from numerical solution of the incompressible Navier‐Stokes equations. Spectral analysis of the preconditioned matrix is presented, and numerical experiments are carried out to illustrate the convergence behavior of the preconditioner for solving both steady and unsteady incompressible flow problems.",
+      "topics": [
+        "Matrix Theory and Algorithms",
+        "Advanced Numerical Methods in Computational Mathematics",
+        "Electromagnetic Scattering and Analysis"
+      ],
+      "referenced_works_count": 23,
+      "related_works": [
+        "https://openalex.org/W2401310550",
+        "https://openalex.org/W2381322109",
+        "https://openalex.org/W3035142666",
+        "https://openalex.org/W2500173965",
+        "https://openalex.org/W3009263674"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e3d3444552ccfe31.json"
+    },
+    {
+      "title": "On the stability of projection methods for the incompressible Navier–Stokes equations based on high-order discontinuous Galerkin discretizations",
+      "display_name": "On the stability of projection methods for the incompressible Navier–Stokes equations based on high-order discontinuous Galerkin discretizations",
+      "authors": [
+        {
+          "name": "Niklas Fehn",
+          "given": "Niklas",
+          "family": "Fehn",
+          "author_id": "https://openalex.org/A5047587390",
+          "display_name": "Niklas Fehn",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5047587390",
+            "orcid": "https://orcid.org/0000-0001-7693-692X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technical University of Munich"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Wolfgang A. Wall",
+          "given": "Wolfgang A.",
+          "family": "Wall",
+          "author_id": "https://openalex.org/A5053323760",
+          "display_name": "Wolfgang A. Wall",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5053323760",
+            "orcid": "https://orcid.org/0000-0001-7419-3384",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technical University of Munich"
+          ],
+          "countries": [
+            "DE"
+          ]
+        },
+        {
+          "name": "Martin Kronbichler",
+          "given": "Martin",
+          "family": "Kronbichler",
+          "author_id": "https://openalex.org/A5048891988",
+          "display_name": "Martin Kronbichler",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5048891988",
+            "orcid": "https://orcid.org/0000-0001-8406-835X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Technical University of Munich"
+          ],
+          "countries": [
+            "DE"
+          ]
+        }
+      ],
+      "year": 2017,
+      "publication_date": "2017-09-22",
+      "journal": "Journal of Computational Physics",
+      "venue": "Journal of Computational Physics",
+      "publisher": "Elsevier BV",
+      "reference_type": "journal-article",
+      "volume": "351",
+      "issue": "",
+      "pages": "392-421",
+      "doi": "10.1016/j.jcp.2017.09.031",
+      "url": "https://doi.org/10.1016/j.jcp.2017.09.031",
+      "pdf_url": "https://arxiv.org/pdf/1706.09252",
+      "openalex_id": "https://openalex.org/W2728331915",
+      "citation_count": 56,
+      "cited_by_count": 56,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": null,
+      "topics": [
+        "Advanced Numerical Methods in Computational Mathematics",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Numerical methods for differential equations"
+      ],
+      "referenced_works_count": 52,
+      "related_works": [
+        "https://openalex.org/W2162026849",
+        "https://openalex.org/W2394687667",
+        "https://openalex.org/W2887215440",
+        "https://openalex.org/W2292863065",
+        "https://openalex.org/W2114432561"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e3d3444552ccfe31.json"
+    },
+    {
+      "title": "Preconditioners for Incompressible Navier-Stokes Solvers",
+      "display_name": "Preconditioners for Incompressible Navier-Stokes Solvers",
+      "authors": [
+        {
+          "name": "A. Śegal",
+          "given": "A.",
+          "family": "Śegal",
+          "author_id": "https://openalex.org/A5108097806",
+          "display_name": "A. Śegal",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5108097806",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [],
+          "countries": []
+        }
+      ],
+      "year": 2010,
+      "publication_date": "2010-03-01",
+      "journal": "Numerical Mathematics Theory Methods and Applications",
+      "venue": "Numerical Mathematics Theory Methods and Applications",
+      "publisher": "Cambridge University Press",
+      "reference_type": "journal-article",
+      "volume": "3",
+      "issue": "3",
+      "pages": "245-275",
+      "doi": "10.4208/nmtma.2010.33.1",
+      "url": "https://doi.org/10.4208/nmtma.2010.33.1",
+      "pdf_url": "https://global-sci.org/intro/article_detail/auth/5999.html",
+      "openalex_id": "https://openalex.org/W2078763831",
+      "citation_count": 33,
+      "cited_by_count": 33,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "abstract": "In this paper we give an overview of the present state of fast solvers for the solution of the incompressible Navier-Stokes equations discretized by the finite element method and linearized by Newton or Picard's method. It is shown that block preconditioners form an excellent approach for the solution, however, if the grids are not to fine preconditioning, a Saddle point ILU matrix (SILU) may be an attractive alternative. The applicability of all methods to stabilized elements is investigated. In case of the stand-alone Stokes equations special preconditioners increase the efficiency considerably.",
+      "topics": [
+        "Advanced Numerical Methods in Computational Mathematics",
+        "Matrix Theory and Algorithms",
+        "Computational Fluid Dynamics and Aerodynamics"
+      ],
+      "referenced_works_count": 45,
+      "related_works": [
+        "https://openalex.org/W4236459141",
+        "https://openalex.org/W4205304778",
+        "https://openalex.org/W2020252434",
+        "https://openalex.org/W73248859",
+        "https://openalex.org/W2584253892"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e3d3444552ccfe31.json"
+    },
+    {
+      "title": "New stabilized discretizations for poroelasticity and the Stokes’ equations",
+      "display_name": "New stabilized discretizations for poroelasticity and the Stokes’ equations",
+      "authors": [
+        {
+          "name": "Carmen Rodrigo",
+          "given": "Carmen",
+          "family": "Rodrigo",
+          "author_id": "https://openalex.org/A5110571332",
+          "display_name": "Carmen Rodrigo",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5110571332",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Universidad de Zaragoza"
+          ],
+          "countries": [
+            "ES"
+          ]
+        },
+        {
+          "name": "Xiaozhe Hu",
+          "given": "Xiaozhe",
+          "family": "Hu",
+          "author_id": "https://openalex.org/A5029270343",
+          "display_name": "Xiaozhe Hu",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5029270343",
+            "orcid": "https://orcid.org/0000-0001-7533-0416",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Tufts University"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Peter Ohm",
+          "given": "Peter",
+          "family": "Ohm",
+          "author_id": "https://openalex.org/A5009385730",
+          "display_name": "Peter Ohm",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5009385730",
+            "orcid": "https://orcid.org/0000-0002-4803-4416",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Tufts University"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "James H. Adler",
+          "given": "James H.",
+          "family": "Adler",
+          "author_id": "https://openalex.org/A5040491922",
+          "display_name": "James H. Adler",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5040491922",
+            "orcid": "https://orcid.org/0000-0002-6603-8840",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Tufts University"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Francisco J. Gaspar",
+          "given": "Francisco J.",
+          "family": "Gaspar",
+          "author_id": "https://openalex.org/A5038994805",
+          "display_name": "Francisco J. Gaspar",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5038994805",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Centrum Wiskunde & Informatica"
+          ],
+          "countries": [
+            "NL"
+          ]
+        },
+        {
+          "name": "Ludmil Zikatanov",
+          "given": "Ludmil",
+          "family": "Zikatanov",
+          "author_id": "https://openalex.org/A5074536850",
+          "display_name": "Ludmil Zikatanov",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5074536850",
+            "orcid": "https://orcid.org/0000-0002-5189-4230",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Pennsylvania State University",
+            "Bulgarian Academy of Sciences"
+          ],
+          "countries": [
+            "US",
+            "BG"
+          ]
+        }
+      ],
+      "year": 2018,
+      "publication_date": "2018-07-11",
+      "journal": "Computer Methods in Applied Mechanics and Engineering",
+      "venue": "Computer Methods in Applied Mechanics and Engineering",
+      "publisher": "Elsevier BV",
+      "reference_type": "journal-article",
+      "volume": "341",
+      "issue": "",
+      "pages": "467-484",
+      "doi": "10.1016/j.cma.2018.07.003",
+      "url": "https://doi.org/10.1016/j.cma.2018.07.003",
+      "pdf_url": "https://arxiv.org/pdf/1706.05169",
+      "openalex_id": "https://openalex.org/W2625023226",
+      "citation_count": 85,
+      "cited_by_count": 85,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": null,
+      "topics": [
+        "Advanced Numerical Methods in Computational Mathematics",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Numerical methods in engineering"
+      ],
+      "referenced_works_count": 49,
+      "related_works": [
+        "https://openalex.org/W4390465241",
+        "https://openalex.org/W2059677665",
+        "https://openalex.org/W2735211706",
+        "https://openalex.org/W2894257416",
+        "https://openalex.org/W4391977111"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e3d3444552ccfe31.json"
+    },
+    {
+      "title": "Numerical simulation of 3D bubbles rising in viscous liquids using a front tracking method",
+      "display_name": "Numerical simulation of 3D bubbles rising in viscous liquids using a front tracking method",
+      "authors": [
+        {
+          "name": "Jinsong Hua",
+          "given": "Jinsong",
+          "family": "Hua",
+          "author_id": "https://openalex.org/A5000228190",
+          "display_name": "Jinsong Hua",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5000228190",
+            "orcid": "https://orcid.org/0000-0001-5529-5350",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Institute of High Performance Computing"
+          ],
+          "countries": [
+            "SG"
+          ]
+        },
+        {
+          "name": "Jan F. Stene",
+          "given": "Jan F.",
+          "family": "Stene",
+          "author_id": "https://openalex.org/A5002616780",
+          "display_name": "Jan F. Stene",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5002616780",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "National University of Singapore"
+          ],
+          "countries": [
+            "SG"
+          ]
+        },
+        {
+          "name": "Ping Lin",
+          "given": "Ping",
+          "family": "Lin",
+          "author_id": "https://openalex.org/A5101831455",
+          "display_name": "Ping Lin",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5101831455",
+            "orcid": "https://orcid.org/0000-0002-4132-2159",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "National University of Singapore"
+          ],
+          "countries": [
+            "SG"
+          ]
+        }
+      ],
+      "year": 2007,
+      "publication_date": "2007-12-28",
+      "journal": "Journal of Computational Physics",
+      "venue": "Journal of Computational Physics",
+      "publisher": "Elsevier BV",
+      "reference_type": "journal-article",
+      "volume": "227",
+      "issue": "6",
+      "pages": "3358-3382",
+      "doi": "10.1016/j.jcp.2007.12.002",
+      "url": "https://doi.org/10.1016/j.jcp.2007.12.002",
+      "pdf_url": "https://discovery.dundee.ac.uk/ws/files/82972/JCP_Paper_manuscript_V7.pdf",
+      "openalex_id": "https://openalex.org/W1978894382",
+      "citation_count": 223,
+      "cited_by_count": 223,
+      "is_oa": true,
+      "oa_status": "green",
+      "abstract": null,
+      "topics": [
+        "Fluid Dynamics and Heat Transfer",
+        "Lattice Boltzmann Simulation Studies",
+        "Fluid Dynamics and Mixing"
+      ],
+      "referenced_works_count": 56,
+      "related_works": [
+        "https://openalex.org/W3143842500",
+        "https://openalex.org/W2148444155",
+        "https://openalex.org/W2034854043",
+        "https://openalex.org/W2066838737",
+        "https://openalex.org/W2020494338"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/e3d3444552ccfe31.json"
+    }
+  ]
+}

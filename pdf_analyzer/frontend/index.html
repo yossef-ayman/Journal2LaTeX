@@ -41,8 +41,8 @@
                 <span id="theme-icon">☀️</span>
                 <span id="theme-text">Light</span>
             </button>
-            <div class="user-account-link" title="Academic Account">
-                <span class="user-signin-label">Sign in</span>
+            <div class="user-account-link" onclick="showAccountInfo()" title="Academic Workspace Status" style="cursor: pointer;">
+                <span class="user-signin-label">Workspace Active</span>
                 <div class="user-avatar-circle">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 </div>
@@ -103,8 +103,8 @@
                             <div class="kpi-stat-title">AUTHORS</div>
                         </div>
                         <div class="kpi-card-box">
-                            <div id="kpi-headings" class="kpi-stat-value">-</div>
-                            <div class="kpi-stat-title">HEADINGS</div>
+                            <div id="kpi-enriched" class="kpi-stat-value">-</div>
+                            <div class="kpi-stat-title">ENRICHED</div>
                         </div>
                         <div class="kpi-card-box">
                             <div id="kpi-references" class="kpi-stat-value">-</div>
@@ -258,6 +258,12 @@
     <!-- PAPER PROFILE MODAL (ACADEMIC RESEARCH DASHBOARD) -->
     <div id="paper-modal" class="modal-overlay" style="display: none;">
         <div class="academic-modal-card paper-modal-container">
+            <div class="page-only-nav" style="padding: 1.25rem 2rem 0;">
+                <a href="/" class="btn-back-analyzer" onclick="handleBackNavigation(event)">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    ← Back to Document Analyzer
+                </a>
+            </div>
             <div class="modal-header">
                 <div>
                     <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
@@ -449,6 +455,12 @@
     <!-- AUTHOR PROFILE MODAL -->
     <div id="author-modal" class="modal-overlay" style="display: none;">
         <div class="academic-modal-card">
+            <div class="page-only-nav" style="padding: 1.25rem 2rem 0;">
+                <a href="/" class="btn-back-analyzer" onclick="handleBackNavigation(event)">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    ← Back to Document Analyzer
+                </a>
+            </div>
             <div class="modal-header">
                 <div>
                     <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">

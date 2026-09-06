@@ -1,0 +1,407 @@
+{
+  "project_id": "project_20260906_071831_7a845b53",
+  "created_at": "2026-09-06T07:18:31.275485+00:00",
+  "input_pdf": {
+    "filename": "1.pdf",
+    "sha256": "7a845b53d3fd4951d166f6142deac347c8d7727a9d53cf226a915fea245b2e48",
+    "size_bytes": 1041845,
+    "page_count": 13
+  },
+  "metadata": {
+    "title": "Cybersecurity Assessment Report",
+    "journal": "Microsoft: Print To PDF",
+    "doi": null,
+    "arxiv_id": null,
+    "authors": [
+      "Report Version",
+      "Scope Baseline",
+      "Local Artifacts",
+      "Referenced Virtual Endpoints",
+      "Source Code Review",
+      "Security Consultant"
+    ]
+  },
+  "references": [],
+  "headings": [
+    {
+      "text": "8 Local Artifacts & Referenced Virtual Endpoints",
+      "level": 1,
+      "page": 1
+    },
+    {
+      "text": "CONFIDENTIAL",
+      "level": 1,
+      "page": 1
+    },
+    {
+      "text": "8 Local Artifacts & Referenced Virtual Endpoints",
+      "level": 1,
+      "page": 2
+    },
+    {
+      "text": "1. Reconnaissance & Crawler Directives Review — evaluation of search engine configurations and advertised",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "2. Application Topology Enumeration — mapping navigation trees, entry points, and static routes.",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "3. Configuration & Environment Auditing — inspecting cleartext configurations and debug variables.",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "4. Authentication Handling Review — auditing login workflows, form attributes, and transmission methods.",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "5. Client-Side Source Code Audit — line-by-line inspection of HTML schemas, DOM scripts, and metadata.",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "6. Input Validation Assessment — testing data sanitization across form controls and query variables.",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "7. Client-Side Injection (XSS) Testing — fuzzing presentation elements with script injection payloads.",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "8. Access Control Validation — verifying authorization barriers on administrative resources.",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "9. Known Vulnerability / CVE Correlation — checking identified version strings against vulnerability disclosures.",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "10. Evidence Collection & Forensic Screencaps — capturing DevTools network packets, DOM states, and responses.",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "11. Risk Analysis & Scoring — establishing CVSS v3.1 baselines for validated observations.",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "12. Remediation & Hardening Planning — formulating actionable technical mitigations.",
+      "level": 1,
+      "page": 3
+    },
+    {
+      "text": "CRITICAL",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "HIGH",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "NOT",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "ASSESSED",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "MEDIUM",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "LOW",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "INFO",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "FINDING",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "FINDING",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "FINDING",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "FINDING",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "FINDING",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "PASS",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "PASS / CLEAR",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "PASS",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "ID",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "CWE",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "F-01",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "HIGH",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "CWE-798 / 312",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "F-02",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "LOW",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "CWE-200 / 538",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "F-03",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "LOW",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "CWE-200 / 497",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "F-04",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "LOW",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "CWE-319 / 522",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "F-05",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "INFO",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "CWE-284",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "F-06",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "INFO",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "CWE-20",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "text": "HIGH",
+      "level": 1,
+      "page": 5
+    },
+    {
+      "text": "1. Remove Static Credentials: immediately delete test-config.txt from web-accessible directories.",
+      "level": 1,
+      "page": 5
+    },
+    {
+      "text": "2. Implement Runtime Secrets: shift all environmental definitions to secure system environment variables or a",
+      "level": 1,
+      "page": 5
+    },
+    {
+      "text": "3. Enforce Ingestion Rules: configure .gitignore and CI/CD secret scanning rules to prevent credential commits.",
+      "level": 1,
+      "page": 5
+    },
+    {
+      "text": "1. Remove Unnecessary Directives: eliminate internal directory paths from robots.txt.",
+      "level": 1,
+      "page": 6
+    },
+    {
+      "text": "2. Server-Level Authorization: rely entirely on server-side authorization filters, IP whitelisting, or HTTP Basic",
+      "level": 1,
+      "page": 6
+    },
+    {
+      "text": "1. Strip Generator Tags: remove the <meta name=\"generator\"> attribute from web templates.",
+      "level": 1,
+      "page": 7
+    },
+    {
+      "text": "2. Disable Client Debug Scripts: ensure build pipelines strip staging telemetry flags (debug=true) and internal",
+      "level": 1,
+      "page": 7
+    },
+    {
+      "text": "1. Explicit POST Method: define method=\"POST\" on all authentication and sensitive input forms.",
+      "level": 1,
+      "page": 8
+    },
+    {
+      "text": "2. Enforce Transport Security: ensure the form submission target (action) binds strictly to an encrypted HTTPS URI",
+      "level": 1,
+      "page": 8
+    },
+    {
+      "text": "1. Server-Side Authentication: implement server-side middleware to ensure administrative endpoints require an",
+      "level": 1,
+      "page": 9
+    },
+    {
+      "text": "2. Navigation Obfuscation: restrict administrative navigation links from displaying to unauthenticated public users.",
+      "level": 1,
+      "page": 9
+    },
+    {
+      "text": "1. Apply Strict Input Types: change the email input to type=\"email\" and enforce required and maxlength bounds.",
+      "level": 1,
+      "page": 10
+    },
+    {
+      "text": "2. Incorporate CSRF & Rate Limiting: enforce CSRF token validation and rate-limiting middleware on submission",
+      "level": 1,
+      "page": 10
+    },
+    {
+      "text": "F-",
+      "level": 1,
+      "page": 12
+    },
+    {
+      "text": "F-",
+      "level": 1,
+      "page": 12
+    },
+    {
+      "text": "F-",
+      "level": 1,
+      "page": 12
+    },
+    {
+      "text": "F-",
+      "level": 1,
+      "page": 12
+    },
+    {
+      "text": "F-",
+      "level": 1,
+      "page": 12
+    },
+    {
+      "text": "F-",
+      "level": 1,
+      "page": 12
+    },
+    {
+      "text": "1. Authorized Laboratory Scope: assessment activities were limited to the 8 supplied local files and referenced paths.",
+      "level": 1,
+      "page": 12
+    },
+    {
+      "text": "2. Static Prototype Boundaries: several assets (admin.html, login.html, contact.html) functioned as client-side markup",
+      "level": 1,
+      "page": 12
+    },
+    {
+      "text": "3. Absence of Destructive Attacks: denial of service, brute-force testing, and resource exhaustion were strictly",
+      "level": 1,
+      "page": 12
+    },
+    {
+      "text": "4. Point-in-Time Assurance: this assessment reflects the security baseline of the provided code state on September 3,",
+      "level": 1,
+      "page": 12
+    },
+    {
+      "text": "2026. Ongoing changes necessitate continuous re-evaluation.",
+      "level": 1,
+      "page": 12
+    }
+  ],
+  "xml": "<?xml version=\"1.0\" ?>\n<document>\n  <metadata>\n    <title>Cybersecurity Assessment Report</title>\n    <journal>Microsoft: Print To PDF</journal>\n    <page_count>13</page_count>\n    <authors>\n      <author>Report Version</author>\n      <author>Scope Baseline</author>\n      <author>Local Artifacts</author>\n      <author>Referenced Virtual Endpoints</author>\n      <author>Source Code Review</author>\n      <author>Security Consultant</author>\n    </authors>\n    <affiliations>\n      <affiliation>Assessment Environment Local Laboratory Test Bed (http://localhost:8000)</affiliation>\n      <affiliation>Target: BookNest CMS — Authorized Local Security Testing Laboratory</affiliation>\n    </affiliations>\n    <references_count>0</references_count>\n  </metadata>\n  <structure>\n    <heading level=\"1\" page=\"1\">8 Local Artifacts &amp; Referenced Virtual Endpoints</heading>\n    <heading level=\"1\" page=\"1\">CONFIDENTIAL</heading>\n    <heading level=\"1\" page=\"2\">8 Local Artifacts &amp; Referenced Virtual Endpoints</heading>\n    <heading level=\"1\" page=\"3\">1. Reconnaissance &amp; Crawler Directives Review — evaluation of search engine configurations and advertised</heading>\n    <heading level=\"1\" page=\"3\">2. Application Topology Enumeration — mapping navigation trees, entry points, and static routes.</heading>\n    <heading level=\"1\" page=\"3\">3. Configuration &amp; Environment Auditing — inspecting cleartext configurations and debug variables.</heading>\n    <heading level=\"1\" page=\"3\">4. Authentication Handling Review — auditing login workflows, form attributes, and transmission methods.</heading>\n    <heading level=\"1\" page=\"3\">5. Client-Side Source Code Audit — line-by-line inspection of HTML schemas, DOM scripts, and metadata.</heading>\n    <heading level=\"1\" page=\"3\">6. Input Validation Assessment — testing data sanitization across form controls and query variables.</heading>\n    <heading level=\"1\" page=\"3\">7. Client-Side Injection (XSS) Testing — fuzzing presentation elements with script injection payloads.</heading>\n    <heading level=\"1\" page=\"3\">8. Access Control Validation — verifying authorization barriers on administrative resources.</heading>\n    <heading level=\"1\" page=\"3\">9. Known Vulnerability / CVE Correlation — checking identified version strings against vulnerability disclosures.</heading>\n    <heading level=\"1\" page=\"3\">10. Evidence Collection &amp; Forensic Screencaps — capturing DevTools network packets, DOM states, and responses.</heading>\n    <heading level=\"1\" page=\"3\">11. Risk Analysis &amp; Scoring — establishing CVSS v3.1 baselines for validated observations.</heading>\n    <heading level=\"1\" page=\"3\">12. Remediation &amp; Hardening Planning — formulating actionable technical mitigations.</heading>\n    <heading level=\"1\" page=\"4\">CRITICAL</heading>\n    <heading level=\"1\" page=\"4\">HIGH</heading>\n    <heading level=\"1\" page=\"4\">NOT</heading>\n    <heading level=\"1\" page=\"4\">ASSESSED</heading>\n    <heading level=\"1\" page=\"4\">MEDIUM</heading>\n    <heading level=\"1\" page=\"4\">LOW</heading>\n    <heading level=\"1\" page=\"4\">INFO</heading>\n    <heading level=\"1\" page=\"4\">FINDING</heading>\n    <heading level=\"1\" page=\"4\">FINDING</heading>\n    <heading level=\"1\" page=\"4\">FINDING</heading>\n    <heading level=\"1\" page=\"4\">FINDING</heading>\n    <heading level=\"1\" page=\"4\">FINDING</heading>\n    <heading level=\"1\" page=\"4\">PASS</heading>\n    <heading level=\"1\" page=\"4\">PASS / CLEAR</heading>\n    <heading level=\"1\" page=\"4\">PASS</heading>\n    <heading level=\"1\" page=\"4\">ID</heading>\n    <heading level=\"1\" page=\"4\">CWE</heading>\n    <heading level=\"1\" page=\"4\">F-01</heading>\n    <heading level=\"1\" page=\"4\">HIGH</heading>\n    <heading level=\"1\" page=\"4\">CWE-798 / 312</heading>\n    <heading level=\"1\" page=\"4\">F-02</heading>\n    <heading level=\"1\" page=\"4\">LOW</heading>\n    <heading level=\"1\" page=\"4\">CWE-200 / 538</heading>\n    <heading level=\"1\" page=\"4\">F-03</heading>\n    <heading level=\"1\" page=\"4\">LOW</heading>\n    <heading level=\"1\" page=\"4\">CWE-200 / 497</heading>\n    <heading level=\"1\" page=\"4\">F-04</heading>\n    <heading level=\"1\" page=\"4\">LOW</heading>\n    <heading level=\"1\" page=\"4\">CWE-319 / 522</heading>\n    <heading level=\"1\" page=\"4\">F-05</heading>\n    <heading level=\"1\" page=\"4\">INFO</heading>\n    <heading level=\"1\" page=\"4\">CWE-284</heading>\n    <heading level=\"1\" page=\"4\">F-06</heading>\n    <heading level=\"1\" page=\"4\">INFO</heading>\n    <heading level=\"1\" page=\"4\">CWE-20</heading>\n    <heading level=\"1\" page=\"5\">HIGH</heading>\n    <heading level=\"1\" page=\"5\">1. Remove Static Credentials: immediately delete test-config.txt from web-accessible directories.</heading>\n    <heading level=\"1\" page=\"5\">2. Implement Runtime Secrets: shift all environmental definitions to secure system environment variables or a</heading>\n    <heading level=\"1\" page=\"5\">3. Enforce Ingestion Rules: configure .gitignore and CI/CD secret scanning rules to prevent credential commits.</heading>\n    <heading level=\"1\" page=\"6\">1. Remove Unnecessary Directives: eliminate internal directory paths from robots.txt.</heading>\n    <heading level=\"1\" page=\"6\">2. Server-Level Authorization: rely entirely on server-side authorization filters, IP whitelisting, or HTTP Basic</heading>\n    <heading level=\"1\" page=\"7\">1. Strip Generator Tags: remove the &lt;meta name=\"generator\"&gt; attribute from web templates.</heading>\n    <heading level=\"1\" page=\"7\">2. Disable Client Debug Scripts: ensure build pipelines strip staging telemetry flags (debug=true) and internal</heading>\n    <heading level=\"1\" page=\"8\">1. Explicit POST Method: define method=\"POST\" on all authentication and sensitive input forms.</heading>\n    <heading level=\"1\" page=\"8\">2. Enforce Transport Security: ensure the form submission target (action) binds strictly to an encrypted HTTPS URI</heading>\n    <heading level=\"1\" page=\"9\">1. Server-Side Authentication: implement server-side middleware to ensure administrative endpoints require an</heading>\n    <heading level=\"1\" page=\"9\">2. Navigation Obfuscation: restrict administrative navigation links from displaying to unauthenticated public users.</heading>\n    <heading level=\"1\" page=\"10\">1. Apply Strict Input Types: change the email input to type=\"email\" and enforce required and maxlength bounds.</heading>\n    <heading level=\"1\" page=\"10\">2. Incorporate CSRF &amp; Rate Limiting: enforce CSRF token validation and rate-limiting middleware on submission</heading>\n    <heading level=\"1\" page=\"12\">F-</heading>\n    <heading level=\"1\" page=\"12\">F-</heading>\n    <heading level=\"1\" page=\"12\">F-</heading>\n    <heading level=\"1\" page=\"12\">F-</heading>\n    <heading level=\"1\" page=\"12\">F-</heading>\n    <heading level=\"1\" page=\"12\">F-</heading>\n    <heading level=\"1\" page=\"12\">1. Authorized Laboratory Scope: assessment activities were limited to the 8 supplied local files and referenced paths.</heading>\n    <heading level=\"1\" page=\"12\">2. Static Prototype Boundaries: several assets (admin.html, login.html, contact.html) functioned as client-side markup</heading>\n    <heading level=\"1\" page=\"12\">3. Absence of Destructive Attacks: denial of service, brute-force testing, and resource exhaustion were strictly</heading>\n    <heading level=\"1\" page=\"12\">4. Point-in-Time Assurance: this assessment reflects the security baseline of the provided code state on September 3,</heading>\n    <heading level=\"1\" page=\"12\">2026. Ongoing changes necessitate continuous re-evaluation.</heading>\n  </structure>\n  <references/>\n</document>\n",
+  "statistics": {
+    "total_references": 0,
+    "enriched_count": 0
+  }
+}

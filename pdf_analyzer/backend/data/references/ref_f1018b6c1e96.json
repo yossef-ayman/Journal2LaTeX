@@ -1,41 +1,21 @@
 {
   "reference_id": "ref_f1018b6c1e96",
-  "project_id": "project_20260831_082256_e63dea74",
-  "created_at": "2026-08-31T08:23:26.734826+00:00",
+  "project_id": "project_20260906_102443_69092c9c",
+  "created_at": "2026-09-06T10:25:15.806380+00:00",
   "input": {
     "original_text": "Abdel-Aty, M., Sebawe Abdalla, M., Obada, A.-S.F. Entropy squeezing of a two-mode multiphoton Jaynes-Cummings model in the presence of a nonlinear medium, Journal of Optics B Quantum and Semiclassical Optics, 2002, 4(2), pp. 134–142 DOI: http://dx.doi.org/10.1088/1464-4266/4/2/309",
     "parsed": {
-      "title": "134–142 DOI",
+      "title": "Sebawe Abdalla, M., Obada, A.-S.F. Entropy squeezing of a two-mode multiphoton Jaynes-Cummings model in the presence of a nonlinear medium",
       "authors": [
         {
           "name": "M Abdel-Aty",
           "given": "M",
           "family": "Abdel-Aty"
-        },
-        {
-          "name": "M Sebawe Abdalla",
-          "given": "M",
-          "family": "Sebawe Abdalla"
-        },
-        {
-          "name": "A.-S.F. Entropy squeezing of a two-mode multiphoton Jaynes-Cummings model in the presence of a nonlinear medium, Journal of Optics B Quantum Obada",
-          "given": "A.-S.F. Entropy squeezing of a two-mode multiphoton Jaynes-Cummings model in the presence of a nonlinear medium, Journal of Optics B Quantum",
-          "family": "Obada"
-        },
-        {
-          "name": "Semiclassical Optics",
-          "given": "",
-          "family": "Semiclassical Optics"
-        },
-        {
-          "name": "pp (2)",
-          "given": "pp",
-          "family": "(2)"
         }
       ],
       "year": 2002,
-      "reference_type": "book-chapter",
-      "journal": null,
+      "reference_type": "journal-article",
+      "journal": "Journal of Optics B Quantum and Semiclassical Optics , –142",
       "publisher": null,
       "volume": "4",
       "issue": "2",
@@ -59,10 +39,10 @@
       "verification_status": "verified"
     },
     "venue": {
-      "value": null,
-      "source": "none",
-      "confidence": 0.0,
-      "verification_status": "unverified"
+      "value": "Journal of Optics B Quantum and Semiclassical Optics , –142",
+      "source": "parsed",
+      "confidence": 0.85,
+      "verification_status": "verified"
     },
     "reference_type": {
       "value": "journal-article",
@@ -317,36 +297,16 @@
       "raw_file": null,
       "normalized_file": "data/normalized/google_scholar/cc11d02a1d6592a9.json",
       "data": {
-        "title": "134–142 DOI",
+        "title": "Sebawe Abdalla, M., Obada, A.-S.F. Entropy squeezing of a two-mode multiphoton Jaynes-Cummings model in the presence of a nonlinear medium",
         "authors": [
           {
             "name": "M Abdel-Aty",
             "given": "M",
             "family": "Abdel-Aty"
-          },
-          {
-            "name": "M Sebawe Abdalla",
-            "given": "M",
-            "family": "Sebawe Abdalla"
-          },
-          {
-            "name": "A.-S.F. Entropy squeezing of a two-mode multiphoton Jaynes-Cummings model in the presence of a nonlinear medium, Journal of Optics B Quantum Obada",
-            "given": "A.-S.F. Entropy squeezing of a two-mode multiphoton Jaynes-Cummings model in the presence of a nonlinear medium, Journal of Optics B Quantum",
-            "family": "Obada"
-          },
-          {
-            "name": "Semiclassical Optics",
-            "given": "",
-            "family": "Semiclassical Optics"
-          },
-          {
-            "name": "pp (2)",
-            "given": "pp",
-            "family": "(2)"
           }
         ],
         "year": 2002,
-        "journal": null,
+        "journal": "Journal of Optics B Quantum and Semiclassical Optics , –142",
         "doi": "10.1088/1464-4266/4/2/309",
         "url": "https://scholar.google.com/scholar?q=doi%3A10.1088/1464-4266/4/2/309",
         "citation_count": null,
@@ -365,47 +325,31 @@
     "reconciled_with_arxiv": false,
     "confidence": 1.0,
     "reason": "Verified with parsed metadata consistency (title_sim=1.00).",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1088/1464-4266/4/2/309",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.92)",
-        "status": "conflict"
-      }
-    ],
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
     "overall_confidence": 1.0,
-    "metadata_completeness": 0.83,
+    "metadata_completeness": 1.0,
     "doi_verified": true,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1088/1464-4266/4/2/309",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.92)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
       "google_scholar",
-      "crossref",
-      "openalex"
+      "openalex",
+      "crossref"
     ],
     "latency_ms": {
-      "google_scholar": 9.85,
-      "crossref": 2530.11,
-      "openalex": 3322.33
+      "google_scholar": 8.96,
+      "openalex": 4460.71,
+      "crossref": 4937.18
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
-      "openalex": 1
+      "openalex": 1,
+      "crossref": 0
     },
     "errors": {}
   }

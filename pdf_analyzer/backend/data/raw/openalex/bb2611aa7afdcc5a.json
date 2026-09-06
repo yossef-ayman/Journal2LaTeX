@@ -1,0 +1,3266 @@
+{
+  "provider": "openalex",
+  "query_key": "title_author:Sunil Dutt Purohit & D. L. Suthar, Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data Bhatter",
+  "query_hash": "bb2611aa7afdcc5a",
+  "saved_at": "2026-09-06T10:25:19.348986+00:00",
+  "status_code": 200,
+  "candidate_count": 3,
+  "raw_response": {
+    "meta": {
+      "count": 3,
+      "db_response_time_ms": 494,
+      "page": 1,
+      "per_page": 10,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (Sunil Dutt Purohit \"&\" D. L. Suthar Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data Bhatter)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Sunil Dutt Purohit & D. L. Suthar Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data Bhatter",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Sunil Dutt Purohit %26 D. L. Suthar Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data Bhatter&per_page=10"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4417274188",
+        "doi": "https://doi.org/10.1038/s41598-025-31440-0",
+        "title": "A fractional model based on caputo derivative for tuberculosis transmission using real data from Kenya",
+        "display_name": "A fractional model based on caputo derivative for tuberculosis transmission using real data from Kenya",
+        "relevance_score": 201.99039,
+        "publication_year": 2025,
+        "publication_date": "2025-12-10",
+        "ids": {
+          "openalex": "https://openalex.org/W4417274188",
+          "doi": "https://doi.org/10.1038/s41598-025-31440-0",
+          "pmid": "https://pubmed.ncbi.nlm.nih.gov/41372319"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1038/s41598-025-31440-0",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1038/s41598-025-31440-0",
+          "pdf_url": "https://www.nature.com/articles/s41598-025-31440-0_reference.pdf",
+          "source": {
+            "id": "https://openalex.org/S196734849",
+            "display_name": "Scientific Reports",
+            "issn_l": "2045-2322",
+            "issn": [
+              "2045-2322"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319908",
+            "host_organization_name": "Nature Portfolio",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319908",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Nature Portfolio",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Scientific Reports",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj",
+          "pubmed"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.nature.com/articles/s41598-025-31440-0_reference.pdf",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5042567935",
+              "display_name": "Bhamini Bhatia",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I83205935",
+                "display_name": "Malaviya National Institute of Technology Jaipur",
+                "ror": "https://ror.org/0077k1j32",
+                "country_code": "IN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I83205935"
+                ]
+              }
+            ],
+            "countries": [
+              "IN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Bhamini Bhatia",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Malaviya National Institute of Technology Jaipur, Jaipur, India"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Malaviya National Institute of Technology Jaipur, Jaipur, India",
+                "institution_ids": [
+                  "https://openalex.org/I83205935"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5013011137",
+              "display_name": "Sanjay Bhatter",
+              "orcid": "https://orcid.org/0000-0003-1717-2178"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I83205935",
+                "display_name": "Malaviya National Institute of Technology Jaipur",
+                "ror": "https://ror.org/0077k1j32",
+                "country_code": "IN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I83205935"
+                ]
+              }
+            ],
+            "countries": [
+              "IN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Sanjay Bhatter",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Malaviya National Institute of Technology Jaipur, Jaipur, India"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Malaviya National Institute of Technology Jaipur, Jaipur, India",
+                "institution_ids": [
+                  "https://openalex.org/I83205935"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5013917704",
+              "display_name": "Sunıl Dutt Purohıt",
+              "orcid": "https://orcid.org/0000-0002-1098-5961"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I159219196",
+                "display_name": "Rajasthan Technical University",
+                "ror": "https://ror.org/056bber35",
+                "country_code": "IN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I159219196"
+                ]
+              }
+            ],
+            "countries": [
+              "IN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "S. D. Purohit",
+            "raw_affiliation_strings": [
+              "Department of HEAS (Mathematics), Rajasthan Technical University, Kota, India"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of HEAS (Mathematics), Rajasthan Technical University, Kota, India",
+                "institution_ids": [
+                  "https://openalex.org/I159219196"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5030756029",
+              "display_name": "Dumitru Bǎleanu",
+              "orcid": "https://orcid.org/0000-0002-0286-7244"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210142834",
+                "display_name": "Institute of Space Science - INFLPR Subsidiary",
+                "ror": "https://ror.org/054a6wv56",
+                "country_code": "RO",
+                "type": "facility",
+                "lineage": [
+                  "https://openalex.org/I4210142834"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I56306041",
+                "display_name": "Lebanese American University",
+                "ror": "https://ror.org/00hqkan37",
+                "country_code": "LB",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I56306041"
+                ]
+              }
+            ],
+            "countries": [
+              "LB",
+              "RO"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "D. Baleanu",
+            "raw_affiliation_strings": [
+              "Department of Computer Science and Mathematics, Lebanese American University, Beirut, Lebanon",
+              "Institute of Space Sciences, Magurele, Romania"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Computer Science and Mathematics, Lebanese American University, Beirut, Lebanon",
+                "institution_ids": [
+                  "https://openalex.org/I56306041"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Institute of Space Sciences, Magurele, Romania",
+                "institution_ids": [
+                  "https://openalex.org/I4210142834"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5078530562",
+              "display_name": "D. L. Suthar",
+              "orcid": "https://orcid.org/0000-0001-9978-2177"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210114501",
+                "display_name": "Wollo University",
+                "ror": "https://ror.org/01ktt8y73",
+                "country_code": "ET",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210114501"
+                ]
+              }
+            ],
+            "countries": [
+              "ET"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "D. L. Suthar",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Wollo University, P.O. Box 1145, Dessie, Amhara, Ethiopia. dlsuthar@gmail.com"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Wollo University, P.O. Box 1145, Dessie, Amhara, Ethiopia. dlsuthar@gmail.com",
+                "institution_ids": [
+                  "https://openalex.org/I4210114501"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 4,
+        "institutions_distinct_count": 5,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5078530562"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I4210114501"
+        ],
+        "apc_list": {
+          "value": 2690,
+          "currency": "USD",
+          "value_usd": 2690
+        },
+        "apc_paid": {
+          "value": 2690,
+          "currency": "USD",
+          "value_usd": 2690
+        },
+        "fwci": 5.2356,
+        "has_fulltext": true,
+        "cited_by_count": 7,
+        "citation_normalized_percentile": {
+          "value": 0.9637912,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 98,
+          "max": 99
+        },
+        "biblio": {
+          "volume": "16",
+          "issue": "1",
+          "first_page": "1725",
+          "last_page": "1725"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10038",
+          "display_name": "Tuberculosis Research and Epidemiology",
+          "score": 0.5498999953269958,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2725",
+            "display_name": "Infectious Diseases"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10038",
+            "display_name": "Tuberculosis Research and Epidemiology",
+            "score": 0.5498999953269958,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2725",
+              "display_name": "Infectious Diseases"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/27",
+              "display_name": "Medicine"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/4",
+              "display_name": "Health Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10288",
+            "display_name": "Fractional Differential Equations Solutions",
+            "score": 0.17270000278949738,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T13114",
+            "display_name": "Image Processing Techniques and Applications",
+            "score": 0.03480000048875809,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2214",
+              "display_name": "Media Technology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/tuberculosis",
+            "display_name": "Tuberculosis",
+            "score": 0.7468000054359436
+          },
+          {
+            "id": "https://openalex.org/keywords/uniqueness",
+            "display_name": "Uniqueness",
+            "score": 0.5734000205993652
+          },
+          {
+            "id": "https://openalex.org/keywords/transmission",
+            "display_name": "Transmission (telecommunications)",
+            "score": 0.5126000046730042
+          },
+          {
+            "id": "https://openalex.org/keywords/nonlinear-system",
+            "display_name": "Nonlinear system",
+            "score": 0.4927000105381012
+          },
+          {
+            "id": "https://openalex.org/keywords/basic-reproduction-number",
+            "display_name": "Basic reproduction number",
+            "score": 0.4237000048160553
+          },
+          {
+            "id": "https://openalex.org/keywords/disease",
+            "display_name": "Disease",
+            "score": 0.4219000041484833
+          },
+          {
+            "id": "https://openalex.org/keywords/mycobacterium-tuberculosis",
+            "display_name": "Mycobacterium tuberculosis",
+            "score": 0.4185999929904938
+          },
+          {
+            "id": "https://openalex.org/keywords/sensitivity",
+            "display_name": "Sensitivity (control systems)",
+            "score": 0.4020000100135803
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2781069245",
+            "wikidata": "https://www.wikidata.org/wiki/Q12204",
+            "display_name": "Tuberculosis",
+            "level": 2,
+            "score": 0.7468000054359436
+          },
+          {
+            "id": "https://openalex.org/C2777021972",
+            "wikidata": "https://www.wikidata.org/wiki/Q22976830",
+            "display_name": "Uniqueness",
+            "level": 2,
+            "score": 0.5734000205993652
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.5616000294685364
+          },
+          {
+            "id": "https://openalex.org/C761482",
+            "wikidata": "https://www.wikidata.org/wiki/Q118093",
+            "display_name": "Transmission (telecommunications)",
+            "level": 2,
+            "score": 0.5126000046730042
+          },
+          {
+            "id": "https://openalex.org/C158622935",
+            "wikidata": "https://www.wikidata.org/wiki/Q660848",
+            "display_name": "Nonlinear system",
+            "level": 2,
+            "score": 0.4927000105381012
+          },
+          {
+            "id": "https://openalex.org/C204264503",
+            "wikidata": "https://www.wikidata.org/wiki/Q901464",
+            "display_name": "Basic reproduction number",
+            "level": 3,
+            "score": 0.4237000048160553
+          },
+          {
+            "id": "https://openalex.org/C2779134260",
+            "wikidata": "https://www.wikidata.org/wiki/Q12136",
+            "display_name": "Disease",
+            "level": 2,
+            "score": 0.4219000041484833
+          },
+          {
+            "id": "https://openalex.org/C2777975735",
+            "wikidata": "https://www.wikidata.org/wiki/Q130971",
+            "display_name": "Mycobacterium tuberculosis",
+            "level": 3,
+            "score": 0.4185999929904938
+          },
+          {
+            "id": "https://openalex.org/C21200559",
+            "wikidata": "https://www.wikidata.org/wiki/Q7451068",
+            "display_name": "Sensitivity (control systems)",
+            "level": 2,
+            "score": 0.4020000100135803
+          },
+          {
+            "id": "https://openalex.org/C36464697",
+            "wikidata": "https://www.wikidata.org/wiki/Q451553",
+            "display_name": "Visualization",
+            "level": 2,
+            "score": 0.3772999942302704
+          },
+          {
+            "id": "https://openalex.org/C126255220",
+            "wikidata": "https://www.wikidata.org/wiki/Q141495",
+            "display_name": "Mathematical optimization",
+            "level": 1,
+            "score": 0.36059999465942383
+          },
+          {
+            "id": "https://openalex.org/C154249771",
+            "wikidata": "https://www.wikidata.org/wiki/Q1339058",
+            "display_name": "Fractional calculus",
+            "level": 2,
+            "score": 0.34209999442100525
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.33309999108314514
+          },
+          {
+            "id": "https://openalex.org/C207467116",
+            "wikidata": "https://www.wikidata.org/wiki/Q4385666",
+            "display_name": "Inverse",
+            "level": 2,
+            "score": 0.3264999985694885
+          },
+          {
+            "id": "https://openalex.org/C135252773",
+            "wikidata": "https://www.wikidata.org/wiki/Q1567213",
+            "display_name": "Inverse problem",
+            "level": 2,
+            "score": 0.31029999256134033
+          },
+          {
+            "id": "https://openalex.org/C2780665704",
+            "wikidata": "https://www.wikidata.org/wiki/Q959298",
+            "display_name": "Intervention (counseling)",
+            "level": 2,
+            "score": 0.30730000138282776
+          },
+          {
+            "id": "https://openalex.org/C1627819",
+            "wikidata": "https://www.wikidata.org/wiki/Q2572354",
+            "display_name": "Epidemic model",
+            "level": 3,
+            "score": 0.29760000109672546
+          },
+          {
+            "id": "https://openalex.org/C119857082",
+            "wikidata": "https://www.wikidata.org/wiki/Q2539",
+            "display_name": "Machine learning",
+            "level": 1,
+            "score": 0.28999999165534973
+          },
+          {
+            "id": "https://openalex.org/C524204448",
+            "wikidata": "https://www.wikidata.org/wiki/Q788926",
+            "display_name": "Infectious disease (medical specialty)",
+            "level": 3,
+            "score": 0.2802000045776367
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.2791999876499176
+          },
+          {
+            "id": "https://openalex.org/C124101348",
+            "wikidata": "https://www.wikidata.org/wiki/Q172491",
+            "display_name": "Data mining",
+            "level": 1,
+            "score": 0.27230000495910645
+          },
+          {
+            "id": "https://openalex.org/C2776291640",
+            "wikidata": "https://www.wikidata.org/wiki/Q2912517",
+            "display_name": "Value (mathematics)",
+            "level": 2,
+            "score": 0.2678000032901764
+          }
+        ],
+        "mesh": [
+          {
+            "descriptor_ui": "D003198",
+            "descriptor_name": "Computer Simulation",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D003198",
+            "descriptor_name": "Computer Simulation",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D003198",
+            "descriptor_name": "Computer Simulation",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D007630",
+            "descriptor_name": "Kenya",
+            "qualifier_ui": "Q000453",
+            "qualifier_name": "epidemiology",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D007630",
+            "descriptor_name": "Kenya",
+            "qualifier_ui": "Q000453",
+            "qualifier_name": "epidemiology",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D007630",
+            "descriptor_name": "Kenya",
+            "qualifier_ui": "Q000453",
+            "qualifier_name": "epidemiology",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D008962",
+            "descriptor_name": "Models, Theoretical",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D008962",
+            "descriptor_name": "Models, Theoretical",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D008962",
+            "descriptor_name": "Models, Theoretical",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D009169",
+            "descriptor_name": "Mycobacterium tuberculosis",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D009169",
+            "descriptor_name": "Mycobacterium tuberculosis",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D009169",
+            "descriptor_name": "Mycobacterium tuberculosis",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014376",
+            "descriptor_name": "Tuberculosis",
+            "qualifier_ui": "Q000453",
+            "qualifier_name": "epidemiology",
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D014376",
+            "descriptor_name": "Tuberculosis",
+            "qualifier_ui": "Q000453",
+            "qualifier_name": "epidemiology",
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D014376",
+            "descriptor_name": "Tuberculosis",
+            "qualifier_ui": "Q000453",
+            "qualifier_name": "epidemiology",
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D014376",
+            "descriptor_name": "Tuberculosis",
+            "qualifier_ui": "Q000635",
+            "qualifier_name": "transmission",
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D014376",
+            "descriptor_name": "Tuberculosis",
+            "qualifier_ui": "Q000635",
+            "qualifier_name": "transmission",
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D014376",
+            "descriptor_name": "Tuberculosis",
+            "qualifier_ui": "Q000635",
+            "qualifier_name": "transmission",
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D050936",
+            "descriptor_name": "Basic Reproduction Number",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D050936",
+            "descriptor_name": "Basic Reproduction Number",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D050936",
+            "descriptor_name": "Basic Reproduction Number",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          }
+        ],
+        "locations_count": 4,
+        "locations": [
+          {
+            "id": "doi:10.1038/s41598-025-31440-0",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1038/s41598-025-31440-0",
+            "pdf_url": "https://www.nature.com/articles/s41598-025-31440-0_reference.pdf",
+            "source": {
+              "id": "https://openalex.org/S196734849",
+              "display_name": "Scientific Reports",
+              "issn_l": "2045-2322",
+              "issn": [
+                "2045-2322"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310319908",
+              "host_organization_name": "Nature Portfolio",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310319908",
+                "https://openalex.org/P4310319965"
+              ],
+              "host_organization_lineage_names": [
+                "Nature Portfolio",
+                "Springer Nature"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by-nc-nd",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Scientific Reports",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmid:41372319",
+            "is_oa": false,
+            "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/41372319",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306525036",
+              "display_name": "PubMed",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1299303238",
+              "host_organization_name": "National Institutes of Health",
+              "host_organization_lineage": [
+                "https://openalex.org/I1299303238"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Scientific reports",
+            "raw_type": "Journal Article"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:73f8d525aaee4caabc4113e17f431836",
+            "is_oa": true,
+            "landing_page_url": "https://doaj.org/article/73f8d525aaee4caabc4113e17f431836",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Scientific Reports, Vol 16, Iss 1, Pp 1-18 (2025)",
+            "raw_type": "article"
+          },
+          {
+            "id": "pmh:oai:pubmedcentral.nih.gov:12800265",
+            "is_oa": true,
+            "landing_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12800265/",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S2764455111",
+              "display_name": "PubMed Central",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1299303238",
+              "host_organization_name": "National Institutes of Health",
+              "host_organization_lineage": [
+                "https://openalex.org/I1299303238"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "other-oa",
+            "license_id": "https://openalex.org/licenses/other-oa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Sci Rep",
+            "raw_type": "Text"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1038/s41598-025-31440-0",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1038/s41598-025-31440-0",
+          "pdf_url": "https://www.nature.com/articles/s41598-025-31440-0_reference.pdf",
+          "source": {
+            "id": "https://openalex.org/S196734849",
+            "display_name": "Scientific Reports",
+            "issn_l": "2045-2322",
+            "issn": [
+              "2045-2322"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319908",
+            "host_organization_name": "Nature Portfolio",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319908",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Nature Portfolio",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Scientific Reports",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4417274188.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4417274188.grobid-xml"
+        },
+        "referenced_works_count": 16,
+        "referenced_works": [
+          "https://openalex.org/W2078190445",
+          "https://openalex.org/W2126776457",
+          "https://openalex.org/W2810345970",
+          "https://openalex.org/W2980254384",
+          "https://openalex.org/W3162327293",
+          "https://openalex.org/W3200057168",
+          "https://openalex.org/W4395686101",
+          "https://openalex.org/W4397033340",
+          "https://openalex.org/W4400291798",
+          "https://openalex.org/W4401941266",
+          "https://openalex.org/W4402493653",
+          "https://openalex.org/W4405260547",
+          "https://openalex.org/W4408168112",
+          "https://openalex.org/W4409391020",
+          "https://openalex.org/W4414827180",
+          "https://openalex.org/W4415388944"
+        ],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "Tuberculosis": [
+            0
+          ],
+          "(TB)": [
+            1
+          ],
+          "remains": [
+            2
+          ],
+          "one": [
+            3
+          ],
+          "of": [
+            4,
+            97,
+            121,
+            139,
+            203,
+            212
+          ],
+          "the": [
+            5,
+            20,
+            38,
+            66,
+            83,
+            88,
+            103,
+            114,
+            119,
+            136,
+            152,
+            188,
+            210
+          ],
+          "top": [
+            6
+          ],
+          "infectious": [
+            7
+          ],
+          "disease": [
+            8,
+            125
+          ],
+          "killers": [
+            9
+          ],
+          "worldwide.": [
+            10
+          ],
+          "It": [
+            11
+          ],
+          "is": [
+            12
+          ],
+          "caused": [
+            13
+          ],
+          "by": [
+            14,
+            150
+          ],
+          "Mycobacterium": [
+            15
+          ],
+          "tuberculosis": [
+            16
+          ],
+          "and": [
+            17,
+            43,
+            50,
+            77,
+            131,
+            164,
+            201,
+            215
+          ],
+          "spread": [
+            18
+          ],
+          "through": [
+            19,
+            128
+          ],
+          "air,": [
+            21
+          ],
+          "posing": [
+            22
+          ],
+          "a": [
+            23,
+            59
+          ],
+          "serious": [
+            24
+          ],
+          "threat": [
+            25
+          ],
+          "to": [
+            26,
+            47,
+            159
+          ],
+          "vulnerable": [
+            27
+          ],
+          "populations,": [
+            28
+          ],
+          "especially": [
+            29
+          ],
+          "those": [
+            30
+          ],
+          "with": [
+            31,
+            93,
+            106
+          ],
+          "weakened": [
+            32
+          ],
+          "immune": [
+            33
+          ],
+          "systems.": [
+            34
+          ],
+          "These": [
+            35,
+            207
+          ],
+          "challenges": [
+            36
+          ],
+          "emphasize": [
+            37,
+            209
+          ],
+          "need": [
+            39
+          ],
+          "for": [
+            40,
+            82,
+            161,
+            219
+          ],
+          "more": [
+            41,
+            165
+          ],
+          "robust": [
+            42
+          ],
+          "realistic": [
+            44
+          ],
+          "modeling": [
+            45
+          ],
+          "approaches": [
+            46
+          ],
+          "inform": [
+            48
+          ],
+          "policy": [
+            49
+          ],
+          "intervention.": [
+            51
+          ],
+          "This": [
+            52
+          ],
+          "study": [
+            53
+          ],
+          "has": [
+            54
+          ],
+          "been": [
+            55
+          ],
+          "carried": [
+            56
+          ],
+          "out": [
+            57
+          ],
+          "using": [
+            58
+          ],
+          "fractional-order": [
+            60
+          ],
+          "TB": [
+            61,
+            143,
+            221
+          ],
+          "model": [
+            62,
+            179
+          ],
+          "in": [
+            63,
+            113
+          ],
+          "Kenya": [
+            64
+          ],
+          "incorporating": [
+            65
+          ],
+          "Caputo": [
+            67
+          ],
+          "derivative.": [
+            68
+          ],
+          "Fundamental": [
+            69
+          ],
+          "mathematical": [
+            70
+          ],
+          "features": [
+            71
+          ],
+          "such": [
+            72
+          ],
+          "as": [
+            73
+          ],
+          "positivity,": [
+            74
+          ],
+          "boundedness,": [
+            75
+          ],
+          "uniqueness": [
+            76
+          ],
+          "existence": [
+            78
+          ],
+          "are": [
+            79,
+            91,
+            148
+          ],
+          "rigorously": [
+            80
+          ],
+          "investigated": [
+            81
+          ],
+          "model.": [
+            84
+          ],
+          "Model": [
+            85
+          ],
+          "parameters,": [
+            86
+          ],
+          "including": [
+            87,
+            195
+          ],
+          "fractional": [
+            89,
+            98
+          ],
+          "order,": [
+            90
+          ],
+          "estimated,": [
+            92
+          ],
+          "an": [
+            94
+          ],
+          "optimal": [
+            95
+          ],
+          "value": [
+            96
+          ],
+          "order": [
+            99
+          ],
+          "around": [
+            100
+          ],
+          "0.85": [
+            101
+          ],
+          "yielding": [
+            102
+          ],
+          "best": [
+            104
+          ],
+          "alignment": [
+            105
+          ],
+          "real": [
+            107
+          ],
+          "data.": [
+            108,
+            186
+          ],
+          "A": [
+            109
+          ],
+          "sensitivity": [
+            110
+          ],
+          "analysis,": [
+            111
+          ],
+          "grounded": [
+            112
+          ],
+          "basic": [
+            115
+          ],
+          "reproduction": [
+            116
+          ],
+          "number,": [
+            117
+          ],
+          "identifies": [
+            118
+          ],
+          "influence": [
+            120
+          ],
+          "critical": [
+            122
+          ],
+          "parameters": [
+            123,
+            141
+          ],
+          "on": [
+            124,
+            142
+          ],
+          "spread.": [
+            126
+          ],
+          "Visualization": [
+            127
+          ],
+          "3D": [
+            129
+          ],
+          "mesh": [
+            130
+          ],
+          "contour": [
+            132
+          ],
+          "plots": [
+            133
+          ],
+          "further": [
+            134
+          ],
+          "reveals": [
+            135
+          ],
+          "significant": [
+            137
+          ],
+          "impact": [
+            138
+          ],
+          "these": [
+            140
+          ],
+          "transmission": [
+            144,
+            205
+          ],
+          "dynamics.": [
+            145,
+            169,
+            206
+          ],
+          "Numerical": [
+            146
+          ],
+          "simulations": [
+            147,
+            189
+          ],
+          "conducted": [
+            149
+          ],
+          "employing": [
+            151
+          ],
+          "Adams-Bashforth": [
+            153
+          ],
+          "Predictor": [
+            154
+          ],
+          "Corrector": [
+            155
+          ],
+          "scheme,": [
+            156
+          ],
+          "allowing": [
+            157
+          ],
+          "us": [
+            158
+          ],
+          "account": [
+            160
+          ],
+          "memory": [
+            162
+          ],
+          "effects": [
+            163
+          ],
+          "accurately": [
+            166
+          ],
+          "reflect": [
+            167
+          ],
+          "real-world": [
+            168,
+            185
+          ],
+          "By": [
+            170
+          ],
+          "performing": [
+            171
+          ],
+          "data": [
+            172
+          ],
+          "fitting,": [
+            173
+          ],
+          "we": [
+            174
+          ],
+          "observe": [
+            175
+          ],
+          "that": [
+            176,
+            182
+          ],
+          "our": [
+            177
+          ],
+          "formulated": [
+            178
+          ],
+          "produces": [
+            180
+          ],
+          "results": [
+            181,
+            208
+          ],
+          "closely": [
+            183
+          ],
+          "match": [
+            184
+          ],
+          "Overall,": [
+            187
+          ],
+          "also": [
+            190
+          ],
+          "explored": [
+            191
+          ],
+          "various": [
+            192
+          ],
+          "intervention": [
+            193,
+            214
+          ],
+          "strategies,": [
+            194
+          ],
+          "improved": [
+            196
+          ],
+          "treatment": [
+            197
+          ],
+          "access,": [
+            198
+          ],
+          "faster": [
+            199
+          ],
+          "diagnosis,": [
+            200
+          ],
+          "recognition": [
+            202
+          ],
+          "nonlinear": [
+            204
+          ],
+          "importance": [
+            211
+          ],
+          "timely": [
+            213
+          ],
+          "provide": [
+            216
+          ],
+          "actionable": [
+            217
+          ],
+          "insights": [
+            218
+          ],
+          "strengthening": [
+            220
+          ],
+          "control": [
+            222
+          ],
+          "policies.": [
+            223
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 7
+          }
+        ],
+        "updated_date": "2026-08-24T07:32:12.397491",
+        "created_date": "2025-12-11T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W7154498377",
+        "doi": "https://doi.org/10.1080/13873954.2026.2658274",
+        "title": "Numerical approximation of a time-delayed fractional-order diabetes mellitus model using predictor-corrector method",
+        "display_name": "Numerical approximation of a time-delayed fractional-order diabetes mellitus model using predictor-corrector method",
+        "relevance_score": 66.663,
+        "publication_year": 2026,
+        "publication_date": "2026-04-14",
+        "ids": {
+          "openalex": "https://openalex.org/W7154498377",
+          "doi": "https://doi.org/10.1080/13873954.2026.2658274"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1080/13873954.2026.2658274",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1080/13873954.2026.2658274",
+          "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/13873954.2026.2658274?needAccess=true",
+          "source": {
+            "id": "https://openalex.org/S86547361",
+            "display_name": "Mathematical and Computer Modelling of Dynamical Systems",
+            "issn_l": "1387-3954",
+            "issn": [
+              "1387-3954",
+              "1744-5051"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320547",
+            "host_organization_name": "Taylor & Francis",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320547",
+              "https://openalex.org/P4310320449"
+            ],
+            "host_organization_lineage_names": [
+              "Taylor & Francis",
+              "Informa"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Mathematical and Computer Modelling of Dynamical Systems",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/13873954.2026.2658274?needAccess=true",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5042567935",
+              "display_name": "Bhamini Bhatia",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I83205935",
+                "display_name": "Malaviya National Institute of Technology Jaipur",
+                "ror": "https://ror.org/0077k1j32",
+                "country_code": "IN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I83205935"
+                ]
+              }
+            ],
+            "countries": [
+              "IN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Bhamini Bhatia",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Malaviya National Institute of Technology"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Malaviya National Institute of Technology",
+                "institution_ids": [
+                  "https://openalex.org/I83205935"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5013011137",
+              "display_name": "Sanjay Bhatter",
+              "orcid": "https://orcid.org/0000-0003-1717-2178"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I83205935",
+                "display_name": "Malaviya National Institute of Technology Jaipur",
+                "ror": "https://ror.org/0077k1j32",
+                "country_code": "IN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I83205935"
+                ]
+              }
+            ],
+            "countries": [
+              "IN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Sanjay Bhatter",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Malaviya National Institute of Technology"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Malaviya National Institute of Technology",
+                "institution_ids": [
+                  "https://openalex.org/I83205935"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5133631837",
+              "display_name": "Sunil Dutt Purohit",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I159219196",
+                "display_name": "Rajasthan Technical University",
+                "ror": "https://ror.org/056bber35",
+                "country_code": "IN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I159219196"
+                ]
+              }
+            ],
+            "countries": [
+              "IN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Sunil Dutt Purohit",
+            "raw_affiliation_strings": [
+              "Department of HEAS (Mathematics), Rajasthan Technical University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of HEAS (Mathematics), Rajasthan Technical University",
+                "institution_ids": [
+                  "https://openalex.org/I159219196"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5133660809",
+              "display_name": "D. L. Suthar",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210114501",
+                "display_name": "Wollo University",
+                "ror": "https://ror.org/01ktt8y73",
+                "country_code": "ET",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210114501"
+                ]
+              }
+            ],
+            "countries": [
+              "ET"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "D. L. Suthar",
+            "raw_affiliation_strings": [
+              "Department of Mathematics, Wollo University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Mathematics, Wollo University",
+                "institution_ids": [
+                  "https://openalex.org/I4210114501"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 2,
+        "institutions_distinct_count": 3,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5133660809"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I4210114501"
+        ],
+        "apc_list": {
+          "value": 1250,
+          "currency": "GBP",
+          "value_usd": 1533
+        },
+        "apc_paid": {
+          "value": 1250,
+          "currency": "GBP",
+          "value_usd": 1533
+        },
+        "fwci": 11.9104,
+        "has_fulltext": true,
+        "cited_by_count": 2,
+        "citation_normalized_percentile": {
+          "value": 0.98233851,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 97,
+          "max": 98
+        },
+        "biblio": {
+          "volume": "32",
+          "issue": "1",
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10288",
+          "display_name": "Fractional Differential Equations Solutions",
+          "score": 0.8439000248908997,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2611",
+            "display_name": "Modeling and Simulation"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/26",
+            "display_name": "Mathematics"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10288",
+            "display_name": "Fractional Differential Equations Solutions",
+            "score": 0.8439000248908997,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2611",
+              "display_name": "Modeling and Simulation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11081",
+            "display_name": "Advanced Control Systems Design",
+            "score": 0.0949999988079071,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2207",
+              "display_name": "Control and Systems Engineering"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11416",
+            "display_name": "Numerical methods for differential equations",
+            "score": 0.010700000450015068,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2612",
+              "display_name": "Numerical Analysis"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/26",
+              "display_name": "Mathematics"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/numerical-approximation",
+            "display_name": "Numerical approximation",
+            "score": 0.5527999997138977
+          },
+          {
+            "id": "https://openalex.org/keywords/numerical-analysis",
+            "display_name": "Numerical analysis",
+            "score": 0.43650001287460327
+          },
+          {
+            "id": "https://openalex.org/keywords/approximation-theory",
+            "display_name": "Approximation theory",
+            "score": 0.4072999954223633
+          },
+          {
+            "id": "https://openalex.org/keywords/spouges-approximation",
+            "display_name": "Spouge's approximation",
+            "score": 0.3815000057220459
+          },
+          {
+            "id": "https://openalex.org/keywords/numerical-models",
+            "display_name": "Numerical models",
+            "score": 0.38109999895095825
+          },
+          {
+            "id": "https://openalex.org/keywords/diabetes-mellitus",
+            "display_name": "Diabetes mellitus",
+            "score": 0.3463999927043915
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.6495000123977661
+          },
+          {
+            "id": "https://openalex.org/C2986878899",
+            "wikidata": "https://www.wikidata.org/wiki/Q11216",
+            "display_name": "Numerical approximation",
+            "level": 3,
+            "score": 0.5527999997138977
+          },
+          {
+            "id": "https://openalex.org/C28826006",
+            "wikidata": "https://www.wikidata.org/wiki/Q33521",
+            "display_name": "Applied mathematics",
+            "level": 1,
+            "score": 0.5236999988555908
+          },
+          {
+            "id": "https://openalex.org/C48753275",
+            "wikidata": "https://www.wikidata.org/wiki/Q11216",
+            "display_name": "Numerical analysis",
+            "level": 2,
+            "score": 0.43650001287460327
+          },
+          {
+            "id": "https://openalex.org/C145242015",
+            "wikidata": "https://www.wikidata.org/wiki/Q774123",
+            "display_name": "Approximation theory",
+            "level": 2,
+            "score": 0.4072999954223633
+          },
+          {
+            "id": "https://openalex.org/C62376455",
+            "wikidata": "https://www.wikidata.org/wiki/Q935210",
+            "display_name": "Spouge's approximation",
+            "level": 3,
+            "score": 0.3815000057220459
+          },
+          {
+            "id": "https://openalex.org/C2986605239",
+            "wikidata": "https://www.wikidata.org/wiki/Q925667",
+            "display_name": "Numerical models",
+            "level": 3,
+            "score": 0.38109999895095825
+          },
+          {
+            "id": "https://openalex.org/C555293320",
+            "wikidata": "https://www.wikidata.org/wiki/Q12206",
+            "display_name": "Diabetes mellitus",
+            "level": 2,
+            "score": 0.3463999927043915
+          },
+          {
+            "id": "https://openalex.org/C148764684",
+            "wikidata": "https://www.wikidata.org/wiki/Q621751",
+            "display_name": "Approximation algorithm",
+            "level": 2,
+            "score": 0.3402999937534332
+          },
+          {
+            "id": "https://openalex.org/C134306372",
+            "wikidata": "https://www.wikidata.org/wiki/Q7754",
+            "display_name": "Mathematical analysis",
+            "level": 1,
+            "score": 0.32519999146461487
+          },
+          {
+            "id": "https://openalex.org/C126255220",
+            "wikidata": "https://www.wikidata.org/wiki/Q141495",
+            "display_name": "Mathematical optimization",
+            "level": 1,
+            "score": 0.3249000012874603
+          },
+          {
+            "id": "https://openalex.org/C45374587",
+            "wikidata": "https://www.wikidata.org/wiki/Q12525525",
+            "display_name": "Computation",
+            "level": 2,
+            "score": 0.3102000057697296
+          },
+          {
+            "id": "https://openalex.org/C2777686260",
+            "wikidata": "https://www.wikidata.org/wiki/Q144037",
+            "display_name": "Calculus (dental)",
+            "level": 2,
+            "score": 0.267300009727478
+          },
+          {
+            "id": "https://openalex.org/C176321772",
+            "wikidata": "https://www.wikidata.org/wiki/Q1430640",
+            "display_name": "Numerical stability",
+            "level": 3,
+            "score": 0.26409998536109924
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.1080/13873954.2026.2658274",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1080/13873954.2026.2658274",
+            "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/13873954.2026.2658274?needAccess=true",
+            "source": {
+              "id": "https://openalex.org/S86547361",
+              "display_name": "Mathematical and Computer Modelling of Dynamical Systems",
+              "issn_l": "1387-3954",
+              "issn": [
+                "1387-3954",
+                "1744-5051"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320547",
+              "host_organization_name": "Taylor & Francis",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320547",
+                "https://openalex.org/P4310320449"
+              ],
+              "host_organization_lineage_names": [
+                "Taylor & Francis",
+                "Informa"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Mathematical and Computer Modelling of Dynamical Systems",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:doaj.org/article:63b2a86a37994be5aecd163dedb33e05",
+            "is_oa": true,
+            "landing_page_url": "https://doaj.org/article/63b2a86a37994be5aecd163dedb33e05",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306401280",
+              "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Mathematical and Computer Modelling of Dynamical Systems, Vol 32, Iss 1 (2026)",
+            "raw_type": "article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1080/13873954.2026.2658274",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1080/13873954.2026.2658274",
+          "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/13873954.2026.2658274?needAccess=true",
+          "source": {
+            "id": "https://openalex.org/S86547361",
+            "display_name": "Mathematical and Computer Modelling of Dynamical Systems",
+            "issn_l": "1387-3954",
+            "issn": [
+              "1387-3954",
+              "1744-5051"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320547",
+            "host_organization_name": "Taylor & Francis",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320547",
+              "https://openalex.org/P4310320449"
+            ],
+            "host_organization_lineage_names": [
+              "Taylor & Francis",
+              "Informa"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Mathematical and Computer Modelling of Dynamical Systems",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W7154498377.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W7154498377.grobid-xml"
+        },
+        "referenced_works_count": 24,
+        "referenced_works": [
+          "https://openalex.org/W1994751336",
+          "https://openalex.org/W2057414857",
+          "https://openalex.org/W2077339070",
+          "https://openalex.org/W2091879618",
+          "https://openalex.org/W2206395182",
+          "https://openalex.org/W2569674663",
+          "https://openalex.org/W3015192910",
+          "https://openalex.org/W3094549672",
+          "https://openalex.org/W3117160299",
+          "https://openalex.org/W3153953807",
+          "https://openalex.org/W3160256712",
+          "https://openalex.org/W3206762279",
+          "https://openalex.org/W4295664448",
+          "https://openalex.org/W4317242490",
+          "https://openalex.org/W4381489115",
+          "https://openalex.org/W4386418495",
+          "https://openalex.org/W4396943675",
+          "https://openalex.org/W4396977075",
+          "https://openalex.org/W4401941266",
+          "https://openalex.org/W4403343656",
+          "https://openalex.org/W4409391020",
+          "https://openalex.org/W4409982991",
+          "https://openalex.org/W4416455767",
+          "https://openalex.org/W4417274188"
+        ],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "This": [
+            0
+          ],
+          "paper": [
+            1
+          ],
+          "presents": [
+            2
+          ],
+          "a": [
+            3,
+            41
+          ],
+          "mathematical": [
+            4
+          ],
+          "model": [
+            5,
+            31
+          ],
+          "to": [
+            6,
+            39,
+            107
+          ],
+          "study": [
+            7
+          ],
+          "diabetes": [
+            8,
+            115
+          ],
+          "mellitus": [
+            9
+          ],
+          "disease": [
+            10
+          ],
+          "by": [
+            11,
+            93
+          ],
+          "incorporating": [
+            12
+          ],
+          "fractional": [
+            13,
+            33,
+            85,
+            101
+          ],
+          "derivatives": [
+            14
+          ],
+          "in": [
+            15
+          ],
+          "the": [
+            16,
+            46,
+            51,
+            112,
+            119
+          ],
+          "Caputo": [
+            17
+          ],
+          "sense,": [
+            18
+          ],
+          "which": [
+            19,
+            75
+          ],
+          "generalizes": [
+            20
+          ],
+          "classical": [
+            21
+          ],
+          "integer-order": [
+            22
+          ],
+          "models": [
+            23
+          ],
+          "through": [
+            24
+          ],
+          "improved": [
+            25
+          ],
+          "representation": [
+            26
+          ],
+          "of": [
+            27,
+            45,
+            64,
+            84,
+            111,
+            114,
+            121
+          ],
+          "memory": [
+            28
+          ],
+          "effects.": [
+            29
+          ],
+          "The": [
+            30
+          ],
+          "incorporates": [
+            32
+          ],
+          "time": [
+            34
+          ],
+          "delay": [
+            35
+          ],
+          "and": [
+            36,
+            55,
+            59,
+            81,
+            116
+          ],
+          "treatment": [
+            37
+          ],
+          "function": [
+            38
+          ],
+          "enable": [
+            40
+          ],
+          "more": [
+            42
+          ],
+          "comprehensive": [
+            43
+          ],
+          "analysis": [
+            44,
+            63
+          ],
+          "disease.": [
+            47
+          ],
+          "First,": [
+            48
+          ],
+          "we": [
+            49
+          ],
+          "determine": [
+            50
+          ],
+          "model's": [
+            52
+          ],
+          "essential": [
+            53
+          ],
+          "equilibria": [
+            54
+          ],
+          "establish": [
+            56
+          ],
+          "its": [
+            57
+          ],
+          "positivity": [
+            58
+          ],
+          "boundedness.": [
+            60
+          ],
+          "A": [
+            61
+          ],
+          "qualitative": [
+            62
+          ],
+          "approximate": [
+            65
+          ],
+          "solutions": [
+            66
+          ],
+          "has": [
+            67
+          ],
+          "been": [
+            68
+          ],
+          "carried": [
+            69
+          ],
+          "out": [
+            70
+          ],
+          "using": [
+            71,
+            94
+          ],
+          "fixed": [
+            72
+          ],
+          "point": [
+            73
+          ],
+          "theory": [
+            74
+          ],
+          "is": [
+            76
+          ],
+          "well-suited": [
+            77
+          ],
+          "for": [
+            78,
+            99
+          ],
+          "handling": [
+            79
+          ],
+          "non-local": [
+            80
+          ],
+          "nonlinear": [
+            82
+          ],
+          "aspects": [
+            83
+          ],
+          "order": [
+            86,
+            102
+          ],
+          "systems.": [
+            87
+          ],
+          "We": [
+            88
+          ],
+          "have": [
+            89
+          ],
+          "performed": [
+            90
+          ],
+          "computational": [
+            91
+          ],
+          "simulations": [
+            92
+          ],
+          "an": [
+            95
+          ],
+          "Adams–Bashforth–Moulton-type": [
+            96
+          ],
+          "predictor–corrector": [
+            97
+          ],
+          "approach": [
+            98
+          ],
+          "different": [
+            100
+          ],
+          "values.": [
+            103
+          ],
+          "These": [
+            104
+          ],
+          "findings": [
+            105
+          ],
+          "facilitate": [
+            106
+          ],
+          "advance": [
+            108
+          ],
+          "our": [
+            109
+          ],
+          "understanding": [
+            110
+          ],
+          "dynamics": [
+            113
+          ],
+          "can": [
+            117
+          ],
+          "inform": [
+            118
+          ],
+          "development": [
+            120
+          ],
+          "effective": [
+            122
+          ],
+          "public": [
+            123
+          ],
+          "health": [
+            124
+          ],
+          "initiatives.": [
+            125
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 2
+          }
+        ],
+        "updated_date": "2026-08-21T09:56:20.448147",
+        "created_date": "2026-04-16T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W7171870354",
+        "doi": "https://doi.org/10.1088/1742-6596/3275/1/012006",
+        "title": "Numerical Solution of the Time-Fractional Sawada–Kotera equation via Caputo Derivative and Quintic B-Spline Finite Element Method",
+        "display_name": "Numerical Solution of the Time-Fractional Sawada–Kotera equation via Caputo Derivative and Quintic B-Spline Finite Element Method",
+        "relevance_score": 14.865831,
+        "publication_year": 2026,
+        "publication_date": "2026-07-01",
+        "ids": {
+          "openalex": "https://openalex.org/W7171870354",
+          "doi": "https://doi.org/10.1088/1742-6596/3275/1/012006"
+        },
+        "language": null,
+        "primary_location": {
+          "id": "doi:10.1088/1742-6596/3275/1/012006",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1088/1742-6596/3275/1/012006",
+          "pdf_url": "https://iopscience.iop.org/article/10.1088/1742-6596/3275/1/012006/pdf",
+          "source": {
+            "id": "https://openalex.org/S4210187594",
+            "display_name": "Journal of Physics Conference Series",
+            "issn_l": "1742-6588",
+            "issn": [
+              "1742-6588",
+              "1742-6596"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320083",
+            "host_organization_name": "IOP Publishing",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320083",
+              "https://openalex.org/P4310311669"
+            ],
+            "host_organization_lineage_names": [
+              "IOP Publishing",
+              "Institute of Physics"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Physics: Conference Series",
+          "raw_type": "journal-article"
+        },
+        "type": "conference-paper",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://iopscience.iop.org/article/10.1088/1742-6596/3275/1/012006/pdf",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5117712340",
+              "display_name": "Hayah Samy",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210120363",
+                "display_name": "Higher Institute of Engineering",
+                "ror": "https://ror.org/02pyw9g57",
+                "country_code": "EG",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210120363"
+                ]
+              }
+            ],
+            "countries": [
+              "EG"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Hayah Samy",
+            "raw_affiliation_strings": [
+              "Higher Institute for Engineering and Technology at Manzala"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Higher Institute for Engineering and Technology at Manzala",
+                "institution_ids": [
+                  "https://openalex.org/I4210120363"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5144052694",
+              "display_name": "Waleed Adel",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I159247623",
+                "display_name": "Mansoura University",
+                "ror": "https://ror.org/01k8vtd75",
+                "country_code": "EG",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I159247623"
+                ]
+              }
+            ],
+            "countries": [
+              "EG"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Waleed Adel",
+            "raw_affiliation_strings": [
+              "Mansoura University",
+              "Nile University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Mansoura University",
+                "institution_ids": [
+                  "https://openalex.org/I159247623"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Nile University",
+                "institution_ids": []
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 2,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": null,
+        "has_fulltext": true,
+        "cited_by_count": 0,
+        "citation_normalized_percentile": null,
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": "3275",
+          "issue": "1",
+          "first_page": "012006",
+          "last_page": "012006"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": null,
+        "topics": [],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/discretization",
+            "display_name": "Discretization",
+            "score": 0.6480000019073486
+          },
+          {
+            "id": "https://openalex.org/keywords/finite-element-method",
+            "display_name": "Finite element method",
+            "score": 0.637499988079071
+          },
+          {
+            "id": "https://openalex.org/keywords/quintic-function",
+            "display_name": "Quintic function",
+            "score": 0.6317999958992004
+          },
+          {
+            "id": "https://openalex.org/keywords/smoothness",
+            "display_name": "Smoothness",
+            "score": 0.5853999853134155
+          },
+          {
+            "id": "https://openalex.org/keywords/partial-differential-equation",
+            "display_name": "Partial differential equation",
+            "score": 0.5687999725341797
+          },
+          {
+            "id": "https://openalex.org/keywords/convergence",
+            "display_name": "Convergence (economics)",
+            "score": 0.5557000041007996
+          },
+          {
+            "id": "https://openalex.org/keywords/stability",
+            "display_name": "Stability (learning theory)",
+            "score": 0.5419999957084656
+          },
+          {
+            "id": "https://openalex.org/keywords/nonlinear-system",
+            "display_name": "Nonlinear system",
+            "score": 0.5242000222206116
+          },
+          {
+            "id": "https://openalex.org/keywords/numerical-analysis",
+            "display_name": "Numerical analysis",
+            "score": 0.4876999855041504
+          },
+          {
+            "id": "https://openalex.org/keywords/basis-function",
+            "display_name": "Basis function",
+            "score": 0.4787999987602234
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.6693999767303467
+          },
+          {
+            "id": "https://openalex.org/C73000952",
+            "wikidata": "https://www.wikidata.org/wiki/Q17007827",
+            "display_name": "Discretization",
+            "level": 2,
+            "score": 0.6480000019073486
+          },
+          {
+            "id": "https://openalex.org/C135628077",
+            "wikidata": "https://www.wikidata.org/wiki/Q220184",
+            "display_name": "Finite element method",
+            "level": 2,
+            "score": 0.637499988079071
+          },
+          {
+            "id": "https://openalex.org/C124966035",
+            "wikidata": "https://www.wikidata.org/wiki/Q33104507",
+            "display_name": "Quintic function",
+            "level": 3,
+            "score": 0.6317999958992004
+          },
+          {
+            "id": "https://openalex.org/C102634674",
+            "wikidata": "https://www.wikidata.org/wiki/Q868473",
+            "display_name": "Smoothness",
+            "level": 2,
+            "score": 0.5853999853134155
+          },
+          {
+            "id": "https://openalex.org/C134306372",
+            "wikidata": "https://www.wikidata.org/wiki/Q7754",
+            "display_name": "Mathematical analysis",
+            "level": 1,
+            "score": 0.5767999887466431
+          },
+          {
+            "id": "https://openalex.org/C93779851",
+            "wikidata": "https://www.wikidata.org/wiki/Q271977",
+            "display_name": "Partial differential equation",
+            "level": 2,
+            "score": 0.5687999725341797
+          },
+          {
+            "id": "https://openalex.org/C2777303404",
+            "wikidata": "https://www.wikidata.org/wiki/Q759757",
+            "display_name": "Convergence (economics)",
+            "level": 2,
+            "score": 0.5557000041007996
+          },
+          {
+            "id": "https://openalex.org/C112972136",
+            "wikidata": "https://www.wikidata.org/wiki/Q7595718",
+            "display_name": "Stability (learning theory)",
+            "level": 2,
+            "score": 0.5419999957084656
+          },
+          {
+            "id": "https://openalex.org/C158622935",
+            "wikidata": "https://www.wikidata.org/wiki/Q660848",
+            "display_name": "Nonlinear system",
+            "level": 2,
+            "score": 0.5242000222206116
+          },
+          {
+            "id": "https://openalex.org/C48753275",
+            "wikidata": "https://www.wikidata.org/wiki/Q11216",
+            "display_name": "Numerical analysis",
+            "level": 2,
+            "score": 0.4876999855041504
+          },
+          {
+            "id": "https://openalex.org/C28826006",
+            "wikidata": "https://www.wikidata.org/wiki/Q33521",
+            "display_name": "Applied mathematics",
+            "level": 1,
+            "score": 0.4830999970436096
+          },
+          {
+            "id": "https://openalex.org/C5917680",
+            "wikidata": "https://www.wikidata.org/wiki/Q2621825",
+            "display_name": "Basis function",
+            "level": 2,
+            "score": 0.4787999987602234
+          },
+          {
+            "id": "https://openalex.org/C36503486",
+            "wikidata": "https://www.wikidata.org/wiki/Q11235244",
+            "display_name": "Domain (mathematical analysis)",
+            "level": 2,
+            "score": 0.4438999891281128
+          },
+          {
+            "id": "https://openalex.org/C176321772",
+            "wikidata": "https://www.wikidata.org/wiki/Q1430640",
+            "display_name": "Numerical stability",
+            "level": 3,
+            "score": 0.413100004196167
+          },
+          {
+            "id": "https://openalex.org/C111771559",
+            "wikidata": "https://www.wikidata.org/wiki/Q66295",
+            "display_name": "Derivative (finance)",
+            "level": 2,
+            "score": 0.3935999870300293
+          },
+          {
+            "id": "https://openalex.org/C12426560",
+            "wikidata": "https://www.wikidata.org/wiki/Q189569",
+            "display_name": "Basis (linear algebra)",
+            "level": 2,
+            "score": 0.3628000020980835
+          },
+          {
+            "id": "https://openalex.org/C154249771",
+            "wikidata": "https://www.wikidata.org/wiki/Q1339058",
+            "display_name": "Fractional calculus",
+            "level": 2,
+            "score": 0.3456999957561493
+          },
+          {
+            "id": "https://openalex.org/C144468803",
+            "wikidata": "https://www.wikidata.org/wiki/Q16965966",
+            "display_name": "Mixed finite element method",
+            "level": 3,
+            "score": 0.33889999985694885
+          },
+          {
+            "id": "https://openalex.org/C103824480",
+            "wikidata": "https://www.wikidata.org/wiki/Q185889",
+            "display_name": "Time domain",
+            "level": 2,
+            "score": 0.311599999666214
+          },
+          {
+            "id": "https://openalex.org/C17137986",
+            "wikidata": "https://www.wikidata.org/wiki/Q215067",
+            "display_name": "Orthogonality",
+            "level": 2,
+            "score": 0.3109000027179718
+          },
+          {
+            "id": "https://openalex.org/C59696629",
+            "wikidata": "https://www.wikidata.org/wiki/Q193846",
+            "display_name": "Wave equation",
+            "level": 2,
+            "score": 0.30959999561309814
+          },
+          {
+            "id": "https://openalex.org/C53846429",
+            "wikidata": "https://www.wikidata.org/wiki/Q186475",
+            "display_name": "Partial derivative",
+            "level": 2,
+            "score": 0.3021000027656555
+          },
+          {
+            "id": "https://openalex.org/C78045399",
+            "wikidata": "https://www.wikidata.org/wiki/Q11214",
+            "display_name": "Differential equation",
+            "level": 2,
+            "score": 0.29919999837875366
+          },
+          {
+            "id": "https://openalex.org/C77618280",
+            "wikidata": "https://www.wikidata.org/wiki/Q1155772",
+            "display_name": "Scheme (mathematics)",
+            "level": 2,
+            "score": 0.29490000009536743
+          },
+          {
+            "id": "https://openalex.org/C17685861",
+            "wikidata": "https://www.wikidata.org/wiki/Q6960532",
+            "display_name": "Time derivative",
+            "level": 2,
+            "score": 0.28949999809265137
+          },
+          {
+            "id": "https://openalex.org/C24810621",
+            "wikidata": "https://www.wikidata.org/wiki/Q3333647",
+            "display_name": "Extended finite element method",
+            "level": 3,
+            "score": 0.28139999508857727
+          },
+          {
+            "id": "https://openalex.org/C3018824978",
+            "wikidata": "https://www.wikidata.org/wiki/Q2894891",
+            "display_name": "Error analysis",
+            "level": 2,
+            "score": 0.27869999408721924
+          },
+          {
+            "id": "https://openalex.org/C19118579",
+            "wikidata": "https://www.wikidata.org/wiki/Q786423",
+            "display_name": "Frequency domain",
+            "level": 2,
+            "score": 0.27790001034736633
+          },
+          {
+            "id": "https://openalex.org/C33257320",
+            "wikidata": "https://www.wikidata.org/wiki/Q1932744",
+            "display_name": "Second derivative",
+            "level": 2,
+            "score": 0.2540999948978424
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.1088/1742-6596/3275/1/012006",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1088/1742-6596/3275/1/012006",
+            "pdf_url": "https://iopscience.iop.org/article/10.1088/1742-6596/3275/1/012006/pdf",
+            "source": {
+              "id": "https://openalex.org/S4210187594",
+              "display_name": "Journal of Physics Conference Series",
+              "issn_l": "1742-6588",
+              "issn": [
+                "1742-6588",
+                "1742-6596"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320083",
+              "host_organization_name": "IOP Publishing",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320083",
+                "https://openalex.org/P4310311669"
+              ],
+              "host_organization_lineage_names": [
+                "IOP Publishing",
+                "Institute of Physics"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Journal of Physics: Conference Series",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1088/1742-6596/3275/1/012006",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1088/1742-6596/3275/1/012006",
+          "pdf_url": "https://iopscience.iop.org/article/10.1088/1742-6596/3275/1/012006/pdf",
+          "source": {
+            "id": "https://openalex.org/S4210187594",
+            "display_name": "Journal of Physics Conference Series",
+            "issn_l": "1742-6588",
+            "issn": [
+              "1742-6588",
+              "1742-6596"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320083",
+            "host_organization_name": "IOP Publishing",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320083",
+              "https://openalex.org/P4310311669"
+            ],
+            "host_organization_lineage_names": [
+              "IOP Publishing",
+              "Institute of Physics"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Physics: Conference Series",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "grobid_xml": true,
+          "pdf": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W7171870354.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W7171870354.grobid-xml"
+        },
+        "referenced_works_count": 11,
+        "referenced_works": [
+          "https://openalex.org/W4390884569",
+          "https://openalex.org/W4406167117",
+          "https://openalex.org/W4407259062",
+          "https://openalex.org/W4409234114",
+          "https://openalex.org/W4409391020",
+          "https://openalex.org/W4410773980",
+          "https://openalex.org/W4414072182",
+          "https://openalex.org/W4414940181",
+          "https://openalex.org/W6907582926",
+          "https://openalex.org/W7130702089",
+          "https://openalex.org/W7138897060"
+        ],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "Abstract": [
+            0
+          ],
+          "This": [
+            1
+          ],
+          "study": [
+            2
+          ],
+          "presents": [
+            3
+          ],
+          "a": [
+            4,
+            55,
+            68
+          ],
+          "numerical": [
+            5,
+            90
+          ],
+          "approach": [
+            6
+          ],
+          "for": [
+            7
+          ],
+          "solving": [
+            8
+          ],
+          "the": [
+            9,
+            34,
+            38,
+            44,
+            96,
+            99
+          ],
+          "time-fractional": [
+            10,
+            29
+          ],
+          "Sawada–Kotera": [
+            11
+          ],
+          "partial": [
+            12
+          ],
+          "differential": [
+            13
+          ],
+          "equation,": [
+            14
+          ],
+          "which": [
+            15
+          ],
+          "is": [
+            16,
+            31,
+            41,
+            65,
+            80
+          ],
+          "commonly": [
+            17
+          ],
+          "used": [
+            18
+          ],
+          "to": [
+            19,
+            53,
+            72,
+            83,
+            94
+          ],
+          "describe": [
+            20
+          ],
+          "nonlinear": [
+            21,
+            103
+          ],
+          "dispersive": [
+            22
+          ],
+          "wave": [
+            23,
+            105
+          ],
+          "phenomena": [
+            24
+          ],
+          "with": [
+            25,
+            48
+          ],
+          "memory": [
+            26
+          ],
+          "effects.": [
+            27
+          ],
+          "The": [
+            28,
+            62
+          ],
+          "derivative": [
+            30
+          ],
+          "formulated": [
+            32
+          ],
+          "in": [
+            33,
+            101
+          ],
+          "Caputo": [
+            35
+          ],
+          "sense,": [
+            36
+          ],
+          "while": [
+            37
+          ],
+          "spatial": [
+            39
+          ],
+          "domain": [
+            40
+          ],
+          "discretized": [
+            42
+          ],
+          "using": [
+            43
+          ],
+          "finite": [
+            45
+          ],
+          "element": [
+            46
+          ],
+          "method": [
+            47,
+            100
+          ],
+          "quintic": [
+            49
+          ],
+          "B-spline": [
+            50
+          ],
+          "basis": [
+            51
+          ],
+          "functions": [
+            52
+          ],
+          "ensure": [
+            54
+          ],
+          "high": [
+            56
+          ],
+          "level": [
+            57
+          ],
+          "of": [
+            58,
+            98
+          ],
+          "smoothness": [
+            59
+          ],
+          "and": [
+            60,
+            76
+          ],
+          "accuracy.": [
+            61
+          ],
+          "proposed": [
+            63
+          ],
+          "scheme": [
+            64
+          ],
+          "examined": [
+            66
+          ],
+          "through": [
+            67
+          ],
+          "comprehensive": [
+            69
+          ],
+          "stability": [
+            70
+          ],
+          "analysis": [
+            71,
+            79
+          ],
+          "assess": [
+            73
+          ],
+          "its": [
+            74,
+            85
+          ],
+          "robustness,": [
+            75
+          ],
+          "an": [
+            77
+          ],
+          "error": [
+            78
+          ],
+          "carried": [
+            81
+          ],
+          "out": [
+            82
+          ],
+          "evaluate": [
+            84
+          ],
+          "convergence": [
+            86
+          ],
+          "properties.": [
+            87
+          ],
+          "In": [
+            88
+          ],
+          "addition,": [
+            89
+          ],
+          "simulations": [
+            91
+          ],
+          "are": [
+            92
+          ],
+          "provided": [
+            93
+          ],
+          "illustrate": [
+            95
+          ],
+          "performance": [
+            97
+          ],
+          "approximating": [
+            102
+          ],
+          "fractional": [
+            104
+          ],
+          "behavior.": [
+            106
+          ]
+        },
+        "counts_by_year": [],
+        "updated_date": "2026-08-24T07:32:12.397491",
+        "created_date": "2026-07-31T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}

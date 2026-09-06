@@ -1,31 +1,21 @@
 {
   "reference_id": "ref_792a21b76992",
-  "project_id": "project_20260831_082256_e63dea74",
-  "created_at": "2026-08-31T08:23:26.223885+00:00",
+  "project_id": "project_20260906_102443_69092c9c",
+  "created_at": "2026-09-06T10:25:16.077462+00:00",
   "input": {
     "original_text": "Lyons, I. M., Beilock, S. L., 2012. When math hurts: Math anxiety predicts pain network activation in anticipation of doing math. PLoS ONE 7(10), e48076. http://dx.doi.org/10.1371/journal.pone.0048076",
     "parsed": {
-      "title": "When math hurts: Math anxiety predicts pain network activation in anticipation of doing math",
+      "title": "M., Beilock, S. L., 2012",
       "authors": [
         {
-          "name": "I. M Lyons",
-          "given": "I. M",
+          "name": "I Lyons",
+          "given": "I",
           "family": "Lyons"
-        },
-        {
-          "name": "S. L Beilock",
-          "given": "S. L",
-          "family": "Beilock"
-        },
-        {
-          "name": "2012",
-          "given": "",
-          "family": "2012"
         }
       ],
       "year": 2012,
       "reference_type": "journal-article",
-      "journal": "PLoS ONE 7(10), e48076",
+      "journal": "When math hurts: Math anxiety predicts pain network activation in anticipation of doing math. PLoS O",
       "publisher": null,
       "volume": "7",
       "issue": "10",
@@ -49,7 +39,7 @@
       "verification_status": "verified"
     },
     "venue": {
-      "value": "PLoS ONE 7(10), e48076",
+      "value": "When math hurts: Math anxiety predicts pain network activation in anticipation of doing math. PLoS O",
       "source": "parsed",
       "confidence": 0.85,
       "verification_status": "verified"
@@ -188,8 +178,8 @@
               "University of Chicago"
             ],
             "countries": [
-              "CA",
-              "US"
+              "US",
+              "CA"
             ]
           },
           {
@@ -273,26 +263,16 @@
       "raw_file": null,
       "normalized_file": "data/normalized/google_scholar/c97ddaceb67a96a9.json",
       "data": {
-        "title": "When math hurts: Math anxiety predicts pain network activation in anticipation of doing math",
+        "title": "M., Beilock, S. L., 2012",
         "authors": [
           {
-            "name": "I. M Lyons",
-            "given": "I. M",
+            "name": "I Lyons",
+            "given": "I",
             "family": "Lyons"
-          },
-          {
-            "name": "S. L Beilock",
-            "given": "S. L",
-            "family": "Beilock"
-          },
-          {
-            "name": "2012",
-            "given": "",
-            "family": "2012"
           }
         ],
         "year": 2012,
-        "journal": "PLoS ONE 7(10), e48076",
+        "journal": "When math hurts: Math anxiety predicts pain network activation in anticipation of doing math. PLoS O",
         "doi": "10.1371/journal.pone.0048076",
         "url": "https://scholar.google.com/scholar?q=doi%3A10.1371/journal.pone.0048076",
         "citation_count": null,
@@ -311,7 +291,15 @@
     "reconciled_with_arxiv": false,
     "confidence": 1.0,
     "reason": "Verified with parsed metadata consistency (title_sim=1.00).",
-    "conflicts": [],
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1371/journal.pone.0048076",
+        "reason": "Metadata mismatch (title_sim=0.17, author_sim=0.90)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -319,7 +307,15 @@
     "metadata_completeness": 1.0,
     "doi_verified": true,
     "author_verified": true,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1371/journal.pone.0048076",
+        "reason": "Metadata mismatch (title_sim=0.17, author_sim=0.90)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -328,9 +324,9 @@
       "crossref"
     ],
     "latency_ms": {
-      "google_scholar": 2.37,
-      "openalex": 25281.1,
-      "crossref": 24984.42
+      "google_scholar": 50.22,
+      "openalex": 26613.88,
+      "crossref": 27408.53
     },
     "candidate_counts": {
       "google_scholar": 1,

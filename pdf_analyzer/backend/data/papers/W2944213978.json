@@ -1,0 +1,57 @@
+{
+  "paper_id": "https://openalex.org/W2944213978",
+  "title": "BayesNAS: A Bayesian Approach for Neural Architecture Search",
+  "year": 2019,
+  "reference_type": "proceedings-article",
+  "venue": "In Proceedings of the 22nd International Conference on Artificial Intelligence and Statistics (AISTA",
+  "publisher": null,
+  "volume": null,
+  "issue": null,
+  "pages": null,
+  "doi": null,
+  "isbn": null,
+  "arxiv_id": null,
+  "openalex_id": "https://openalex.org/W2944213978",
+  "citations": {
+    "canonical_value": 88,
+    "google_scholar": null,
+    "openalex": 88,
+    "crossref": null
+  },
+  "authors": [
+    {
+      "name": "G Dikov",
+      "display_name": "G Dikov",
+      "given": "G",
+      "family": "Dikov",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "matched",
+      "confidence": 0.75
+    },
+    {
+      "name": "J Bayer",
+      "display_name": "J Bayer",
+      "given": "J",
+      "family": "Bayer",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "matched",
+      "confidence": 0.75
+    }
+  ],
+  "abstract": "One-Shot Neural Architecture Search (NAS) is a promising method to significantly reduce search time without any separate training. It can be treated as a Network Compression problem on the architecture parameters from an over-parameterized network. However, there are two issues associated with most one-shot NAS methods. First, dependencies between a node and its predecessors and successors are often disregarded which result in improper treatment over zero operations. Second, architecture parameters pruning based on their magnitude is questionable. In this paper, we employ the classic Bayesian learning approach to alleviate these two issues by modeling architecture parameters using hierarchical automatic relevance determination (HARD) priors. Unlike other NAS methods, we train the over-parameterized network for only one epoch then update the architecture. Impressively, this enabled us to find the architecture on CIFAR-10 within only 0.2 GPU days using a single GPU. Competitive performance can be also achieved by transferring to ImageNet. As a byproduct, our approach can be applied directly to compress convolutional neural networks by enforcing structural sparsity which achieves extremely sparse networks without accuracy deterioration.",
+  "url": "http://arxiv.org/abs/1905.04919",
+  "pdf_url": "https://arxiv.org/pdf/1905.04919",
+  "reference_id": "ref_b04a04e1b4d8"
+}

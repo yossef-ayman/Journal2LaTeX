@@ -1,7 +1,7 @@
 {
   "provider": "openalex",
   "entity_key": "title:The modified simple equation method for solving nonlinear Phi-Four equation",
-  "normalized_at": "2026-08-31T07:40:18.097309+00:00",
+  "normalized_at": "2026-09-06T08:05:19.145404+00:00",
   "data": [
     {
       "title": "The modified simple equation method for solving nonlinear Phi-Four equation",
@@ -550,8 +550,8 @@
       "url": "https://doi.org/10.1016/j.cpc.2021.108171",
       "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0010465521002836/pdf",
       "openalex_id": "https://openalex.org/W3201073812",
-      "citation_count": 12279,
-      "cited_by_count": 12279,
+      "citation_count": 12369,
+      "cited_by_count": 12369,
       "is_oa": true,
       "oa_status": "hybrid",
       "abstract": "Since the classical molecular dynamics simulator LAMMPS was released as an open source code in 2004, it has become a widely-used tool for particle-based modeling of materials at length scales ranging from atomic to mesoscale to continuum. Reasons for its popularity are that it provides a wide variety of particle interaction models for different materials, that it runs on any platform from a single CPU core to the largest supercomputers with accelerators, and that it gives users control over simulation details, either via the input script or by adding code for new interatomic potentials, constraints, diagnostics, or other features needed for their models. As a result, hundreds of people have contributed new capabilities to LAMMPS and it has grown from fifty thousand lines of code in 2004 to a million lines today. In this paper several of the fundamental algorithms used in LAMMPS are described along with the design strategies which have made it flexible for both users and developers. We also highlight some capabilities recently added to the code which were enabled by this flexibility, including dynamic load balancing, on-the-fly visualization, magnetic spin dynamics models, and quantum-accuracy machine learning interatomic potentials. Program Title: Large-scale Atomic/Molecular Massively Parallel Simulator (LAMMPS) CPC Library link to program files: https://doi.org/10.17632/cxbxs9btsv.1 Developer's repository link: https://github.com/lammps/lammps Licensing provisions: GPLv2 Programming language: C++, Python, C, Fortran Supplementary material: https://www.lammps.org Nature of problem: Many science applications in physics, chemistry, materials science, and related fields require parallel, scalable, and efficient generation of long, stable classical particle dynamics trajectories. Within this common problem definition, there lies a great diversity of use cases, distinguished by different particle interaction models, external constraints, as well as timescales and lengthscales ranging from atomic to mesoscale to macroscopic. Solution method: The LAMMPS code uses parallel spatial decomposition, distributed neighbor lists, and parallel FFTs for long-range Coulombic interactions [1]. The time integration algorithm is based on the Størmer-Verlet symplectic integrator [2], which provides better stability than higher-order non-symplectic methods. In addition, LAMMPS supports a wide range of interatomic potentials, constraints, diagnostics, software interfaces, and pre- and post-processing features. Additional comments including restrictions and unusual features: This paper serves as the definitive reference for the LAMMPS code. S. Plimpton, Fast parallel algorithms for short-range molecular dynamics. J. Comp. Phys. 117 (1995) 1–19. L. Verlet, Computer experiments on classical fluids: I. Thermodynamical properties of Lennard–Jones molecules, Phys. Rev. 159 (1967) 98–103.",
@@ -568,6 +568,120 @@
         "https://openalex.org/W4250743593",
         "https://openalex.org/W2339733346"
       ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/c83482b28fd945f6.json"
+    },
+    {
+      "title": "The Athena++ Adaptive Mesh Refinement Framework: Design and Magnetohydrodynamic Solvers",
+      "display_name": "The Athena++ Adaptive Mesh Refinement Framework: Design and Magnetohydrodynamic Solvers",
+      "authors": [
+        {
+          "name": "James M. Stone",
+          "given": "James M.",
+          "family": "Stone",
+          "author_id": "",
+          "display_name": "James M. Stone",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": "https://orcid.org/0000-0001-5603-1832",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Princeton University"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Kengo Tomida",
+          "given": "Kengo",
+          "family": "Tomida",
+          "author_id": "",
+          "display_name": "Kengo Tomida",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": "https://orcid.org/0000-0001-8105-8113",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Osaka Health Science University",
+            "The University of Osaka"
+          ],
+          "countries": [
+            "JP"
+          ]
+        },
+        {
+          "name": "Christopher J. White",
+          "given": "Christopher J.",
+          "family": "White",
+          "author_id": "",
+          "display_name": "Christopher J. White",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of California, Santa Barbara"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Kyle G. Felker",
+          "given": "Kyle G.",
+          "family": "Felker",
+          "author_id": "",
+          "display_name": "Kyle G. Felker",
+          "source": "openalex",
+          "author_match_status": "ambiguous",
+          "identifiers": {
+            "openalex_id": null,
+            "orcid": "https://orcid.org/0000-0002-3501-482X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Princeton University"
+          ],
+          "countries": [
+            "US"
+          ]
+        }
+      ],
+      "year": 2020,
+      "publication_date": "2020-06-25",
+      "journal": "The Astrophysical Journal Supplement Series",
+      "venue": "The Astrophysical Journal Supplement Series",
+      "publisher": "Institute of Physics",
+      "reference_type": "journal-article",
+      "volume": "249",
+      "issue": "1",
+      "pages": "4",
+      "doi": "10.3847/1538-4365/ab929b",
+      "url": "https://doi.org/10.3847/1538-4365/ab929b",
+      "pdf_url": "https://iopscience.iop.org/article/10.3847/1538-4365/ab929b/pdf",
+      "openalex_id": "https://openalex.org/W3025571086",
+      "citation_count": 576,
+      "cited_by_count": 576,
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "abstract": "Abstract The design and implementation of a new framework for adaptive mesh refinement calculations are described. It is intended primarily for applications in astrophysical fluid dynamics, but its flexible and modular design enables its use for a wide variety of physics. The framework works with both uniform and nonuniform grids in Cartesian and curvilinear coordinate systems. It adopts a dynamic execution model based on a simple design called a “task list” that improves parallel performance by overlapping communication and computation, simplifies the inclusion of a diverse range of physics, and even enables multiphysics models involving different physics in different regions of the calculation. We describe physics modules implemented in this framework for both nonrelativistic and relativistic magnetohydrodynamics (MHD). These modules adopt mature and robust algorithms originally developed for the Athena MHD code and incorporate new extensions: support for curvilinear coordinates, higher-order time integrators, more realistic physics such as a general equation of state, and diffusion terms that can be integrated with super-time-stepping algorithms. The modules show excellent performance and scaling, with well over 80% parallel efficiency on over half a million threads. The source code has been made publicly available.",
+      "topics": [
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Numerical methods for differential equations",
+        "Magnetic confinement fusion research"
+      ],
+      "referenced_works_count": 97,
+      "related_works": [],
       "source": "openalex",
       "raw_file": "data/raw/openalex/c83482b28fd945f6.json"
     },
@@ -693,120 +807,6 @@
       "raw_file": "data/raw/openalex/c83482b28fd945f6.json"
     },
     {
-      "title": "The Athena++ Adaptive Mesh Refinement Framework: Design and Magnetohydrodynamic Solvers",
-      "display_name": "The Athena++ Adaptive Mesh Refinement Framework: Design and Magnetohydrodynamic Solvers",
-      "authors": [
-        {
-          "name": "James M. Stone",
-          "given": "James M.",
-          "family": "Stone",
-          "author_id": "",
-          "display_name": "James M. Stone",
-          "source": "openalex",
-          "author_match_status": "ambiguous",
-          "identifiers": {
-            "openalex_id": null,
-            "orcid": "https://orcid.org/0000-0001-5603-1832",
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Princeton University"
-          ],
-          "countries": [
-            "US"
-          ]
-        },
-        {
-          "name": "Kengo Tomida",
-          "given": "Kengo",
-          "family": "Tomida",
-          "author_id": "",
-          "display_name": "Kengo Tomida",
-          "source": "openalex",
-          "author_match_status": "ambiguous",
-          "identifiers": {
-            "openalex_id": null,
-            "orcid": "https://orcid.org/0000-0001-8105-8113",
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Osaka Health Science University",
-            "The University of Osaka"
-          ],
-          "countries": [
-            "JP"
-          ]
-        },
-        {
-          "name": "Christopher J. White",
-          "given": "Christopher J.",
-          "family": "White",
-          "author_id": "",
-          "display_name": "Christopher J. White",
-          "source": "openalex",
-          "author_match_status": "ambiguous",
-          "identifiers": {
-            "openalex_id": null,
-            "orcid": null,
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "University of California, Santa Barbara"
-          ],
-          "countries": [
-            "US"
-          ]
-        },
-        {
-          "name": "Kyle G. Felker",
-          "given": "Kyle G.",
-          "family": "Felker",
-          "author_id": "",
-          "display_name": "Kyle G. Felker",
-          "source": "openalex",
-          "author_match_status": "ambiguous",
-          "identifiers": {
-            "openalex_id": null,
-            "orcid": "https://orcid.org/0000-0002-3501-482X",
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Princeton University"
-          ],
-          "countries": [
-            "US"
-          ]
-        }
-      ],
-      "year": 2020,
-      "publication_date": "2020-06-25",
-      "journal": "The Astrophysical Journal Supplement Series",
-      "venue": "The Astrophysical Journal Supplement Series",
-      "publisher": "Institute of Physics",
-      "reference_type": "journal-article",
-      "volume": "249",
-      "issue": "1",
-      "pages": "4",
-      "doi": "10.3847/1538-4365/ab929b",
-      "url": "https://doi.org/10.3847/1538-4365/ab929b",
-      "pdf_url": "https://iopscience.iop.org/article/10.3847/1538-4365/ab929b/pdf",
-      "openalex_id": "https://openalex.org/W3025571086",
-      "citation_count": 574,
-      "cited_by_count": 574,
-      "is_oa": true,
-      "oa_status": "hybrid",
-      "abstract": "Abstract The design and implementation of a new framework for adaptive mesh refinement calculations are described. It is intended primarily for applications in astrophysical fluid dynamics, but its flexible and modular design enables its use for a wide variety of physics. The framework works with both uniform and nonuniform grids in Cartesian and curvilinear coordinate systems. It adopts a dynamic execution model based on a simple design called a “task list” that improves parallel performance by overlapping communication and computation, simplifies the inclusion of a diverse range of physics, and even enables multiphysics models involving different physics in different regions of the calculation. We describe physics modules implemented in this framework for both nonrelativistic and relativistic magnetohydrodynamics (MHD). These modules adopt mature and robust algorithms originally developed for the Athena MHD code and incorporate new extensions: support for curvilinear coordinates, higher-order time integrators, more realistic physics such as a general equation of state, and diffusion terms that can be integrated with super-time-stepping algorithms. The modules show excellent performance and scaling, with well over 80% parallel efficiency on over half a million threads. The source code has been made publicly available.",
-      "topics": [
-        "Computational Fluid Dynamics and Aerodynamics",
-        "Numerical methods for differential equations",
-        "Magnetic confinement fusion research"
-      ],
-      "referenced_works_count": 97,
-      "related_works": [],
-      "source": "openalex",
-      "raw_file": "data/raw/openalex/c83482b28fd945f6.json"
-    },
-    {
       "title": "Cosmological tests of modified gravity",
       "display_name": "Cosmological tests of modified gravity",
       "authors": [
@@ -844,8 +844,8 @@
       "url": "https://doi.org/10.1088/0034-4885/79/4/046902",
       "pdf_url": "https://iopscience.iop.org/article/10.1088/0034-4885/79/4/046902/pdf",
       "openalex_id": "https://openalex.org/W2308926591",
-      "citation_count": 702,
-      "cited_by_count": 702,
+      "citation_count": 703,
+      "cited_by_count": 703,
       "is_oa": true,
       "oa_status": "bronze",
       "abstract": "We review recent progress in the construction of modified gravity models as alternatives to dark energy as well as the development of cosmological tests of gravity. Einstein's theory of general relativity (GR) has been tested accurately within the local universe i.e. the Solar System, but this leaves the possibility open that it is not a good description of gravity at the largest scales in the Universe. This being said, the standard model of cosmology assumes GR on all scales. In 1998, astronomers made the surprising discovery that the expansion of the Universe is accelerating, not slowing down. This late-time acceleration of the Universe has become the most challenging problem in theoretical physics. Within the framework of GR, the acceleration would originate from an unknown dark energy. Alternatively, it could be that there is no dark energy and GR itself is in error on cosmological scales. In this review, we first give an overview of recent developments in modified gravity theories including f(R) gravity, braneworld gravity, Horndeski theory and massive/bigravity theory. We then focus on common properties these models share, such as screening mechanisms they use to evade the stringent Solar System tests. Once armed with a theoretical knowledge of modified gravity models, we move on to discuss how we can test modifications of gravity on cosmological scales. We present tests of gravity using linear cosmological perturbations and review the latest constraints on deviations from the standard [Formula: see text]CDM model. Since screening mechanisms leave distinct signatures in the non-linear structure formation, we also review novel astrophysical tests of gravity using clusters, dwarf galaxies and stars. The last decade has seen a number of new constraints placed on gravity from astrophysical to cosmological scales. Thanks to on-going and future surveys, cosmological tests of gravity will enjoy another, possibly even more, exciting ten years.",
@@ -861,205 +861,6 @@
         "https://openalex.org/W3105167352",
         "https://openalex.org/W54078636",
         "https://openalex.org/W2954470139"
-      ],
-      "source": "openalex",
-      "raw_file": "data/raw/openalex/c83482b28fd945f6.json"
-    },
-    {
-      "title": "Travelling wave solutions for a nonlinear variant of the PHI-four equation",
-      "display_name": "Travelling wave solutions for a nonlinear variant of the PHI-four equation",
-      "authors": [
-        {
-          "name": "Xijun Deng",
-          "given": "Xijun",
-          "family": "Deng",
-          "author_id": "https://openalex.org/A5029542251",
-          "display_name": "Xijun Deng",
-          "source": "openalex",
-          "author_match_status": "matched",
-          "identifiers": {
-            "openalex_id": "https://openalex.org/A5029542251",
-            "orcid": "https://orcid.org/0000-0003-4943-9236",
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Yangtze University"
-          ],
-          "countries": [
-            "CN"
-          ]
-        },
-        {
-          "name": "Ming Zhao",
-          "given": "Ming",
-          "family": "Zhao",
-          "author_id": "https://openalex.org/A5101741923",
-          "display_name": "Ming Zhao",
-          "source": "openalex",
-          "author_match_status": "matched",
-          "identifiers": {
-            "openalex_id": "https://openalex.org/A5101741923",
-            "orcid": "https://orcid.org/0009-0001-3604-3614",
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Yangtze University"
-          ],
-          "countries": [
-            "CN"
-          ]
-        },
-        {
-          "name": "Xi Li",
-          "given": "Xi",
-          "family": "Li",
-          "author_id": "https://openalex.org/A5100407754",
-          "display_name": "Xi Li",
-          "source": "openalex",
-          "author_match_status": "matched",
-          "identifiers": {
-            "openalex_id": "https://openalex.org/A5100407754",
-            "orcid": "https://orcid.org/0000-0003-2249-688X",
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "University of Kansas"
-          ],
-          "countries": [
-            "US"
-          ]
-        }
-      ],
-      "year": 2008,
-      "publication_date": "2008-04-18",
-      "journal": "Mathematical and Computer Modelling",
-      "venue": "Mathematical and Computer Modelling",
-      "publisher": "Pergamon Press",
-      "reference_type": "journal-article",
-      "volume": "49",
-      "issue": "3-4",
-      "pages": "617-622",
-      "doi": "10.1016/j.mcm.2008.03.011",
-      "url": "https://doi.org/10.1016/j.mcm.2008.03.011",
-      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0895717708000988/pdf",
-      "openalex_id": "https://openalex.org/W2072177053",
-      "citation_count": 33,
-      "cited_by_count": 33,
-      "is_oa": true,
-      "oa_status": "bronze",
-      "abstract": null,
-      "topics": [
-        "Nonlinear Waves and Solitons",
-        "Fractional Differential Equations Solutions",
-        "Nonlinear Photonic Systems"
-      ],
-      "referenced_works_count": 20,
-      "related_works": [
-        "https://openalex.org/W2904592692",
-        "https://openalex.org/W2031675395",
-        "https://openalex.org/W3157896460",
-        "https://openalex.org/W2163513648",
-        "https://openalex.org/W2106413662"
-      ],
-      "source": "openalex",
-      "raw_file": "data/raw/openalex/c83482b28fd945f6.json"
-    },
-    {
-      "title": "Exact and explicit traveling wave solution to the time-fractional phi-four and (2+1) dimensional CBS equations using the modified extended tanh-function method in mathematical physics",
-      "display_name": "Exact and explicit traveling wave solution to the time-fractional phi-four and (2+1) dimensional CBS equations using the modified extended tanh-function method in mathematical physics",
-      "authors": [
-        {
-          "name": "Lohani Md. Badrul Alam",
-          "given": "Lohani Md. Badrul",
-          "family": "Alam",
-          "author_id": "https://openalex.org/A5064762400",
-          "display_name": "Lohani Md. Badrul Alam",
-          "source": "openalex",
-          "author_match_status": "matched",
-          "identifiers": {
-            "openalex_id": "https://openalex.org/A5064762400",
-            "orcid": null,
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Changzhou University"
-          ],
-          "countries": [
-            "CN"
-          ]
-        },
-        {
-          "name": "Xingfang Jiang",
-          "given": "Xingfang",
-          "family": "Jiang",
-          "author_id": "https://openalex.org/A5112121985",
-          "display_name": "Xingfang Jiang",
-          "source": "openalex",
-          "author_match_status": "matched",
-          "identifiers": {
-            "openalex_id": "https://openalex.org/A5112121985",
-            "orcid": null,
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Second Institute of Oceanography",
-            "Changzhou University"
-          ],
-          "countries": [
-            "CN"
-          ]
-        },
-        {
-          "name": "Abdulla – Al – Mamun",
-          "given": "Abdulla – Al –",
-          "family": "Mamun",
-          "author_id": "https://openalex.org/A5009428345",
-          "display_name": "Abdulla – Al – Mamun",
-          "source": "openalex",
-          "author_match_status": "matched",
-          "identifiers": {
-            "openalex_id": "https://openalex.org/A5009428345",
-            "orcid": "https://orcid.org/0000-0003-0183-7112",
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Hohai University"
-          ],
-          "countries": [
-            "CN"
-          ]
-        }
-      ],
-      "year": 2021,
-      "publication_date": "2021-04-02",
-      "journal": "Partial Differential Equations in Applied Mathematics",
-      "venue": "Partial Differential Equations in Applied Mathematics",
-      "publisher": "Elsevier BV",
-      "reference_type": "journal-article",
-      "volume": "4",
-      "issue": "",
-      "pages": "100039",
-      "doi": "10.1016/j.padiff.2021.100039",
-      "url": "https://doi.org/10.1016/j.padiff.2021.100039",
-      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S266681812100019X/pdf",
-      "openalex_id": "https://openalex.org/W3165874078",
-      "citation_count": 65,
-      "cited_by_count": 65,
-      "is_oa": true,
-      "oa_status": "gold",
-      "abstract": "This current study’s primary aim is to discover new and exact traveling wave solutions to the time-fractional phi-four equation and the (2+1) dimensional Calogero–Bogoyavlanskil schilf (CBS) equation in the perspective of nonlinear traveling wave phenomena. The modified extended tanh-function method is imposed on the phi-four and the (2+1) dimensional CBS equations in this case. Consequently, lump, mixed lump, lump-periodic, lump-periodic-kink, kink, singular kink, kink soliton, periodic, and singular solutions are exhibited in trigonometric, hyperbolic, and rational function solutions. To enucleate, the underlying traveling​ structures, achieved solutions are established by making their dynamic comportment of the exact solutions presented in three-dimensional (3D), contour, and two-dimensional (2D) chart with computational software MATLAB. In terms of conformable derivative, fractional traveling wave transformation, and the applied procedure, all the exact solutions obtained are considered to be novel. To comprehend the physical processes, we have portrayed the figures of the estimated solutions.",
-      "topics": [
-        "Nonlinear Waves and Solitons",
-        "Fractional Differential Equations Solutions",
-        "Nonlinear Photonic Systems"
-      ],
-      "referenced_works_count": 73,
-      "related_works": [
-        "https://openalex.org/W4298111289",
-        "https://openalex.org/W4386850153",
-        "https://openalex.org/W2972492613",
-        "https://openalex.org/W4313655736",
-        "https://openalex.org/W2781079754"
       ],
       "source": "openalex",
       "raw_file": "data/raw/openalex/c83482b28fd945f6.json"
@@ -1791,6 +1592,7 @@
           },
           "affiliations": [
             "Harvard University",
+            "Institut de Science et d'Ingénierie Supramoléculaires",
             "Institut de Chimie de Strasbourg",
             "Université de Strasbourg"
           ],
@@ -1813,8 +1615,8 @@
       "url": "https://doi.org/10.1002/jcc.21287",
       "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcc.21287",
       "openalex_id": "https://openalex.org/W2132262459",
-      "citation_count": 9263,
-      "cited_by_count": 9263,
+      "citation_count": 9279,
+      "cited_by_count": 9279,
       "is_oa": true,
       "oa_status": "bronze",
       "abstract": "CHARMM (Chemistry at HARvard Molecular Mechanics) is a highly versatile and widely used molecular simulation program. It has been developed over the last three decades with a primary focus on molecules of biological interest, including proteins, peptides, lipids, nucleic acids, carbohydrates, and small molecule ligands, as they occur in solution, crystals, and membrane environments. For the study of such systems, the program provides a large suite of computational tools that include numerous conformational and path sampling methods, free energy estimators, molecular minimization, dynamics, and analysis techniques, and model-building capabilities. The CHARMM program is applicable to problems involving a much broader class of many-particle systems. Calculations with CHARMM can be performed using a number of different energy functions and models, from mixed quantum mechanical-molecular mechanical force fields, to all-atom classical potential energy functions with explicit solvent and various boundary conditions, to implicit solvent and membrane models. The program has been ported to numerous platforms in both serial and parallel architectures. This article provides an overview of the program as it exists today with an emphasis on developments since the publication of the original CHARMM article in 1983.",
@@ -1830,6 +1632,205 @@
         "https://openalex.org/W2811043963",
         "https://openalex.org/W2161972019",
         "https://openalex.org/W4366465732"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/c83482b28fd945f6.json"
+    },
+    {
+      "title": "Travelling wave solutions for a nonlinear variant of the PHI-four equation",
+      "display_name": "Travelling wave solutions for a nonlinear variant of the PHI-four equation",
+      "authors": [
+        {
+          "name": "Xijun Deng",
+          "given": "Xijun",
+          "family": "Deng",
+          "author_id": "https://openalex.org/A5029542251",
+          "display_name": "Xijun Deng",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5029542251",
+            "orcid": "https://orcid.org/0000-0003-4943-9236",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Yangtze University"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Ming Zhao",
+          "given": "Ming",
+          "family": "Zhao",
+          "author_id": "https://openalex.org/A5101741923",
+          "display_name": "Ming Zhao",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5101741923",
+            "orcid": "https://orcid.org/0009-0001-3604-3614",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Yangtze University"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Xi Li",
+          "given": "Xi",
+          "family": "Li",
+          "author_id": "https://openalex.org/A5100407754",
+          "display_name": "Xi Li",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5100407754",
+            "orcid": "https://orcid.org/0000-0003-2249-688X",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Kansas"
+          ],
+          "countries": [
+            "US"
+          ]
+        }
+      ],
+      "year": 2008,
+      "publication_date": "2008-04-18",
+      "journal": "Mathematical and Computer Modelling",
+      "venue": "Mathematical and Computer Modelling",
+      "publisher": "Pergamon Press",
+      "reference_type": "journal-article",
+      "volume": "49",
+      "issue": "3-4",
+      "pages": "617-622",
+      "doi": "10.1016/j.mcm.2008.03.011",
+      "url": "https://doi.org/10.1016/j.mcm.2008.03.011",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0895717708000988/pdf",
+      "openalex_id": "https://openalex.org/W2072177053",
+      "citation_count": 33,
+      "cited_by_count": 33,
+      "is_oa": true,
+      "oa_status": "bronze",
+      "abstract": null,
+      "topics": [
+        "Nonlinear Waves and Solitons",
+        "Fractional Differential Equations Solutions",
+        "Nonlinear Photonic Systems"
+      ],
+      "referenced_works_count": 20,
+      "related_works": [
+        "https://openalex.org/W2904592692",
+        "https://openalex.org/W2031675395",
+        "https://openalex.org/W3157896460",
+        "https://openalex.org/W2163513648",
+        "https://openalex.org/W2106413662"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/c83482b28fd945f6.json"
+    },
+    {
+      "title": "Exact and explicit traveling wave solution to the time-fractional phi-four and (2+1) dimensional CBS equations using the modified extended tanh-function method in mathematical physics",
+      "display_name": "Exact and explicit traveling wave solution to the time-fractional phi-four and (2+1) dimensional CBS equations using the modified extended tanh-function method in mathematical physics",
+      "authors": [
+        {
+          "name": "Lohani Md. Badrul Alam",
+          "given": "Lohani Md. Badrul",
+          "family": "Alam",
+          "author_id": "https://openalex.org/A5064762400",
+          "display_name": "Lohani Md. Badrul Alam",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5064762400",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Changzhou University"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Xingfang Jiang",
+          "given": "Xingfang",
+          "family": "Jiang",
+          "author_id": "https://openalex.org/A5112121985",
+          "display_name": "Xingfang Jiang",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5112121985",
+            "orcid": null,
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Second Institute of Oceanography",
+            "Changzhou University"
+          ],
+          "countries": [
+            "CN"
+          ]
+        },
+        {
+          "name": "Abdulla – Al – Mamun",
+          "given": "Abdulla – Al –",
+          "family": "Mamun",
+          "author_id": "https://openalex.org/A5009428345",
+          "display_name": "Abdulla – Al – Mamun",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5009428345",
+            "orcid": "https://orcid.org/0000-0003-0183-7112",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Hohai University"
+          ],
+          "countries": [
+            "CN"
+          ]
+        }
+      ],
+      "year": 2021,
+      "publication_date": "2021-04-02",
+      "journal": "Partial Differential Equations in Applied Mathematics",
+      "venue": "Partial Differential Equations in Applied Mathematics",
+      "publisher": "Elsevier BV",
+      "reference_type": "journal-article",
+      "volume": "4",
+      "issue": "",
+      "pages": "100039",
+      "doi": "10.1016/j.padiff.2021.100039",
+      "url": "https://doi.org/10.1016/j.padiff.2021.100039",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S266681812100019X/pdf",
+      "openalex_id": "https://openalex.org/W3165874078",
+      "citation_count": 65,
+      "cited_by_count": 65,
+      "is_oa": true,
+      "oa_status": "gold",
+      "abstract": "This current study’s primary aim is to discover new and exact traveling wave solutions to the time-fractional phi-four equation and the (2+1) dimensional Calogero–Bogoyavlanskil schilf (CBS) equation in the perspective of nonlinear traveling wave phenomena. The modified extended tanh-function method is imposed on the phi-four and the (2+1) dimensional CBS equations in this case. Consequently, lump, mixed lump, lump-periodic, lump-periodic-kink, kink, singular kink, kink soliton, periodic, and singular solutions are exhibited in trigonometric, hyperbolic, and rational function solutions. To enucleate, the underlying traveling​ structures, achieved solutions are established by making their dynamic comportment of the exact solutions presented in three-dimensional (3D), contour, and two-dimensional (2D) chart with computational software MATLAB. In terms of conformable derivative, fractional traveling wave transformation, and the applied procedure, all the exact solutions obtained are considered to be novel. To comprehend the physical processes, we have portrayed the figures of the estimated solutions.",
+      "topics": [
+        "Nonlinear Waves and Solitons",
+        "Fractional Differential Equations Solutions",
+        "Nonlinear Photonic Systems"
+      ],
+      "referenced_works_count": 73,
+      "related_works": [
+        "https://openalex.org/W4298111289",
+        "https://openalex.org/W4386850153",
+        "https://openalex.org/W2972492613",
+        "https://openalex.org/W4313655736",
+        "https://openalex.org/W2781079754"
       ],
       "source": "openalex",
       "raw_file": "data/raw/openalex/c83482b28fd945f6.json"

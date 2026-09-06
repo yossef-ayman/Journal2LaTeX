@@ -1,26 +1,21 @@
 {
   "reference_id": "ref_f2e8ed61678c",
-  "project_id": "project_20260831_082256_e63dea74",
-  "created_at": "2026-08-31T08:23:26.345075+00:00",
+  "project_id": "project_20260906_102443_69092c9c",
+  "created_at": "2026-09-06T10:25:15.825963+00:00",
   "input": {
     "original_text": "Pekrun, R., 2006. The control-value theory of achievement emotions: Assumptions, corollaries, and implications. Educational Psychology Review 18(4), 315–341. http://dx.doi.org/10.1007/s10648-006-9029-9",
     "parsed": {
-      "title": "The control-value theory of achievement emotions: Assumptions, corollaries, and implications",
+      "title": "2006",
       "authors": [
         {
           "name": "R Pekrun",
           "given": "R",
           "family": "Pekrun"
-        },
-        {
-          "name": "2006",
-          "given": "",
-          "family": "2006"
         }
       ],
       "year": 2006,
       "reference_type": "journal-article",
-      "journal": "Educational Psychology Review 18(4), 315–341",
+      "journal": "The control-value theory of achievement emotions: Assumptions, corollaries, and implications. Educat",
       "publisher": null,
       "volume": "18",
       "issue": "4",
@@ -44,7 +39,7 @@
       "verification_status": "verified"
     },
     "venue": {
-      "value": "Educational Psychology Review 18(4), 315–341",
+      "value": "The control-value theory of achievement emotions: Assumptions, corollaries, and implications. Educat",
       "source": "parsed",
       "confidence": 0.85,
       "verification_status": "verified"
@@ -105,9 +100,9 @@
       }
     },
     "citation_counts": {
-      "canonical_value": 5416,
+      "canonical_value": 5452,
       "google_scholar": null,
-      "openalex": 5416,
+      "openalex": 5452,
       "crossref": null
     }
   },
@@ -136,7 +131,7 @@
       "matched": true,
       "status": "matched",
       "confidence": 1.0,
-      "citation_count": 5416,
+      "citation_count": 5452,
       "openalex_id": "https://openalex.org/W2169365000",
       "doi": "10.1007/s10648-006-9029-9",
       "url": "https://doi.org/10.1007/s10648-006-9029-9",
@@ -181,8 +176,8 @@
         "url": "https://doi.org/10.1007/s10648-006-9029-9",
         "pdf_url": null,
         "openalex_id": "https://openalex.org/W2169365000",
-        "citation_count": 5416,
-        "cited_by_count": 5416,
+        "citation_count": 5452,
+        "cited_by_count": 5452,
         "is_oa": false,
         "oa_status": "closed",
         "abstract": null,
@@ -228,21 +223,16 @@
       "raw_file": null,
       "normalized_file": "data/normalized/google_scholar/acf5205bfdacf64e.json",
       "data": {
-        "title": "The control-value theory of achievement emotions: Assumptions, corollaries, and implications",
+        "title": "2006",
         "authors": [
           {
             "name": "R Pekrun",
             "given": "R",
             "family": "Pekrun"
-          },
-          {
-            "name": "2006",
-            "given": "",
-            "family": "2006"
           }
         ],
         "year": 2006,
-        "journal": "Educational Psychology Review 18(4), 315–341",
+        "journal": "The control-value theory of achievement emotions: Assumptions, corollaries, and implications. Educat",
         "doi": "10.1007/s10648-006-9029-9",
         "url": "https://scholar.google.com/scholar?q=doi%3A10.1007/s10648-006-9029-9",
         "citation_count": null,
@@ -261,7 +251,15 @@
     "reconciled_with_arxiv": false,
     "confidence": 1.0,
     "reason": "Verified with parsed metadata consistency (title_sim=1.00).",
-    "conflicts": [],
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s10648-006-9029-9",
+        "reason": "Metadata mismatch (title_sim=0.00, author_sim=1.00)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -269,7 +267,15 @@
     "metadata_completeness": 1.0,
     "doi_verified": true,
     "author_verified": true,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s10648-006-9029-9",
+        "reason": "Metadata mismatch (title_sim=0.00, author_sim=1.00)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -278,9 +284,9 @@
       "crossref"
     ],
     "latency_ms": {
-      "google_scholar": 10.81,
-      "openalex": 26181.25,
-      "crossref": 26252.82
+      "google_scholar": 2.92,
+      "openalex": 27626.29,
+      "crossref": 28441.09
     },
     "candidate_counts": {
       "google_scholar": 1,

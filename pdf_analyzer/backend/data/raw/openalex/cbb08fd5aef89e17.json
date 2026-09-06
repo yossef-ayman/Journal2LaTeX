@@ -1,0 +1,6577 @@
+{
+  "provider": "openalex",
+  "query_key": "title:Transforming our world",
+  "query_hash": "cbb08fd5aef89e17",
+  "saved_at": "2026-09-06T07:19:54.057097+00:00",
+  "status_code": 200,
+  "candidate_count": 10,
+  "raw_response": {
+    "meta": {
+      "count": 3129800,
+      "db_response_time_ms": 666,
+      "page": 1,
+      "per_page": 10,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (Transforming our world)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "Transforming our world",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:Transforming our world&per_page=10"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W2412247133",
+        "doi": "https://doi.org/10.1891/9780826190123.ap02",
+        "title": "Transforming Our World: The 2030 Agenda for Sustainable Development",
+        "display_name": "Transforming Our World: The 2030 Agenda for Sustainable Development",
+        "relevance_score": 16341.236,
+        "publication_year": 2018,
+        "publication_date": "2018-06-14",
+        "ids": {
+          "openalex": "https://openalex.org/W2412247133",
+          "doi": "https://doi.org/10.1891/9780826190123.ap02",
+          "mag": "2412247133"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1891/9780826190123.ap02",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1891/9780826190123.ap02",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "A New Era in Global Health",
+          "raw_type": "book-chapter"
+        },
+        "type": "book-chapter",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 4716.0656,
+        "has_fulltext": false,
+        "cited_by_count": 19576,
+        "citation_normalized_percentile": {
+          "value": 1.0,
+          "is_in_top_1_percent": true,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 89,
+          "max": 100
+        },
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T12414",
+          "display_name": "Coastal and Marine Management",
+          "score": 0.9416999816894531,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2308",
+            "display_name": "Management, Monitoring, Policy and Law"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/23",
+            "display_name": "Environmental Science"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T12414",
+            "display_name": "Coastal and Marine Management",
+            "score": 0.9416999816894531,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2308",
+              "display_name": "Management, Monitoring, Policy and Law"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/23",
+              "display_name": "Environmental Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/sustainable-development",
+            "display_name": "Sustainable development",
+            "score": 0.5852543711662292
+          },
+          {
+            "id": "https://openalex.org/keywords/political-science",
+            "display_name": "Political science",
+            "score": 0.40963587164878845
+          },
+          {
+            "id": "https://openalex.org/keywords/business",
+            "display_name": "Business",
+            "score": 0.38206803798675537
+          },
+          {
+            "id": "https://openalex.org/keywords/environmental-planning",
+            "display_name": "Environmental planning",
+            "score": 0.32414472103118896
+          },
+          {
+            "id": "https://openalex.org/keywords/geography",
+            "display_name": "Geography",
+            "score": 0.236221045255661
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C552854447",
+            "wikidata": "https://www.wikidata.org/wiki/Q131201",
+            "display_name": "Sustainable development",
+            "level": 2,
+            "score": 0.5852543711662292
+          },
+          {
+            "id": "https://openalex.org/C17744445",
+            "wikidata": "https://www.wikidata.org/wiki/Q36442",
+            "display_name": "Political science",
+            "level": 0,
+            "score": 0.40963587164878845
+          },
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.38206803798675537
+          },
+          {
+            "id": "https://openalex.org/C91375879",
+            "wikidata": "https://www.wikidata.org/wiki/Q15473274",
+            "display_name": "Environmental planning",
+            "level": 1,
+            "score": 0.32414472103118896
+          },
+          {
+            "id": "https://openalex.org/C205649164",
+            "wikidata": "https://www.wikidata.org/wiki/Q1071",
+            "display_name": "Geography",
+            "level": 0,
+            "score": 0.236221045255661
+          },
+          {
+            "id": "https://openalex.org/C199539241",
+            "wikidata": "https://www.wikidata.org/wiki/Q7748",
+            "display_name": "Law",
+            "level": 1,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.1891/9780826190123.ap02",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.1891/9780826190123.ap02",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "A New Era in Global Health",
+            "raw_type": "book-chapter"
+          },
+          {
+            "id": "pmh:oai:generic.eprints.org:33751",
+            "is_oa": false,
+            "landing_page_url": "https://www.drugsandalcohol.ie/33751/1/2030_Agenda_for_Sustainable_Development_web.pdf",
+            "pdf_url": "https://www.drugsandalcohol.ie/33751/1/2030_Agenda_for_Sustainable_Development_web.pdf",
+            "source": {
+              "id": "https://openalex.org/S4377196493",
+              "display_name": "HRB National Drugs Library (Health Research Board)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I4210086850",
+              "host_organization_name": "Health Research Board",
+              "host_organization_lineage": [
+                "https://openalex.org/I4210086850"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "acceptedVersion",
+            "is_accepted": true,
+            "is_published": false,
+            "raw_source_name": "",
+            "raw_type": "Report"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [
+          {
+            "score": 0.41999998688697815,
+            "display_name": "Partnerships for the goals",
+            "id": "https://metadata.un.org/sdg/17"
+          }
+        ],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W2748952813",
+          "https://openalex.org/W1893496822",
+          "https://openalex.org/W2365995941",
+          "https://openalex.org/W2385813058",
+          "https://openalex.org/W2356964550",
+          "https://openalex.org/W2393743241",
+          "https://openalex.org/W3049600763",
+          "https://openalex.org/W2352942804",
+          "https://openalex.org/W2381816181",
+          "https://openalex.org/W2359982472"
+        ],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 23
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1260
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 2388
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2670
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 2491
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 3396
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 2743
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1829
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1310
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 881
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 512
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 62
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 1
+          }
+        ],
+        "updated_date": "2026-09-04T10:56:28.161419",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4361016261",
+        "doi": "https://doi.org/10.5040/9781509934058.0025",
+        "title": "Transforming our world: the 2030 Agenda for Sustainable Development",
+        "display_name": "Transforming our world: the 2030 Agenda for Sustainable Development",
+        "relevance_score": 9421.26,
+        "publication_year": 2022,
+        "publication_date": "2022-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W4361016261",
+          "doi": "https://doi.org/10.5040/9781509934058.0025"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.5040/9781509934058.0025",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.5040/9781509934058.0025",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Sustainable Development Goals",
+          "raw_type": "book-chapter"
+        },
+        "type": "book-chapter",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 3916.3163,
+        "has_fulltext": false,
+        "cited_by_count": 6796,
+        "citation_normalized_percentile": {
+          "value": 1.0,
+          "is_in_top_1_percent": true,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 89,
+          "max": 100
+        },
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T12013",
+          "display_name": "Sustainable Development and Environmental Policy",
+          "score": 0.20479999482631683,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2308",
+            "display_name": "Management, Monitoring, Policy and Law"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/23",
+            "display_name": "Environmental Science"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T12013",
+            "display_name": "Sustainable Development and Environmental Policy",
+            "score": 0.20479999482631683,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2308",
+              "display_name": "Management, Monitoring, Policy and Law"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/23",
+              "display_name": "Environmental Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/sustainable-development",
+            "display_name": "Sustainable development",
+            "score": 0.5824230909347534
+          },
+          {
+            "id": "https://openalex.org/keywords/development",
+            "display_name": "Development (topology)",
+            "score": 0.45799264311790466
+          },
+          {
+            "id": "https://openalex.org/keywords/political-science",
+            "display_name": "Political science",
+            "score": 0.4495278596878052
+          },
+          {
+            "id": "https://openalex.org/keywords/environmental-planning",
+            "display_name": "Environmental planning",
+            "score": 0.35375821590423584
+          },
+          {
+            "id": "https://openalex.org/keywords/regional-science",
+            "display_name": "Regional science",
+            "score": 0.34421563148498535
+          },
+          {
+            "id": "https://openalex.org/keywords/geography",
+            "display_name": "Geography",
+            "score": 0.2730298638343811
+          },
+          {
+            "id": "https://openalex.org/keywords/mathematics",
+            "display_name": "Mathematics",
+            "score": 0.05170238018035889
+          },
+          {
+            "id": "https://openalex.org/keywords/law",
+            "display_name": "Law",
+            "score": 0.030920714139938354
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C552854447",
+            "wikidata": "https://www.wikidata.org/wiki/Q131201",
+            "display_name": "Sustainable development",
+            "level": 2,
+            "score": 0.5824230909347534
+          },
+          {
+            "id": "https://openalex.org/C2776542497",
+            "wikidata": "https://www.wikidata.org/wiki/Q5266672",
+            "display_name": "Development (topology)",
+            "level": 2,
+            "score": 0.45799264311790466
+          },
+          {
+            "id": "https://openalex.org/C17744445",
+            "wikidata": "https://www.wikidata.org/wiki/Q36442",
+            "display_name": "Political science",
+            "level": 0,
+            "score": 0.4495278596878052
+          },
+          {
+            "id": "https://openalex.org/C91375879",
+            "wikidata": "https://www.wikidata.org/wiki/Q15473274",
+            "display_name": "Environmental planning",
+            "level": 1,
+            "score": 0.35375821590423584
+          },
+          {
+            "id": "https://openalex.org/C148383697",
+            "wikidata": "https://www.wikidata.org/wiki/Q1781695",
+            "display_name": "Regional science",
+            "level": 1,
+            "score": 0.34421563148498535
+          },
+          {
+            "id": "https://openalex.org/C205649164",
+            "wikidata": "https://www.wikidata.org/wiki/Q1071",
+            "display_name": "Geography",
+            "level": 0,
+            "score": 0.2730298638343811
+          },
+          {
+            "id": "https://openalex.org/C33923547",
+            "wikidata": "https://www.wikidata.org/wiki/Q395",
+            "display_name": "Mathematics",
+            "level": 0,
+            "score": 0.05170238018035889
+          },
+          {
+            "id": "https://openalex.org/C199539241",
+            "wikidata": "https://www.wikidata.org/wiki/Q7748",
+            "display_name": "Law",
+            "level": 1,
+            "score": 0.030920714139938354
+          },
+          {
+            "id": "https://openalex.org/C134306372",
+            "wikidata": "https://www.wikidata.org/wiki/Q7754",
+            "display_name": "Mathematical analysis",
+            "level": 1,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.5040/9781509934058.0025",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.5040/9781509934058.0025",
+            "pdf_url": null,
+            "source": null,
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Sustainable Development Goals",
+            "raw_type": "book-chapter"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W2380972922",
+          "https://openalex.org/W3120056682",
+          "https://openalex.org/W2373572053",
+          "https://openalex.org/W2279788334",
+          "https://openalex.org/W2362957081",
+          "https://openalex.org/W3121001958",
+          "https://openalex.org/W2360549801",
+          "https://openalex.org/W4247534302",
+          "https://openalex.org/W2359084290",
+          "https://openalex.org/W2995327359"
+        ],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 466
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 826
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 1066
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1092
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 1010
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 817
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 614
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 442
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 271
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 151
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 1
+          }
+        ],
+        "updated_date": "2026-09-02T18:50:13.731487",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W2522754627",
+        "doi": "https://doi.org/10.18356/69725e5a-en",
+        "title": "The sustainable development goals: 17 goals to transform our world",
+        "display_name": "The sustainable development goals: 17 goals to transform our world",
+        "relevance_score": 2889.4438,
+        "publication_year": 2016,
+        "publication_date": "2016-08-19",
+        "ids": {
+          "openalex": "https://openalex.org/W2522754627",
+          "doi": "https://doi.org/10.18356/69725e5a-en",
+          "mag": "2522754627"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.18356/69725e5a-en",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.18356/69725e5a-en",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306464046",
+            "display_name": "United Nations eBooks",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/P4310321776",
+            "host_organization_name": "United Nations",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310321776"
+            ],
+            "host_organization_lineage_names": [
+              "United Nations"
+            ],
+            "type": "ebook platform"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Furthering the Work of the United Nations",
+          "raw_type": "book-chapter"
+        },
+        "type": "book-chapter",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5112697881",
+              "display_name": "Helen Clark",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "Helen Clark",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5101819425",
+              "display_name": "Hongbo Wu",
+              "orcid": "https://orcid.org/0000-0002-6961-9149"
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "Hongbo Wu",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 334.7177,
+        "has_fulltext": false,
+        "cited_by_count": 670,
+        "citation_normalized_percentile": {
+          "value": 0.99963853,
+          "is_in_top_1_percent": true,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 99,
+          "max": 100
+        },
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": "36",
+          "last_page": "54"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T12013",
+          "display_name": "Sustainable Development and Environmental Policy",
+          "score": 0.4729999899864197,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2308",
+            "display_name": "Management, Monitoring, Policy and Law"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/23",
+            "display_name": "Environmental Science"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T12013",
+            "display_name": "Sustainable Development and Environmental Policy",
+            "score": 0.4729999899864197,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2308",
+              "display_name": "Management, Monitoring, Policy and Law"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/23",
+              "display_name": "Environmental Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/charter",
+            "display_name": "Charter",
+            "score": 0.7085488438606262
+          },
+          {
+            "id": "https://openalex.org/keywords/commission",
+            "display_name": "Commission",
+            "score": 0.6956498622894287
+          },
+          {
+            "id": "https://openalex.org/keywords/sustainable-development",
+            "display_name": "Sustainable development",
+            "score": 0.6779665946960449
+          },
+          {
+            "id": "https://openalex.org/keywords/social-needs",
+            "display_name": "Social needs",
+            "score": 0.6155284643173218
+          },
+          {
+            "id": "https://openalex.org/keywords/political-science",
+            "display_name": "Political science",
+            "score": 0.5444669723510742
+          },
+          {
+            "id": "https://openalex.org/keywords/key",
+            "display_name": "Key (lock)",
+            "score": 0.4395753741264343
+          },
+          {
+            "id": "https://openalex.org/keywords/business",
+            "display_name": "Business",
+            "score": 0.388852596282959
+          },
+          {
+            "id": "https://openalex.org/keywords/environmental-resource-management",
+            "display_name": "Environmental resource management",
+            "score": 0.3733808100223541
+          },
+          {
+            "id": "https://openalex.org/keywords/environmental-planning",
+            "display_name": "Environmental planning",
+            "score": 0.34177663922309875
+          },
+          {
+            "id": "https://openalex.org/keywords/computer-science",
+            "display_name": "Computer science",
+            "score": 0.18079224228858948
+          },
+          {
+            "id": "https://openalex.org/keywords/geography",
+            "display_name": "Geography",
+            "score": 0.15858152508735657
+          },
+          {
+            "id": "https://openalex.org/keywords/economics",
+            "display_name": "Economics",
+            "score": 0.13624858856201172
+          },
+          {
+            "id": "https://openalex.org/keywords/computer-security",
+            "display_name": "Computer security",
+            "score": 0.09010112285614014
+          },
+          {
+            "id": "https://openalex.org/keywords/law",
+            "display_name": "Law",
+            "score": 0.08175909519195557
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2777596936",
+            "wikidata": "https://www.wikidata.org/wiki/Q727002",
+            "display_name": "Charter",
+            "level": 2,
+            "score": 0.7085488438606262
+          },
+          {
+            "id": "https://openalex.org/C2776034101",
+            "wikidata": "https://www.wikidata.org/wiki/Q1509347",
+            "display_name": "Commission",
+            "level": 2,
+            "score": 0.6956498622894287
+          },
+          {
+            "id": "https://openalex.org/C552854447",
+            "wikidata": "https://www.wikidata.org/wiki/Q131201",
+            "display_name": "Sustainable development",
+            "level": 2,
+            "score": 0.6779665946960449
+          },
+          {
+            "id": "https://openalex.org/C2991770496",
+            "wikidata": "https://www.wikidata.org/wiki/Q179515",
+            "display_name": "Social needs",
+            "level": 3,
+            "score": 0.6155284643173218
+          },
+          {
+            "id": "https://openalex.org/C17744445",
+            "wikidata": "https://www.wikidata.org/wiki/Q36442",
+            "display_name": "Political science",
+            "level": 0,
+            "score": 0.5444669723510742
+          },
+          {
+            "id": "https://openalex.org/C26517878",
+            "wikidata": "https://www.wikidata.org/wiki/Q228039",
+            "display_name": "Key (lock)",
+            "level": 2,
+            "score": 0.4395753741264343
+          },
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.388852596282959
+          },
+          {
+            "id": "https://openalex.org/C107826830",
+            "wikidata": "https://www.wikidata.org/wiki/Q929380",
+            "display_name": "Environmental resource management",
+            "level": 1,
+            "score": 0.3733808100223541
+          },
+          {
+            "id": "https://openalex.org/C91375879",
+            "wikidata": "https://www.wikidata.org/wiki/Q15473274",
+            "display_name": "Environmental planning",
+            "level": 1,
+            "score": 0.34177663922309875
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.18079224228858948
+          },
+          {
+            "id": "https://openalex.org/C205649164",
+            "wikidata": "https://www.wikidata.org/wiki/Q1071",
+            "display_name": "Geography",
+            "level": 0,
+            "score": 0.15858152508735657
+          },
+          {
+            "id": "https://openalex.org/C162324750",
+            "wikidata": "https://www.wikidata.org/wiki/Q8134",
+            "display_name": "Economics",
+            "level": 0,
+            "score": 0.13624858856201172
+          },
+          {
+            "id": "https://openalex.org/C38652104",
+            "wikidata": "https://www.wikidata.org/wiki/Q3510521",
+            "display_name": "Computer security",
+            "level": 1,
+            "score": 0.09010112285614014
+          },
+          {
+            "id": "https://openalex.org/C199539241",
+            "wikidata": "https://www.wikidata.org/wiki/Q7748",
+            "display_name": "Law",
+            "level": 1,
+            "score": 0.08175909519195557
+          },
+          {
+            "id": "https://openalex.org/C160735492",
+            "wikidata": "https://www.wikidata.org/wiki/Q31207",
+            "display_name": "Health care",
+            "level": 2,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.18356/69725e5a-en",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.18356/69725e5a-en",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306464046",
+              "display_name": "United Nations eBooks",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/P4310321776",
+              "host_organization_name": "United Nations",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310321776"
+              ],
+              "host_organization_lineage_names": [
+                "United Nations"
+              ],
+              "type": "ebook platform"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Furthering the Work of the United Nations",
+            "raw_type": "book-chapter"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W4368229000",
+          "https://openalex.org/W2058510444",
+          "https://openalex.org/W2139817518",
+          "https://openalex.org/W2506397782",
+          "https://openalex.org/W1970315224",
+          "https://openalex.org/W2091096980",
+          "https://openalex.org/W1485948495",
+          "https://openalex.org/W2399999651",
+          "https://openalex.org/W1917426751",
+          "https://openalex.org/W2139953175"
+        ],
+        "abstract_inverted_index": {
+          "The": [
+            0
+          ],
+          "concept": [
+            1,
+            76
+          ],
+          "of": [
+            2,
+            12,
+            26,
+            55,
+            62,
+            77,
+            84,
+            98,
+            104
+          ],
+          "sustainable": [
+            3,
+            47
+          ],
+          "development": [
+            4,
+            48
+          ],
+          "that": [
+            5,
+            51
+          ],
+          "emerged": [
+            6
+          ],
+          "with": [
+            7
+          ],
+          "the": [
+            8,
+            13,
+            23,
+            27,
+            37,
+            53,
+            56,
+            60,
+            81,
+            85,
+            96,
+            102,
+            110
+          ],
+          "adoption": [
+            9
+          ],
+          "in": [
+            10,
+            22,
+            79
+          ],
+          "1982": [
+            11
+          ],
+          "World": [
+            14,
+            30
+          ],
+          "Charter": [
+            15
+          ],
+          "for": [
+            16
+          ],
+          "Nature": [
+            17
+          ],
+          "was": [
+            18
+          ],
+          "given": [
+            19
+          ],
+          "detailed": [
+            20
+          ],
+          "definition": [
+            21
+          ],
+          "1987": [
+            24
+          ],
+          "report": [
+            25,
+            45
+          ],
+          "United": [
+            28
+          ],
+          "Nations": [
+            29
+          ],
+          "Commission": [
+            31
+          ],
+          "on": [
+            32,
+            109
+          ],
+          "Environment": [
+            33
+          ],
+          "and": [
+            34,
+            95,
+            106,
+            116
+          ],
+          "Development,": [
+            35
+          ],
+          "or": [
+            36
+          ],
+          "Brundtland": [
+            38
+          ],
+          "Commission,": [
+            39
+          ],
+          "entitled": [
+            40
+          ],
+          "Our": [
+            41
+          ],
+          "Common": [
+            42
+          ],
+          "Future.": [
+            43
+          ],
+          "That": [
+            44
+          ],
+          "defined": [
+            46
+          ],
+          "as": [
+            49
+          ],
+          "“development": [
+            50
+          ],
+          "meets": [
+            52
+          ],
+          "needs": [
+            54,
+            83
+          ],
+          "present": [
+            57,
+            115
+          ],
+          "without": [
+            58
+          ],
+          "compromising": [
+            59
+          ],
+          "ability": [
+            61,
+            112
+          ],
+          "future": [
+            63,
+            117
+          ],
+          "generations": [
+            64
+          ],
+          "to": [
+            65,
+            88,
+            113
+          ],
+          "meet": [
+            66,
+            114
+          ],
+          "their": [
+            67
+          ],
+          "own": [
+            68
+          ],
+          "needs”.": [
+            69,
+            118
+          ],
+          "It": [
+            70
+          ],
+          "encompassed": [
+            71
+          ],
+          "two": [
+            72
+          ],
+          "key": [
+            73
+          ],
+          "concepts:": [
+            74
+          ],
+          "“the": [
+            75
+          ],
+          "‘needs’,": [
+            78
+          ],
+          "particular": [
+            80
+          ],
+          "essential": [
+            82
+          ],
+          "world’s": [
+            86
+          ],
+          "poor,": [
+            87
+          ],
+          "which": [
+            89
+          ],
+          "overriding": [
+            90
+          ],
+          "priority": [
+            91
+          ],
+          "should": [
+            92
+          ],
+          "be": [
+            93
+          ],
+          "given;": [
+            94
+          ],
+          "idea": [
+            97
+          ],
+          "‘limitations’": [
+            99
+          ],
+          "imposed": [
+            100
+          ],
+          "by": [
+            101
+          ],
+          "state": [
+            103
+          ],
+          "technology": [
+            105
+          ],
+          "social": [
+            107
+          ],
+          "organization": [
+            108
+          ],
+          "environment's": [
+            111
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 13
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 32
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 70
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 66
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 72
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 78
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 69
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 90
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 114
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 51
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 15
+          }
+        ],
+        "updated_date": "2026-08-28T12:50:07.497085",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W2520292910",
+        "doi": "https://doi.org/10.1057/s41271-016-0002-7",
+        "title": "Transforming Our World: Implementing the 2030 Agenda Through Sustainable Development Goal Indicators",
+        "display_name": "Transforming Our World: Implementing the 2030 Agenda Through Sustainable Development Goal Indicators",
+        "relevance_score": 2602.213,
+        "publication_year": 2016,
+        "publication_date": "2016-09-01",
+        "ids": {
+          "openalex": "https://openalex.org/W2520292910",
+          "doi": "https://doi.org/10.1057/s41271-016-0002-7",
+          "mag": "2520292910",
+          "pmid": "https://pubmed.ncbi.nlm.nih.gov/27638240"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1057/s41271-016-0002-7",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1057/s41271-016-0002-7",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S59089974",
+            "display_name": "Journal of Public Health Policy",
+            "issn_l": "0197-5897",
+            "issn": [
+              "0197-5897",
+              "1745-655X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319702",
+            "host_organization_name": "Palgrave Macmillan",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319702",
+              "https://openalex.org/P4310319964"
+            ],
+            "host_organization_lineage_names": [
+              "Palgrave Macmillan",
+              "Macmillan Publishers"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Public Health Policy",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "pubmed"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5074218530",
+              "display_name": "Bandy X. Lee",
+              "orcid": "https://orcid.org/0000-0002-5188-2467"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I32971472",
+                "display_name": "Yale University",
+                "ror": "https://ror.org/03v76x132",
+                "country_code": "US",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I32971472"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Bandy X. Lee",
+            "raw_affiliation_strings": [
+              "Law and Psychiatry Division, Yale University, 34 Park Street, New Haven, CT, 06519, USA. bandy.lee@yale.edu",
+              "Law and Psychiatry Division, Yale University, 34 Park Street, New Haven, CT, 06519, USA"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Law and Psychiatry Division, Yale University, 34 Park Street, New Haven, CT, 06519, USA. bandy.lee@yale.edu",
+                "institution_ids": [
+                  "https://openalex.org/I32971472"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Law and Psychiatry Division, Yale University, 34 Park Street, New Haven, CT, 06519, USA",
+                "institution_ids": [
+                  "https://openalex.org/I32971472"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5090693123",
+              "display_name": "Finn Kjaerulf",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210098754",
+                "display_name": "Danish Institute against Torture",
+                "ror": "https://ror.org/010pvqx55",
+                "country_code": "DK",
+                "type": "nonprofit",
+                "lineage": [
+                  "https://openalex.org/I4210098754"
+                ]
+              }
+            ],
+            "countries": [
+              "DK"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Finn Kjaerulf",
+            "raw_affiliation_strings": [
+              "DIGNITY - Danish Institute Against Torture, Copenhagen, Denmark",
+              "DIGNITY – Danish Institute Against Torture, Copenhagen, Denmark"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "DIGNITY - Danish Institute Against Torture, Copenhagen, Denmark",
+                "institution_ids": [
+                  "https://openalex.org/I4210098754"
+                ]
+              },
+              {
+                "raw_affiliation_string": "DIGNITY – Danish Institute Against Torture, Copenhagen, Denmark",
+                "institution_ids": [
+                  "https://openalex.org/I4210098754"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5029502364",
+              "display_name": "Shannon Turner",
+              "orcid": "https://orcid.org/0000-0001-7425-3607"
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "Shannon Turner",
+            "raw_affiliation_strings": [
+              "Prevention of Violence Canada-Prévention de la violence, Quebec City, Canada"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Prevention of Violence Canada-Prévention de la violence, Quebec City, Canada",
+                "institution_ids": []
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5042485474",
+              "display_name": "L. Jonathan Cohen",
+              "orcid": "https://orcid.org/0000-0002-0721-8980"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I2801753046",
+                "display_name": "Prevention Institute",
+                "ror": "https://ror.org/02xdygm42",
+                "country_code": "US",
+                "type": "nonprofit",
+                "lineage": [
+                  "https://openalex.org/I2801753046"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Larry Cohen",
+            "raw_affiliation_strings": [
+              "Prevention Institute, Oakland, USA"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Prevention Institute, Oakland, USA",
+                "institution_ids": [
+                  "https://openalex.org/I2801753046"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5030870656",
+              "display_name": "Peter Donnelly",
+              "orcid": "https://orcid.org/0000-0002-9878-9673"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210125326",
+                "display_name": "Public Health Ontario",
+                "ror": "https://ror.org/025z8ah66",
+                "country_code": "CA",
+                "type": "healthcare",
+                "lineage": [
+                  "https://openalex.org/I4210125326"
+                ]
+              }
+            ],
+            "countries": [
+              "CA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Peter D. Donnelly",
+            "raw_affiliation_strings": [
+              "Public Health Ontario, Toronto, Canada"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Public Health Ontario, Toronto, Canada",
+                "institution_ids": [
+                  "https://openalex.org/I4210125326"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5039987318",
+              "display_name": "Robert Muggah",
+              "orcid": "https://orcid.org/0000-0003-1754-3127"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I951315",
+                "display_name": "Graduate Institute of International and Development Studies",
+                "ror": "https://ror.org/007ygn379",
+                "country_code": "CH",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I951315"
+                ]
+              }
+            ],
+            "countries": [
+              "CH"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Robert Muggah",
+            "raw_affiliation_strings": [
+              "Igarapé Institute (Brazil) and the SecDev Foundation (Canada), University of Oxford and the Graduate Institute of International Studies in Geneva, Geneva, Switzerland"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Igarapé Institute (Brazil) and the SecDev Foundation (Canada), University of Oxford and the Graduate Institute of International Studies in Geneva, Geneva, Switzerland",
+                "institution_ids": [
+                  "https://openalex.org/I951315"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5101754013",
+              "display_name": "Rachel Davis",
+              "orcid": "https://orcid.org/0000-0003-1062-3220"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I2801753046",
+                "display_name": "Prevention Institute",
+                "ror": "https://ror.org/02xdygm42",
+                "country_code": "US",
+                "type": "nonprofit",
+                "lineage": [
+                  "https://openalex.org/I2801753046"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Rachel Davis",
+            "raw_affiliation_strings": [
+              "Prevention Institute, Oakland, USA"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Prevention Institute, Oakland, USA",
+                "institution_ids": [
+                  "https://openalex.org/I2801753046"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5042938252",
+              "display_name": "Anna Realini",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I2801753046",
+                "display_name": "Prevention Institute",
+                "ror": "https://ror.org/02xdygm42",
+                "country_code": "US",
+                "type": "nonprofit",
+                "lineage": [
+                  "https://openalex.org/I2801753046"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Anna Realini",
+            "raw_affiliation_strings": [
+              "Prevention Institute, Oakland, USA"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Prevention Institute, Oakland, USA",
+                "institution_ids": [
+                  "https://openalex.org/I2801753046"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5089745429",
+              "display_name": "Berit Kieselbach",
+              "orcid": "https://orcid.org/0000-0003-1790-3292"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210105654",
+                "display_name": "World Health Organization",
+                "ror": "https://ror.org/01f80g185",
+                "country_code": "CH",
+                "type": "government",
+                "lineage": [
+                  "https://openalex.org/I4210105654"
+                ]
+              }
+            ],
+            "countries": [
+              "CH"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Berit Kieselbach",
+            "raw_affiliation_strings": [
+              "World Health Organization, Geneva, Switzerland"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "World Health Organization, Geneva, Switzerland",
+                "institution_ids": [
+                  "https://openalex.org/I4210105654"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5058983147",
+              "display_name": "Lori Snyder MacGregor",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I2802246343",
+                "display_name": "Regional Municipality of Waterloo",
+                "ror": "https://ror.org/04apt4x36",
+                "country_code": "CA",
+                "type": "government",
+                "lineage": [
+                  "https://openalex.org/I2802246343"
+                ]
+              }
+            ],
+            "countries": [
+              "CA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Lori Snyder MacGregor",
+            "raw_affiliation_strings": [
+              "Region of Waterloo Public Health and Emergency Services, Waterloo, Canada"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Region of Waterloo Public Health and Emergency Services, Waterloo, Canada",
+                "institution_ids": [
+                  "https://openalex.org/I2802246343"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5076250288",
+              "display_name": "Irvin Waller",
+              "orcid": "https://orcid.org/0000-0002-1959-3198"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I153718931",
+                "display_name": "University of Ottawa",
+                "ror": "https://ror.org/03c4mmv16",
+                "country_code": "CA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I153718931"
+                ]
+              }
+            ],
+            "countries": [
+              "CA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Irvin Waller",
+            "raw_affiliation_strings": [
+              "University of Ottawa, Ottawa, Canada"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "University of Ottawa, Ottawa, Canada",
+                "institution_ids": [
+                  "https://openalex.org/I153718931"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5102985470",
+              "display_name": "Rebecca Gordon",
+              "orcid": "https://orcid.org/0000-0001-8483-4069"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I1312237181",
+                "display_name": "Girls Incorporated",
+                "ror": "https://ror.org/03v7zx932",
+                "country_code": "US",
+                "type": "nonprofit",
+                "lineage": [
+                  "https://openalex.org/I1312237181"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4210107735",
+                "display_name": "Together",
+                "ror": "https://ror.org/01azqfh67",
+                "country_code": "US",
+                "type": "nonprofit",
+                "lineage": [
+                  "https://openalex.org/I4210107735"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Rebecca Gordon",
+            "raw_affiliation_strings": [
+              "Together for Girls, Washington, DC, USA"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Together for Girls, Washington, DC, USA",
+                "institution_ids": [
+                  "https://openalex.org/I1312237181",
+                  "https://openalex.org/I4210107735"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5013182086",
+              "display_name": "Michele Moloney-Kitts",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I1312237181",
+                "display_name": "Girls Incorporated",
+                "ror": "https://ror.org/03v7zx932",
+                "country_code": "US",
+                "type": "nonprofit",
+                "lineage": [
+                  "https://openalex.org/I1312237181"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4210107735",
+                "display_name": "Together",
+                "ror": "https://ror.org/01azqfh67",
+                "country_code": "US",
+                "type": "nonprofit",
+                "lineage": [
+                  "https://openalex.org/I4210107735"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Michele Moloney-Kitts",
+            "raw_affiliation_strings": [
+              "Together for Girls, Washington, DC, USA"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Together for Girls, Washington, DC, USA",
+                "institution_ids": [
+                  "https://openalex.org/I1312237181",
+                  "https://openalex.org/I4210107735"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5100707324",
+              "display_name": "Grace Lee",
+              "orcid": "https://orcid.org/0000-0003-0042-2281"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I32971472",
+                "display_name": "Yale University",
+                "ror": "https://ror.org/03v76x132",
+                "country_code": "US",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I32971472"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Grace Lee",
+            "raw_affiliation_strings": [
+              "Law and Psychiatry Division, Yale University, 34 Park Street, New Haven, CT, 06519, USA"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Law and Psychiatry Division, Yale University, 34 Park Street, New Haven, CT, 06519, USA",
+                "institution_ids": [
+                  "https://openalex.org/I32971472"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5109615168",
+              "display_name": "James Gilligan",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I57206974",
+                "display_name": "New York University",
+                "ror": "https://ror.org/0190ak572",
+                "country_code": "US",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I57206974"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "James Gilligan",
+            "raw_affiliation_strings": [
+              "New York University, New York, NY, USA"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "New York University, New York, NY, USA",
+                "institution_ids": [
+                  "https://openalex.org/I57206974"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 4,
+        "institutions_distinct_count": 11,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5074218530"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I32971472"
+        ],
+        "apc_list": {
+          "value": 2890,
+          "currency": "USD",
+          "value_usd": 2890
+        },
+        "apc_paid": null,
+        "fwci": 10.7188,
+        "has_fulltext": false,
+        "cited_by_count": 711,
+        "citation_normalized_percentile": {
+          "value": 0.98485283,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 89,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "37",
+          "issue": "S1",
+          "first_page": "13",
+          "last_page": "31"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10380",
+          "display_name": "Intimate Partner and Family Violence",
+          "score": 0.9937999844551086,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3306",
+            "display_name": "Health"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/33",
+            "display_name": "Social Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10380",
+            "display_name": "Intimate Partner and Family Violence",
+            "score": 0.9937999844551086,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3306",
+              "display_name": "Health"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/sustainable-development",
+            "display_name": "Sustainable development",
+            "score": 0.7091625332832336
+          },
+          {
+            "id": "https://openalex.org/keywords/accountability",
+            "display_name": "Accountability",
+            "score": 0.5779024958610535
+          },
+          {
+            "id": "https://openalex.org/keywords/sustainability",
+            "display_name": "Sustainability",
+            "score": 0.5100908875465393
+          },
+          {
+            "id": "https://openalex.org/keywords/context",
+            "display_name": "Context (archaeology)",
+            "score": 0.5047303438186646
+          },
+          {
+            "id": "https://openalex.org/keywords/political-science",
+            "display_name": "Political science",
+            "score": 0.4950970709323883
+          },
+          {
+            "id": "https://openalex.org/keywords/agency",
+            "display_name": "Agency (philosophy)",
+            "score": 0.45820924639701843
+          },
+          {
+            "id": "https://openalex.org/keywords/alliance",
+            "display_name": "Alliance",
+            "score": 0.4402843117713928
+          },
+          {
+            "id": "https://openalex.org/keywords/public-relations",
+            "display_name": "Public relations",
+            "score": 0.3964115381240845
+          },
+          {
+            "id": "https://openalex.org/keywords/sociology",
+            "display_name": "Sociology",
+            "score": 0.158338725566864
+          },
+          {
+            "id": "https://openalex.org/keywords/geography",
+            "display_name": "Geography",
+            "score": 0.0863010585308075
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C552854447",
+            "wikidata": "https://www.wikidata.org/wiki/Q131201",
+            "display_name": "Sustainable development",
+            "level": 2,
+            "score": 0.7091625332832336
+          },
+          {
+            "id": "https://openalex.org/C2776007630",
+            "wikidata": "https://www.wikidata.org/wiki/Q2798912",
+            "display_name": "Accountability",
+            "level": 2,
+            "score": 0.5779024958610535
+          },
+          {
+            "id": "https://openalex.org/C66204764",
+            "wikidata": "https://www.wikidata.org/wiki/Q219416",
+            "display_name": "Sustainability",
+            "level": 2,
+            "score": 0.5100908875465393
+          },
+          {
+            "id": "https://openalex.org/C2779343474",
+            "wikidata": "https://www.wikidata.org/wiki/Q3109175",
+            "display_name": "Context (archaeology)",
+            "level": 2,
+            "score": 0.5047303438186646
+          },
+          {
+            "id": "https://openalex.org/C17744445",
+            "wikidata": "https://www.wikidata.org/wiki/Q36442",
+            "display_name": "Political science",
+            "level": 0,
+            "score": 0.4950970709323883
+          },
+          {
+            "id": "https://openalex.org/C108170787",
+            "wikidata": "https://www.wikidata.org/wiki/Q3951828",
+            "display_name": "Agency (philosophy)",
+            "level": 2,
+            "score": 0.45820924639701843
+          },
+          {
+            "id": "https://openalex.org/C2778431023",
+            "wikidata": "https://www.wikidata.org/wiki/Q878249",
+            "display_name": "Alliance",
+            "level": 2,
+            "score": 0.4402843117713928
+          },
+          {
+            "id": "https://openalex.org/C39549134",
+            "wikidata": "https://www.wikidata.org/wiki/Q133080",
+            "display_name": "Public relations",
+            "level": 1,
+            "score": 0.3964115381240845
+          },
+          {
+            "id": "https://openalex.org/C144024400",
+            "wikidata": "https://www.wikidata.org/wiki/Q21201",
+            "display_name": "Sociology",
+            "level": 0,
+            "score": 0.158338725566864
+          },
+          {
+            "id": "https://openalex.org/C205649164",
+            "wikidata": "https://www.wikidata.org/wiki/Q1071",
+            "display_name": "Geography",
+            "level": 0,
+            "score": 0.0863010585308075
+          },
+          {
+            "id": "https://openalex.org/C18903297",
+            "wikidata": "https://www.wikidata.org/wiki/Q7150",
+            "display_name": "Ecology",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C36289849",
+            "wikidata": "https://www.wikidata.org/wiki/Q34749",
+            "display_name": "Social science",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C166957645",
+            "wikidata": "https://www.wikidata.org/wiki/Q23498",
+            "display_name": "Archaeology",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C86803240",
+            "wikidata": "https://www.wikidata.org/wiki/Q420",
+            "display_name": "Biology",
+            "level": 0,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C199539241",
+            "wikidata": "https://www.wikidata.org/wiki/Q7748",
+            "display_name": "Law",
+            "level": 1,
+            "score": 0.0
+          }
+        ],
+        "mesh": [
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002648",
+            "descriptor_name": "Child",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002649",
+            "descriptor_name": "Child Abuse",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002649",
+            "descriptor_name": "Child Abuse",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002649",
+            "descriptor_name": "Child Abuse",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D002649",
+            "descriptor_name": "Child Abuse",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D006801",
+            "descriptor_name": "Humans",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D007398",
+            "descriptor_name": "Interpersonal Relations",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D007398",
+            "descriptor_name": "Interpersonal Relations",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D007398",
+            "descriptor_name": "Interpersonal Relations",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D007398",
+            "descriptor_name": "Interpersonal Relations",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D012959",
+            "descriptor_name": "Socioeconomic Factors",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D012959",
+            "descriptor_name": "Socioeconomic Factors",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D012959",
+            "descriptor_name": "Socioeconomic Factors",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D012959",
+            "descriptor_name": "Socioeconomic Factors",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D013179",
+            "descriptor_name": "Spouse Abuse",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D013179",
+            "descriptor_name": "Spouse Abuse",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D013179",
+            "descriptor_name": "Spouse Abuse",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D013179",
+            "descriptor_name": "Spouse Abuse",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014480",
+            "descriptor_name": "United Nations",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014480",
+            "descriptor_name": "United Nations",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014480",
+            "descriptor_name": "United Nations",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014480",
+            "descriptor_name": "United Nations",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014754",
+            "descriptor_name": "Violence",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014754",
+            "descriptor_name": "Violence",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014754",
+            "descriptor_name": "Violence",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014754",
+            "descriptor_name": "Violence",
+            "qualifier_ui": "Q000517",
+            "qualifier_name": "prevention & control",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014933",
+            "descriptor_name": "Women's Rights",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014933",
+            "descriptor_name": "Women's Rights",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014933",
+            "descriptor_name": "Women's Rights",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014933",
+            "descriptor_name": "Women's Rights",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014943",
+            "descriptor_name": "Global Health",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D014943",
+            "descriptor_name": "Global Health",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D014943",
+            "descriptor_name": "Global Health",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D014943",
+            "descriptor_name": "Global Health",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": true
+          },
+          {
+            "descriptor_ui": "D014944",
+            "descriptor_name": "World Health Organization",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014944",
+            "descriptor_name": "World Health Organization",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014944",
+            "descriptor_name": "World Health Organization",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D014944",
+            "descriptor_name": "World Health Organization",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D038622",
+            "descriptor_name": "Internationality",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D038622",
+            "descriptor_name": "Internationality",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D038622",
+            "descriptor_name": "Internationality",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D038622",
+            "descriptor_name": "Internationality",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D055317",
+            "descriptor_name": "Evidence-Based Practice",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D055317",
+            "descriptor_name": "Evidence-Based Practice",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D055317",
+            "descriptor_name": "Evidence-Based Practice",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D055317",
+            "descriptor_name": "Evidence-Based Practice",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D055500",
+            "descriptor_name": "Resilience, Psychological",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D055500",
+            "descriptor_name": "Resilience, Psychological",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D055500",
+            "descriptor_name": "Resilience, Psychological",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D055500",
+            "descriptor_name": "Resilience, Psychological",
+            "qualifier_ui": null,
+            "qualifier_name": null,
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D057191",
+            "descriptor_name": "Capacity Building",
+            "qualifier_ui": "Q000458",
+            "qualifier_name": "organization & administration",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D057191",
+            "descriptor_name": "Capacity Building",
+            "qualifier_ui": "Q000458",
+            "qualifier_name": "organization & administration",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D057191",
+            "descriptor_name": "Capacity Building",
+            "qualifier_ui": "Q000458",
+            "qualifier_name": "organization & administration",
+            "is_major_topic": false
+          },
+          {
+            "descriptor_ui": "D057191",
+            "descriptor_name": "Capacity Building",
+            "qualifier_ui": "Q000458",
+            "qualifier_name": "organization & administration",
+            "is_major_topic": false
+          }
+        ],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.1057/s41271-016-0002-7",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.1057/s41271-016-0002-7",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S59089974",
+              "display_name": "Journal of Public Health Policy",
+              "issn_l": "0197-5897",
+              "issn": [
+                "0197-5897",
+                "1745-655X"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310319702",
+              "host_organization_name": "Palgrave Macmillan",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310319702",
+                "https://openalex.org/P4310319964"
+              ],
+              "host_organization_lineage_names": [
+                "Palgrave Macmillan",
+                "Macmillan Publishers"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Journal of Public Health Policy",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmid:27638240",
+            "is_oa": false,
+            "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/27638240",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4306525036",
+              "display_name": "PubMed",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/I1299303238",
+              "host_organization_name": "National Institutes of Health",
+              "host_organization_lineage": [
+                "https://openalex.org/I1299303238"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Journal of public health policy",
+            "raw_type": "Journal Article"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [
+          {
+            "score": 0.4300000071525574,
+            "display_name": "Partnerships for the goals",
+            "id": "https://metadata.un.org/sdg/17"
+          }
+        ],
+        "awards": [],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320307856",
+            "display_name": "World Health Organization",
+            "ror": "https://ror.org/01f80g185"
+          }
+        ],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 13,
+        "referenced_works": [
+          "https://openalex.org/W638664869",
+          "https://openalex.org/W2064630040",
+          "https://openalex.org/W2139645593",
+          "https://openalex.org/W2182693454",
+          "https://openalex.org/W2412247133",
+          "https://openalex.org/W2479027647",
+          "https://openalex.org/W2518923393",
+          "https://openalex.org/W2535458314",
+          "https://openalex.org/W2896673481",
+          "https://openalex.org/W2964510282",
+          "https://openalex.org/W2994267595",
+          "https://openalex.org/W4229883593",
+          "https://openalex.org/W4408114298"
+        ],
+        "related_works": [
+          "https://openalex.org/W3125302265",
+          "https://openalex.org/W4242931393",
+          "https://openalex.org/W2114295463",
+          "https://openalex.org/W2096976397",
+          "https://openalex.org/W4233133547",
+          "https://openalex.org/W2355569436",
+          "https://openalex.org/W369672418",
+          "https://openalex.org/W2381872080",
+          "https://openalex.org/W1486494288",
+          "https://openalex.org/W2041686041"
+        ],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 102
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 152
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 132
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 118
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 64
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 38
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 76
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 2
+          }
+        ],
+        "updated_date": "2026-09-03T10:48:47.769340",
+        "created_date": "2016-09-23T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W1595569896",
+        "doi": "https://doi.org/10.5860/choice.37-1652",
+        "title": "Uncommon grounds: the history of coffee and how it transformed our world",
+        "display_name": "Uncommon grounds: the history of coffee and how it transformed our world",
+        "relevance_score": 2200.6619,
+        "publication_year": 1999,
+        "publication_date": "1999-11-01",
+        "ids": {
+          "openalex": "https://openalex.org/W1595569896",
+          "doi": "https://doi.org/10.5860/choice.37-1652",
+          "mag": "1595569896"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.5860/choice.37-1652",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.5860/choice.37-1652",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2764375719",
+            "display_name": "Choice Reviews Online",
+            "issn_l": "0009-4978",
+            "issn": [
+              "0009-4978",
+              "1523-8253",
+              "1943-5975"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310316146",
+            "host_organization_name": "Association of College and Research Libraries",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310316146",
+              "https://openalex.org/P4310315903"
+            ],
+            "host_organization_lineage_names": [
+              "Association of College and Research Libraries",
+              "American Library Association"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Choice Reviews Online",
+          "raw_type": "journal-article"
+        },
+        "type": "book-review",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": null,
+        "has_fulltext": false,
+        "cited_by_count": 381,
+        "citation_normalized_percentile": null,
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": "37",
+          "issue": "03",
+          "first_page": "37",
+          "last_page": "1652"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11862",
+          "display_name": "Agriculture, Land Use, Rural Development",
+          "score": 0.4115000069141388,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1100",
+            "display_name": "General Agricultural and Biological Sciences"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/11",
+            "display_name": "Agricultural and Biological Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/1",
+            "display_name": "Life Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11862",
+            "display_name": "Agriculture, Land Use, Rural Development",
+            "score": 0.4115000069141388,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1100",
+              "display_name": "General Agricultural and Biological Sciences"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/11",
+              "display_name": "Agricultural and Biological Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/1",
+              "display_name": "Life Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11743",
+            "display_name": "Political Economy and Marxism",
+            "score": 0.3537999987602234,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3312",
+              "display_name": "Sociology and Political Science"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/history",
+            "display_name": "History",
+            "score": 0.4823831617832184
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C95457728",
+            "wikidata": "https://www.wikidata.org/wiki/Q309",
+            "display_name": "History",
+            "level": 0,
+            "score": 0.4823831617832184
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.5860/choice.37-1652",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.5860/choice.37-1652",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S2764375719",
+              "display_name": "Choice Reviews Online",
+              "issn_l": "0009-4978",
+              "issn": [
+                "0009-4978",
+                "1523-8253",
+                "1943-5975"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310316146",
+              "host_organization_name": "Association of College and Research Libraries",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310316146",
+                "https://openalex.org/P4310315903"
+              ],
+              "host_organization_lineage_names": [
+                "Association of College and Research Libraries",
+                "American Library Association"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Choice Reviews Online",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W2899084033",
+          "https://openalex.org/W2503791906",
+          "https://openalex.org/W2587265756",
+          "https://openalex.org/W2498735738",
+          "https://openalex.org/W2488258410",
+          "https://openalex.org/W2067388071",
+          "https://openalex.org/W2946980061",
+          "https://openalex.org/W2480794981",
+          "https://openalex.org/W2947840720",
+          "https://openalex.org/W2908402300"
+        ],
+        "abstract_inverted_index": {
+          "*": [
+            0,
+            5,
+            14,
+            19,
+            23,
+            27,
+            36,
+            42,
+            49,
+            52,
+            59,
+            67,
+            72,
+            76,
+            81,
+            88,
+            94,
+            100,
+            104,
+            108,
+            112
+          ],
+          "Prologue:": [
+            1
+          ],
+          "The": [
+            2,
+            20,
+            24,
+            28,
+            43,
+            47,
+            92,
+            101,
+            105,
+            109
+          ],
+          "Oriflama": [
+            3
+          ],
+          "Harvest": [
+            4
+          ],
+          "Introduction:": [
+            6
+          ],
+          "Puddle": [
+            7
+          ],
+          "Water": [
+            8
+          ],
+          "or": [
+            9
+          ],
+          "Panacea?": [
+            10
+          ],
+          "Seeds": [
+            11
+          ],
+          "Of": [
+            12
+          ],
+          "Conquest": [
+            13
+          ],
+          "Coffee": [
+            15,
+            21,
+            30,
+            58,
+            82
+          ],
+          "Colonizes": [
+            16
+          ],
+          "the": [
+            17,
+            33,
+            54,
+            64,
+            74
+          ],
+          "World": [
+            18,
+            55
+          ],
+          "Kingdoms": [
+            22
+          ],
+          "American": [
+            25
+          ],
+          "Drink": [
+            26,
+            45
+          ],
+          "Great": [
+            29
+          ],
+          "Wars": [
+            31
+          ],
+          "of": [
+            32,
+            98
+          ],
+          "Gilded": [
+            34
+          ],
+          "Age": [
+            35,
+            66
+          ],
+          "Hermann": [
+            37
+          ],
+          "Sielcken": [
+            38
+          ],
+          "and": [
+            39,
+            85
+          ],
+          "Brazilian": [
+            40
+          ],
+          "Valorization": [
+            41
+          ],
+          "Drug": [
+            44
+          ],
+          "Canning": [
+            46
+          ],
+          "Buzz": [
+            48
+          ],
+          "Growing": [
+            50
+          ],
+          "Pains": [
+            51
+          ],
+          "Making": [
+            53
+          ],
+          "Safe": [
+            56
+          ],
+          "for": [
+            57
+          ],
+          "Selling": [
+            60
+          ],
+          "an": [
+            61
+          ],
+          "Image": [
+            62
+          ],
+          "in": [
+            63
+          ],
+          "Jazz": [
+            65
+          ],
+          "Burning": [
+            68
+          ],
+          "Beans,": [
+            69
+          ],
+          "Starving": [
+            70
+          ],
+          "Campesinos": [
+            71
+          ],
+          "Showboating": [
+            73
+          ],
+          "Depression": [
+            75
+          ],
+          "Cuppa": [
+            77
+          ],
+          "Joe": [
+            78
+          ],
+          "Bitter": [
+            79
+          ],
+          "Brews": [
+            80
+          ],
+          "Witch": [
+            83
+          ],
+          "Hunts": [
+            84
+          ],
+          "Instant": [
+            86
+          ],
+          "Non-Gratification": [
+            87
+          ],
+          "Robusta": [
+            89
+          ],
+          "Triumphant": [
+            90
+          ],
+          "Romancing": [
+            91
+          ],
+          "Bean": [
+            93
+          ],
+          "A": [
+            95
+          ],
+          "Scattered": [
+            96
+          ],
+          "Band": [
+            97
+          ],
+          "Fanatics": [
+            99
+          ],
+          "Black": [
+            102
+          ],
+          "Frost": [
+            103
+          ],
+          "Specialty": [
+            106
+          ],
+          "Revolution": [
+            107
+          ],
+          "Starbucks": [
+            110
+          ],
+          "Experience": [
+            111
+          ],
+          "Eco-Coffee": [
+            113
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 8
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 9
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 29
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 64
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 18
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 16
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 14
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 27
+          }
+        ],
+        "updated_date": "2026-07-14T23:27:15.235271",
+        "created_date": "2016-06-24T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4413467052",
+        "doi": "https://doi.org/10.56975/ijcrt.v13i8.292474",
+        "title": "Transforming Our World: The 2030 Agenda for Sustainable Development",
+        "display_name": "Transforming Our World: The 2030 Agenda for Sustainable Development",
+        "relevance_score": 1739.3259,
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W4413467052",
+          "doi": "https://doi.org/10.56975/ijcrt.v13i8.292474"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.56975/ijcrt.v13i8.292474",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.56975/ijcrt.v13i8.292474",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4389158016",
+            "display_name": "INTERNATIONAL JOURNAL OF CREATIVE RESEARCH THOUGHTS",
+            "issn_l": "2320-2882",
+            "issn": [
+              "2320-2882"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "INTERNATIONAL JOURNAL OF CREATIVE RESEARCH THOUGHTS",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://doi.org/10.56975/ijcrt.v13i8.292474",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5119402609",
+              "display_name": "Ch Devi Palaka",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "Ch Devi Palaka",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5085305247",
+              "display_name": "Sunand Prasad",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "S.V.V.D.M.B. Prasad",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 247.3181,
+        "has_fulltext": false,
+        "cited_by_count": 207,
+        "citation_normalized_percentile": {
+          "value": 1.0,
+          "is_in_top_1_percent": true,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 89,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "13",
+          "issue": "8",
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T12013",
+          "display_name": "Sustainable Development and Environmental Policy",
+          "score": 0.20520000159740448,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2308",
+            "display_name": "Management, Monitoring, Policy and Law"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/23",
+            "display_name": "Environmental Science"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T12013",
+            "display_name": "Sustainable Development and Environmental Policy",
+            "score": 0.20520000159740448,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2308",
+              "display_name": "Management, Monitoring, Policy and Law"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/23",
+              "display_name": "Environmental Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/sustainable-development",
+            "display_name": "Sustainable development",
+            "score": 0.6648255586624146
+          },
+          {
+            "id": "https://openalex.org/keywords/political-science",
+            "display_name": "Political science",
+            "score": 0.5265451073646545
+          },
+          {
+            "id": "https://openalex.org/keywords/environmental-planning",
+            "display_name": "Environmental planning",
+            "score": 0.4122558534145355
+          },
+          {
+            "id": "https://openalex.org/keywords/engineering-ethics",
+            "display_name": "Engineering ethics",
+            "score": 0.3789716064929962
+          },
+          {
+            "id": "https://openalex.org/keywords/business",
+            "display_name": "Business",
+            "score": 0.34465107321739197
+          },
+          {
+            "id": "https://openalex.org/keywords/environmental-ethics",
+            "display_name": "Environmental ethics",
+            "score": 0.3230248689651489
+          },
+          {
+            "id": "https://openalex.org/keywords/environmental-science",
+            "display_name": "Environmental science",
+            "score": 0.23357826471328735
+          },
+          {
+            "id": "https://openalex.org/keywords/engineering",
+            "display_name": "Engineering",
+            "score": 0.2141377031803131
+          },
+          {
+            "id": "https://openalex.org/keywords/philosophy",
+            "display_name": "Philosophy",
+            "score": 0.06628701090812683
+          },
+          {
+            "id": "https://openalex.org/keywords/law",
+            "display_name": "Law",
+            "score": 0.06367537379264832
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C552854447",
+            "wikidata": "https://www.wikidata.org/wiki/Q131201",
+            "display_name": "Sustainable development",
+            "level": 2,
+            "score": 0.6648255586624146
+          },
+          {
+            "id": "https://openalex.org/C17744445",
+            "wikidata": "https://www.wikidata.org/wiki/Q36442",
+            "display_name": "Political science",
+            "level": 0,
+            "score": 0.5265451073646545
+          },
+          {
+            "id": "https://openalex.org/C91375879",
+            "wikidata": "https://www.wikidata.org/wiki/Q15473274",
+            "display_name": "Environmental planning",
+            "level": 1,
+            "score": 0.4122558534145355
+          },
+          {
+            "id": "https://openalex.org/C55587333",
+            "wikidata": "https://www.wikidata.org/wiki/Q1133029",
+            "display_name": "Engineering ethics",
+            "level": 1,
+            "score": 0.3789716064929962
+          },
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.34465107321739197
+          },
+          {
+            "id": "https://openalex.org/C95124753",
+            "wikidata": "https://www.wikidata.org/wiki/Q875686",
+            "display_name": "Environmental ethics",
+            "level": 1,
+            "score": 0.3230248689651489
+          },
+          {
+            "id": "https://openalex.org/C39432304",
+            "wikidata": "https://www.wikidata.org/wiki/Q188847",
+            "display_name": "Environmental science",
+            "level": 0,
+            "score": 0.23357826471328735
+          },
+          {
+            "id": "https://openalex.org/C127413603",
+            "wikidata": "https://www.wikidata.org/wiki/Q11023",
+            "display_name": "Engineering",
+            "level": 0,
+            "score": 0.2141377031803131
+          },
+          {
+            "id": "https://openalex.org/C138885662",
+            "wikidata": "https://www.wikidata.org/wiki/Q5891",
+            "display_name": "Philosophy",
+            "level": 0,
+            "score": 0.06628701090812683
+          },
+          {
+            "id": "https://openalex.org/C199539241",
+            "wikidata": "https://www.wikidata.org/wiki/Q7748",
+            "display_name": "Law",
+            "level": 1,
+            "score": 0.06367537379264832
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.56975/ijcrt.v13i8.292474",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.56975/ijcrt.v13i8.292474",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4389158016",
+              "display_name": "INTERNATIONAL JOURNAL OF CREATIVE RESEARCH THOUGHTS",
+              "issn_l": "2320-2882",
+              "issn": [
+                "2320-2882"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "INTERNATIONAL JOURNAL OF CREATIVE RESEARCH THOUGHTS",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.56975/ijcrt.v13i8.292474",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.56975/ijcrt.v13i8.292474",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4389158016",
+            "display_name": "INTERNATIONAL JOURNAL OF CREATIVE RESEARCH THOUGHTS",
+            "issn_l": "2320-2882",
+            "issn": [
+              "2320-2882"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "INTERNATIONAL JOURNAL OF CREATIVE RESEARCH THOUGHTS",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W4391375266",
+          "https://openalex.org/W1893496822",
+          "https://openalex.org/W3049600763",
+          "https://openalex.org/W2365995941",
+          "https://openalex.org/W2385813058",
+          "https://openalex.org/W2356964550",
+          "https://openalex.org/W2393743241",
+          "https://openalex.org/W2352942804",
+          "https://openalex.org/W2381816181",
+          "https://openalex.org/W2359982472"
+        ],
+        "abstract_inverted_index": {
+          "UGC-CARE,": [
+            0
+          ],
+          "UGC": [
+            1,
+            3,
+            9,
+            11,
+            14,
+            61,
+            64,
+            120,
+            143,
+            224,
+            234,
+            246,
+            296,
+            300,
+            342,
+            352,
+            364,
+            406,
+            419
+          ],
+          "CARE,": [
+            2,
+            10,
+            121,
+            225,
+            343
+          ],
+          "CARE": [
+            4,
+            12,
+            15,
+            62,
+            65,
+            144,
+            235,
+            247,
+            353,
+            365
+          ],
+          "list,": [
+            5,
+            13,
+            22,
+            24,
+            33,
+            74,
+            138,
+            236,
+            241,
+            354,
+            359
+          ],
+          "ugc": [
+            6,
+            30,
+            67,
+            72,
+            75,
+            80,
+            85,
+            117,
+            124,
+            127,
+            132,
+            146,
+            151,
+            155,
+            159,
+            164,
+            221,
+            226,
+            231,
+            249,
+            254,
+            258,
+            262,
+            267,
+            272,
+            276,
+            282,
+            339,
+            344,
+            349,
+            367,
+            372,
+            376,
+            380,
+            385,
+            390,
+            394,
+            409,
+            411
+          ],
+          "approved": [
+            7,
+            73,
+            76,
+            81,
+            87,
+            118,
+            125,
+            128,
+            157,
+            165,
+            222,
+            227,
+            260,
+            268,
+            277,
+            283,
+            289,
+            340,
+            345,
+            378,
+            386,
+            395
+          ],
+          "journal,": [
+            8,
+            44,
+            56,
+            60,
+            63,
+            71,
+            79,
+            84,
+            93,
+            108,
+            119,
+            126,
+            131,
+            134,
+            136,
+            150,
+            158,
+            184,
+            188,
+            197,
+            199,
+            214,
+            223,
+            230,
+            233,
+            239,
+            253,
+            261,
+            341,
+            348,
+            351,
+            357,
+            371,
+            379,
+            408,
+            439
+          ],
+          "list": [
+            16,
+            69,
+            77,
+            129,
+            148,
+            153,
+            161,
+            228,
+            251,
+            256,
+            264,
+            274,
+            346,
+            369,
+            374,
+            382,
+            392
+          ],
+          "of": [
+            17,
+            46,
+            70,
+            78,
+            130,
+            149,
+            219,
+            229,
+            252,
+            307,
+            336,
+            347,
+            370,
+            401,
+            415
+          ],
+          "Journal,": [
+            18,
+            35,
+            52,
+            57,
+            173
+          ],
+          "UGCCARE,": [
+            19,
+            237,
+            355
+          ],
+          "care": [
+            20,
+            31,
+            68,
+            83,
+            86,
+            133,
+            135,
+            147,
+            152,
+            156,
+            160,
+            232,
+            238,
+            250,
+            255,
+            259,
+            263,
+            273,
+            288,
+            350,
+            356,
+            368,
+            373,
+            377,
+            381,
+            391
+          ],
+          "journal": [
+            21,
+            32,
+            100,
+            166,
+            206,
+            269,
+            278,
+            284,
+            290,
+            387,
+            396
+          ],
+          "UGC-CARE": [
+            23,
+            26,
+            137,
+            140,
+            240,
+            243,
+            358,
+            361
+          ],
+          "New": [
+            25,
+            29,
+            139,
+            242,
+            360
+          ],
+          "Reference": [
+            27,
+            141,
+            244,
+            362
+          ],
+          "List,": [
+            28,
+            142,
+            245,
+            363
+          ],
+          "Research": [
+            34,
+            36,
+            39,
+            51,
+            58,
+            92,
+            112,
+            172,
+            198
+          ],
+          "Journal": [
+            37,
+            320,
+            429
+          ],
+          "Publication,": [
+            38
+          ],
+          "Paper,": [
+            40
+          ],
+          "Low": [
+            41,
+            181,
+            440
+          ],
+          "cost": [
+            42,
+            47,
+            115,
+            182,
+            196
+          ],
+          "research": [
+            43,
+            94,
+            96,
+            99,
+            183,
+            187,
+            200,
+            202,
+            205
+          ],
+          "Free": [
+            45,
+            444
+          ],
+          "paper": [
+            48,
+            59,
+            97,
+            203
+          ],
+          "publication": [
+            49
+          ],
+          "in": [
+            50,
+            167,
+            270,
+            279,
+            285,
+            313,
+            325,
+            388,
+            397
+          ],
+          "High": [
+            53
+          ],
+          "impact": [
+            54,
+            103,
+            209
+          ],
+          "factor": [
+            55
+          ],
+          "Journals,": [
+            66,
+            145,
+            192,
+            248,
+            366
+          ],
+          "journal,ugc": [
+            82
+          ],
+          "journal,Journal": [
+            88
+          ],
+          "publication,": [
+            89,
+            98,
+            101,
+            106,
+            116,
+            204,
+            207,
+            212,
+            418
+          ],
+          "ISSN": [
+            90,
+            193,
+            421
+          ],
+          "approved,": [
+            91,
+            194
+          ],
+          "paper,": [
+            95,
+            110,
+            113,
+            201
+          ],
+          "high": [
+            102,
+            208
+          ],
+          "factor,": [
+            104,
+            210
+          ],
+          "free": [
+            105,
+            211,
+            414,
+            417
+          ],
+          "index": [
+            107,
+            213
+          ],
+          "publish": [
+            109,
+            111,
+            413
+          ],
+          "low": [
+            114,
+            195
+          ],
+          "follow": [
+            122
+          ],
+          "norms": [
+            123
+          ],
+          "2020,": [
+            154,
+            162,
+            168,
+            257,
+            265,
+            271,
+            375,
+            383,
+            389
+          ],
+          "new": [
+            163,
+            266,
+            295,
+            384
+          ],
+          "IJCRT": [
+            169,
+            327
+          ],
+          "-": [
+            170,
+            220
+          ],
+          "international": [
+            171,
+            186
+          ],
+          "INTERNATIONAL": [
+            174
+          ],
+          "JOURNAL": [
+            175
+          ],
+          "OF": [
+            176
+          ],
+          "CREATIVE": [
+            177
+          ],
+          "RESEARCH": [
+            178
+          ],
+          "THOUGHTS": [
+            179
+          ],
+          ",": [
+            180,
+            403,
+            423,
+            430,
+            437
+          ],
+          "Online": [
+            185
+          ],
+          "Peer-reviewed,": [
+            189,
+            317
+          ],
+          "and": [
+            190,
+            217,
+            291,
+            309,
+            315,
+            318,
+            323,
+            334,
+            420
+          ],
+          "Refereed": [
+            191,
+            319
+          ],
+          "Regarding": [
+            215
+          ],
+          "Approval": [
+            216
+          ],
+          "Equivalence": [
+            218
+          ],
+          "2021,": [
+            275,
+            393,
+            398
+          ],
+          "2021": [
+            280
+          ],
+          ":": [
+            281,
+            435
+          ],
+          "18": [
+            286
+          ],
+          "before": [
+            287
+          ],
+          "Valid": [
+            292
+          ],
+          "as": [
+            293
+          ],
+          "per": [
+            294
+          ],
+          "Gazette": [
+            297
+          ],
+          "regulations": [
+            298,
+            301
+          ],
+          "for": [
+            299,
+            305
+          ],
+          "on": [
+            302
+          ],
+          "minimum": [
+            303
+          ],
+          "qualifications": [
+            304
+          ],
+          "appointment": [
+            306
+          ],
+          "teachers": [
+            308
+          ],
+          "other": [
+            310
+          ],
+          "academic": [
+            311
+          ],
+          "staff": [
+            312
+          ],
+          "universities": [
+            314
+          ],
+          "colleges": [
+            316
+          ],
+          "is": [
+            321
+          ],
+          "valid": [
+            322
+          ],
+          "point": [
+            324
+          ],
+          "Publication.": [
+            326
+          ],
+          "Followed": [
+            328
+          ],
+          "Norms,": [
+            329
+          ],
+          "guidelines,": [
+            330
+          ],
+          "requirement,": [
+            331
+          ],
+          "listing": [
+            332
+          ],
+          "criteria": [
+            333
+          ],
+          "methodology": [
+            335
+          ],
+          "score/point": [
+            337
+          ],
+          "from:": [
+            338
+          ],
+          "Scopus,": [
+            399
+          ],
+          "web": [
+            400
+          ],
+          "Science": [
+            402
+          ],
+          "scholarly": [
+            404
+          ],
+          "journals,": [
+            405
+          ],
+          "Approved": [
+            407,
+            422
+          ],
+          "approved,ugc,": [
+            410
+          ],
+          "certify,": [
+            412
+          ],
+          "cost,": [
+            416
+          ],
+          "International": [
+            424
+          ],
+          "Peer": [
+            425
+          ],
+          "Reviewed,": [
+            426
+          ],
+          "Open": [
+            427
+          ],
+          "Access": [
+            428
+          ],
+          "ISSN:": [
+            431
+          ],
+          "2320-2882": [
+            432
+          ],
+          "Impact": [
+            433
+          ],
+          "Factor": [
+            434
+          ],
+          "7.97": [
+            436
+          ],
+          "E-": [
+            438
+          ],
+          "Cost": [
+            441
+          ],
+          "INR": [
+            442
+          ],
+          "500,": [
+            443
+          ],
+          "Publication": [
+            445
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 192
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 6
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 1
+          }
+        ],
+        "updated_date": "2026-07-31T08:31:51.225901",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W3014085075",
+        "doi": "https://doi.org/10.5553/hyiel/266627012016004001011",
+        "title": "Transforming Our World",
+        "display_name": "Transforming Our World",
+        "relevance_score": 1636.8457,
+        "publication_year": 2016,
+        "publication_date": "2016-12-01",
+        "ids": {
+          "openalex": "https://openalex.org/W3014085075",
+          "doi": "https://doi.org/10.5553/hyiel/266627012016004001011",
+          "mag": "3014085075"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.5553/hyiel/266627012016004001011",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.5553/hyiel/266627012016004001011",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210178350",
+            "display_name": "Hungarian Yearbook of International Law and European Law",
+            "issn_l": "2666-2701",
+            "issn": [
+              "2666-2701",
+              "2666-271X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/P4310319987",
+            "host_organization_name": "Uitgeverij Boom",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319987"
+            ],
+            "host_organization_lineage_names": [
+              "Uitgeverij Boom"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Hungarian Yearbook of International Law and European Law",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5029543829",
+              "display_name": "Zsuzsanna Horváth",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": true,
+            "raw_author_name": "Zsuzsanna Horváth",
+            "raw_affiliation_strings": [],
+            "raw_orcid": null,
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 0,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5029543829"
+        ],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 36.1692,
+        "has_fulltext": false,
+        "cited_by_count": 112,
+        "citation_normalized_percentile": {
+          "value": 0.99653297,
+          "is_in_top_1_percent": true,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 91,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "4",
+          "issue": "1",
+          "first_page": "167",
+          "last_page": "194"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T12765",
+          "display_name": "Race, History, and American Society",
+          "score": 0.008100000210106373,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3312",
+            "display_name": "Sociology and Political Science"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/33",
+            "display_name": "Social Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T12765",
+            "display_name": "Race, History, and American Society",
+            "score": 0.008100000210106373,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3312",
+              "display_name": "Sociology and Political Science"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T13902",
+            "display_name": "Indian History and Philosophy",
+            "score": 0.007899999618530273,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1211",
+              "display_name": "Philosophy"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/12",
+              "display_name": "Arts and Humanities"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T14176",
+            "display_name": "Interdisciplinary Cultural and Social Studies",
+            "score": 0.007699999958276749,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3312",
+              "display_name": "Sociology and Political Science"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/geography",
+            "display_name": "Geography",
+            "score": 0.3141736090183258
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C205649164",
+            "wikidata": "https://www.wikidata.org/wiki/Q1071",
+            "display_name": "Geography",
+            "level": 0,
+            "score": 0.3141736090183258
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.5553/hyiel/266627012016004001011",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.5553/hyiel/266627012016004001011",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4210178350",
+              "display_name": "Hungarian Yearbook of International Law and European Law",
+              "issn_l": "2666-2701",
+              "issn": [
+                "2666-2701",
+                "2666-271X"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": "https://openalex.org/P4310319987",
+              "host_organization_name": "Uitgeverij Boom",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310319987"
+              ],
+              "host_organization_lineage_names": [
+                "Uitgeverij Boom"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Hungarian Yearbook of International Law and European Law",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W2748952813",
+          "https://openalex.org/W3120165752",
+          "https://openalex.org/W3158585187",
+          "https://openalex.org/W2344506138",
+          "https://openalex.org/W85411530",
+          "https://openalex.org/W1964191721",
+          "https://openalex.org/W2485179383",
+          "https://openalex.org/W4211064241",
+          "https://openalex.org/W3195275078",
+          "https://openalex.org/W2073705106"
+        ],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 7
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 12
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 21
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 19
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 15
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 6
+          }
+        ],
+        "updated_date": "2026-07-07T14:30:12.667765",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W594552557",
+        "doi": null,
+        "title": "The twilight of sovereignty : how the information revolution is transforming our world",
+        "display_name": "The twilight of sovereignty : how the information revolution is transforming our world",
+        "relevance_score": 1166.4877,
+        "publication_year": 1992,
+        "publication_date": "1992-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W594552557",
+          "mag": "594552557"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "mag:594552557",
+          "is_oa": false,
+          "landing_page_url": "http://ci.nii.ac.jp/ncid/BA19750575",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210197683",
+            "display_name": "Medical Entomology and Zoology",
+            "issn_l": "0424-7086",
+            "issn": [
+              "0424-7086",
+              "2185-5609"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319750",
+            "host_organization_name": "Japan Society of Medical Entomology and Zoology",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319750"
+            ],
+            "host_organization_lineage_names": [
+              "Japan Society of Medical Entomology and Zoology"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": null
+        },
+        "type": "book",
+        "indexed_in": [],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5041823413",
+              "display_name": "Walter B. Wriston",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": true,
+            "raw_author_name": "Walter B. Wriston",
+            "raw_affiliation_strings": [],
+            "affiliations": []
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 0,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5041823413"
+        ],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 30.0682,
+        "has_fulltext": false,
+        "cited_by_count": 97,
+        "citation_normalized_percentile": {
+          "value": 0.99315068,
+          "is_in_top_1_percent": true,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 89,
+          "max": 98
+        },
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T13066",
+          "display_name": "Information Society and Technology Trends",
+          "score": 0.05389999970793724,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3300",
+            "display_name": "General Social Sciences"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/33",
+            "display_name": "Social Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T13066",
+            "display_name": "Information Society and Technology Trends",
+            "score": 0.05389999970793724,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3300",
+              "display_name": "General Social Sciences"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/twilight",
+            "display_name": "Twilight",
+            "score": 0.8669171333312988
+          },
+          {
+            "id": "https://openalex.org/keywords/sovereignty",
+            "display_name": "Sovereignty",
+            "score": 0.730206310749054
+          },
+          {
+            "id": "https://openalex.org/keywords/political-science",
+            "display_name": "Political science",
+            "score": 0.45050787925720215
+          },
+          {
+            "id": "https://openalex.org/keywords/law",
+            "display_name": "Law",
+            "score": 0.19259852170944214
+          },
+          {
+            "id": "https://openalex.org/keywords/politics",
+            "display_name": "Politics",
+            "score": 0.10533884167671204
+          },
+          {
+            "id": "https://openalex.org/keywords/physics",
+            "display_name": "Physics",
+            "score": 0.05576285719871521
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2777298776",
+            "wikidata": "https://www.wikidata.org/wiki/Q164160",
+            "display_name": "Twilight",
+            "level": 2,
+            "score": 0.8669171333312988
+          },
+          {
+            "id": "https://openalex.org/C186229450",
+            "wikidata": "https://www.wikidata.org/wiki/Q42008",
+            "display_name": "Sovereignty",
+            "level": 3,
+            "score": 0.730206310749054
+          },
+          {
+            "id": "https://openalex.org/C17744445",
+            "wikidata": "https://www.wikidata.org/wiki/Q36442",
+            "display_name": "Political science",
+            "level": 0,
+            "score": 0.45050787925720215
+          },
+          {
+            "id": "https://openalex.org/C199539241",
+            "wikidata": "https://www.wikidata.org/wiki/Q7748",
+            "display_name": "Law",
+            "level": 1,
+            "score": 0.19259852170944214
+          },
+          {
+            "id": "https://openalex.org/C94625758",
+            "wikidata": "https://www.wikidata.org/wiki/Q7163",
+            "display_name": "Politics",
+            "level": 2,
+            "score": 0.10533884167671204
+          },
+          {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.05576285719871521
+          },
+          {
+            "id": "https://openalex.org/C1276947",
+            "wikidata": "https://www.wikidata.org/wiki/Q333",
+            "display_name": "Astronomy",
+            "level": 1,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "mag:594552557",
+            "is_oa": false,
+            "landing_page_url": "http://ci.nii.ac.jp/ncid/BA19750575",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4210197683",
+              "display_name": "Medical Entomology and Zoology",
+              "issn_l": "0424-7086",
+              "issn": [
+                "0424-7086",
+                "2185-5609"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310319750",
+              "host_organization_name": "Japan Society of Medical Entomology and Zoology",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310319750"
+              ],
+              "host_organization_lineage_names": [
+                "Japan Society of Medical Entomology and Zoology"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": null,
+            "is_accepted": false,
+            "is_published": null,
+            "raw_source_name": null,
+            "raw_type": null
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W1983900138",
+          "https://openalex.org/W1984759356",
+          "https://openalex.org/W2166735555",
+          "https://openalex.org/W3126280144",
+          "https://openalex.org/W2109671377",
+          "https://openalex.org/W1967877710",
+          "https://openalex.org/W1536243131",
+          "https://openalex.org/W2056527113",
+          "https://openalex.org/W2053998061",
+          "https://openalex.org/W2022183040",
+          "https://openalex.org/W1995923455",
+          "https://openalex.org/W1508803947",
+          "https://openalex.org/W48725733",
+          "https://openalex.org/W1983072116",
+          "https://openalex.org/W1896517735",
+          "https://openalex.org/W618705865",
+          "https://openalex.org/W301716519",
+          "https://openalex.org/W1970086641",
+          "https://openalex.org/W1595197072",
+          "https://openalex.org/W1502421200"
+        ],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2024,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 3
+          }
+        ],
+        "updated_date": "2025-11-06T04:12:42.849631",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W1559236343",
+        "doi": "https://doi.org/10.1016/0378-4266(93)90011-2",
+        "title": "The twilight of sovereignty: How the information revolution is transforming our world",
+        "display_name": "The twilight of sovereignty: How the information revolution is transforming our world",
+        "relevance_score": 1133.2172,
+        "publication_year": 1993,
+        "publication_date": "1993-06-01",
+        "ids": {
+          "openalex": "https://openalex.org/W1559236343",
+          "doi": "https://doi.org/10.1016/0378-4266(93)90011-2",
+          "mag": "1559236343"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1016/0378-4266(93)90011-2",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/0378-4266(93)90011-2",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2876017",
+            "display_name": "Journal of Banking & Finance",
+            "issn_l": "0378-4266",
+            "issn": [
+              "0378-4266",
+              "1872-6372"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Banking &amp; Finance",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5029028326",
+              "display_name": "Joseph F. Sinkey",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I165733156",
+                "display_name": "University of Georgia",
+                "ror": "https://ror.org/00te3t702",
+                "country_code": "US",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I165733156"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Joseph F. Sinkey",
+            "raw_affiliation_strings": [
+              "The University of Georgia Athens, GA, USA"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "The University of Georgia Athens, GA, USA",
+                "institution_ids": [
+                  "https://openalex.org/I165733156"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5029028326"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I165733156"
+        ],
+        "apc_list": {
+          "value": 3340,
+          "currency": "USD",
+          "value_usd": 3340
+        },
+        "apc_paid": null,
+        "fwci": 5.3218,
+        "has_fulltext": false,
+        "cited_by_count": 90,
+        "citation_normalized_percentile": {
+          "value": 0.95422397,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 89,
+          "max": 99
+        },
+        "biblio": {
+          "volume": "17",
+          "issue": "4",
+          "first_page": "764",
+          "last_page": "766"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10047",
+          "display_name": "Financial Markets and Investment Strategies",
+          "score": 0.9883000254631042,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2003",
+            "display_name": "Finance"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/20",
+            "display_name": "Economics, Econometrics and Finance"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10047",
+            "display_name": "Financial Markets and Investment Strategies",
+            "score": 0.9883000254631042,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2003",
+              "display_name": "Finance"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/20",
+              "display_name": "Economics, Econometrics and Finance"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11059",
+            "display_name": "Market Dynamics and Volatility",
+            "score": 0.9824000000953674,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2002",
+              "display_name": "Economics and Econometrics"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/20",
+              "display_name": "Economics, Econometrics and Finance"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11326",
+            "display_name": "Stock Market Forecasting Methods",
+            "score": 0.9768000245094299,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1803",
+              "display_name": "Management Science and Operations Research"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/18",
+              "display_name": "Decision Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/unobservable",
+            "display_name": "Unobservable",
+            "score": 0.7462437152862549
+          },
+          {
+            "id": "https://openalex.org/keywords/stock",
+            "display_name": "Stock (firearms)",
+            "score": 0.7228202223777771
+          },
+          {
+            "id": "https://openalex.org/keywords/stock-market",
+            "display_name": "Stock market",
+            "score": 0.5300255417823792
+          },
+          {
+            "id": "https://openalex.org/keywords/economics",
+            "display_name": "Economics",
+            "score": 0.4407522678375244
+          },
+          {
+            "id": "https://openalex.org/keywords/financial-economics",
+            "display_name": "Financial economics",
+            "score": 0.3936902582645416
+          },
+          {
+            "id": "https://openalex.org/keywords/business",
+            "display_name": "Business",
+            "score": 0.3671736717224121
+          },
+          {
+            "id": "https://openalex.org/keywords/econometrics",
+            "display_name": "Econometrics",
+            "score": 0.35499781370162964
+          },
+          {
+            "id": "https://openalex.org/keywords/monetary-economics",
+            "display_name": "Monetary economics",
+            "score": 0.324924111366272
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2780695315",
+            "wikidata": "https://www.wikidata.org/wiki/Q3799040",
+            "display_name": "Unobservable",
+            "level": 2,
+            "score": 0.7462437152862549
+          },
+          {
+            "id": "https://openalex.org/C204036174",
+            "wikidata": "https://www.wikidata.org/wiki/Q909380",
+            "display_name": "Stock (firearms)",
+            "level": 2,
+            "score": 0.7228202223777771
+          },
+          {
+            "id": "https://openalex.org/C2780299701",
+            "wikidata": "https://www.wikidata.org/wiki/Q475000",
+            "display_name": "Stock market",
+            "level": 3,
+            "score": 0.5300255417823792
+          },
+          {
+            "id": "https://openalex.org/C162324750",
+            "wikidata": "https://www.wikidata.org/wiki/Q8134",
+            "display_name": "Economics",
+            "level": 0,
+            "score": 0.4407522678375244
+          },
+          {
+            "id": "https://openalex.org/C106159729",
+            "wikidata": "https://www.wikidata.org/wiki/Q2294553",
+            "display_name": "Financial economics",
+            "level": 1,
+            "score": 0.3936902582645416
+          },
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.3671736717224121
+          },
+          {
+            "id": "https://openalex.org/C149782125",
+            "wikidata": "https://www.wikidata.org/wiki/Q160039",
+            "display_name": "Econometrics",
+            "level": 1,
+            "score": 0.35499781370162964
+          },
+          {
+            "id": "https://openalex.org/C556758197",
+            "wikidata": "https://www.wikidata.org/wiki/Q580018",
+            "display_name": "Monetary economics",
+            "level": 1,
+            "score": 0.324924111366272
+          },
+          {
+            "id": "https://openalex.org/C2780762169",
+            "wikidata": "https://www.wikidata.org/wiki/Q5905368",
+            "display_name": "Horse",
+            "level": 2,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C78519656",
+            "wikidata": "https://www.wikidata.org/wiki/Q101333",
+            "display_name": "Mechanical engineering",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C86803240",
+            "wikidata": "https://www.wikidata.org/wiki/Q420",
+            "display_name": "Biology",
+            "level": 0,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C151730666",
+            "wikidata": "https://www.wikidata.org/wiki/Q7205",
+            "display_name": "Paleontology",
+            "level": 1,
+            "score": 0.0
+          },
+          {
+            "id": "https://openalex.org/C127413603",
+            "wikidata": "https://www.wikidata.org/wiki/Q11023",
+            "display_name": "Engineering",
+            "level": 0,
+            "score": 0.0
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.1016/0378-4266(93)90011-2",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.1016/0378-4266(93)90011-2",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S2876017",
+              "display_name": "Journal of Banking & Finance",
+              "issn_l": "0378-4266",
+              "issn": [
+                "0378-4266",
+                "1872-6372"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320990",
+              "host_organization_name": "Elsevier BV",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320990"
+              ],
+              "host_organization_lineage_names": [
+                "Elsevier BV"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Journal of Banking &amp; Finance",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W2614563012",
+          "https://openalex.org/W4293337373",
+          "https://openalex.org/W1968533609",
+          "https://openalex.org/W1984270607",
+          "https://openalex.org/W2151842462",
+          "https://openalex.org/W2349333549",
+          "https://openalex.org/W2116445905",
+          "https://openalex.org/W2486803649",
+          "https://openalex.org/W2370669686",
+          "https://openalex.org/W1544412370"
+        ],
+        "abstract_inverted_index": null,
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 1
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 10
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 3
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 2
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 4
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 5
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 2
+          }
+        ],
+        "updated_date": "2026-08-21T09:56:20.448147",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W2753533763",
+        "doi": "https://doi.org/10.1063/1.3050879",
+        "title": "The Structure of Scientific Revolutions",
+        "display_name": "The Structure of Scientific Revolutions",
+        "relevance_score": 1067.3567,
+        "publication_year": 1963,
+        "publication_date": "1963-04-01",
+        "ids": {
+          "openalex": "https://openalex.org/W2753533763",
+          "doi": "https://doi.org/10.1063/1.3050879",
+          "mag": "2753533763"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1063/1.3050879",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1063/1.3050879",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S180907581",
+            "display_name": "Physics Today",
+            "issn_l": "0031-9228",
+            "issn": [
+              "0031-9228",
+              "1945-0699"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320061",
+            "host_organization_name": "AIP Publishing",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320061",
+              "https://openalex.org/P4310320257"
+            ],
+            "host_organization_lineage_names": [
+              "AIP Publishing",
+              "American Institute of Physics"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Physics Today",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5102738088",
+              "display_name": "Thomas Kühn",
+              "orcid": "https://orcid.org/0000-0003-3701-7925"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I87216513",
+                "display_name": "Michigan State University",
+                "ror": "https://ror.org/05hs6h993",
+                "country_code": "US",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I87216513"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Thomas S. Kuhn",
+            "raw_affiliation_strings": [
+              "Michigan State University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Michigan State University",
+                "institution_ids": [
+                  "https://openalex.org/I87216513"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5109867375",
+              "display_name": "Richard Schlegel",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I87216513",
+                "display_name": "Michigan State University",
+                "ror": "https://ror.org/05hs6h993",
+                "country_code": "US",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I87216513"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Richard Schlegel",
+            "raw_affiliation_strings": [
+              "Michigan State University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Michigan State University",
+                "institution_ids": [
+                  "https://openalex.org/I87216513"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I87216513"
+        ],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 10.919,
+        "has_fulltext": false,
+        "cited_by_count": 35549,
+        "citation_normalized_percentile": {
+          "value": 0.99093401,
+          "is_in_top_1_percent": true,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 99,
+          "max": 100
+        },
+        "biblio": {
+          "volume": "16",
+          "issue": "4",
+          "first_page": "69",
+          "last_page": "69"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T13937",
+          "display_name": "Genetics, Bioinformatics, and Biomedical Research",
+          "score": 0.40119999647140503,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1312",
+            "display_name": "Molecular Biology"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/13",
+            "display_name": "Biochemistry, Genetics and Molecular Biology"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/1",
+            "display_name": "Life Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T13937",
+            "display_name": "Genetics, Bioinformatics, and Biomedical Research",
+            "score": 0.40119999647140503,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1312",
+              "display_name": "Molecular Biology"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/13",
+              "display_name": "Biochemistry, Genetics and Molecular Biology"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/1",
+              "display_name": "Life Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/engineering-physics",
+            "display_name": "Engineering physics",
+            "score": 0.32576286792755127
+          },
+          {
+            "id": "https://openalex.org/keywords/engineering-ethics",
+            "display_name": "Engineering ethics",
+            "score": 0.3222424387931824
+          },
+          {
+            "id": "https://openalex.org/keywords/physics",
+            "display_name": "Physics",
+            "score": 0.2650412321090698
+          },
+          {
+            "id": "https://openalex.org/keywords/engineering",
+            "display_name": "Engineering",
+            "score": 0.22082123160362244
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C61696701",
+            "wikidata": "https://www.wikidata.org/wiki/Q770766",
+            "display_name": "Engineering physics",
+            "level": 1,
+            "score": 0.32576286792755127
+          },
+          {
+            "id": "https://openalex.org/C55587333",
+            "wikidata": "https://www.wikidata.org/wiki/Q1133029",
+            "display_name": "Engineering ethics",
+            "level": 1,
+            "score": 0.3222424387931824
+          },
+          {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.2650412321090698
+          },
+          {
+            "id": "https://openalex.org/C127413603",
+            "wikidata": "https://www.wikidata.org/wiki/Q11023",
+            "display_name": "Engineering",
+            "level": 0,
+            "score": 0.22082123160362244
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.1063/1.3050879",
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.1063/1.3050879",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S180907581",
+              "display_name": "Physics Today",
+              "issn_l": "0031-9228",
+              "issn": [
+                "0031-9228",
+                "1945-0699"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": true,
+              "host_organization": "https://openalex.org/P4310320061",
+              "host_organization_name": "AIP Publishing",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320061",
+                "https://openalex.org/P4310320257"
+              ],
+              "host_organization_lineage_names": [
+                "AIP Publishing",
+                "American Institute of Physics"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Physics Today",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": null,
+        "sustainable_development_goals": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 8,
+        "referenced_works": [
+          "https://openalex.org/W1965624169",
+          "https://openalex.org/W1971924284",
+          "https://openalex.org/W2031481217",
+          "https://openalex.org/W2073704760",
+          "https://openalex.org/W2075386234",
+          "https://openalex.org/W2297975939",
+          "https://openalex.org/W2320651649",
+          "https://openalex.org/W2902443132"
+        ],
+        "related_works": [
+          "https://openalex.org/W2008021542",
+          "https://openalex.org/W3028909265",
+          "https://openalex.org/W2058650892",
+          "https://openalex.org/W4236871695",
+          "https://openalex.org/W4246339685",
+          "https://openalex.org/W1985701312",
+          "https://openalex.org/W2612686989",
+          "https://openalex.org/W2754455709",
+          "https://openalex.org/W3174002941",
+          "https://openalex.org/W3155246490"
+        ],
+        "abstract_inverted_index": {
+          "A": [
+            0
+          ],
+          "good": [
+            1
+          ],
+          "book": [
+            2,
+            18
+          ],
+          "may": [
+            3
+          ],
+          "have": [
+            4
+          ],
+          "the": [
+            5,
+            9,
+            13,
+            30,
+            74,
+            112,
+            153,
+            164,
+            188,
+            215,
+            222,
+            226,
+            253,
+            261
+          ],
+          "power": [
+            6
+          ],
+          "to": [
+            7,
+            29,
+            89,
+            163,
+            214,
+            221,
+            259
+          ],
+          "change": [
+            8
+          ],
+          "way": [
+            10
+          ],
+          "we": [
+            11,
+            33,
+            39
+          ],
+          "see": [
+            12
+          ],
+          "world,": [
+            14
+          ],
+          "but": [
+            15,
+            121
+          ],
+          "a": [
+            16,
+            70,
+            237
+          ],
+          "great": [
+            17
+          ],
+          "actually": [
+            19
+          ],
+          "becomes": [
+            20
+          ],
+          "part": [
+            21
+          ],
+          "of": [
+            22,
+            53,
+            59,
+            78,
+            94,
+            102,
+            116,
+            139,
+            183,
+            190,
+            217,
+            225,
+            256,
+            263
+          ],
+          "our": [
+            23,
+            27,
+            177,
+            264
+          ],
+          "daily": [
+            24
+          ],
+          "consciousness,": [
+            25
+          ],
+          "pervading": [
+            26
+          ],
+          "thinking": [
+            28,
+            132
+          ],
+          "point": [
+            31
+          ],
+          "that": [
+            32,
+            57,
+            106,
+            122,
+            129,
+            166,
+            200
+          ],
+          "take": [
+            34
+          ],
+          "it": [
+            35,
+            62,
+            68,
+            84
+          ],
+          "for": [
+            36
+          ],
+          "granted,": [
+            37
+          ],
+          "and": [
+            38,
+            43,
+            76,
+            118,
+            133,
+            208,
+            210
+          ],
+          "forget": [
+            40
+          ],
+          "how": [
+            41,
+            158
+          ],
+          "provocative": [
+            42
+          ],
+          "challenging": [
+            44
+          ],
+          "its": [
+            45
+          ],
+          "ideas": [
+            46,
+            108,
+            156,
+            213
+          ],
+          "once": [
+            47
+          ],
+          "were-and": [
+            48
+          ],
+          "still": [
+            49,
+            85,
+            174
+          ],
+          "are.": [
+            50
+          ],
+          "The": [
+            51,
+            92
+          ],
+          "Structure": [
+            52,
+            93
+          ],
+          "Scientific": [
+            54,
+            95
+          ],
+          "Revolutions": [
+            55
+          ],
+          "is": [
+            56
+          ],
+          "kind": [
+            58
+          ],
+          "book.": [
+            60
+          ],
+          "When": [
+            61
+          ],
+          "was": [
+            63,
+            69,
+            148
+          ],
+          "first": [
+            64
+          ],
+          "published": [
+            65
+          ],
+          "in": [
+            66,
+            73,
+            124,
+            170,
+            176,
+            187
+          ],
+          "1962,": [
+            67
+          ],
+          "landmark": [
+            71
+          ],
+          "event": [
+            72
+          ],
+          "history": [
+            75,
+            189,
+            262
+          ],
+          "philosophy": [
+            77
+          ],
+          "science.": [
+            79,
+            267
+          ],
+          "And": [
+            80
+          ],
+          "fifty": [
+            81
+          ],
+          "years": [
+            82
+          ],
+          "later,": [
+            83
+          ],
+          "has": [
+            86
+          ],
+          "many": [
+            87
+          ],
+          "lessons": [
+            88
+          ],
+          "teach.": [
+            90
+          ],
+          "With": [
+            91
+          ],
+          "Revolutions,": [
+            96
+          ],
+          "Kuhn": [
+            97,
+            147
+          ],
+          "challenged": [
+            98
+          ],
+          "long-standing": [
+            99
+          ],
+          "linear": [
+            100
+          ],
+          "notions": [
+            101
+          ],
+          "scientific": [
+            103,
+            159
+          ],
+          "progress,": [
+            104
+          ],
+          "arguing": [
+            105
+          ],
+          "transformative": [
+            107
+          ],
+          "don't": [
+            109
+          ],
+          "arise": [
+            110
+          ],
+          "from": [
+            111
+          ],
+          "day-to-day,": [
+            113
+          ],
+          "gradual": [
+            114
+          ],
+          "process": [
+            115
+          ],
+          "experimentation": [
+            117
+          ],
+          "data": [
+            119
+          ],
+          "accumulation,": [
+            120
+          ],
+          "revolutions": [
+            123,
+            160
+          ],
+          "science,": [
+            141
+          ],
+          "those": [
+            126
+          ],
+          "breakthrough": [
+            127
+          ],
+          "moments": [
+            128
+          ],
+          "disrupt": [
+            130
+          ],
+          "accepted": [
+            131
+          ],
+          "offer": [
+            134
+          ],
+          "unanticipated": [
+            135
+          ],
+          "ideas,": [
+            136
+          ],
+          "occur": [
+            137
+          ],
+          "outside": [
+            138
+          ],
+          "normal": [
+            140
+          ],
+          "as": [
+            142,
+            234,
+            236
+          ],
+          "he": [
+            143
+          ],
+          "called": [
+            144
+          ],
+          "it.": [
+            145
+          ],
+          "Though": [
+            146
+          ],
+          "writing": [
+            149
+          ],
+          "when": [
+            150
+          ],
+          "physics": [
+            151
+          ],
+          "ruled": [
+            152
+          ],
+          "sciences,": [
+            154
+          ],
+          "his": [
+            155
+          ],
+          "on": [
+            157,
+            266
+          ],
+          "bring": [
+            161
+          ],
+          "order": [
+            162
+          ],
+          "anomalies": [
+            165
+          ],
+          "amass": [
+            167
+          ],
+          "over": [
+            168
+          ],
+          "time": [
+            169
+          ],
+          "research": [
+            171
+          ],
+          "experiments": [
+            172
+          ],
+          "are": [
+            173
+          ],
+          "instructive": [
+            175
+          ],
+          "biotech": [
+            178
+          ],
+          "age.": [
+            179
+          ],
+          "This": [
+            180
+          ],
+          "new": [
+            181
+          ],
+          "edition": [
+            182,
+            247
+          ],
+          "Kuhn's": [
+            184,
+            212
+          ],
+          "essential": [
+            185
+          ],
+          "work": [
+            186
+          ],
+          "science": [
+            191,
+            216
+          ],
+          "includes": [
+            192
+          ],
+          "an": [
+            193,
+            243
+          ],
+          "insightful": [
+            194
+          ],
+          "introductory": [
+            195
+          ],
+          "essay": [
+            196,
+            229
+          ],
+          "by": [
+            197,
+            204,
+            252
+          ],
+          "Ian": [
+            198
+          ],
+          "Hacking": [
+            199
+          ],
+          "clarifies": [
+            201
+          ],
+          "terms": [
+            202
+          ],
+          "popularized": [
+            203
+          ],
+          "Kuhn,": [
+            205
+          ],
+          "including": [
+            206
+          ],
+          "paradigm": [
+            207
+          ],
+          "incommensurability,": [
+            209
+          ],
+          "applies": [
+            211
+          ],
+          "today.": [
+            218
+          ],
+          "Usefully": [
+            219
+          ],
+          "keyed": [
+            220
+          ],
+          "separate": [
+            223
+          ],
+          "sections": [
+            224
+          ],
+          "book,": [
+            227
+          ],
+          "Hacking's": [
+            228
+          ],
+          "provides": [
+            230
+          ],
+          "important": [
+            231
+          ],
+          "background": [
+            232
+          ],
+          "information": [
+            233
+          ],
+          "well": [
+            235
+          ],
+          "contemporary": [
+            238
+          ],
+          "context.": [
+            239
+          ],
+          "Newly": [
+            240
+          ],
+          "designed,": [
+            241
+          ],
+          "with": [
+            242
+          ],
+          "expanded": [
+            244
+          ],
+          "index,": [
+            245
+          ],
+          "this": [
+            246
+          ],
+          "will": [
+            248
+          ],
+          "be": [
+            249
+          ],
+          "eagerly": [
+            250
+          ],
+          "welcomed": [
+            251
+          ],
+          "next": [
+            254
+          ],
+          "generation": [
+            255
+          ],
+          "readers": [
+            257
+          ],
+          "seeking": [
+            258
+          ],
+          "understand": [
+            260
+          ],
+          "perspectives": [
+            265
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 32
+          },
+          {
+            "year": 2025,
+            "cited_by_count": 11
+          },
+          {
+            "year": 2024,
+            "cited_by_count": 22
+          },
+          {
+            "year": 2023,
+            "cited_by_count": 28
+          },
+          {
+            "year": 2022,
+            "cited_by_count": 44
+          },
+          {
+            "year": 2021,
+            "cited_by_count": 708
+          },
+          {
+            "year": 2020,
+            "cited_by_count": 896
+          },
+          {
+            "year": 2019,
+            "cited_by_count": 923
+          },
+          {
+            "year": 2018,
+            "cited_by_count": 938
+          },
+          {
+            "year": 2017,
+            "cited_by_count": 1091
+          },
+          {
+            "year": 2016,
+            "cited_by_count": 1326
+          },
+          {
+            "year": 2015,
+            "cited_by_count": 1490
+          },
+          {
+            "year": 2014,
+            "cited_by_count": 1641
+          },
+          {
+            "year": 2013,
+            "cited_by_count": 1773
+          },
+          {
+            "year": 2012,
+            "cited_by_count": 1664
+          }
+        ],
+        "updated_date": "2026-09-05T08:02:43.246662",
+        "created_date": "2025-10-10T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}

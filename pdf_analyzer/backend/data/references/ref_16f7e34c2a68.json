@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_16f7e34c2a68",
-  "project_id": "project_20260831_081840_857bd2f2",
-  "created_at": "2026-08-31T08:20:14.707901+00:00",
+  "project_id": "project_20260831_090611_857bd2f2",
+  "created_at": "2026-08-31T09:07:30.359949+00:00",
   "input": {
     "original_text": "Child and Adolescent, Psychiatry and Mental Health. (2024) 18-107.",
     "parsed": {
@@ -75,13 +75,13 @@
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "confidence": 0.0,
+        "verification_status": "missing"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.21,
+        "confidence": 0.0,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -165,16 +165,16 @@
   ],
   "sources": {
     "openalex": {
-      "available": true,
+      "available": false,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.21,
+      "confidence": 0.0,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": "data/raw/openalex/a0647261cc91ca02.json",
+      "raw_file": null,
       "normalized_file": null,
       "data": {}
     },
@@ -236,48 +236,12 @@
     }
   },
   "doi_verification": {
-    "status": "conflict",
+    "status": "missing",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s2215-0366(24)00163-9",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/wps.21160",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1161/cir.0000000000001078",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1038/s41581-024-00820-6",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1101/cshperspect.a029694",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ],
+    "confidence": 0.0,
+    "reason": "No DOI or arXiv identifier present in reference or provider results.",
+    "conflicts": [],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -285,43 +249,7 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": [
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1016/s2215-0366(24)00163-9",
-        "reason": "Metadata mismatch (title_sim=0.03, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1002/wps.21160",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1161/cir.0000000000001078",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1038/s41581-024-00820-6",
-        "reason": "Metadata mismatch (title_sim=0.02, author_sim=0.00)",
-        "status": "conflict"
-      },
-      {
-        "field": "doi",
-        "provider": "openalex",
-        "rejected_value": "10.1101/cshperspect.a029694",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
-        "status": "conflict"
-      }
-    ]
+    "conflicts": []
   },
   "telemetry": {
     "providers_queried": [
@@ -330,14 +258,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.46,
-      "crossref": 61815.39,
-      "openalex": 81774.09
+      "google_scholar": 8.96,
+      "crossref": 51522.64,
+      "openalex": 74526.99
     },
     "candidate_counts": {
       "google_scholar": 1,
       "crossref": 0,
-      "openalex": 5
+      "openalex": 0
     },
     "errors": {}
   }
