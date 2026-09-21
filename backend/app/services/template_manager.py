@@ -208,10 +208,10 @@ class TemplateManager:
             # 2. Policy: no executable/script payloads inside a template.
             with zipfile.ZipFile(zip_file_path, "r") as zip_ref:
                 for member in zip_ref.infolist():
-                    if Path(member.filename).suffix.lower() in self.FORBIDDEN_EXTENSIONS:
+                    if self._is_forbidden_file(member.filename):
                         raise TemplateManagerError(
-                            f"Security alert: File {member.filename} has a "
-                            "forbidden executable extension."
+                            f"Security alert: File {member.filename} is a forbidden "
+                            "executable or configuration payload."
                         )
 
             # 3. All checks passed -- extract member by member (never extractall).
@@ -392,12 +392,37 @@ class TemplateManager:
     # ------------------------------------------------------------------ #
 
     #: extensions never accepted inside a template
-    FORBIDDEN_EXTENSIONS = {".sh", ".bat", ".exe", ".py", ".pl", ".php", ".js"}
+    FORBIDDEN_EXTENSIONS = {
+        ".sh", ".bat", ".cmd", ".ps1", ".vbs", ".vbe", ".wsf", ".wsh",
+        ".pif", ".com", ".scr", ".msi", ".dll", ".so", ".dylib", ".jar",
+        ".rb", ".exe", ".py", ".pl", ".php", ".js", ".reg", ".hta",
+    }
+    #: specific dangerous filenames never accepted inside a template
+    FORBIDDEN_NAMES = {
+        "latexmkrc", ".latexmkrc", ".bashrc", ".bash_profile", ".profile",
+        ".zshrc", ".env", ".git", ".gitconfig", ".htaccess", "web.config",
+    }
     #: extensions treated as editable text
     TEXT_EXTENSIONS = {
         ".tex", ".cls", ".sty", ".bst", ".bib", ".txt", ".md", ".json",
         ".cfg", ".def", ".clo", ".ins", ".dtx", ".csv", ".log",
     }
+
+    @classmethod
+    def _is_forbidden_file(cls, filename: str) -> bool:
+        """Check if a file has a forbidden executable/script extension or name."""
+        p = Path(filename)
+        name_lower = p.name.lower()
+        suffix_lower = p.suffix.lower()
+        if name_lower in cls.FORBIDDEN_NAMES:
+            return True
+        if suffix_lower in cls.FORBIDDEN_EXTENSIONS:
+            return True
+        # Check all suffixes for compound extensions like .tar.gz or malicious doubles
+        for s in p.suffixes:
+            if s.lower() in cls.FORBIDDEN_EXTENSIONS:
+                return True
+        return False
 
     def _resolve_member(self, template_id: str, rel_path: str,
                         must_exist: bool = True) -> Path:
@@ -469,10 +494,9 @@ class TemplateManager:
         bytes (for replacing images/logos).  Parent directories are created.
         """
         self._require_uploaded(template_id)
-        suffix = Path(rel_path).suffix.lower()
-        if suffix in self.FORBIDDEN_EXTENSIONS:
+        if self._is_forbidden_file(rel_path):
             raise TemplateManagerError(
-                f"Files with the '{suffix}' extension are not allowed in templates."
+                f"File '{rel_path}' is not allowed in templates due to security restrictions."
             )
         path = self._resolve_member(template_id, rel_path, must_exist=False)
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -591,7 +615,7 @@ class TemplateManager:
         forbidden = [
             p.relative_to(template_dir).as_posix()
             for p in template_dir.rglob("*")
-            if p.is_file() and p.suffix.lower() in self.FORBIDDEN_EXTENSIONS
+            if p.is_file() and self._is_forbidden_file(p.name)
         ]
         check("no_forbidden_files", not forbidden,
               "no forbidden file types" if not forbidden

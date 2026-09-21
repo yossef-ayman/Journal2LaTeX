@@ -18,12 +18,12 @@ import fitz  # PyMuPDF
 
 app = FastAPI(title="Academic Reference Explorer & PDF Analyzer API")
 
-# Enable CORS for standalone frontend development across any port and file origins
+# Enable secure CORS for standalone frontend development on localhost/127.0.0.1
 app.add_middleware(
     CORSMiddleware,
-    allow_origin_regex=r".*",
+    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$",
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
     expose_headers=["*"],
 )

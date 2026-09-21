@@ -19,6 +19,8 @@ CHUNK_SIZE = 1024 * 1024  # 1 MB
 #: A .docx is an OOXML package, i.e. a ZIP.  Both signatures are legal: "PK\x03\x04"
 #: for a normal archive and "PK\x05\x06" for an empty one.
 _ZIP_MAGIC = (b"PK\x03\x04", b"PK\x05\x06", b"PK\x07\x08")
+#: A binary .doc file is an OLE CFBF container starting with this magic byte signature.
+_DOC_MAGIC = b"\xD0\xCF\x11\xE0\xA1\xB1\x1A\xE1"
 
 
 def _sanitize_filename(filename: str) -> str:
@@ -126,8 +128,13 @@ async def upload_document(
             detail="The uploaded file is empty.",
         )
 
-    # If legacy .doc format, convert to .docx in a temp workspace
+    # If legacy .doc format, confirm binary OLE CFBF magic bytes before any conversion
     if ext == ".doc":
+        if len(content) < 8 or not content.startswith(_DOC_MAGIC):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="The uploaded file is not a valid binary .doc document.",
+            )
         with tempfile.TemporaryDirectory() as tmpdir:
             tmp_path = Path(tmpdir) / "upload.doc"
             tmp_path.write_bytes(content)

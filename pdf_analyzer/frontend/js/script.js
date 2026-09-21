@@ -570,6 +570,7 @@ function renderReferencesList(refsList) {
         const arxivVal = (canonical.identifiers && canonical.identifiers.arxiv_id && canonical.identifiers.arxiv_id.value) || ref.arxiv_id || inputParsed.arxiv_id || null;
         const isbnVal = (canonical.identifiers && canonical.identifiers.isbn && canonical.identifiers.isbn.value) || inputParsed.isbn || null;
         const openalexId = (canonical.identifiers && canonical.identifiers.openalex_id && canonical.identifiers.openalex_id.value) || null;
+        const clusterId = (canonical.identifiers && canonical.identifiers.google_scholar_cluster_id && canonical.identifiers.google_scholar_cluster_id.value) || (scholarData && scholarData.cluster_id) || (ref && ref.cluster_id) || null;
         const scholarQueryParam = doiVal ? encodeURIComponent(`doi:${doiVal}`) : encodedQuery;
         const scholarResultUrl = (canonical.identifiers && canonical.identifiers.google_scholar_url && canonical.identifiers.google_scholar_url.value) || ref.scholar_url || (scholarData && scholarData.link) || `https://scholar.google.com/scholar?q=${scholarQueryParam}`;
 

@@ -56,6 +56,11 @@ _DEFAULTS = {
     "CITATION_REWRITE_ENABLED": False,
     # Rasterization DPI for visual comparison
     "COMPARISON_DPI": 150,
+    # Security and Concurrency Hardening
+    "ALLOWED_ORIGINS": "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000,http://localhost:8000,http://127.0.0.1:8000",
+    "MAX_CONCURRENT_COMPILATIONS": 4,
+    "RATE_LIMIT_ENABLED": True,
+    "RATE_LIMIT_PER_MINUTE": 60,
 }
 
 
@@ -76,6 +81,16 @@ class _SettingsMixin:
     def output_dir(self) -> Path:
         """Absolute path to the output directory."""
         return Path(self.OUTPUT_FOLDER).resolve()
+
+    @property
+    def allowed_origins_list(self) -> list[str]:
+        """List of CORS allowed origins parsed from ALLOWED_ORIGINS."""
+        val = getattr(self, "ALLOWED_ORIGINS", "")
+        if isinstance(val, list):
+            return val
+        if not val or str(val).strip() == "*":
+            return ["*"]
+        return [orig.strip() for orig in str(val).split(",") if orig.strip()]
 
 
 if _HAS_PYDANTIC_SETTINGS:
@@ -101,6 +116,10 @@ if _HAS_PYDANTIC_SETTINGS:
         VALIDATION_ENABLED: bool = _DEFAULTS["VALIDATION_ENABLED"]
         CITATION_REWRITE_ENABLED: bool = _DEFAULTS["CITATION_REWRITE_ENABLED"]
         COMPARISON_DPI: int = _DEFAULTS["COMPARISON_DPI"]
+        ALLOWED_ORIGINS: str = _DEFAULTS["ALLOWED_ORIGINS"]
+        MAX_CONCURRENT_COMPILATIONS: int = _DEFAULTS["MAX_CONCURRENT_COMPILATIONS"]
+        RATE_LIMIT_ENABLED: bool = _DEFAULTS["RATE_LIMIT_ENABLED"]
+        RATE_LIMIT_PER_MINUTE: int = _DEFAULTS["RATE_LIMIT_PER_MINUTE"]
 
         model_config = SettingsConfigDict(
             env_file=".env",

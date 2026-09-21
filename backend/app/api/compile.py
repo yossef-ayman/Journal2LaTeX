@@ -1,8 +1,11 @@
 from typing import Optional
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel
+from app.core.config import settings
+from app.core.rate_limiter import get_compilation_semaphore
 from app.models.job import JobMetadata
 from app.services.pipeline_service import PipelineService
+from app.utils.filesystem import is_valid_job_id
 
 router = APIRouter(prefix="/compile", tags=["Compile"])
 
@@ -16,6 +19,12 @@ class CompileRequest(BaseModel):
 @router.post("", response_model=JobMetadata)
 async def compile_latex(request: CompileRequest) -> JobMetadata:
     """Trigger the template loading, LaTeX rendering, and PDF compilation stages of the pipeline."""
+    if not is_valid_job_id(request.job_id):
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Job with ID {request.job_id} not found",
+        )
+
     pipeline_service = PipelineService()
     metadata = pipeline_service.job_manager.get_job(request.job_id)
     if not metadata:
@@ -61,8 +70,9 @@ async def compile_latex(request: CompileRequest) -> JobMetadata:
     if not tex_path:
         return pipeline_service.job_manager.get_job(request.job_id)
 
-    # 3. Compile LaTeX project to PDF
-    pdf_path = pipeline_service.compile(request.job_id)
+    # 3. Compile LaTeX project to PDF (guarded by concurrency semaphore)
+    async with get_compilation_semaphore(settings.MAX_CONCURRENT_COMPILATIONS):
+        pdf_path = pipeline_service.compile(request.job_id)
     if not pdf_path:
         return pipeline_service.job_manager.get_job(request.job_id)
 

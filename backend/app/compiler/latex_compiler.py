@@ -70,6 +70,7 @@ class LatexCompiler:
             settings.PDFLATEX_PATH,
             "-interaction=nonstopmode",
             "-file-line-error",
+            "-no-shell-escape",
             str(tex_path)
         ]
         logger = get_job_logger(job_id, "compiler")
@@ -388,6 +389,16 @@ class LatexCompiler:
         except OSError:
             logger.warning("Could not remove stale PDF before compilation: %s", pdf_path)
 
+        # Defence-in-depth: remove any untrusted local latexmkrc files in working_dir
+        for rc_name in ("latexmkrc", ".latexmkrc"):
+            rc_file = working_dir / rc_name
+            if rc_file.exists():
+                try:
+                    rc_file.unlink()
+                    logger.warning("Removed unauthorized %s file from workspace.", rc_name)
+                except OSError:
+                    pass
+
         use_latexmk = self._latexmk_available(logger)
 
         try:
@@ -395,12 +406,13 @@ class LatexCompiler:
                 logger.info("Using latexmk compiler.")
                 cmd = [
                     settings.LATEXMK_PATH,
+                    "-norc",  # Disable reading any local or user latexmkrc Perl scripts
                     "-pdf",
-                    "-g",  # force processing: we delete the old PDF ourselves,
-                           # and latexmk's up-to-date check otherwise refuses to
-                           # rebuild after a previous failed invocation
+                    "-g",  # force processing: we delete the old PDF ourselves
                     "-interaction=nonstopmode",
                     "-file-line-error",
+                    f"-pdflatex={settings.PDFLATEX_PATH} %O -no-shell-escape %S",
+                    "-extra-options=-no-shell-escape",
                     str(tex_path)
                 ]
                 result = subprocess.run(

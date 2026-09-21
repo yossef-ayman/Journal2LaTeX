@@ -12,6 +12,9 @@ from app.api.health import router as health_router
 from app.api.job import router as job_router
 from app.api.job import jobs_router
 from app.api.templates import router as templates_router
+from app.core.config import settings
+from app.core.rate_limiter import RateLimiterMiddleware
+from app.core.security_headers import SecurityHeadersMiddleware
 from app.utils.logger import setup_app_logging
 
 logger = logging.getLogger("app.main")
@@ -35,12 +38,23 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# Security Headers Middleware
+app.add_middleware(SecurityHeadersMiddleware)
+
+# Rate Limiter Middleware
+app.add_middleware(
+    RateLimiterMiddleware,
+    enabled=settings.RATE_LIMIT_ENABLED,
+    requests_per_minute=settings.RATE_LIMIT_PER_MINUTE,
+)
+
 # CORS configuration
+cors_origins = settings.allowed_origins_list
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,  # False required when allow_origins=["*"]
-    allow_methods=["*"],
+    allow_origins=cors_origins,
+    allow_credentials=(cors_origins != ["*"]),
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 

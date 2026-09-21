@@ -37,6 +37,11 @@ def convert_doc_to_docx(doc_path: Path) -> Path:
             word = win32com.client.DispatchEx("Word.Application")
             word.Visible = False
             word.DisplayAlerts = False
+            # 3 = msoAutomationSecurityForceDisable (disables all VBA macros automatically)
+            try:
+                word.AutomationSecurity = 3
+            except Exception:
+                pass
             doc = word.Documents.Open(
                 str(doc_path.resolve()), ReadOnly=True, Visible=False
             )
@@ -63,16 +68,25 @@ def convert_doc_to_docx(doc_path: Path) -> Path:
             or r"C:\Program Files\LibreOffice\program\soffice.exe"
         )
         if soffice and Path(soffice).exists():
-            cmd = [
-                str(soffice),
-                "--headless",
-                "--convert-to",
-                "docx",
-                str(doc_path.resolve()),
-                "--outdir",
-                str(doc_path.parent.resolve()),
-            ]
-            res = subprocess.run(cmd, capture_output=True, timeout=60, check=False)
+            import tempfile
+            user_profile = tempfile.mkdtemp(prefix="soffice_profile_")
+            try:
+                cmd = [
+                    str(soffice),
+                    "--headless",
+                    "--norestore",
+                    "--nolockcheck",
+                    "--nologo",
+                    f"-env:UserInstallation={Path(user_profile).as_uri()}",
+                    "--convert-to",
+                    "docx",
+                    str(doc_path.resolve()),
+                    "--outdir",
+                    str(doc_path.parent.resolve()),
+                ]
+                res = subprocess.run(cmd, capture_output=True, timeout=60, check=False)
+            finally:
+                shutil.rmtree(user_profile, ignore_errors=True)
             if res.returncode == 0 and out_docx.is_file() and out_docx.stat().st_size > 0:
                 logger.info(
                     "Successfully converted %s to .docx via LibreOffice",

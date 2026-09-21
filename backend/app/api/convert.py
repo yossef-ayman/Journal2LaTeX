@@ -5,6 +5,8 @@ from app.models.job import JobMetadata
 from app.services.pipeline_service import PipelineService
 from app.services.template_manager import TemplateManager
 
+from app.utils.filesystem import is_valid_job_id
+
 router = APIRouter(prefix="/convert", tags=["Convert"])
 
 
@@ -17,6 +19,12 @@ class ConvertRequest(BaseModel):
 @router.post("", response_model=JobMetadata)
 async def start_conversion(request: ConvertRequest) -> JobMetadata:
     """Trigger the validation, analysis, and asset extraction stages of the pipeline."""
+    if not is_valid_job_id(request.job_id):
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Job with ID {request.job_id} not found",
+        )
+
     pipeline_service = PipelineService()
     metadata = pipeline_service.job_manager.get_job(request.job_id)
     if not metadata:
