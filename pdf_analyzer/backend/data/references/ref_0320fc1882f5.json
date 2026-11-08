@@ -1,11 +1,11 @@
 {
   "reference_id": "ref_0320fc1882f5",
-  "project_id": "project_20260906_082722_bb902af0",
-  "created_at": "2026-09-06T08:29:01.007879+00:00",
+  "project_id": "project_20260923_134508_bb902af0",
+  "created_at": "2026-09-23T13:46:05.663008+00:00",
   "input": {
     "original_text": "Sanjay Bhatter, Sangeeta Kumawat, Sunil Dutt Purohit & D. L. Suthar, Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data. Scientific reports. 15 (2025) 12672.",
     "parsed": {
-      "title": "12672",
+      "title": "Scientific reports",
       "authors": [
         {
           "name": "Sanjay Bhatter",
@@ -23,8 +23,8 @@
           "family": "Purohit"
         },
         {
-          "name": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data. Scientific reports. D. L. Suthar",
-          "given": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data. Scientific reports.",
+          "name": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data D. L. Suthar",
+          "given": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data",
           "family": "D. L. Suthar"
         }
       ],
@@ -42,15 +42,15 @@
   },
   "canonical": {
     "title": {
-      "value": "12672",
-      "source": "google_scholar",
-      "confidence": 1.0,
+      "value": "Scientific reports",
+      "source": "crossref",
+      "confidence": 0.98,
       "verification_status": "verified"
     },
     "year": {
       "value": 2025,
-      "source": "parsed",
-      "confidence": 0.9,
+      "source": "crossref",
+      "confidence": 0.98,
       "verification_status": "verified"
     },
     "venue": {
@@ -75,18 +75,18 @@
     "issue": "2025",
     "pages": "12672",
     "abstract": null,
-    "url": "https://scholar.google.com/scholar?q=12672%20Bhatter",
+    "url": "https://doi.org/10.18356/9789211068733c003",
     "identifiers": {
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.0,
-        "verification_status": "missing"
+        "confidence": 0.2,
+        "verification_status": "conflict"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.0,
+        "confidence": 0.3,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -108,17 +108,17 @@
         "verification_status": "unverified"
       },
       "google_scholar_url": {
-        "value": "https://scholar.google.com/scholar?q=12672%20Bhatter",
+        "value": "https://scholar.google.com/scholar?q=Scientific%20reports%20Bhatter",
         "source": "google_scholar",
         "confidence": 1.0,
         "verification_status": "verified"
       }
     },
     "citation_counts": {
-      "canonical_value": null,
+      "canonical_value": 5,
       "google_scholar": null,
       "openalex": null,
-      "crossref": null
+      "crossref": 5
     }
   },
   "canonical_authors": [
@@ -168,9 +168,9 @@
       "confidence": 0.75
     },
     {
-      "name": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data. Scientific reports. D. L. Suthar",
-      "display_name": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data. Scientific reports. D. L. Suthar",
-      "given": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data. Scientific reports.",
+      "name": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data D. L. Suthar",
+      "display_name": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data D. L. Suthar",
+      "given": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data",
       "family": "D. L. Suthar",
       "author_id": "",
       "identifiers": {
@@ -185,45 +185,56 @@
   ],
   "sources": {
     "openalex": {
-      "available": false,
+      "available": true,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.0,
+      "confidence": 0.3,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": null,
+      "raw_file": "data/raw/openalex/b2299cfc0835c9c9.json",
       "normalized_file": null,
       "data": {}
     },
     "crossref": {
-      "available": false,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.0,
-      "citation_count": null,
-      "doi": null,
-      "url": null,
-      "raw_file": null,
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 0.98,
+      "citation_count": 5,
+      "doi": "10.18356/9789211068733c003",
+      "url": "https://doi.org/10.18356/9789211068733c003",
+      "raw_file": "data/raw/crossref/81e537eac724ea3e.json",
       "normalized_file": null,
-      "data": {}
+      "data": {
+        "title": "Scientific reports",
+        "authors": [],
+        "year": 2025,
+        "journal": "United Nations Scientific Committee on the Effects of Atomic Radiation (UNSCEAR) Reports",
+        "doi": "10.18356/9789211068733c003",
+        "url": "https://doi.org/10.18356/9789211068733c003",
+        "openalex_id": "",
+        "citation_count": 5,
+        "source": "crossref",
+        "raw_file": "data/raw/crossref/81e537eac724ea3e.json"
+      }
     },
     "google_scholar": {
       "available": false,
       "matched": true,
       "status": "matched",
       "confidence": 1.0,
-      "url": "https://scholar.google.com/scholar?q=12672%20Bhatter",
+      "url": "https://scholar.google.com/scholar?q=Scientific%20reports%20Bhatter",
       "cluster_id": null,
       "cited_by_url": null,
       "citation_count": null,
       "versions_count": null,
       "raw_file": null,
-      "normalized_file": "data/normalized/google_scholar/a383a6f85d17b519.json",
+      "normalized_file": "data/normalized/google_scholar/f9d6e9ea6143b75b.json",
       "data": {
-        "title": "12672",
+        "title": "Scientific reports",
         "authors": [
           {
             "name": "Sanjay Bhatter",
@@ -241,40 +252,420 @@
             "family": "Purohit"
           },
           {
-            "name": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data. Scientific reports. D. L. Suthar",
-            "given": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data. Scientific reports.",
+            "name": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data D. L. Suthar",
+            "given": "Mathematical modeling of tuberculosis using Caputo fractional derivative: a comparative analysis with real data",
             "family": "D. L. Suthar"
           }
         ],
         "year": 2025,
         "journal": null,
         "doi": "",
-        "url": "https://scholar.google.com/scholar?q=12672%20Bhatter",
+        "url": "https://scholar.google.com/scholar?q=Scientific%20reports%20Bhatter",
         "citation_count": null,
         "source": "google_scholar",
-        "scholar_url": "https://scholar.google.com/scholar?q=12672%20Bhatter",
+        "scholar_url": "https://scholar.google.com/scholar?q=Scientific%20reports%20Bhatter",
         "available": false,
         "reason": "SERPAPI_KEY_NOT_CONFIGURED",
         "raw_file": null,
-        "normalized_file": "data/normalized/google_scholar/a383a6f85d17b519.json"
+        "normalized_file": "data/normalized/google_scholar/f9d6e9ea6143b75b.json"
       }
     }
   },
   "doi_verification": {
-    "status": "missing",
+    "status": "conflict",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.0,
-    "reason": "No DOI or arXiv identifier present in reference or provider results.",
-    "conflicts": [],
+    "confidence": 0.2,
+    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1256/004316502320517344",
+        "reason": "Metadata mismatch (title_sim=0.20, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0021-9258(19)52451-6",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1136/bmj.b2535",
+        "reason": "Metadata mismatch (title_sim=0.19, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41592-019-0686-2",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcm.2016.02.012",
+        "reason": "Metadata mismatch (title_sim=0.21, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3945/an.116.012120",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/1748-5908-4-40",
+        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s40820-021-00707-2",
+        "reason": "Metadata mismatch (title_sim=0.19, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1161/circulationaha.114.007667",
+        "reason": "Metadata mismatch (title_sim=0.40, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/nn.4035",
+        "reason": "Metadata mismatch (title_sim=0.18, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/14651858.cd010216.pub5",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/14651858.cd010216.pub7",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jaim.2017.05.004",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.2406.04449",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41598-017-10882-1",
+        "reason": "Metadata mismatch (title_sim=0.15, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.2478/cttr-2021-0007",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1021/acsami.2c19883",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/85.5.648e",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/92.2.260",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/92.3.400",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/89.1.138",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/91.4.508",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/89.4.582",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/89.6.830",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.18356/9789210010030c003",
+        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.18356/9789211068733c003",
+        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.wem.2014.06.008",
+        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
-    "overall_confidence": 1.0,
-    "metadata_completeness": 0.5,
+    "overall_confidence": 0.98,
+    "metadata_completeness": 0.67,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1256/004316502320517344",
+        "reason": "Metadata mismatch (title_sim=0.20, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0021-9258(19)52451-6",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1136/bmj.b2535",
+        "reason": "Metadata mismatch (title_sim=0.19, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41592-019-0686-2",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcm.2016.02.012",
+        "reason": "Metadata mismatch (title_sim=0.21, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3945/an.116.012120",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/1748-5908-4-40",
+        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s40820-021-00707-2",
+        "reason": "Metadata mismatch (title_sim=0.19, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1161/circulationaha.114.007667",
+        "reason": "Metadata mismatch (title_sim=0.40, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/nn.4035",
+        "reason": "Metadata mismatch (title_sim=0.18, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/14651858.cd010216.pub5",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/14651858.cd010216.pub7",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jaim.2017.05.004",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.2406.04449",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41598-017-10882-1",
+        "reason": "Metadata mismatch (title_sim=0.15, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.2478/cttr-2021-0007",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1021/acsami.2c19883",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/85.5.648e",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/92.2.260",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/92.3.400",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/89.1.138",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/91.4.508",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/89.4.582",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1093/ajcp/89.6.830",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.18356/9789210010030c003",
+        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.18356/9789211068733c003",
+        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/j.wem.2014.06.008",
+        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -283,14 +674,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 8.54,
-      "crossref": 68551.54,
-      "openalex": 95061.52
+      "google_scholar": 9.45,
+      "crossref": 46488.78,
+      "openalex": 55046.56
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
-      "openalex": 0
+      "crossref": 10,
+      "openalex": 20
     },
     "errors": {}
   }

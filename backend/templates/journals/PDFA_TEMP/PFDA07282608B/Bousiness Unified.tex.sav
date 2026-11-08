@@ -1,0 +1,460 @@
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage[top=1cm,bottom=2cm,left=1.5cm,right=1.5cm,a4paper]{geometry}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{amsthm}
+\usepackage[colorlinks]{hyperref}
+%\usepackage[nameinlink]{cleveref}
+\usepackage{url}
+\usepackage{graphicx,color,epsfig}
+\usepackage{epstopdf}
+\usepackage{amsfonts}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{eurosym}
+\usepackage{cite}
+\usepackage{cleveref}
+\usepackage{upgreek}
+\usepackage{enumitem}
+\usepackage{xcolor,rotating}
+\usepackage{placeins}
+\usepackage{color,soul}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=Latex.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{LastRevised=Thursday, April 25, 2019 13:23:17}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%\renewcommand{\tablename}{{\small F}\scriptsize{IGURE}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+%\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\usepackage[symbol]{footmisc}
+\def\correspondingauthor{\footnote{Corresponding author.}}
+\numberwithin{equation}{section}
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+\usepackage{multicol}
+\hypersetup{pdftitle={},% title
+    pdfauthor={Lanre Akinyemi},     % author
+    %pdfsubject={Differential Equations},   % subject of the document
+    pdfcreator={pdftex},   % creator of the document
+    pdfproducer={Texmaker}, % producer of the document
+    pdfkeywords={}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,          % color of internal links
+    citecolor=blue,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
+\setcounter{MaxMatrixCols}{10}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\capu}{\mathcal{D}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\equationautorefname}{Eq.}
+\Crefname{figure}{Fig.}{Figs.}
+\Crefname{table}{Tab.}{Tabs.}
+\makeatletter
+\let\oldtheequation\theequation
+\renewcommand\tagform@[1]{\maketag@@@{\ignorespaces#1\unskip\@@italiccorr}}
+\renewcommand\theequation{(\oldtheequation)}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newtheorem{theorem}{Theorem}[section]
+\newtheorem{case}{Case}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{remark}[theorem]{Remark}
+%\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\usepackage[symbol]{footmisc}
+\renewcommand{\baselinestretch}{1.2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\date{}
+%opening\def\correspondingauthor{\footnote{Corresponding author.}}
+\begin{document}
+\title{ Bousinesq }
+\author{ Farrah Ashraf $^{1}$,  \\
+\\
+$^{1}$ Department of Mathematics and Statistics,\\ The University of Lahore, Lahore, Pakistan.\\
+e-mail: \{ f.as70000\}@gmail.com }
+\date{ }
+\maketitle
+% !TeX spellcheck = en_US
+\begin{abstract}
+\noindent
+In this work, we examine the robustness of the ill-posed Boussinesq equation by integration. This method is used to obtain solutions including trigonometric solutions, periodic solutions, exponential solutions, elliptic solutions and other solutions. It helps to better understand the meaning of the body(wave) and its equilibrium behavior, thus revealing the importance of studying various nonlinear waves occurring in physics and ocean engineering. These results are new and have not been repeated in previous works of other authors. For the purpose of visual presentation and physical explanation, we have drawn demonstration pictures of some solutions in 3D and 2D planes used in Mathematica software or Maple software. Therefore, we see that the solution results of the ill posed Boussinesq equation are different from the bell-like, weak solutions, periodic solutions and more types of solutions.
+\end{abstract}
+\textbf{Key words}:Unified approach method, Analytical soliton solutions, Ill-posed Boussinesq equation, Kink shaped soliton, Singular soliton and Periodic soliton solutions.
+\section{Introduction}
+\noindent The study of exact solutions of differential equations is one of the most useful topics in the literature and is also important for the presentation of many unclear topics in applied science and engineering. Nonlinear partial equations are used to model many parameters in fluid systems, signal processing, nonlinear systems, plasma physics, fluid dynamics, electricity, science and engineering. Soliton theory and isolation conditions are also relevant to this study and in this context, finding exact solutions of partial differential equations is an important study. Recent work in the last few years includes well-known techniques for obtaining optimal solutions to non-physical problems using computational models with the help of software such as Maple.These methods are as follows Homotopy perturbation method \cite{IFE3},Variational iteration method \cite{A2},the $G/G^{'}$ - Expansion method \cite{A3,a4,a5}, The Exp-Function method\cite{a6,a7,a8,a9}, Modified simple equation method \cite{a10,a11}, the tanh function method\cite{a12,a13,a14}, Kudryashov method \cite{a15,a16}, Trial equation method \cite{a17}, the Backscatter method\cite{a18}, Backlund transform\cite{a19}, Hirota bilinear method\cite{a20}, Homogeneous balance method\cite{a21}, Jacobi and Weierstrass elliptic function method\cite{a22}etc
+This method (Unified approach) is one of the best method to find the exact solutions of the non linear partial differential equations [NLPDE]. In this paper we will apply this method demonstrate the behaviour and find the exact solution of the ill-posed Boussinesq equation. This method will provide many exact solutions of the ill-posed Boussinesq equation.
+\section{The Unified Approach Method }
+The methodology of unified approach method has the folllowing steps:
+\subsection{Different Steps of the Unified Approach method}
+\textbf{Step 1:}
+We use the transformation equation to convert
+\begin{eqnarray}
+\Omega(u_x,u_t,u_{xt},u_{xx},u_{xxx}........)=0
+\end{eqnarray}
+into ODE form (By combining the variables we get).
+\begin{eqnarray}\label{b1}
+\Pi(U',U'',U''',.............)=0
+\end{eqnarray}\\\
+\textbf{Step 2:}
+ Now we consider the solution of the equation eq${(2.2)}$ is of the form:
+\begin{eqnarray}
+\frac{d}{d \zeta}\eta \! \left(\zeta \right) =H_{0}+ \sum_{j=1}^N H_{j}.\eta \left(\zeta \right)^{j}+\sum_{j=1}^N \frac{F_{j}}{\eta \left(\zeta \right)^{j}}
+\end{eqnarray}
+\textbf{Step 3:}
+Now by balancing the highest order non-linear term with the highest order derivative term in eq.(2.2) we will find the value of N.\\\
+The Recatti Equation of the form:
+\begin{eqnarray}
+\frac{d}{d \zeta}\eta \! \left(\zeta \right) =\eta \! \left(\zeta \right)^{2}+M
+\end{eqnarray}
+Here we have different families ${\eta(\zeta)}$ of eq.$(2.4)$ depending upon the value of M.\\\
+\textbf{when $\textbf{ M $<$ 0} $ }
+\begin{align}
+\begin{cases}\\\
+\textbf{(i):}\quad \eta \! \left(\zeta \right) =\frac{-\sqrt{-\left(P^{2}+Q^{2}\right) M}-P \sqrt{-M}\, \cosh \! \left(2 \sqrt{-M}\, \left(\zeta +\phi \right)\right)}{P \sinh \! \left(2 \sqrt{-M}\, \left(\zeta +\phi \right)\right)+Q}\\\
+\textbf{(ii):}\quad \eta \! \left(\zeta \right) =\frac{\sqrt{-\left(P^{2}+Q^{2}\right) M}-P \sqrt{-M}\, \cosh \! \left(2 \sqrt{-M}\, \left(\zeta +\phi \right)\right)}{P \sinh \! \left(2 \sqrt{-M}\, \left(\zeta +\phi \right)\right)+Q}\\\
+\textbf{(iii):}\quad \eta \! \left(\zeta \right) =-\sqrt{-M}+\frac{2 P \sqrt{-M}}{P +\cosh \! \left(2 \sqrt{-M}\, \left(\zeta +\phi \right)\right)-\sinh \! \left(2 \sqrt{-M}\, \left(X +\phi \right)\right)}\\\
+\textbf{(iv):}\quad \eta \! \left(\zeta \right) =\sqrt{-M}+\frac{2 P \sqrt{-M}}{P +\cosh \! \left(2 \sqrt{-M}\, \left(\zeta +\phi \right)\right)-\sinh \! \left(2 \sqrt{-M}\, \left(X +\phi \right)\right)}\\\
+\end{cases}
+\end{align}
+\textbf{when $\textbf{ M $>$ 0} $ }
+\begin{align}
+\begin{cases}\\\
+\textbf{(v):}\quad \eta \! \left(\zeta \right) =\frac{-\sqrt{\left(P^{2}+Q^{2}\right) M}-P \sqrt{M}\, \cos \! \left(2 \sqrt{M}\, \left(\zeta +\phi \right)\right)}{P \sin \! \left(2 \sqrt{M}\, \left(\zeta +\phi \right)\right)+Q}\\\
+\textbf{(vi):}\quad \eta \! \left(\zeta \right) =\frac{\sqrt{\left(P^{2}+Q^{2}\right) M}-P \sqrt{M}\, \cos \! \left(2 \sqrt{M}\, \left(\zeta +\phi \right)\right)}{P \sin \! \left(2 \sqrt{M}\, \left(\zeta +\phi \right)\right)+Q}\\\
+\textbf{(vii):}\quad \eta \! \left(\zeta \right) =-i \sqrt{M}+\frac{2 i P \sqrt{M}}{P +\cos \! \left(2 \sqrt{M}\, \left(\zeta +\phi \right)\right)-i \sin \! \left(2 \sqrt{M}\, \left(\zeta +\phi \right)\right)}\\\
+\textbf{(viii):}\quad \eta \! \left(\zeta \right) =i \sqrt{-M}+\frac{2 i P \sqrt{M}}{P +\cosh \! \left(2 \sqrt{M}\, \left(\zeta +\phi \right)\right)-i \sin \! \left(2 \sqrt{M}\, \left(X +\phi \right)\right)}\\\
+\end{cases}
+\end{align}
+\textbf{when $\textbf{ $M = 0$} $ }
+\begin{eqnarray}
+\textbf{(ix):}\quad \eta \! \left(\zeta \right) = -\frac{1}{\zeta +\phi}
+\end{eqnarray}
+\section{Solution of ill-posed Boussinesq Equation }
+Consider Non-Linear ill-posed Boussinesq equation of the form:
+\begin{eqnarray}
+u_{\mathit{tt}} =u_{\mathit{xx}}+\left(u^{2}\right)_{\mathit{xx}}+u_{\mathit{xxxx}}
+\end{eqnarray}
+Using the transformation
+\begin{eqnarray}
+u(x,t)=U(\zeta) \qquad \zeta=x - v t 
+\end{eqnarray}
+in eq. (3.1) and integrating the result twice we get our required ODE form of ill-posed Boussinesq equation.
+\begin{eqnarray}
+\left(v^{2}-1\right) U -U^{2}-U_{\zeta \zeta} = 0
+\end{eqnarray}
+Now by using the Homogeneous Balancing Principle ( By balancing the highest order derivative term $U_{\zeta \zeta}$ with the highest degree non-linear term $U^{2}$, we get $N=2.$\\\\
+Now by replacing $N=2$ in equation in eq.(2.3) we get
+\begin{eqnarray}
+U \! \left(\zeta \right) =H_{0}+H_{1} \eta \! \left(\zeta \right)+H_{2} \eta \! \left(\zeta \right)^{2}+\frac{F_{1}}{\eta \! \left(\zeta \right)}+\frac{F_{2}}{\eta \! \left(\zeta \right)^{2}}
+\end{eqnarray}
+Here we need to find the constants involved in $U{(\zeta)}$ which are $H_{0}$ , $H_{1}$ , $H_{2}$ , $F_{1}$ , $F_{2}$
+The $\eta{(\zeta)}$ represents (the families given) the solutions of eq.(2.4).
+Now substitute eq.(3.3) and eq.(2.4)in eq.(2.2) , then simplify resulting equation to get the co-efficients of all powers of ${\eta(\zeta)}$, and set all the co-efficients of different powers of $\eta{(\zeta)}$ equal to zero which will provide us a set of algebraic equations which can be solved simultaneously.
+The co-efficients of different powers of $\eta{(\zeta)}$ are:\\\\\\
+\begin{align}
+\begin{cases}
+\eta{(\zeta)}^{4} :\qquad-H_{2}^{2}-6 H_{2} = 0\\\
+\eta{(\zeta)}^{3} :\qquad-2 H_{1} H_{2}-2 H_{1} = 0\\\
+\eta{(\zeta)}^{2} :\qquad v^{2} H_{2}-8 M H_{2}-2 H_{0} H_{2}-H_{1}^{2}-H_{2} = 0\\\
+\eta{(\zeta)}^{1} :\qquad H_{1} v^{2}-2 H_{1} M -2 H_{2} F_{1}-2 H_{0} H_{1}-H_{1} = 0\\\
+\eta{(\zeta)}^{0} :\qquad -2 H_{2} M^{2}+H_{0} v^{2}-2 H_{1} F_{1}-2 H_{2} F_{2}-H_{0}^{2}-2 F_{2}-H_{0} = 0\\\
+\eta{(\zeta)}^{1} :\qquad v^{2} F_{1}-2 M F_{1}-2 F_{1} H_{0}-2 F_{2} H_{1}-F_{1} = 0\\\
+\eta{(\zeta)}^{2} :\qquad F_{2} v^{2}-8 F_{2} M -F_{1}^{2}-2 H_{0} F_{2}-F_{2} = 0\\\
+\eta{(\zeta)}^{3} :\qquad -2 F_{1} M^{2}-2 F_{1} F_{2} = 0\\\
+\eta{(\zeta)}^{4} :\qquad -2 F_{1} M^{2}-2 F_{1} F_{2} = 0\\\
+\end{cases}
+\end{align}
+Now by using Maple software we find the simultaneous solution of these equations\\\
+\textbf{Set I:}
+\begin{eqnarray}
+v = \sqrt{16 M -1},\,F_{1} = 0,\,F_{2} = -6 M^{2},\, H_{0} = -12 M,\, H_{1} = 0,\, H_{2} = -6
+\end{eqnarray}
+\textbf{Solution of Set I:}\\
+By substituting eq. (3.2),(3.6) and using the following families \textbf{(v,vii,iv,ix)} in eq.(3.4) we will get the following solutions
+\begin{eqnarray}
+U_{1} \left(\zeta \right) =H_{0}+\frac{H_{2} \left(\sqrt{\left(P^{2}+Q^{2}\right) M}-P \sqrt{M}\, \cos \! \left(2 \sqrt{M}\, \left(-v t +\phi +x \right)\right)\right)}{P \sin \! \left(2 \sqrt{M}\, \left(-v t +\phi +x \right)\right)+Q}+\nonumber
+\end{eqnarray}
+\begin{eqnarray}
+\frac{F_{2} \left(P \sin \! \left(2 \sqrt{M}\, \left(-v t +\phi +x \right)\right)+Q \right)^{2}}{{\left(\sqrt{\left(P^{2}+Q^{2}\right) M}-P \sqrt{M}\, \cos \! \left(2 \sqrt{M}\, \left(-v t +\phi +x \right)\right)\right)}^{2}}
+\end{eqnarray}
+\begin{eqnarray}
+U_{2} \left(\zeta \right) =
+H_{0}+\frac{H_{2} \left(-\sqrt{\left(P^{2}+Q^{2}\right) M}-P \sqrt{M}\, \cos \! \left(2 \sqrt{M}\, \left(-v t +\phi +x \right)\right)\right)}{P \sin \! \left(2 \sqrt{M}\, \left(-v t +\phi +x \right)\right)+Q}+\nonumber
+\end{eqnarray}
+\begin{eqnarray}
+\frac{F_{2} \left(P \sin \! \left(2 \sqrt{M}\, \left(-v t +\phi +x \right)\right)+Q \right)^{2}}{{\left(-\sqrt{\left(P^{2}+Q^{2}\right) M}-P \sqrt{M}\, \cos \! \left(2 \sqrt{M}\, \left(-v t +\phi +x \right)\right)\right)}^{2}}
+\end{eqnarray}
+\begin{eqnarray}
+U_{3} \left(\zeta \right) =
+H_{0}+H_{2} \left(\sqrt{-M}+\frac{2 P \sqrt{-M}}{P +\cosh \! \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)-\sinh \! \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)}\right)+\nonumber
+\end{eqnarray}
+\begin{eqnarray}
+\frac{F_{2}}{\left(\sqrt{-M}+\frac{2 P \sqrt{-M}}{P +\cosh \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)-\sinh \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)}\right)^{2}}
+\end{eqnarray}
+\begin{eqnarray}
+U_{4}\left(\zeta \right) =H_{0}-\frac{H_{2}}{-v t +\phi +x}+F_{2} \left(-v t +\phi +x \right)^{2}
+\end{eqnarray}
+\textbf{Set II:}
+\begin{eqnarray}
+v = \sqrt{-4 M -1},\,F_{1} = 0,\,F_{2} = -6 M^{2},\, H_{0} = -2 M,\, H_{1} = 0,\, H_{2} = 0
+\end{eqnarray}
+By substituting eq. (3.11),(3.2) and using the following equations \textbf{(2.5),(2.7)} in eq. (3.4) we will get the following solutions.\\\
+\textbf{Solution of Set II:}\\\
+\begin{eqnarray}
+U_{1}\! \left(\zeta \right) =H_{0}+\frac{F_{2} \left(P \sinh \! \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)+Q \right)}{\sqrt{-\left(P^{2}+Q^{2}\right) M}-P \sqrt{-M}\, \cosh \! \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)}
+\end{eqnarray}
+\begin{eqnarray}
+U_{2}\! \left(\zeta \right) =H_{0}+\frac{F_{2} \left(P \sinh \! \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)+Q \right)}{-\sqrt{-\left(P^{2}+Q^{2}\right) M}-P \sqrt{-M}\, \cosh \! \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)}
+\end{eqnarray}
+\begin{eqnarray}
+U_{3}\! \left(\zeta \right) =H_{0}+\frac{F_{2}}{\sqrt{-M}+\frac{2 P \sqrt{-M}}{P +\cosh \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)-\sinh \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)}}
+\end{eqnarray}
+\begin{eqnarray}
+U_{4}\! \left(\zeta \right) =H_{0}+\frac{F_{2}}{-\sqrt{-M}+\frac{2 P \sqrt{-M}}{P +\cosh \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)-\sinh \left(2 \sqrt{-M}\, \left(-v t +\phi +x \right)\right)}}
+\end{eqnarray}
+\begin{eqnarray}
+U_{5}\! \left(\zeta \right) = H_{0}+F_{2} \left(v t -\phi -x \right)
+\end{eqnarray}
+\textbf{Set III:}
+\begin{eqnarray}
+M = M,\,v = \sqrt{-16 M -1},\,F_{1} = 0,\,F_{2} = -6 M^{2},\, H_{0} = 4 M,\, H_{1} = 0,\, H_{2} = -6
+\end{eqnarray}
+\textbf{Solution of Set III:}\\\
+By substituting eq. (3.15),(2.1) and using the following equations \textbf{(2.6),(2.7),(2.8),(2.9),(2.14)} in eq. (3.3) we will get the following solutions\\\
+\begin{eqnarray}
+         U_{1}\ \left(\zeta \right) = H_{0}+H_{2} \left(\sqrt{-M}+\frac{2 P \sqrt{-M}}{P +\cosh \! \left(2 \sqrt{-M}\,
+         \left(-t v +\phi +x \right)\right)-\sinh \! \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)}\right)^{2}+\nonumber
+\end{eqnarray}
+\begin{eqnarray}
+         \frac{F_{2}}{\left(\sqrt{-M}+\frac{2 P \sqrt{-M}}{P +\cosh \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)-\sinh \left(2 \sqrt{-M}\,
+         \left(-t v +\phi +x \right)\right)}\right)^{2}}
+\end{eqnarray}
+\begin{eqnarray}
+U_{2}\! \left(\zeta \right) =
+H_{0}+H_{2} \left(-\sqrt{-M}+\frac{2 P \sqrt{-M}}{P +\cosh \! \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)-\sinh \! \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)}\right)^{2}+\nonumber
+\end{eqnarray}
+\begin{eqnarray}
+\frac{F_{2}}{\left(-\sqrt{-M}+\frac{2 P \sqrt{-M}}{P +\cosh \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)-\sinh \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)}\right)^{2}}
+\end{eqnarray}
+\begin{eqnarray}
+U_{3}\! \left(\zeta \right) =
+H_{0}+\frac{H_{2} {\left(\sqrt{-\left(P^{2}+Q^{2}\right) M}-P \sqrt{-M}\, \cosh \! \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)\right)}^{2}}{\left(P \sinh \! \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)+Q \right)^{2}}+\nonumber
+\end{eqnarray}
+\begin{eqnarray}
+\frac{F_{2} \left(P \sinh \! \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)+Q \right)^{2}}{{\left(\sqrt{-\left(P^{2}+Q^{2}\right) M}-P \sqrt{-M}\, \cosh \! \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)\right)}^{2}}
+\end{eqnarray}
+\begin{eqnarray}
+U_{4}\! \left(\zeta \right) =
+H_{0}+\frac{H_{2} {\left(-\sqrt{-\left(P^{2}+Q^{2}\right) M}-P \sqrt{-M}\, \cosh \! \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)\right)}^{2}}{\left(P \sinh \! \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)+Q \right)^{2}}+\nonumber
+\end{eqnarray}
+\begin{eqnarray}
+\frac{F_{2} \left(P \sinh \! \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)+Q \right)^{2}}{{\left(-\sqrt{-\left(P^{2}+Q^{2}\right) M}-P \sqrt{-M}\, \cosh \! \left(2 \sqrt{-M}\, \left(-t v +\phi +x \right)\right)\right)}^{2}}
+\end{eqnarray}
+\begin{eqnarray}
+U_{5}\! \left(\zeta \right) =
+H_{0}+\frac{H_{2}}{\left(-t v +\phi +x \right)^{2}}+F_{2} \left(-t v +\phi +x \right)^{2}
+\end{eqnarray}
+\newpage
+\section{The Graphical Representation of sets}
+\textbf{Graphical Representation of the Set I:}\\\
+By substituting ${M=0.2}$, \,${P=0.021}$, \,${Q=397}$, \,${\phi=3}$, \,${\delta=2}$ a periodic waves via 3D is observed and wave propagates in an intervals as shown in figure
+\begin{figure}[h!]\label{A1}
+    \centering
+    \begin{tabular}{ccc}
+        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+            height=55mm]{u1.png}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+            \includegraphics[width=\linewidth, height=40mm]{c1.png}\subcaption{} \end{minipage}
+    \end{tabular}%
+ \noindent\caption{The 3D, and 2D Density plot of $U_1(\xi)$ given by Eq.(3.5) }.\label{111}
+\end{figure}\\\
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{u2}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{c2}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_2(\xi)$ given by Eq.(3.6) }.\label{111}
+%\end{figure}\\\
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b7}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b8}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of real part of $U_3(\xi)$ given by Eq.(3.7) }.\label{111}
+%\end{figure}\\\
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b9}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b10}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of complex part of $U_3(\xi)$ given by Eq.(3.7) }.\label{111}
+%\end{figure}\\\
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b11}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b12}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_4(\xi)$ given by Eq.(3.8) }.\label{111}
+%\end{figure}\\\
+%\FloatBarrier
+%\textbf{Graphical Representation of the Set II:}\\\
+%By substituting ${M=-0.3}$, \,${P=0.021}$, \,${Q=397}$, \,${\phi=3}$, \,${\delta=2}$ different soliton waves via 3D are observed and wave propagates in an intervals as shown in figure\\\
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b13}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b14}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_1(\xi)$ given by Eq.(3.10) }.\label{111}
+%\end{figure}
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b15}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b16}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_2(\xi)$ given by Eq.(3.11) }.\label{111}
+%\end{figure}
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b17}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b18}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_3(\xi)$ given by Eq.(3.12) }.\label{111}
+%\end{figure}
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b19}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b20}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_4(\xi)$ given by Eq.(3.13) }.\label{111}
+%\end{figure}
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b21}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b22}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_5(\xi)$ given by Eq.(3.14) }.\label{111}
+%\end{figure}
+%\FloatBarrier
+%\textbf{Graphical Representation of the Set III:}\\\
+%By substituting ${M=-0.2}$, \,${P=0.021}$, \,${Q=397}$, \,${\phi=3}$, \,${\delta=2}$ differet forms of soliton waves via 3D are observed and wave propagates in an intervals as shown in figure\\\
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b23}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b24}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_1(\xi)$ given by Eq.(3.16) }.\label{111}
+%\end{figure}
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b25}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b26}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_2(\xi)$ given by Eq.(3.17) }.\label{111}
+%\end{figure}
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b27}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b28}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_3(\xi)$ given by Eq.(3.18) }.\label{111}
+%\end{figure}
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b29}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b30}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_4(\xi)$ given by Eq.(3.19) }.\label{111}
+%\end{figure}
+%\begin{figure}[h!]\label{A1}
+%    \centering
+%    \begin{tabular}{ccc}
+%        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+%            height=40mm]{b31}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+%            \includegraphics[width=\linewidth, height=40mm]{b32}\subcaption{} \end{minipage}
+%    \end{tabular}%
+% \noindent\caption{The 3D, and 2D Density plots of $U_5(\xi)$ given by Eq.(3.20) }.\label{111}
+%\end{figure}
+%\FloatBarrier
+\section{Results and Discussion}\label{s4}
+The use of robust integration techniques to analyze analytical soliton solutions is novel and different from previous results obtained using different methods. We obtained proofs of analytical soliton wave solutions such as hyperbolic functions, weakly acting functions, value functions and the problem of triangular function solutions of the ill possed Boussinesq equation. Therefore, the solutions we obtained were converted back to the ill possed Boussinesq equation and analyzed using mathematical symbols in the Mathematica software. In order to explain the physical result of these solutions with 3D, and 2D Density graphs using the appropriate values of unknown coefficients and regular measurements, the observations are given as follows: Figures 1 and 2 shows the periodic waves of solution of (3.5),(3.6), Figures 5, 9, 12, 15 shows Dark solitons of the solution of (3.8), (3.13), (3.17), (3.20). Figure 8 shows the kink shaped soliton of solution of (3.12). Figure 11 shows the anti Kink shaped soliton of solution of (3.16). Figure 10 shows a dispersion-less soliton of solution of (3.14). The dynamical behavior of the analytical soliton solutions is presented by setting
+the suitable values of unknown coefficients and free parameter constants.
+\section{Conclusion}\label{s5}
+\noindent This paper proposes a Unified Approach Method to solve the ill possed Boussinesq equation and produces different new solutions. Also, the solutions we obtained from the Unified approach method are not yet been published. Also, these new solutions might gives us the existing results and help to make the physical properties of the equations with much more clearity. The solutions are obtained by using Maple Software. This method is very general as well as simple and easy for finding the exact solutions of NLPDE's, which shows the efficiency, productivity and suitability of this method for handling many other non linear partial differential equations (NPDE's)
+\begin{thebibliography}{99}
+\bibitem{IFE3}S. A. Sezer, A. Y.ld.r.m, and S. T. MohyudÅ]Din, ÅgHeÅfs homotopy perturbation method for solving the fractional KdVÅ]BurgersÅ]Kuramoto equation,Åh International Journal of Numerical Methods for Heat and Fluid Flow, vol. 21, no. 4, pp. 448.458, May 2011.
+\bibitem{A2} S. T. Mohyud-Din, M. A. Noor, K. I. Noor, and M. M. Hosseini, ìVariational Iteration Method for Re-formulated Partial Differential Equations,î International Journal of Nonlinear Sciences and Numerical Simulation, vol. 11, no. 2, pp. 87ñ92, Jan. 2010.
+\bibitem{A3}M. Shakeel and S. T. Mohyud-Din, ÅgImproved (GÅå/G)-expansion and extended tanh methods for (2+1)-dimensional Calogero.Bogoyavlenskii.Schiff equation,Åh Alexandria Engineering Journal, vol. 54, no. 1, pp. 27.33, 2015.
+\bibitem{a4}O. Guner, H. Atik, and A. A. Kayyrzhanovich, ÅgNew exact solution for space-time fractional differential equations via (GÅå/G)-expansion method,Åh Optik - International Journal for Light and Electron Optics, vol. 130, pp. 696.701, 2017.
+\bibitem{a5} M. Ekici, ÅgSoliton and other solutions of nonlinear time fractional parabolic equations using extended GÅå/G-expansion method,Åh Optik - International Journal for Light and Electron Optics, vol. 130, pp. 1312.1319, 2017.
+\bibitem{a6}O. Guner, A. Bekir, and H. Bilgil, ìA note on exp-function method combined with complex transform method applied to fractional differential equations,î Advances in Nonlinear Analysis, vol. 4, no. 3, pp. 201ñ208, 2015
+\bibitem{a7}Z. Navickas, T. Telksnys, and M. Ragulskis, ìComments on ëThe exp-function method and generalized solitary solutions,íî Computers and Mathematics with Applications, vol. 69, no. 8, pp. 798ñ803, 2015
+\bibitem{a8}M. A. Noor, S. T. Mohyud-Din, and A. Waheed, ìExp-function method for solving Kuramoto-Sivashinsky and Boussinesq equations,î Journal of Applied Mathematics and Computing, vol. 29, no. 1ñ2, pp. 1ñ13, 2009
+\bibitem{a9}S. T. Mohyud-Din, M. A. Noor, and A. Waheed, ìExp-function method for generalized traveling solutions of good Boussinesq equations,î Journal of Applied Mathematics and Computing, vol. 30, no. 1ñ2, pp. 439ñ445, May 2009
+\bibitem{a10}M. Younis and A. Zafar, ìThe modified simple equation method for solving nonlinear Phi-four equation,î International Journal of Innovation and Applied Studies, vol. 2, no. 4, pp. 661ñ664, 2013.
+\bibitem{a11} E. M. E. Zayed, ìA note on the modified simple equation method applied to SharmañTassoñOlver equation,î 2011.
+\bibitem{a12}M. El-Wakil, SA and Abdou, ìNew exact travelling wave solutions using modified extended tanh-function method,î Chaos, Solitons and Fractals, vol. 31, no. 4, pp. 840--852, 2007.
+\bibitem{a13} T. Xu, J. Li, H. Q. Zhang, Y. X. Zhang, Z. Z. Yao, and B. Tian, ìNew extension of the tanh-function method and application to the Whitham-Broer-Kaup shallow water model with symbolic computation,î Physics Letters, Section A: General, Atomic and Solid State Physics, vol. 369, no. 5ñ6, pp. 458ñ463, Oct. 2007.
+\bibitem{a14} M. Inc and E. G. Fan, ìExtended tanh-function method for finding travelling wave solutions of some nonlinear partial differential equations,î Zeitschrift f¸r Naturforschung A, vol. 60, no. 1ñ2, pp. 7ñ16, 2005
+\bibitem{a15}K. Hosseini, A. Bekir, and R. Ansari, ìNew exact solutions of the conformable time-fractional CahnñAllen and CahnñHilliard equations using the modified Kudryashov method,î Optik, vol. 132, pp. 203ñ209, 2017.
+\bibitem{a16} M. Kaplan, A. Bekir, and A. Akbulut, ìA generalized Kudryashov method to some nonlinear evolution equations in mathematical physics,î Nonlinear Dynamics, vol. 85, no. 4, pp. 2843ñ2850, Sep. 2016
+\bibitem{a17}Y. Gurefe, E. Misirli, A. Sonmezoglu, and M. Ekici, ìExtended trial equation method to generalized nonlinear partial differential equations,î Applied Mathematics and Computation, vol. 219, no. 10, pp. 5253ñ5260, 2013
+\bibitem{a18}S. Ghosh, S. Nandy, Inverse scattering method and vector higher order non-linear Schrˆdinger equation, Nucl. Phys. B 561 (3) (1999) 451ñ466
+\bibitem{a19}Ma W.X., Abdeljabbar A., A bilinear B‰cklund transformation of a (3+1)-dimensional generalized KP equation, Applied
+Mathematics Letters, 25(10), 1500-1504, 2012
+\bibitem{a20}A.M. Wazwaz, The Hirotaís bilinear method and the tanhñcoth method for multiple-soliton solutions of the SawadañKoterañKadomtsevñPetvishvili equation, Appl.
+Math. Comput. 200 (1) (2008) 160ñ166.
+\bibitem{a21} M.L. Wang, Y.B. Zhou, Z.B. Li, Application of a homogeneous balance method to exact solutions of nonlinear equations in mathematical physics, Phys. Lett. A 216 (1996)67ñ75.
+\bibitem{a22}S.K. Liu, Z.T. Fu, S.D. Liu, Jacobi elliptic function expansion method and periodic wave solutions of nonlinear wave equations, Phys. Lett. A 289 (2001) 69ñ74.
+\end{thebibliography}
+\end{document}  

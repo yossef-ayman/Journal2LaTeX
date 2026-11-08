@@ -96,6 +96,41 @@ export function BatchForm({
     });
   };
 
+  // Helper to extract canonical uppercase journal code
+  const getJournalCode = (code: string): string => {
+    const cleaned = (code || "").replace(/[^A-Za-z0-9]/g, "").toUpperCase();
+    const map: Record<string, string> = {
+      AMISL: "AMIS",
+      JSAPL: "JSAP",
+      PFDA: "PDFA",
+      THIN_FILM: "THINFILM",
+      THINFILM: "THINFILM",
+    };
+    return map[cleaned] || cleaned;
+  };
+
+  const handleJournalSelect = (newJournal: string) => {
+    onSelectJournal?.(newJournal);
+    const newPrefix = getJournalCode(newJournal);
+    setPaperOverrides((prev) => {
+      const next = { ...prev };
+      Object.keys(next).forEach((key) => {
+        const idx = Number(key);
+        if (next[idx]?.reference_number) {
+          const currentRef = next[idx].reference_number;
+          const match = currentRef.match(/^[A-Za-z_]+(\d{6,}.*)$/);
+          if (match) {
+            next[idx] = {
+              ...next[idx],
+              reference_number: `${newPrefix}${match[1]}`,
+            };
+          }
+        }
+      });
+      return next;
+    });
+  };
+
   // Run paper inspection whenever files, selectedJournal, or acceptanceDate changes
   useEffect(() => {
     if (files.length === 0) {
@@ -119,6 +154,14 @@ export function BatchForm({
                 fee: "2100$",
                 hasDiscount: false,
                 discount: "0$",
+                acceptanceDate: acceptanceDate,
+                deadline: deadline,
+              };
+            } else {
+              // Update reference number to match the newly selected journal & date
+              next[paperIndex] = {
+                ...next[paperIndex],
+                reference_number: item.reference_number || next[paperIndex].reference_number,
                 acceptanceDate: acceptanceDate,
                 deadline: deadline,
               };
@@ -231,7 +274,7 @@ export function BatchForm({
             <select
               value={selectedJournal}
               disabled={disabled || running}
-              onChange={(e) => onSelectJournal?.(e.target.value)}
+              onChange={(e) => handleJournalSelect(e.target.value)}
               className="h-10 min-w-[260px] rounded-lg border border-emerald-200 bg-white px-3 text-sm font-medium text-gray-800 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
             >
               {journals.map((j) => (

@@ -153,27 +153,57 @@ class LatexRenderer:
             content_tex, citation_report = CitationMapper().map_citations(
                 doc, content_tex, intermediate_dir, journal_rules)
 
+            # 3. Read base template
+            template_content = read_text_file(template_tex_path)
+            uses_institute_cmd = "\\institute" in template_content
+
             # 2. Format Authors and Institutes
-            author_strings = []
+            corresponding_email = getattr(doc, "corresponding_email", "") or ""
+            if not corresponding_email:
+                for a in doc.authors:
+                    if a.email:
+                        corresponding_email = a.email
+                        break
+
             affiliations = []
             for author in doc.authors:
-                if author.affiliation:
-                    if author.affiliation not in affiliations:
-                        affiliations.append(author.affiliation)
-                    idx = affiliations.index(author.affiliation) + 1
-                    author_strings.append(f"{self._escape_text(author.name)}$^{{{idx}}}$")
+                aff_clean = " ".join(author.affiliation.split()) if author.affiliation else ""
+                if aff_clean and aff_clean not in affiliations:
+                    affiliations.append(aff_clean)
+
+            author_strings = []
+            for author in doc.authors:
+                aff_clean = " ".join(author.affiliation.split()) if author.affiliation else ""
+                is_corresp = author.is_corresponding or bool(corresponding_email and author.email and author.email.lower() == corresponding_email.lower())
+                
+                parts = []
+                if aff_clean and len(affiliations) > 1:
+                    idx = affiliations.index(aff_clean) + 1
+                    parts.append(str(idx))
+                if is_corresp:
+                    parts.append("*")
+                
+                if parts:
+                    author_strings.append(f"{self._escape_text(author.name)}$^{{{','.join(parts)}}}$")
                 else:
                     author_strings.append(self._escape_text(author.name))
             
-            authors_tex = " \\and ".join(author_strings) if author_strings else "Author name unspecified"
+            if len(author_strings) > 2:
+                authors_tex = f"{', '.join(author_strings[:-1])} and {author_strings[-1]}"
+            elif len(author_strings) == 2:
+                authors_tex = f"{author_strings[0]} and {author_strings[1]}"
+            elif len(author_strings) == 1:
+                authors_tex = author_strings[0]
+            else:
+                authors_tex = "Author name unspecified"
             
-            institute_strings = []
-            for idx, aff in enumerate(affiliations):
-                institute_strings.append(f"$^{{{idx+1}}}$ {self._escape_text(aff)}")
-            institutes_tex = " \\\\ ".join(institute_strings) if institute_strings else ""
-
-            # 3. Read base template
-            template_content = read_text_file(template_tex_path)
+            if uses_institute_cmd:
+                # Classes providing \institute (e.g. NSP1, llncs, svjour) format and number institutes via \and
+                clean_affs = [self._escape_text(aff) for aff in affiliations]
+                institutes_tex = " \\and\n".join(clean_affs) if clean_affs else ""
+            else:
+                institute_strings = [f"$^{{{idx+1}}}$ {self._escape_text(aff)}" for idx, aff in enumerate(affiliations)]
+                institutes_tex = " \\\\ ".join(institute_strings) if institute_strings else ""
 
             # 4. Format Bibliography
             bib_tex = ""
@@ -251,6 +281,20 @@ class LatexRenderer:
                                 f"\\begin{{{photo_env}}}{{{relative_path}}}{{{b_name}}}\n"
                                 f"{b_text}\\end{{{photo_env}}}\n\n"
                             )
+                        elif "minipage" in bio_rules.layouts:
+                            biography_tex += (
+                                f"\\noindent\n"
+                                f"\\begin{{minipage}}[t]{{0.17\\columnwidth}}\n"
+                                f"  \\vspace{{0pt}}\n"
+                                f"  \\centering\n"
+                                f"  \\includegraphics[width=2.2cm,height=2.7cm,keepaspectratio]{{{relative_path}}}\n"
+                                f"\\end{{minipage}}\\hfill\n"
+                                f"\\begin{{minipage}}[t]{{0.80\\columnwidth}}\n"
+                                f"  \\vspace{{0pt}}\n"
+                                f"  \\textbf{{{b_name}}} {b_text}\n"
+                                f"\\end{{minipage}}\n"
+                                f"\\par\\vspace{{1.5em}}\n\n"
+                            )
                         else:
                             biography_tex += (
                                 f"\\noindent\\textbf{{{b_name}}}\\\\\n"
@@ -265,11 +309,20 @@ class LatexRenderer:
                                 f"\\begin{{{plain_env}}}{{{b_name}}}\n"
                                 f"{b_text}\\end{{{plain_env}}}\n\n"
                             )
+                        elif "minipage" in bio_rules.layouts:
+                            biography_tex += (
+                                f"\\noindent\n"
+                                f"\\textbf{{{b_name}}} {b_text}\n"
+                                f"\\par\\vspace{{1.5em}}\n\n"
+                            )
                         else:
                             biography_tex += (
                                 f"\\noindent\\textbf{{{b_name}}}\\\\\n"
                                 f"{b_text}\\par\\bigskip\n\n"
                             )
+
+                if biography_tex.strip() and "\\section*{Authors Biography}" not in content_tex:
+                    biography_tex = "\\section*{Authors Biography}\n\n" + biography_tex
 
             if author_photo_tex:
                 content_tex += "\n\n" + author_photo_tex
@@ -420,7 +473,7 @@ class LatexRenderer:
                 # \and is a \maketitle-only construct (article.cls implements
                 # it with tabular switching); inline title blocks need commas.
                 rendered_content = rendered_content.replace(
-                    "__AUTHORS__", authors_tex.replace(" \\and ", ", ")
+                    "__AUTHORS__", authors_tex
                 )
                 rendered_content = rendered_content.replace("__INSTITUTES__", institutes_tex)
                 rendered_content = rendered_content.replace("__ABSTRACT__", self._escape_text(doc.abstract))
@@ -434,7 +487,31 @@ class LatexRenderer:
                 rendered_content = rendered_content.replace("__REVISED_DATE__", rev)
                 rendered_content = rendered_content.replace("__ACCEPTED_DATE__", acc)
                 rendered_content = rendered_content.replace("__PUBLISHED_DATE__", pub)
+                doi_val = getattr(doc, "doi", "") or defaults.get("doi") or template_metadata.get("doi_prefix", "") or ""
+                if doi_val and not str(doi_val).startswith("http"):
+                    doi_val = f"http://dx.doi.org/{doi_val}"
+                rendered_content = rendered_content.replace("__DOI__", str(doi_val))
                 rendered_content = self._inject_corresponding_email(rendered_content, doc)
+                
+                # Replace running title and running author
+                if doc.title:
+                    rt = self._escape_text(doc.title)
+                    if len(rt) > 55:
+                        rt = rt[:52] + "..."
+                    rendered_content = rendered_content.replace("__RUNNING_TITLE__", rt)
+                    rendered_content = replace_latex_command(rendered_content, "\\titlerunning", rt)
+                else:
+                    rendered_content = rendered_content.replace("__RUNNING_TITLE__", "")
+
+                if doc.authors:
+                    first_author = doc.authors[0].name
+                    ra = f"{first_author} et al." if len(doc.authors) > 1 else first_author
+                    ra_esc = self._escape_text(ra)
+                    rendered_content = rendered_content.replace("__RUNNING_AUTHOR__", ra_esc)
+                    rendered_content = replace_latex_command(rendered_content, "\\authorrunning", ra_esc)
+                else:
+                    rendered_content = rendered_content.replace("__RUNNING_AUTHOR__", "")
+
                 # No e-mail extracted -> leave nothing behind, and never emit
                 # an empty label.
                 rendered_content = rendered_content.replace("__CORRESPONDING__", "")
@@ -512,6 +589,11 @@ class LatexRenderer:
             if "\\captionof" in rendered_content and "{caption}" not in rendered_content \
                     and "{capt-of}" not in rendered_content:
                 needed_pkgs.append("\\usepackage{capt-of}")
+            if "{caption}" in rendered_content and "\\captionsetup[table]" not in rendered_content:
+                needed_pkgs.append(
+                    "\\captionsetup[table]{position=above,aboveskip=4pt,belowskip=4pt}\n"
+                    "\\captionsetup[figure]{position=below,aboveskip=4pt,belowskip=2pt}"
+                )
             # Math support must never depend on the template.  Word equations
             # convert to constructs that are amsmath-only (\text, \dfrac, \tag,
             # aligned/gathered) and amssymb-only (\mathbb, \leqslant); a
@@ -758,9 +840,11 @@ class LatexRenderer:
                     corresponding_email = author.email
                     break
         if not corresponding_email:
+            rendered_content = rendered_content.replace("__CORRESPONDING_EMAIL__", "")
             return rendered_content
 
         escaped_mail = self._escape_text(corresponding_email)
+        rendered_content = rendered_content.replace("__CORRESPONDING_EMAIL__", escaped_mail)
         # Templates that render their title block inline (no \maketitle, no
         # \mail) expose __CORRESPONDING__ instead, so the address still shows
         # up in the front matter rather than being silently dropped.
@@ -978,14 +1062,31 @@ class LatexRenderer:
 
     def _emit_placed(self, inner_tex: str, caption: str, label_str: str,
                      kind: str, strategy: str) -> str:
-        """Render one object according to the chosen placement strategy."""
+        """Render one object according to the chosen placement strategy.
+        Tables always have captions above the table; figures always below.
+        """
+        is_table = (kind == "table")
+        caption_tex = f"\\captionof{{{kind}}}{{{caption}}}" if caption else ""
+        cap = f"\\caption{{{caption}}}\n" if caption else ""
+        lab = f"{label_str}\n" if label_str else ""
+
         if strategy in ("inline_span", "inline_column"):
-            caption_tex = f"\\captionof{{{kind}}}{{{caption}}}" if caption else ""
-            parts = [inner_tex]
-            if caption_tex:
-                parts.append(caption_tex)
-            if label_str:
-                parts.append(label_str)
+            # Table: caption and label placed ABOVE the table.
+            # Figure: inner_tex first, caption and label placed BELOW.
+            if is_table:
+                parts = []
+                if caption_tex:
+                    parts.append(caption_tex)
+                if label_str:
+                    parts.append(label_str)
+                parts.append(inner_tex)
+            else:
+                parts = [inner_tex]
+                if caption_tex:
+                    parts.append(caption_tex)
+                if label_str:
+                    parts.append(label_str)
+
             # Keep object + caption as one unbreakable unit (never detaches).
             # \samepage + samepage-safe minipage + no widow/orphan splits keeps
             # the object attached to its surrounding paragraphs whenever the
@@ -1007,8 +1108,8 @@ class LatexRenderer:
                     + unit + "\n\\end{jltxspan}" + self._SPACE_AFTER
                 )
             return (
-                f"{self._SPACE_BEFORE}\\begin{{center}}\n" + unit
-                + "\n\\end{center}" + self._SPACE_AFTER
+                f"{self._SPACE_BEFORE}\\par\\noindent\n" + unit
+                + "\n\\par" + self._SPACE_AFTER
             )
 
         env, place = {
@@ -1016,16 +1117,22 @@ class LatexRenderer:
             "float_column": (kind, "[htbp]"),
             "float_span": (kind + "*", "[tp]"),
         }[strategy]
-        cap = f"\\caption{{{caption}}}\n" if caption else ""
-        lab = f"{label_str}\n" if label_str else ""
         # [H] is placed in-flow -- add uniform spacing.  Real floats
         # (htbp/tp) are placed by LaTeX and get its own spacing rules.
         pre = self._SPACE_BEFORE if place == "[H]" else ""
         post = self._SPACE_AFTER if place == "[H]" else ""
-        return (
-            f"{pre}\\begin{{{env}}}{place}\n\\centering\n{inner_tex}\n{cap}{lab}"
-            f"\\end{{{env}}}{post}"
-        )
+        if is_table:
+            # Table: caption and label placed ABOVE the table
+            return (
+                f"{pre}\\begin{{{env}}}{place}\n\\centering\n{cap}{lab}\n{inner_tex}\n"
+                f"\\end{{{env}}}{post}"
+            )
+        else:
+            # Figure: inner_tex first, caption and label placed BELOW
+            return (
+                f"{pre}\\begin{{{env}}}{place}\n\\centering\n{inner_tex}\n{cap}{lab}"
+                f"\\end{{{env}}}{post}"
+            )
 
     def _place_object(self, inner_tex: str, caption: str, label_str: str,
                       kind: str, content: dict) -> str:
@@ -1073,7 +1180,7 @@ class LatexRenderer:
                     f"\\ifdim {w:.4f}in>\\linewidth\n"
                     f"  \\includegraphics[width=\\linewidth,keepaspectratio]{{{relative_path}}}\n"
                     f"\\else\n"
-                    f"  \\includegraphics[width={w:.4f}in,height={height_in:.4f}in]{{{relative_path}}}\n"
+                    f"  \\includegraphics[width={w:.4f}in,height={height_in:.4f}in,keepaspectratio]{{{relative_path}}}\n"
                     f"\\fi"
                 )
             elif content.get("width_in"):
@@ -1163,15 +1270,15 @@ class LatexRenderer:
         col_specs = "c" * num_cols
         headers_str = ""
         if headers:
-            headers_str = " & ".join(self._escape_text(h) for h in headers) + " \\\\\n\\hline"
+            headers_str = " & ".join(f"\\textbf{{{self._escape_text(h)}}}" for h in headers) + " \\\\\n\\hline"
         rows_str = "\n".join(
             " & ".join(self._escape_text(cell) for cell in row) + " \\\\" for row in rows
         )
         inner = (
-            "\\resizebox{\\linewidth}{!}{%\n"
+            "{\\renewcommand{\\arraystretch}{1.15}\\small\n"
             f"\\begin{{tabular}}{{{col_specs}}}\n\\hline\n"
             f"{headers_str}\n{rows_str}\n\\hline\n"
-            "\\end{tabular}%\n}"
+            "\\end{tabular}}"
         )
         return self._place_object(inner, caption, label_str, "table", content)
 
@@ -1254,24 +1361,22 @@ class LatexRenderer:
                 parts.append(align or "l")
         col_spec_str = sep + sep.join(parts) + sep
 
-        # Optional row-height stretch (Word trHeight is in points).
-        stretch = ""
+        # Table row-height stretch: ensure clean academic row spacing
+        # (minimum 1.15 so text never collides with horizontal rules).
         if row_heights:
             avg = sum(row_heights) / len(row_heights)
-            factor = max(1.0, min(2.0, avg / 14.0))
-            if factor > 1.05:
-                stretch = f"\\renewcommand{{\\arraystretch}}{{{factor:.2f}}}"
+            factor = max(1.15, min(1.4, avg / 14.0))
+        else:
+            factor = 1.15
+        stretch = f"\\renewcommand{{\\arraystretch}}{{{factor:.2f}}}"
 
         # pending[k]: how many rows below the current one column k is still
         # covered by an open rowspan.
         pending = [0] * num_cols
-        lines = []
-        if has_grid:
-            lines.append("\\hline")
+        lines = ["\\hline"]
         n_header = len(header_rows)
 
         for r_idx, row in enumerate(all_rows):
-            fills = shading_rows[r_idx] if r_idx < len(shading_rows) else []
             consumed = [False] * num_cols
             cells_out = []
             col = 0
@@ -1286,9 +1391,8 @@ class LatexRenderer:
                 text = self._escape_text(cell.get("text", ""))
                 if text and (cell.get("bold") or r_idx < n_header):
                     text = f"\\textbf{{{text}}}"
-                fill = fills[col] if col < len(fills) else None
-                if fill:
-                    text = f"\\cellcolor[HTML]{{{fill}}}{text}"
+                # Discard arbitrary cell background fills from Word; journal tables
+                # strictly use clean, fixed academic styling without colored cell fills.
                 colspan = max(1, cell.get("colspan", 1))
                 rowspan = max(1, cell.get("rowspan", 1))
                 if rowspan > 1:

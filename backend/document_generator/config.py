@@ -23,11 +23,21 @@ from typing import Any, Dict
 
 logger = logging.getLogger("document_generator.config")
 
+def _resolve_data_root() -> Path:
+    if "DOCUMENT_GENERATOR_DATA" in os.environ:
+        return Path(os.environ["DOCUMENT_GENERATOR_DATA"]).resolve()
+    module_data = Path(__file__).resolve().parent.parent / "document_generator_data"
+    if module_data.is_dir():
+        return module_data
+    cwd_data = Path("document_generator_data").resolve()
+    if cwd_data.is_dir():
+        return cwd_data
+    return module_data
+
+
 # Root of the module's storage.  Overridable so a deployment can point it at a
 # mounted volume, and so tests can run against a scratch directory.
-DATA_ROOT = Path(
-    os.environ.get("DOCUMENT_GENERATOR_DATA", "document_generator_data")
-).resolve()
+DATA_ROOT = _resolve_data_root()
 
 # Master templates: uploaded once, reused for every generation, replaced only
 # on an explicit upload.

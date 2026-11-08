@@ -1,0 +1,131 @@
+\PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
+\RequirePackage{xcolor}
+\makeatletter\@namedef{ver@color.sty}{2021/01/01}\makeatother
+\makeatletter\@ifundefined{providecolor}{}{%
+	\providecolor{SpringGreen}{rgb}{0.0,1.0,0.498}
+	\providecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
+	\providecolor{abstractcolor}{named}{SpringGreen}
+	\providecolor{rulecolor}{named}{OliveGreen}
+}\makeatother
+
+\documentclass[10pt]{NSP1}
+
+\usepackage{url,floatflt,cite}
+\usepackage{helvet,times}
+\usepackage{psfig,graphics,graphicx}
+\usepackage{mathptmx,amsmath,amssymb,bm,amsfonts,nccmath}
+\usepackage{float}
+\usepackage[bf,hypcap]{caption}
+\usepackage{placeins}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{hyperref}
+\graphicspath{{./media/}{./images/}}
+
+\lstset{
+	basicstyle=\ttfamily\scriptsize,
+	breaklines=true,
+	breakatwhitespace=true,
+	columns=flexible,
+	frame=none,
+	keepspaces=true,
+	showstringspaces=false
+}
+
+\captionsetup{
+	labelfont=bf,
+	labelsep=period,
+	aboveskip=4pt,
+	belowskip=3pt
+}
+\captionsetup[table]{position=above,aboveskip=4pt,belowskip=4pt}
+\captionsetup[figure]{position=below,aboveskip=4pt,belowskip=2pt}
+
+% Float placement & spacing optimizations
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{6}
+\setcounter{dbltopnumber}{4}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\dblfloatpagefraction}{0.8}
+
+\setlength{\textfloatsep}{6pt plus 1pt minus 1pt}
+\setlength{\floatsep}{5pt plus 1pt minus 1pt}
+\setlength{\intextsep}{5pt plus 1pt minus 1pt}
+\setlength{\dbltextfloatsep}{6pt plus 1pt minus 1pt}
+\setlength{\dblfloatsep}{5pt plus 1pt minus 1pt}
+
+\setlist{nosep,leftmargin=*}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\addtolength{\oddsidemargin}{.5in}
+\addtolength{\evensidemargin}{-.5in}
+\topmargin=0.00cm
+\raggedbottom
+
+\def\sm{\smallskip}
+\def\no{\noindent}
+
+% Theorem and Lemma environments
+\makeatletter
+\@ifundefined{theorem}{\newtheorem{theorem}{Theorem}}{}
+\@ifundefined{corollary}{\newtheorem{corollary}{Corollary}}{}
+\@ifundefined{definition}{\newtheorem{definition}{Definition}}{}
+\@ifundefined{lemma}{\newtheorem{lemma}{Lemma}}{}
+\@ifundefined{proposition}{\newtheorem{proposition}{Proposition}}{}
+\@ifundefined{remark}{\newtheorem{remark}{Remark}}{}
+\@ifundefined{case}{\newtheorem{case}{Case}}{}
+\makeatother
+
+\def\firstpage{1}
+\setcounter{page}{\firstpage}
+\def\thevol{__VOLUME__}
+\def\thenumber{__ISSUE__}
+\def\theyear{__YEAR__}
+
+\journalname{International Journal of Thin Films Science and Technology}
+
+\begin{document}
+
+\titlefigurecaption{{\large \bf \rm \vspace{0.15cm}International Journal of Thin Films Science and Technology}{}}
+
+\title{__TITLE__}
+
+\author{__AUTHORS__}
+
+\institute{__INSTITUTES__}
+
+\titlerunning{__RUNNING_TITLE__}
+\authorrunning{__RUNNING_AUTHOR__}
+
+\mail{__CORRESPONDING_EMAIL__}
+
+\received{__RECEIVED_DATE__}
+\revised{__REVISED_DATE__}
+\accepted{__ACCEPTED_DATE__}
+\published{__PUBLISHED_DATE__}
+
+\providecommand{\paperdoi}[1]{\def\doi{#1}}
+\def\doi{__DOI__}
+\paperdoi{__DOI__}
+
+\abstracttext{__ABSTRACT__}
+
+\keywords{__KEYWORDS__}
+
+\maketitle
+
+__CONTENT__
+
+\end{document}

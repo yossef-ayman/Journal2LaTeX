@@ -1,26 +1,21 @@
 {
   "reference_id": "ref_71c66afe35ad",
-  "project_id": "project_20260906_075341_bb902af0",
-  "created_at": "2026-09-06T07:55:20.996202+00:00",
+  "project_id": "project_20260923_134508_bb902af0",
+  "created_at": "2026-09-23T13:46:05.196311+00:00",
   "input": {
     "original_text": "Young, K. S., Psychology of computer use: Addictive use of the internet, a case that breaks the stereotype. Psychological Reports, 79 (1996) 899-902.",
     "parsed": {
-      "title": "899-902",
+      "title": "S., Psychology of computer use: Addictive use of the internet, a case that breaks the stereotype",
       "authors": [
         {
-          "name": "K. S Young",
-          "given": "K. S",
+          "name": "K Young",
+          "given": "K",
           "family": "Young"
-        },
-        {
-          "name": "a case that breaks the stereotype. Psychological Reports, Psychology of computer use: Addictive use of the internet",
-          "given": "a case that breaks the stereotype. Psychological Reports,",
-          "family": "Psychology of computer use: Addictive use of the internet"
         }
       ],
       "year": 1996,
       "reference_type": "journal-article",
-      "journal": null,
+      "journal": "Psychological Reports, -902",
       "publisher": null,
       "volume": "79",
       "issue": "1996",
@@ -32,22 +27,22 @@
   },
   "canonical": {
     "title": {
-      "value": "899-902",
-      "source": "google_scholar",
+      "value": "Psychology of Computer Use: XL. Addictive Use of the Internet: A Case That Breaks the Stereotype",
+      "source": "crossref",
       "confidence": 1.0,
       "verification_status": "verified"
     },
     "year": {
       "value": 1996,
-      "source": "parsed",
-      "confidence": 0.9,
+      "source": "crossref",
+      "confidence": 1.0,
       "verification_status": "verified"
     },
     "venue": {
-      "value": null,
-      "source": "none",
-      "confidence": 0.0,
-      "verification_status": "unverified"
+      "value": "Psychological Reports, -902",
+      "source": "parsed",
+      "confidence": 0.85,
+      "verification_status": "verified"
     },
     "reference_type": {
       "value": "journal-article",
@@ -65,18 +60,18 @@
     "issue": "1996",
     "pages": "899-902",
     "abstract": null,
-    "url": "https://scholar.google.com/scholar?q=899-902%20Young",
+    "url": "https://doi.org/10.2466/pr0.1996.79.3.899",
     "identifiers": {
       "doi": {
-        "value": null,
-        "source": "none",
-        "confidence": 0.0,
-        "verification_status": "missing"
+        "value": "10.2466/pr0.1996.79.3.899",
+        "source": "doi_verifier",
+        "confidence": 1.0,
+        "verification_status": "verified"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.0,
+        "confidence": 0.45,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -98,24 +93,24 @@
         "verification_status": "unverified"
       },
       "google_scholar_url": {
-        "value": "https://scholar.google.com/scholar?q=899-902%20Young",
+        "value": "https://scholar.google.com/scholar?q=S.%2C%20Psychology%20of%20computer%20use%3A%20Addictive%20use%20of%20the%20internet%2C%20a%20case%20that%20breaks%20the%20stereotype%20Young",
         "source": "google_scholar",
         "confidence": 1.0,
         "verification_status": "verified"
       }
     },
     "citation_counts": {
-      "canonical_value": null,
+      "canonical_value": 821,
       "google_scholar": null,
       "openalex": null,
-      "crossref": null
+      "crossref": 821
     }
   },
   "canonical_authors": [
     {
-      "name": "K. S Young",
-      "display_name": "K. S Young",
-      "given": "K. S",
+      "name": "Kimberly S. Young",
+      "display_name": "Kimberly S. Young",
+      "given": "Kimberly S.",
       "family": "Young",
       "author_id": "",
       "identifiers": {
@@ -124,107 +119,389 @@
         "google_scholar_id": null
       },
       "affiliations": [],
-      "match_status": "matched",
-      "confidence": 0.75
-    },
-    {
-      "name": "a case that breaks the stereotype. Psychological Reports, Psychology of computer use: Addictive use of the internet",
-      "display_name": "a case that breaks the stereotype. Psychological Reports, Psychology of computer use: Addictive use of the internet",
-      "given": "a case that breaks the stereotype. Psychological Reports,",
-      "family": "Psychology of computer use: Addictive use of the internet",
-      "author_id": "",
-      "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
-        "google_scholar_id": null
-      },
-      "affiliations": [],
-      "match_status": "matched",
+      "match_status": "ambiguous",
       "confidence": 0.75
     }
   ],
   "sources": {
     "openalex": {
-      "available": false,
+      "available": true,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.0,
+      "confidence": 0.45,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": null,
+      "raw_file": "data/raw/openalex/12336a01fe15b678.json",
       "normalized_file": null,
       "data": {}
     },
     "crossref": {
-      "available": false,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.0,
-      "citation_count": null,
-      "doi": null,
-      "url": null,
-      "raw_file": null,
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "citation_count": 821,
+      "doi": "10.2466/pr0.1996.79.3.899",
+      "url": "https://doi.org/10.2466/pr0.1996.79.3.899",
+      "raw_file": "data/raw/crossref/fb37dfb5172f76f1.json",
       "normalized_file": null,
-      "data": {}
+      "data": {
+        "title": "Psychology of Computer Use: XL. Addictive Use of the Internet: A Case That Breaks the Stereotype",
+        "authors": [
+          {
+            "name": "Kimberly S. Young",
+            "given": "Kimberly S.",
+            "family": "Young",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          }
+        ],
+        "year": 1996,
+        "journal": "Psychological Reports",
+        "doi": "10.2466/pr0.1996.79.3.899",
+        "url": "https://doi.org/10.2466/pr0.1996.79.3.899",
+        "openalex_id": "",
+        "citation_count": 821,
+        "source": "crossref",
+        "raw_file": "data/raw/crossref/fb37dfb5172f76f1.json"
+      }
     },
     "google_scholar": {
       "available": false,
       "matched": true,
       "status": "matched",
       "confidence": 1.0,
-      "url": "https://scholar.google.com/scholar?q=899-902%20Young",
+      "url": "https://scholar.google.com/scholar?q=S.%2C%20Psychology%20of%20computer%20use%3A%20Addictive%20use%20of%20the%20internet%2C%20a%20case%20that%20breaks%20the%20stereotype%20Young",
       "cluster_id": null,
       "cited_by_url": null,
       "citation_count": null,
       "versions_count": null,
       "raw_file": null,
-      "normalized_file": "data/normalized/google_scholar/29e3c978c7abc0ad.json",
+      "normalized_file": "data/normalized/google_scholar/a99c78d1858976de.json",
       "data": {
-        "title": "899-902",
+        "title": "S., Psychology of computer use: Addictive use of the internet, a case that breaks the stereotype",
         "authors": [
           {
-            "name": "K. S Young",
-            "given": "K. S",
+            "name": "K Young",
+            "given": "K",
             "family": "Young"
-          },
-          {
-            "name": "a case that breaks the stereotype. Psychological Reports, Psychology of computer use: Addictive use of the internet",
-            "given": "a case that breaks the stereotype. Psychological Reports,",
-            "family": "Psychology of computer use: Addictive use of the internet"
           }
         ],
         "year": 1996,
-        "journal": null,
+        "journal": "Psychological Reports, -902",
         "doi": "",
-        "url": "https://scholar.google.com/scholar?q=899-902%20Young",
+        "url": "https://scholar.google.com/scholar?q=S.%2C%20Psychology%20of%20computer%20use%3A%20Addictive%20use%20of%20the%20internet%2C%20a%20case%20that%20breaks%20the%20stereotype%20Young",
         "citation_count": null,
         "source": "google_scholar",
-        "scholar_url": "https://scholar.google.com/scholar?q=899-902%20Young",
+        "scholar_url": "https://scholar.google.com/scholar?q=S.%2C%20Psychology%20of%20computer%20use%3A%20Addictive%20use%20of%20the%20internet%2C%20a%20case%20that%20breaks%20the%20stereotype%20Young",
         "available": false,
         "reason": "SERPAPI_KEY_NOT_CONFIGURED",
         "raw_file": null,
-        "normalized_file": "data/normalized/google_scholar/29e3c978c7abc0ad.json"
+        "normalized_file": "data/normalized/google_scholar/a99c78d1858976de.json"
       }
     }
   },
   "doi_verification": {
-    "status": "missing",
-    "canonical_doi": null,
+    "status": "verified",
+    "canonical_doi": "10.2466/pr0.1996.79.3.899",
     "reconciled_with_arxiv": false,
-    "confidence": 0.0,
-    "reason": "No DOI or arXiv identifier present in reference or provider results.",
-    "conflicts": [],
+    "confidence": 1.0,
+    "reason": "Verified with crossref metadata consistency (title_sim=0.97).",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.neubiorev.2016.08.033",
+        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.84)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.5498/wjp.v6.i1.143",
+        "reason": "Metadata mismatch (title_sim=0.41, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/da.10094",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.2174/13816128113199990617",
+        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/j.2051-5545.2010.tb00278.x",
+        "reason": "Metadata mismatch (title_sim=0.39, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3758/brm.40.2.563",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1111/j.1083-6101.2008.00428.x",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/fnhum.2014.00375",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.87)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3390/ijerph16142612",
+        "reason": "Metadata mismatch (title_sim=0.22, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1111/j.1440-1819.2004.01290.x",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/fpsyt.2019.00455",
+        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2466/pr0.1997.80.1.81",
+        "reason": "Metadata mismatch (title_sim=0.66, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2466/pr0.80.1.81-82",
+        "reason": "Metadata mismatch (title_sim=0.66, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1126/science.abn4189",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1176/appi.pn.2019.8b17",
+        "reason": "Metadata mismatch (title_sim=0.41, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1097/yco.0000000000000804",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/0003-6870(85)90150-4",
+        "reason": "Metadata mismatch (title_sim=0.44, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/0143-6236(84)90031-0",
+        "reason": "Metadata mismatch (title_sim=0.44, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3758/bf03204599",
+        "reason": "Metadata mismatch (title_sim=0.38, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3758/bf03203144",
+        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
     "overall_confidence": 1.0,
-    "metadata_completeness": 0.5,
-    "doi_verified": false,
-    "author_verified": true,
-    "conflicts": []
+    "metadata_completeness": 1.0,
+    "doi_verified": true,
+    "author_verified": false,
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.neubiorev.2016.08.033",
+        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.84)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.5498/wjp.v6.i1.143",
+        "reason": "Metadata mismatch (title_sim=0.41, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/da.10094",
+        "reason": "Metadata mismatch (title_sim=0.33, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.2174/13816128113199990617",
+        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/j.2051-5545.2010.tb00278.x",
+        "reason": "Metadata mismatch (title_sim=0.39, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3758/brm.40.2.563",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1111/j.1083-6101.2008.00428.x",
+        "reason": "Metadata mismatch (title_sim=0.30, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/fnhum.2014.00375",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.87)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3390/ijerph16142612",
+        "reason": "Metadata mismatch (title_sim=0.22, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1111/j.1440-1819.2004.01290.x",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/fpsyt.2019.00455",
+        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2466/pr0.1997.80.1.81",
+        "reason": "Metadata mismatch (title_sim=0.66, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.2466/pr0.80.1.81-82",
+        "reason": "Metadata mismatch (title_sim=0.66, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1126/science.abn4189",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1176/appi.pn.2019.8b17",
+        "reason": "Metadata mismatch (title_sim=0.41, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1097/yco.0000000000000804",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/0003-6870(85)90150-4",
+        "reason": "Metadata mismatch (title_sim=0.44, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/0143-6236(84)90031-0",
+        "reason": "Metadata mismatch (title_sim=0.44, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3758/bf03204599",
+        "reason": "Metadata mismatch (title_sim=0.38, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.3758/bf03203144",
+        "reason": "Metadata mismatch (title_sim=0.29, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -233,14 +510,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 4.94,
-      "crossref": 64264.3,
-      "openalex": 85183.14
+      "google_scholar": 9.67,
+      "crossref": 42780.99,
+      "openalex": 50455.81
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
-      "openalex": 0
+      "crossref": 10,
+      "openalex": 11
     },
     "errors": {}
   }

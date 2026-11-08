@@ -129,23 +129,25 @@ def is_affiliation_line(text: str) -> bool:
     line = _normalise(text)
     if not line:
         return True
-    if _EMAIL_RE.search(line) or _URL_RE.search(line):
+    # Strip URLs and emails first to see if the remainder is an author line or an affiliation line
+    line_no_contact = _URL_RE.sub("", _EMAIL_RE.sub("", line)).strip(" ()[]<>,;")
+    if not line_no_contact:
         return True
-    if _LONG_NUMBER_RE.search(line):
+    if _LONG_NUMBER_RE.search(line_no_contact):
         return True
-    words = set(_words(line))
+    words = set(_words(line_no_contact))
     if words & _AFFILIATION_WORDS:
         return True
     # "An educator ...", "The Department ..." -- a line opening with an article
     # is a description of something, never a person.
-    first = _words(line)[:1]
+    first = _words(line_no_contact)[:1]
     if first and first[0] in {"a", "an", "the"}:
         return True
     # A role word marks a line as a job description only when the line is not
     # itself shaped like a name: "Researcher, Faculty of Science" is one, and
     # "Ali Researcher" is a person whose surname happens to be that word.
     if words & _OCCUPATION_WORDS and not any(
-        is_person_name(part) for part in _SPLIT_RE.split(line) if part.strip()
+        is_person_name(part) for part in _SPLIT_RE.split(line_no_contact) if part.strip()
     ):
         return True
     return False
@@ -162,7 +164,9 @@ def strip_markers(text: str) -> str:
     tokens = name.split()
     while tokens and tokens[0].lower().strip(".,") in _TITLES:
         tokens.pop(0)
-    return " ".join(tokens).strip(" ,.;-")
+    while tokens and tokens[-1].lower().strip(".,") in _TITLES:
+        tokens.pop()
+    return " ".join(tokens).strip(" ,.;-()")
 
 
 def _is_name_token(token: str) -> bool:
@@ -170,6 +174,9 @@ def _is_name_token(token: str) -> bool:
     core = token.strip(".,;:()[]")
     if not core:
         return False
+    # A single-letter token (e.g. initials 'A.', 'A', 'M.') is valid and is not a function word.
+    if len(core) == 1 and core.isalpha():
+        return True
     if core.lower() in _FUNCTION_WORDS or core.lower() in _AFFILIATION_WORDS:
         return False
     # Letters, plus the punctuation names legitimately contain: initials'
@@ -211,6 +218,8 @@ def clean_authors(raw_names: Iterable[str]) -> Tuple[List[str], List[str]]:
     discarded: List[str] = []
     seen: set[str] = set()
 
+    marker_comma_re = re.compile(rf"([{re.escape(_MARKER_CHARS)}])\s*,\s*([{re.escape(_MARKER_CHARS)}])")
+
     for raw in raw_names:
         for line in (_normalise(raw) or "").split("\n"):
             line = line.strip()
@@ -219,9 +228,22 @@ def clean_authors(raw_names: Iterable[str]) -> Tuple[List[str], List[str]]:
             if is_affiliation_line(line):
                 discarded.append(line)
                 continue
-            for candidate in _SPLIT_RE.split(line):
+
+            # Strip standalone emails and URLs in-line so an author name on the same line survives
+            clean_line = _URL_RE.sub("", _EMAIL_RE.sub("", line)).strip(" ()[]<>,;")
+            if not clean_line:
+                continue
+
+            # Normalize comma-separated marker sequences like "1,2,3" -> "1 2 3"
+            while marker_comma_re.search(clean_line):
+                clean_line = marker_comma_re.sub(r"\1 \2", clean_line)
+
+            for candidate in _SPLIT_RE.split(clean_line):
                 candidate = candidate.strip()
                 if not candidate:
+                    continue
+                # If the candidate is only digits/superscripts/symbols, ignore without warning
+                if not any(c.isalpha() for c in candidate):
                     continue
                 if not is_person_name(candidate):
                     if candidate.lower() not in _PLACEHOLDERS:

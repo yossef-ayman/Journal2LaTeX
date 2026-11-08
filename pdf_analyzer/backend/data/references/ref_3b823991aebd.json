@@ -1,31 +1,21 @@
 {
   "reference_id": "ref_3b823991aebd",
-  "project_id": "project_20260906_075341_bb902af0",
-  "created_at": "2026-09-06T07:55:20.779266+00:00",
+  "project_id": "project_20260923_134508_bb902af0",
+  "created_at": "2026-09-23T13:46:04.201014+00:00",
   "input": {
     "original_text": "Khan, M. A., Atangana A., Modeling the dynamics of novel coronavirus (2019-nCov) with fractional derivative. Alexandria. 59",
     "parsed": {
-      "title": "Alexandria",
+      "title": "A., Atangana A., Modeling the dynamics of novel coronavirus (2019-nCov) with fractional derivative",
       "authors": [
         {
-          "name": "M. A Khan",
-          "given": "M. A",
+          "name": "M Khan",
+          "given": "M",
           "family": "Khan"
-        },
-        {
-          "name": "Atangana A",
-          "given": "Atangana",
-          "family": "A"
-        },
-        {
-          "name": "Modeling the dynamics of novel coronavirus (2019-nCov) with fractional derivative",
-          "given": "Modeling the dynamics of novel coronavirus (2019-nCov) with fractional",
-          "family": "derivative"
         }
       ],
       "year": 2019,
       "reference_type": "journal-article",
-      "journal": "59",
+      "journal": "Alexandria. 59",
       "publisher": null,
       "volume": null,
       "issue": "vel",
@@ -37,19 +27,19 @@
   },
   "canonical": {
     "title": {
-      "value": "alexandria",
-      "source": "crossref",
-      "confidence": 0.98,
-      "verification_status": "verified"
+      "value": "A robust study on 2019-nCOV outbreaks through non-singular derivative",
+      "source": "openalex",
+      "confidence": 0.59,
+      "verification_status": "unverified"
     },
     "year": {
-      "value": 2021,
-      "source": "crossref",
-      "confidence": 0.98,
+      "value": 2019,
+      "source": "parsed",
+      "confidence": 0.9,
       "verification_status": "verified"
     },
     "venue": {
-      "value": "59",
+      "value": "Alexandria. 59",
       "source": "parsed",
       "confidence": 0.85,
       "verification_status": "verified"
@@ -70,7 +60,7 @@
     "issue": "vel",
     "pages": null,
     "abstract": null,
-    "url": "https://doi.org/10.5040/9781501365072.304",
+    "url": "https://doi.org/10.1140/epjp/s13360-021-01159-8",
     "identifiers": {
       "doi": {
         "value": null,
@@ -79,9 +69,9 @@
         "verification_status": "conflict"
       },
       "openalex_id": {
-        "value": null,
+        "value": "https://openalex.org/W3127335105",
         "source": "openalex",
-        "confidence": 0.0,
+        "confidence": 0.59,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -103,55 +93,25 @@
         "verification_status": "unverified"
       },
       "google_scholar_url": {
-        "value": "https://scholar.google.com/scholar?q=Alexandria%20Khan",
+        "value": "https://scholar.google.com/scholar?q=A.%2C%20Atangana%20A.%2C%20Modeling%20the%20dynamics%20of%20novel%20coronavirus%20%282019-nCov%29%20with%20fractional%20derivative%20Khan",
         "source": "google_scholar",
         "confidence": 1.0,
         "verification_status": "verified"
       }
     },
     "citation_counts": {
-      "canonical_value": 0,
+      "canonical_value": 177,
       "google_scholar": null,
-      "openalex": null,
-      "crossref": 0
+      "openalex": 177,
+      "crossref": null
     }
   },
   "canonical_authors": [
     {
-      "name": "M. A Khan",
-      "display_name": "M. A Khan",
-      "given": "M. A",
+      "name": "M Khan",
+      "display_name": "M Khan",
+      "given": "M",
       "family": "Khan",
-      "author_id": "",
-      "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
-        "google_scholar_id": null
-      },
-      "affiliations": [],
-      "match_status": "matched",
-      "confidence": 0.75
-    },
-    {
-      "name": "Atangana A",
-      "display_name": "Atangana A",
-      "given": "Atangana",
-      "family": "A",
-      "author_id": "",
-      "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
-        "google_scholar_id": null
-      },
-      "affiliations": [],
-      "match_status": "matched",
-      "confidence": 0.75
-    },
-    {
-      "name": "Modeling the dynamics of novel coronavirus (2019-nCov) with fractional derivative",
-      "display_name": "Modeling the dynamics of novel coronavirus (2019-nCov) with fractional derivative",
-      "given": "Modeling the dynamics of novel coronavirus (2019-nCov) with fractional",
-      "family": "derivative",
       "author_id": "",
       "identifiers": {
         "openalex_id": null,
@@ -165,84 +125,161 @@
   ],
   "sources": {
     "openalex": {
+      "available": true,
+      "matched": false,
+      "status": "low_confidence",
+      "confidence": 0.59,
+      "citation_count": 177,
+      "openalex_id": "https://openalex.org/W3127335105",
+      "doi": "10.1140/epjp/s13360-021-01159-8",
+      "url": "https://doi.org/10.1140/epjp/s13360-021-01159-8",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1140/epjp/s13360-021-01159-8.pdf",
+      "raw_file": "data/raw/openalex/b6beafb695d8efbf.json",
+      "normalized_file": null,
+      "data": {
+        "title": "A robust study on 2019-nCOV outbreaks through non-singular derivative",
+        "display_name": "A robust study on 2019-nCOV outbreaks through non-singular derivative",
+        "authors": [
+          {
+            "name": "Muhammad Altaf Khan",
+            "given": "Muhammad Altaf",
+            "family": "Khan",
+            "author_id": "https://openalex.org/A5057536424",
+            "display_name": "Muhammad Altaf Khan",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5057536424",
+              "orcid": "https://orcid.org/0000-0002-4483-7879",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Ton Duc Thang University"
+            ],
+            "countries": [
+              "VN"
+            ]
+          },
+          {
+            "name": "Saif Ullah",
+            "given": "Saif",
+            "family": "Ullah",
+            "author_id": "https://openalex.org/A5003720374",
+            "display_name": "Saif Ullah",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5003720374",
+              "orcid": "https://orcid.org/0000-0002-4338-6850",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "University of Peshawar"
+            ],
+            "countries": [
+              "PK"
+            ]
+          },
+          {
+            "name": "Sunil Kumar",
+            "given": "Sunil",
+            "family": "Kumar",
+            "author_id": "https://openalex.org/A5060764666",
+            "display_name": "Sunil Kumar",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5060764666",
+              "orcid": "https://orcid.org/0000-0003-0620-1068",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "National Institute of Technology Jamshedpur"
+            ],
+            "countries": [
+              "IN"
+            ]
+          }
+        ],
+        "year": 2021,
+        "publication_date": "2021-02-01",
+        "journal": "The European Physical Journal Plus",
+        "venue": "The European Physical Journal Plus",
+        "publisher": "Springer Science+Business Media",
+        "reference_type": "journal-article",
+        "volume": "136",
+        "issue": "2",
+        "pages": "168",
+        "doi": "10.1140/epjp/s13360-021-01159-8",
+        "url": "https://doi.org/10.1140/epjp/s13360-021-01159-8",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1140/epjp/s13360-021-01159-8.pdf",
+        "openalex_id": "https://openalex.org/W3127335105",
+        "citation_count": 177,
+        "cited_by_count": 177,
+        "is_oa": true,
+        "oa_status": "bronze",
+        "abstract": null,
+        "topics": [
+          "Fractional Differential Equations Solutions",
+          "Mathematical and Theoretical Epidemiology and Ecology Models",
+          "COVID-19 epidemiological studies"
+        ],
+        "referenced_works_count": 30,
+        "related_works": [
+          "https://openalex.org/W3162204513",
+          "https://openalex.org/W2371138613",
+          "https://openalex.org/W2048963458",
+          "https://openalex.org/W43109613",
+          "https://openalex.org/W2359952343"
+        ],
+        "source": "openalex",
+        "raw_file": "data/raw/openalex/b6beafb695d8efbf.json"
+      }
+    },
+    "crossref": {
       "available": false,
       "matched": false,
       "status": "not_found",
       "confidence": 0.0,
       "citation_count": null,
-      "openalex_id": null,
       "doi": null,
       "url": null,
-      "pdf_url": null,
       "raw_file": null,
       "normalized_file": null,
       "data": {}
-    },
-    "crossref": {
-      "available": true,
-      "matched": true,
-      "status": "matched",
-      "confidence": 0.98,
-      "citation_count": 0,
-      "doi": "10.5040/9781501365072.304",
-      "url": "https://doi.org/10.5040/9781501365072.304",
-      "raw_file": "data/raw/crossref/a6cc1ef14390cf5f.json",
-      "normalized_file": null,
-      "data": {
-        "title": "alexandria",
-        "authors": [],
-        "year": 2021,
-        "journal": "The Fairchild Books Dictionary of Textiles",
-        "doi": "10.5040/9781501365072.304",
-        "url": "https://doi.org/10.5040/9781501365072.304",
-        "openalex_id": "",
-        "citation_count": 0,
-        "source": "crossref",
-        "raw_file": "data/raw/crossref/a6cc1ef14390cf5f.json"
-      }
     },
     "google_scholar": {
       "available": false,
       "matched": true,
       "status": "matched",
       "confidence": 1.0,
-      "url": "https://scholar.google.com/scholar?q=Alexandria%20Khan",
+      "url": "https://scholar.google.com/scholar?q=A.%2C%20Atangana%20A.%2C%20Modeling%20the%20dynamics%20of%20novel%20coronavirus%20%282019-nCov%29%20with%20fractional%20derivative%20Khan",
       "cluster_id": null,
       "cited_by_url": null,
       "citation_count": null,
       "versions_count": null,
       "raw_file": null,
-      "normalized_file": "data/normalized/google_scholar/a5f077b72476c9c7.json",
+      "normalized_file": "data/normalized/google_scholar/866d085f685fdac9.json",
       "data": {
-        "title": "Alexandria",
+        "title": "A., Atangana A., Modeling the dynamics of novel coronavirus (2019-nCov) with fractional derivative",
         "authors": [
           {
-            "name": "M. A Khan",
-            "given": "M. A",
+            "name": "M Khan",
+            "given": "M",
             "family": "Khan"
-          },
-          {
-            "name": "Atangana A",
-            "given": "Atangana",
-            "family": "A"
-          },
-          {
-            "name": "Modeling the dynamics of novel coronavirus (2019-nCov) with fractional derivative",
-            "given": "Modeling the dynamics of novel coronavirus (2019-nCov) with fractional",
-            "family": "derivative"
           }
         ],
         "year": 2019,
-        "journal": "59",
+        "journal": "Alexandria. 59",
         "doi": "",
-        "url": "https://scholar.google.com/scholar?q=Alexandria%20Khan",
+        "url": "https://scholar.google.com/scholar?q=A.%2C%20Atangana%20A.%2C%20Modeling%20the%20dynamics%20of%20novel%20coronavirus%20%282019-nCov%29%20with%20fractional%20derivative%20Khan",
         "citation_count": null,
         "source": "google_scholar",
-        "scholar_url": "https://scholar.google.com/scholar?q=Alexandria%20Khan",
+        "scholar_url": "https://scholar.google.com/scholar?q=A.%2C%20Atangana%20A.%2C%20Modeling%20the%20dynamics%20of%20novel%20coronavirus%20%282019-nCov%29%20with%20fractional%20derivative%20Khan",
         "available": false,
         "reason": "SERPAPI_KEY_NOT_CONFIGURED",
         "raw_file": null,
-        "normalized_file": "data/normalized/google_scholar/a5f077b72476c9c7.json"
+        "normalized_file": "data/normalized/google_scholar/866d085f685fdac9.json"
       }
     }
   },
@@ -255,151 +292,151 @@
     "conflicts": [
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9783050081298.15",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1140/epjp/s13360-021-01159-8",
+        "reason": "Metadata mismatch (title_sim=0.47, author_sim=0.87)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5040/9798216201199.010",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-02834-3",
+        "reason": "Metadata mismatch (title_sim=0.42, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1628/978-3-16-192902-9",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1140/epjp/s13360-020-00819-5",
+        "reason": "Metadata mismatch (title_sim=0.42, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/978-3-662-68478-8_9",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.32604/cmc.2020.012314",
+        "reason": "Metadata mismatch (title_sim=0.37, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.13109/9783666300356.39",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-02762-2",
+        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/gao/9781884446054.article.t001722",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-02831-6",
+        "reason": "Metadata mismatch (title_sim=0.38, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1177/030751332701300131",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-02845-0",
+        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5040/9781501365072.304",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-021-03265-4",
+        "reason": "Metadata mismatch (title_sim=0.20, author_sim=0.83)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9780691219813-002",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1515/dema-2022-0183",
+        "reason": "Metadata mismatch (title_sim=0.41, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9781315206523-6",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.aej.2021.12.042",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
         "status": "conflict"
       }
     ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
-    "overall_confidence": 0.98,
+    "overall_confidence": 1.0,
     "metadata_completeness": 0.83,
     "doi_verified": false,
     "author_verified": true,
     "conflicts": [
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9783050081298.15",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1140/epjp/s13360-021-01159-8",
+        "reason": "Metadata mismatch (title_sim=0.47, author_sim=0.87)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5040/9798216201199.010",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-02834-3",
+        "reason": "Metadata mismatch (title_sim=0.42, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1628/978-3-16-192902-9",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1140/epjp/s13360-020-00819-5",
+        "reason": "Metadata mismatch (title_sim=0.42, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1007/978-3-662-68478-8_9",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.32604/cmc.2020.012314",
+        "reason": "Metadata mismatch (title_sim=0.37, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.13109/9783666300356.39",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-02762-2",
+        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/gao/9781884446054.article.t001722",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-02831-6",
+        "reason": "Metadata mismatch (title_sim=0.38, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1177/030751332701300131",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-02845-0",
+        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5040/9781501365072.304",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-021-03265-4",
+        "reason": "Metadata mismatch (title_sim=0.20, author_sim=0.83)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1515/9780691219813-002",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1515/dema-2022-0183",
+        "reason": "Metadata mismatch (title_sim=0.41, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4324/9781315206523-6",
-        "reason": "Metadata mismatch (title_sim=1.00, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.aej.2021.12.042",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
         "status": "conflict"
       }
     ]
@@ -411,14 +448,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 4.57,
-      "crossref": 57088.35,
-      "openalex": 78984.07
+      "google_scholar": 8.83,
+      "crossref": 37402.46,
+      "openalex": 44404.44
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 10,
-      "openalex": 0
+      "crossref": 0,
+      "openalex": 10
     },
     "errors": {}
   }

@@ -86,10 +86,10 @@ def _convert_with_word(docx_path: Path, output_path: Path) -> None:
         # ReadOnly and AddToRecentFiles=False keep the master template and the
         # operator's Word environment untouched.
         document = word.Documents.Open(
-            str(docx_path), ReadOnly=True, AddToRecentFiles=False, Visible=False
+            str(docx_path.resolve()), ReadOnly=True, AddToRecentFiles=False, Visible=False
         )
         # 17 = wdExportFormatPDF
-        document.ExportAsFixedFormat(str(output_path), 17)
+        document.ExportAsFixedFormat(str(output_path.resolve()), 17)
     except Exception as exc:  # noqa: BLE001 - COM raises a wide variety
         raise PdfConversionError(f"Word could not export {docx_path.name}: {exc}") from exc
     finally:

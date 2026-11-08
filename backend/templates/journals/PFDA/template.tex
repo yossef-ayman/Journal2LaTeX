@@ -1,0 +1,125 @@
+\PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
+\RequirePackage{xcolor}
+\makeatletter\@namedef{ver@color.sty}{2021/01/01}\makeatother
+\makeatletter\@ifundefined{providecolor}{}{%
+	\providecolor{abstractcolor}{RGB}{128,128,128}
+	\providecolor{rulecolor}{RGB}{128,128,128}
+}\makeatother
+
+\documentclass[10pt]{NSP1}
+
+\usepackage{url,floatflt,cite}
+\usepackage{helvet,times}
+\usepackage{psfig,graphics,graphicx}
+\usepackage{mathptmx,amsmath,amssymb,bm,amsfonts,nccmath}
+\usepackage{float}
+\usepackage[bf,hypcap]{caption}
+\usepackage{placeins}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\graphicspath{{./media/}{./images/}}
+
+\captionsetup{
+	labelfont=bf,
+	labelsep=period,
+	aboveskip=4pt,
+	belowskip=3pt
+}
+\captionsetup[table]{position=above,aboveskip=4pt,belowskip=4pt}
+\captionsetup[figure]{position=below,aboveskip=4pt,belowskip=2pt}
+
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\addtolength{\oddsidemargin}{.5in}
+\addtolength{\evensidemargin}{-.5in}
+\topmargin=0.00cm
+\raggedbottom
+
+\def\sm{\smallskip}
+\def\no{\noindent}
+
+% Match abstract rules to journal banner color
+\colorlet{rulecolor}{abstractcolor}
+
+% Fractional derivative and math helpers from PFDA official papers
+\newcommand{\fitwidth}[1]{\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{#1}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\providecommand{\ul}[1]{#1}
+\newcommand{\CD}{\mathcal{D}}
+
+% Theorem and Lemma environments required for PFDA mathematical papers
+\makeatletter
+\@ifundefined{theorem}{\newtheorem{theorem}{Theorem}}{}
+\@ifundefined{corollary}{\newtheorem{corollary}{Corollary}}{}
+\@ifundefined{definition}{\newtheorem{definition}{Definition}}{}
+\@ifundefined{lemma}{\newtheorem{lemma}{Lemma}}{}
+\@ifundefined{proposition}{\newtheorem{proposition}{Proposition}}{}
+\@ifundefined{remark}{\newtheorem{remark}{Remark}}{}
+\@ifundefined{case}{\newtheorem{case}{Case}}{}
+\makeatother
+
+% Direct Unicode Greek characters mapping for math equations
+\IfFileExists{newunicodechar.sty}{\usepackage{newunicodechar}}{\makeatletter\providecommand\newunicodechar[2]{%
+	\begingroup\lccode\~=#1\lowercase{\endgroup\def~}{#2}%
+	\catcode#1=\active}\makeatother}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+
+\def\firstpage{1}
+\setcounter{page}{\firstpage}
+\def\thevol{__VOLUME__}
+\def\thenumber{__ISSUE__}
+\def\theyear{__YEAR__}
+
+\journalname{Progress in Fractional Differentiation and Applications}
+
+\begin{document}
+
+\titlefigurecaption{{\large \bf \rm Progress in Fractional Differentiation and Applications}\\ {\it\small An International Journal}}
+
+\title{__TITLE__}
+
+\author{__AUTHORS__}
+
+\institute{__INSTITUTES__}
+
+\titlerunning{__RUNNING_TITLE__}
+\authorrunning{__RUNNING_AUTHOR__}
+
+\mail{__CORRESPONDING_EMAIL__}
+
+\received{__RECEIVED_DATE__}
+\revised{__REVISED_DATE__}
+\accepted{__ACCEPTED_DATE__}
+\published{__PUBLISHED_DATE__}
+
+\def\doi{__DOI__}
+\paperdoi{__DOI__}
+
+\abstracttext{__ABSTRACT__}
+
+\keywords{__KEYWORDS__}
+
+\maketitle
+
+\setlength{\floatsep}{6pt}   
+\setlength{\textfloatsep}{6pt}  
+\setlength{\intextsep}{6pt} 
+
+__CONTENT__
+
+\end{document}

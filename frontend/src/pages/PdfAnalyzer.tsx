@@ -54,41 +54,26 @@ export const PdfAnalyzerPage: React.FC = () => {
     formData.append("file", file);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/pdf-analyzer/analyze`, {
+      const response = await fetch(`${API_BASE_URL}/pdf-analyzer-standalone/analyze`, {
         method: "POST",
         body: formData,
       });
 
       if (!response.ok) {
-        throw new Error(`Analysis failed with status ${response.status}`);
+        const body = await response.json().catch(() => null);
+        const detail = body && typeof body.detail === "string" ? body.detail : response.statusText;
+        throw new Error(`تعذر تحليل الملف (${response.status}): ${detail || "خطأ غير معروف"}`);
       }
 
       const data = await response.json();
-      setResult(data);
+      setResult({ ...data, pages: data.pages ?? data.page_count ?? 0 });
     } catch (err: any) {
-      console.warn("API PDF Analyzer unreachable, displaying fallback analysis", err);
-      setTimeout(() => {
-        setResult({
-          pages: 12,
-          metadata: {
-            title: file.name.replace(/\.[^/.]+$/, ""),
-            authors: ["Dr. Researcher", "Prof. Academic"],
-            doi: "10.1016/j.jcp.2026.109821",
-            arxiv_id: "2608.12345",
-          },
-          structure: {
-            sections: ["Abstract", "1. Introduction", "2. Methodology", "3. Results", "4. Discussion", "References"],
-            headings_count: 14,
-            tables_count: 4,
-            figures_count: 8,
-          },
-          raw_text_snippet: `Extracted preview of ${file.name}:\n\nAbstract—This paper presents an automated structural layout extraction method for academic PDF publications...`,
-        });
-        setLoading(false);
-      }, 800);
-      return;
+      const message = err instanceof Error ? err.message : "حدث خطأ أثناء الاتصال بالخادم.";
+      console.error("PDF analysis failed:", err);
+      setError(message);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const totalPages = result?.pages || 12;

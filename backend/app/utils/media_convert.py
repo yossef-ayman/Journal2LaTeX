@@ -82,34 +82,55 @@ def convert_unsupported_media(media_dir: Path, job_id: str) -> Dict[str, Any]:
     if not pending:
         return report
 
-    soffice = shutil.which(settings.SOFFICE_PATH) or shutil.which("libreoffice")
-    if not soffice:
-        msg = f"{len(pending)} vector media files need conversion but LibreOffice is unavailable."
-        logger.warning(msg)
-        report["failed"] = [f.name for f in pending]
+    # 1. Fast in-process conversion using Pillow (supports WMF natively)
+    still_pending: List[Path] = []
+    for f in pending:
+        png = f.with_suffix(".png")
+        try:
+            with Image.open(f) as im:
+                im.save(png, "PNG")
+            _autocrop_png(png)
+            report["converted"].append(f.name)
+        except Exception:
+            still_pending.append(f)
+
+    if not still_pending:
+        report["backend"] = "pillow"
+        logger.info("Vector media conversion: %d converted via Pillow, 0 failed.", len(report["converted"]))
         return report
 
-    report["backend"] = "libreoffice"
-    try:
-        result = subprocess.run(
-            [soffice, "--headless", "--norestore", "--convert-to", "png",
-             "--outdir", str(media_dir)] + [str(f) for f in pending],
-            capture_output=True, text=True, check=False,
-            timeout=settings.COMPILE_TIMEOUT,
-        )
-        if result.returncode != 0:
-            logger.warning("LibreOffice media conversion rc=%d: %s",
-                           result.returncode, (result.stderr or "")[:300])
-    except (OSError, subprocess.SubprocessError) as exc:
-        logger.warning("LibreOffice media conversion failed: %s", exc)
+    # 2. Fallback to LibreOffice for formats Pillow cannot read (e.g. SVG/EMF)
+    soffice = shutil.which(settings.SOFFICE_PATH) or shutil.which("libreoffice")
+    if soffice:
+        report["backend"] = "libreoffice"
+        try:
+            result = subprocess.run(
+                [soffice, "--headless", "--norestore", "--convert-to", "png",
+                 "--outdir", str(media_dir)] + [str(f) for f in still_pending],
+                capture_output=True, text=True, check=False,
+                timeout=settings.COMPILE_TIMEOUT,
+            )
+            if result.returncode != 0:
+                logger.warning("LibreOffice media conversion rc=%d: %s",
+                               result.returncode, (result.stderr or "")[:300])
+        except (OSError, subprocess.SubprocessError) as exc:
+            logger.warning("LibreOffice media conversion failed: %s", exc)
 
-    for f in pending:
+    # 3. Final pass: record successes and create graceful placeholders for missing images
+    for f in still_pending:
         png = f.with_suffix(".png")
         if png.exists():
             _autocrop_png(png)
             report["converted"].append(f.name)
         else:
+            # Generate a clean lightweight placeholder so \includegraphics does not abort the LaTeX build
+            try:
+                placeholder = Image.new("RGB", (64, 64), (245, 245, 245))
+                placeholder.save(png, "PNG")
+            except Exception:
+                pass
             report["failed"].append(f.name)
+
     if report["failed"]:
         logger.warning("Media files not converted to PNG: %s", report["failed"][:10])
     logger.info("Vector media conversion: %d converted, %d failed.",

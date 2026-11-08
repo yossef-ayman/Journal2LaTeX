@@ -278,5 +278,9 @@ def _inject_body_font_scale(source: str) -> str:
         "\\normalsize\n"
         "% <<< j2l compat\n"
     )
-    insert = b.end()
+    maketitle_match = re.search(r"\\maketitle\b", source)
+    if maketitle_match:
+        insert = maketitle_match.end()
+    else:
+        insert = b.end()
     return source[:insert] + block + source[insert:]

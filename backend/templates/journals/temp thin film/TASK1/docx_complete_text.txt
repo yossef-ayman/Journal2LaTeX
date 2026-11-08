@@ -1,0 +1,375 @@
+P[0]: Nanoparticle – Blood Flow and Immune System Interactions in Advancing Cardiovascular Health: A COMSOL Multiphysics Analysis
+
+P[1]: Sahin Ahmed1, Anil Nangkar2 and Kottakkaran Sooppy Nisar3,4,5,*
+
+P[2]: 1,2Department of Mathematics, Rajiv Gandhi University, 791112, Arunachal Pradesh, INDIA.
+
+P[3]: E-mail(s): 1nanofluid.sahin@gmail.com
+
+P[4]: 2anil.nangkar@rgu.ac.in
+
+P[5]: 3Department of Mathematics, College of Science and Humanities, Prince Sattam bin Abdulaziz University, KSA; Email: ksnisar1@gmail.com
+
+P[6]: 4 Mathematics Research Center, Near East University, 99138 Nicosia, Turkey.
+
+P[7]: 5 Hourani Center for Applied Scientific Research, Al-Ahliyya Amman University, Amman, Jordan
+
+P[8]: *Corresponding Author: K.S. Nisar
+
+P[11]: Abstract –
+
+P[12]: This paper provides an elaborate mathematical model for the association of the flow of blood in arteries, WBCs, cytokines, and nanoparticles in regulating vascular inflammation. What makes this research stand out is the integration of hemodynamics, transport in immunology, and physical attributes of nanoparticles into a computational model used for treating cardiovascular diseases. The study adopts COMSOL Multiphysics platform in investigating the effect of nanoparticles on the functions of the immune system through reaction-convection-diffusion equations. This model clarifies the role of particles in interactions with cytokines and WBCs, thus improving the efficacy of the delivery process of nanoparticles to the region of inflammation. Results showed that magnetically activated Fe3O4 particles significantly increased WBCs' reaction at inflamed sites. On the other hand, SWCNT particles were characterized by higher thermal conductivity but failed to cause any change in chemotactic reactions. This aspect is particularly crucial when designing new precision medicine approaches to manage inflammatory-related cardiovascular disease, such as atherosclerosis. The proposed computational method has successfully contributed to solving the knowledge gap that exists while offering a strong framework for future work in this regard.
+
+P[13]: Keywords: Blood flow, White blood cell, COMSOL Multiphysics, Nanoparticles, MHD.
+
+P[16]: 1 Introduction
+
+P[17]: Cardiovascular diseases present significant mortality and morbidity worldwide. Characterizing arterial blood flow patterns is fundamental to diagnosing and treating these conditions. In this study, we investigate the contributions of WBCs and cytokines to the inflammatory pathways activated in multifaceted vascular pathologies. Inflammation is central to the pathophysiology of many diseases, including atherosclerosis. In atherosclerosis, some cytokines control the immune response, and WBCs are recruited to the inflamed endothelium. This model also examines the use of engineered nanoparticles for the modulation of these biological responses to augment the delivery and enhance the therapeutic effects of treatments. This work combines advanced computational modeling with the complexities and interrelated functionality of arterial blood flow, WBCs, cytokines, and nanoparticles. With the use of COMSOL Multiphysics, these simulations strive to elucidate new perspectives toward therapeutic vascular improvement.
+
+P[18]: Understanding arterial blood flow velocity and health has significant implications on the aging process and countless other conditions such as atherosclerosis. Hemodynamic forces and shear stress act on the endothelium, which is susceptible to plaque buildup. Low shear stress correlates with a tendency for plaque buildup (Ku, 1997). More sophisticated models such as those proposed by Zhao et al. (2000), and Steinman (2004) have the ability to predict the progression of a given pathology. The work of Singh et al. (2010), and Rezazadeh and Ostadi (2022) shows the potential of imaging and modeling to examine the complex phenomena that occur in constricted arteries. Katanov et al. (2015) studies microvascular blood flow resistance, and red blood cell migration and dispersion, which are crucial phenomena of microcirculation. Milnor (1989) and Iliceto et al. (1991) provided fundamental insights into cardiovascular hemodynamics and blood-flow velocity measurements under physiological conditions.
+
+P[19]: Nanoparticles are considered one of the important facets of nanotechnology with great applications in the biomedical domain. Nanoparticle applications have been found in various aspects, including the development of nanoparticle-based drug delivery systems and nanoparticle-based diagnostic approaches. For instance, according to Shen et al. (2018), there have been investigations regarding biocompatibility and magnetism of Fe3O4 nanoparticles for targeted therapies. As per Fullstone et al. (2015), SWCNTs are discussed along with the special electric and thermal characteristics of such particles for enabling delivery mechanisms and temperature control. The ability of nanoparticles to follow diverse routes in the blood flow is well established by previous research conducted by Gentile et al. (2008) and Ghasemi et al. (2015). Another study by Boujelbene et al. (2023) analyzes the thermal and mechanical impacts of nanoparticles under a magnetic field. Siogkas et al. (2011) developed patient-specific multiscale arterial models, demonstrating the usefulness of computational approaches in cardiovascular disease analysis.
+
+P[20]: A synergistic relationship between white blood cells (WBCs) and cytokines in circulation is critical for a strong immune response, especially during inflammation. This is evidenced by research done by Gerhardt & Ley (2015) and Cavaillon (1994), where they demonstrate how cytokine signalling is involved in coordinating the actions of WBCs and consequently guide their mobility and effectiveness. In turn, it is possible for nanoparticles to change these dynamics in ways that can strengthen immune response, which has been demonstrated by Zlotnik & Yoshie (2000) and Dubey et al. (2021). Such alterations present an avenue for improving targeting and effectiveness of immunotherapy, especially those involving the vasculature. Khan and Khan (2009) emphasized the crucial role of white blood cells and cytokine-mediated signaling in regulating immune responses during inflammation. Hewlin et al. (2023) study the impact of unstable flows on the targeting effectiveness of magnetic nanoparticles in arterial stents. Anderson et al. (2013) and Lee et al. (2010) reported that nanoparticle diffusion, size, and targeting characteristics significantly influence transport efficiency and biodistribution in biological systems. Sha et al. (2017), Wei et al. (2018), and Muhammad et al. (2018) highlighted the superior magnetic responsiveness of Fe₃O₄ nanoparticles and the excellent thermal conductivity of SWCNTs, making them attractive for biomedical transport applications.
+
+P[21]: The role of computational modelling in cardiovascular research is vital in that it facilitates the construction and forecasting of complex interactions in the cardiovascular system. Budu-Grajdeanu et al. (2008) and Cilla et al. (2014) make use of computation methods to model disease processes and possible treatment options. Advances in computation methods highlighted by Menon et al. (2024) and Ali et al. (2021) enable the creation of complex multiscale models that accurately represent physiological systems. Fractional modelling of MHD blood flow along with the introduction of magnetic particles for improved visualization and targeting within vascular models has been addressed by Majeed et al. (2022). Blood flow mechanics have also been studied by other scholars, such as Vaidya et al. (2021) and Ougrinovskaia et al. (2010). Ahmed and Mishra (2026) developed a semi-experimental model vis COMSOL Multiphysics to investigated the behaviour of stenos height in a stenotic artery to simulate blood flow having microorganism and silver nanoparticles by the influence of Reynolds number, Hartmann number, and bioconvection Lewis number. The classical models of Maxwell (1873) and Brinkman (1952) remain widely used for estimating the effective thermal conductivity and viscosity of nanoparticle suspensions.
+
+P[22]: In this investigation, we introduce a numerical model using governing equations in conjunction with blood mass transport for studying the interplay between white blood cells, cytokines, and synthetic nanoparticles. Based on an extensive review of the relevant literature, this model is able to fill the critical gap in scientific knowledge by investigating the regulation of immune system responses within the cardiovascular system. The parameters, such as reaction rate constants and diffusivity coefficients, are precisely computed based on experimental data available in the literature to make sure that the simulation outputs mimic real biological processes. Through focusing on this relationship, the main aim of this model is to provide us with new insights into the effectiveness of nanoparticle therapy.
+
+P[23]: 2 Model hypothesis
+
+P[24]: The present research paper aims at developing the concept of chemotactic motion of white blood cells (WBCs) under the influence of nanoparticle-cytokine interactions along with a magnetic field acting on the moving blood in the artery. The computational domain consists of a three-dimensional simulation of a blood vessel enclosed by the inflow and outflow boundaries, whereas there exists an infected area on the surface of the blood vessel that constantly secretes cytokines into the surrounding environment. This local secretion of cytokines acts as a stimulus for the attraction of WBCs towards the affected zone, which imitates inflammatory behaviour of the immune system.
+
+P[26] [IMG_COUNT=1]: 
+
+P[27]: Fig. 1: 2D Schematic diagram of the model.
+
+P[29]: The geometry is structured to replicate arterial dimensions, suitable for laminar, steady blood flow. Blood is treated as an incompressible, Newtonian fluid with constant density (ρf) and dynamic viscosity (μf). Under these assumptions, the model adheres to a steady, laminar flow profile, aligning with physiological conditions in medium to small blood vessels. There exist two types of nanoparticles, which include Fe3O4 (magnetite) and SWCNT (Single-Walled Carbon Nanotube). These are injected into the bloodstream in order to investigate their various influences in terms of the migration of white blood cells (WBCs) due to the presence of magnetic forces. Under the current context, WBC locomotion occurs through the mechanism of chemotaxis in response to the cytokine concentration gradient within the infected region. The underlying mathematics behind this model takes into consideration these interactions where the WBC density acts as the chemotactic variable, while nanoparticle density affects WBCs depending on magnetic variations. Building upon that, the present model aims to address the following research questions:
+
+P[30]: How does χ impact the temporal and spatial accumulation of WBCs in response to cytokine gradients, particularly in inflamed regions?
+
+P[31]: What is the influence of Fe₃O₄ nanoparticles and SWCNTs on WBC migration and temperature modulation under changing magnetic field conditions, and how do their properties shape therapeutic outcomes?
+
+P[32]: Can magnetic field modulation augment the sensitivity of WBCs to cytokine gradients, and what character do Fe₃O₄ nanoparticles play in strengthening this impact compared to SWCNTs?
+
+P[33]: What are the thermal and chemotactic performance differences between Fe₃O₄ and SWCNT nanoparticles, and how can their distinct behaviours under magnetic influence be optimized for targeted therapeutic interventions?
+
+P[34]: How does the interaction between WBCs, cytokines, and nanoparticles change with time according to different levels of chemotactic sensitivities and magnetic fields? What are the consequences of such interaction on the accuracy of targeted immune treatments?
+
+P[35]: 3 Governing equations
+
+P[36]: The system of equations which describe the blood flow, temperature profile, movement of nanoparticles, WBCs, and cytokine concentration can be found below. The set of equations for each of the cases is provided together with respective boundary conditions used in the COMSOL simulation.
+
+P[37]: 3.1 Blood flow along the vessel
+
+P[38]: Blood flow is considered as an incompressible, Newtonian fluid, described by the continuity and Navier-Stokes equations. The continuity equation ensures the conservation of mass:
+
+P[39]: ∇.u=0,
+
+P[40]: and the Navier-Stokes equation governs momentum conservation [Ku (1997); Steinman (2004)]:
+
+P[41]: ∂u∂t+u.∇u=-1ρnf∇p+μnfρnf∇2u+1ρnf(J×B) ,
+
+P[42]: where:
+
+P[43]: u is the velocity vector field,
+
+P[44]: ρnf is the density of nanofluid,
+
+P[45]: μnf is the dynamic viscosity,
+
+P[46]: p is the pressure,
+
+P[47]: J,B ​ represents the electric current density and the applied magnetic field.
+
+P[48]: At the inlet, a velocity profile is applied to simulate physiological blood flow conditions, ensuring a realistic representation of blood entering the vessel. The outlet boundary condition adopts an outflow profile (n⋅∇p=0) to maintain continuity of flow without artificial pressure buildup. Vessel walls are modelled with no-slip conditions (u=0), accurately representing the frictional interaction between blood and the endothelial surface.
+
+P[49]: 3.2 Nanoparticle transport [Gentile et al. (2008); Fullstone et al. (2015)]
+
+P[50]: Nanoparticles (Fe₃O₄ and SWCNT) are transported within the bloodstream according to the convection-diffusion equation:
+
+P[51]: ∂Cnp∂t+∇.uCnp=Dnp∇2Cnp
+
+P[52]: where:
+
+P[53]: Cnp​ is the nanoparticle concentration,
+
+P[54]: Dnp ​ denotes the diffusion coefficient of nanoparticles.
+
+P[55]: At the inlet, the concentration of nanoparticles is defined by the volume fraction, ϕ representing the initial distribution of nanoparticles in the bloodstream. This volume fraction can be adjusted based on experimental or simulation needs. The outlet follows a convective flux condition (n.Dnp∇Cnp= 0), allowing nanoparticles to exit the domain naturally with the flow. The vessel walls are modelled with a no-flux condition to prevent nanoparticle loss through the vessel boundaries.
+
+P[56]: 3.3 WBC transport and Chemotaxis [Zlotnik & Yoshie (2000); Gerhardt & Ley (2015)]
+
+P[57]: The migration and distribution of WBCs within the flow are influenced by both convection-diffusion equation and chemotaxis:
+
+P[58]: ∂CWBC∂t+∇⋅(uCWBC)=DWBC∇2CWBC-χ∇⋅(CWBC∇Ccytokine)
+
+P[59]: where:
+
+P[60]: CWBC ​ is the concentration of WBCs,
+
+P[61]: DWBC ​ is the WBC diffusion coefficient,
+
+P[62]: χ represents the chemotactic sensitivity coefficient indicating the response strength of WBCs to cytokine gradients,
+
+P[63]: Ccytokine ​ is the cytokine concentration.
+
+P[64]: The chemotactic term, -χ∇⋅(CWBC∇Ccytokine), represents the directed movement of WBCs toward higher cytokine concentrations. This term reflects the natural biological response where WBCs are attracted to sites of infection or inflammation, following the cytokine concentration gradient. At the inlet, a baseline concentration of WBCs (C0,WBC) is set to simulate their entry into the vessel. The outlet employs a zero diffusive flux condition, n.DWBC∇CWBC=0, allowing for the natural exit of WBCs with the flow. The vessel walls use reflective boundary conditions to prevent WBCs from being absorbed or lost, ensuring that their movement remains constrained within the vessel.
+
+P[65]: 3.4 Cytokine distribution [Cavaillon (1994); Budu-Grajdeanu et al. (2008)]
+
+P[66]: Cytokines play a pivotal role in guiding WBC chemotaxis and are modelled with the following convection-diffusion reaction equation:
+
+P[67]: ∂Ccytokine∂t+∇⋅(uCcytokine)=Dcytokine∇2Ccytokine
+
+P[68]: where:
+
+P[69]: Dcytokine is the cytokine diffusion coefficient.
+
+P[70]: The continuous release of cytokines from the infected region creates a gradient that drives the chemotactic response of WBCs, simulating a biological infection site. The infected region along the vessel wall serves as a cytokine source, maintaining a steady concentration (C0,cytokine) to mimic ongoing inflammation. Both inlet and outlet boundaries use zero diffusive flux conditions, n.Dcytokine∇Ccytokine=0, to ensure that cytokines are confined within the vessel. The vessel walls are treated as non-permeable, preserving the cytokine gradient essential for WBC chemotaxis.
+
+P[71]: 3.5 Temperature distribution [Rezazadeh & Ostadi (2022); Ahmed & Mishra (2026)]
+
+P[72]: The temperature profile within the vessel is modelled using the energy equation:
+
+P[73]: ρnfCpnf∂T∂t+u⋅∇T=knf∇2T
+
+P[74]: where:
+
+P[75]: T is the temperature,
+
+P[76]: Cp is the specific heat capacity of nanofluid,
+
+P[77]: κnf is the thermal conductivity of the nanofluid,
+
+P[78]: At the inlet, an inflow temperature condition was applied with a specified value of Tinlet=310 K to represent the temperature of the incoming blood or nanofluid. This ensures that the inflow temperature reflects physiological conditions. The initial temperature of the entire domain was set at 293.15 K, establishing a baseline from which temperature changes could be observed as the simulation progressed. For the outlet, a convective flux condition was applied, expressed by the equation -n⋅q=0 , where q represents the heat flux vector. This boundary condition allows the heat to leave the system through advection due to flow conditions without forcing any constraints on temperature externally. The walls of the container are taken as adiabatic, which means that there is no heat exchange through the walls, thus, no loss or gain of heat occurs from or to the system through its walls. The walls being insulated mean that any changes in temperature occurring in the system occur due to internal factors only.
+
+P[79]: With reference to models studied by Maxwell (1873), Brinkman (1952), Ahmed & Mishra (2026), the thermophysical properties of nanofluid are given by:
+
+P[80]: ρnf=1-ϕρf+ϕρnp ,
+
+P[81]: κnfκf=κnp+2κf-2ϕ(κf-κnp)κnp+2κf+ϕ(κf-κnp) ,
+
+P[82]: νnfνf=ρfρnf1-ϕ2.5 ,
+
+P[83]: ρCpnf=1-ϕρCpf+ϕρCpnp ,
+
+P[84]: σnfσf=1+3σnpσf-1ϕσnpσf+2-σnpσf-1ϕ .
+
+P[85]: Table 1 List of parameters related to this model.
+
+TABLE[86]: 22 rows x 4 cols
+  R0: ['Parameter', 'Description', 'Value', 'Reference']
+  R1: ['C0,  cytokine', 'cytokine concentration', '3.10 × 10-10 mol.m-3', 'Siogkas et al. (2011)']
+  R2: ['C0,WBC', 'inlet WBC concentration', '10-5 mol.m-3', 'Khan and Khan (2009)']
+  R3: ['Cpf', 'blood specific heat', '3617 J.kg-1.K-1', 'Milnor (1989)']
+  R4: ['CpFe3O4', 'Fe3O4 specific heat', '670 J.kg-1.K-1', 'Sha and Zhang (2017)']
+  R5: ['CpSWCNT', 'SWCNT specific heat', '425 J.kg-1.K-1', 'Muhammad et al. (2018)']
+  R6: ['Dcytokine', 'cytokine diffusion coefficient', '10-9 m2.s-1', 'Budu-Grajdeanu et al. (2008)']
+  R7: ['DFe3O4', 'Fe3O4 diffusion coefficient', '10-10 m2.s-1', 'Wei et al. (2018)']
+  R8: ['DSWCNT', 'SWCNT diffusion coefficient', '10-11 m2.s-1', 'Anderson et al. (2013)']
+  R9: ['DWBC', 'WBC diffusion coefficient', '10-9 m2.s-1', 'Khan and Khan (2009)']
+  R10: ['u0', 'blood inlet velocity', '0.24 m.s-1', 'Iliceto et al. (1991)']
+  R11: ['ϕ', 'nanoparticle volume fraction', '0.001', 'Lee et al. (2010)']
+  R12: ['ρf', 'blood density', '1050 kg.m-3', 'Milnor (1989)']
+  R13: ['ρFe3O4', 'Fe3O4 density', '5200 kg.m-3', 'Sha and Zhang (2017)']
+  R14: ['ρSWCNT', 'SWCNT density', '2600 kg.m-3', 'Muhammad et al. (2018)']
+  R15: ['μf', 'blood dynamic viscosity', '0.0035 Pa.s', 'Milnor (1989)']
+  R16: ['σf', 'blood electrical conductivity', '0.8 S.m-1', 'Milnor (1989)']
+  R17: ['σFe3O4', 'Fe3O4 electrical conductivity', '25000 S.m-1', 'Sha and Zhang (2017)']
+  R18: ['σSWCNT', 'SWCNT electrical conductivity', '106 S.m-1', 'Muhammad et al. (2018)']
+  R19: ['kf', 'blood thermal conductivity', '0.52 W.m-1.K-1', 'Milnor (1989)']
+  R20: ['kFe3O4', 'Fe3O4 thermal conductivity', '6 W.m-1.K-1', 'Sha and Zhang (2017)']
+  R21: ['kSWCNT', 'SWCNT thermal conductivity', '6600 W.m-1.K-1', 'Muhammad et al. (2018)']
+
+P[88]: 4 Computational Frameworks
+
+P[89]: 4.1 Methodology
+
+P[90]: Computational modelling of this problem was conducted in the software package COMSOL Multiphysics 6.0, which is known due to its finite element methods and Multiphysics coupling abilities. In the current research, Laminar Flow Module was used for simulation of blood flow in the vessel, Heat Transfer Module was applied for simulation of temperature field, and Transport of Diluted Species Module was considered to describe concentration of nanoparticles, cytokines, and white blood cells. Interaction between these models was established by means of Mult-physics coupling to account for the impact of magnetic field on the processes of fluid dynamics, heat transfer, and species transport. Geometrical domain of interest represented a part of cylinder that simulates the blood vessel with outlet extension accounting for infection site of the vessel.
+
+P[91]: The boundary conditions were set in a way that would mimic physiological conditions, with inflow, outflow, and insulated wall boundary conditions for simulating actual physiological blood flow dynamics and heat transfer characteristics. The PARDISO solver was used to solve the simulation with a relative tolerance of 0.005 and absolute tolerance scaling with 0.05. The transient analysis considered the time frame between 0 and 10 seconds with time increments such that the CFL criterion is satisfied.
+
+P[92]: 4.2 Mesh analysis
+
+P[93]: Discretization of the domain was performed by using the mesh generation capabilities of COMSOL to generate a “Fine” mesh with 302,107 number of elements. This included 267,899 tetrahedrons, 33,846 prisms, 362 pyramids, 18,310 triangles, and 312 quadrilaterals. Quality analysis of the mesh showed that the minimum value of element quality is 0.09329 while the mean value of element quality is 0.694, hence ensuring the stability of simulations. Volume ratio of the elements was found to be 1.335 × 10⁻⁴ with the mesh having a total volume of 5411 mm³.
+
+P[94]: From Table 2, it can be seen that the Fine mesh is the optimal one for the purpose of this research. This claim is based on the facts that some of the important parameters related to the results, namely the average WBC level, were relatively consistent despite the change in mesh structure from Normal to Fine, and the difference in WBC level was less than 1%. This means that further optimization from Fine to even finer mesh would lead to insignificant changes and therefore no improvement. Though Normal mesh is cheaper from the computational perspective, it showed higher variance than the Fine mesh; thus, the second option is optimal for gaining accuracy, especially considering that the phenomenon of nanoparticle and cytokine interaction is quite complex.
+
+P[95] [IMG_COUNT=1]: 
+
+P[96]: Fig. 2: Mesh.
+
+P[98]: Table 2 Mesh Analysis for the model
+
+TABLE[99]: 7 rows x 5 cols
+  R0: ['Mesh', 'Number of Elements', 'Degrees of Freedom', 'Average WBC Concentration (mol/m³)', 'Variation (%)']
+  R1: ['Extremely Coarse', '31,287', '156,452', '2.051 x 10-9', '—']
+  R2: ['Extra Coarse', '62,134', '312,850', '2.107 x 10-9', '2.65']
+  R3: ['Coarser', '121,402', '612,314', '2.142 x 10-9', '1.90']
+  R4: ['Coarse', '182,376', '915,840', '2.173 x 10-9', '1.80']
+  R5: ['Normal', '242,890', '1,201,563', '2.201 x 10-9', '1.27']
+  R6: ['Fine', '302,107', '1,510,535', '2.217 x 10-9', '0.72']
+
+P[101]: 5 Results and discussion
+
+P[102]: 5.1 Time dependent analysis of WBC concentration
+
+P[103] [IMG_COUNT=2]: 
+
+P[104] [IMG_COUNT=2]: 
+
+P[105]: Fig. 3 WBC concentration surface plots of Fe3O4 nanoaprticle for different time intervals t=0.5s (top left), t=1s (top right), t=2s (bottom left) and t=10s (bottom right).
+
+P[106]: The time-dependent analysis of WBC concentration at different time intervals (Figure 3) reveals significant trends in WBC migration, particularly around the infected portion where cytokines are released. Initial observations at t=0.5s and t=1s shows a progressive movement of WBCs toward the infected region, driven by the chemotactic response to the cytokine gradient. This early-stage migration shows the initial attraction phase where WBCs respond rapidly to the chemical signals, demonstrating the role of cytokine signalling in guiding immune cells. At t=2s, there is a visible accumulation of WBCs around the infected zone, indicating a strengthened chemotactic response. However, it is at t=10s where the concentration at the infected site reaches its peak value. This peak accumulation signifies that the WBCs continue to be attracted and held at the infected zone due to sustained cytokine release, resulting in the highest observed concentration at this point in time. On the other hand, the rest of the region shows a fairly homogeneous distribution, suggesting that WBCs far from the region of infection remain at a constant steady-state value, dependent on convection as well as basic chemotaxis.
+
+P[107]: The rise in the white blood cell density observed at the site of infection after t = 10 s shows how nanoparticle-assisted chemotaxis is effective in maintaining cell mobility over long periods of time. This observation is significant since it provides insights into the possible benefits of such treatments in clinical cases where specific immune responses are necessary. This consistent rise in cell density suggests how therapies can be improved where high density of cells at certain regions is needed.
+
+P[108]: 5.2 Chemotactic Sensitivity Analysis of WBCs
+
+P[109] [IMG_COUNT=2]: 
+
+P[110]: Fig. 4 Effect of Chemotaxis Constant on WBC Concentration for Fe₃O₄ Nanoparticles at
+
+P[111]: t = 2s for χ=0.1 and χ=1.
+
+P[113] [IMG_COUNT=1]: 
+
+P[114]: Fig. 5: WBC concentration plots with varying chemotaxis constant.
+
+P[115]: The chemotactic sensitivity of WBCs, as shown in Figures 4 and 5, shows how the WBC concentration changes under different chemotaxis constants while considering the impact of the Fe3O4 particles. Figure 4 shows surface graphs for WBC distribution when t = 2 s and reveals that WBCs exhibit an intermediate aggregate level near the infected area where cytokines exist. At this point, it is clear from the figures that increased chemotaxis constants result in increased gradient levels; therefore, higher chemotactic sensitivity leads to higher directed migration towards the infected areas. Figure 5 displays WBC concentrations over a longer time period in which WBC behavior and migration trends have been considered based on the value of chemotaxis constant (χ). The results suggest that increased χ values result in high WBC concentration levels in the infected zones. It becomes apparent that WBC concentration peaks occur at t ≈ 10 s, indicating that chemotactic sensitivity plays a significant role in WBC migration. Overall, it is clear from the temporal analysis that χ affects the directed migration of WBCs towards areas releasing cytokines.
+
+P[116]: This suggests that it is extremely important to ensure that the chemotaxis parameter is maximized to allow immune cells to migrate and accumulate in infected areas. This shows how significant the sensitivity to chemotaxis is to ensure a locally increased concentration of white blood cells, which is crucial in ensuring efficient immune responses. Through appropriate manipulation of χ, medical approaches can be optimized to improve their targeting efficiency, which may aid in developing innovative therapies for inflammation and local infections.
+
+P[117]: 5.3 Modulation of WBC Concentration by Magnetic Fields Using Fe₃O₄ Nanoparticles
+
+P[118] [IMG_COUNT=2]: 
+
+P[119] [IMG_COUNT=2]: 
+
+P[120]: Fig. 6 Surface concentration plots of WBCs, showing distribution across the full model domain (left) and the infected region (right) for B=0T (top) and B=100T (bottom) at t=1s.
+
+P[121]: The effect of magnetic field modulation on WBC concentration is presented in Figure 6, showing distribution across the full model domain and the infected region under magnetic field. Without the presence of any external magnetic field (B = 0 T), the distribution of WBCs is quite dispersed. On the other hand, in the case of a magnetic field of 100 T, WBCs have a high degree of aggregation around the infected area, suggesting that a magnetic navigation process plays a crucial part in WBC migration. This phenomenon of increased localization around infected areas can be explained by the effect of both the Fe₃O₄ nanoparticles and the applied magnetic field. Based on this observation, it can be said that external magnetic fields can guide WBC movements and hence, can provide precise control over such immune-related activities. Leveraging such approaches could advance treatment protocols, particularly for conditions that require precise immune cell localization, facilitating better-targeted and more efficient therapeutic outcomes.
+
+P[122]: 5.4 Comparative Temperature Dynamics in the Infected Region with Different Nanoparticles
+
+P[123] [IMG_COUNT=3]: 
+
+P[124]: B=0 (Fe304)	       (b)  B=100 (Fe3O4)	     (c) B=0,100 (SWCNT)
+
+P[125]: Fig. 7 Isothermal contours of Fe3O4 and SWCNT nanoaprticles with varying magnetic field at the infected region for t=1s.
+
+P[127] [IMG_COUNT=1]: 
+
+P[128]: Fig. 8 Temperature distribution for Fe3O4 and SWCNT under varying magnetic field.
+
+P[129]: Figure 7 illustrates the isothermal contours for temperature distribution in the infected region when using Fe₃O₄ and SWCNT nanoparticles under magnetic field conditions of B=0T and B=100T. For Fe₃O₄ at B=0T, the contours display moderate thermal gradients, indicating a steady heat distribution. When a magnetic field of B=100T is applied, the contours reveal steeper gradients, showing an increase in temperature due to Fe₃O₄’s magnetic properties that enhances localized heat conduction. This demonstrates Fe₃O₄ nanoparticles capacity for leveraging magnetic fields to improve temperature variation in the targeted area.
+
+P[130]: There is almost no difference in the behaviour of the isothermal contour for the SWCNT nanoparticles at different values of magnetic field strength from B = 0 T to B = 100 T, suggesting that magnetic fields have almost no impact here. However, since SWCNT nanoparticles are highly thermally conductive, they can help achieve uniform heating of the area. Hence, SWCNT nanoparticles are beneficial in maintaining the heat flow process; however, there is no advantage of using them when magnetic fields are involved, unlike Fe3O4.
+
+P[131]: The results demonstrate the unique thermal properties associated with the nanoparticles being discussed. As previously mentioned, single walled carbon nanotubes (SWCNTs) are ideal for uses where the need exists for an efficient and constant heat transfer process that does not involve any form of magnetic field manipulation. On the other hand, since Fe3O4 nanoparticles can be used in a magnetic field, they are therefore better suited in situations where the need exists for a controlled amount of temperature change. Ultimately, the choice of nanoparticle should align with the specific requirements of thermal management and magnetic field interaction to optimize therapeutic outcomes.
+
+P[132]: 5.5 WBC concentration trends for different nanoparticles at the infected region under the influence of magnetic field
+
+P[133] [IMG_COUNT=1]: 
+
+P[134]: Fig. 9: Average WBC concentration distribution for Fe3O4 and SWCNT under varying magnetic field at the infected region.
+
+P[135]: Graphical depiction of time trends for the concentration of WBC in the infected area when the nanoparticles of Fe₃O₄ and single walled carbon nanotubes (SWCNTs) are exposed to different magnetic field strengths (B=0 T and B=100 T) is shown in Fig. 9 below. In the case of the Fe₃O₄ nanoparticle, the trend depicts an increase in the concentration of WBC due to exposure to a magnetic field. In fact, the trend line depicting B=100 T shows faster growth of WBC concentration compared to the line for B=0 T.
+
+P[136]: SWCNT nanoparticles, on the other hand, show a different pattern. The WBC concentration for SWCNT at B=100T is higher than at B=0T, confirming that the application of a magnetic field does affect WBC migration. However, the difference between the two curves is less pronounced than for Fe₃O₄, indicating that SWCNTs' response to magnetic influence is moderate. This behavior suggests that while SWCNTs can facilitate WBC accumulation and benefit from magnetic fields to a certain extent, their enhancement is not as substantial as that of Fe₃O₄.
+
+P[137]: The above results demonstrate the advantages of using Fe3O4 nanoparticles for applications where there is a need for significant enhancement in chemotaxis due to the presence of magnetic field, hence making it an efficient material for enhancing immune cell targeting in therapy. Although SWCNTs react to magnetic fields, their efficiency would be higher when applied in applications that require consistency rather than enhancement.
+
+P[139]: 6 Conclusion –
+
+P[140]: A full mathematical model was created to analyze the process of blood flow, leukocyte movement, nanoparticle transport, and cytokines interaction under influence of magnetic field, using COMSOL Multiphysics program. The present research is characterized by unique incorporation of Fe3O4 and SWCNT nanoparticles for studying the effect of each of them on chemotaxis and temperature distribution of leukocytes.
+
+P[141]: These findings reveal that the exposure of Fe₃O₄ nanoparticles to magnetic fields significantly elevates WBCs levels at the area of infection. Thus, the implications of these discoveries are that such nanoparticles could be applied in biological processes involving the use of magnets to target immune cells. On the other hand, SWCNT nanoparticles have excellent heat conductance characteristics, resulting in a constant temperature pattern whether there is an application of a magnetic field or not. Hence, they are better suited to applications where constant temperatures are involved. The findings of this study are in line with biological phenomena.
+
+P[142]: This is the progression of our comprehension of the behaviour of white blood cells and nanoparticles in blood flow. However, there are aspects in which this model is deficient and must be recognized. This study focuses on the main interactions of the white blood cells, nanoparticles, and cytokines without considering the possible effects of other immune cells as well as their biochemistry involving other cytokines. Complexities such as variable blood properties, the role of cardiac pulsatility, and real-world geometrical variations were simplified or omitted to maintain computational tractability. Additionally, while this model incorporated the magnetic responsiveness of Fe₃O₄, more comprehensive studies that include varying magnetic field orientations and intensities would provide deeper insights.
+
+P[143]: In general, the model that was designed helps in gaining more insight regarding the ways magnetic nanoparticles could be used to influence immune responses and manage heat distribution. Based on the findings of this investigation, it is crucial to choose a proper type of nanoparticles to achieve desired results in terms of developing therapy. In spite of certain drawbacks, the investigation provides relevant information about nanoparticle use for designing future studies on more complex models.
+
+P[145]: Declarations –
+
+P[146]: Conflict of interest: The authors proclaim no potential conflict of interest with respect to the research, authorship and publication of this article.
+
+P[147]: References
+
+P[148]: Ali, F., Majeed, S., & Imtiaz, A. (2021). Magnetohydrodynamic blood flow in a cylindrical    tube with magnetic particles: a time fractional model. Mathematical Problems in Engineering, 2021(1), 6624912. https://doi.org/10.1155/2021/6624912
+
+P[149]: Anderson, M. D., Xiao, Y. F., & Fraser, J. M. (2013). First-passage theory of exciton population loss in single-walled carbon nanotubes reveals micron-scale intrinsic diffusion lengths. Physical Review B—Condensed Matter and Materials Physics, 88(4), 045420. https://doi.org/10.1103/physrevb.88.045420
+
+P[150]: Boujelbene, M., Rehman, S., Alqahtani, S., & Alshehery, S. (2023). Second law assessment of injected nanoparticles to blood flow with thermal radiation and magnetic field in conduit artery. Journal of the Taiwan Institute of Chemical Engineers, 150, 105074. https://doi.org/10.1016/j.jtice.2023.105074
+
+P[151]: Budu-Grajdeanu, P., Schugart, R. C., Friedman, A., Valentine, C., Agarwal, A. K., & Rovin, B. H. (2008). A mathematical model of venous neointimal hyperplasia formation. Theoretical Biology and Medical Modelling, 5, 1-9. https://doi.org/10.1186/1742-4682-5-2
+
+P[152]: Cavaillon, J. M. (1994). Cytokines and macrophages. Biomedicine & Pharmacotherapy, 48(10), 445–453. https://doi.org/10.1016/0753-3322(94)90005-1
+
+P[153]: Cilla, M., Pena, E., & Martinez, M. A. (2014). Mathematical modelling of atheroma plaque formation and development in coronary arteries. Journal of The Royal Society Interface, 11(90), 20130866. https://doi.org/10.1098/rsif.2013.0866
+
+P[154]: Dubey, A., Vasu, B., Bég, O. A., & Gorla, R. S. R. (2021). Finite element computation of magneto-hemodynamic flow and heat transfer in a bifurcated artery with saccular aneurysm using the Carreau-Yasuda biorheological model. Microvascular Research, 138, 104221. https://doi.org/10.1016/j.mvr.2021.104221
+
+P[155]: Fullstone, G., Wood, J., Holcombe, M., & Battaglia, G. (2015). Modelling the transport of nanoparticles under blood flow using an agent-based approach. Scientific reports, 5(1), 10649. https://doi.org/10.1038/srep10649
+
+P[156]: Gentile, F., Ferrari, M., & Decuzzi, P. (2008). The transport of nanoparticles in blood vessels: the effect of vessel permeability and blood rheology. Annals of biomedical engineering, 36(2), 254-261. https://doi.org/10.1007/s10439-007-9423-6
+
+P[157]: Gerhardt, T., & Ley, K. (2015). Monocyte trafficking across the vessel wall. Cardiovascular Research, 107(3), 321–330. https://doi.org/10.1093/cvr/cvv147
+
+P[158]: Ghasemi, S. E., Hatami, M., Sarokolaie, A. K., & Ganji, D. D. (2015). Study on blood flow containing nanoparticles through porous arteries in presence of magnetic field using analytical methods. Physica E: Low-dimensional Systems and Nanostructures, 70, 146-156. https://doi.org/10.1016/j.physe.2015.03.002
+
+P[159]: Hewlin Jr, R. L., Smith, M., & Kizito, J. P. (2023). Computational assessment of unsteady flow effects on magnetic nanoparticle targeting efficiency in a magnetic stented carotid bifurcation artery. Cardiovascular Engineering and Technology, 14(5), 694-712. https://doi.org/10.1007/s13239-023-00681-3
+
+P[160]: Iliceto, S., Marangelli, V., Memmola, C., & Rizzon, P. (1991). Transesophageal Doppler echocardiography evaluation of coronary blood flow velocity in baseline conditions and during dipyridamole-induced coronary vasodilation. Circulation, 83(1), 61-69. https://doi.org/10.1161/01.cir.83.1.61
+
+P[161]: Katanov, D., Gompper, G., & Fedosov, D. A. (2015). Microvascular blood flow resistance: role of red blood cell migration and dispersion. Microvascular Research, 99, 57–66. https://doi.org/10.1016/j.mvr.2015.02.006
+
+P[162]: Khan, F. H., & Khan, F. (2009). The elements of immunology. Pearson Education India.
+
+P[163]: Ku, D. N. (1997). Blood flow in arteries. Annual Review of Fluid Mechanics, 29(1), 399–434. https://doi.org/10.1146/annurev.fluid.29.1.399
+
+P[164]: Lee, H., Fonge, H., Hoang, B., Reilly, R. M., & Allen, C. (2010). The effects of particle size and molecular targeting on the intra-tumoral and subcellular distribution of polymeric nanoparticles. Molecular pharmaceutics, 7(4), 1195-1208.
+
+P[165]: https://doi.org/10.1021/mp100038h
+
+P[166]: Majeed, S., Ali, F., Imtiaz, A., Khan, I., & Andualem, M. (2022). Fractional model of MHD blood flow in a cylindrical tube containing magnetic particles. Scientific reports, 12(1), 418. https://doi.org/10.1038/s41598-021-04088-9
+
+P[167]: Menon, K., Hu, Z., & Marsden, A. L. (2024). Cardiovascular fluid dynamics: a journey through our circulation. Flow, 4, E7. https://doi.org/10.1017/flo.2024.5
+
+P[168]: Milnor, W. R. (1989). Hemodynamic 2nd edn. (Baltimore, MD: William and Wilkins).
+
+P[169]: Muhammad, S., Ali, G., Shah, Z., Islam, S., & Hussain, S. A. (2018). The rotating flow of magneto hydrodynamic carbon nanotubes over a stretching sheet with the impact of non-linear thermal radiation and heat generation/absorption. Applied Sciences, 8(4), 482. https://doi.org/10.3390/app8040482
+
+P[170]: Ougrinovskaia, A., Thompson, R. S., & Myerscough, M. R. (2010). An ODE model of early stages of atherosclerosis: mechanisms of the inflammatory response. Bulletin of mathematical biology, 72, 1534-1561. https://doi.org/10.1007/s11538-010-9509-4
+
+P[171]: Rezazadeh, M., & Ostadi, R. (2022). Numerical simulation of the wall shear stress distribution in a carotid artery bifurcation. Journal of Mechanical Science and Technology, 36(10), 5035–5046. https://doi.org/10.1007/s12206-022-0917-9
+
+P[172]: Sha, L., Ju, Y., & Zhang, H. (2017). The influence of the magnetic field on the convective heat transfer characteristics of Fe3O4/water nanofluids. Applied Thermal Engineering, 126, 108-116. https://doi.org/10.1016/j.applthermaleng.2017.07.150
+
+P[173]: Shen, L., Li, B., & Qiao, Y. (2018). Fe₃O₄ nanoparticles in targeted drug/gene delivery systems. Materials, 11(2), 324. https://doi.org/10.3390/ma11020324
+
+P[174]: Singh, R., Sharma, G. C., & Jain, M. (2010). Mathematical modeling of blood flow in a stenosed artery under MHD effect through porous medium. International Journal of Engineering, 23(3), 243-252.
+
+P[175]: Siogkas, P., Sakellarios, A., Exarchos, T. P., Athanasiou, L., Karvounis, E., Stefanou, K., ... & Parodi, O. (2011). Multiscale-patient-specific artery and atherogenesis models. IEEE Transactions on Biomedical Engineering, 58(12), 3464-3468. https://doi.org/10.1109/tbme.2011.2164919
+
+P[176]: Steinman, D. A. (2004). Image-based computational fluid dynamics: a new paradigm for monitoring hemodynamics and atherosclerosis. Current Drug Targets-Cardiovascular & Hematological Disorders, 4(2), 183–197. https://doi.org/10.2174/1568006043336302
+
+P[177]: Vaidya, H., Rajashekhar, C., Prasad, K. V., Khan, S. U., Mebarek-Oudina, F., Patil, A., & Nagathan, P. (2021). Channel flow of MHD bingham fluid due to peristalsis with multiple chemical reactions: an application to blood flow through narrow arteries. SN Applied Sciences, 3, 1-12. https://doi.org/10.1007/s42452-021-04143-0
+
+P[178]: Wei, X., Jing, L., Liu, C., Hou, Y., Jiao, M., & Gao, M. (2018). Molecular mechanisms for delicately tuning the morphology and properties of Fe3O4 nanoparticle clusters. CrystEngComm, 20(17), 2421-2429. https://doi.org/10.1039/c8ce00056e
+
+P[179]: Zhao, S. Z., Xu, X. Y., Hughes, A. D., Thom, S. A., Stanton, A. V., Ariff, B., & Long, Q. (2000). Blood flow and vessel mechanics in a physiologically realistic model of a human carotid arterial bifurcation. Journal of biomechanics, 33(8), 975-984. https://doi.org/10.1016/s0021-9290(00)00043-9
+
+P[180]: Zlotnik, A., & Yoshie, O. (2000). Chemokines: a new classification system and their role in immunity. Immunity, 12(2), 121–127. https://doi.org/10.1016/s1074-7613(00)80165-x
+
+P[181]: Ahmed, S., & Mishra, S.R. (2026). Magnetoresponsive hemodynamic behaviour of nanofuids
+in biomedical transport: a multiphysics design approach
+and artifcial neural network predictions. Int J Mech Mater Des., 22:106, 1-24.
+https://doi.org/10.1007/s10999-026-09931-3
+
+P[182]: Maxwell, J.C. (1873). A Treatise on Electricity and Magnetism. Clarendon Press, Oxford.
+
+P[183]: Brinkman, H.C. (1952). The viscosity of concentrated suspensions
+and solutions. J. Chem. Phys. 20, 571–581.
+

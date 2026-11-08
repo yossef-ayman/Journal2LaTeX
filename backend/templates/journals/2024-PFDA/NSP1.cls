@@ -292,6 +292,9 @@
     \ignorespaces\@published
   \fi
 }
+\def\paperdoi#1{\gdef\@paperdoi{#1}}
+\def\doi#1{\gdef\@paperdoi{#1}}
+\def\@paperdoi{http://dx.doi.org/10.18576/pfda/\jobname}
 \def\keywordsname{{\bfseries Keywords:}\enspace}
 \def\keywords#1{\gdef\@keywords{#1}}
 \def\@keywords{}
@@ -658,9 +661,8 @@ Natural Sciences Publishing Cor.
    \fi
  }%
  \vspace{3.5mm}
-\def\doi{http://dx.doi.org/10.18576/pfda/\jobname}
 \urlstyle{same}
-\hbox{~}\hfill {\scriptsize \url{\doi} \\ }
+\hbox{~}\hfill {\scriptsize \url{\@paperdoi} \\ }
  \vspace{-3\baselineskip}%
  \setbox\authrun=\vbox\bgroup
  {\Large \bfseries\boldmath

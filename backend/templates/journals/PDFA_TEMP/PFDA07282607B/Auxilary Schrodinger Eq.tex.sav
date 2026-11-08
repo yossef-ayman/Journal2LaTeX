@@ -1,0 +1,352 @@
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage[top=1cm,bottom=2cm,left=1.5cm,right=1.5cm,a4paper]{geometry}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{amsthm}
+\usepackage[colorlinks]{hyperref}
+%\usepackage[nameinlink]{cleveref}
+\usepackage{url}
+\usepackage{graphicx,color,epsfig}
+\usepackage{epstopdf}
+\usepackage{amsfonts}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{eurosym}
+\usepackage{cite}
+\usepackage{cleveref}
+\usepackage{upgreek}
+\usepackage{enumitem}
+\usepackage{xcolor,rotating}
+\usepackage{placeins}
+\usepackage{color,soul}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=Latex.dll}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{LastRevised=Thursday, April 25, 2019 13:23:17}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%\renewcommand{\tablename}{{\small F}\scriptsize{IGURE}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+%\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\usepackage[symbol]{footmisc}
+\def\correspondingauthor{\footnote{Corresponding author.}}
+\numberwithin{equation}{section}
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+\usepackage{multicol}
+\hypersetup{pdftitle={},% title
+    pdfauthor={Lanre Akinyemi},     % author
+    %pdfsubject={Differential Equations},   % subject of the document
+    pdfcreator={pdftex},   % creator of the document
+    pdfproducer={Texmaker}, % producer of the document
+    pdfkeywords={}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,          % color of internal links
+    citecolor=blue,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
+\setcounter{MaxMatrixCols}{10}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\capu}{\mathcal{D}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\equationautorefname}{Eq.}
+\Crefname{figure}{Fig.}{Figs.}
+\Crefname{table}{Tab.}{Tabs.}
+\makeatletter
+\let\oldtheequation\theequation
+\renewcommand\tagform@[1]{\maketag@@@{\ignorespaces#1\unskip\@@italiccorr}}
+\renewcommand\theequation{(\oldtheequation)}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newtheorem{theorem}{Theorem}[section]
+\newtheorem{case}{Case}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{remark}[theorem]{Remark}
+%\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\usepackage[symbol]{footmisc}
+\renewcommand{\baselinestretch}{1.2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\date{}
+%opening\def\correspondingauthor{\footnote{Corresponding author.}}
+\begin{document}
+\title{ Auxiliary }
+\author{ Farrah Ashraf $^{1}$, Rehan Khursheed  \\
+\\
+$^{1}$ Department of Mathematics and Statistics,\\ The University of Lahore, Lahore, Pakistan.\\
+e-mail: \{ f.as70000\},\{rehankhursheed468\} @gmail.com }
+\date{ }
+\maketitle
+% !TeX spellcheck = en_US
+\begin{abstract}
+\noindent
+ This paper uses the differential equation method to derive several new solutions to the Schrodinger equation, which has many applications in mathematical physics. This method effectively produces bell-shaped solitons, singular solitons, dark solitons, bright solitons, and some periodic solitons to solve non-linear partial differential equations. These types of solutions are more than those offered by current technologies. The parameters in the solution are to provide the necessary results for understanding the body and providing beautiful images. Our results demonstrate the effectiveness, efficiency, and desirability of the differential equation method in obtaining good results in solving many different differential equations.
+\end{abstract}
+
+\textbf{Key words}: Auxiliary equation method, Schrödinger equation, Analytical soliton solution, Dark soliton, Bright soliton, Singular soliton and Kink shaped solitons.
+\section{Introduction}
+\noindentThe study of solitons and their properties has become a cornerstone of modern mathematical physics particularly in the context of non-linear partial differential equations (PDEs). Among these, the Non-linear Schrödinger Equation (NLSE) stands out as one of the most important equations widely studied in the context of fluid dynamics, non-linear optics and plasma physics. Solitons as stable wave-like solutions of non-linear equations offer unique insights into the behavior of complex systems where wave propagation is governed by both dispersive and non-linear effects. Solitons are non-linear waves. A soliton is considered as solitory traveling wave pulse solution of non-linear partial differential equations. There are non-linear wave phenomena in several areas including blood physics.\cite{IFE3,A2,A3}, optical fiber \cite{a4,a5,a6,a7}, fluid dynamics \cite{a8,a9}, and other non-linear wave phenomena we can get by finding the exact solutions of the non-linear partial differential equations. In the study of non-linear phenomena, the solution to these NPDEs is crucial. Numerous techniques have been developed in recent years to solve NPDE's such as the $G/G^{'}$ - Expansion method \cite{a8}, Backscatter method \cite{a10}, The Exponential Function method \cite{a11},  Homotopy perturbation method \cite{a12}, Hirota bilinear method \cite{a13}, Homogeneous balance method \cite{a14}, Bäcklund transform \cite{a15}, and Jacobi and Weierstrass elliptic function method \cite{a16} etc.\\\
+The non-linear Schrodinger equation (NLSE) has this form \cite{a17}:
+\begin{eqnarray}\label{F}
+i u_{t}+u_{\mathit{xx}}\pm 2 \gamma  {| u |}^{2} u = 0,
+\end{eqnarray}
+Where $\gamma\neq {0}$ and is a real constant and a complex-valued function of two real variables, x and t, is u = u (x,t). The Schrödinger equation is used in many areas of physics, including superconductivity, non-linear optics, quantum mechanics, and plasma physics \cite{a18}. Isolated solutions are indicated by the NLSE (1.1). These are referred to as NLS+ and NLS-equivalent circumstances. Non-linear Schrodinger positive and Non-linear Schrodinger negative have different overlaps. The NLS ''+'' and NLS ''-'' overlaps are not the same. For instance, NLS- has a dark resolution while NLS+ has a bright one resolution \cite{a19}. Such behavior occurs when there is no conflict between the two plasma instabilities \cite{a20} and the two layers of baroclinic instability \cite{a21}.\\
+The UNLS equation takes the form:
+\begin{eqnarray}\label{F}
+\mathit{iu}_{t}+u_{\mathit{xx}}+2 \gamma  {| u |}^{2} u -2 \gamma  u =  0.
+\end{eqnarray}
+Vadati et al.\cite{a22} A similar Hamiltonian complex has been proposed as a modification of the amplitude equation (UNS).
+\begin{eqnarray}\label{F}
+\mathit{iu}_{t}+u_{\mathit{xx}}+2 \gamma  {| u |}^{2} u -\epsilon  u_{\mathit{xt}} =  0.
+\end{eqnarray}
+Identifies some instabilities of the modulated wave train \cite{a23}.\\\
+The time-dependent, two-dimensional NLSE :
+\begin{eqnarray}\label{F}
+\mathit{iu}_{t}+u_{\mathit{xx}}+u_{\mathit{yy}}+\gamma  {| u |}^{2} u =  0.
+\end{eqnarray}
+This type of equation, which simulates an electromagnetic wave equation in a two-dimensional weakly guiding structure, is found in many areas of physics, including quantum mechanics \cite{a24}, Electromagnetic Wave Propagation \cite{a25}, Underwater Acoustics \cite{a26} and  and the design of specific optoelectronic devices \cite{a27} Because it simulates the electromagnetic wave balance in a two-dimensional weak conductor model. It is also used in many quantum dynamics calculations \cite{a28}.\\\
+The time-dependent 3D NLSE non-linear schrodinger equation is expressed as:
+\begin{eqnarray}\label{F}
+i u_{t}+u_{\mathit{xx}}+u_{\mathit{yy}}+u_{\mathit{zz}}+\gamma  {| u |}^{2} u =  0.
+\end{eqnarray}
+Gagnon and Winternitz reported symmetry reductions of the (3 + 1)-dimensional non-linear Schrodinger equation in a number of publications \cite{a29,a30,a31,a32,a33}.
+
+\section{The Simple Auxiliary Method }
+\subsection{Steps of the Simple Auxiliary Method}
+The followings are the steps involved in the Simple auxiliary equation method:\\\
+\textbf{\textbf{$1^{st}$} Step:}
+We use the transformation equation
+to convert the (NLPDE) non-linear partial differential equation
+\begin{eqnarray}
+H(u,u_x,u_y,u_t,u_{xy},........)=0,
+\end{eqnarray}
+into (ODE) ordinary differential equation form (By uniting the independent variables we get).
+\begin{eqnarray}\label{b1}
+G(U,U',U'',U''',.............)=0.
+\end{eqnarray}\\\
+\textbf{\textbf{$2^{nd}$} Step:}
+ We now examine the solution to the equation of the following form:
+\begin{eqnarray}
+U \! \left(\zeta \right)= a_{0} + a_{1} Q \! \left(\zeta \right)+ a_{2} {U \! \left(\zeta \right)}^{2} +........+a_{N} {Q \! \left(\zeta \right)}^{N}.
+\end{eqnarray}
+\textbf{\textbf{$3^{rd}$} Step:}
+To obtain the value of N we now use the principles of homogeneous equilibrium and balance which takes into account the highest order derivative term and non-linear factor involved in the equation (2.2).\\\
+The $Q{(\zeta)}$ shows the answers of the equation (2.4).
+\begin{eqnarray}
+\frac{d}{d \zeta}Q \! \left(\zeta \right) =\sqrt{a Q \! \left(\xi \right)^{2}+b Q \! \left(\xi \right)^{3}+c Q \! \left(\xi \right)^{4}},
+\end{eqnarray}
+where a,b,and c are parameter (real valued).\\\\
+\textbf{\textbf{$4^{th}$} Step:}
+Substitute equation (2.4) and using the transformation in equation (2.2) we get a resulting algebraic equation in ${Q(\zeta)}$. Now we simplify our resulting equation to get the coefficients of all powers of ${Q(\zeta)}$ and then put all the coefficients of all powers of $Q{(\zeta)}$ equal to zero. This will create a system of equations that can be solved separately and simultaneously.\\\
+The exact solutions of equation (2.4) using ${\epsilon=\pm1}$ are:\\\\
+\textbf{Family I: for $a > 0$ }
+\begin{eqnarray}
+Q \! \left(\zeta \right) = -\frac{a b\,\mathrm{sech}\! \left(\frac{\sqrt{a}\, \xi}{2}\right)^{2}}{b^{2}-a c \left[1+\epsilon  \tanh \! \left(\frac{\sqrt{a}\, \xi}{2}\right)\right]^{2}}.
+\end{eqnarray}
+\textbf{Family II: for $a > 0$ }
+\begin{eqnarray}
+Q \! \left(\zeta \right) = \frac{a b\,\mathrm{csch}\! \left(\frac{\sqrt{a}\, \xi}{2}\right)^{2}}{b^{2}-a c \left[1+\epsilon  \coth \! \left(\frac{\sqrt{a}\, \xi}{2}\right)\right]^{2}}.
+\end{eqnarray}
+\textbf{Family III: for $a > 0$ , \,$b^{2}-4ac > 0$ }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =\frac{2 a \,\mathrm{sech}\! \left(\sqrt{a}\, \xi \right)}{\epsilon  \sqrt{-4 a c +b^{2}}-b \,\mathrm{sech}\! \left(\sqrt{a}\, \xi \right)}.
+\end{eqnarray}
+\textbf{Family IV: for $a < 0$ , \,$b^{2}-4ac > 0$ }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =\frac{2 a \sec \! \left(\sqrt{-a}\, \xi \right)}{\epsilon  \sqrt{-4 a c +b^{2}}-b \sec \! \left(\sqrt{-a}\, \xi \right)}.
+\end{eqnarray}
+\textbf{Family V: for $a > 0$ , \,$b^{2}-4ac < 0$ }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =\frac{2 a \,\mathrm{csch}\! \left(\sqrt{a}\, \xi \right)}{\epsilon  \sqrt{4 a c -b^{2}}-b \,\mathrm{csch}\! \left(\sqrt{a}\, \xi \right)}.
+\end{eqnarray}
+\textbf{Family VI: for $a < 0$ , \,$b^{2}-4ac > 0$ }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =\frac{2 a \csc \! \left(\sqrt{-a}\, \xi \right)}{\epsilon  \sqrt{-4 a c +b^{2}}-b \csc \! \left(\sqrt{-a}\, \xi \right)}.
+\end{eqnarray}
+\textbf{Family VII: for $a > 0$ , \,$c > 0$ }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =-\frac{a \mathrm{sech}\! \left(\frac{\sqrt{a}\, \xi}{2}\right)^{2}}{b +2\,\epsilon  \sqrt{a c}\, \tanh \! \left(\frac{\sqrt{a}\, \xi}{2}\right)}.
+\end{eqnarray}
+\textbf{Family VIII: for $a < 0$ , \,$c > 0$ }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =-\frac{a \left[\sec^{2}\left(\frac{\sqrt{-a}\, \xi}{2}\right)\right]}{b +2\,\epsilon  \sqrt{-a c}\, \tan \! \left(\frac{\sqrt{-a}\, \xi}{2}\right)}.
+\end{eqnarray}
+\textbf{Family IX: for $a > 0$ , \,$c > 0$   }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =\frac{a \mathrm{csch}\! \left(\frac{\sqrt{a}\, \xi}{2}\right)^{2}}{b +2\,\epsilon  \sqrt{a c}\, \coth \! \left(\frac{\sqrt{a}\, \xi}{2}\right)}.
+\end{eqnarray}
+\textbf{Family X: for $a < 0$ , \,$c > 0$ }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =-\frac{a \left[\csc^{2}\left(\frac{\sqrt{-a}\, \xi}{2}\right)\right]}{b +2\,\epsilon  \sqrt{-a c}\, \cot \! \left(\frac{\sqrt{-a}\, \xi}{2}\right)}.
+\end{eqnarray}
+\textbf{Family XI: for $a > 0$ , \,$b^{2}-4ac = 0$  }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =-\frac{a \left[1+\epsilon  \tanh \! \left(\frac{\sqrt{a}\, \xi}{2}\right)\right]}{b}.
+\end{eqnarray}
+\textbf{Family XII: for  $a > 0$ , \,$b^{2}-4ac = 0$ }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =-\frac{a \left[1+\epsilon  \coth \! \left(\frac{\sqrt{a}\, \xi}{2}\right)\right]}{b}.
+\end{eqnarray}
+\textbf{Family XIII: for $a > 0$ }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =\frac{4 a \,{\mathrm e}^{\epsilon  \sqrt{a}\, \zeta}}{\left({\mathrm e}^{\epsilon  \sqrt{a}\, \zeta}-b \right)^{2}-4 a c}.
+\end{eqnarray}
+\textbf{Family XIV:  for $a > 0$ ,\, $b = 0$  }
+\begin{eqnarray}
+Q \! \left(\zeta \right) =\frac{\left(\pm 4\right) a \epsilon  \,{\mathrm e}^{\epsilon  \sqrt{a}\, \zeta}}{1-4 a c \,{\mathrm e}^{4 \epsilon  \sqrt{a}\, \zeta}}.
+\end{eqnarray}
+\section{Solution of Non-Linear Schrodinger Equation }
+Consider NLSE with this form:
+\begin{eqnarray}
+i u_{t}+u_{\mathit{xx}}+2 \gamma  {| u |}^{2} u = 0,
+\end{eqnarray}
+Now we use this transformation equation
+ \begin{eqnarray}
+u \! \left(x , t\right) ={\mathrm e}^{i\theta} U \! \left(\zeta \right),   \qquad \zeta = x + v t,  \qquad \theta = p x + r t.
+\end{eqnarray}
+and using the relation $v=-2p$ we get
+\begin{eqnarray}
+U^{''}{(\zeta)}-\left(p^{2}+r \right) U \! \left(\zeta \right)+2 \gamma \! \left(U \! \left(\zeta \right)\right)^{3}=0.
+\end{eqnarray}
+the ODE form of the schrodinger equation. N= 1 is now obtained by balancing the highest degree non-linear term $U^{3}$ and the maximum order derivative term $U''$.\\\
+Using $N=1$ in equation (2.4) will gives:
+\begin{eqnarray}
+U \! \left(\zeta \right)= a_{0} + a_{1} Q \! \left(\zeta \right),
+\end{eqnarray}
+Here we need to find the constants involved in $U{(\zeta)}$ which are $a_{0}$ and $a_{1}$.\\\
+The $Q{(\zeta)}$ represents (the families given) the solutions of equation (2.4). Now by putting equation (3.2) and (3.4) in eq.(3.3). After this we simplify our resulting equation to get the coefficients of all powers of ${Q(\zeta)}$ and then put all the coefficients of all non zero powers of $Q{(\zeta)}$ equal to zero. This will create a set of algebraic equations. These equations can be solved separately or simultaneously.\\\
+The non-linear algebraic equations are:\\\
+\begin{align}
+\begin{cases}
+Q^{3}{(\zeta)}:\qquad2 \gamma  a_{1}^{3}+2 a_{1} c = 0,\\\
+Q^{2}{(\zeta)}:\qquad\frac{3}{2} a_{1} b +6 \gamma  a_{0} a_{1}^{2} = 0,\\\
+Q^{1}{(\zeta)}:\qquad6 \gamma  a_{0}^{2} a_{1}-a_{1} p^{2}+a_{1} a -a_{1} r = 0,\\\
+Q^{0}{(\zeta)}:\qquad2 \gamma  a_{0}^{3}-a_{0} p^{2}-a_{0} r = 0.\\\
+\end{cases}
+\end{align}
+By using Maple software we obtained the solution of these equations.\\\
+\textbf{Set:}\\\
+$a_{0} = -\frac{b}{4 \sqrt{-\gamma  c}}$, \,$a_{1} = \frac{\sqrt{-\gamma  c}}{\gamma}$ and  \,$\nu = - 5\times 10^{-1} \sqrt{-\frac{6 b^{2}}{c}+16 a -16 r}$.\\\
+\textbf{ Solution of Set:}\\\
+Using equation (3.2) and \textbf{family (1,2,11,12)} in equation (3.4) we get the following results:
+\begin{eqnarray}
+U_{1}\left(\zeta \right) =-\frac{b}{4 \sqrt{-\gamma  c}}-\frac{\sqrt{c (-\gamma)}\, a b\, \mathrm{sech} \left[\frac{\sqrt{a}\, \left(t v +x \right)}{2}\right]^{2}}{\gamma  \left[b^{2}-a c \left(1+\epsilon  \tanh  \left(\frac{\sqrt{a}\, \left(t v +x \right)}{2}\right)\right)^{2}\right]}.
+\end{eqnarray}
+\begin{eqnarray}
+U_{2}\left(\zeta \right) =-\frac{b}{4 \sqrt{-\gamma  c}}+\frac{\sqrt{-\gamma  c}\, a b\, \mathrm{csch} \left[\frac{\sqrt{a}\, \left(t v +x \right)}{2}\right]^{2}}{\gamma  \left[b^{2}-a c \left(1+\epsilon  \coth  \left(\frac{\sqrt{a}\, \left(t v +x \right)}{2}\right)\right)^{2}\right]}.
+\end{eqnarray}
+\begin{eqnarray}
+U_{3}\left(\zeta \right) =-\frac{b}{4 \sqrt{-\gamma  c}}-\frac{\sqrt{-\gamma  c}\, a \left[1+\epsilon  \tanh  \left(\frac{\sqrt{a}\, \left(t v +x \right)}{2}\right)\right]}{\gamma  b}.
+\end{eqnarray}
+\begin{eqnarray}
+U_{4}\left(\zeta \right) =
+-\frac{b}{4 \sqrt{-\gamma  c}}-\frac{\sqrt{-\gamma  c}\, a \left[1+\epsilon  \coth \left(\frac{\sqrt{a}\, \left(t v +x \right)}{2}\right)\right]}{\gamma  b}.
+\end{eqnarray}
+\newpage
+\section{The Graphical Representation}
+\textbf{Set:}\\\
+Using $a = 2$, $b = 3$, $c = -4$, $r = 1.5$ and $\epsilon =1$ the graphical representation of the solutions $U_{1}$, $U_{2}$, $U_{3}$ and $U_{4}$ are:
+\begin{figure}[h!]\label{A1}
+    \centering
+    \begin{tabular}{ccc}
+        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+            height=55mm]{u1.png}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+            \includegraphics[width=\linewidth, height=55mm]{c1.png}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+            \includegraphics[width=\linewidth, height=55mm]{d1.png}\subcaption{} \end{minipage}
+    \end{tabular}%
+ \noindent\caption{The 3D, 2D Contour and Density plot of $U_1(\xi)$ given by equation (3.6) }are shown.\label{111}
+\end{figure}\\\
+\begin{figure}[h!]\label{A1}
+    \centering
+    \begin{tabular}{ccc}
+        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+            height=55mm]{u2.png}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+            \includegraphics[width=\linewidth, height=55mm]{c2.png}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+            \includegraphics[width=\linewidth, height=55mm]{d2.png}\subcaption{} \end{minipage}
+    \end{tabular}%
+ \noindent\caption{The 3D, 2D Contour and Density plots of $U_2(\xi)$ given by equation (3.7) }.\label{111}
+\end{figure}\\\
+\begin{figure}[h!]\label{A1}
+    \centering
+    \begin{tabular}{ccc}
+        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+            height=55mm]{u3.png}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+            \includegraphics[width=\linewidth, height=55mm]{c3.png}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+            \includegraphics[width=\linewidth, height=55mm]{d3.png}\subcaption{} \end{minipage}
+    \end{tabular}%
+ \noindent\caption{The 3D, 2D Contour and Density plots of $U_3(\xi)$ given by equation (3.8) }.\label{111}
+\end{figure}\\\
+\begin{figure}[h!]\label{A1}
+    \centering
+    \begin{tabular}{ccc}
+        \begin{minipage}{.30\textwidth} \includegraphics[width=\linewidth,
+            height=55mm]{u4.png}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+            \includegraphics[width=\linewidth, height=55mm]{c4.png}\subcaption{} \end{minipage} & \begin{minipage}{.30\textwidth}
+            \includegraphics[width=\linewidth, height=55mm]{d4.png}\subcaption{} \end{minipage}
+    \end{tabular}%
+ \noindent\caption{The 3D, 2D Contour and Density plots of $U_4(\xi)$ given by equation (3.9) }.\label{111}
+\end{figure}\\\
+\FloatBarrier
+\section{Results and Discussion}\label{s4}
+\noindent This paper will present new solutions to the non-linear schrodinger equation then those we have obtained using alternative methods. To the best of our knowledge, several solutions using  auxiliary equation method for the Schrodinger problem are novel and have not been published in any literature. Proofs of analytic solutions for soliton waves, including hyperbolic functions, weakly acting functions, value functions, exponential functions and the triangular function solution problem of the Schrodinger equation were found. The following observations can be used to explain the physical result of these solutions with 3D and 2D Contour density graphs by utilizing regular measurements and the suitable values of unknown coefficients. Figure 1 shows the Dark soliton observed for (3.6). Figure 2 shows the Bright soliton  observed for (3.7). Furthermore some similar solitory waves are also observed. Figure 3 shows the Kink shaped soliton observed for (3.8). The presentation of the analytical soliton solutions and dynamic behavior involves use of the appropriate values for the free parameter constants and unknown coefficients.
+\section{Conclusion}\label{s5}
+\noindent This work provides numerous new accurate soliton solutions and suggests using the auxiliary equation approach to solve the Schrodinger problem. These new solutions may also help to clarify the physical properties of the given equation. Maple is used to verify the solutions that have obtained. This approach is found to be more broad, simple and intuitive which explains its efficacy, generative feature and suitability for handling a wide range of additional non-linear partial differential equations.
+\begin{thebibliography}{99}
+\bibitem{IFE3}Khater, A.H., Callebaut, D.K. and Abdelkawy, M.A. (2010). Two-dimensional force-free magnetic fields described by some nonlinear equations. \emph{Physics of Plasmas, 17}(12).
+\bibitem{A2} Sodha, M.S., Konar,S. and Maheshwari, K.P. (1992). Steady-state self-focusing of rippled laser beams in plasmas: Arbitrary nonlinearity. \emph{Journal of plasma physics, 48}(1), 107-118.
+\bibitem{A3} Bhrawy, A.H., Abdelkawy, M.A., Kumar, S., Johnson, S. and Biswas, A. (2013). Solitons and other solutions to quantum Zakharov–Kuznetsov equation in quantum magneto-plasmas. \emph{Indian Journal of Physics, 87}, 455-463.
+\bibitem{a4}Srivastava, S. and Konar, S. (2009). Two-component coupled photovoltaic soliton pair in two-photon photorefractive materials under open circuit conditions. \emph{Optics and Laser Technology, 41}(4), 419-423.
+\bibitem{a5}Konar, S., Kumar, J. and Sen, P.K. (1999). Suppression of soliton instability by higher order nonlinearity in long haul optical communication systems. \emph{Journal of Non-linear Optical Physics and Materials, 8}(04), 497-502.
+\bibitem{a6}Konar, S. and Jana, S. (2004). Linear and non-linear propagation of sinh-Gaussian pulses in dispersive media possessing Kerr nonlinearity. \emph{Optics communications, 236}(1-3), 7-20.
+\bibitem{a7}Jana, S. and Konar, S. (2007). A new family of Thirring type optical spatial solitons via electromagnetically induced transparency. \emph{Physics Letters A, 362}(5-6), 435-438.
+\bibitem{a8}Bhrawy, A. and Abdelkawy, M. (2013). Computational study of some nonlinear shallow water equations. Open Physics, 11(4), 518-525.
+\bibitem{a9}Bhrawy, A.H., Tharwat, M.M. and Abdelkawy, M.A. (2013). Integrable system modelling shallow water waves: Kaup–Boussinesq shallow water system. \emph{Indian Journal of Physics, 87}, 665-671.
+\bibitem{a10}Ghosh, S. and Nandy, S. (1999). Inverse scattering method and vector higher order non-linear Schrödinger equation. \emph{Nuclear Physics B, 561}(3), 451-466.
+\bibitem{a11}Bhrawy, A.H., Biswas, A., Javidi, M., Ma, W.X., Pinar, Z. and Yildirim, A. (2013). New solutions for (1+ 1)-dimensional and (2+ 1)-dimensional Kaup–Kupershmidt equations. \emph{Results in Mathematics, 63}, 675-686.
+\bibitem{a12}Sakthivel, R., Chun, C. and Bae, A.R. (2010). A general approach to hyperbolic partial differential equations by homotopy perturbation method. \emph{International Journal of Computer Mathematics, 87}(11), 2601-2606.
+\bibitem{a13}Wazwaz, A.M. (2008). The Hirota’s bilinear method and the tanh–coth method for multiple-soliton solutions of the Sawada-Kotera-Kadomtsev-Petviashvili equation. \emph{Applied Mathematics and Computation, 200}(1), 160-166..
+\bibitem{a14}Wang, M., Zhou, Y. and Li, Z. (1996). Application of a homogeneous balance method to exact solutions of non-linear equations in mathematical physics. \emph{Physics Letters A, 216}(1-5), 67-75.
+\bibitem{a15}Khater, A.H., Callebaut, D.K., Bhrawy, A.H. and Abdelkawy, M.A. (2013). Non-linear periodic solutions for isothermal magnetostatic atmospheres. \emph{Journal of Computational and Applied Mathematics, 242}, 28-40.
+\bibitem{a16}Liu, S., Fu, Z., Liu, S. and Zhao, Q. (2001). Jacobi elliptic function expansion method and periodic wave solutions of non-linear wave equations. \emph{Physics Letters A, 289}(1-2), 69-74.
+\bibitem{a17}Zhou, Y., Wang, M. and Miao, T. (2004). The periodic wave solutions and solitary wave solutions for a class of non-linear partial differential equations. \emph{Physics Letters A, 323}(1-2), 77-88.
+\bibitem{a18}Wazwaz, A.M. (2008). A study on linear and non-linear Schrodinger equations by the variational iteration method.\emph{ Chaos, Solitons and Fractals, 37}(4), 1136-1142.
+\bibitem{a19}Zhang, H.Q., Tian, B., Li, L.L. and Xue, Y.S. (2009). Darboux transformation and soliton solutions for the (2+ 1)-dimensional non-linear Schrödinger hierarchy with symbolic computation. \emph{Physica A: Statistical Mechanics and its Applications, 388}(1), 9-20.
+\bibitem{a20}Pawlik, M. and Rowlands, G. (1975). The propagation of solitary waves in piezoelectric semiconductors. \emph{Journal of Physics C: Solid State Physics, 8}(8), 1189.
+\bibitem{a21}Pedlosky, J. (1970). Finite-amplitude baroclinic waves. \emph{Journal of the Atmospheric Sciences, 27}(1), 15-30.
+\bibitem{a22}Wadati, M., Segur, H. and MJ, A. (1992). A new Hamiltonian amplitude equation governing modulated wave instabilities. \emph{Journal of the Physical Society of Japan, 61}(4), 1187-1193.
+\bibitem{a23}Beuß, H. (1996). On unstable non-linear Schrödinger equations. \emph{Non-linear Analysis: Theory, Methods and Applications, 26}(5), 903-914.
+\bibitem{a24}Arnold, A. (1998). Numerically absorbing boundary conditions for quantum evolution equations. \emph{VLSI design, 6}(1-4), 313-319.
+\bibitem{a25}Dehghan, M. and Shokri, A. (2007). A numerical method for two-dimensional Schrödinger equation using collocation and radial basis functions. \emph{Computers and Mathematics with Applications, 54}(1), 136-146.
+\bibitem{a26}Tappert, F.D. (2005). The parabolic approximation method. \emph{Wave propagation and underwater acoustics}, 224-287.
+\bibitem{a27}Huang, W., Xu, C., Chu, S.T. and Chaudhuri, S.K. (1992). The finite-difference vector beam propagation method: analysis and assessment. \emph{Journal of Lightwave Technology, 10}(3), 295-305.
+\bibitem{a28}Hajj, F.Y. (1985). Solution of the Schrodinger equation in two and three dimensions. \emph{Journal of Physics B: Atomic and Molecular Physics, 18}(1), 1.
+\bibitem{a29}Gagnon, L., Grammaticos, B., Ramani, A. and Winternitz, P. (1989). Lie symmetries of a generalised non-linear Schrodinger equation. III. Reductions to third-order ordinary differential equations. \emph{Journal of Physics A: Mathematical and General, 22}(5), 499.
+\bibitem{a30}Gagnon, L. and Paré, C. (1991). Non-linear radiation modes connected to parabolic graded-index profiles by the lens transformation. \emph{JOSA A, 8}(4), 601-607.
+\bibitem{a31}Gagnon, L. and Winternitz, P. (1989). Lie symmetries of a generalised non-linear Schrodinger equation. II. Exact solutions. \emph{Journal of Physics A: Mathematical and General, 22}(5), 469..
+\bibitem{a32}Gagnon, L. and Winternitz, P. (1989). Exact solutions of the spherical quintic non-linear Schrödinger equation. \emph{Physics Letters A, 134}(5), 276-281.
+\bibitem{a33}Gagnon, L. and Winternitz, P. (1990). Non-Painlevé reductions of non-linear Schrödinger equations. \emph{Physical Review A, 42}(8), 5029.
+\end{thebibliography}
+\end{document}  

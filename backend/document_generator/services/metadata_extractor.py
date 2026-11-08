@@ -183,6 +183,56 @@ def extract_pdf_metadata(pdf_path: Path) -> Tuple[str, List[str], List[str]]:
     return title, authors, warnings
 
 
+def extract_docx_direct(paper_path: Path, known_title: str = "") -> Tuple[str, List[str]]:
+    """Direct layout inspection of Word document paragraphs for title and author names."""
+    detected_title = known_title
+    detected_authors: List[str] = []
+    try:
+        import docx
+        doc = docx.Document(paper_path)
+        paras = [p.text.strip() for p in doc.paragraphs if p.text.strip()]
+        for t in doc.tables[:3]:
+            for row in t.rows:
+                for cell in row.cells:
+                    for p in cell.paragraphs:
+                        txt = p.text.strip()
+                        if txt and txt not in paras:
+                            paras.append(txt)
+
+        journal_re = re.compile(
+            r"^(journal|international journal|an international journal|j\.\s*stat|issn|doi:|http|https|vol\.|volume|pp\.|published|received|accepted|revised)",
+            re.IGNORECASE,
+        )
+
+        title_candidate = detected_title
+        if not title_candidate:
+            for p in paras[:10]:
+                if journal_re.search(p) or len(p) < 15 or len(p) > 300:
+                    continue
+                if any(kw in p.lower() for kw in ["abstract", "keywords", "introduction", "@"]):
+                    continue
+                title_candidate = _clean_title(p)
+                break
+        detected_title = title_candidate
+
+        for p in paras[:25]:
+            lower = p.lower()
+            if any(kw in lower for kw in ["abstract", "keywords", "index terms", "1. introduction", "1 introduction"]):
+                break
+            if journal_re.search(p):
+                continue
+            if detected_title and (_clean_title(p) == detected_title or detected_title in _clean_title(p) or _clean_title(p) in detected_title):
+                continue
+            cleaned, _ = author_names.clean_authors([p])
+            if cleaned:
+                for name in cleaned:
+                    if name not in detected_authors:
+                        detected_authors.append(name)
+    except Exception as exc:
+        logger.warning("Direct docx inspection failed for %s: %s", paper_path.name, exc)
+    return detected_title, detected_authors
+
+
 def extract(paper_path: Path, job_id: str) -> Tuple[str, List[str], List[str]]:
     """Return ``(title, authors, warnings)`` for one paper (.docx or .pdf).
 
@@ -221,16 +271,30 @@ def extract(paper_path: Path, job_id: str) -> Tuple[str, List[str], List[str]]:
                 paper_path.name,
                 "; ".join(dropped[:5]),
             )
+
+        # Fallback/enhancement via direct docx inspection if authors are missing or incomplete
+        direct_title, direct_authors = extract_docx_direct(paper_path, known_title=title)
+        if not title and direct_title:
+            title = direct_title
+        if direct_authors and (not authors or len(direct_authors) > len(authors)):
+            authors = direct_authors
     except Exception as exc:  # noqa: BLE001 - any analyzer failure is non-fatal
         logger.warning(
-            "Metadata extraction failed for %s (%s); falling back to the file name.",
+            "Metadata extraction failed for %s (%s); trying direct docx fallback.",
             paper_path.name,
             exc,
         )
-        warnings.append(
-            f"Could not read the document structure of {paper_path.name}; "
-            "the file name was used as the title."
-        )
+        direct_title, direct_authors = extract_docx_direct(paper_path)
+        if direct_title:
+            title = direct_title
+        if direct_authors:
+            authors = direct_authors
+        if not title:
+            title = title_from_filename(paper_path)
+            warnings.append(
+                f"Could not read the document structure of {paper_path.name}; "
+                "the file name was used as the title."
+            )
 
     if not title:
         title = title_from_filename(paper_path)

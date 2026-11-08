@@ -1,11 +1,11 @@
 {
   "reference_id": "ref_7460bc5abab3",
-  "project_id": "project_20260906_075341_bb902af0",
-  "created_at": "2026-09-06T07:55:13.826155+00:00",
+  "project_id": "project_20260923_134508_bb902af0",
+  "created_at": "2026-09-23T13:46:02.373325+00:00",
   "input": {
     "original_text": "Bentout S, Age-structured modeling of COVID-19 epidemic in the USA, UAE and Algeria. 60(1) (2021) 401–411.",
     "parsed": {
-      "title": "401–411",
+      "title": "60(1) (2021) 401–411",
       "authors": [
         {
           "name": "Bentout S",
@@ -23,9 +23,9 @@
           "family": "UAE"
         },
         {
-          "name": "Algeria. 60(1)",
-          "given": "Algeria.",
-          "family": "60(1)"
+          "name": "Algeria",
+          "given": "",
+          "family": "Algeria"
         }
       ],
       "year": 2021,
@@ -42,7 +42,7 @@
   },
   "canonical": {
     "title": {
-      "value": "401–411",
+      "value": "60(1) (2021) 401–411",
       "source": "google_scholar",
       "confidence": 1.0,
       "verification_status": "verified"
@@ -75,18 +75,18 @@
     "issue": null,
     "pages": null,
     "abstract": null,
-    "url": "https://scholar.google.com/scholar?q=401%E2%80%93411%20S",
+    "url": "https://scholar.google.com/scholar?q=60%281%29%20%282021%29%20401%E2%80%93411%20S",
     "identifiers": {
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.0,
-        "verification_status": "missing"
+        "confidence": 0.2,
+        "verification_status": "conflict"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.0,
+        "confidence": 0.26,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -108,7 +108,7 @@
         "verification_status": "unverified"
       },
       "google_scholar_url": {
-        "value": "https://scholar.google.com/scholar?q=401%E2%80%93411%20S",
+        "value": "https://scholar.google.com/scholar?q=60%281%29%20%282021%29%20401%E2%80%93411%20S",
         "source": "google_scholar",
         "confidence": 1.0,
         "verification_status": "verified"
@@ -168,10 +168,10 @@
       "confidence": 0.75
     },
     {
-      "name": "Algeria. 60(1)",
-      "display_name": "Algeria. 60(1)",
-      "given": "Algeria.",
-      "family": "60(1)",
+      "name": "Algeria",
+      "display_name": "Algeria",
+      "given": "",
+      "family": "Algeria",
       "author_id": "",
       "identifiers": {
         "openalex_id": null,
@@ -185,16 +185,16 @@
   ],
   "sources": {
     "openalex": {
-      "available": false,
+      "available": true,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.0,
+      "confidence": 0.26,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": null,
+      "raw_file": "data/raw/openalex/23134914bb579b1d.json",
       "normalized_file": null,
       "data": {}
     },
@@ -215,15 +215,15 @@
       "matched": true,
       "status": "matched",
       "confidence": 1.0,
-      "url": "https://scholar.google.com/scholar?q=401%E2%80%93411%20S",
+      "url": "https://scholar.google.com/scholar?q=60%281%29%20%282021%29%20401%E2%80%93411%20S",
       "cluster_id": null,
       "cited_by_url": null,
       "citation_count": null,
       "versions_count": null,
       "raw_file": null,
-      "normalized_file": "data/normalized/google_scholar/68cc73b9c2e142ba.json",
+      "normalized_file": "data/normalized/google_scholar/d72c9cbd1a642c5c.json",
       "data": {
-        "title": "401–411",
+        "title": "60(1) (2021) 401–411",
         "authors": [
           {
             "name": "Bentout S",
@@ -241,32 +241,103 @@
             "family": "UAE"
           },
           {
-            "name": "Algeria. 60(1)",
-            "given": "Algeria.",
-            "family": "60(1)"
+            "name": "Algeria",
+            "given": "",
+            "family": "Algeria"
           }
         ],
         "year": 2021,
         "journal": null,
         "doi": "",
-        "url": "https://scholar.google.com/scholar?q=401%E2%80%93411%20S",
+        "url": "https://scholar.google.com/scholar?q=60%281%29%20%282021%29%20401%E2%80%93411%20S",
         "citation_count": null,
         "source": "google_scholar",
-        "scholar_url": "https://scholar.google.com/scholar?q=401%E2%80%93411%20S",
+        "scholar_url": "https://scholar.google.com/scholar?q=60%281%29%20%282021%29%20401%E2%80%93411%20S",
         "available": false,
         "reason": "SERPAPI_KEY_NOT_CONFIGURED",
         "raw_file": null,
-        "normalized_file": "data/normalized/google_scholar/68cc73b9c2e142ba.json"
+        "normalized_file": "data/normalized/google_scholar/d72c9cbd1a642c5c.json"
       }
     }
   },
   "doi_verification": {
-    "status": "missing",
+    "status": "conflict",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.0,
-    "reason": "No DOI or arXiv identifier present in reference or provider results.",
-    "conflicts": [],
+    "confidence": 0.2,
+    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/eurheartj/ehab484",
+        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s00134-021-06506-y",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0140-6736(24)00933-4",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1097/ccm.0000000000005337",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0140-6736(24)00367-2",
+        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s1474-4422(24)00369-7",
+        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0140-6736(24)00685-8",
+        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s00134-021-06368-4",
+        "reason": "Metadata mismatch (title_sim=0.12, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/ejcts/ezab389",
+        "reason": "Metadata mismatch (title_sim=0.14, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s2468-2667(21)00249-8",
+        "reason": "Metadata mismatch (title_sim=0.10, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
@@ -274,7 +345,78 @@
     "metadata_completeness": 0.5,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/eurheartj/ehab484",
+        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s00134-021-06506-y",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0140-6736(24)00933-4",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1097/ccm.0000000000005337",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0140-6736(24)00367-2",
+        "reason": "Metadata mismatch (title_sim=0.01, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s1474-4422(24)00369-7",
+        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0140-6736(24)00685-8",
+        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s00134-021-06368-4",
+        "reason": "Metadata mismatch (title_sim=0.12, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/ejcts/ezab389",
+        "reason": "Metadata mismatch (title_sim=0.14, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s2468-2667(21)00249-8",
+        "reason": "Metadata mismatch (title_sim=0.10, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -283,14 +425,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 6.19,
-      "crossref": 36105.78,
-      "openalex": 51578.81
+      "google_scholar": 9.25,
+      "crossref": 20888.12,
+      "openalex": 25836.64
     },
     "candidate_counts": {
       "google_scholar": 1,
       "crossref": 0,
-      "openalex": 0
+      "openalex": 10
     },
     "errors": {}
   }

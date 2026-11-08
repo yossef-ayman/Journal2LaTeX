@@ -78,7 +78,14 @@ def normalise_journal_code(code: Optional[str]) -> str:
     and ``JSAP`` all produce the same, stable identifier -- an operator should
     not be able to split one journal's numbering in two by typing it differently.
     """
-    return re.sub(r"[^A-Za-z0-9]", "", (code or "")).upper()
+    cleaned = re.sub(r"[^A-Za-z0-9]", "", (code or "")).upper()
+    code_map = {
+        "AMISL": "AMIS",
+        "JSAPL": "JSAP",
+        "PFDA": "PDFA",
+        "THIN_FILM": "THINFILM",
+    }
+    return code_map.get(cleaned, cleaned)
 
 
 def build_reference_number(

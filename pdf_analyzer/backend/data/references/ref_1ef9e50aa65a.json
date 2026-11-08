@@ -1,31 +1,21 @@
 {
   "reference_id": "ref_1ef9e50aa65a",
-  "project_id": "project_20260906_082722_bb902af0",
-  "created_at": "2026-09-06T08:28:54.477101+00:00",
+  "project_id": "project_20260923_134508_bb902af0",
+  "created_at": "2026-09-23T13:46:04.964947+00:00",
   "input": {
     "original_text": "Chen, T. M., Rui, J., Wang, A mathematical model for simulating the phase-based transmissibility of a novel corona virus. Infectious diseases of poverty. 9(1)(2020) 1-8.",
     "parsed": {
-      "title": "1-8",
+      "title": "M., Rui, J., Wang, A mathematical model for simulating the phase-based transmissibility of a novel corona virus",
       "authors": [
         {
-          "name": "T. M Chen",
-          "given": "T. M",
+          "name": "T Chen",
+          "given": "T",
           "family": "Chen"
-        },
-        {
-          "name": "J Rui",
-          "given": "J",
-          "family": "Rui"
-        },
-        {
-          "name": "A mathematical model for simulating the phase-based transmissibility of a novel corona virus. Infectious diseases of poverty. 9(1) Wang",
-          "given": "A mathematical model for simulating the phase-based transmissibility of a novel corona virus. Infectious diseases of poverty. 9(1)",
-          "family": "Wang"
         }
       ],
       "year": 2020,
       "reference_type": "journal-article",
-      "journal": null,
+      "journal": "Infectious diseases of poverty. () 1-8",
       "publisher": null,
       "volume": null,
       "issue": "vel",
@@ -37,52 +27,52 @@
   },
   "canonical": {
     "title": {
-      "value": "1-8",
-      "source": "parsed",
-      "confidence": 0.5,
-      "verification_status": "unverified"
+      "value": "A mathematical model for simulating the phase-based transmissibility of a novel coronavirus",
+      "source": "openalex",
+      "confidence": 0.99,
+      "verification_status": "verified"
     },
     "year": {
       "value": 2020,
-      "source": "parsed",
-      "confidence": 0.9,
+      "source": "openalex",
+      "confidence": 0.99,
       "verification_status": "verified"
     },
     "venue": {
-      "value": null,
-      "source": "none",
-      "confidence": 0.0,
-      "verification_status": "unverified"
+      "value": "Infectious diseases of poverty. () 1-8",
+      "source": "parsed",
+      "confidence": 0.85,
+      "verification_status": "verified"
     },
     "reference_type": {
       "value": "journal-article",
-      "source": "classifier",
-      "confidence": 0.75,
-      "verification_status": "unverified"
+      "source": "openalex",
+      "confidence": 0.9,
+      "verification_status": "verified"
     },
     "publisher": {
-      "value": null,
-      "source": "none",
-      "confidence": 0.0,
-      "verification_status": "unverified"
+      "value": "BioMed Central",
+      "source": "openalex",
+      "confidence": 0.9,
+      "verification_status": "verified"
     },
     "volume": null,
     "issue": "vel",
     "pages": null,
-    "abstract": null,
-    "url": null,
+    "abstract": "Abstract Background As reported by the World Health Organization, a novel coronavirus (2019-nCoV) was identified as the causative virus of Wuhan pneumonia of unknown etiology by Chinese authorities on 7 January, 2020. The virus was named as severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) by International Committee on Taxonomy of Viruses on 11 February, 2020. This study aimed to develop a mathematical model for calculating the transmissibility of the virus. Methods In this study, we developed a Bats-Hosts-Reservoir-People transmission network model for simulating the potential transmission from the infection source (probably be bats) to the human infection. Since the Bats-Hosts-Reservoir network was hard to explore clearly and public concerns were focusing on the transmission from Huanan Seafood Wholesale Market (reservoir) to people, we simplified the model as Reservoir-People (RP) transmission network model. The next generation matrix approach was adopted to calculate the basic reproduction number ( R 0 ) from the RP model to assess the transmissibility of the SARS-CoV-2. Results The value of R 0 was estimated of 2.30 from reservoir to person and 3.58 from person to person which means that the expected number of secondary infections that result from introducing a single infected individual into an otherwise susceptible population was 3.58. Conclusions Our model showed that the transmissibility of SARS-CoV-2 was higher than the Middle East respiratory syndrome in the Middle East countries, similar to severe acute respiratory syndrome, but lower than MERS in the Republic of Korea.",
+    "url": "https://doi.org/10.1186/s40249-020-00640-3",
     "identifiers": {
       "doi": {
-        "value": null,
-        "source": "none",
-        "confidence": 0.0,
-        "verification_status": "missing"
+        "value": "10.1186/s40249-020-00640-3",
+        "source": "doi_verifier",
+        "confidence": 0.99,
+        "verification_status": "verified"
       },
       "openalex_id": {
-        "value": null,
+        "value": "https://openalex.org/W3009041394",
         "source": "openalex",
-        "confidence": 0.0,
-        "verification_status": "unverified"
+        "confidence": 0.99,
+        "verification_status": "verified"
       },
       "arxiv_id": {
         "value": null,
@@ -103,80 +93,305 @@
         "verification_status": "unverified"
       },
       "google_scholar_url": {
-        "value": null,
-        "source": "none",
-        "confidence": 0.0,
-        "verification_status": "unverified"
+        "value": "https://scholar.google.com/scholar?q=M.%2C%20Rui%2C%20J.%2C%20Wang%2C%20A%20mathematical%20model%20for%20simulating%20the%20phase-based%20transmissibility%20of%20a%20novel%20corona%20virus%20Chen",
+        "source": "google_scholar",
+        "confidence": 1.0,
+        "verification_status": "verified"
       }
     },
     "citation_counts": {
-      "canonical_value": null,
+      "canonical_value": 903,
       "google_scholar": null,
-      "openalex": null,
+      "openalex": 903,
       "crossref": null
     }
   },
   "canonical_authors": [
     {
-      "name": "T. M Chen",
-      "display_name": "T. M Chen",
-      "given": "T. M",
+      "name": "Tianmu Chen",
+      "display_name": "Tianmu Chen",
+      "given": "Tianmu",
       "family": "Chen",
-      "author_id": "",
+      "author_id": "https://openalex.org/A5009969845",
       "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
+        "openalex_id": "https://openalex.org/A5009969845",
+        "orcid": "https://orcid.org/0000-0003-0710-5086",
         "google_scholar_id": null
       },
-      "affiliations": [],
+      "affiliations": [
+        "Xiamen University",
+        "State Key Laboratory of Molecular Vaccinology and Molecular Diagnostics"
+      ],
       "match_status": "matched",
-      "confidence": 0.75
+      "confidence": 0.95
     },
     {
-      "name": "J Rui",
-      "display_name": "J Rui",
-      "given": "J",
+      "name": "Jia Rui",
+      "display_name": "Jia Rui",
+      "given": "Jia",
       "family": "Rui",
-      "author_id": "",
+      "author_id": "https://openalex.org/A5072881423",
       "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
+        "openalex_id": "https://openalex.org/A5072881423",
+        "orcid": "https://orcid.org/0000-0002-7888-9933",
         "google_scholar_id": null
       },
-      "affiliations": [],
+      "affiliations": [
+        "Xiamen University",
+        "State Key Laboratory of Molecular Vaccinology and Molecular Diagnostics"
+      ],
       "match_status": "matched",
-      "confidence": 0.75
+      "confidence": 0.95
     },
     {
-      "name": "A mathematical model for simulating the phase-based transmissibility of a novel corona virus. Infectious diseases of poverty. 9(1) Wang",
-      "display_name": "A mathematical model for simulating the phase-based transmissibility of a novel corona virus. Infectious diseases of poverty. 9(1) Wang",
-      "given": "A mathematical model for simulating the phase-based transmissibility of a novel corona virus. Infectious diseases of poverty. 9(1)",
+      "name": "Qiu-Peng Wang",
+      "display_name": "Qiu-Peng Wang",
+      "given": "Qiu-Peng",
       "family": "Wang",
-      "author_id": "",
+      "author_id": "https://openalex.org/A5029169371",
       "identifiers": {
-        "openalex_id": null,
+        "openalex_id": "https://openalex.org/A5029169371",
         "orcid": null,
         "google_scholar_id": null
       },
-      "affiliations": [],
+      "affiliations": [
+        "Xiamen University",
+        "State Key Laboratory of Molecular Vaccinology and Molecular Diagnostics"
+      ],
       "match_status": "matched",
-      "confidence": 0.75
+      "confidence": 0.95
+    },
+    {
+      "name": "Ze-Yu Zhao",
+      "display_name": "Ze-Yu Zhao",
+      "given": "Ze-Yu",
+      "family": "Zhao",
+      "author_id": "https://openalex.org/A5110705917",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5110705917",
+        "orcid": "https://orcid.org/0009-0002-1004-4464",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Xiamen University",
+        "State Key Laboratory of Molecular Vaccinology and Molecular Diagnostics"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Jing-An Cui",
+      "display_name": "Jing-An Cui",
+      "given": "Jing-An",
+      "family": "Cui",
+      "author_id": "https://openalex.org/A5101088328",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5101088328",
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Beijing University of Civil Engineering and Architecture"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
+    },
+    {
+      "name": "Ling Feng Yin",
+      "display_name": "Ling Feng Yin",
+      "given": "Ling Feng",
+      "family": "Yin",
+      "author_id": "https://openalex.org/A5101670284",
+      "identifiers": {
+        "openalex_id": "https://openalex.org/A5101670284",
+        "orcid": "https://orcid.org/0000-0002-0262-0655",
+        "google_scholar_id": null
+      },
+      "affiliations": [
+        "Chinese Academy of Sciences",
+        "Shenzhen Institutes of Advanced Technology"
+      ],
+      "match_status": "matched",
+      "confidence": 0.95
     }
   ],
   "sources": {
     "openalex": {
-      "available": false,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.0,
-      "citation_count": null,
-      "openalex_id": null,
-      "doi": null,
-      "url": null,
-      "pdf_url": null,
-      "raw_file": null,
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 0.99,
+      "citation_count": 903,
+      "openalex_id": "https://openalex.org/W3009041394",
+      "doi": "10.1186/s40249-020-00640-3",
+      "url": "https://doi.org/10.1186/s40249-020-00640-3",
+      "pdf_url": "https://idpjournal.biomedcentral.com/counter/pdf/10.1186/s40249-020-00640-3",
+      "raw_file": "data/raw/openalex/5ed4ddbeedd0b7d0.json",
       "normalized_file": null,
-      "data": {}
+      "data": {
+        "title": "A mathematical model for simulating the phase-based transmissibility of a novel coronavirus",
+        "display_name": "A mathematical model for simulating the phase-based transmissibility of a novel coronavirus",
+        "authors": [
+          {
+            "name": "Tianmu Chen",
+            "given": "Tianmu",
+            "family": "Chen",
+            "author_id": "https://openalex.org/A5009969845",
+            "display_name": "Tianmu Chen",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5009969845",
+              "orcid": "https://orcid.org/0000-0003-0710-5086",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Xiamen University",
+              "State Key Laboratory of Molecular Vaccinology and Molecular Diagnostics"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Jia Rui",
+            "given": "Jia",
+            "family": "Rui",
+            "author_id": "https://openalex.org/A5072881423",
+            "display_name": "Jia Rui",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5072881423",
+              "orcid": "https://orcid.org/0000-0002-7888-9933",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Xiamen University",
+              "State Key Laboratory of Molecular Vaccinology and Molecular Diagnostics"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Qiu-Peng Wang",
+            "given": "Qiu-Peng",
+            "family": "Wang",
+            "author_id": "https://openalex.org/A5029169371",
+            "display_name": "Qiu-Peng Wang",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5029169371",
+              "orcid": null,
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Xiamen University",
+              "State Key Laboratory of Molecular Vaccinology and Molecular Diagnostics"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Ze-Yu Zhao",
+            "given": "Ze-Yu",
+            "family": "Zhao",
+            "author_id": "https://openalex.org/A5110705917",
+            "display_name": "Ze-Yu Zhao",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5110705917",
+              "orcid": "https://orcid.org/0009-0002-1004-4464",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Xiamen University",
+              "State Key Laboratory of Molecular Vaccinology and Molecular Diagnostics"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Jing-An Cui",
+            "given": "Jing-An",
+            "family": "Cui",
+            "author_id": "https://openalex.org/A5101088328",
+            "display_name": "Jing-An Cui",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5101088328",
+              "orcid": null,
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Beijing University of Civil Engineering and Architecture"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Ling Feng Yin",
+            "given": "Ling Feng",
+            "family": "Yin",
+            "author_id": "https://openalex.org/A5101670284",
+            "display_name": "Ling Feng Yin",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5101670284",
+              "orcid": "https://orcid.org/0000-0002-0262-0655",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Chinese Academy of Sciences",
+              "Shenzhen Institutes of Advanced Technology"
+            ],
+            "countries": [
+              "CN"
+            ]
+          }
+        ],
+        "year": 2020,
+        "publication_date": "2020-02-28",
+        "journal": "Infectious Diseases of Poverty",
+        "venue": "Infectious Diseases of Poverty",
+        "publisher": "BioMed Central",
+        "reference_type": "journal-article",
+        "volume": "9",
+        "issue": "1",
+        "pages": "24",
+        "doi": "10.1186/s40249-020-00640-3",
+        "url": "https://doi.org/10.1186/s40249-020-00640-3",
+        "pdf_url": "https://idpjournal.biomedcentral.com/counter/pdf/10.1186/s40249-020-00640-3",
+        "openalex_id": "https://openalex.org/W3009041394",
+        "citation_count": 903,
+        "cited_by_count": 903,
+        "is_oa": true,
+        "oa_status": "gold",
+        "abstract": "Abstract Background As reported by the World Health Organization, a novel coronavirus (2019-nCoV) was identified as the causative virus of Wuhan pneumonia of unknown etiology by Chinese authorities on 7 January, 2020. The virus was named as severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) by International Committee on Taxonomy of Viruses on 11 February, 2020. This study aimed to develop a mathematical model for calculating the transmissibility of the virus. Methods In this study, we developed a Bats-Hosts-Reservoir-People transmission network model for simulating the potential transmission from the infection source (probably be bats) to the human infection. Since the Bats-Hosts-Reservoir network was hard to explore clearly and public concerns were focusing on the transmission from Huanan Seafood Wholesale Market (reservoir) to people, we simplified the model as Reservoir-People (RP) transmission network model. The next generation matrix approach was adopted to calculate the basic reproduction number ( R 0 ) from the RP model to assess the transmissibility of the SARS-CoV-2. Results The value of R 0 was estimated of 2.30 from reservoir to person and 3.58 from person to person which means that the expected number of secondary infections that result from introducing a single infected individual into an otherwise susceptible population was 3.58. Conclusions Our model showed that the transmissibility of SARS-CoV-2 was higher than the Middle East respiratory syndrome in the Middle East countries, similar to severe acute respiratory syndrome, but lower than MERS in the Republic of Korea.",
+        "topics": [
+          "COVID-19 epidemiological studies",
+          "Infection Control and Ventilation",
+          "SARS-CoV-2 and COVID-19 Research"
+        ],
+        "referenced_works_count": 26,
+        "related_works": [
+          "https://openalex.org/W2106557213",
+          "https://openalex.org/W4286480187",
+          "https://openalex.org/W2939404188",
+          "https://openalex.org/W2061805641",
+          "https://openalex.org/W2181588960"
+        ],
+        "source": "openalex",
+        "raw_file": "data/raw/openalex/5ed4ddbeedd0b7d0.json"
+      }
     },
     "crossref": {
       "available": false,
@@ -192,34 +407,182 @@
     },
     "google_scholar": {
       "available": false,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.2,
-      "url": null,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "url": "https://scholar.google.com/scholar?q=M.%2C%20Rui%2C%20J.%2C%20Wang%2C%20A%20mathematical%20model%20for%20simulating%20the%20phase-based%20transmissibility%20of%20a%20novel%20corona%20virus%20Chen",
       "cluster_id": null,
       "cited_by_url": null,
       "citation_count": null,
       "versions_count": null,
       "raw_file": null,
-      "normalized_file": null,
-      "data": {}
+      "normalized_file": "data/normalized/google_scholar/a28a80e232a2073d.json",
+      "data": {
+        "title": "M., Rui, J., Wang, A mathematical model for simulating the phase-based transmissibility of a novel corona virus",
+        "authors": [
+          {
+            "name": "T Chen",
+            "given": "T",
+            "family": "Chen"
+          }
+        ],
+        "year": 2020,
+        "journal": "Infectious diseases of poverty. () 1-8",
+        "doi": "",
+        "url": "https://scholar.google.com/scholar?q=M.%2C%20Rui%2C%20J.%2C%20Wang%2C%20A%20mathematical%20model%20for%20simulating%20the%20phase-based%20transmissibility%20of%20a%20novel%20corona%20virus%20Chen",
+        "citation_count": null,
+        "source": "google_scholar",
+        "scholar_url": "https://scholar.google.com/scholar?q=M.%2C%20Rui%2C%20J.%2C%20Wang%2C%20A%20mathematical%20model%20for%20simulating%20the%20phase-based%20transmissibility%20of%20a%20novel%20corona%20virus%20Chen",
+        "available": false,
+        "reason": "SERPAPI_KEY_NOT_CONFIGURED",
+        "raw_file": null,
+        "normalized_file": "data/normalized/google_scholar/a28a80e232a2073d.json"
+      }
     }
   },
   "doi_verification": {
-    "status": "missing",
-    "canonical_doi": null,
+    "status": "verified",
+    "canonical_doi": "10.1186/s40249-020-00640-3",
     "reconciled_with_arxiv": false,
-    "confidence": 0.0,
-    "reason": "No DOI or arXiv identifier present in reference or provider results.",
-    "conflicts": [],
+    "confidence": 0.99,
+    "reason": "Verified with openalex metadata consistency (title_sim=0.93).",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.chaos.2020.109846",
+        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.idm.2020.06.005",
+        "reason": "Metadata mismatch (title_sim=0.77, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s13346-020-00818-0",
+        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13104-020-05192-1",
+        "reason": "Metadata mismatch (title_sim=0.36, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-02834-3",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s11071-021-06524-x",
+        "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.sintl.2021.100088",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-03029-6",
+        "reason": "Metadata mismatch (title_sim=0.59, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.aej.2020.09.029",
+        "reason": "Metadata mismatch (title_sim=0.47, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
-    "overall_confidence": 0.2,
-    "metadata_completeness": 0.5,
-    "doi_verified": false,
+    "overall_confidence": 1.0,
+    "metadata_completeness": 1.0,
+    "doi_verified": true,
     "author_verified": true,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.chaos.2020.109846",
+        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.idm.2020.06.005",
+        "reason": "Metadata mismatch (title_sim=0.77, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s13346-020-00818-0",
+        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13104-020-05192-1",
+        "reason": "Metadata mismatch (title_sim=0.36, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-02834-3",
+        "reason": "Metadata mismatch (title_sim=0.49, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s11071-021-06524-x",
+        "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.sintl.2021.100088",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s13662-020-03029-6",
+        "reason": "Metadata mismatch (title_sim=0.59, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.aej.2020.09.029",
+        "reason": "Metadata mismatch (title_sim=0.47, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -228,14 +591,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 10.51,
-      "crossref": 64194.74,
-      "openalex": 83674.11
+      "google_scholar": 9.51,
+      "crossref": 38415.01,
+      "openalex": 46097.65
     },
     "candidate_counts": {
       "google_scholar": 1,
       "crossref": 0,
-      "openalex": 0
+      "openalex": 10
     },
     "errors": {}
   }

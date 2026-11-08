@@ -173,10 +173,12 @@ def test_xml_api_endpoints():
 
 
 def test_analyze_pdf_caching_lifecycle():
+    import uuid
+    unique_run = uuid.uuid4().hex[:8]
     # Create minimal valid PDF using PyMuPDF
     doc = fitz.open()
     page = doc.new_page()
-    page.insert_text((50, 72), "An Efficient XML Storage Architecture for Academic Papers", fontsize=16)
+    page.insert_text((50, 72), f"An Efficient XML Storage Architecture for Academic Papers {unique_run}", fontsize=16)
     page.insert_text((50, 100), "Authors: Jane Doe, John Smith", fontsize=12)
     page.insert_text((50, 130), "Abstract: In this paper we introduce an instant XML storage engine.", fontsize=10)
     page.insert_text((50, 160), "1. Introduction", fontsize=14)

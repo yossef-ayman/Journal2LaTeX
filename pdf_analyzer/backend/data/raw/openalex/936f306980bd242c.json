@@ -1,0 +1,6620 @@
+{
+  "provider": "openalex",
+  "query_key": "title:. Al-Assaf, K. T., Foriki, M. S. M., Samarah, T., Hindieh, A., Mohammad, S. I. S., Vasudevan, A., and Al Kurdi, B",
+  "query_hash": "936f306980bd242c",
+  "saved_at": "2026-09-23T13:37:41.393015+00:00",
+  "status_code": 200,
+  "candidate_count": 6,
+  "raw_response": {
+    "meta": {
+      "count": 6,
+      "db_response_time_ms": 724,
+      "page": 1,
+      "per_page": 10,
+      "groups_count": null,
+      "x_query": {
+        "oql": "works where full text has (. Al-Assaf K. T. Foriki M. S. M. Samarah T. Hindieh A. Mohammad S. I. S. Vasudevan A. \"and\" Al Kurdi B)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": ". Al-Assaf K. T. Foriki M. S. M. Samarah T. Hindieh A. Mohammad S. I. S. Vasudevan A. and Al Kurdi B",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:. Al-Assaf K. T. Foriki M. S. M. Samarah T. Hindieh A. Mohammad S. I. S. Vasudevan A. and Al Kurdi B&per_page=10"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4409903793",
+        "doi": "https://doi.org/10.52340/gs.2025.07.02.18",
+        "title": "Digital Marketing Strategies in the Pharmaceutical Sector",
+        "display_name": "Digital Marketing Strategies in the Pharmaceutical Sector",
+        "relevance_score": 19.285177,
+        "publication_year": 2025,
+        "publication_date": "2025-04-29",
+        "ids": {
+          "openalex": "https://openalex.org/W4409903793",
+          "doi": "https://doi.org/10.52340/gs.2025.07.02.18"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.52340/gs.2025.07.02.18",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.52340/gs.2025.07.02.18",
+          "pdf_url": "https://journals.4science.ge/index.php/GS/article/download/3566/3551",
+          "source": {
+            "id": "https://openalex.org/S4210238182",
+            "display_name": "GEORGIAN SCIENTISTS",
+            "issn_l": "2667-9760",
+            "issn": [
+              "2667-9760"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "GEORGIAN SCIENTISTS",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://journals.4science.ge/index.php/GS/article/download/3566/3551",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5094224343",
+              "display_name": "Nana Shashiashvili Nana Shashiashvili",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I7848551",
+                "display_name": "Tbilisi State Medical University",
+                "ror": "https://ror.org/020jbrt22",
+                "country_code": "GE",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I7848551"
+                ]
+              }
+            ],
+            "countries": [
+              "GE"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Nana Shashiashvili",
+            "raw_affiliation_strings": [
+              "Tbilisi State Medical University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Tbilisi State Medical University",
+                "institution_ids": [
+                  "https://openalex.org/I7848551"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5117367739",
+              "display_name": "Mariam Bakradze Mariam Bakradze",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I223093266",
+                "display_name": "Caucasus University",
+                "ror": "https://ror.org/02tc4et63",
+                "country_code": "GE",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I223093266"
+                ]
+              }
+            ],
+            "countries": [
+              "GE"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Mariam Bakradze",
+            "raw_affiliation_strings": [
+              "Caucasus University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Caucasus University",
+                "institution_ids": [
+                  "https://openalex.org/I223093266"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 2,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 2.3621,
+        "has_fulltext": true,
+        "cited_by_count": 2,
+        "citation_normalized_percentile": {
+          "value": 0.89118554,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": {
+          "min": 95,
+          "max": 96
+        },
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T13151",
+          "display_name": "Business Strategies and Innovation",
+          "score": 0.8715000152587891,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1408",
+            "display_name": "Strategy and Management"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/14",
+            "display_name": "Business, Management and Accounting"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T13151",
+            "display_name": "Business Strategies and Innovation",
+            "score": 0.8715000152587891,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1408",
+              "display_name": "Strategy and Management"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/14",
+              "display_name": "Business, Management and Accounting"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T12922",
+            "display_name": "Business and Economic Development",
+            "score": 0.8668000102043152,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2308",
+              "display_name": "Management, Monitoring, Policy and Law"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/23",
+              "display_name": "Environmental Science"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10058",
+            "display_name": "Entrepreneurship Studies and Influences",
+            "score": 0.805899977684021,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1405",
+              "display_name": "Management of Technology and Innovation"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/14",
+              "display_name": "Business, Management and Accounting"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/marketing",
+            "display_name": "Marketing",
+            "score": 0.6036592125892639
+          },
+          {
+            "id": "https://openalex.org/keywords/business",
+            "display_name": "Business",
+            "score": 0.6010695695877075
+          },
+          {
+            "id": "https://openalex.org/keywords/pharmaceutical-marketing",
+            "display_name": "Pharmaceutical marketing",
+            "score": 0.5676344633102417
+          },
+          {
+            "id": "https://openalex.org/keywords/digital-marketing",
+            "display_name": "Digital marketing",
+            "score": 0.45315879583358765
+          },
+          {
+            "id": "https://openalex.org/keywords/advertising",
+            "display_name": "Advertising",
+            "score": 0.3289341330528259
+          },
+          {
+            "id": "https://openalex.org/keywords/pharmaceutical-industry",
+            "display_name": "Pharmaceutical industry",
+            "score": 0.3127661347389221
+          },
+          {
+            "id": "https://openalex.org/keywords/medicine",
+            "display_name": "Medicine",
+            "score": 0.15420302748680115
+          },
+          {
+            "id": "https://openalex.org/keywords/pharmacology",
+            "display_name": "Pharmacology",
+            "score": 0.1101510226726532
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C162853370",
+            "wikidata": "https://www.wikidata.org/wiki/Q39809",
+            "display_name": "Marketing",
+            "level": 1,
+            "score": 0.6036592125892639
+          },
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.6010695695877075
+          },
+          {
+            "id": "https://openalex.org/C2781419290",
+            "wikidata": "https://www.wikidata.org/wiki/Q5254772",
+            "display_name": "Pharmaceutical marketing",
+            "level": 3,
+            "score": 0.5676344633102417
+          },
+          {
+            "id": "https://openalex.org/C98495876",
+            "wikidata": "https://www.wikidata.org/wiki/Q1323528",
+            "display_name": "Digital marketing",
+            "level": 2,
+            "score": 0.45315879583358765
+          },
+          {
+            "id": "https://openalex.org/C112698675",
+            "wikidata": "https://www.wikidata.org/wiki/Q37038",
+            "display_name": "Advertising",
+            "level": 1,
+            "score": 0.3289341330528259
+          },
+          {
+            "id": "https://openalex.org/C2779652045",
+            "wikidata": "https://www.wikidata.org/wiki/Q507443",
+            "display_name": "Pharmaceutical industry",
+            "level": 2,
+            "score": 0.3127661347389221
+          },
+          {
+            "id": "https://openalex.org/C71924100",
+            "wikidata": "https://www.wikidata.org/wiki/Q11190",
+            "display_name": "Medicine",
+            "level": 0,
+            "score": 0.15420302748680115
+          },
+          {
+            "id": "https://openalex.org/C98274493",
+            "wikidata": "https://www.wikidata.org/wiki/Q128406",
+            "display_name": "Pharmacology",
+            "level": 1,
+            "score": 0.1101510226726532
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.52340/gs.2025.07.02.18",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.52340/gs.2025.07.02.18",
+            "pdf_url": "https://journals.4science.ge/index.php/GS/article/download/3566/3551",
+            "source": {
+              "id": "https://openalex.org/S4210238182",
+              "display_name": "GEORGIAN SCIENTISTS",
+              "issn_l": "2667-9760",
+              "issn": [
+                "2667-9760"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "journal"
+            },
+            "license": "cc-by-nc-nd",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "GEORGIAN SCIENTISTS",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.52340/gs.2025.07.02.18",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.52340/gs.2025.07.02.18",
+          "pdf_url": "https://journals.4science.ge/index.php/GS/article/download/3566/3551",
+          "source": {
+            "id": "https://openalex.org/S4210238182",
+            "display_name": "GEORGIAN SCIENTISTS",
+            "issn_l": "2667-9760",
+            "issn": [
+              "2667-9760"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "GEORGIAN SCIENTISTS",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "x_sdgs": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": true,
+          "grobid_xml": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4409903793.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4409903793.grobid-xml"
+        },
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W2001171802",
+          "https://openalex.org/W3012996910",
+          "https://openalex.org/W1606135920",
+          "https://openalex.org/W4382600032",
+          "https://openalex.org/W2994256544",
+          "https://openalex.org/W2886081026",
+          "https://openalex.org/W1531879997",
+          "https://openalex.org/W2465652233",
+          "https://openalex.org/W3108022068",
+          "https://openalex.org/W1953370691"
+        ],
+        "abstract_inverted_index": {
+          "The": [
+            0,
+            189
+          ],
+          "rapid": [
+            1
+          ],
+          "advancement": [
+            2
+          ],
+          "of": [
+            3,
+            158,
+            191,
+            233,
+            241
+          ],
+          "digital": [
+            4,
+            33,
+            192,
+            235,
+            242
+          ],
+          "technologies": [
+            5
+          ],
+          "has": [
+            6
+          ],
+          "significantly": [
+            7
+          ],
+          "transformed": [
+            8
+          ],
+          "marketing": [
+            9,
+            34,
+            123,
+            149,
+            243
+          ],
+          "practices": [
+            10
+          ],
+          "in": [
+            11,
+            79,
+            208
+          ],
+          "the": [
+            12,
+            155,
+            216,
+            238
+          ],
+          "pharmaceutical": [
+            13,
+            28,
+            167
+          ],
+          "sector.": [
+            14
+          ],
+          "In": [
+            15,
+            146
+          ],
+          "response": [
+            16
+          ],
+          "to": [
+            17,
+            36,
+            62,
+            133,
+            179
+          ],
+          "increasing": [
+            18
+          ],
+          "demand": [
+            19
+          ],
+          "for": [
+            20,
+            111,
+            128,
+            160
+          ],
+          "personalized": [
+            21,
+            129
+          ],
+          "healthcare": [
+            22,
+            67,
+            141,
+            206,
+            254
+          ],
+          "solutions": [
+            23
+          ],
+          "and": [
+            24,
+            41,
+            59,
+            64,
+            69,
+            83,
+            105,
+            118,
+            140,
+            163,
+            176,
+            185,
+            199,
+            212,
+            226,
+            248,
+            252
+          ],
+          "improved": [
+            25
+          ],
+          "patient": [
+            26
+          ],
+          "engagement,": [
+            27
+          ],
+          "companies": [
+            29,
+            132,
+            168
+          ],
+          "are": [
+            30,
+            151,
+            169
+          ],
+          "adopting": [
+            31
+          ],
+          "diverse": [
+            32
+          ],
+          "strategies": [
+            35,
+            48,
+            150
+          ],
+          "strengthen": [
+            37
+          ],
+          "their": [
+            38
+          ],
+          "market": [
+            39
+          ],
+          "presence": [
+            40
+          ],
+          "enhance": [
+            42,
+            186
+          ],
+          "communication": [
+            43
+          ],
+          "with": [
+            44,
+            143,
+            205,
+            224
+          ],
+          "key": [
+            45
+          ],
+          "stakeholders.": [
+            46
+          ],
+          "These": [
+            47
+          ],
+          "include": [
+            49
+          ],
+          "content": [
+            50,
+            91
+          ],
+          "marketing,": [
+            51
+          ],
+          "which": [
+            52
+          ],
+          "focuses": [
+            53
+          ],
+          "on": [
+            54
+          ],
+          "delivering": [
+            55
+          ],
+          "scientifically": [
+            56
+          ],
+          "accurate,": [
+            57
+          ],
+          "relevant,": [
+            58
+          ],
+          "valuable": [
+            60
+          ],
+          "information": [
+            61
+          ],
+          "educate": [
+            63
+          ],
+          "engage": [
+            65
+          ],
+          "both": [
+            66
+          ],
+          "professionals": [
+            68
+          ],
+          "patients.": [
+            70
+          ],
+          "Search": [
+            71
+          ],
+          "Engine": [
+            72
+          ],
+          "Optimization": [
+            73
+          ],
+          "(SEO)": [
+            74
+          ],
+          "plays": [
+            75
+          ],
+          "a": [
+            76,
+            125,
+            209,
+            219,
+            230
+          ],
+          "vital": [
+            77
+          ],
+          "role": [
+            78
+          ],
+          "improving": [
+            80
+          ],
+          "website": [
+            81
+          ],
+          "visibility": [
+            82
+          ],
+          "ensuring": [
+            84
+          ],
+          "that": [
+            85
+          ],
+          "users": [
+            86
+          ],
+          "can": [
+            87
+          ],
+          "access": [
+            88
+          ],
+          "reliable": [
+            89
+          ],
+          "medical": [
+            90
+          ],
+          "through": [
+            92
+          ],
+          "search": [
+            93
+          ],
+          "engines.": [
+            94
+          ],
+          "Social": [
+            95
+          ],
+          "media": [
+            96
+          ],
+          "platforms": [
+            97
+          ],
+          "such": [
+            98,
+            194
+          ],
+          "as": [
+            99,
+            195
+          ],
+          "Facebook,": [
+            100
+          ],
+          "LinkedIn,": [
+            101
+          ],
+          "X": [
+            102
+          ],
+          "(formerly": [
+            103
+          ],
+          "Twitter),": [
+            104
+          ],
+          "Instagram": [
+            106
+          ],
+          "have": [
+            107
+          ],
+          "become": [
+            108
+          ],
+          "powerful": [
+            109
+          ],
+          "tools": [
+            110
+          ],
+          "raising": [
+            112
+          ],
+          "brand": [
+            113
+          ],
+          "awareness,": [
+            114
+          ],
+          "disseminating": [
+            115
+          ],
+          "educational": [
+            116
+          ],
+          "content,": [
+            117
+          ],
+          "fostering": [
+            119
+          ],
+          "interactive": [
+            120
+          ],
+          "communication.": [
+            121
+          ],
+          "Email": [
+            122
+          ],
+          "remains": [
+            124,
+            229
+          ],
+          "cost-effective": [
+            126
+          ],
+          "channel": [
+            127
+          ],
+          "outreach,": [
+            130
+          ],
+          "enabling": [
+            131
+          ],
+          "share": [
+            134
+          ],
+          "product": [
+            135
+          ],
+          "updates,": [
+            136
+          ],
+          "clinical": [
+            137
+          ],
+          "trial": [
+            138
+          ],
+          "results,": [
+            139
+          ],
+          "news": [
+            142
+          ],
+          "targeted": [
+            144
+          ],
+          "audiences.": [
+            145
+          ],
+          "parallel,": [
+            147
+          ],
+          "mobile": [
+            148
+          ],
+          "increasingly": [
+            152
+          ],
+          "important,": [
+            153
+          ],
+          "given": [
+            154
+          ],
+          "widespread": [
+            156
+          ],
+          "use": [
+            157,
+            240
+          ],
+          "smartphones": [
+            159
+          ],
+          "health-related": [
+            161
+          ],
+          "searches": [
+            162
+          ],
+          "app-based": [
+            164
+          ],
+          "services.": [
+            165
+          ],
+          "Moreover,": [
+            166
+          ],
+          "embracing": [
+            170
+          ],
+          "data-driven": [
+            171
+          ],
+          "approaches,": [
+            172
+          ],
+          "leveraging": [
+            173
+          ],
+          "real-time": [
+            174
+          ],
+          "analytics": [
+            175
+          ],
+          "machine": [
+            177
+          ],
+          "learning": [
+            178
+          ],
+          "optimize": [
+            180
+          ],
+          "campaigns,": [
+            181
+          ],
+          "predict": [
+            182
+          ],
+          "consumer": [
+            183
+          ],
+          "behavior,": [
+            184
+          ],
+          "customer": [
+            187
+          ],
+          "experience.": [
+            188
+          ],
+          "integration": [
+            190
+          ],
+          "tools,": [
+            193
+          ],
+          "virtual": [
+            196
+          ],
+          "detailing,": [
+            197
+          ],
+          "webinars,": [
+            198
+          ],
+          "automated": [
+            200
+          ],
+          "platforms,": [
+            201
+          ],
+          "further": [
+            202
+          ],
+          "supports": [
+            203,
+            249
+          ],
+          "engagement": [
+            204
+          ],
+          "providers": [
+            207
+          ],
+          "more": [
+            210,
+            250
+          ],
+          "efficient": [
+            211
+          ],
+          "scalable": [
+            213
+          ],
+          "manner.": [
+            214
+          ],
+          "As": [
+            215
+          ],
+          "industry": [
+            217
+          ],
+          "navigates": [
+            218
+          ],
+          "complex": [
+            220
+          ],
+          "regulatory": [
+            221
+          ],
+          "environment,": [
+            222
+          ],
+          "compliance": [
+            223
+          ],
+          "legal": [
+            225
+          ],
+          "ethical": [
+            227
+          ],
+          "standards": [
+            228
+          ],
+          "critical": [
+            231
+          ],
+          "component": [
+            232
+          ],
+          "any": [
+            234
+          ],
+          "initiative.": [
+            236
+          ],
+          "Overall,": [
+            237
+          ],
+          "strategic": [
+            239
+          ],
+          "enhances": [
+            244
+          ],
+          "competitiveness,": [
+            245
+          ],
+          "facilitates": [
+            246
+          ],
+          "innovation,": [
+            247
+          ],
+          "informed": [
+            251
+          ],
+          "connected": [
+            253
+          ],
+          "ecosystems.": [
+            255
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2025,
+            "cited_by_count": 2
+          }
+        ],
+        "updated_date": "2026-08-21T09:56:20.448147",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W7155187621",
+        "doi": "https://doi.org/10.1016/j.teler.2026.100332",
+        "title": "Neuromarketing research through the years: A bibliometric review of technological advancements and multisensory studies",
+        "display_name": "Neuromarketing research through the years: A bibliometric review of technological advancements and multisensory studies",
+        "relevance_score": 10.331914,
+        "publication_year": 2026,
+        "publication_date": "2026-04-22",
+        "ids": {
+          "openalex": "https://openalex.org/W7155187621",
+          "doi": "https://doi.org/10.1016/j.teler.2026.100332"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.1016/j.teler.2026.100332",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.teler.2026.100332",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210186116",
+            "display_name": "Telematics and Informatics Reports",
+            "issn_l": "2772-5030",
+            "issn": [
+              "2772-5030"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "jufo-1",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Telematics and Informatics Reports",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref",
+          "doaj"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://doi.org/10.1016/j.teler.2026.100332",
+          "any_repository_has_fulltext": true
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5087520816",
+              "display_name": "Md. Abu Issa Gazi",
+              "orcid": "https://orcid.org/0000-0002-1397-8855"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I12649496",
+                "display_name": "INTI International University",
+                "ror": "https://ror.org/03fj82m46",
+                "country_code": "MY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I12649496"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I134626604",
+                "display_name": "Jiujiang University",
+                "ror": "https://ror.org/0066vpg85",
+                "country_code": "CN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I134626604"
+                ]
+              }
+            ],
+            "countries": [
+              "CN",
+              "MY"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Md. Abu Issa Gazi",
+            "raw_affiliation_strings": [
+              "Faculty of Business and Communications, INTI International University, Persiaran Perdana BBN Putra Nilai, 71800 Nilai, Negeri Sembilan, Malaysia",
+              "School of Management, Jiujiang University, Jiujiang 332005, China"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-1397-8855",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Business and Communications, INTI International University, Persiaran Perdana BBN Putra Nilai, 71800 Nilai, Negeri Sembilan, Malaysia",
+                "institution_ids": [
+                  "https://openalex.org/I12649496"
+                ]
+              },
+              {
+                "raw_affiliation_string": "School of Management, Jiujiang University, Jiujiang 332005, China",
+                "institution_ids": [
+                  "https://openalex.org/I134626604"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5072882653",
+              "display_name": "Md. Mustaqim Roshid",
+              "orcid": "https://orcid.org/0000-0001-8517-6336"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I902853133",
+                "display_name": "University of Rajshahi",
+                "ror": "https://ror.org/05nnyr510",
+                "country_code": "BD",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I902853133"
+                ]
+              }
+            ],
+            "countries": [
+              "BD"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Md. Mustaqim Roshid",
+            "raw_affiliation_strings": [
+              "Department of Management Studies, University of Rajshahi, Rajshahi 6205, Bangladesh"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0003-2483-8329",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Management Studies, University of Rajshahi, Rajshahi 6205, Bangladesh",
+                "institution_ids": [
+                  "https://openalex.org/I902853133"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5093926614",
+              "display_name": "Abdul Waaje",
+              "orcid": "https://orcid.org/0009-0004-7207-0750"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I11957088",
+                "display_name": "Michigan Technological University",
+                "ror": "https://ror.org/0036rpn28",
+                "country_code": "US",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I11957088"
+                ]
+              }
+            ],
+            "countries": [
+              "US"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Abdul Waaje",
+            "raw_affiliation_strings": [
+              "College of Business, Michigan Technological University, Houghton, USA"
+            ],
+            "raw_orcid": "https://orcid.org/0009-0004-7207-0750",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "College of Business, Michigan Technological University, Houghton, USA",
+                "institution_ids": [
+                  "https://openalex.org/I11957088"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5134322370",
+              "display_name": "Md. Bony Yeamin",
+              "orcid": "https://orcid.org/0009-0009-1791-2691"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I902853133",
+                "display_name": "University of Rajshahi",
+                "ror": "https://ror.org/05nnyr510",
+                "country_code": "BD",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I902853133"
+                ]
+              }
+            ],
+            "countries": [
+              "BD"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Md. Bony Yeamin",
+            "raw_affiliation_strings": [
+              "Department of Economics, University of Rajshahi, Rajshahi 6205, Bangladesh"
+            ],
+            "raw_orcid": "https://orcid.org/0009-0009-1791-2691",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Economics, University of Rajshahi, Rajshahi 6205, Bangladesh",
+                "institution_ids": [
+                  "https://openalex.org/I902853133"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5063714160",
+              "display_name": "Rejaul Karim",
+              "orcid": "https://orcid.org/0000-0001-6175-8825"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I12649496",
+                "display_name": "INTI International University",
+                "ror": "https://ror.org/03fj82m46",
+                "country_code": "MY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I12649496"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I3132220783",
+                "display_name": "Varendra University",
+                "ror": "https://ror.org/00crqck26",
+                "country_code": "BD",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3132220783"
+                ]
+              }
+            ],
+            "countries": [
+              "BD",
+              "MY"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Rejaul Karim",
+            "raw_affiliation_strings": [
+              "Department of Business Administration, Varendra University, Rajshahi 6204, Bangladesh",
+              "Faculty of Business and Communications, INTI International University, Persiaran Perdana BBN Putra Nilai, 71800 Nilai, Negeri Sembilan, Malaysia"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0001-6175-8825",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Business Administration, Varendra University, Rajshahi 6204, Bangladesh",
+                "institution_ids": [
+                  "https://openalex.org/I3132220783"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Faculty of Business and Communications, INTI International University, Persiaran Perdana BBN Putra Nilai, 71800 Nilai, Negeri Sembilan, Malaysia",
+                "institution_ids": [
+                  "https://openalex.org/I12649496"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5067485345",
+              "display_name": "Mohammad Bin Amin",
+              "orcid": "https://orcid.org/0000-0002-9184-4828"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I132735039",
+                "display_name": "University of Debrecen",
+                "ror": "https://ror.org/02xf66n48",
+                "country_code": "HU",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I132735039"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I138617543",
+                "display_name": "State University of Bangladesh",
+                "ror": "https://ror.org/01g14tq52",
+                "country_code": "BD",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I138617543"
+                ]
+              }
+            ],
+            "countries": [
+              "BD",
+              "HU"
+            ],
+            "is_corresponding": true,
+            "raw_author_name": "Mohammad Bin Amin",
+            "raw_affiliation_strings": [
+              "Department of Business Administration, Faculty of Business Studies, Bangladesh Army University of Science and Technology, Saidpur 5310, Nilphamari, Bangladesh",
+              "Department of Business Studies, State University of Bangladesh, 696 Kendua, Kanchan, Rupganj, Narayanganj 1461, Dhaka, Bangladesh",
+              "Doctoral School of Management and Business, Faculty of Economics and Business, University of Debrecen, Böszörményi street 138, Debrecen 4032, Hungary"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-9184-4828",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Business Administration, Faculty of Business Studies, Bangladesh Army University of Science and Technology, Saidpur 5310, Nilphamari, Bangladesh",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "Department of Business Studies, State University of Bangladesh, 696 Kendua, Kanchan, Rupganj, Narayanganj 1461, Dhaka, Bangladesh",
+                "institution_ids": [
+                  "https://openalex.org/I138617543"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Doctoral School of Management and Business, Faculty of Economics and Business, University of Debrecen, Böszörményi street 138, Debrecen 4032, Hungary",
+                "institution_ids": [
+                  "https://openalex.org/I132735039"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5121414881",
+              "display_name": "Abdul Rahman bin S Senathirajah",
+              "orcid": "https://orcid.org/0009-0000-2064-5365"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I12649496",
+                "display_name": "INTI International University",
+                "ror": "https://ror.org/03fj82m46",
+                "country_code": "MY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I12649496"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I181635417",
+                "display_name": "Shinawatra University",
+                "ror": "https://ror.org/02sr8jt85",
+                "country_code": "TH",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I181635417"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I2802681329",
+                "display_name": "Wekerle Business School",
+                "ror": "https://ror.org/054877331",
+                "country_code": "HU",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I2802681329"
+                ]
+              }
+            ],
+            "countries": [
+              "HU",
+              "MY",
+              "TH"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Abdul Rahman bin S Senathirajah",
+            "raw_affiliation_strings": [
+              "Faculty of Business and Communications, INTI International University, Persiaran Perdana BBN Putra Nilai, 71800 Nilai, Negeri Sembilan, Malaysia",
+              "Faculty of Management, Shinawatra University, Pathum Thani 12160, Thailand",
+              "Wekerle Business School, College in Budapest, Budapest 1083, Hungary"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Business and Communications, INTI International University, Persiaran Perdana BBN Putra Nilai, 71800 Nilai, Negeri Sembilan, Malaysia",
+                "institution_ids": [
+                  "https://openalex.org/I12649496"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Faculty of Management, Shinawatra University, Pathum Thani 12160, Thailand",
+                "institution_ids": [
+                  "https://openalex.org/I181635417"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Wekerle Business School, College in Budapest, Budapest 1083, Hungary",
+                "institution_ids": [
+                  "https://openalex.org/I2802681329"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5134216732",
+              "display_name": "Judit Oláh",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I132735039",
+                "display_name": "University of Debrecen",
+                "ror": "https://ror.org/02xf66n48",
+                "country_code": "HU",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I132735039"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I205984670",
+                "display_name": "Czech University of Life Sciences Prague",
+                "ror": "https://ror.org/0415vcw02",
+                "country_code": "CZ",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I205984670"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4210142209",
+                "display_name": "John von Neumann University",
+                "ror": "https://ror.org/03n9qzd79",
+                "country_code": "HU",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210142209"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4210145463",
+                "display_name": "WSB University",
+                "ror": "https://ror.org/046tym167",
+                "country_code": "PL",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210145463"
+                ]
+              }
+            ],
+            "countries": [
+              "CZ",
+              "HU",
+              "PL"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Judit Oláh",
+            "raw_affiliation_strings": [
+              "Department of Trade and Finance, Faculty of Economics and Management, Czech University of Life Sciences Prague, Czech Republic",
+              "Doctoral School of Management and Business Administration, John von Neumann University, 6000 Kecskemét, Hungary",
+              "Faculty of Applied Sciences, WSB University, Poland",
+              "Faculty of Economics and Business, University of Debrecen, Böszörményi út 138, 4032, Debrecen, Hungary"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Department of Trade and Finance, Faculty of Economics and Management, Czech University of Life Sciences Prague, Czech Republic",
+                "institution_ids": [
+                  "https://openalex.org/I205984670"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Doctoral School of Management and Business Administration, John von Neumann University, 6000 Kecskemét, Hungary",
+                "institution_ids": [
+                  "https://openalex.org/I4210142209"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Faculty of Applied Sciences, WSB University, Poland",
+                "institution_ids": [
+                  "https://openalex.org/I4210145463"
+                ]
+              },
+              {
+                "raw_affiliation_string": "Faculty of Economics and Business, University of Debrecen, Böszörményi út 138, 4032, Debrecen, Hungary",
+                "institution_ids": [
+                  "https://openalex.org/I132735039"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 8,
+        "institutions_distinct_count": 12,
+        "corresponding_author_ids": [
+          "https://openalex.org/A5063714160",
+          "https://openalex.org/A5067485345",
+          "https://openalex.org/A5087520816"
+        ],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I12649496",
+          "https://openalex.org/I132735039",
+          "https://openalex.org/I134626604",
+          "https://openalex.org/I138617543",
+          "https://openalex.org/I3132220783"
+        ],
+        "apc_list": {
+          "value": 1790,
+          "currency": "USD",
+          "value_usd": 1790
+        },
+        "apc_paid": {
+          "value": 1790,
+          "currency": "USD",
+          "value_usd": 1790
+        },
+        "fwci": 9.498,
+        "has_fulltext": true,
+        "cited_by_count": 1,
+        "citation_normalized_percentile": {
+          "value": 0.96657356,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": true
+        },
+        "cited_by_percentile_year": {
+          "min": 93,
+          "max": 96
+        },
+        "biblio": {
+          "volume": "22",
+          "issue": null,
+          "first_page": "100332",
+          "last_page": "100332"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T14055",
+          "display_name": "Consumer Packaging Perceptions and Trends",
+          "score": 0.07720000296831131,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1406",
+            "display_name": "Marketing"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/14",
+            "display_name": "Business, Management and Accounting"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T14055",
+            "display_name": "Consumer Packaging Perceptions and Trends",
+            "score": 0.07720000296831131,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1406",
+              "display_name": "Marketing"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/14",
+              "display_name": "Business, Management and Accounting"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T11536",
+            "display_name": "Consumer Retail Behavior Studies",
+            "score": 0.050700001418590546,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1406",
+              "display_name": "Marketing"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/14",
+              "display_name": "Business, Management and Accounting"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T13480",
+            "display_name": "Innovations and Analysis in Business and Education",
+            "score": 0.022099999710917473,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1803",
+              "display_name": "Management Science and Operations Research"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/18",
+              "display_name": "Decision Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/neuromarketing",
+            "display_name": "Neuromarketing",
+            "score": 0.6923999786376953
+          },
+          {
+            "id": "https://openalex.org/keywords/bibliometrics",
+            "display_name": "Bibliometrics",
+            "score": 0.3635999858379364
+          },
+          {
+            "id": "https://openalex.org/keywords/field",
+            "display_name": "Field (mathematics)",
+            "score": 0.3111000061035156
+          },
+          {
+            "id": "https://openalex.org/keywords/interpretation",
+            "display_name": "Interpretation (philosophy)",
+            "score": 0.2590000033378601
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2781183061",
+            "wikidata": "https://www.wikidata.org/wiki/Q516337",
+            "display_name": "Neuromarketing",
+            "level": 2,
+            "score": 0.6923999786376953
+          },
+          {
+            "id": "https://openalex.org/C41008148",
+            "wikidata": "https://www.wikidata.org/wiki/Q21198",
+            "display_name": "Computer science",
+            "level": 0,
+            "score": 0.38510000705718994
+          },
+          {
+            "id": "https://openalex.org/C2522767166",
+            "wikidata": "https://www.wikidata.org/wiki/Q2374463",
+            "display_name": "Data science",
+            "level": 1,
+            "score": 0.38280001282691956
+          },
+          {
+            "id": "https://openalex.org/C55587333",
+            "wikidata": "https://www.wikidata.org/wiki/Q1133029",
+            "display_name": "Engineering ethics",
+            "level": 1,
+            "score": 0.38199999928474426
+          },
+          {
+            "id": "https://openalex.org/C178315738",
+            "wikidata": "https://www.wikidata.org/wiki/Q603441",
+            "display_name": "Bibliometrics",
+            "level": 2,
+            "score": 0.3635999858379364
+          },
+          {
+            "id": "https://openalex.org/C539667460",
+            "wikidata": "https://www.wikidata.org/wiki/Q2414942",
+            "display_name": "Management science",
+            "level": 1,
+            "score": 0.3447999954223633
+          },
+          {
+            "id": "https://openalex.org/C15744967",
+            "wikidata": "https://www.wikidata.org/wiki/Q9418",
+            "display_name": "Psychology",
+            "level": 0,
+            "score": 0.3278000056743622
+          },
+          {
+            "id": "https://openalex.org/C9652623",
+            "wikidata": "https://www.wikidata.org/wiki/Q190109",
+            "display_name": "Field (mathematics)",
+            "level": 2,
+            "score": 0.3111000061035156
+          },
+          {
+            "id": "https://openalex.org/C127413603",
+            "wikidata": "https://www.wikidata.org/wiki/Q11023",
+            "display_name": "Engineering",
+            "level": 0,
+            "score": 0.3093999922275543
+          },
+          {
+            "id": "https://openalex.org/C188147891",
+            "wikidata": "https://www.wikidata.org/wiki/Q147638",
+            "display_name": "Cognitive science",
+            "level": 1,
+            "score": 0.29249998927116394
+          },
+          {
+            "id": "https://openalex.org/C107457646",
+            "wikidata": "https://www.wikidata.org/wiki/Q207434",
+            "display_name": "Human–computer interaction",
+            "level": 1,
+            "score": 0.2703999876976013
+          },
+          {
+            "id": "https://openalex.org/C527412718",
+            "wikidata": "https://www.wikidata.org/wiki/Q855395",
+            "display_name": "Interpretation (philosophy)",
+            "level": 2,
+            "score": 0.2590000033378601
+          },
+          {
+            "id": "https://openalex.org/C12713177",
+            "wikidata": "https://www.wikidata.org/wiki/Q1900281",
+            "display_name": "Perspective (graphical)",
+            "level": 2,
+            "score": 0.25360000133514404
+          }
+        ],
+        "mesh": [],
+        "locations_count": 2,
+        "locations": [
+          {
+            "id": "doi:10.1016/j.teler.2026.100332",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.1016/j.teler.2026.100332",
+            "pdf_url": null,
+            "source": {
+              "id": "https://openalex.org/S4210186116",
+              "display_name": "Telematics and Informatics Reports",
+              "issn_l": "2772-5030",
+              "issn": [
+                "2772-5030"
+              ],
+              "is_oa": true,
+              "is_in_doaj": true,
+              "is_core": true,
+              "listed_in": [
+                "cwts-core",
+                "doaj",
+                "jufo-1",
+                "norway-1"
+              ],
+              "host_organization": "https://openalex.org/P4310320990",
+              "host_organization_name": "Elsevier BV",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320990"
+              ],
+              "host_organization_lineage_names": [
+                "Elsevier BV"
+              ],
+              "type": "journal"
+            },
+            "license": "cc-by-nc-nd",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Telematics and Informatics Reports",
+            "raw_type": "journal-article"
+          },
+          {
+            "id": "pmh:oai:digitalcommons.mtu.edu:michigantech-p2-3552",
+            "is_oa": true,
+            "landing_page_url": "https://digitalcommons.mtu.edu/michigantech-p2/2490",
+            "pdf_url": "https://digitalcommons.mtu.edu/context/michigantech-p2/article/3552/viewcontent/1_s2.0_S2772503026000435_main.pdf",
+            "source": {
+              "id": "https://openalex.org/S4377196391",
+              "display_name": "Digital Commons - Michigan Tech (Michigan Technological University)",
+              "issn_l": null,
+              "issn": null,
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": "https://openalex.org/I11957088",
+              "host_organization_name": "Michigan Technological University",
+              "host_organization_lineage": [
+                "https://openalex.org/I11957088"
+              ],
+              "host_organization_lineage_names": [],
+              "type": "repository"
+            },
+            "license": "cc-by-nc-nd",
+            "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+            "version": "submittedVersion",
+            "is_accepted": false,
+            "is_published": false,
+            "raw_source_name": "Michigan Tech Publications",
+            "raw_type": "text"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.1016/j.teler.2026.100332",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.teler.2026.100332",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210186116",
+            "display_name": "Telematics and Informatics Reports",
+            "issn_l": "2772-5030",
+            "issn": [
+              "2772-5030"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "jufo-1",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Telematics and Informatics Reports",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "x_sdgs": [],
+        "awards": [],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320324298",
+            "display_name": "International Islamic University Malaysia",
+            "ror": "https://ror.org/03s9hs139"
+          },
+          {
+            "id": "https://openalex.org/F4320325658",
+            "display_name": "Debreceni Egyetem",
+            "ror": "https://ror.org/02xf66n48"
+          }
+        ],
+        "has_content": {
+          "pdf": false,
+          "grobid_xml": false
+        },
+        "content_urls": null,
+        "referenced_works_count": 45,
+        "referenced_works": [
+          "https://openalex.org/W1972071806",
+          "https://openalex.org/W1997061718",
+          "https://openalex.org/W2013383317",
+          "https://openalex.org/W2019426164",
+          "https://openalex.org/W2034532018",
+          "https://openalex.org/W2089620540",
+          "https://openalex.org/W2095310830",
+          "https://openalex.org/W2096267981",
+          "https://openalex.org/W2108680868",
+          "https://openalex.org/W2117170968",
+          "https://openalex.org/W2141569049",
+          "https://openalex.org/W2149074943",
+          "https://openalex.org/W2161561996",
+          "https://openalex.org/W2174856159",
+          "https://openalex.org/W2279038365",
+          "https://openalex.org/W2316888041",
+          "https://openalex.org/W2584487694",
+          "https://openalex.org/W2592084954",
+          "https://openalex.org/W2604941166",
+          "https://openalex.org/W2618812001",
+          "https://openalex.org/W2767945620",
+          "https://openalex.org/W2769514020",
+          "https://openalex.org/W2940569720",
+          "https://openalex.org/W3081634420",
+          "https://openalex.org/W3087438817",
+          "https://openalex.org/W3107018100",
+          "https://openalex.org/W3120045749",
+          "https://openalex.org/W3154271163",
+          "https://openalex.org/W3160856016",
+          "https://openalex.org/W3199929155",
+          "https://openalex.org/W3204249465",
+          "https://openalex.org/W4211077705",
+          "https://openalex.org/W4224134663",
+          "https://openalex.org/W4285088871",
+          "https://openalex.org/W4308587701",
+          "https://openalex.org/W4323286786",
+          "https://openalex.org/W4386337665",
+          "https://openalex.org/W4387009722",
+          "https://openalex.org/W4390581600",
+          "https://openalex.org/W4400592685",
+          "https://openalex.org/W4405218098",
+          "https://openalex.org/W4407171647",
+          "https://openalex.org/W4407937596",
+          "https://openalex.org/W4410507852",
+          "https://openalex.org/W4414170384"
+        ],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "The": [
+            0,
+            80,
+            101,
+            136
+          ],
+          "current": [
+            1
+          ],
+          "study": [
+            2,
+            137
+          ],
+          "examines": [
+            3
+          ],
+          "the": [
+            4,
+            15,
+            36,
+            48,
+            52,
+            87,
+            99,
+            114,
+            140,
+            159,
+            170,
+            181,
+            204
+          ],
+          "changes": [
+            5
+          ],
+          "in": [
+            6,
+            14,
+            86,
+            113,
+            188,
+            207
+          ],
+          "neuromarketing": [
+            7,
+            90,
+            143,
+            179
+          ],
+          "studies": [
+            8
+          ],
+          "between": [
+            9
+          ],
+          "2015": [
+            10
+          ],
+          "and": [
+            11,
+            31,
+            67,
+            98,
+            110,
+            133,
+            148,
+            164,
+            200,
+            209
+          ],
+          "2024,": [
+            12
+          ],
+          "particularly": [
+            13
+          ],
+          "context": [
+            16
+          ],
+          "of": [
+            17,
+            89,
+            142,
+            162,
+            173
+          ],
+          "new": [
+            18
+          ],
+          "technologies": [
+            19
+          ],
+          "incorporating": [
+            20
+          ],
+          "multisensory": [
+            21
+          ],
+          "interventions.": [
+            22
+          ],
+          "It": [
+            23,
+            156
+          ],
+          "attempts": [
+            24
+          ],
+          "to": [
+            25,
+            43,
+            116,
+            158,
+            183
+          ],
+          "identify": [
+            26
+          ],
+          "significant": [
+            27,
+            84
+          ],
+          "trends,": [
+            28
+          ],
+          "influential": [
+            29
+          ],
+          "texts,": [
+            30
+          ],
+          "topical": [
+            32
+          ],
+          "developments": [
+            33
+          ],
+          "that": [
+            34,
+            139,
+            178
+          ],
+          "shape": [
+            35
+          ],
+          "field.": [
+            37
+          ],
+          "A": [
+            38
+          ],
+          "bibliometric": [
+            39
+          ],
+          "method": [
+            40
+          ],
+          "was": [
+            41
+          ],
+          "employed": [
+            42
+          ],
+          "review": [
+            44
+          ],
+          "307": [
+            45
+          ],
+          "publications": [
+            46
+          ],
+          "within": [
+            47
+          ],
+          "study's": [
+            49
+          ],
+          "framework,": [
+            50
+          ],
+          "using": [
+            51,
+            74
+          ],
+          "Scopus": [
+            53
+          ],
+          "database.": [
+            54
+          ],
+          "Bookmarked": [
+            55
+          ],
+          "by": [
+            56,
+            186
+          ],
+          "methods": [
+            57,
+            199
+          ],
+          "such": [
+            58
+          ],
+          "as": [
+            59,
+            203
+          ],
+          "keyword": [
+            60
+          ],
+          "co-occurrence,": [
+            61
+          ],
+          "co-citation,": [
+            62
+          ],
+          "cluster": [
+            63
+          ],
+          "analysis,": [
+            64,
+            66
+          ],
+          "performance": [
+            65
+          ],
+          "science": [
+            68
+          ],
+          "mapping": [
+            69
+          ],
+          "techniques,": [
+            70
+          ],
+          "these": [
+            71
+          ],
+          "are": [
+            72
+          ],
+          "implemented": [
+            73
+          ],
+          "programs": [
+            75
+          ],
+          "like": [
+            76
+          ],
+          "VOSviewer": [
+            77
+          ],
+          "or": [
+            78
+          ],
+          "Biblioshiny.": [
+            79
+          ],
+          "results": [
+            81
+          ],
+          "show": [
+            82
+          ],
+          "a": [
+            83,
+            189,
+            195
+          ],
+          "increase": [
+            85
+          ],
+          "number": [
+            88
+          ],
+          "studies,": [
+            91
+          ],
+          "with": [
+            92
+          ],
+          "notable": [
+            93
+          ],
+          "works": [
+            94
+          ],
+          "from": [
+            95
+          ],
+          "Italy,": [
+            96
+          ],
+          "Spain,": [
+            97
+          ],
+          "USA.": [
+            100
+          ],
+          "literature": [
+            102
+          ],
+          "has": [
+            103,
+            144,
+            180
+          ],
+          "been": [
+            104,
+            145
+          ],
+          "utilizing": [
+            105
+          ],
+          "neuroimaging": [
+            106
+          ],
+          "instruments,": [
+            107
+          ],
+          "artificial": [
+            108
+          ],
+          "intelligence,": [
+            109
+          ],
+          "virtual": [
+            111
+          ],
+          "reality": [
+            112
+          ],
+          "quest": [
+            115
+          ],
+          "comprehend": [
+            117
+          ],
+          "consumer": [
+            118,
+            127
+          ],
+          "behavior.": [
+            119
+          ],
+          "Four": [
+            120
+          ],
+          "main": [
+            121
+          ],
+          "research": [
+            122
+          ],
+          "clusters": [
+            123
+          ],
+          "have": [
+            124
+          ],
+          "arisen": [
+            125
+          ],
+          "on": [
+            126
+          ],
+          "neuroscience,": [
+            128
+          ],
+          "marketing": [
+            129,
+            166,
+            185
+          ],
+          "innovation,": [
+            130
+          ],
+          "ethical": [
+            131,
+            201
+          ],
+          "issues,": [
+            132
+          ],
+          "decision-making": [
+            134
+          ],
+          "processes.": [
+            135
+          ],
+          "concludes": [
+            138
+          ],
+          "phenomenon": [
+            141
+          ],
+          "dynamic,": [
+            146
+          ],
+          "interdisciplinary,": [
+            147
+          ],
+          "technologically": [
+            149
+          ],
+          "paced,": [
+            150
+          ],
+          "while": [
+            151,
+            192
+          ],
+          "also": [
+            152,
+            193
+          ],
+          "raising": [
+            153
+          ],
+          "moral": [
+            154
+          ],
+          "concerns.": [
+            155
+          ],
+          "points": [
+            157
+          ],
+          "increased": [
+            160
+          ],
+          "use": [
+            161
+          ],
+          "data-driven": [
+            163
+          ],
+          "immersive": [
+            165
+          ],
+          "solutions,": [
+            167
+          ],
+          "which": [
+            168
+          ],
+          "access": [
+            169
+          ],
+          "unconscious": [
+            171
+          ],
+          "reactions": [
+            172
+          ],
+          "customers.": [
+            174
+          ],
+          "These": [
+            175
+          ],
+          "implications": [
+            176
+          ],
+          "suggest": [
+            177
+          ],
+          "potential": [
+            182
+          ],
+          "elevate": [
+            184
+          ],
+          "engaging": [
+            187
+          ],
+          "personalized": [
+            190
+          ],
+          "manner,": [
+            191
+          ],
+          "conveying": [
+            194
+          ],
+          "message": [
+            196
+          ],
+          "about": [
+            197
+          ],
+          "responsible": [
+            198
+          ],
+          "guidelines": [
+            202
+          ],
+          "discipline": [
+            205
+          ],
+          "expands": [
+            206
+          ],
+          "breadth": [
+            208
+          ],
+          "depth.": [
+            210
+          ]
+        },
+        "counts_by_year": [
+          {
+            "year": 2026,
+            "cited_by_count": 1
+          }
+        ],
+        "updated_date": "2026-09-23T09:40:40.371523",
+        "created_date": "2026-04-23T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W7118928811",
+        "doi": "https://doi.org/10.22495/cbsrv7i1art5",
+        "title": "The impact of digital marketing strategy on promoting local pharmaceutical products",
+        "display_name": "The impact of digital marketing strategy on promoting local pharmaceutical products",
+        "relevance_score": 5.3877897,
+        "publication_year": 2026,
+        "publication_date": "2026-01-07",
+        "ids": {
+          "openalex": "https://openalex.org/W7118928811",
+          "doi": "https://doi.org/10.22495/cbsrv7i1art5"
+        },
+        "language": null,
+        "primary_location": {
+          "id": "doi:10.22495/cbsrv7i1art5",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.22495/cbsrv7i1art5",
+          "pdf_url": "https://virtusinterpress.org/spip.php?action=telecharger&arg=14727&hash=33213174cfb2a8f4fe3a85c4b0d4343ca31f6067",
+          "source": {
+            "id": "https://openalex.org/S4210237355",
+            "display_name": "Corporate and Business Strategy Review",
+            "issn_l": "2708-4965",
+            "issn": [
+              "2708-4965",
+              "2708-9924"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [
+              "jufo-1",
+              "norway-1"
+            ],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Corporate and Business Strategy Review",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://virtusinterpress.org/spip.php?action=telecharger&arg=14727&hash=33213174cfb2a8f4fe3a85c4b0d4343ca31f6067",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5065623074",
+              "display_name": "Abbas N. Albarq",
+              "orcid": "https://orcid.org/0000-0003-4663-9101"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4626487",
+                "display_name": "King Faisal University",
+                "ror": "https://ror.org/00dn43547",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4626487"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Abbas N. Albarq",
+            "raw_affiliation_strings": [
+              "King Faisal University"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0003-4663-9101",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "King Faisal University",
+                "institution_ids": [
+                  "https://openalex.org/I4626487"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5020582531",
+              "display_name": "Amal Khalil Suleiman",
+              "orcid": "https://orcid.org/0000-0002-6162-6301"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4626487",
+                "display_name": "King Faisal University",
+                "ror": "https://ror.org/00dn43547",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4626487"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Amal K. Suleiman",
+            "raw_affiliation_strings": [
+              "King Faisal University"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0002-6162-6301",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "King Faisal University",
+                "institution_ids": [
+                  "https://openalex.org/I4626487"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5074267307",
+              "display_name": "Khaled Al Falah",
+              "orcid": "https://orcid.org/0000-0001-8159-504X"
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4626487",
+                "display_name": "King Faisal University",
+                "ror": "https://ror.org/00dn43547",
+                "country_code": "SA",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4626487"
+                ]
+              }
+            ],
+            "countries": [
+              "SA"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Khaled Al Falah",
+            "raw_affiliation_strings": [
+              "King Faisal University"
+            ],
+            "raw_orcid": "https://orcid.org/0000-0001-8159-504X",
+            "affiliations": [
+              {
+                "raw_affiliation_string": "King Faisal University",
+                "institution_ids": [
+                  "https://openalex.org/I4626487"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I4626487"
+        ],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.0,
+        "has_fulltext": true,
+        "cited_by_count": 0,
+        "citation_normalized_percentile": {
+          "value": 0.01644628,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": "7",
+          "issue": "1",
+          "first_page": "56",
+          "last_page": "56"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T12878",
+          "display_name": "Pharmaceutical Quality and Counterfeiting",
+          "score": 0.16329999268054962,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2739",
+            "display_name": "Public Health, Environmental and Occupational Health"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T12878",
+            "display_name": "Pharmaceutical Quality and Counterfeiting",
+            "score": 0.16329999268054962,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2739",
+              "display_name": "Public Health, Environmental and Occupational Health"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/27",
+              "display_name": "Medicine"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/4",
+              "display_name": "Health Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10609",
+            "display_name": "Digital Marketing and Social Media",
+            "score": 0.1500999927520752,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3312",
+              "display_name": "Sociology and Political Science"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T12027",
+            "display_name": "Social Media in Health Education",
+            "score": 0.07590000331401825,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3306",
+              "display_name": "Health"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/digital-marketing",
+            "display_name": "Digital marketing",
+            "score": 0.7069000005722046
+          },
+          {
+            "id": "https://openalex.org/keywords/social-media",
+            "display_name": "Social media",
+            "score": 0.5936999917030334
+          },
+          {
+            "id": "https://openalex.org/keywords/promotion",
+            "display_name": "Promotion (chess)",
+            "score": 0.5250999927520752
+          },
+          {
+            "id": "https://openalex.org/keywords/pharmaceutical-marketing",
+            "display_name": "Pharmaceutical marketing",
+            "score": 0.505299985408783
+          },
+          {
+            "id": "https://openalex.org/keywords/visibility",
+            "display_name": "Visibility",
+            "score": 0.49729999899864197
+          },
+          {
+            "id": "https://openalex.org/keywords/digital-media",
+            "display_name": "Digital media",
+            "score": 0.47600001096725464
+          },
+          {
+            "id": "https://openalex.org/keywords/relevance",
+            "display_name": "Relevance (law)",
+            "score": 0.42329999804496765
+          },
+          {
+            "id": "https://openalex.org/keywords/health-care",
+            "display_name": "Health care",
+            "score": 0.3887999951839447
+          },
+          {
+            "id": "https://openalex.org/keywords/pharmaceutical-industry",
+            "display_name": "Pharmaceutical industry",
+            "score": 0.388700008392334
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C98495876",
+            "wikidata": "https://www.wikidata.org/wiki/Q1323528",
+            "display_name": "Digital marketing",
+            "level": 2,
+            "score": 0.7069000005722046
+          },
+          {
+            "id": "https://openalex.org/C162853370",
+            "wikidata": "https://www.wikidata.org/wiki/Q39809",
+            "display_name": "Marketing",
+            "level": 1,
+            "score": 0.6901999711990356
+          },
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.6464999914169312
+          },
+          {
+            "id": "https://openalex.org/C518677369",
+            "wikidata": "https://www.wikidata.org/wiki/Q202833",
+            "display_name": "Social media",
+            "level": 2,
+            "score": 0.5936999917030334
+          },
+          {
+            "id": "https://openalex.org/C98147612",
+            "wikidata": "https://www.wikidata.org/wiki/Q215599",
+            "display_name": "Promotion (chess)",
+            "level": 3,
+            "score": 0.5250999927520752
+          },
+          {
+            "id": "https://openalex.org/C2781419290",
+            "wikidata": "https://www.wikidata.org/wiki/Q5254772",
+            "display_name": "Pharmaceutical marketing",
+            "level": 3,
+            "score": 0.505299985408783
+          },
+          {
+            "id": "https://openalex.org/C123403432",
+            "wikidata": "https://www.wikidata.org/wiki/Q654068",
+            "display_name": "Visibility",
+            "level": 2,
+            "score": 0.49729999899864197
+          },
+          {
+            "id": "https://openalex.org/C17632256",
+            "wikidata": "https://www.wikidata.org/wiki/Q1076968",
+            "display_name": "Digital media",
+            "level": 2,
+            "score": 0.47600001096725464
+          },
+          {
+            "id": "https://openalex.org/C158154518",
+            "wikidata": "https://www.wikidata.org/wiki/Q7310970",
+            "display_name": "Relevance (law)",
+            "level": 2,
+            "score": 0.42329999804496765
+          },
+          {
+            "id": "https://openalex.org/C160735492",
+            "wikidata": "https://www.wikidata.org/wiki/Q31207",
+            "display_name": "Health care",
+            "level": 2,
+            "score": 0.3887999951839447
+          },
+          {
+            "id": "https://openalex.org/C2779652045",
+            "wikidata": "https://www.wikidata.org/wiki/Q507443",
+            "display_name": "Pharmaceutical industry",
+            "level": 2,
+            "score": 0.388700008392334
+          },
+          {
+            "id": "https://openalex.org/C93032411",
+            "wikidata": "https://www.wikidata.org/wiki/Q1363963",
+            "display_name": "Marketing strategy",
+            "level": 2,
+            "score": 0.37779998779296875
+          },
+          {
+            "id": "https://openalex.org/C112698675",
+            "wikidata": "https://www.wikidata.org/wiki/Q37038",
+            "display_name": "Advertising",
+            "level": 1,
+            "score": 0.37380000948905945
+          },
+          {
+            "id": "https://openalex.org/C48891531",
+            "wikidata": "https://www.wikidata.org/wiki/Q1141436",
+            "display_name": "Marketing research",
+            "level": 2,
+            "score": 0.36059999465942383
+          },
+          {
+            "id": "https://openalex.org/C120936955",
+            "wikidata": "https://www.wikidata.org/wiki/Q2155640",
+            "display_name": "Empirical research",
+            "level": 2,
+            "score": 0.32710000872612
+          },
+          {
+            "id": "https://openalex.org/C2779344036",
+            "wikidata": "https://www.wikidata.org/wiki/Q11320476",
+            "display_name": "Digital content",
+            "level": 2,
+            "score": 0.30959999561309814
+          },
+          {
+            "id": "https://openalex.org/C512338625",
+            "wikidata": "https://www.wikidata.org/wiki/Q624902",
+            "display_name": "Online advertising",
+            "level": 3,
+            "score": 0.3073999881744385
+          },
+          {
+            "id": "https://openalex.org/C126082660",
+            "wikidata": "https://www.wikidata.org/wiki/Q4252370",
+            "display_name": "Digital transformation",
+            "level": 2,
+            "score": 0.30239999294281006
+          },
+          {
+            "id": "https://openalex.org/C166052673",
+            "wikidata": "https://www.wikidata.org/wiki/Q83021",
+            "display_name": "Empirical evidence",
+            "level": 2,
+            "score": 0.2994000017642975
+          },
+          {
+            "id": "https://openalex.org/C131158328",
+            "wikidata": "https://www.wikidata.org/wiki/Q1307337",
+            "display_name": "Social influence",
+            "level": 2,
+            "score": 0.28139999508857727
+          },
+          {
+            "id": "https://openalex.org/C2779530757",
+            "wikidata": "https://www.wikidata.org/wiki/Q1207505",
+            "display_name": "Quality (philosophy)",
+            "level": 2,
+            "score": 0.2773999869823456
+          },
+          {
+            "id": "https://openalex.org/C65067816",
+            "wikidata": "https://www.wikidata.org/wiki/Q2295139",
+            "display_name": "Computer-assisted web interviewing",
+            "level": 2,
+            "score": 0.2750000059604645
+          },
+          {
+            "id": "https://openalex.org/C2780433410",
+            "wikidata": "https://www.wikidata.org/wiki/Q5276090",
+            "display_name": "Digital health",
+            "level": 3,
+            "score": 0.27239999175071716
+          },
+          {
+            "id": "https://openalex.org/C2777754422",
+            "wikidata": "https://www.wikidata.org/wiki/Q17081927",
+            "display_name": "Social marketing",
+            "level": 2,
+            "score": 0.2700999975204468
+          },
+          {
+            "id": "https://openalex.org/C98716237",
+            "wikidata": "https://www.wikidata.org/wiki/Q193959",
+            "display_name": "Marketing mix",
+            "level": 2,
+            "score": 0.2556999921798706
+          },
+          {
+            "id": "https://openalex.org/C2780762989",
+            "wikidata": "https://www.wikidata.org/wiki/Q1323528",
+            "display_name": "Digital strategy",
+            "level": 4,
+            "score": 0.2540000081062317
+          },
+          {
+            "id": "https://openalex.org/C192975520",
+            "wikidata": "https://www.wikidata.org/wiki/Q1143466",
+            "display_name": "Marketing management",
+            "level": 2,
+            "score": 0.25209999084472656
+          },
+          {
+            "id": "https://openalex.org/C178408851",
+            "wikidata": "https://www.wikidata.org/wiki/Q558685",
+            "display_name": "Content marketing",
+            "level": 3,
+            "score": 0.2500999867916107
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.22495/cbsrv7i1art5",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.22495/cbsrv7i1art5",
+            "pdf_url": "https://virtusinterpress.org/spip.php?action=telecharger&arg=14727&hash=33213174cfb2a8f4fe3a85c4b0d4343ca31f6067",
+            "source": {
+              "id": "https://openalex.org/S4210237355",
+              "display_name": "Corporate and Business Strategy Review",
+              "issn_l": "2708-4965",
+              "issn": [
+                "2708-4965",
+                "2708-9924"
+              ],
+              "is_oa": false,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [
+                "jufo-1",
+                "norway-1"
+              ],
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "journal"
+            },
+            "license": "cc-by",
+            "license_id": "https://openalex.org/licenses/cc-by",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Corporate and Business Strategy Review",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.22495/cbsrv7i1art5",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.22495/cbsrv7i1art5",
+          "pdf_url": "https://virtusinterpress.org/spip.php?action=telecharger&arg=14727&hash=33213174cfb2a8f4fe3a85c4b0d4343ca31f6067",
+          "source": {
+            "id": "https://openalex.org/S4210237355",
+            "display_name": "Corporate and Business Strategy Review",
+            "issn_l": "2708-4965",
+            "issn": [
+              "2708-4965",
+              "2708-9924"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [
+              "jufo-1",
+              "norway-1"
+            ],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Corporate and Business Strategy Review",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [
+          {
+            "id": "https://metadata.un.org/sdg/9",
+            "score": 0.4230080842971802,
+            "display_name": "Industry, innovation and infrastructure"
+          }
+        ],
+        "x_sdgs": [],
+        "awards": [],
+        "funders": [
+          {
+            "id": "https://openalex.org/F4320331156",
+            "display_name": "King Faisal University",
+            "ror": null
+          }
+        ],
+        "has_content": {
+          "pdf": true,
+          "grobid_xml": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W7118928811.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W7118928811.grobid-xml"
+        },
+        "referenced_works_count": 23,
+        "referenced_works": [
+          "https://openalex.org/W2461030013",
+          "https://openalex.org/W2955644763",
+          "https://openalex.org/W2999172624",
+          "https://openalex.org/W3107128613",
+          "https://openalex.org/W3201945527",
+          "https://openalex.org/W4245683280",
+          "https://openalex.org/W4320020809",
+          "https://openalex.org/W4375860032",
+          "https://openalex.org/W4379781036",
+          "https://openalex.org/W4381427633",
+          "https://openalex.org/W4387907788",
+          "https://openalex.org/W4390742658",
+          "https://openalex.org/W4399087030",
+          "https://openalex.org/W4399087105",
+          "https://openalex.org/W4399087177",
+          "https://openalex.org/W4399250528",
+          "https://openalex.org/W4400492721",
+          "https://openalex.org/W4400762242",
+          "https://openalex.org/W4403306920",
+          "https://openalex.org/W4405130196",
+          "https://openalex.org/W4406676047",
+          "https://openalex.org/W4410567528",
+          "https://openalex.org/W4411864909"
+        ],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "This": [
+            0
+          ],
+          "study": [
+            1,
+            124,
+            175
+          ],
+          "investigates": [
+            2
+          ],
+          "the": [
+            3,
+            10,
+            22,
+            73,
+            99,
+            115,
+            127,
+            153,
+            169,
+            192,
+            203,
+            215
+          ],
+          "influence": [
+            4
+          ],
+          "of": [
+            5,
+            12,
+            45,
+            102,
+            119,
+            130,
+            155,
+            195,
+            217
+          ],
+          "digital": [
+            6,
+            26,
+            46,
+            107,
+            131,
+            196,
+            207
+          ],
+          "marketing": [
+            7,
+            47,
+            58,
+            82,
+            90,
+            133,
+            159
+          ],
+          "strategies": [
+            8
+          ],
+          "on": [
+            9,
+            177
+          ],
+          "promotion": [
+            11
+          ],
+          "locally": [
+            13
+          ],
+          "manufactured": [
+            14
+          ],
+          "pharmaceutical": [
+            15,
+            121,
+            145,
+            219
+          ],
+          "products": [
+            16,
+            220
+          ],
+          "in": [
+            17,
+            113,
+            168,
+            198,
+            221
+          ],
+          "Saudi": [
+            18,
+            171,
+            222
+          ],
+          "Arabia,": [
+            19
+          ],
+          "aligning": [
+            20
+          ],
+          "with": [
+            21
+          ],
+          "country’s": [
+            23
+          ],
+          "Vision": [
+            24
+          ],
+          "2030": [
+            25
+          ],
+          "transformation": [
+            27
+          ],
+          "agenda.": [
+            28
+          ],
+          "A": [
+            29
+          ],
+          "cross-sectional": [
+            30
+          ],
+          "survey": [
+            31
+          ],
+          "was": [
+            32
+          ],
+          "conducted": [
+            33
+          ],
+          "among": [
+            34
+          ],
+          "218": [
+            35
+          ],
+          "licensed": [
+            36
+          ],
+          "pharmacists": [
+            37,
+            212
+          ],
+          "using": [
+            38
+          ],
+          "a": [
+            39,
+            84
+          ],
+          "structured": [
+            40
+          ],
+          "questionnaire.": [
+            41
+          ],
+          "Four": [
+            42
+          ],
+          "core": [
+            43
+          ],
+          "dimensions": [
+            44
+          ],
+          "—": [
+            48,
+            60,
+            112
+          ],
+          "content": [
+            49,
+            81
+          ],
+          "marketing,": [
+            50,
+            52
+          ],
+          "email": [
+            51,
+            89
+          ],
+          "online": [
+            53,
+            78
+          ],
+          "advertising,": [
+            54,
+            79
+          ],
+          "and": [
+            55,
+            104,
+            117,
+            140,
+            148,
+            165,
+            185,
+            213
+          ],
+          "social": [
+            56,
+            110
+          ],
+          "media": [
+            57,
+            111
+          ],
+          "(SMM)": [
+            59
+          ],
+          "were": [
+            61
+          ],
+          "examined": [
+            62
+          ],
+          "through": [
+            63
+          ],
+          "multiple": [
+            64
+          ],
+          "regression": [
+            65
+          ],
+          "analysis.": [
+            66
+          ],
+          "The": [
+            67,
+            123,
+            150,
+            174
+          ],
+          "results": [
+            68
+          ],
+          "demonstrate": [
+            69
+          ],
+          "that": [
+            70
+          ],
+          "SMM": [
+            71
+          ],
+          "exerts": [
+            72
+          ],
+          "strongest": [
+            74
+          ],
+          "effect,": [
+            75
+          ],
+          "followed": [
+            76
+          ],
+          "by": [
+            77,
+            135,
+            180
+          ],
+          "while": [
+            80
+          ],
+          "shows": [
+            83
+          ],
+          "moderate": [
+            85
+          ],
+          "influence.": [
+            86
+          ],
+          "In": [
+            87
+          ],
+          "contrast,": [
+            88
+          ],
+          "exhibited": [
+            91
+          ],
+          "no": [
+            92
+          ],
+          "statistically": [
+            93
+          ],
+          "significant": [
+            94
+          ],
+          "impact.": [
+            95
+          ],
+          "These": [
+            96
+          ],
+          "findings": [
+            97,
+            179
+          ],
+          "underscore": [
+            98
+          ],
+          "dominant": [
+            100
+          ],
+          "role": [
+            101
+          ],
+          "interactive": [
+            103
+          ],
+          "visually": [
+            105
+          ],
+          "driven": [
+            106
+          ],
+          "tools,": [
+            108
+          ],
+          "particularly": [
+            109
+          ],
+          "enhancing": [
+            114
+          ],
+          "visibility": [
+            116,
+            216
+          ],
+          "adoption": [
+            118
+          ],
+          "local": [
+            120,
+            218
+          ],
+          "products.": [
+            122
+          ],
+          "contributes": [
+            125
+          ],
+          "to": [
+            126,
+            161,
+            209
+          ],
+          "growing": [
+            128
+          ],
+          "body": [
+            129
+          ],
+          "health": [
+            132
+          ],
+          "literature": [
+            134
+          ],
+          "providing": [
+            136
+          ],
+          "region-specific": [
+            137
+          ],
+          "empirical": [
+            138
+          ],
+          "evidence": [
+            139
+          ],
+          "offering": [
+            141
+          ],
+          "actionable": [
+            142
+          ],
+          "insights": [
+            143
+          ],
+          "for": [
+            144,
+            205
+          ],
+          "firms,": [
+            146
+          ],
+          "marketers,": [
+            147
+          ],
+          "policymakers.": [
+            149
+          ],
+          "implications": [
+            151
+          ],
+          "support": [
+            152
+          ],
+          "development": [
+            154
+          ],
+          "data-driven,": [
+            156
+          ],
+          "culturally": [
+            157
+          ],
+          "adaptive": [
+            158
+          ],
+          "frameworks": [
+            160
+          ],
+          "improve": [
+            162
+          ],
+          "industry": [
+            163
+          ],
+          "competitiveness": [
+            164
+          ],
+          "consumer": [
+            166
+          ],
+          "reach": [
+            167
+          ],
+          "evolving": [
+            170
+          ],
+          "healthcare": [
+            172,
+            199
+          ],
+          "ecosystem.": [
+            173
+          ],
+          "builds": [
+            176
+          ],
+          "recent": [
+            178
+          ],
+          "Al-Assaf": [
+            181
+          ],
+          "et": [
+            182,
+            188
+          ],
+          "al.": [
+            183,
+            189
+          ],
+          "(2025)": [
+            184
+          ],
+          "Al": [
+            186
+          ],
+          "Ghadeer": [
+            187
+          ],
+          "(2025),": [
+            190
+          ],
+          "emphasizing": [
+            191
+          ],
+          "rising": [
+            193
+          ],
+          "relevance": [
+            194
+          ],
+          "platforms": [
+            197
+          ],
+          "marketing.": [
+            200
+          ],
+          "It": [
+            201
+          ],
+          "underscores": [
+            202
+          ],
+          "need": [
+            204
+          ],
+          "targeted": [
+            206
+          ],
+          "efforts": [
+            208
+          ],
+          "effectively": [
+            210
+          ],
+          "engage": [
+            211
+          ],
+          "boost": [
+            214
+          ],
+          "Arabia.": [
+            223
+          ]
+        },
+        "counts_by_year": [],
+        "updated_date": "2026-09-23T09:40:40.371523",
+        "created_date": "2026-01-08T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4414407580",
+        "doi": "https://doi.org/10.64149/j.carcinog.24.5s.875-885",
+        "title": "Sustainable Project Management Practices Aligned with SDG 11: Sustainable Cities Urban infrastructure development through sustainable planning techniques",
+        "display_name": "Sustainable Project Management Practices Aligned with SDG 11: Sustainable Cities Urban infrastructure development through sustainable planning techniques",
+        "relevance_score": 4.1104174,
+        "publication_year": 2025,
+        "publication_date": "2025-01-01",
+        "ids": {
+          "openalex": "https://openalex.org/W4414407580",
+          "doi": "https://doi.org/10.64149/j.carcinog.24.5s.875-885"
+        },
+        "language": "en",
+        "primary_location": {
+          "id": "doi:10.64149/j.carcinog.24.5s.875-885",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.64149/j.carcinog.24.5s.875-885",
+          "pdf_url": "https://carcinogenesis.com/index.php/JOC/article/download/949/710",
+          "source": {
+            "id": "https://openalex.org/S146206",
+            "display_name": "Journal of Carcinogenesis",
+            "issn_l": "0974-6773",
+            "issn": [
+              "0974-6773",
+              "1477-3163"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-1",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320448",
+            "host_organization_name": "Medknow",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320448",
+              "https://openalex.org/P4310318547"
+            ],
+            "host_organization_lineage_names": [
+              "Medknow",
+              "Wolters Kluwer"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Carcinogenesis",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://carcinogenesis.com/index.php/JOC/article/download/949/710",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": null,
+              "display_name": "Ramesh Safare",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I3132999081",
+                "display_name": "Marwadi University",
+                "ror": "https://ror.org/030dn1812",
+                "country_code": "IN",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I3132999081"
+                ]
+              }
+            ],
+            "countries": [
+              "IN"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Ramesh Safare",
+            "raw_affiliation_strings": [
+              "Associate Professor Marwadi University , Rajkot , Gujarat"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Associate Professor Marwadi University , Rajkot , Gujarat",
+                "institution_ids": [
+                  "https://openalex.org/I3132999081"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": null,
+              "display_name": "Parin Somani",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "Parin Somani",
+            "raw_affiliation_strings": [
+              "CEO ,",
+              "London Organsation of Skills Development ( LOSD"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "CEO ,",
+                "institution_ids": []
+              },
+              {
+                "raw_affiliation_string": "London Organsation of Skills Development ( LOSD",
+                "institution_ids": []
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": null,
+              "display_name": "Mcxin  Tee",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I12649496",
+                "display_name": "INTI International University",
+                "ror": "https://ror.org/03fj82m46",
+                "country_code": "MY",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I12649496"
+                ]
+              }
+            ],
+            "countries": [
+              "MY"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Mcxin  Tee",
+            "raw_affiliation_strings": [
+              "Faculty of Business and Communications , INTI International University , 71800 Nilai , Malaysia"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Business and Communications , INTI International University , 71800 Nilai , Malaysia",
+                "institution_ids": [
+                  "https://openalex.org/I12649496"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": null,
+              "display_name": "Lin Yan",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I181635417",
+                "display_name": "Shinawatra University",
+                "ror": "https://ror.org/02sr8jt85",
+                "country_code": "TH",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I181635417"
+                ]
+              }
+            ],
+            "countries": [
+              "TH"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Lin Yan",
+            "raw_affiliation_strings": [
+              "Faculty of Psychology Shinawatra University"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Faculty of Psychology Shinawatra University",
+                "institution_ids": [
+                  "https://openalex.org/I181635417"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 3,
+        "institutions_distinct_count": 3,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": {
+          "value": 1500,
+          "currency": "USD",
+          "value_usd": 1500
+        },
+        "apc_paid": {
+          "value": 1500,
+          "currency": "USD",
+          "value_usd": 1500
+        },
+        "fwci": 0.0,
+        "has_fulltext": true,
+        "cited_by_count": 0,
+        "citation_normalized_percentile": {
+          "value": 0.18827276,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": null,
+          "issue": null,
+          "first_page": null,
+          "last_page": null
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T11988",
+          "display_name": "Sustainable Building Design and Assessment",
+          "score": 0.5777000188827515,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2215",
+            "display_name": "Building and Construction"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T11988",
+            "display_name": "Sustainable Building Design and Assessment",
+            "score": 0.5777000188827515,
+            "subfield": {
+              "id": "https://openalex.org/subfields/2215",
+              "display_name": "Building and Construction"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/22",
+              "display_name": "Engineering"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/3",
+              "display_name": "Physical Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/sustainable-development",
+            "display_name": "Sustainable development",
+            "score": 0.5612000226974487
+          },
+          {
+            "id": "https://openalex.org/keywords/urban-planning",
+            "display_name": "Urban planning",
+            "score": 0.40689998865127563
+          },
+          {
+            "id": "https://openalex.org/keywords/infrastructure-planning",
+            "display_name": "Infrastructure planning",
+            "score": 0.39809998869895935
+          },
+          {
+            "id": "https://openalex.org/keywords/project-management",
+            "display_name": "Project management",
+            "score": 0.3781000077724457
+          },
+          {
+            "id": "https://openalex.org/keywords/urban-infrastructure",
+            "display_name": "Urban infrastructure",
+            "score": 0.321399986743927
+          },
+          {
+            "id": "https://openalex.org/keywords/project-planning",
+            "display_name": "Project planning",
+            "score": 0.31859999895095825
+          },
+          {
+            "id": "https://openalex.org/keywords/sustainability",
+            "display_name": "Sustainability",
+            "score": 0.31139999628067017
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C91375879",
+            "wikidata": "https://www.wikidata.org/wiki/Q15473274",
+            "display_name": "Environmental planning",
+            "level": 1,
+            "score": 0.6362000107765198
+          },
+          {
+            "id": "https://openalex.org/C552854447",
+            "wikidata": "https://www.wikidata.org/wiki/Q131201",
+            "display_name": "Sustainable development",
+            "level": 2,
+            "score": 0.5612000226974487
+          },
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.5440000295639038
+          },
+          {
+            "id": "https://openalex.org/C49545453",
+            "wikidata": "https://www.wikidata.org/wiki/Q69883",
+            "display_name": "Urban planning",
+            "level": 2,
+            "score": 0.40689998865127563
+          },
+          {
+            "id": "https://openalex.org/C2993828040",
+            "wikidata": "https://www.wikidata.org/wiki/Q19720704",
+            "display_name": "Infrastructure planning",
+            "level": 2,
+            "score": 0.39809998869895935
+          },
+          {
+            "id": "https://openalex.org/C15952604",
+            "wikidata": "https://www.wikidata.org/wiki/Q179012",
+            "display_name": "Project management",
+            "level": 2,
+            "score": 0.3781000077724457
+          },
+          {
+            "id": "https://openalex.org/C107826830",
+            "wikidata": "https://www.wikidata.org/wiki/Q929380",
+            "display_name": "Environmental resource management",
+            "level": 1,
+            "score": 0.3490999937057495
+          },
+          {
+            "id": "https://openalex.org/C2989523885",
+            "wikidata": "https://www.wikidata.org/wiki/Q121359",
+            "display_name": "Urban infrastructure",
+            "level": 3,
+            "score": 0.321399986743927
+          },
+          {
+            "id": "https://openalex.org/C58565012",
+            "wikidata": "https://www.wikidata.org/wiki/Q2112558",
+            "display_name": "Project planning",
+            "level": 3,
+            "score": 0.31859999895095825
+          },
+          {
+            "id": "https://openalex.org/C66204764",
+            "wikidata": "https://www.wikidata.org/wiki/Q219416",
+            "display_name": "Sustainability",
+            "level": 2,
+            "score": 0.31139999628067017
+          },
+          {
+            "id": "https://openalex.org/C18762648",
+            "wikidata": "https://www.wikidata.org/wiki/Q42213",
+            "display_name": "Work (physics)",
+            "level": 2,
+            "score": 0.3070000112056732
+          },
+          {
+            "id": "https://openalex.org/C2908647359",
+            "wikidata": "https://www.wikidata.org/wiki/Q2625603",
+            "display_name": "Population",
+            "level": 2,
+            "score": 0.28360000252723694
+          },
+          {
+            "id": "https://openalex.org/C174378899",
+            "wikidata": "https://www.wikidata.org/wiki/Q7649643",
+            "display_name": "Sustainable community",
+            "level": 3,
+            "score": 0.28119999170303345
+          },
+          {
+            "id": "https://openalex.org/C2780748813",
+            "wikidata": "https://www.wikidata.org/wiki/Q7649683",
+            "display_name": "Sustainable management",
+            "level": 3,
+            "score": 0.27410000562667847
+          },
+          {
+            "id": "https://openalex.org/C48243021",
+            "wikidata": "https://www.wikidata.org/wiki/Q932522",
+            "display_name": "Strategic planning",
+            "level": 2,
+            "score": 0.2646999955177307
+          },
+          {
+            "id": "https://openalex.org/C83864248",
+            "wikidata": "https://www.wikidata.org/wiki/Q177323",
+            "display_name": "Developing country",
+            "level": 2,
+            "score": 0.2574999928474426
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.64149/j.carcinog.24.5s.875-885",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.64149/j.carcinog.24.5s.875-885",
+            "pdf_url": "https://carcinogenesis.com/index.php/JOC/article/download/949/710",
+            "source": {
+              "id": "https://openalex.org/S146206",
+              "display_name": "Journal of Carcinogenesis",
+              "issn_l": "0974-6773",
+              "issn": [
+                "0974-6773",
+                "1477-3163"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": true,
+              "listed_in": [
+                "cwts-core",
+                "jufo-1",
+                "norway-1"
+              ],
+              "host_organization": "https://openalex.org/P4310320448",
+              "host_organization_name": "Medknow",
+              "host_organization_lineage": [
+                "https://openalex.org/P4310320448",
+                "https://openalex.org/P4310318547"
+              ],
+              "host_organization_lineage_names": [
+                "Medknow",
+                "Wolters Kluwer"
+              ],
+              "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Journal of Carcinogenesis",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.64149/j.carcinog.24.5s.875-885",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.64149/j.carcinog.24.5s.875-885",
+          "pdf_url": "https://carcinogenesis.com/index.php/JOC/article/download/949/710",
+          "source": {
+            "id": "https://openalex.org/S146206",
+            "display_name": "Journal of Carcinogenesis",
+            "issn_l": "0974-6773",
+            "issn": [
+              "0974-6773",
+              "1477-3163"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-1",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320448",
+            "host_organization_name": "Medknow",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320448",
+              "https://openalex.org/P4310318547"
+            ],
+            "host_organization_lineage_names": [
+              "Medknow",
+              "Wolters Kluwer"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Carcinogenesis",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "x_sdgs": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": true,
+          "grobid_xml": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4414407580.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4414407580.grobid-xml"
+        },
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "The": [
+            0
+          ],
+          "issue": [
+            1
+          ],
+          "of": [
+            2,
+            13,
+            48,
+            57,
+            70,
+            82,
+            92,
+            156,
+            201
+          ],
+          "sustainable": [
+            3,
+            49,
+            67,
+            228
+          ],
+          "project": [
+            4,
+            59,
+            104,
+            225
+          ],
+          "management": [
+            5,
+            226
+          ],
+          "(SPM)": [
+            6
+          ],
+          "has": [
+            7
+          ],
+          "become": [
+            8
+          ],
+          "essential": [
+            9
+          ],
+          "to": [
+            10,
+            61,
+            89,
+            192,
+            223
+          ],
+          "the": [
+            11,
+            16,
+            39,
+            46,
+            55,
+            63,
+            93,
+            125,
+            128,
+            145,
+            154,
+            176,
+            181,
+            188,
+            204
+          ],
+          "way": [
+            12
+          ],
+          "achieving": [
+            14
+          ],
+          "that": [
+            15,
+            144,
+            180,
+            219
+          ],
+          "urban": [
+            17,
+            71,
+            101,
+            114,
+            174,
+            229
+          ],
+          "infrastructure": [
+            18
+          ],
+          "development": [
+            19
+          ],
+          "is": [
+            20,
+            140,
+            151
+          ],
+          "in": [
+            21,
+            79,
+            148,
+            163,
+            173,
+            196,
+            203,
+            227
+          ],
+          "accordance": [
+            22
+          ],
+          "with": [
+            23
+          ],
+          "global": [
+            24
+          ],
+          "Sustainable": [
+            25,
+            32
+          ],
+          "Development": [
+            26
+          ],
+          "Goal": [
+            27
+          ],
+          "11": [
+            28
+          ],
+          "(SDG": [
+            29
+          ],
+          "11)": [
+            30
+          ],
+          "namely": [
+            31
+          ],
+          "Cities": [
+            33
+          ],
+          "and": [
+            34,
+            66,
+            85,
+            106,
+            136,
+            171,
+            194,
+            215
+          ],
+          "Communities": [
+            35
+          ],
+          "as": [
+            36,
+            97,
+            120,
+            166,
+            168
+          ],
+          "set": [
+            37
+          ],
+          "by": [
+            38
+          ],
+          "United": [
+            40
+          ],
+          "Nations.The": [
+            41
+          ],
+          "current": [
+            42
+          ],
+          "paper": [
+            43
+          ],
+          "studies": [
+            44
+          ],
+          "how": [
+            45,
+            113
+          ],
+          "methods": [
+            47
+          ],
+          "planning": [
+            50,
+            105
+          ],
+          "may": [
+            51
+          ],
+          "be": [
+            52,
+            221
+          ],
+          "incorporated": [
+            53
+          ],
+          "into": [
+            54
+          ],
+          "work": [
+            56
+          ],
+          "a": [
+            58
+          ],
+          "manager": [
+            60
+          ],
+          "encourage": [
+            62
+          ],
+          "resilience,": [
+            64
+          ],
+          "inclusivity,": [
+            65
+          ],
+          "environmental": [
+            68,
+            118
+          ],
+          "policies": [
+            69
+          ],
+          "infrastructure.The": [
+            72
+          ],
+          "research": [
+            73,
+            202
+          ],
+          "synthesized": [
+            74
+          ],
+          "existing": [
+            75
+          ],
+          "literature": [
+            76
+          ],
+          "on": [
+            77
+          ],
+          "sustainability": [
+            78,
+            137,
+            150,
+            217
+          ],
+          "construction,": [
+            80
+          ],
+          "design": [
+            81
+          ],
+          "smart": [
+            83
+          ],
+          "cities": [
+            84
+          ],
+          "life-cycle": [
+            86
+          ],
+          "cost": [
+            87
+          ],
+          "evaluation": [
+            88
+          ],
+          "determine": [
+            90
+          ],
+          "some": [
+            91
+          ],
+          "important": [
+            94
+          ],
+          "practices": [
+            95
+          ],
+          "such": [
+            96
+          ],
+          "green": [
+            98
+          ],
+          "buildings,": [
+            99
+          ],
+          "participatory": [
+            100
+          ],
+          "planning,": [
+            102
+          ],
+          "adaptive": [
+            103
+          ],
+          "circular": [
+            107
+          ],
+          "economy": [
+            108
+          ],
+          "values.The": [
+            109
+          ],
+          "new": [
+            110
+          ],
+          "structure": [
+            111
+          ],
+          "shows": [
+            112
+          ],
+          "developments": [
+            115
+          ],
+          "can": [
+            116,
+            220
+          ],
+          "reduce": [
+            117
+          ],
+          "effects,": [
+            119
+          ],
+          "it": [
+            121
+          ],
+          "increases": [
+            122,
+            172
+          ],
+          "socio-economic": [
+            123
+          ],
+          "gains.At": [
+            124
+          ],
+          "methodological": [
+            126
+          ],
+          "level,": [
+            127
+          ],
+          "Mixed-Method": [
+            129
+          ],
+          "approach,": [
+            130
+          ],
+          "which": [
+            131,
+            149
+          ],
+          "comprises": [
+            132
+          ],
+          "case": [
+            133
+          ],
+          "study": [
+            134
+          ],
+          "analysis": [
+            135,
+            139
+          ],
+          "performance": [
+            138
+          ],
+          "taken.Findings": [
+            141
+          ],
+          "have": [
+            142,
+            159
+          ],
+          "shown": [
+            143
+          ],
+          "implemented": [
+            146
+          ],
+          "projects": [
+            147
+          ],
+          "assessed": [
+            152
+          ],
+          "through": [
+            153
+          ],
+          "integration": [
+            155
+          ],
+          "integrated": [
+            157
+          ],
+          "models": [
+            158
+          ],
+          "demonstrable": [
+            160
+          ],
+          "proportional": [
+            161
+          ],
+          "decreases": [
+            162
+          ],
+          "carbon": [
+            164
+          ],
+          "footprint": [
+            165
+          ],
+          "well": [
+            167
+          ],
+          "stakeholder": [
+            169
+          ],
+          "satisfaction": [
+            170
+          ],
+          "resilience.Nevertheless,": [
+            175
+          ],
+          "possible": [
+            177
+          ],
+          "shortcomings": [
+            178
+          ],
+          "are": [
+            179,
+            185,
+            190
+          ],
+          "initial": [
+            182
+          ],
+          "investment": [
+            183
+          ],
+          "costs": [
+            184
+          ],
+          "very": [
+            186
+          ],
+          "high,": [
+            187
+          ],
+          "institutions": [
+            189
+          ],
+          "resistant": [
+            191
+          ],
+          "change,": [
+            193
+          ],
+          "fissures": [
+            195
+          ],
+          "technical": [
+            197
+          ],
+          "expertise": [
+            198
+          ],
+          "occur.The": [
+            199
+          ],
+          "areas": [
+            200
+          ],
+          "future": [
+            205
+          ],
+          "should": [
+            206
+          ],
+          "include": [
+            207
+          ],
+          "scalable": [
+            208
+          ],
+          "digital": [
+            209
+          ],
+          "twin": [
+            210
+          ],
+          "integration,": [
+            211
+          ],
+          "climate-risk": [
+            212
+          ],
+          "predictive": [
+            213
+          ],
+          "modeling": [
+            214
+          ],
+          "localized": [
+            216
+          ],
+          "indicators": [
+            218
+          ],
+          "used": [
+            222
+          ],
+          "streamline": [
+            224
+          ],
+          "development...": [
+            230
+          ]
+        },
+        "counts_by_year": [],
+        "updated_date": "2026-09-23T05:00:35.095934",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W4409383074",
+        "doi": "https://doi.org/10.58466/aicoms.v3i2.1747",
+        "title": "Analisis Kesiapan Digital UMKM Trenggalek: Perspektif dari Strategi Digital Marketing",
+        "display_name": "Analisis Kesiapan Digital UMKM Trenggalek: Perspektif dari Strategi Digital Marketing",
+        "relevance_score": 3.8924406,
+        "publication_year": 2025,
+        "publication_date": "2025-02-12",
+        "ids": {
+          "openalex": "https://openalex.org/W4409383074",
+          "doi": "https://doi.org/10.58466/aicoms.v3i2.1747"
+        },
+        "language": "id",
+        "primary_location": {
+          "id": "doi:10.58466/aicoms.v3i2.1747",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.58466/aicoms.v3i2.1747",
+          "pdf_url": "https://jurnal.politap.ac.id/aicoms/article/download/1747/1205",
+          "source": {
+            "id": "https://openalex.org/S4387285974",
+            "display_name": "Applied Information Technology and Computer Science (AICOMS)",
+            "issn_l": "2964-7703",
+            "issn": [
+              "2964-7703"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Applied Information Technology and Computer Science (AICOMS)",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://jurnal.politap.ac.id/aicoms/article/download/1747/1205",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5060504910",
+              "display_name": "Wiji Nurastuti",
+              "orcid": null
+            },
+            "institutions": [],
+            "countries": [],
+            "is_corresponding": false,
+            "raw_author_name": "Wiji Nurastuti",
+            "raw_affiliation_strings": [
+              "Universitan Amikom Yogyakarta"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Universitan Amikom Yogyakarta",
+                "institution_ids": []
+              }
+            ]
+          },
+          {
+            "author_position": "middle",
+            "author": {
+              "id": "https://openalex.org/A5117118639",
+              "display_name": "Ahmad Sumiyanto",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210087739",
+                "display_name": "Universitas Respati Yogyakarta",
+                "ror": "https://ror.org/003ktzf45",
+                "country_code": "ID",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210087739"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4400573182",
+                "display_name": "Universitas Amikom Yogyakarta",
+                "ror": "https://ror.org/00j65mz88",
+                "country_code": null,
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4400573182"
+                ]
+              }
+            ],
+            "countries": [
+              "ID"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Ahmad Sumiyanto",
+            "raw_affiliation_strings": [
+              "Universitas Amikom Yogyakarta"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Universitas Amikom Yogyakarta",
+                "institution_ids": [
+                  "https://openalex.org/I4210087739",
+                  "https://openalex.org/I4400573182"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5117118640",
+              "display_name": "Netci Hesvindrati",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210087739",
+                "display_name": "Universitas Respati Yogyakarta",
+                "ror": "https://ror.org/003ktzf45",
+                "country_code": "ID",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210087739"
+                ]
+              },
+              {
+                "id": "https://openalex.org/I4400573182",
+                "display_name": "Universitas Amikom Yogyakarta",
+                "ror": "https://ror.org/00j65mz88",
+                "country_code": null,
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4400573182"
+                ]
+              }
+            ],
+            "countries": [
+              "ID"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Netci Hesvindrati",
+            "raw_affiliation_strings": [
+              "Universitas Amikom Yogyakarta"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Universitas Amikom Yogyakarta",
+                "institution_ids": [
+                  "https://openalex.org/I4210087739",
+                  "https://openalex.org/I4400573182"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 2,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.0,
+        "has_fulltext": true,
+        "cited_by_count": 0,
+        "citation_normalized_percentile": {
+          "value": 0.09468168,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": "3",
+          "issue": "2",
+          "first_page": "11",
+          "last_page": "17"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T13053",
+          "display_name": "SMEs Development and Digital Marketing",
+          "score": 0.9976999759674072,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3317",
+            "display_name": "Demography"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/33",
+            "display_name": "Social Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T13053",
+            "display_name": "SMEs Development and Digital Marketing",
+            "score": 0.9976999759674072,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3317",
+              "display_name": "Demography"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T14281",
+            "display_name": "Islamic Finance and Communication",
+            "score": 0.9606000185012817,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3312",
+              "display_name": "Sociology and Political Science"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T14416",
+            "display_name": "Health, Technology, Consumer Behavior",
+            "score": 0.9591000080108643,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3605",
+              "display_name": "Health Information Management"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/36",
+              "display_name": "Health Professions"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/4",
+              "display_name": "Health Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/business-administration",
+            "display_name": "Business administration",
+            "score": 0.5432762503623962
+          },
+          {
+            "id": "https://openalex.org/keywords/business",
+            "display_name": "Business",
+            "score": 0.5274482369422913
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C178550888",
+            "wikidata": "https://www.wikidata.org/wiki/Q2043282",
+            "display_name": "Business administration",
+            "level": 1,
+            "score": 0.5432762503623962
+          },
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.5274482369422913
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.58466/aicoms.v3i2.1747",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.58466/aicoms.v3i2.1747",
+            "pdf_url": "https://jurnal.politap.ac.id/aicoms/article/download/1747/1205",
+            "source": {
+              "id": "https://openalex.org/S4387285974",
+              "display_name": "Applied Information Technology and Computer Science (AICOMS)",
+              "issn_l": "2964-7703",
+              "issn": [
+                "2964-7703"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "listed_in": [],
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "journal"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Applied Information Technology and Computer Science (AICOMS)",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.58466/aicoms.v3i2.1747",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.58466/aicoms.v3i2.1747",
+          "pdf_url": "https://jurnal.politap.ac.id/aicoms/article/download/1747/1205",
+          "source": {
+            "id": "https://openalex.org/S4387285974",
+            "display_name": "Applied Information Technology and Computer Science (AICOMS)",
+            "issn_l": "2964-7703",
+            "issn": [
+              "2964-7703"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Applied Information Technology and Computer Science (AICOMS)",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "x_sdgs": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": true,
+          "grobid_xml": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W4409383074.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W4409383074.grobid-xml"
+        },
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [
+          "https://openalex.org/W4391375266",
+          "https://openalex.org/W3005293895",
+          "https://openalex.org/W3107278293",
+          "https://openalex.org/W3104897255",
+          "https://openalex.org/W3213882830",
+          "https://openalex.org/W2742433941",
+          "https://openalex.org/W2976862298",
+          "https://openalex.org/W2923798061",
+          "https://openalex.org/W3160677946",
+          "https://openalex.org/W2980164204"
+        ],
+        "abstract_inverted_index": {
+          "This": [
+            0,
+            114
+          ],
+          "study": [
+            1,
+            115
+          ],
+          "aims": [
+            2
+          ],
+          "to": [
+            3,
+            16,
+            38,
+            76,
+            93,
+            109,
+            119
+          ],
+          "analyze": [
+            4
+          ],
+          "the": [
+            5,
+            58,
+            99,
+            121,
+            130
+          ],
+          "readiness": [
+            6,
+            75
+          ],
+          "of": [
+            7,
+            23,
+            74,
+            85,
+            123
+          ],
+          "Micro,": [
+            8
+          ],
+          "Small,": [
+            9
+          ],
+          "and": [
+            10,
+            48,
+            54,
+            90,
+            111,
+            137
+          ],
+          "Medium": [
+            11
+          ],
+          "Enterprises": [
+            12
+          ],
+          "(MSME)": [
+            13
+          ],
+          "in": [
+            14,
+            57,
+            67,
+            105
+          ],
+          "Trenggalek": [
+            15,
+            68
+          ],
+          "adopt": [
+            17,
+            77
+          ],
+          "digital": [
+            18,
+            25,
+            59,
+            78,
+            87,
+            95,
+            124,
+            131
+          ],
+          "marketing": [
+            19,
+            79,
+            96
+          ],
+          "strategies": [
+            20
+          ],
+          "as": [
+            21,
+            50,
+            52
+          ],
+          "part": [
+            22
+          ],
+          "their": [
+            24,
+            86,
+            91
+          ],
+          "transformation.": [
+            26
+          ],
+          "A": [
+            27
+          ],
+          "quantitative": [
+            28
+          ],
+          "approach": [
+            29
+          ],
+          "was": [
+            30
+          ],
+          "used,": [
+            31
+          ],
+          "with": [
+            32
+          ],
+          "data": [
+            33
+          ],
+          "collected": [
+            34
+          ],
+          "through": [
+            35,
+            128
+          ],
+          "questionnaires": [
+            36
+          ],
+          "distributed": [
+            37
+          ],
+          "44": [
+            39
+          ],
+          "respondents.": [
+            40
+          ],
+          "The": [
+            41,
+            62
+          ],
+          "analyzed": [
+            42
+          ],
+          "indicators": [
+            43
+          ],
+          "include": [
+            44,
+            103
+          ],
+          "experience,": [
+            45
+          ],
+          "satisfaction,": [
+            46
+          ],
+          "interactivity,": [
+            47
+          ],
+          "knowledge,": [
+            49
+          ],
+          "well": [
+            51
+          ],
+          "supporting": [
+            53
+          ],
+          "inhibiting": [
+            55
+          ],
+          "factors": [
+            56
+          ],
+          "transformation": [
+            60,
+            125
+          ],
+          "process.": [
+            61
+          ],
+          "results": [
+            63
+          ],
+          "indicate": [
+            64
+          ],
+          "that": [
+            65
+          ],
+          "MSME": [
+            66,
+            127
+          ],
+          "have": [
+            69
+          ],
+          "a": [
+            70
+          ],
+          "relatively": [
+            71
+          ],
+          "high": [
+            72
+          ],
+          "level": [
+            73
+          ],
+          "strategies.": [
+            80,
+            97
+          ],
+          "Respondents": [
+            81
+          ],
+          "provided": [
+            82
+          ],
+          "positive": [
+            83
+          ],
+          "assessments": [
+            84
+          ],
+          "interaction": [
+            88
+          ],
+          "experience": [
+            89
+          ],
+          "ability": [
+            92
+          ],
+          "understand": [
+            94
+          ],
+          "However,": [
+            98
+          ],
+          "main": [
+            100
+          ],
+          "challenges": [
+            101
+          ],
+          "faced": [
+            102
+          ],
+          "limitations": [
+            104
+          ],
+          "technological": [
+            106,
+            139
+          ],
+          "infrastructure,": [
+            107
+          ],
+          "access": [
+            108
+          ],
+          "funding,": [
+            110
+          ],
+          "technical": [
+            112
+          ],
+          "skills.": [
+            113
+          ],
+          "provides": [
+            116
+          ],
+          "strategic": [
+            117
+          ],
+          "insights": [
+            118
+          ],
+          "encourage": [
+            120
+          ],
+          "adoption": [
+            122
+          ],
+          "among": [
+            126
+          ],
+          "strengthening": [
+            129
+          ],
+          "ecosystem,": [
+            132
+          ],
+          "improving": [
+            133
+          ],
+          "human": [
+            134
+          ],
+          "resource": [
+            135
+          ],
+          "skills,": [
+            136
+          ],
+          "expanding": [
+            138
+          ],
+          "support.": [
+            140
+          ]
+        },
+        "counts_by_year": [],
+        "updated_date": "2026-09-23T05:00:35.095934",
+        "created_date": "2025-10-10T00:00:00"
+      },
+      {
+        "id": "https://openalex.org/W7133202675",
+        "doi": "https://doi.org/10.52970/grmilf.v6i2.1798",
+        "title": "How Digital Content Marketing, Fashion Involvement, and Trust Influence Online Purchase Intention on TikTok: The Mediating Role of eWOM",
+        "display_name": "How Digital Content Marketing, Fashion Involvement, and Trust Influence Online Purchase Intention on TikTok: The Mediating Role of eWOM",
+        "relevance_score": 2.917744,
+        "publication_year": 2026,
+        "publication_date": "2026-02-01",
+        "ids": {
+          "openalex": "https://openalex.org/W7133202675",
+          "doi": "https://doi.org/10.52970/grmilf.v6i2.1798"
+        },
+        "language": null,
+        "primary_location": {
+          "id": "doi:10.52970/grmilf.v6i2.1798",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.52970/grmilf.v6i2.1798",
+          "pdf_url": "https://goldenratio.id/index.php/grmilf/article/download/1798/1393",
+          "source": {
+            "id": "https://openalex.org/S4210203737",
+            "display_name": "Golden Ratio of Mapping Idea and Literature Format",
+            "issn_l": "2776-6381",
+            "issn": [
+              "2776-6381"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Golden Ratio of Mapping Idea and Literature Format",
+          "raw_type": "journal-article"
+        },
+        "type": "article",
+        "indexed_in": [
+          "crossref"
+        ],
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://goldenratio.id/index.php/grmilf/article/download/1798/1393",
+          "any_repository_has_fulltext": false
+        },
+        "authorships": [
+          {
+            "author_position": "first",
+            "author": {
+              "id": "https://openalex.org/A5127814904",
+              "display_name": "Fahmiatul Ilmiyah",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210096641",
+                "display_name": "Universitas Esa Unggul",
+                "ror": "https://ror.org/00cwwxh37",
+                "country_code": "ID",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210096641"
+                ]
+              }
+            ],
+            "countries": [
+              "ID"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Fahmiatul Ilmiyah",
+            "raw_affiliation_strings": [
+              "Universitas Esa Unggul"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Universitas Esa Unggul",
+                "institution_ids": [
+                  "https://openalex.org/I4210096641"
+                ]
+              }
+            ]
+          },
+          {
+            "author_position": "last",
+            "author": {
+              "id": "https://openalex.org/A5074677719",
+              "display_name": "Dimas Angga Negoro",
+              "orcid": null
+            },
+            "institutions": [
+              {
+                "id": "https://openalex.org/I4210096641",
+                "display_name": "Universitas Esa Unggul",
+                "ror": "https://ror.org/00cwwxh37",
+                "country_code": "ID",
+                "type": "education",
+                "lineage": [
+                  "https://openalex.org/I4210096641"
+                ]
+              }
+            ],
+            "countries": [
+              "ID"
+            ],
+            "is_corresponding": false,
+            "raw_author_name": "Dimas Negoro",
+            "raw_affiliation_strings": [
+              "Universitas Esa Unggul"
+            ],
+            "raw_orcid": null,
+            "affiliations": [
+              {
+                "raw_affiliation_string": "Universitas Esa Unggul",
+                "institution_ids": [
+                  "https://openalex.org/I4210096641"
+                ]
+              }
+            ]
+          }
+        ],
+        "institutions": [],
+        "countries_distinct_count": 1,
+        "institutions_distinct_count": 1,
+        "corresponding_author_ids": [],
+        "corresponding_institution_ids": [
+          "https://openalex.org/I4210096641"
+        ],
+        "apc_list": null,
+        "apc_paid": null,
+        "fwci": 0.0,
+        "has_fulltext": true,
+        "cited_by_count": 0,
+        "citation_normalized_percentile": {
+          "value": 0.14843072,
+          "is_in_top_1_percent": false,
+          "is_in_top_10_percent": false
+        },
+        "cited_by_percentile_year": null,
+        "biblio": {
+          "volume": "6",
+          "issue": "2",
+          "first_page": "1374",
+          "last_page": "1393"
+        },
+        "is_retracted": false,
+        "is_paratext": false,
+        "is_xpac": false,
+        "primary_topic": {
+          "id": "https://openalex.org/T10609",
+          "display_name": "Digital Marketing and Social Media",
+          "score": 0.4239000082015991,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3312",
+            "display_name": "Sociology and Political Science"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/33",
+            "display_name": "Social Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        "topics": [
+          {
+            "id": "https://openalex.org/T10609",
+            "display_name": "Digital Marketing and Social Media",
+            "score": 0.4239000082015991,
+            "subfield": {
+              "id": "https://openalex.org/subfields/3312",
+              "display_name": "Sociology and Political Science"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/33",
+              "display_name": "Social Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T14260",
+            "display_name": "Impact of AI and Big Data on Business and Society",
+            "score": 0.04410000145435333,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1803",
+              "display_name": "Management Science and Operations Research"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/18",
+              "display_name": "Decision Sciences"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          },
+          {
+            "id": "https://openalex.org/T10880",
+            "display_name": "Environmental Sustainability in Business",
+            "score": 0.03139999881386757,
+            "subfield": {
+              "id": "https://openalex.org/subfields/1406",
+              "display_name": "Marketing"
+            },
+            "field": {
+              "id": "https://openalex.org/fields/14",
+              "display_name": "Business, Management and Accounting"
+            },
+            "domain": {
+              "id": "https://openalex.org/domains/2",
+              "display_name": "Social Sciences"
+            }
+          }
+        ],
+        "keywords": [
+          {
+            "id": "https://openalex.org/keywords/purchasing",
+            "display_name": "Purchasing",
+            "score": 0.7698000073432922
+          },
+          {
+            "id": "https://openalex.org/keywords/structural-equation-modeling",
+            "display_name": "Structural equation modeling",
+            "score": 0.5304999947547913
+          },
+          {
+            "id": "https://openalex.org/keywords/perception",
+            "display_name": "Perception",
+            "score": 0.5006999969482422
+          },
+          {
+            "id": "https://openalex.org/keywords/digital-content",
+            "display_name": "Digital content",
+            "score": 0.49000000953674316
+          },
+          {
+            "id": "https://openalex.org/keywords/nonprobability-sampling",
+            "display_name": "Nonprobability sampling",
+            "score": 0.45739999413490295
+          },
+          {
+            "id": "https://openalex.org/keywords/word-of-mouth",
+            "display_name": "Word of mouth",
+            "score": 0.45559999346733093
+          },
+          {
+            "id": "https://openalex.org/keywords/antecedent",
+            "display_name": "Antecedent (behavioral psychology)",
+            "score": 0.4408999979496002
+          },
+          {
+            "id": "https://openalex.org/keywords/relevance",
+            "display_name": "Relevance (law)",
+            "score": 0.4334999918937683
+          }
+        ],
+        "concepts": [
+          {
+            "id": "https://openalex.org/C2778813691",
+            "wikidata": "https://www.wikidata.org/wiki/Q1369832",
+            "display_name": "Purchasing",
+            "level": 2,
+            "score": 0.7698000073432922
+          },
+          {
+            "id": "https://openalex.org/C112698675",
+            "wikidata": "https://www.wikidata.org/wiki/Q37038",
+            "display_name": "Advertising",
+            "level": 1,
+            "score": 0.6049000024795532
+          },
+          {
+            "id": "https://openalex.org/C71104824",
+            "wikidata": "https://www.wikidata.org/wiki/Q1476639",
+            "display_name": "Structural equation modeling",
+            "level": 2,
+            "score": 0.5304999947547913
+          },
+          {
+            "id": "https://openalex.org/C26760741",
+            "wikidata": "https://www.wikidata.org/wiki/Q160402",
+            "display_name": "Perception",
+            "level": 2,
+            "score": 0.5006999969482422
+          },
+          {
+            "id": "https://openalex.org/C2779344036",
+            "wikidata": "https://www.wikidata.org/wiki/Q11320476",
+            "display_name": "Digital content",
+            "level": 2,
+            "score": 0.49000000953674316
+          },
+          {
+            "id": "https://openalex.org/C144133560",
+            "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+            "display_name": "Business",
+            "level": 0,
+            "score": 0.4586000144481659
+          },
+          {
+            "id": "https://openalex.org/C100363876",
+            "wikidata": "https://www.wikidata.org/wiki/Q690661",
+            "display_name": "Nonprobability sampling",
+            "level": 3,
+            "score": 0.45739999413490295
+          },
+          {
+            "id": "https://openalex.org/C137913393",
+            "wikidata": "https://www.wikidata.org/wiki/Q15737157",
+            "display_name": "Word of mouth",
+            "level": 2,
+            "score": 0.45559999346733093
+          },
+          {
+            "id": "https://openalex.org/C2781256819",
+            "wikidata": "https://www.wikidata.org/wiki/Q16828835",
+            "display_name": "Antecedent (behavioral psychology)",
+            "level": 2,
+            "score": 0.4408999979496002
+          },
+          {
+            "id": "https://openalex.org/C158154518",
+            "wikidata": "https://www.wikidata.org/wiki/Q7310970",
+            "display_name": "Relevance (law)",
+            "level": 2,
+            "score": 0.4334999918937683
+          },
+          {
+            "id": "https://openalex.org/C65067816",
+            "wikidata": "https://www.wikidata.org/wiki/Q2295139",
+            "display_name": "Computer-assisted web interviewing",
+            "level": 2,
+            "score": 0.42410001158714294
+          },
+          {
+            "id": "https://openalex.org/C15744967",
+            "wikidata": "https://www.wikidata.org/wiki/Q9418",
+            "display_name": "Psychology",
+            "level": 0,
+            "score": 0.39649999141693115
+          },
+          {
+            "id": "https://openalex.org/C30772137",
+            "wikidata": "https://www.wikidata.org/wiki/Q5164762",
+            "display_name": "Consumption (sociology)",
+            "level": 2,
+            "score": 0.35339999198913574
+          },
+          {
+            "id": "https://openalex.org/C23213687",
+            "wikidata": "https://www.wikidata.org/wiki/Q301468",
+            "display_name": "Consumer behaviour",
+            "level": 2,
+            "score": 0.3499000072479248
+          },
+          {
+            "id": "https://openalex.org/C27574286",
+            "wikidata": "https://www.wikidata.org/wiki/Q320723",
+            "display_name": "Variables",
+            "level": 2,
+            "score": 0.34610000252723694
+          },
+          {
+            "id": "https://openalex.org/C198531522",
+            "wikidata": "https://www.wikidata.org/wiki/Q485146",
+            "display_name": "Sample (material)",
+            "level": 2,
+            "score": 0.3093999922275543
+          },
+          {
+            "id": "https://openalex.org/C162446236",
+            "wikidata": "https://www.wikidata.org/wiki/Q653137",
+            "display_name": "Content analysis",
+            "level": 2,
+            "score": 0.3070000112056732
+          },
+          {
+            "id": "https://openalex.org/C162853370",
+            "wikidata": "https://www.wikidata.org/wiki/Q39809",
+            "display_name": "Marketing",
+            "level": 1,
+            "score": 0.3001999855041504
+          },
+          {
+            "id": "https://openalex.org/C78597825",
+            "wikidata": "https://www.wikidata.org/wiki/Q484847",
+            "display_name": "E-commerce",
+            "level": 2,
+            "score": 0.2946999967098236
+          },
+          {
+            "id": "https://openalex.org/C518677369",
+            "wikidata": "https://www.wikidata.org/wiki/Q202833",
+            "display_name": "Social media",
+            "level": 2,
+            "score": 0.28380000591278076
+          },
+          {
+            "id": "https://openalex.org/C120936955",
+            "wikidata": "https://www.wikidata.org/wiki/Q2155640",
+            "display_name": "Empirical research",
+            "level": 2,
+            "score": 0.27000001072883606
+          },
+          {
+            "id": "https://openalex.org/C2776185967",
+            "wikidata": "https://www.wikidata.org/wiki/Q112945",
+            "display_name": "Technology acceptance model",
+            "level": 3,
+            "score": 0.2651999890804291
+          }
+        ],
+        "mesh": [],
+        "locations_count": 1,
+        "locations": [
+          {
+            "id": "doi:10.52970/grmilf.v6i2.1798",
+            "is_oa": true,
+            "landing_page_url": "https://doi.org/10.52970/grmilf.v6i2.1798",
+            "pdf_url": "https://goldenratio.id/index.php/grmilf/article/download/1798/1393",
+            "source": {
+              "id": "https://openalex.org/S4210203737",
+              "display_name": "Golden Ratio of Mapping Idea and Literature Format",
+              "issn_l": "2776-6381",
+              "issn": [
+                "2776-6381"
+              ],
+              "is_oa": true,
+              "is_in_doaj": false,
+              "is_core": false,
+              "host_organization": null,
+              "host_organization_name": null,
+              "host_organization_lineage": [],
+              "host_organization_lineage_names": [],
+              "type": "journal"
+            },
+            "license": "cc-by-sa",
+            "license_id": "https://openalex.org/licenses/cc-by-sa",
+            "version": "publishedVersion",
+            "is_accepted": true,
+            "is_published": true,
+            "raw_source_name": "Golden Ratio of Mapping Idea and Literature Format",
+            "raw_type": "journal-article"
+          }
+        ],
+        "best_oa_location": {
+          "id": "doi:10.52970/grmilf.v6i2.1798",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.52970/grmilf.v6i2.1798",
+          "pdf_url": "https://goldenratio.id/index.php/grmilf/article/download/1798/1393",
+          "source": {
+            "id": "https://openalex.org/S4210203737",
+            "display_name": "Golden Ratio of Mapping Idea and Literature Format",
+            "issn_l": "2776-6381",
+            "issn": [
+              "2776-6381"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Golden Ratio of Mapping Idea and Literature Format",
+          "raw_type": "journal-article"
+        },
+        "sustainable_development_goals": [],
+        "x_sdgs": [],
+        "awards": [],
+        "funders": [],
+        "has_content": {
+          "pdf": true,
+          "grobid_xml": true
+        },
+        "content_urls": {
+          "pdf": "https://content.openalex.org/works/W7133202675.pdf",
+          "grobid_xml": "https://content.openalex.org/works/W7133202675.grobid-xml"
+        },
+        "referenced_works_count": 0,
+        "referenced_works": [],
+        "related_works": [],
+        "abstract_inverted_index": {
+          "This": [
+            0,
+            149,
+            222
+          ],
+          "study": [
+            1,
+            246
+          ],
+          "aims": [
+            2
+          ],
+          "to": [
+            3,
+            101,
+            121,
+            166,
+            263
+          ],
+          "examine": [
+            4
+          ],
+          "the": [
+            5,
+            31,
+            95,
+            102,
+            123,
+            197,
+            208,
+            245,
+            248
+          ],
+          "relationship": [
+            6
+          ],
+          "between": [
+            7
+          ],
+          "Digital": [
+            8,
+            130,
+            211
+          ],
+          "Content": [
+            9,
+            131,
+            212
+          ],
+          "Marketing,": [
+            10,
+            132,
+            213
+          ],
+          "Fashion": [
+            11,
+            133,
+            214
+          ],
+          "Involvement,": [
+            12,
+            134,
+            215
+          ],
+          "and": [
+            13,
+            53,
+            71,
+            135,
+            141,
+            160,
+            170,
+            216,
+            259
+          ],
+          "Trust": [
+            14,
+            136,
+            217
+          ],
+          "on": [
+            15,
+            30,
+            37,
+            144,
+            183,
+            218,
+            235
+          ],
+          "Online": [
+            16,
+            184,
+            219
+          ],
+          "Purchase": [
+            17,
+            185,
+            220
+          ],
+          "Intention,": [
+            18,
+            186
+          ],
+          "with": [
+            19,
+            117
+          ],
+          "Electronic": [
+            20,
+            145,
+            174,
+            202
+          ],
+          "Word": [
+            21,
+            146,
+            175,
+            203
+          ],
+          "of": [
+            22,
+            65,
+            97,
+            147,
+            176,
+            204,
+            210,
+            251
+          ],
+          "Mouth": [
+            23,
+            177,
+            205
+          ],
+          "(eWOM)": [
+            24
+          ],
+          "acting": [
+            25
+          ],
+          "as": [
+            26
+          ],
+          "a": [
+            27,
+            139,
+            179
+          ],
+          "mediating": [
+            28
+          ],
+          "variable": [
+            29
+          ],
+          "TikTok": [
+            32,
+            39
+          ],
+          "platform.": [
+            33
+          ],
+          "The": [
+            34,
+            126
+          ],
+          "research": [
+            35,
+            103
+          ],
+          "focuses": [
+            36
+          ],
+          "active": [
+            38
+          ],
+          "users": [
+            40,
+            165
+          ],
+          "who": [
+            41
+          ],
+          "regularly": [
+            42
+          ],
+          "engage": [
+            43
+          ],
+          "in": [
+            44,
+            59,
+            158,
+            191
+          ],
+          "fashion-related": [
+            45
+          ],
+          "purchases,": [
+            46
+          ],
+          "providing": [
+            47
+          ],
+          "insight": [
+            48
+          ],
+          "into": [
+            49
+          ],
+          "how": [
+            50
+          ],
+          "digital": [
+            51,
+            153,
+            254
+          ],
+          "engagement": [
+            52
+          ],
+          "consumer": [
+            54,
+            161,
+            257
+          ],
+          "perceptions": [
+            55
+          ],
+          "influence": [
+            56,
+            209
+          ],
+          "purchasing": [
+            57,
+            86
+          ],
+          "behavior": [
+            58,
+            100
+          ],
+          "social": [
+            60,
+            269
+          ],
+          "commerce": [
+            61
+          ],
+          "environments.": [
+            62
+          ],
+          "A": [
+            63,
+            105
+          ],
+          "total": [
+            64
+          ],
+          "200": [
+            66
+          ],
+          "potential": [
+            67
+          ],
+          "respondents": [
+            68,
+            83
+          ],
+          "were": [
+            69,
+            75
+          ],
+          "targeted,": [
+            70
+          ],
+          "130": [
+            72
+          ],
+          "valid": [
+            73
+          ],
+          "responses": [
+            74
+          ],
+          "successfully": [
+            76
+          ],
+          "collected": [
+            77
+          ],
+          "using": [
+            78
+          ],
+          "purposive": [
+            79
+          ],
+          "sampling": [
+            80
+          ],
+          "techniques.": [
+            81
+          ],
+          "All": [
+            82
+          ],
+          "had": [
+            84
+          ],
+          "experience": [
+            85
+          ],
+          "fashion": [
+            87,
+            271
+          ],
+          "products": [
+            88
+          ],
+          "at": [
+            89
+          ],
+          "least": [
+            90
+          ],
+          "once": [
+            91
+          ],
+          "per": [
+            92
+          ],
+          "month,": [
+            93
+          ],
+          "ensuring": [
+            94
+          ],
+          "relevance": [
+            96
+          ],
+          "their": [
+            98,
+            233
+          ],
+          "consumption": [
+            99
+          ],
+          "context.": [
+            104
+          ],
+          "quantitative": [
+            106
+          ],
+          "approach": [
+            107
+          ],
+          "was": [
+            108
+          ],
+          "employed,": [
+            109
+          ],
+          "utilizing": [
+            110
+          ],
+          "Partial": [
+            111
+          ],
+          "Least": [
+            112
+          ],
+          "Squares–Structural": [
+            113
+          ],
+          "Equation": [
+            114
+          ],
+          "Modeling": [
+            115
+          ],
+          "(PLS-SEM)": [
+            116
+          ],
+          "SmartPLS": [
+            118
+          ],
+          "4.1": [
+            119
+          ],
+          "software": [
+            120
+          ],
+          "analyze": [
+            122
+          ],
+          "proposed": [
+            124
+          ],
+          "relationships.": [
+            125
+          ],
+          "findings": [
+            127
+          ],
+          "reveal": [
+            128
+          ],
+          "that": [
+            129,
+            151,
+            201,
+            224
+          ],
+          "each": [
+            137
+          ],
+          "have": [
+            138
+          ],
+          "positive": [
+            140,
+            261
+          ],
+          "significant": [
+            142,
+            180
+          ],
+          "effect": [
+            143,
+            182
+          ],
+          "Mouth.": [
+            148
+          ],
+          "indicates": [
+            150
+          ],
+          "engaging": [
+            152
+          ],
+          "content,": [
+            154,
+            255
+          ],
+          "strong": [
+            155
+          ],
+          "personal": [
+            156
+          ],
+          "involvement": [
+            157
+          ],
+          "fashion,": [
+            159
+          ],
+          "trust": [
+            162
+          ],
+          "collectively": [
+            163
+          ],
+          "encourage": [
+            164
+          ],
+          "share": [
+            167
+          ],
+          "opinions,": [
+            168
+          ],
+          "reviews,": [
+            169
+          ],
+          "recommendations": [
+            171
+          ],
+          "online.": [
+            172
+          ],
+          "Furthermore,": [
+            173
+          ],
+          "demonstrates": [
+            178
+          ],
+          "direct": [
+            181
+          ],
+          "confirming": [
+            187
+          ],
+          "its": [
+            188
+          ],
+          "critical": [
+            189
+          ],
+          "role": [
+            190
+          ],
+          "shaping": [
+            192
+          ],
+          "consumers’": [
+            193,
+            231
+          ],
+          "buying": [
+            194
+          ],
+          "decisions.": [
+            195
+          ],
+          "Importantly,": [
+            196
+          ],
+          "results": [
+            198
+          ],
+          "also": [
+            199
+          ],
+          "show": [
+            200
+          ],
+          "effectively": [
+            206
+          ],
+          "mediates": [
+            207
+          ],
+          "Intention.": [
+            221
+          ],
+          "suggests": [
+            223
+          ],
+          "while": [
+            225
+          ],
+          "these": [
+            226
+          ],
+          "antecedent": [
+            227
+          ],
+          "variables": [
+            228
+          ],
+          "directly": [
+            229
+          ],
+          "enhance": [
+            230
+          ],
+          "perceptions,": [
+            232
+          ],
+          "impact": [
+            234
+          ],
+          "purchase": [
+            236,
+            266
+          ],
+          "intention": [
+            237
+          ],
+          "is": [
+            238
+          ],
+          "substantially": [
+            239
+          ],
+          "strengthened": [
+            240
+          ],
+          "through": [
+            241
+          ],
+          "eWOM": [
+            242,
+            262
+          ],
+          "mechanisms.": [
+            243
+          ],
+          "Overall,": [
+            244
+          ],
+          "highlights": [
+            247
+          ],
+          "strategic": [
+            249
+          ],
+          "importance": [
+            250
+          ],
+          "fostering": [
+            252
+          ],
+          "credible": [
+            253
+          ],
+          "building": [
+            256
+          ],
+          "trust,": [
+            258
+          ],
+          "encouraging": [
+            260
+          ],
+          "stimulate": [
+            264
+          ],
+          "online": [
+            265
+          ],
+          "intentions": [
+            267
+          ],
+          "within": [
+            268
+          ],
+          "media–based": [
+            270
+          ],
+          "markets.": [
+            272
+          ]
+        },
+        "counts_by_year": [],
+        "updated_date": "2026-08-21T09:56:20.448147",
+        "created_date": "2026-03-03T00:00:00"
+      }
+    ],
+    "group_by": []
+  }
+}

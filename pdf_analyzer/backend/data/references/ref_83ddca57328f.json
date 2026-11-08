@@ -1,11 +1,11 @@
 {
   "reference_id": "ref_83ddca57328f",
-  "project_id": "project_20260906_082722_bb902af0",
-  "created_at": "2026-09-06T08:28:52.360663+00:00",
+  "project_id": "project_20260923_134508_bb902af0",
+  "created_at": "2026-09-23T13:46:04.056943+00:00",
   "input": {
     "original_text": "Lu, X., Huang, P., Feng, X., He, Y., A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput. 92(3) (2022) 104.",
     "parsed": {
-      "title": "104",
+      "title": "stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations",
       "authors": [
         {
           "name": "X Lu",
@@ -26,16 +26,11 @@
           "name": "Y He",
           "given": "Y",
           "family": "He"
-        },
-        {
-          "name": "A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput. 92(3)",
-          "given": "A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput.",
-          "family": "92(3)"
         }
       ],
       "year": 2022,
       "reference_type": "journal-article",
-      "journal": null,
+      "journal": "J. Sci. Comput. () 104",
       "publisher": null,
       "volume": null,
       "issue": null,
@@ -47,52 +42,52 @@
   },
   "canonical": {
     "title": {
-      "value": "104",
-      "source": "parsed",
-      "confidence": 0.5,
-      "verification_status": "unverified"
+      "value": "A Stabilized Difference Finite Element Method for the 3D Steady Incompressible Navier-Stokes Equations",
+      "source": "openalex",
+      "confidence": 1.0,
+      "verification_status": "verified"
     },
     "year": {
       "value": 2022,
-      "source": "parsed",
-      "confidence": 0.9,
+      "source": "openalex",
+      "confidence": 1.0,
       "verification_status": "verified"
     },
     "venue": {
-      "value": null,
-      "source": "none",
-      "confidence": 0.0,
-      "verification_status": "unverified"
+      "value": "J. Sci. Comput. () 104",
+      "source": "parsed",
+      "confidence": 0.85,
+      "verification_status": "verified"
     },
     "reference_type": {
       "value": "journal-article",
-      "source": "classifier",
-      "confidence": 0.75,
-      "verification_status": "unverified"
+      "source": "openalex",
+      "confidence": 0.9,
+      "verification_status": "verified"
     },
     "publisher": {
-      "value": null,
-      "source": "none",
-      "confidence": 0.0,
-      "verification_status": "unverified"
+      "value": "Springer Science+Business Media",
+      "source": "openalex",
+      "confidence": 0.9,
+      "verification_status": "verified"
     },
     "volume": null,
     "issue": null,
     "pages": null,
     "abstract": null,
-    "url": null,
+    "url": "https://doi.org/10.1007/s10915-022-01928-2",
     "identifiers": {
       "doi": {
-        "value": null,
-        "source": "none",
-        "confidence": 0.2,
-        "verification_status": "conflict"
+        "value": "10.1007/s10915-022-01928-2",
+        "source": "doi_verifier",
+        "confidence": 1.0,
+        "verification_status": "verified"
       },
       "openalex_id": {
-        "value": null,
+        "value": "https://openalex.org/W4292974224",
         "source": "openalex",
-        "confidence": 0.0,
-        "verification_status": "unverified"
+        "confidence": 1.0,
+        "verification_status": "verified"
       },
       "arxiv_id": {
         "value": null,
@@ -113,292 +108,550 @@
         "verification_status": "unverified"
       },
       "google_scholar_url": {
-        "value": null,
-        "source": "none",
-        "confidence": 0.0,
-        "verification_status": "unverified"
+        "value": "https://scholar.google.com/scholar?q=stabilized%20difference%20finite%20element%20method%20for%20the%203D%20steady%20incompressible%20Navier-Stokes%20equations%20Lu",
+        "source": "google_scholar",
+        "confidence": 1.0,
+        "verification_status": "verified"
       }
     },
     "citation_counts": {
-      "canonical_value": null,
+      "canonical_value": 10,
       "google_scholar": null,
-      "openalex": null,
+      "openalex": 10,
       "crossref": null
     }
   },
   "canonical_authors": [
     {
-      "name": "X Lu",
-      "display_name": "X Lu",
-      "given": "X",
+      "name": "Xiaoli Lu",
+      "display_name": "Xiaoli Lu",
+      "given": "Xiaoli",
       "family": "Lu",
-      "author_id": "",
+      "author_id": "https://openalex.org/A5103503974",
       "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
+        "openalex_id": "https://openalex.org/A5103503974",
+        "orcid": "https://orcid.org/0009-0002-3066-5049",
         "google_scholar_id": null
       },
-      "affiliations": [],
+      "affiliations": [
+        "Xi'an Jiaotong University"
+      ],
       "match_status": "matched",
-      "confidence": 0.75
+      "confidence": 0.95
     },
     {
-      "name": "P Huang",
-      "display_name": "P Huang",
-      "given": "P",
+      "name": "Pengzhan Huang",
+      "display_name": "Pengzhan Huang",
+      "given": "Pengzhan",
       "family": "Huang",
-      "author_id": "",
+      "author_id": "https://openalex.org/A5002555958",
       "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
+        "openalex_id": "https://openalex.org/A5002555958",
+        "orcid": "https://orcid.org/0000-0002-2228-9111",
         "google_scholar_id": null
       },
-      "affiliations": [],
+      "affiliations": [
+        "Xinjiang University"
+      ],
       "match_status": "matched",
-      "confidence": 0.75
+      "confidence": 0.95
     },
     {
-      "name": "X Feng",
-      "display_name": "X Feng",
-      "given": "X",
+      "name": "Xinlong Feng",
+      "display_name": "Xinlong Feng",
+      "given": "Xinlong",
       "family": "Feng",
-      "author_id": "",
+      "author_id": "https://openalex.org/A5028639093",
       "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
+        "openalex_id": "https://openalex.org/A5028639093",
+        "orcid": "https://orcid.org/0000-0002-5354-6424",
         "google_scholar_id": null
       },
-      "affiliations": [],
+      "affiliations": [
+        "Xinjiang University"
+      ],
       "match_status": "matched",
-      "confidence": 0.75
+      "confidence": 0.95
     },
     {
-      "name": "Y He",
-      "display_name": "Y He",
-      "given": "Y",
+      "name": "Yinnian He",
+      "display_name": "Yinnian He",
+      "given": "Yinnian",
       "family": "He",
-      "author_id": "",
+      "author_id": "https://openalex.org/A5100457891",
       "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
+        "openalex_id": "https://openalex.org/A5100457891",
+        "orcid": "https://orcid.org/0000-0003-3402-8493",
         "google_scholar_id": null
       },
-      "affiliations": [],
+      "affiliations": [
+        "Xi'an Jiaotong University"
+      ],
       "match_status": "matched",
-      "confidence": 0.75
-    },
-    {
-      "name": "A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput. 92(3)",
-      "display_name": "A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput. 92(3)",
-      "given": "A stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations. J. Sci. Comput.",
-      "family": "92(3)",
-      "author_id": "",
-      "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
-        "google_scholar_id": null
-      },
-      "affiliations": [],
-      "match_status": "matched",
-      "confidence": 0.75
+      "confidence": 0.95
     }
   ],
   "sources": {
     "openalex": {
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "citation_count": 10,
+      "openalex_id": "https://openalex.org/W4292974224",
+      "doi": "10.1007/s10915-022-01928-2",
+      "url": "https://doi.org/10.1007/s10915-022-01928-2",
+      "pdf_url": null,
+      "raw_file": "data/raw/openalex/394b4421a3a5d202.json",
+      "normalized_file": null,
+      "data": {
+        "title": "A Stabilized Difference Finite Element Method for the 3D Steady Incompressible Navier-Stokes Equations",
+        "display_name": "A Stabilized Difference Finite Element Method for the 3D Steady Incompressible Navier-Stokes Equations",
+        "authors": [
+          {
+            "name": "Xiaoli Lu",
+            "given": "Xiaoli",
+            "family": "Lu",
+            "author_id": "https://openalex.org/A5103503974",
+            "display_name": "Xiaoli Lu",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5103503974",
+              "orcid": "https://orcid.org/0009-0002-3066-5049",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Xi'an Jiaotong University"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Pengzhan Huang",
+            "given": "Pengzhan",
+            "family": "Huang",
+            "author_id": "https://openalex.org/A5002555958",
+            "display_name": "Pengzhan Huang",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5002555958",
+              "orcid": "https://orcid.org/0000-0002-2228-9111",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Xinjiang University"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Xinlong Feng",
+            "given": "Xinlong",
+            "family": "Feng",
+            "author_id": "https://openalex.org/A5028639093",
+            "display_name": "Xinlong Feng",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5028639093",
+              "orcid": "https://orcid.org/0000-0002-5354-6424",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Xinjiang University"
+            ],
+            "countries": [
+              "CN"
+            ]
+          },
+          {
+            "name": "Yinnian He",
+            "given": "Yinnian",
+            "family": "He",
+            "author_id": "https://openalex.org/A5100457891",
+            "display_name": "Yinnian He",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5100457891",
+              "orcid": "https://orcid.org/0000-0003-3402-8493",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Xi'an Jiaotong University"
+            ],
+            "countries": [
+              "CN"
+            ]
+          }
+        ],
+        "year": 2022,
+        "publication_date": "2022-08-01",
+        "journal": "Journal of Scientific Computing",
+        "venue": "Journal of Scientific Computing",
+        "publisher": "Springer Science+Business Media",
+        "reference_type": "journal-article",
+        "volume": "92",
+        "issue": "3",
+        "pages": "",
+        "doi": "10.1007/s10915-022-01928-2",
+        "url": "https://doi.org/10.1007/s10915-022-01928-2",
+        "pdf_url": null,
+        "openalex_id": "https://openalex.org/W4292974224",
+        "citation_count": 10,
+        "cited_by_count": 10,
+        "is_oa": false,
+        "oa_status": "closed",
+        "abstract": null,
+        "topics": [
+          "Advanced Numerical Methods in Computational Mathematics",
+          "Computational Fluid Dynamics and Aerodynamics",
+          "Numerical methods for differential equations"
+        ],
+        "referenced_works_count": 38,
+        "related_works": [
+          "https://openalex.org/W2063054640",
+          "https://openalex.org/W1590663584",
+          "https://openalex.org/W2122608714",
+          "https://openalex.org/W4287186133",
+          "https://openalex.org/W3197759857"
+        ],
+        "source": "openalex",
+        "raw_file": "data/raw/openalex/394b4421a3a5d202.json"
+      }
+    },
+    "crossref": {
       "available": false,
       "matched": false,
       "status": "not_found",
       "confidence": 0.0,
       "citation_count": null,
-      "openalex_id": null,
       "doi": null,
       "url": null,
-      "pdf_url": null,
       "raw_file": null,
-      "normalized_file": null,
-      "data": {}
-    },
-    "crossref": {
-      "available": true,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.2,
-      "citation_count": null,
-      "doi": null,
-      "url": null,
-      "raw_file": "data/raw/crossref/5420e0974ab49217.json",
       "normalized_file": null,
       "data": {}
     },
     "google_scholar": {
       "available": false,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.2,
-      "url": null,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "url": "https://scholar.google.com/scholar?q=stabilized%20difference%20finite%20element%20method%20for%20the%203D%20steady%20incompressible%20Navier-Stokes%20equations%20Lu",
       "cluster_id": null,
       "cited_by_url": null,
       "citation_count": null,
       "versions_count": null,
       "raw_file": null,
-      "normalized_file": null,
-      "data": {}
+      "normalized_file": "data/normalized/google_scholar/4059dcd68c3fdd4c.json",
+      "data": {
+        "title": "stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations",
+        "authors": [
+          {
+            "name": "X Lu",
+            "given": "X",
+            "family": "Lu"
+          },
+          {
+            "name": "P Huang",
+            "given": "P",
+            "family": "Huang"
+          },
+          {
+            "name": "X Feng",
+            "given": "X",
+            "family": "Feng"
+          },
+          {
+            "name": "Y He",
+            "given": "Y",
+            "family": "He"
+          }
+        ],
+        "year": 2022,
+        "journal": "J. Sci. Comput. () 104",
+        "doi": "",
+        "url": "https://scholar.google.com/scholar?q=stabilized%20difference%20finite%20element%20method%20for%20the%203D%20steady%20incompressible%20Navier-Stokes%20equations%20Lu",
+        "citation_count": null,
+        "source": "google_scholar",
+        "scholar_url": "https://scholar.google.com/scholar?q=stabilized%20difference%20finite%20element%20method%20for%20the%203D%20steady%20incompressible%20Navier-Stokes%20equations%20Lu",
+        "available": false,
+        "reason": "SERPAPI_KEY_NOT_CONFIGURED",
+        "raw_file": null,
+        "normalized_file": "data/normalized/google_scholar/4059dcd68c3fdd4c.json"
+      }
     }
   },
   "doi_verification": {
-    "status": "conflict",
-    "canonical_doi": null,
+    "status": "verified",
+    "canonical_doi": "10.1007/s10915-022-01928-2",
     "reconciled_with_arxiv": false,
-    "confidence": 0.2,
-    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "confidence": 1.0,
+    "reason": "Verified with openalex metadata consistency (title_sim=0.99).",
     "conflicts": [
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1299/jsmetokai.2005.54.7",
-        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcp.2015.04.023",
+        "reason": "Metadata mismatch (title_sim=0.72, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1051/vcm/2024005",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1137/080728032",
+        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1136/jitc-2023-sitc2023.0104",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1051/m2an/2015044",
+        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/j.telpol.2025.103073",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcp.2017.02.039",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2139/ssrn.5277548",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s10915-017-0512-x",
+        "reason": "Metadata mismatch (title_sim=0.69, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5414/cn111702cor",
-        "reason": "Metadata mismatch (title_sim=0.10, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1002/(issn)1097-0363",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/s0145-2126(05)80168-7",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcp.2010.11.010",
+        "reason": "Metadata mismatch (title_sim=0.53, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1118/1.3181396",
-        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcp.2016.10.009",
+        "reason": "Metadata mismatch (title_sim=0.61, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4028/www.scientific.net/amm.128-129.661",
-        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1002/num.20333",
+        "reason": "Metadata mismatch (title_sim=0.64, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/bjs/znac269.452",
-        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1155/2012/402490",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s11831-008-9019-9",
+        "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.4208/nmtma.2010.33.1",
+        "reason": "Metadata mismatch (title_sim=0.53, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcp.2018.10.014",
+        "reason": "Metadata mismatch (title_sim=0.63, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.5802/smai-jcm.72",
+        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.cpc.2014.10.026",
+        "reason": "Metadata mismatch (title_sim=0.40, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.cma.2016.03.026",
+        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.cma.2017.06.003",
+        "reason": "Metadata mismatch (title_sim=0.57, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s11071-024-09856-6",
+        "reason": "Metadata mismatch (title_sim=0.52, author_sim=0.25)",
         "status": "conflict"
       }
     ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
-    "overall_confidence": 0.2,
-    "metadata_completeness": 0.5,
-    "doi_verified": false,
+    "overall_confidence": 1.0,
+    "metadata_completeness": 1.0,
+    "doi_verified": true,
     "author_verified": true,
     "conflicts": [
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1299/jsmetokai.2005.54.7",
-        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcp.2015.04.023",
+        "reason": "Metadata mismatch (title_sim=0.72, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1051/vcm/2024005",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1137/080728032",
+        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1136/jitc-2023-sitc2023.0104",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1051/m2an/2015044",
+        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/j.telpol.2025.103073",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcp.2017.02.039",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.2139/ssrn.5277548",
-        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s10915-017-0512-x",
+        "reason": "Metadata mismatch (title_sim=0.69, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.5414/cn111702cor",
-        "reason": "Metadata mismatch (title_sim=0.10, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1002/(issn)1097-0363",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1016/s0145-2126(05)80168-7",
-        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcp.2010.11.010",
+        "reason": "Metadata mismatch (title_sim=0.53, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1118/1.3181396",
-        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcp.2016.10.009",
+        "reason": "Metadata mismatch (title_sim=0.61, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.4028/www.scientific.net/amm.128-129.661",
-        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1002/num.20333",
+        "reason": "Metadata mismatch (title_sim=0.64, author_sim=0.00)",
         "status": "conflict"
       },
       {
         "field": "doi",
-        "provider": "crossref",
-        "rejected_value": "10.1093/bjs/znac269.452",
-        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.00)",
+        "provider": "openalex",
+        "rejected_value": "10.1155/2012/402490",
+        "reason": "Metadata mismatch (title_sim=0.62, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s11831-008-9019-9",
+        "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.4208/nmtma.2010.33.1",
+        "reason": "Metadata mismatch (title_sim=0.53, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jcp.2018.10.014",
+        "reason": "Metadata mismatch (title_sim=0.63, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.5802/smai-jcm.72",
+        "reason": "Metadata mismatch (title_sim=0.54, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.cpc.2014.10.026",
+        "reason": "Metadata mismatch (title_sim=0.40, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.cma.2016.03.026",
+        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.cma.2017.06.003",
+        "reason": "Metadata mismatch (title_sim=0.57, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s11071-024-09856-6",
+        "reason": "Metadata mismatch (title_sim=0.52, author_sim=0.25)",
         "status": "conflict"
       }
     ]
@@ -410,14 +663,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 9.26,
-      "crossref": 58258.2,
-      "openalex": 75387.96
+      "google_scholar": 8.92,
+      "crossref": 29264.95,
+      "openalex": 35343.55
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 10,
-      "openalex": 0
+      "crossref": 0,
+      "openalex": 20
     },
     "errors": {}
   }

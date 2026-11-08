@@ -53,7 +53,7 @@ export default function DocumentGeneratorPage() {
   // Which template the mapping wizard is open for, if any.
   const [mappingType, setMappingType] = useState<string | null>(null);
   const [mappingError, setMappingError] = useState<string | null>(null);
-  const [selectedJournal, setSelectedJournal] = useState<string>("AMISL");
+  const [selectedJournal, setSelectedJournal] = useState<string>("");
 
   const journals = useQuery({
     queryKey: ["document-generator", "journals"],

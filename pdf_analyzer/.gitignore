@@ -1,6 +1,12 @@
 # Environment variables & API keys
 .env
 *.env
+.env.*
+
+# Python virtual environments
+.venv/
+venv/
+env/
 
 # Python caches
 __pycache__/
@@ -8,5 +14,16 @@ __pycache__/
 *.pyo
 .pytest_cache/
 
+# Logs & temp files
+*.log
+*.tmp
+temp/
+
+# User data, local SQLite cache, and XML stores
+backend/data/cache.db*
+backend/data/projects/
+backend/data/xml_store/
+
 # Node
 node_modules/
+

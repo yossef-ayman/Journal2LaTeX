@@ -2,6 +2,7 @@ import os
 import re
 import sqlite3
 import hashlib
+import tempfile
 import threading
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
@@ -21,6 +22,27 @@ DB_PATH = os.path.join(DATA_DIR, "cache.db")
 def _ensure_xml_dirs():
     for d in (XML_STORE_DIR, DOCUMENTS_XML_DIR, SEARCHES_XML_DIR, AUTHORS_XML_DIR, REFERENCES_XML_DIR):
         os.makedirs(d, exist_ok=True)
+
+
+def _atomic_write_text(file_path: str, content: str) -> None:
+    """Safely write XML string to disk atomically using temporary file rename."""
+    parent_dir = os.path.dirname(file_path)
+    os.makedirs(parent_dir, exist_ok=True)
+    temp_name = None
+    try:
+        with tempfile.NamedTemporaryFile("w", dir=parent_dir, delete=False, encoding="utf-8") as tf:
+            temp_name = tf.name
+            tf.write(content)
+            tf.flush()
+            os.fsync(tf.fileno())
+        os.replace(temp_name, file_path)
+    except Exception:
+        if temp_name and os.path.exists(temp_name):
+            try:
+                os.remove(temp_name)
+            except OSError:
+                pass
+        raise
 
 
 def compute_bytes_hash(data: bytes) -> str:
@@ -255,8 +277,7 @@ class XMLStorageEngine:
             r_el.text = safe_xml_text(ref.get("text", ""))
 
         xml_content = prettify_xml(root)
-        with open(xml_path, "w", encoding="utf-8") as f:
-            f.write(xml_content)
+        _atomic_write_text(xml_path, xml_content)
 
         self._upsert_index("document", pdf_hash, xml_path, data.get("title", ""), len(refs_list))
         return xml_path
@@ -410,8 +431,7 @@ class XMLStorageEngine:
                     ET.SubElement(r_el, "format").text = safe_xml_text(r.get("file_format", "PDF"))
 
         xml_content = prettify_xml(root)
-        with open(xml_path, "w", encoding="utf-8") as f:
-            f.write(xml_content)
+        _atomic_write_text(xml_path, xml_content)
 
         self._upsert_index("search", q_hash, xml_path, query, len(combined))
         return xml_path
@@ -520,8 +540,7 @@ class XMLStorageEngine:
             ET.SubElement(topics_el, "topic").text = safe_xml_text(top)
 
         xml_content = prettify_xml(root)
-        with open(xml_path, "w", encoding="utf-8") as f:
-            f.write(xml_content)
+        _atomic_write_text(xml_path, xml_content)
 
         self._upsert_index("author", clean_id, xml_path, profile.get("display_name") or profile.get("name", ""), profile.get("works_count") or 0)
         return xml_path
@@ -541,8 +560,18 @@ class XMLStorageEngine:
             conn.close()
 
     def get_document_xml_raw(self, pdf_hash: str) -> Optional[str]:
-        """Read raw XML string for a cached document."""
-        xml_path = os.path.join(self.documents_xml_dir, f"doc_{pdf_hash}.xml")
+        """Read raw XML string for a cached document with path traversal protection."""
+        clean_h = re.sub(r"[^a-zA-Z0-9_\-]", "", (pdf_hash or "").strip())
+        if not clean_h:
+            return None
+        xml_path = os.path.abspath(os.path.join(self.documents_xml_dir, f"doc_{clean_h}.xml"))
+        docs_dir = os.path.abspath(self.documents_xml_dir)
+        try:
+            if os.path.commonpath([xml_path, docs_dir]) != docs_dir:
+                return None
+        except ValueError:
+            return None
+
         if os.path.exists(xml_path):
             with open(xml_path, "r", encoding="utf-8") as f:
                 return f.read()
@@ -560,20 +589,33 @@ class XMLStorageEngine:
             conn.close()
 
     def get_search_xml_raw(self, query_or_hash: str) -> Optional[str]:
-        """Read raw XML string for a cached search query or hash."""
-        # Try as direct file first
+        """Read raw XML string for a cached search query or hash with path traversal protection."""
         clean_input = (query_or_hash or "").strip()
-        direct_path = os.path.join(self.searches_xml_dir, f"search_{clean_input}.xml")
-        if os.path.exists(direct_path):
-            with open(direct_path, "r", encoding="utf-8") as f:
-                return f.read()
+        if not clean_input:
+            return None
 
-        # Try computing query hash
+        searches_dir = os.path.abspath(self.searches_xml_dir)
+
+        # 1. Try as sanitized direct filename
+        safe_name = re.sub(r"[^a-zA-Z0-9_\-]", "", clean_input)
+        if safe_name:
+            direct_path = os.path.abspath(os.path.join(self.searches_xml_dir, f"search_{safe_name}.xml"))
+            try:
+                if os.path.commonpath([direct_path, searches_dir]) == searches_dir and os.path.exists(direct_path):
+                    with open(direct_path, "r", encoding="utf-8") as f:
+                        return f.read()
+            except ValueError:
+                pass
+
+        # 2. Try computing query hash
         q_hash = compute_query_hash(clean_input)
-        hashed_path = os.path.join(self.searches_xml_dir, f"search_{q_hash}.xml")
-        if os.path.exists(hashed_path):
-            with open(hashed_path, "r", encoding="utf-8") as f:
-                return f.read()
+        hashed_path = os.path.abspath(os.path.join(self.searches_xml_dir, f"search_{q_hash}.xml"))
+        try:
+            if os.path.commonpath([hashed_path, searches_dir]) == searches_dir and os.path.exists(hashed_path):
+                with open(hashed_path, "r", encoding="utf-8") as f:
+                    return f.read()
+        except ValueError:
+            pass
 
         return None
 

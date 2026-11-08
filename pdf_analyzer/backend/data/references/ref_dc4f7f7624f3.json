@@ -1,11 +1,11 @@
 {
   "reference_id": "ref_dc4f7f7624f3",
-  "project_id": "project_20260906_082722_bb902af0",
-  "created_at": "2026-09-06T08:28:47.279263+00:00",
+  "project_id": "project_20260923_134508_bb902af0",
+  "created_at": "2026-09-23T13:46:05.009940+00:00",
   "input": {
     "original_text": "G. M. Vijayalakshmi., P. Roselyn Besi., A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis. Result in control and Optimization, 8 (2022).",
     "parsed": {
-      "title": null,
+      "title": "Result in control and Optimization, 8 (2022)",
       "authors": [
         {
           "name": "G. M. Vijayalakshmi",
@@ -18,14 +18,9 @@
           "family": "Besi"
         },
         {
-          "name": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis. Result in control",
-          "given": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis. Result in",
-          "family": "control"
-        },
-        {
-          "name": "Optimization",
-          "given": "",
-          "family": "Optimization"
+          "name": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis",
+          "given": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton",
+          "family": "Analysis"
         }
       ],
       "year": 2022,
@@ -42,9 +37,9 @@
   },
   "canonical": {
     "title": {
-      "value": "G. M. Vijayalakshmi., P. Roselyn Besi., A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis. Result in control and Optimization, 8 (2022).",
-      "source": "parsed",
-      "confidence": 0.2,
+      "value": "Meta-heuristics for portfolio optimization",
+      "source": "openalex",
+      "confidence": 0.51,
       "verification_status": "unverified"
     },
     "year": {
@@ -74,19 +69,19 @@
     "volume": null,
     "issue": null,
     "pages": null,
-    "abstract": null,
-    "url": null,
+    "abstract": "Abstract Portfolio optimization has been studied extensively by researchers in computer science and finance, with new and novel work frequently published. Traditional methods, such as quadratic programming, are not computationally effective for solving complex portfolio models. For example, portfolio models with constraints that introduce nonlinearity and non-convexity (such as boundary constraints and cardinality constraints) are NP-Hard. As a result, researchers often use meta-heuristic approaches to approximate optimal solutions in an efficient manner. This paper conducts a comprehensive review of over 140 papers that have applied evolutionary and swarm intelligence algorithms to the portfolio optimization problem. These papers are categorized by the type of portfolio optimization problem considered, i.e., unconstrained or constrained, and are further categorized by single-objective and multi-objective approaches. Furthermore, the various portfolio models used, as well as the constraints, objectives, and properties in which they differ, are also discussed in a detailed analysis. Based on the findings of the reviewed work, guidance for future research in portfolio optimization is given. Possible areas for future work include dynamic portfolio optimization, predictive pricing, the further investigation of multi-objective approaches.",
+    "url": "https://doi.org/10.1007/s00500-023-08177-x",
     "identifiers": {
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.0,
-        "verification_status": "missing"
+        "confidence": 0.2,
+        "verification_status": "conflict"
       },
       "openalex_id": {
-        "value": null,
+        "value": "https://openalex.org/W4366771225",
         "source": "openalex",
-        "confidence": 0.0,
+        "confidence": 0.51,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -108,16 +103,16 @@
         "verification_status": "unverified"
       },
       "google_scholar_url": {
-        "value": null,
-        "source": "none",
-        "confidence": 0.0,
-        "verification_status": "unverified"
+        "value": "https://scholar.google.com/scholar?q=Result%20in%20control%20and%20Optimization%2C%208%20%282022%29%20Vijayalakshmi",
+        "source": "google_scholar",
+        "confidence": 1.0,
+        "verification_status": "verified"
       }
     },
     "citation_counts": {
-      "canonical_value": null,
+      "canonical_value": 52,
       "google_scholar": null,
-      "openalex": null,
+      "openalex": 52,
       "crossref": null
     }
   },
@@ -153,25 +148,10 @@
       "confidence": 0.75
     },
     {
-      "name": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis. Result in control",
-      "display_name": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis. Result in control",
-      "given": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis. Result in",
-      "family": "control",
-      "author_id": "",
-      "identifiers": {
-        "openalex_id": null,
-        "orcid": null,
-        "google_scholar_id": null
-      },
-      "affiliations": [],
-      "match_status": "matched",
-      "confidence": 0.75
-    },
-    {
-      "name": "Optimization",
-      "display_name": "Optimization",
-      "given": "",
-      "family": "Optimization",
+      "name": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis",
+      "display_name": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis",
+      "given": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton",
+      "family": "Analysis",
       "author_id": "",
       "identifiers": {
         "openalex_id": null,
@@ -185,18 +165,98 @@
   ],
   "sources": {
     "openalex": {
-      "available": false,
+      "available": true,
       "matched": false,
-      "status": "not_found",
-      "confidence": 0.0,
-      "citation_count": null,
-      "openalex_id": null,
-      "doi": null,
-      "url": null,
-      "pdf_url": null,
-      "raw_file": null,
+      "status": "low_confidence",
+      "confidence": 0.51,
+      "citation_count": 52,
+      "openalex_id": "https://openalex.org/W4366771225",
+      "doi": "10.1007/s00500-023-08177-x",
+      "url": "https://doi.org/10.1007/s00500-023-08177-x",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s00500-023-08177-x.pdf",
+      "raw_file": "data/raw/openalex/67d40575aa6b139d.json",
       "normalized_file": null,
-      "data": {}
+      "data": {
+        "title": "Meta-heuristics for portfolio optimization",
+        "display_name": "Meta-heuristics for portfolio optimization",
+        "authors": [
+          {
+            "name": "Kyle N. Erwin",
+            "given": "Kyle N.",
+            "family": "Erwin",
+            "author_id": "https://openalex.org/A5075201489",
+            "display_name": "Kyle N. Erwin",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5075201489",
+              "orcid": "https://orcid.org/0000-0002-3725-3154",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Stellenbosch University"
+            ],
+            "countries": [
+              "ZA"
+            ]
+          },
+          {
+            "name": "Andries Petrus Engelbrecht",
+            "given": "Andries Petrus",
+            "family": "Engelbrecht",
+            "author_id": "https://openalex.org/A5039197997",
+            "display_name": "Andries Petrus Engelbrecht",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5039197997",
+              "orcid": "https://orcid.org/0000-0002-0242-3539",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Gulf University for Science & Technology",
+              "Stellenbosch University"
+            ],
+            "countries": [
+              "KW",
+              "ZA"
+            ]
+          }
+        ],
+        "year": 2023,
+        "publication_date": "2023-04-21",
+        "journal": "Soft Computing",
+        "venue": "Soft Computing",
+        "publisher": "Springer Science+Business Media",
+        "reference_type": "journal-article",
+        "volume": "27",
+        "issue": "24",
+        "pages": "19045-19073",
+        "doi": "10.1007/s00500-023-08177-x",
+        "url": "https://doi.org/10.1007/s00500-023-08177-x",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s00500-023-08177-x.pdf",
+        "openalex_id": "https://openalex.org/W4366771225",
+        "citation_count": 52,
+        "cited_by_count": 52,
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "abstract": "Abstract Portfolio optimization has been studied extensively by researchers in computer science and finance, with new and novel work frequently published. Traditional methods, such as quadratic programming, are not computationally effective for solving complex portfolio models. For example, portfolio models with constraints that introduce nonlinearity and non-convexity (such as boundary constraints and cardinality constraints) are NP-Hard. As a result, researchers often use meta-heuristic approaches to approximate optimal solutions in an efficient manner. This paper conducts a comprehensive review of over 140 papers that have applied evolutionary and swarm intelligence algorithms to the portfolio optimization problem. These papers are categorized by the type of portfolio optimization problem considered, i.e., unconstrained or constrained, and are further categorized by single-objective and multi-objective approaches. Furthermore, the various portfolio models used, as well as the constraints, objectives, and properties in which they differ, are also discussed in a detailed analysis. Based on the findings of the reviewed work, guidance for future research in portfolio optimization is given. Possible areas for future work include dynamic portfolio optimization, predictive pricing, the further investigation of multi-objective approaches.",
+        "topics": [
+          "Risk and Portfolio Optimization",
+          "Advanced Multi-Objective Optimization Algorithms",
+          "Electric Power System Optimization"
+        ],
+        "referenced_works_count": 145,
+        "related_works": [
+          "https://openalex.org/W3198789915",
+          "https://openalex.org/W2342245948",
+          "https://openalex.org/W2113583687",
+          "https://openalex.org/W2396009620",
+          "https://openalex.org/W3141254748"
+        ],
+        "source": "openalex",
+        "raw_file": "data/raw/openalex/67d40575aa6b139d.json"
+      }
     },
     "crossref": {
       "available": false,
@@ -212,50 +272,362 @@
     },
     "google_scholar": {
       "available": false,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.2,
-      "url": null,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "url": "https://scholar.google.com/scholar?q=Result%20in%20control%20and%20Optimization%2C%208%20%282022%29%20Vijayalakshmi",
       "cluster_id": null,
       "cited_by_url": null,
       "citation_count": null,
       "versions_count": null,
       "raw_file": null,
-      "normalized_file": null,
-      "data": {}
+      "normalized_file": "data/normalized/google_scholar/efc253bd4b139a8f.json",
+      "data": {
+        "title": "Result in control and Optimization, 8 (2022)",
+        "authors": [
+          {
+            "name": "G. M. Vijayalakshmi",
+            "given": "G. M.",
+            "family": "Vijayalakshmi"
+          },
+          {
+            "name": "P. Roselyn Besi",
+            "given": "P. Roselyn",
+            "family": "Besi"
+          },
+          {
+            "name": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton Analysis",
+            "given": "A fractal fractional order model of COVID-19 pandemic using Adams Moulton",
+            "family": "Analysis"
+          }
+        ],
+        "year": 2022,
+        "journal": null,
+        "doi": "",
+        "url": "https://scholar.google.com/scholar?q=Result%20in%20control%20and%20Optimization%2C%208%20%282022%29%20Vijayalakshmi",
+        "citation_count": null,
+        "source": "google_scholar",
+        "scholar_url": "https://scholar.google.com/scholar?q=Result%20in%20control%20and%20Optimization%2C%208%20%282022%29%20Vijayalakshmi",
+        "available": false,
+        "reason": "SERPAPI_KEY_NOT_CONFIGURED",
+        "raw_file": null,
+        "normalized_file": "data/normalized/google_scholar/efc253bd4b139a8f.json"
+      }
     }
   },
   "doi_verification": {
-    "status": "missing",
+    "status": "conflict",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.0,
-    "reason": "No DOI or arXiv identifier present in reference or provider results.",
-    "conflicts": [],
+    "confidence": 0.2,
+    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3322/caac.21731",
+        "reason": "Metadata mismatch (title_sim=0.47, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.2337/dc22-s002",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/eurheartj/ehac237",
+        "reason": "Metadata mismatch (title_sim=0.34, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/access.2022.3142859",
+        "reason": "Metadata mismatch (title_sim=0.42, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1182/blood.2022016867",
+        "reason": "Metadata mismatch (title_sim=0.21, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/eurheartj/ehac262",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s11831-021-09694-4",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1183/13993003.00879-2022",
+        "reason": "Metadata mismatch (title_sim=0.34, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/tie.2012.2194969",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1137/0117039",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41598-022-24303-5",
+        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s00500-023-08177-x",
+        "reason": "Metadata mismatch (title_sim=0.53, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.aej.2022.08.013",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jksuci.2019.12.006",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1155/2022/8455065",
+        "reason": "Metadata mismatch (title_sim=0.40, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/fcell.2021.716853",
+        "reason": "Metadata mismatch (title_sim=0.46, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/fbioe.2022.865820",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41598-023-30911-6",
+        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1145/3575693.3575747",
+        "reason": "Metadata mismatch (title_sim=0.37, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41598-023-37660-6",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
-    "overall_confidence": 0.2,
-    "metadata_completeness": 0.5,
+    "overall_confidence": 1.0,
+    "metadata_completeness": 0.67,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3322/caac.21731",
+        "reason": "Metadata mismatch (title_sim=0.47, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.2337/dc22-s002",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/eurheartj/ehac237",
+        "reason": "Metadata mismatch (title_sim=0.34, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/access.2022.3142859",
+        "reason": "Metadata mismatch (title_sim=0.42, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1182/blood.2022016867",
+        "reason": "Metadata mismatch (title_sim=0.21, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1093/eurheartj/ehac262",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s11831-021-09694-4",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1183/13993003.00879-2022",
+        "reason": "Metadata mismatch (title_sim=0.34, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/tie.2012.2194969",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1137/0117039",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41598-022-24303-5",
+        "reason": "Metadata mismatch (title_sim=0.24, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/s00500-023-08177-x",
+        "reason": "Metadata mismatch (title_sim=0.53, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.aej.2022.08.013",
+        "reason": "Metadata mismatch (title_sim=0.27, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jksuci.2019.12.006",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1155/2022/8455065",
+        "reason": "Metadata mismatch (title_sim=0.40, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/fcell.2021.716853",
+        "reason": "Metadata mismatch (title_sim=0.46, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/fbioe.2022.865820",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41598-023-30911-6",
+        "reason": "Metadata mismatch (title_sim=0.23, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1145/3575693.3575747",
+        "reason": "Metadata mismatch (title_sim=0.37, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41598-023-37660-6",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
-      "crossref",
       "google_scholar",
+      "crossref",
       "openalex"
     ],
     "latency_ms": {
-      "crossref": 1630.54,
-      "google_scholar": 6.65,
-      "openalex": 40027.75
+      "google_scholar": 9.2,
+      "crossref": 3372.74,
+      "openalex": 11024.63
     },
     "candidate_counts": {
-      "crossref": 0,
       "google_scholar": 1,
-      "openalex": 0
+      "crossref": 0,
+      "openalex": 20
     },
     "errors": {}
   }

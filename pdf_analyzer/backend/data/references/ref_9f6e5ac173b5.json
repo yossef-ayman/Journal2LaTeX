@@ -1,11 +1,11 @@
 {
   "reference_id": "ref_9f6e5ac173b5",
-  "project_id": "project_20260906_082722_bb902af0",
-  "created_at": "2026-09-06T08:29:00.967523+00:00",
+  "project_id": "project_20260923_134508_bb902af0",
+  "created_at": "2026-09-23T13:46:00.724037+00:00",
   "input": {
     "original_text": "Samad, S.A., Islam, M.T., Tomal, S.T.H., Biswas, M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh. Int. J. Sci. Manag. Stud. 3(2) (2020) 36–48.",
     "parsed": {
-      "title": "36–48",
+      "title": "Int",
       "authors": [
         {
           "name": "S.A Samad",
@@ -23,14 +23,14 @@
           "family": "Tomal"
         },
         {
-          "name": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh. Int. J. Sci. Manag. Stud. 3(2) Biswas",
-          "given": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh. Int. J. Sci. Manag. Stud. 3(2)",
+          "name": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh Biswas",
+          "given": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh",
           "family": "Biswas"
         }
       ],
       "year": 2020,
       "reference_type": "journal-article",
-      "journal": null,
+      "journal": "J. Sci Manag Stud () 36–48",
       "publisher": null,
       "volume": null,
       "issue": null,
@@ -42,10 +42,10 @@
   },
   "canonical": {
     "title": {
-      "value": "36–48",
-      "source": "google_scholar",
-      "confidence": 1.0,
-      "verification_status": "verified"
+      "value": "Int",
+      "source": "parsed",
+      "confidence": 0.5,
+      "verification_status": "unverified"
     },
     "year": {
       "value": 2020,
@@ -54,10 +54,10 @@
       "verification_status": "verified"
     },
     "venue": {
-      "value": null,
-      "source": "none",
-      "confidence": 0.0,
-      "verification_status": "unverified"
+      "value": "J. Sci Manag Stud () 36–48",
+      "source": "parsed",
+      "confidence": 0.85,
+      "verification_status": "verified"
     },
     "reference_type": {
       "value": "journal-article",
@@ -75,18 +75,18 @@
     "issue": null,
     "pages": null,
     "abstract": null,
-    "url": "https://scholar.google.com/scholar?q=36%E2%80%9348%20Samad",
+    "url": null,
     "identifiers": {
       "doi": {
         "value": null,
         "source": "none",
-        "confidence": 0.0,
-        "verification_status": "missing"
+        "confidence": 0.2,
+        "verification_status": "conflict"
       },
       "openalex_id": {
         "value": null,
         "source": "openalex",
-        "confidence": 0.0,
+        "confidence": 0.2,
         "verification_status": "unverified"
       },
       "arxiv_id": {
@@ -108,10 +108,10 @@
         "verification_status": "unverified"
       },
       "google_scholar_url": {
-        "value": "https://scholar.google.com/scholar?q=36%E2%80%9348%20Samad",
-        "source": "google_scholar",
-        "confidence": 1.0,
-        "verification_status": "verified"
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
       }
     },
     "citation_counts": {
@@ -168,9 +168,9 @@
       "confidence": 0.75
     },
     {
-      "name": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh. Int. J. Sci. Manag. Stud. 3(2) Biswas",
-      "display_name": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh. Int. J. Sci. Manag. Stud. 3(2) Biswas",
-      "given": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh. Int. J. Sci. Manag. Stud. 3(2)",
+      "name": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh Biswas",
+      "display_name": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh Biswas",
+      "given": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh",
       "family": "Biswas",
       "author_id": "",
       "identifiers": {
@@ -185,16 +185,16 @@
   ],
   "sources": {
     "openalex": {
-      "available": false,
+      "available": true,
       "matched": false,
       "status": "not_found",
-      "confidence": 0.0,
+      "confidence": 0.2,
       "citation_count": null,
       "openalex_id": null,
       "doi": null,
       "url": null,
       "pdf_url": null,
-      "raw_file": null,
+      "raw_file": "data/raw/openalex/8400137e9a486c14.json",
       "normalized_file": null,
       "data": {}
     },
@@ -212,69 +212,176 @@
     },
     "google_scholar": {
       "available": false,
-      "matched": true,
-      "status": "matched",
-      "confidence": 1.0,
-      "url": "https://scholar.google.com/scholar?q=36%E2%80%9348%20Samad",
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.2,
+      "url": null,
       "cluster_id": null,
       "cited_by_url": null,
       "citation_count": null,
       "versions_count": null,
       "raw_file": null,
-      "normalized_file": "data/normalized/google_scholar/a7d0e8c67252afe7.json",
-      "data": {
-        "title": "36–48",
-        "authors": [
-          {
-            "name": "S.A Samad",
-            "given": "S.A",
-            "family": "Samad"
-          },
-          {
-            "name": "M.T Islam",
-            "given": "M.T",
-            "family": "Islam"
-          },
-          {
-            "name": "S.T.H Tomal",
-            "given": "S.T.H",
-            "family": "Tomal"
-          },
-          {
-            "name": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh. Int. J. Sci. Manag. Stud. 3(2) Biswas",
-            "given": "M.: Mathematical assessment of the dynamical model of smoking tobacco epidemic in Bangladesh. Int. J. Sci. Manag. Stud. 3(2)",
-            "family": "Biswas"
-          }
-        ],
-        "year": 2020,
-        "journal": null,
-        "doi": "",
-        "url": "https://scholar.google.com/scholar?q=36%E2%80%9348%20Samad",
-        "citation_count": null,
-        "source": "google_scholar",
-        "scholar_url": "https://scholar.google.com/scholar?q=36%E2%80%9348%20Samad",
-        "available": false,
-        "reason": "SERPAPI_KEY_NOT_CONFIGURED",
-        "raw_file": null,
-        "normalized_file": "data/normalized/google_scholar/a7d0e8c67252afe7.json"
-      }
+      "normalized_file": null,
+      "data": {}
     }
   },
   "doi_verification": {
-    "status": "missing",
+    "status": "conflict",
     "canonical_doi": null,
     "reconciled_with_arxiv": false,
-    "confidence": 0.0,
-    "reason": "No DOI or arXiv identifier present in reference or provider results.",
-    "conflicts": [],
+    "confidence": 0.2,
+    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1172/jci200319246",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1136/gutjnl-2015-310912",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0002-9149(02)02612-7",
+        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1079/bjn20041213",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jare.2019.03.004",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41573-020-0090-8",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1056/nejmoa1314981",
+        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0021-9150(00)00676-6",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jhep.2014.12.012",
+        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.promfg.2017.07.198",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
     "unverified_dois": []
   },
   "quality_and_conflicts": {
-    "overall_confidence": 1.0,
-    "metadata_completeness": 0.5,
+    "overall_confidence": 0.2,
+    "metadata_completeness": 0.67,
     "doi_verified": false,
     "author_verified": true,
-    "conflicts": []
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1172/jci200319246",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1136/gutjnl-2015-310912",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0002-9149(02)02612-7",
+        "reason": "Metadata mismatch (title_sim=0.04, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1079/bjn20041213",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jare.2019.03.004",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1038/s41573-020-0090-8",
+        "reason": "Metadata mismatch (title_sim=0.11, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1056/nejmoa1314981",
+        "reason": "Metadata mismatch (title_sim=0.09, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/s0021-9150(00)00676-6",
+        "reason": "Metadata mismatch (title_sim=0.06, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.jhep.2014.12.012",
+        "reason": "Metadata mismatch (title_sim=0.13, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.promfg.2017.07.198",
+        "reason": "Metadata mismatch (title_sim=0.08, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
   },
   "telemetry": {
     "providers_queried": [
@@ -283,14 +390,14 @@
       "openalex"
     ],
     "latency_ms": {
-      "google_scholar": 6.92,
-      "crossref": 59753.74,
-      "openalex": 85859.7
+      "google_scholar": 9.31,
+      "crossref": 29810.07,
+      "openalex": 33576.97
     },
     "candidate_counts": {
       "google_scholar": 1,
       "crossref": 0,
-      "openalex": 0
+      "openalex": 10
     },
     "errors": {}
   }

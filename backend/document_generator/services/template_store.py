@@ -36,6 +36,68 @@ logger = logging.getLogger("document_generator.template_store")
 # fail a whole batch.
 _REQUIRED_DOCX_ENTRIES = ("word/document.xml", "[Content_Types].xml")
 
+JOURNAL_ALIASES: Dict[str, List[str]] = {
+    "AMIS": ["AMIS", "AMISL"],
+    "AMISL": ["AMISL", "AMIS"],
+    "JSAP": ["JSAP", "JSAPL"],
+    "JSAPL": ["JSAPL", "JSAP"],
+    "PDFA": ["PDFA", "PFDA"],
+    "PFDA": ["PFDA", "PDFA"],
+    "THINFILM": ["THINFILM", "THIN_FILM"],
+    "THIN_FILM": ["THIN_FILM", "THINFILM"],
+}
+
+JOURNAL_NAMES: Dict[str, str] = {
+    "AMIS": "Applied Mathematics & Information Sciences",
+    "AMISL": "Applied Mathematics & Information Sciences (AMIS)",
+    "JSAP": "Journal of Statistics Applications & Probability",
+    "JSAPL": "Journal of Statistics Applications & Probability (JSAP)",
+    "PDFA": "Progress in Fractional Differentiation and Applications (PDFA)",
+    "PFDA": "Progress in Fractional Differentiation and Applications (PDFA)",
+    "THINFILM": "International Journal of Thin Film Science and Technology (THINFILM)",
+    "THIN_FILM": "International Journal of Thin Film Science and Technology (THINFILM)",
+    "IJAB": "International Journal of Advanced Biomedicine",
+    "IJIRYE": "International Journal of Inspiration Resilience Youth Econom",
+    "IJNC": "International Journal of Nanomaterials and Chemistry",
+    "IJNHP": "International Journal of New Horizons in Physics",
+    "JANS": "Journal of Applied Nutritional Sciences",
+    "JANT": "Journal of Analysis Number Theory",
+    "JEHE": "Journal of Ecology of Health Environment",
+    "JNAM": "Journal of Nanotechnology Advanced Materials",
+    "JRNA": "Journal of Radiation and Nuclear Applications",
+    "LNSSH": "Lecture Notes in Social Sciences and Humanities Book series",
+    "MSL": "Mathematical Sciences Letters",
+    "NCMSE": "Numerical and Computational Methods in Sciences and Engineer",
+    "OOE": "Organo Opto Electronics",
+    "QIR": "Quantum Information Review",
+    "QPL": "Quantum Physics Letters",
+    "SJM": "Sohag Journal of Mathematics",
+    "WEFE": "Water Energy Food and Environment",
+    "WRPSJ": "World Research of Political Science Journal",
+}
+
+
+def _find_template_file(journal_dir: Path, key: str) -> Optional[Path]:
+    """Find the best matching template file for a key in a journal directory."""
+    if not journal_dir.is_dir():
+        return None
+    files = [f for f in journal_dir.glob("*.docx") if not f.name.startswith("~$")]
+    if not files:
+        return None
+
+    preferred_prefix = "acceptance_" if key == "acceptance" else "invoice_"
+    for f in files:
+        if f.name.lower().startswith(preferred_prefix):
+            return f
+
+    target_needles = ["acceptance", "accept", "accep"] if key == "acceptance" else ["invoice", "inv"]
+    for f in files:
+        name_lower = f.name.lower()
+        if any(needle in name_lower for needle in target_needles):
+            return f
+
+    return None
+
 
 class TemplateStoreError(Exception):
     """Raised when a template cannot be stored or read."""
@@ -55,40 +117,60 @@ class TemplateStore:
     # Paths
     # ------------------------------------------------------------------ #
 
+    def _find_journal_dir(self, journal_code: str) -> Optional[Path]:
+        """Find the journal directory, checking aliases if needed."""
+        direct = self.templates_dir / journal_code
+        if direct.is_dir():
+            return direct
+        for alias in JOURNAL_ALIASES.get(journal_code, []):
+            candidate = self.templates_dir / alias
+            if candidate.is_dir():
+                return candidate
+        return None
+
     def template_path(self, key: str, journal_code: Optional[str] = None) -> Path:
         """Active slot path for a document type, optionally for a specific journal."""
         if not document_types.is_known(key):
             raise TemplateStoreError(f"Unknown document type: {key}")
 
         if journal_code:
-            journal_dir = self.templates_dir / journal_code
-            if journal_dir.is_dir():
-                target_prefix = "acceptance" if key == "acceptance" else "invoice"
-                for f in journal_dir.glob("*.docx"):
-                    if not f.name.startswith("~$") and target_prefix in f.name.lower():
-                        return f
+            journal_dir = self._find_journal_dir(journal_code)
+            if journal_dir:
+                found = _find_template_file(journal_dir, key)
+                if found:
+                    return found
 
         default_path = self.templates_dir / f"{key}.docx"
         if not default_path.is_file() and journal_code:
-            journal_dir = self.templates_dir / journal_code
-            if journal_dir.is_dir():
-                target_prefix = "acceptance" if key == "acceptance" else "invoice"
-                for f in journal_dir.glob("*.docx"):
-                    if not f.name.startswith("~$") and target_prefix in f.name.lower():
-                        return f
+            journal_dir = self._find_journal_dir(journal_code)
+            if journal_dir:
+                found = _find_template_file(journal_dir, key)
+                if found:
+                    return found
         return default_path
 
     def _metadata_path(self, key: str, journal_code: Optional[str] = None) -> Path:
-        if journal_code and (self.templates_dir / journal_code).is_dir():
-            return self.templates_dir / journal_code / f"{key}.json"
+        if journal_code:
+            journal_dir = self._find_journal_dir(journal_code)
+            if journal_dir:
+                return journal_dir / f"{key}.json"
         return self.templates_dir / f"{key}.json"
 
     def mapping_path(self, key: str, journal_code: Optional[str] = None) -> Path:
         """Where the saved field mapping for a slot lives."""
         if not document_types.is_known(key):
             raise TemplateStoreError(f"Unknown document type: {key}")
-        if journal_code and (self.templates_dir / journal_code).is_dir():
-            return self.templates_dir / journal_code / f"{key}.mapping.json"
+        if journal_code:
+            journal_dir = self._find_journal_dir(journal_code)
+            if journal_dir:
+                direct_map = journal_dir / f"{key}.mapping.json"
+                if direct_map.is_file():
+                    return direct_map
+                for alias in JOURNAL_ALIASES.get(journal_code, []):
+                    alias_map = self.templates_dir / alias / f"{key}.mapping.json"
+                    if alias_map.is_file():
+                        return alias_map
+                return direct_map
         return self.templates_dir / f"{key}.mapping.json"
 
     def has_template(self, key: str, journal_code: Optional[str] = None) -> bool:
@@ -109,16 +191,16 @@ class TemplateStore:
                 acc_path = self.template_path("acceptance", child.name)
                 inv_path = self.template_path("invoice", child.name)
                 
-                # Derive human-readable name from filename if available
-                name = child.name
-                if acc_path.is_file():
-                    stem = acc_path.stem
-                    if stem.startswith("Acceptance_"):
-                        name = stem[len("Acceptance_"):].replace("_", " ").strip()
-                elif inv_path.is_file():
-                    stem = inv_path.stem
-                    if stem.startswith("Invoice_"):
-                        name = stem[len("Invoice_"):].replace("_", " ").strip()
+                name = JOURNAL_NAMES.get(child.name)
+                if not name:
+                    if acc_path.is_file():
+                        stem = acc_path.stem
+                        if stem.startswith("Acceptance_"):
+                            name = stem[len("Acceptance_"):].replace("_", " ").strip()
+                    elif inv_path.is_file():
+                        stem = inv_path.stem
+                        if stem.startswith("Invoice_"):
+                            name = stem[len("Invoice_"):].replace("_", " ").strip()
 
                 journals.append({
                     "code": child.name,
@@ -278,33 +360,62 @@ class TemplateStore:
             from document_generator.services import document_inspector
             insp = document_inspector.inspect(tmpl_path, key)
             mappings: List[FieldMapping] = []
+            seen_fields: set[str] = set()
+
             for idx, seg in enumerate(insp.segments):
                 txt = seg.text
-                if "##" in txt:
-                    prev_txt = insp.segments[idx - 1].text if idx > 0 else ""
-                    combined = f"{prev_txt} {txt}".lower()
-                    field = None
-                    if "invoice no" in combined or "invoice number" in combined:
-                        field = "INVOICE_NUMBER"
-                    elif "ref" in combined:
-                        field = "REFERENCE_NUMBER"
-                    elif "title" in combined:
-                        field = "TITLE"
-                    elif "author" in combined:
-                        field = "AUTHORS"
-                    elif "accepted" in combined or "date" in combined:
-                        field = "ACCEPTANCE_DATE"
-                    elif "deadline" in combined:
-                        field = "DEADLINE"
-                    elif "discount" in combined:
-                        field = "DISCOUNT"
-                    elif "total charge in us dollars" in combined or "total charge in dollars" in combined:
-                        field = "TOTAL_CHARGE_USD"
-                    elif "total charge" in combined or "fees" in combined or "fee" in combined:
-                        field = "TOTAL_CHARGE"
+                if "##" not in txt:
+                    continue
 
-                    if field:
-                        mappings.append(FieldMapping(field=field, text=txt, occurrences=1))
+                txt_lower = txt.lower()
+                field = None
+
+                # 1. Check segment's own text first (prevents previous segment label poisoning)
+                if "invoice no" in txt_lower or "invoice number" in txt_lower:
+                    field = "INVOICE_NUMBER"
+                elif "total charge in us dollars" in txt_lower or "total charge in dollars" in txt_lower:
+                    field = "TOTAL_CHARGE_USD"
+                elif "discount" in txt_lower:
+                    field = "DISCOUNT"
+                elif "tot charge" in txt_lower or "total charge" in txt_lower or "total amount" in txt_lower:
+                    field = "TOTAL_CHARGE"
+                elif "deadline" in txt_lower or "dealine" in txt_lower:
+                    field = "DEADLINE"
+                elif "author" in txt_lower:
+                    field = "AUTHORS"
+                elif "title" in txt_lower:
+                    field = "TITLE"
+                elif "accepted" in txt_lower or "date" in txt_lower:
+                    field = "ACCEPTANCE_DATE"
+                elif "ref" in txt_lower:
+                    field = "REFERENCE_NUMBER"
+
+                # 2. Fall back to previous segment only if segment is bare '##'
+                if not field and idx > 0:
+                    prev_lower = insp.segments[idx - 1].text.lower()
+                    if "invoice no" in prev_lower or "invoice number" in prev_lower:
+                        field = "INVOICE_NUMBER"
+                    elif "total charge in us dollars" in prev_lower or "total charge in dollars" in prev_lower:
+                        field = "TOTAL_CHARGE_USD"
+                    elif "discount" in prev_lower:
+                        field = "DISCOUNT"
+                    elif "tot charge" in prev_lower or "total charge" in prev_lower or "total amount" in prev_lower:
+                        field = "TOTAL_CHARGE"
+                    elif "deadline" in prev_lower or "dealine" in prev_lower:
+                        field = "DEADLINE"
+                    elif "author" in prev_lower:
+                        field = "AUTHORS"
+                    elif "title" in prev_lower:
+                        field = "TITLE"
+                    elif "accepted" in prev_lower or "date" in prev_lower:
+                        field = "ACCEPTANCE_DATE"
+                    elif "ref" in prev_lower:
+                        field = "REFERENCE_NUMBER"
+
+                if field and field not in seen_fields:
+                    mappings.append(FieldMapping(field=field, text=txt, occurrences=1))
+                    seen_fields.add(field)
+
             if mappings:
                 return TemplateMapping(document_type=key, mappings=mappings)
         except Exception as exc:

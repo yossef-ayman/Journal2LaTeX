@@ -1,0 +1,40 @@
+{
+  "template_id": "PFDA",
+  "name": "PFDA",
+  "display_name": "Progress in Fractional Differentiation and Applications (NSP)",
+  "journal_title": "Progress in Fractional Differentiation and Applications",
+  "publisher": "Natural Sciences Publishing",
+  "doi_prefix": "http://dx.doi.org/10.18576/pfda",
+  "entry_file": "template.tex",
+  "class_file": "NSP1.cls",
+  "supported_features": {
+    "author_biographies": true,
+    "double_column": true,
+    "custom_headers": true
+  },
+  "class_provides_header": true,
+  "rules": {
+    "citation": {
+      "style": "numeric",
+      "command": "cite"
+    },
+    "biography": {
+      "layouts": [
+        "minipage",
+        "plain"
+      ],
+      "photo_width_in": 0.87,
+      "photo_height_in": 1.06
+    }
+  },
+  "defaults": {
+    "volume": "12",
+    "issue": "3",
+    "year": "2026",
+    "received_date": "---",
+    "revised_date": "---",
+    "accepted_date": "---",
+    "published_date": "---",
+    "doi": "http://dx.doi.org/10.18576/pfda/120301"
+  }
+}

@@ -703,7 +703,11 @@ async def analyze_pdf(file: UploadFile = File(...), enrich_references: bool = Fa
         raise HTTPException(status_code=400, detail="Only PDF files are supported.")
         
     try:
-        file_bytes = await file.read()
+        try:
+            file_bytes = await file.read()
+        finally:
+            await file.close()
+
         sha256_hash = hashlib.sha256(file_bytes).hexdigest()
 
         # 1. Check local XML cache first - 0 parsing, 0 tokens, 0ms!
@@ -713,9 +717,12 @@ async def analyze_pdf(file: UploadFile = File(...), enrich_references: bool = Fa
                 cached_results["project_id"] = f"project_cached_{sha256_hash[:8]}"
             return JSONResponse(content=cached_results)
 
+        # Parse PDF content and guarantee document handle is immediately closed
         doc = fitz.open(stream=file_bytes, filetype="pdf")
-        
-        analysis_results = analyze_pdf_content(doc)
+        try:
+            analysis_results = analyze_pdf_content(doc)
+        finally:
+            doc.close()
         
         # Deterministic project ID
         timestamp_str = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
@@ -769,7 +776,6 @@ async def analyze_pdf(file: UploadFile = File(...), enrich_references: bool = Fa
         }
         storage.save_project(project_id, project_record)
         
-        doc.close()
         return JSONResponse(content=analysis_results)
         
     except Exception as e:

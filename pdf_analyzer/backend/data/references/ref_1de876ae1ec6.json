@@ -1,7 +1,7 @@
 {
   "reference_id": "ref_1de876ae1ec6",
   "project_id": "project_cached_a6c435a6",
-  "created_at": "2026-09-06T10:25:19.736844+00:00",
+  "created_at": "2026-09-07T09:47:54.809010+00:00",
   "input": {
     "original_text": "El-Shahat, T.M., Abdel-Khalek, S., Abdel-Aty, M., Obada, A.-S.F. Aspects on entropy squeezing of a two-level atom in a squeezed vacuum, Chaos Solitons and Fractals, 2003, 18(2), pp. 289–298 DOI: https://doi.org/10.1016/S0960-0779(02)00652-5",
     "parsed": {
@@ -128,7 +128,7 @@
       "canonical_value": 41,
       "google_scholar": null,
       "openalex": 41,
-      "crossref": null
+      "crossref": 39
     }
   },
   "canonical_authors": [
@@ -335,16 +335,60 @@
       }
     },
     "crossref": {
-      "available": false,
-      "matched": false,
-      "status": "not_found",
-      "confidence": 0.0,
-      "citation_count": null,
-      "doi": null,
-      "url": null,
-      "raw_file": null,
+      "available": true,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "citation_count": 39,
+      "doi": "10.1016/s0960-0779(02)00652-5",
+      "url": "https://doi.org/10.1016/s0960-0779(02)00652-5",
+      "raw_file": "data/raw/crossref/52e713b05cc9836f.json",
       "normalized_file": null,
-      "data": {}
+      "data": {
+        "title": "Aspects on entropy squeezing of a two-level atom in a squeezed vacuum",
+        "authors": [
+          {
+            "name": "T.M. El-Shahat",
+            "given": "T.M.",
+            "family": "El-Shahat",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "S. Abdel-Khalek",
+            "given": "S.",
+            "family": "Abdel-Khalek",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "M. Abdel-Aty",
+            "given": "M.",
+            "family": "Abdel-Aty",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          },
+          {
+            "name": "A.-S.F. Obada",
+            "given": "A.-S.F.",
+            "family": "Obada",
+            "author_id": "",
+            "source": "crossref",
+            "author_match_status": "ambiguous"
+          }
+        ],
+        "year": 2003,
+        "journal": "Chaos, Solitons &amp; Fractals",
+        "doi": "10.1016/s0960-0779(02)00652-5",
+        "url": "https://doi.org/10.1016/s0960-0779(02)00652-5",
+        "openalex_id": "",
+        "citation_count": 39,
+        "source": "crossref",
+        "raw_file": "data/raw/crossref/52e713b05cc9836f.json"
+      }
     },
     "google_scholar": {
       "available": false,
@@ -419,6 +463,13 @@
         "rejected_value": "10.1016/s0960-0779(02)00652-5",
         "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.93)",
         "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/s0960-0779(02)00652-5",
+        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.93)",
+        "status": "conflict"
       }
     ],
     "unverified_dois": []
@@ -435,24 +486,31 @@
         "rejected_value": "10.1016/s0960-0779(02)00652-5",
         "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.93)",
         "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "crossref",
+        "rejected_value": "10.1016/s0960-0779(02)00652-5",
+        "reason": "Metadata mismatch (title_sim=0.07, author_sim=0.93)",
+        "status": "conflict"
       }
     ]
   },
   "telemetry": {
     "providers_queried": [
       "google_scholar",
-      "crossref",
-      "openalex"
+      "openalex",
+      "crossref"
     ],
     "latency_ms": {
-      "google_scholar": 9.33,
-      "crossref": 91513.83,
-      "openalex": 96550.1
+      "google_scholar": 11.67,
+      "openalex": 61048.3,
+      "crossref": 61234.35
     },
     "candidate_counts": {
       "google_scholar": 1,
-      "crossref": 0,
-      "openalex": 1
+      "openalex": 1,
+      "crossref": 1
     },
     "errors": {}
   }

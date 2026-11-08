@@ -136,18 +136,51 @@ def _substitute_paragraph(
             spans.append((start, end, replacement))
 
     if "##" in text and not spans:
-        combined = f"{prev_text} {text}".lower()
+        txt_l = text.lower()
+        prev_l = prev_text.lower()
         target_val = None
-        if "total charge in us dollars" in combined or "total charge in dollars" in combined:
+
+        # Check current text first to avoid poisoning from previous paragraph
+        if "total charge in us dollars" in txt_l or "total charge in dollars" in txt_l:
             target_val = values.get("TOTAL_CHARGE_USD") or values.get("FEE") or values.get("TOTAL_CHARGE")
-        elif "total charge" in combined or "fees" in combined or "total amount" in combined:
-            target_val = values.get("TOTAL_CHARGE") or values.get("TOTAL") or values.get("FEE")
-        elif "discount" in combined:
+        elif "discount" in txt_l:
             target_val = values.get("DISCOUNT") or "$0"
-        elif "ref" in combined:
-            target_val = values.get("REFERENCE_NUMBER") or values.get("REF_NUMBER")
-        elif "invoice no" in combined or "invoice number" in combined:
+        elif "tot charge" in txt_l or "total charge" in txt_l or "fees" in txt_l or "fee" in txt_l or "total amount" in txt_l:
+            target_val = values.get("TOTAL_CHARGE") or values.get("TOTAL") or values.get("FEE")
+        elif "deadline" in txt_l or "dealine" in txt_l:
+            target_val = values.get("DEADLINE") or values.get("DUE_DATE")
+        elif "author" in txt_l:
+            target_val = values.get("AUTHORS")
+        elif "title" in txt_l:
+            target_val = values.get("TITLE")
+        elif "accepted" in txt_l or "date" in txt_l:
+            target_val = values.get("ACCEPTANCE_DATE") or values.get("DATE")
+        elif "invoice no" in txt_l or "invoice number" in txt_l:
             target_val = values.get("INVOICE_NUMBER") or values.get("REFERENCE_NUMBER")
+        elif "ref" in txt_l:
+            target_val = values.get("REFERENCE_NUMBER") or values.get("REF_NUMBER")
+
+        # Fallback to combined if bare
+        if not target_val:
+            combined = f"{prev_l} {txt_l}"
+            if "total charge in us dollars" in combined or "total charge in dollars" in combined:
+                target_val = values.get("TOTAL_CHARGE_USD") or values.get("FEE") or values.get("TOTAL_CHARGE")
+            elif "discount" in combined:
+                target_val = values.get("DISCOUNT") or "$0"
+            elif "tot charge" in combined or "total charge" in combined or "fees" in combined or "fee" in combined or "total amount" in combined:
+                target_val = values.get("TOTAL_CHARGE") or values.get("TOTAL") or values.get("FEE")
+            elif "deadline" in combined or "dealine" in combined:
+                target_val = values.get("DEADLINE") or values.get("DUE_DATE")
+            elif "author" in combined:
+                target_val = values.get("AUTHORS")
+            elif "title" in combined:
+                target_val = values.get("TITLE")
+            elif "accepted" in combined or "date" in combined:
+                target_val = values.get("ACCEPTANCE_DATE") or values.get("DATE")
+            elif "invoice no" in combined or "invoice number" in combined:
+                target_val = values.get("INVOICE_NUMBER") or values.get("REFERENCE_NUMBER")
+            elif "ref" in combined:
+                target_val = values.get("REFERENCE_NUMBER") or values.get("REF_NUMBER")
 
         if target_val:
             import re

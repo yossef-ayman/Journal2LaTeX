@@ -1,0 +1,625 @@
+{
+  "reference_id": "ref_805d28d1b829",
+  "project_id": "project_20260923_133710_89b7f4f3",
+  "created_at": "2026-09-23T13:37:43.689698+00:00",
+  "input": {
+    "original_text": ". Dikov, G., Bayer, J., (2019). Bayesian learning of neural network architectures. In: The 22nd International Conference on Artificial Intelligence and Statistics. PMLR, pp. 730–738. PMLR 89:730-738, 2019.",
+    "parsed": {
+      "title": "Bayesian learning of neural network architectures",
+      "authors": [
+        {
+          "name": "G . Dikov",
+          "given": "G",
+          "family": ". Dikov"
+        },
+        {
+          "name": "J Bayer",
+          "given": "J",
+          "family": "Bayer"
+        }
+      ],
+      "year": 2019,
+      "reference_type": "proceedings-article",
+      "journal": "In: The 22nd International Conference on Artificial Intelligence and Statistics. PMLR, –738. PMLR 89",
+      "publisher": null,
+      "volume": null,
+      "issue": null,
+      "pages": "730–738",
+      "doi": null,
+      "isbn": null,
+      "arxiv_id": null
+    }
+  },
+  "canonical": {
+    "title": {
+      "value": "BayesNAS: A Bayesian Approach for Neural Architecture Search",
+      "source": "openalex",
+      "confidence": 0.53,
+      "verification_status": "unverified"
+    },
+    "year": {
+      "value": 2019,
+      "source": "parsed",
+      "confidence": 0.9,
+      "verification_status": "verified"
+    },
+    "venue": {
+      "value": "In: The 22nd International Conference on Artificial Intelligence and Statistics. PMLR, –738. PMLR 89",
+      "source": "parsed",
+      "confidence": 0.85,
+      "verification_status": "verified"
+    },
+    "reference_type": {
+      "value": "proceedings-article",
+      "source": "classifier",
+      "confidence": 0.75,
+      "verification_status": "unverified"
+    },
+    "publisher": {
+      "value": null,
+      "source": "none",
+      "confidence": 0.0,
+      "verification_status": "unverified"
+    },
+    "volume": null,
+    "issue": null,
+    "pages": "730–738",
+    "abstract": "One-Shot Neural Architecture Search (NAS) is a promising method to significantly reduce search time without any separate training. It can be treated as a Network Compression problem on the architecture parameters from an over-parameterized network. However, there are two issues associated with most one-shot NAS methods. First, dependencies between a node and its predecessors and successors are often disregarded which result in improper treatment over zero operations. Second, architecture parameters pruning based on their magnitude is questionable. In this paper, we employ the classic Bayesian learning approach to alleviate these two issues by modeling architecture parameters using hierarchical automatic relevance determination (HARD) priors. Unlike other NAS methods, we train the over-parameterized network for only one epoch then update the architecture. Impressively, this enabled us to find the architecture on CIFAR-10 within only 0.2 GPU days using a single GPU. Competitive performance can be also achieved by transferring to ImageNet. As a byproduct, our approach can be applied directly to compress convolutional neural networks by enforcing structural sparsity which achieves extremely sparse networks without accuracy deterioration.",
+    "url": "http://arxiv.org/abs/1905.04919",
+    "identifiers": {
+      "doi": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.2,
+        "verification_status": "conflict"
+      },
+      "openalex_id": {
+        "value": "https://openalex.org/W2944213978",
+        "source": "openalex",
+        "confidence": 0.53,
+        "verification_status": "unverified"
+      },
+      "arxiv_id": {
+        "value": null,
+        "source": "arxiv_resolver",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "isbn": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_cluster_id": {
+        "value": null,
+        "source": "none",
+        "confidence": 0.0,
+        "verification_status": "unverified"
+      },
+      "google_scholar_url": {
+        "value": "https://scholar.google.com/scholar?q=Bayesian%20learning%20of%20neural%20network%20architectures%20.%20Dikov",
+        "source": "google_scholar",
+        "confidence": 1.0,
+        "verification_status": "verified"
+      }
+    },
+    "citation_counts": {
+      "canonical_value": 88,
+      "google_scholar": null,
+      "openalex": 88,
+      "crossref": null
+    }
+  },
+  "canonical_authors": [
+    {
+      "name": "G . Dikov",
+      "display_name": "G . Dikov",
+      "given": "G",
+      "family": ". Dikov",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "matched",
+      "confidence": 0.75
+    },
+    {
+      "name": "J Bayer",
+      "display_name": "J Bayer",
+      "given": "J",
+      "family": "Bayer",
+      "author_id": "",
+      "identifiers": {
+        "openalex_id": null,
+        "orcid": null,
+        "google_scholar_id": null
+      },
+      "affiliations": [],
+      "match_status": "matched",
+      "confidence": 0.75
+    }
+  ],
+  "sources": {
+    "openalex": {
+      "available": true,
+      "matched": false,
+      "status": "low_confidence",
+      "confidence": 0.53,
+      "citation_count": 88,
+      "openalex_id": "https://openalex.org/W2944213978",
+      "doi": "10.48550/arxiv.1905.04919",
+      "url": "http://arxiv.org/abs/1905.04919",
+      "pdf_url": "https://arxiv.org/pdf/1905.04919",
+      "raw_file": "data/raw/openalex/01ce084cc2dd27af.json",
+      "normalized_file": null,
+      "data": {
+        "title": "BayesNAS: A Bayesian Approach for Neural Architecture Search",
+        "display_name": "BayesNAS: A Bayesian Approach for Neural Architecture Search",
+        "authors": [
+          {
+            "name": "Hongpeng Zhou",
+            "given": "Hongpeng",
+            "family": "Zhou",
+            "author_id": "https://openalex.org/A5003410899",
+            "display_name": "Hongpeng Zhou",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5003410899",
+              "orcid": "https://orcid.org/0000-0002-3894-0116",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Robot Dynamics"
+            ],
+            "countries": []
+          },
+          {
+            "name": "Minghao Yang",
+            "given": "Minghao",
+            "family": "Yang",
+            "author_id": "https://openalex.org/A5108361021",
+            "display_name": "Minghao Yang",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5108361021",
+              "orcid": "https://orcid.org/0000-0001-5397-3576",
+              "google_scholar_id": null
+            },
+            "affiliations": [],
+            "countries": []
+          },
+          {
+            "name": "Jun Wang",
+            "given": "Jun",
+            "family": "Wang",
+            "author_id": "https://openalex.org/A5100332169",
+            "display_name": "Jun Wang",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5100332169",
+              "orcid": "https://orcid.org/0000-0003-3422-104X",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "University College London"
+            ],
+            "countries": [
+              "GB"
+            ]
+          },
+          {
+            "name": "Wei Li Pan",
+            "given": "Wei Li",
+            "family": "Pan",
+            "author_id": "https://openalex.org/A5100721259",
+            "display_name": "Wei Li Pan",
+            "source": "openalex",
+            "author_match_status": "matched",
+            "identifiers": {
+              "openalex_id": "https://openalex.org/A5100721259",
+              "orcid": "https://orcid.org/0000-0003-1121-9879",
+              "google_scholar_id": null
+            },
+            "affiliations": [
+              "Robot Dynamics"
+            ],
+            "countries": []
+          }
+        ],
+        "year": 2019,
+        "publication_date": "2019-05-13",
+        "journal": "arXiv (Cornell University)",
+        "venue": "arXiv (Cornell University)",
+        "publisher": "Cornell University",
+        "reference_type": "preprint",
+        "volume": "",
+        "issue": "",
+        "pages": "7603-7613",
+        "doi": "10.48550/arxiv.1905.04919",
+        "url": "http://arxiv.org/abs/1905.04919",
+        "pdf_url": "https://arxiv.org/pdf/1905.04919",
+        "openalex_id": "https://openalex.org/W2944213978",
+        "citation_count": 88,
+        "cited_by_count": 88,
+        "is_oa": true,
+        "oa_status": "green",
+        "abstract": "One-Shot Neural Architecture Search (NAS) is a promising method to significantly reduce search time without any separate training. It can be treated as a Network Compression problem on the architecture parameters from an over-parameterized network. However, there are two issues associated with most one-shot NAS methods. First, dependencies between a node and its predecessors and successors are often disregarded which result in improper treatment over zero operations. Second, architecture parameters pruning based on their magnitude is questionable. In this paper, we employ the classic Bayesian learning approach to alleviate these two issues by modeling architecture parameters using hierarchical automatic relevance determination (HARD) priors. Unlike other NAS methods, we train the over-parameterized network for only one epoch then update the architecture. Impressively, this enabled us to find the architecture on CIFAR-10 within only 0.2 GPU days using a single GPU. Competitive performance can be also achieved by transferring to ImageNet. As a byproduct, our approach can be applied directly to compress convolutional neural networks by enforcing structural sparsity which achieves extremely sparse networks without accuracy deterioration.",
+        "topics": [
+          "Advanced Neural Network Applications",
+          "Domain Adaptation and Few-Shot Learning",
+          "Adversarial Robustness in Machine Learning"
+        ],
+        "referenced_works_count": 0,
+        "related_works": [
+          "https://openalex.org/W2965658867",
+          "https://openalex.org/W2964081807",
+          "https://openalex.org/W2810075754",
+          "https://openalex.org/W2963821229",
+          "https://openalex.org/W2963374479"
+        ],
+        "source": "openalex",
+        "raw_file": "data/raw/openalex/01ce084cc2dd27af.json"
+      }
+    },
+    "crossref": {
+      "available": false,
+      "matched": false,
+      "status": "not_found",
+      "confidence": 0.0,
+      "citation_count": null,
+      "doi": null,
+      "url": null,
+      "raw_file": null,
+      "normalized_file": null,
+      "data": {}
+    },
+    "google_scholar": {
+      "available": false,
+      "matched": true,
+      "status": "matched",
+      "confidence": 1.0,
+      "url": "https://scholar.google.com/scholar?q=Bayesian%20learning%20of%20neural%20network%20architectures%20.%20Dikov",
+      "cluster_id": null,
+      "cited_by_url": null,
+      "citation_count": null,
+      "versions_count": null,
+      "raw_file": null,
+      "normalized_file": "data/normalized/google_scholar/490775e5a46ebb32.json",
+      "data": {
+        "title": "Bayesian learning of neural network architectures",
+        "authors": [
+          {
+            "name": "G . Dikov",
+            "given": "G",
+            "family": ". Dikov"
+          },
+          {
+            "name": "J Bayer",
+            "given": "J",
+            "family": "Bayer"
+          }
+        ],
+        "year": 2019,
+        "journal": "In: The 22nd International Conference on Artificial Intelligence and Statistics. PMLR, –738. PMLR 89",
+        "doi": "",
+        "url": "https://scholar.google.com/scholar?q=Bayesian%20learning%20of%20neural%20network%20architectures%20.%20Dikov",
+        "citation_count": null,
+        "source": "google_scholar",
+        "scholar_url": "https://scholar.google.com/scholar?q=Bayesian%20learning%20of%20neural%20network%20architectures%20.%20Dikov",
+        "available": false,
+        "reason": "SERPAPI_KEY_NOT_CONFIGURED",
+        "raw_file": null,
+        "normalized_file": "data/normalized/google_scholar/490775e5a46ebb32.json"
+      }
+    }
+  },
+  "doi_verification": {
+    "status": "conflict",
+    "canonical_doi": null,
+    "reconciled_with_arxiv": false,
+    "confidence": 0.2,
+    "reason": "All candidate DOIs presented metadata conflicts or suspicious repository origins.",
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1145/3065386",
+        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.1409.1556",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/bf00994018",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1023/a:1022627411411",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.1506.02142",
+        "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s40537-021-00444-8",
+        "reason": "Metadata mismatch (title_sim=0.43, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/hbm.23730",
+        "reason": "Metadata mismatch (title_sim=0.47, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.neunet.2019.01.012",
+        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.18653/v1/n16-1030",
+        "reason": "Metadata mismatch (title_sim=0.41, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.1905.04919",
+        "reason": "Metadata mismatch (title_sim=0.63, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/tpami.2020.3008413",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/wcms.1603",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1145/3295500.3356202",
+        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/frobt.2019.00108",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.2008.01475",
+        "reason": "Metadata mismatch (title_sim=0.43, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1142/9789811234026_0018",
+        "reason": "Metadata mismatch (title_sim=0.66, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.17863/cam.69875",
+        "reason": "Metadata mismatch (title_sim=0.47, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/fphy.2022.855775",
+        "reason": "Metadata mismatch (title_sim=0.36, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1609/aaai.v36i6.20547",
+        "reason": "Metadata mismatch (title_sim=0.42, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ],
+    "unverified_dois": []
+  },
+  "quality_and_conflicts": {
+    "overall_confidence": 1.0,
+    "metadata_completeness": 0.83,
+    "doi_verified": false,
+    "author_verified": true,
+    "conflicts": [
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1145/3065386",
+        "reason": "Metadata mismatch (title_sim=0.45, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.1409.1556",
+        "reason": "Metadata mismatch (title_sim=0.35, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1007/bf00994018",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1023/a:1022627411411",
+        "reason": "Metadata mismatch (title_sim=0.31, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.1506.02142",
+        "reason": "Metadata mismatch (title_sim=0.25, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1186/s40537-021-00444-8",
+        "reason": "Metadata mismatch (title_sim=0.43, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/hbm.23730",
+        "reason": "Metadata mismatch (title_sim=0.47, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1016/j.neunet.2019.01.012",
+        "reason": "Metadata mismatch (title_sim=0.60, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.18653/v1/n16-1030",
+        "reason": "Metadata mismatch (title_sim=0.41, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.1905.04919",
+        "reason": "Metadata mismatch (title_sim=0.63, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1109/tpami.2020.3008413",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1002/wcms.1603",
+        "reason": "Metadata mismatch (title_sim=0.26, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1145/3295500.3356202",
+        "reason": "Metadata mismatch (title_sim=0.48, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/frobt.2019.00108",
+        "reason": "Metadata mismatch (title_sim=0.32, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.48550/arxiv.2008.01475",
+        "reason": "Metadata mismatch (title_sim=0.43, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1142/9789811234026_0018",
+        "reason": "Metadata mismatch (title_sim=0.66, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.17863/cam.69875",
+        "reason": "Metadata mismatch (title_sim=0.47, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.3389/fphy.2022.855775",
+        "reason": "Metadata mismatch (title_sim=0.36, author_sim=0.00)",
+        "status": "conflict"
+      },
+      {
+        "field": "doi",
+        "provider": "openalex",
+        "rejected_value": "10.1609/aaai.v36i6.20547",
+        "reason": "Metadata mismatch (title_sim=0.42, author_sim=0.00)",
+        "status": "conflict"
+      }
+    ]
+  },
+  "telemetry": {
+    "providers_queried": [
+      "google_scholar",
+      "crossref",
+      "openalex"
+    ],
+    "latency_ms": {
+      "google_scholar": 16.36,
+      "crossref": 7362.55,
+      "openalex": 10392.37
+    },
+    "candidate_counts": {
+      "google_scholar": 1,
+      "crossref": 0,
+      "openalex": 19
+    },
+    "errors": {}
+  }
+}

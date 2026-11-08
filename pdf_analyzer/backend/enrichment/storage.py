@@ -4,6 +4,7 @@ import sqlite3
 import hashlib
 import tempfile
 import threading
+from contextlib import contextmanager
 from typing import Dict, Any, Optional, List, Tuple
 from datetime import datetime, timezone
 
@@ -63,15 +64,24 @@ def _atomic_write_json(file_path: str, data: Any) -> None:
     parent_dir = os.path.dirname(file_path)
     os.makedirs(parent_dir, exist_ok=True)
     
-    # Write to a temp file in the same directory to guarantee atomic rename on POSIX/Windows
-    with tempfile.NamedTemporaryFile("w", dir=parent_dir, delete=False, encoding="utf-8") as tf:
-        temp_name = tf.name
-        json.dump(data, tf, indent=2, ensure_ascii=False)
-        tf.flush()
-        os.fsync(tf.fileno())
+    temp_name = None
+    try:
+        # Write to a temp file in the same directory to guarantee atomic rename on POSIX/Windows
+        with tempfile.NamedTemporaryFile("w", dir=parent_dir, delete=False, encoding="utf-8") as tf:
+            temp_name = tf.name
+            json.dump(data, tf, indent=2, ensure_ascii=False)
+            tf.flush()
+            os.fsync(tf.fileno())
 
-    # Atomic replace
-    os.replace(temp_name, file_path)
+        # Atomic replace
+        os.replace(temp_name, file_path)
+    except Exception:
+        if temp_name and os.path.exists(temp_name):
+            try:
+                os.remove(temp_name)
+            except OSError:
+                pass
+        raise
 
 
 def _safe_read_json(file_path: str) -> Optional[Dict[str, Any]]:
@@ -99,7 +109,19 @@ class StorageEngine:
         _ensure_directories()
         self._init_sqlite()
 
+    @contextmanager
+    def _connection(self):
+        """Context manager yielding a SQLite connection that commits/rollbacks and always closes."""
+        conn = sqlite3.connect(self.db_path, timeout=10.0)
+        conn.row_factory = sqlite3.Row
+        try:
+            with conn:
+                yield conn
+        finally:
+            conn.close()
+
     def _get_connection(self) -> sqlite3.Connection:
+        """Backward compatibility helper for raw connection."""
         conn = sqlite3.connect(self.db_path, timeout=10.0)
         conn.row_factory = sqlite3.Row
         return conn
@@ -107,7 +129,7 @@ class StorageEngine:
     def _init_sqlite(self):
         """Initialize SQLite index tables."""
         with self._lock:
-            with self._get_connection() as conn:
+            with self._connection() as conn:
                 cursor = conn.cursor()
                 # 1. Projects index
                 cursor.execute("""
@@ -196,7 +218,7 @@ class StorageEngine:
         try:
             rel_path = os.path.relpath(file_path, BASE_DIR).replace("\\", "/")
             with self._lock:
-                with self._get_connection() as conn:
+                with self._connection() as conn:
                     conn.execute("""
                         INSERT OR REPLACE INTO raw_cache_idx
                         (cache_key, provider, query, status_code, candidate_count, file_path, created_at)
@@ -267,7 +289,7 @@ class StorageEngine:
             now_iso = data.get("created_at") or datetime.now(timezone.utc).isoformat()
 
             with self._lock:
-                with self._get_connection() as conn:
+                with self._connection() as conn:
                     conn.execute("""
                         INSERT OR REPLACE INTO references_idx
                         (ref_id, project_id, canonical_title, canonical_doi, confidence, file_path, created_at)
@@ -301,7 +323,7 @@ class StorageEngine:
             now_iso = data.get("saved_at") or datetime.now(timezone.utc).isoformat()
 
             with self._lock:
-                with self._get_connection() as conn:
+                with self._connection() as conn:
                     conn.execute("""
                         INSERT OR REPLACE INTO papers_idx
                         (paper_id, title, doi, arxiv_id, openalex_id, file_path, created_at)
@@ -335,7 +357,7 @@ class StorageEngine:
             now_iso = data.get("saved_at") or datetime.now(timezone.utc).isoformat()
 
             with self._lock:
-                with self._get_connection() as conn:
+                with self._connection() as conn:
                     conn.execute("""
                         INSERT OR REPLACE INTO authors_idx
                         (author_id, name, openalex_id, scholar_id, file_path, created_at)
@@ -370,7 +392,7 @@ class StorageEngine:
             now_iso = data.get("created_at") or datetime.now(timezone.utc).isoformat()
 
             with self._lock:
-                with self._get_connection() as conn:
+                with self._connection() as conn:
                     conn.execute("""
                         INSERT OR REPLACE INTO projects_idx
                         (project_id, filename, sha256, total_references, file_path, created_at)
@@ -390,7 +412,7 @@ class StorageEngine:
     def list_projects(self, limit: int = 50) -> List[Dict[str, Any]]:
         """List recently analyzed projects from SQLite index."""
         with self._lock:
-            with self._get_connection() as conn:
+            with self._connection() as conn:
                 rows = conn.execute("""
                     SELECT project_id, filename, sha256, total_references, file_path, created_at
                     FROM projects_idx
@@ -401,7 +423,7 @@ class StorageEngine:
     def get_stats(self) -> Dict[str, int]:
         """Return counts of saved entities across disk indexes."""
         with self._lock:
-            with self._get_connection() as conn:
+            with self._connection() as conn:
                 p_cnt = conn.execute("SELECT COUNT(*) FROM projects_idx").fetchone()[0]
                 r_cnt = conn.execute("SELECT COUNT(*) FROM references_idx").fetchone()[0]
                 pa_cnt = conn.execute("SELECT COUNT(*) FROM papers_idx").fetchone()[0]

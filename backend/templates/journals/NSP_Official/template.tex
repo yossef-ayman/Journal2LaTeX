@@ -1,0 +1,87 @@
+\PassOptionsToPackage{dvipsnames}{color}
+\documentclass[10pt]{NSP1}
+\usepackage{url,floatflt,cite}
+\usepackage{helvet,times}
+\usepackage{psfig,graphicx}
+\usepackage{mathptmx,amsmath,amssymb,bm}
+\usepackage{float}
+\usepackage[bf,hypcap]{caption}
+\usepackage{placeins}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{hyperref}
+\graphicspath{{./media/}{./images/}}
+
+\captionsetup{
+	labelfont=bf,
+	labelsep=period,
+	aboveskip=4pt,
+	belowskip=3pt
+}
+\captionsetup[table]{position=above,aboveskip=4pt,belowskip=4pt}
+\captionsetup[figure]{position=below,aboveskip=4pt,belowskip=2pt}
+
+
+\definecolor{abstractcolor}{named}{Dandelion}
+\definecolor{rulecolor}{named}{Bittersweet}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{.5in}
+\addtolength{\evensidemargin}{-.5in}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\topmargin=0.00cm
+\raggedbottom
+
+\def\sm{\smallskip}
+\def\no{\noindent}
+
+\def\firstpage{1}
+\setcounter{page}{\firstpage}
+\def\thevol{__VOLUME__}
+\def\thenumber{__ISSUE__}
+\def\theyear{__YEAR__}
+
+\journalname{Journal of Statistics Applications \& Probability}
+
+\begin{document}
+
+\titlefigurecaption{{\large \bf \rm Journal of Statistics Applications \& Probability\\ \it\small An International Journal}}
+
+\title{__TITLE__}
+
+\author{__AUTHORS__}
+
+\institute{__INSTITUTES__}
+
+\titlerunning{__RUNNING_TITLE__}
+\authorrunning{__RUNNING_AUTHOR__}
+
+\mail{__CORRESPONDING_EMAIL__}
+
+\received{__RECEIVED_DATE__}
+\revised{__REVISED_DATE__}
+\accepted{__ACCEPTED_DATE__}
+\published{__PUBLISHED_DATE__}
+
+\def\doi{__DOI__}
+\paperdoi{__DOI__}
+
+\abstracttext{__ABSTRACT__}
+
+\keywords{__KEYWORDS__}
+
+\maketitle
+
+\setlength{\floatsep}{6pt}   
+\setlength{\textfloatsep}{6pt}  
+\setlength{\intextsep}{6pt} 
+
+__CONTENT__
+
+\end{document}

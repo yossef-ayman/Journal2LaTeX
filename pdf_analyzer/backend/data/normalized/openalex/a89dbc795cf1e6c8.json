@@ -1,7 +1,7 @@
 {
   "provider": "openalex",
   "entity_key": "title_author:stabilized difference finite element method for the 3D steady incompressible Navier-Stokes equations, J. Sci Lu",
-  "normalized_at": "2026-09-06T10:25:20.912365+00:00",
+  "normalized_at": "2026-09-07T09:47:59.367818+00:00",
   "data": [
     {
       "title": "Reduced Basis Approximation and a Posteriori Error Estimation for Affinely Parametrized Elliptic Coercive Partial Differential Equations",
@@ -360,6 +360,126 @@
       "raw_file": "data/raw/openalex/a89dbc795cf1e6c8.json"
     },
     {
+      "title": "A Reynolds-robust preconditioner for the Scott-Vogelius discretization of the stationary incompressible Navier-Stokes equations",
+      "display_name": "A Reynolds-robust preconditioner for the Scott-Vogelius discretization of the stationary incompressible Navier-Stokes equations",
+      "authors": [
+        {
+          "name": "Patrick E. Farrell",
+          "given": "Patrick E.",
+          "family": "Farrell",
+          "author_id": "https://openalex.org/A5102855060",
+          "display_name": "Patrick E. Farrell",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5102855060",
+            "orcid": "https://orcid.org/0000-0002-1241-7060",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Oxford"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "Lawrence Mitchell",
+          "given": "Lawrence",
+          "family": "Mitchell",
+          "author_id": "https://openalex.org/A5075683889",
+          "display_name": "Lawrence Mitchell",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5075683889",
+            "orcid": "https://orcid.org/0000-0001-8062-1453",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Durham University"
+          ],
+          "countries": [
+            "GB"
+          ]
+        },
+        {
+          "name": "L. Ridgway Scott",
+          "given": "L. Ridgway",
+          "family": "Scott",
+          "author_id": "https://openalex.org/A5068215959",
+          "display_name": "L. Ridgway Scott",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5068215959",
+            "orcid": "https://orcid.org/0000-0002-7885-7106",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "University of Chicago"
+          ],
+          "countries": [
+            "US"
+          ]
+        },
+        {
+          "name": "Florian Wechsung",
+          "given": "Florian",
+          "family": "Wechsung",
+          "author_id": "https://openalex.org/A5065024606",
+          "display_name": "Florian Wechsung",
+          "source": "openalex",
+          "author_match_status": "matched",
+          "identifiers": {
+            "openalex_id": "https://openalex.org/A5065024606",
+            "orcid": "https://orcid.org/0000-0003-2195-6522",
+            "google_scholar_id": null
+          },
+          "affiliations": [
+            "Courant Institute of Mathematical Sciences",
+            "New York University"
+          ],
+          "countries": [
+            "US"
+          ]
+        }
+      ],
+      "year": 2021,
+      "publication_date": "2021-03-24",
+      "journal": "SMAI Journal of Computational Mathematics",
+      "venue": "SMAI Journal of Computational Mathematics",
+      "publisher": "Cellule MathDoc/CEDRAM",
+      "reference_type": "journal-article",
+      "volume": "7",
+      "issue": "",
+      "pages": "75-96",
+      "doi": "10.5802/smai-jcm.72",
+      "url": "https://doi.org/10.5802/smai-jcm.72",
+      "pdf_url": "https://smai-jcm.centre-mersenne.org/item/10.5802/smai-jcm.72.pdf",
+      "openalex_id": "https://openalex.org/W3126661955",
+      "citation_count": 44,
+      "cited_by_count": 44,
+      "is_oa": true,
+      "oa_status": "diamond",
+      "abstract": "Augmented Lagrangian preconditioners have successfully yielded Reynolds-robust preconditioners for the stationary incompressible Navier–Stokes equations, but only for specific discretizations. The discretizations for which these preconditioners have been designed possess error estimates which depend on the Reynolds number, with the discretization error deteriorating as the Reynolds number is increased. In this paper we present an augmented Lagrangian preconditioner for the Scott–Vogelius discretization on barycentrically-refined meshes. This achieves both Reynolds-robust performance and Reynolds-robust error estimates. A key consideration is the design of a suitable space decomposition that captures the kernel of the grad-div term added to control the Schur complement; the same barycentric refinement that guarantees inf-sup stability also provides a local decomposition of the kernel of the divergence. The robustness of the scheme is confirmed by numerical experiments in two and three dimensions.",
+      "topics": [
+        "Advanced Numerical Methods in Computational Mathematics",
+        "Computational Fluid Dynamics and Aerodynamics",
+        "Elasticity and Material Modeling"
+      ],
+      "referenced_works_count": 75,
+      "related_works": [
+        "https://openalex.org/W2277328098",
+        "https://openalex.org/W1964968800",
+        "https://openalex.org/W1987832651",
+        "https://openalex.org/W68723791",
+        "https://openalex.org/W2950304429"
+      ],
+      "source": "openalex",
+      "raw_file": "data/raw/openalex/a89dbc795cf1e6c8.json"
+    },
+    {
       "title": "An improved physics-informed neural network with adaptive weighting and mixed differentiation for solving the incompressible Navier–Stokes equations",
       "display_name": "An improved physics-informed neural network with adaptive weighting and mixed differentiation for solving the incompressible Navier–Stokes equations",
       "authors": [
@@ -578,8 +698,8 @@
             "École Centrale Paris"
           ],
           "countries": [
-            "FR",
-            "US"
+            "US",
+            "FR"
           ]
         },
         {
@@ -601,8 +721,8 @@
             "École Centrale Paris"
           ],
           "countries": [
-            "FR",
-            "US"
+            "US",
+            "FR"
           ]
         },
         {
@@ -1079,141 +1199,6 @@
         "https://openalex.org/W2042199958",
         "https://openalex.org/W2103149966"
       ],
-      "source": "openalex",
-      "raw_file": "data/raw/openalex/a89dbc795cf1e6c8.json"
-    },
-    {
-      "title": "Efficient Variable-Coefficient Finite-Volume Stokes Solvers",
-      "display_name": "Efficient Variable-Coefficient Finite-Volume Stokes Solvers",
-      "authors": [
-        {
-          "name": "Mingchao Cai",
-          "given": "Mingchao",
-          "family": "Cai",
-          "author_id": "",
-          "display_name": "Mingchao Cai",
-          "source": "openalex",
-          "author_match_status": "ambiguous",
-          "identifiers": {
-            "openalex_id": null,
-            "orcid": null,
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Courant Institute of Mathematical Sciences",
-            "New York University"
-          ],
-          "countries": [
-            "US"
-          ]
-        },
-        {
-          "name": "Andy Nonaka",
-          "given": "Andy",
-          "family": "Nonaka",
-          "author_id": "",
-          "display_name": "Andy Nonaka",
-          "source": "openalex",
-          "author_match_status": "ambiguous",
-          "identifiers": {
-            "openalex_id": null,
-            "orcid": null,
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Lawrence Berkeley National Laboratory"
-          ],
-          "countries": [
-            "US"
-          ]
-        },
-        {
-          "name": "John B. Bell",
-          "given": "John B.",
-          "family": "Bell",
-          "author_id": "",
-          "display_name": "John B. Bell",
-          "source": "openalex",
-          "author_match_status": "ambiguous",
-          "identifiers": {
-            "openalex_id": null,
-            "orcid": null,
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Lawrence Berkeley National Laboratory"
-          ],
-          "countries": [
-            "US"
-          ]
-        },
-        {
-          "name": "Boyce E. Griffith",
-          "given": "Boyce E.",
-          "family": "Griffith",
-          "author_id": "",
-          "display_name": "Boyce E. Griffith",
-          "source": "openalex",
-          "author_match_status": "ambiguous",
-          "identifiers": {
-            "openalex_id": null,
-            "orcid": null,
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "New York University"
-          ],
-          "countries": [
-            "US"
-          ]
-        },
-        {
-          "name": "Aleksandar Donev",
-          "given": "Aleksandar",
-          "family": "Donev",
-          "author_id": "",
-          "display_name": "Aleksandar Donev",
-          "source": "openalex",
-          "author_match_status": "ambiguous",
-          "identifiers": {
-            "openalex_id": null,
-            "orcid": null,
-            "google_scholar_id": null
-          },
-          "affiliations": [
-            "Courant Institute of Mathematical Sciences",
-            "New York University"
-          ],
-          "countries": [
-            "US"
-          ]
-        }
-      ],
-      "year": 2014,
-      "publication_date": "2014-01-01",
-      "journal": "Communications in Computational Physics",
-      "venue": "Communications in Computational Physics",
-      "publisher": "Cambridge University Press",
-      "reference_type": "journal-article",
-      "volume": "16",
-      "issue": "5",
-      "pages": "1263-1297",
-      "doi": "10.4208/cicp.070114.170614a",
-      "url": "https://doi.org/10.4208/cicp.070114.170614a",
-      "pdf_url": "https://arxiv.org/pdf/1308.4605",
-      "openalex_id": "https://openalex.org/W2102512732",
-      "citation_count": 44,
-      "cited_by_count": 44,
-      "is_oa": true,
-      "oa_status": "green",
-      "abstract": "We investigate several robust preconditioners for solving the saddle-point linear systems that arise from spatial discretization of unsteady and steady variable-coefficient Stokes equations on a uniform staggered grid. Building on the success of using the classical projection method as a preconditioner for the coupled velocity pressure system [B. E. Griffith, J. Comp. Phys., 228 (2009), pp. 7565-7595], as well; established techniques for steady and unsteady Stokes flow in the finite-element literature, we construct preconditioners that employ independent generalized Helmholtz and Poisson solvers for the velocity and pressure subproblems. We demonstrate that only a single cycle of a standard geometric multigrid algorithm serves as an effective inexact solver for each of these subproblems. Contrary to traditional wisdom, we find that the Stokes problem can be solved nearly as efficiently as the independent pressure and velocity subproblems, making the overall cost of solving the Stokes system comparable to the cost of classical projection or fractional step methods for incompressible flow, even for steady flow and in the presence of large density and viscosity contrasts. Two of the five preconditioners considered here are found to be robust to GMRES restarts and to increasing problem size, making them suitable for large-scale problems. Our work opens many possibilities for constructing novel unsplit temporal integrators for finite-volume spatial discretizations of the equations of low Mach and incompressible flow dynamics.",
-      "topics": [
-        "Advanced Numerical Methods in Computational Mathematics",
-        "Model Reduction and Neural Networks",
-        "Matrix Theory and Algorithms"
-      ],
-      "referenced_works_count": 49,
-      "related_works": [],
       "source": "openalex",
       "raw_file": "data/raw/openalex/a89dbc795cf1e6c8.json"
     }

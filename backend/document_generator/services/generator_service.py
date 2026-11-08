@@ -303,7 +303,21 @@ class GeneratorService:
                 elif isinstance(override.authors, str):
                     authors = [a.strip() for a in override.authors.split(",") if a.strip()]
             if override.reference_number and override.reference_number.strip():
-                auto_ref = override.reference_number.strip()
+                ref_candidate = override.reference_number.strip()
+                norm_current = reference_numbers.normalise_journal_code(journal_code)
+                if norm_current:
+                    # If ref_candidate starts with a known journal code that differs from the active journal,
+                    # rewrite the prefix to match the selected journal so documents never carry the wrong journal code.
+                    match = re.match(r"^([A-Za-z_]+)(\d{6,}.*)$", ref_candidate)
+                    if match:
+                        old_prefix = reference_numbers.normalise_journal_code(match.group(1))
+                        if old_prefix != norm_current and old_prefix in {
+                            "AMIS", "JSAP", "PDFA", "PFDA", "THINFILM", "IJAB", "IJIRYE",
+                            "IJNC", "IJNHP", "JANS", "JANT", "JEHE", "JNAM", "JRNA",
+                            "LNSSH", "MSL", "NCMSE", "OOE", "QIR", "QPL", "SJM", "WEFE", "WRPSJ"
+                        }:
+                            ref_candidate = f"{norm_current}{match.group(2)}"
+                auto_ref = ref_candidate
 
         paper_extra = dict(request.extra_placeholders or {})
         fee_val = (
